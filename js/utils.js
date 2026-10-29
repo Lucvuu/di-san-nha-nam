@@ -1,26 +1,59 @@
 /**
  * ====================================================================
  * DI SẢN VĂN HÓA NHÃ NAM - CÁC HÀM TIỆN ÍCH HỖ TRỢ (UTILITIES)
- * Hỗ trợ tìm kiếm tiếng Việt không dấu, định dạng, chia sẻ, đọc văn bản
+ * Hỗ trợ tìm kiếm tiếng Việt không dấu, định dạng, Audio Guide, QR Code, Fallback ảnh
  * ====================================================================
  */
 
 /**
+ * Ảnh SVG dự phòng Di Sản Văn Hóa Việt Nam (Data URI)
+ * Không bao giờ bị lỗi mạng hay 404, luôn hiển thị hình tượng mái đình rêu phong và hoa sen cổ truyền
+ */
+const HERITAGE_FALLBACK_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A1010"/>
+      <stop offset="50%" stop-color="#8B1E1E"/>
+      <stop offset="100%" stop-color="#2A0B0B"/>
+    </linearGradient>
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F6E05E" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#C59B27" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  <circle cx="400" cy="250" r="220" fill="url(#goldGlow)"/>
+  <circle cx="400" cy="250" r="180" fill="none" stroke="#C59B27" stroke-width="2" stroke-dasharray="6,4" opacity="0.4"/>
+  <circle cx="400" cy="250" r="130" fill="none" stroke="#F6E05E" stroke-width="1.5" opacity="0.5"/>
+  <path d="M260 290 L400 170 L540 290 Q400 270 260 290 Z" fill="#C59B27" opacity="0.85"/>
+  <path d="M220 290 Q250 280 270 265 L400 150 L530 265 Q550 280 580 290 Q400 265 220 290 Z" fill="#D4AF37"/>
+  <rect x="300" y="285" width="200" height="110" fill="#2A0B0B" opacity="0.75" rx="4"/>
+  <rect x="360" y="315" width="80" height="80" fill="#C59B27" rx="40" opacity="0.6"/>
+  <text x="400" y="445" font-family="serif" font-size="24" font-weight="bold" fill="#F6E05E" text-anchor="middle" letter-spacing="2">DI SẢN VĂN HÓA NHÃ NAM</text>
+  <text x="400" y="475" font-family="sans-serif" font-size="14" fill="#EADECF" text-anchor="middle">Trường THPT Nhã Nam • Tân Yên • Bắc Giang</text>
+</svg>
+`);
+
+/**
+ * Xử lý khi ảnh tải lỗi: tự động đổi sang SVG Di sản Việt Nam
+ */
+function handleImageError(img) {
+  if (!img) return;
+  img.onerror = null;
+  img.src = HERITAGE_FALLBACK_SVG;
+}
+
+/**
  * Chuẩn hóa chuỗi tiếng Việt thành chuỗi không dấu, chữ thường
  * Đảm bảo tìm kiếm tiếng Việt chính xác 100% dù người dùng gõ có dấu hay không dấu.
- * Ví dụ: "Chùa Tứ Giáp" -> "chua tu giap"
- *        "Đền Gốc Khế" -> "den goc khe"
- *        "Khởi nghĩa Yên Thế" -> "khoi nghia yen the"
  */
 function removeVietnameseTones(str) {
   if (!str || typeof str !== 'string') return '';
 
   let normalized = str.toLowerCase();
-
-  // Chuẩn hóa ký tự Unicode tổ hợp
   normalized = normalized.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-  // Xử lý các ký tự đặc thù tiếng Việt
   normalized = normalized
     .replace(/[àáạảãâầấậẩẫăằắặẳẵ]/g, 'a')
     .replace(/[èéẹẻẽêềếệểễ]/g, 'e')
@@ -30,7 +63,6 @@ function removeVietnameseTones(str) {
     .replace(/[ỳýỵỷỹ]/g, 'y')
     .replace(/[đ]/g, 'd');
 
-  // Loại bỏ các dấu thanh rời rạc nếu còn sót
   normalized = normalized
     .replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, '')
     .replace(/\u02C6|\u0306|\u031B/g, '');
@@ -40,7 +72,6 @@ function removeVietnameseTones(str) {
 
 /**
  * Kiểm tra xem một mục di sản có khớp với từ khóa tìm kiếm hay không
- * Hỗ trợ so khớp đa trường (Tiêu đề, tóm tắt, thẻ tag, địa chỉ, phạm vi, nội dung)
  */
 function matchesSearchQuery(item, rawQuery) {
   if (!rawQuery || !rawQuery.trim()) return true;
@@ -48,7 +79,6 @@ function matchesSearchQuery(item, rawQuery) {
   const queryClean = removeVietnameseTones(rawQuery);
   const queryTokens = queryClean.split(/\s+/).filter(Boolean);
 
-  // Tập hợp toàn bộ văn bản có thể tìm kiếm của mục
   const searchableParts = [
     item.title || '',
     item.shortTitle || '',
@@ -63,7 +93,6 @@ function matchesSearchQuery(item, rawQuery) {
 
   const fullSearchableText = removeVietnameseTones(searchableParts.join(' '));
 
-  // Kiểm tra xem tất cả các từ trong truy vấn có xuất hiện không
   return queryTokens.every(token => fullSearchableText.includes(token));
 }
 
@@ -130,13 +159,11 @@ function showToastNotification(message, type = 'info', duration = 3500) {
 
   container.appendChild(toast);
 
-  // Trigger animation in
   requestAnimationFrame(() => {
     toast.classList.remove('translate-y-4', 'opacity-0');
     toast.classList.add('translate-y-0', 'opacity-100');
   });
 
-  // Tự động đóng sau duration
   setTimeout(() => {
     toast.classList.remove('translate-y-0', 'opacity-100');
     toast.classList.add('translate-y-2', 'opacity-0');
@@ -145,32 +172,34 @@ function showToastNotification(message, type = 'info', duration = 3500) {
 }
 
 /**
- * Đọc văn bản bằng giọng đọc trình duyệt (Web Speech Synthesis)
- * Phục vụ học sinh nghe giới thiệu tóm tắt di sản
+ * ====================================================================
+ * AUDIO GUIDE: THUYẾT MINH DI TÍCH TỰ ĐỘNG BẰNG GIỌNG ĐỌC TIẾNG VIỆT
+ * Sử dụng Web Speech API (vi-VN) cho học sinh và thầy cô nghe thuyết minh
+ * ====================================================================
  */
 let currentSpeechUtterance = null;
-let isSpeaking = false;
+let isSpeakingGuide = false;
 
-function toggleTextToSpeech(textToRead, onStateChange) {
+function toggleAudioGuide(textToRead, onStateChange) {
   if (!('speechSynthesis' in window)) {
-    showToastNotification('Trình duyệt của bạn chưa hỗ trợ tính năng đọc tự động.', 'warning');
+    showToastNotification('Trình duyệt của bạn chưa hỗ trợ tính năng thuyết minh tự động.', 'warning');
     return;
   }
 
-  if (isSpeaking) {
+  if (isSpeakingGuide) {
     window.speechSynthesis.cancel();
-    isSpeaking = false;
+    isSpeakingGuide = false;
     if (onStateChange) onStateChange(false);
     return;
   }
 
-  window.speechSynthesis.cancel(); // Dừng câu trước nếu có
+  window.speechSynthesis.cancel();
 
   currentSpeechUtterance = new SpeechSynthesisUtterance(textToRead);
   currentSpeechUtterance.lang = 'vi-VN';
-  currentSpeechUtterance.rate = 0.95; // Tốc độ vừa phải cho học sinh nghe rõ
+  currentSpeechUtterance.rate = 0.95; // Tốc độ đĩnh đạc, rõ ràng
+  currentSpeechUtterance.pitch = 1.0;
 
-  // Cố gắng chọn giọng đọc tiếng Việt nếu có
   const voices = window.speechSynthesis.getVoices();
   const viVoice = voices.find(v => v.lang.includes('vi') || v.lang.includes('VN'));
   if (viVoice) {
@@ -178,27 +207,47 @@ function toggleTextToSpeech(textToRead, onStateChange) {
   }
 
   currentSpeechUtterance.onstart = () => {
-    isSpeaking = true;
+    isSpeakingGuide = true;
     if (onStateChange) onStateChange(true);
   };
 
   currentSpeechUtterance.onend = () => {
-    isSpeaking = false;
+    isSpeakingGuide = false;
     if (onStateChange) onStateChange(false);
   };
 
   currentSpeechUtterance.onerror = () => {
-    isSpeaking = false;
+    isSpeakingGuide = false;
     if (onStateChange) onStateChange(false);
   };
 
   window.speechSynthesis.speak(currentSpeechUtterance);
 }
 
-function stopTextToSpeech() {
+function stopAudioGuide() {
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
-    isSpeaking = false;
+    isSpeakingGuide = false;
   }
 }
 
+// Hàm tương thích cũ
+function toggleTextToSpeech(text, callback) {
+  toggleAudioGuide(text, callback);
+}
+
+function stopTextToSpeech() {
+  stopAudioGuide();
+}
+
+/**
+ * ====================================================================
+ * TẠO MÃ QR DI TÍCH ĐỘNG (QR CODE GENERATOR)
+ * Phục vụ học sinh, giáo viên quét bằng điện thoại hoặc in dán bảng tin
+ * ====================================================================
+ */
+function getHeritageQRCodeUrl(itemId) {
+  // Tạo URL chỉ thẳng đến di tích trên website chính thức
+  const targetUrl = `https://lucvuu.github.io/di-san-nha-nam/#item=${itemId}`;
+  return `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(targetUrl)}&color=8B1E1E&bgcolor=FFFFFF&margin=6`;
+}

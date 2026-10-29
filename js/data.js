@@ -2,30 +2,31 @@
  * ====================================================================
  * DI SẢN VĂN HÓA NHÃ NAM - DỮ LIỆU CẤU HÌNH & HỆ THỐNG DI SẢN
  * Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang, Việt Nam
+ * Đơn vị khởi xướng & phối hợp: Trường THPT Nhã Nam
  * ====================================================================
  */
 
 const SITE_CONFIG = {
   portalName: "Di Sản Văn Hóa Nhã Nam",
   portalSubtitle: "Cổng Thông Tin Số Hóa Di Sản Văn Hóa & Lịch Sử Địa Phương",
+  schoolName: "Trường THPT Nhã Nam",
   district: "Huyện Tân Yên",
   province: "Tỉnh Bắc Giang",
-  schoolTarget: "Dành cho học sinh các trường Tiểu học, THCS, THPT, thầy cô giáo và nhân dân",
+  schoolTarget: "Dành cho học sinh Trường THPT Nhã Nam, các trường THCS, Tiểu học, thầy cô giáo và nhân dân",
+  logoUrl: "./logo-thpt-nha-nam.png",
   
   // Facebook Group Community Configuration
-  // Lưu ý: Nếu để trống ("") hoặc "#", hệ thống sẽ tự động hiển thị thông báo
-  // thân thiện: "Group Facebook hiện đang được Ban điều hành và Cô Mến thiết lập. Đường dẫn sẽ sớm được cập nhật!"
   facebookGroupUrl: "#", 
   facebookGroupStatusNote: "Nhóm có bật chế độ kiểm duyệt bài viết để đảm bảo môi trường học tập văn minh, an toàn cho học sinh",
 
   // Administrator & Contact Configuration
   adminRole: "Ban điều hành dự án & Quản trị nội dung",
-  adminName: "Cô Mến & Nhóm phụ trách Di sản Nhã Nam",
+  adminName: "Cô Mến & Nhóm phụ trách Di sản THPT Nhã Nam",
   adminPhone: "0962.629.650",
   adminPhoneRaw: "0962629650",
   adminZaloUrl: "https://zalo.me/0962629650",
-  adminEmail: "disannhanam.tanyen@gmail.com",
-  adminAddress: "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang"
+  adminEmail: "thptnhanam.disan@gmail.com",
+  adminAddress: "Trường THPT Nhã Nam, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang"
 };
 
 /**
@@ -48,12 +49,11 @@ const TANGIBLE_HERITAGE_DATA = [
     title: "Cụm di tích Đình - Chùa Tứ Giáp",
     shortTitle: "Chùa Tứ Giáp (Đại Phúc Tự)",
     address: "Tổ dân phố Chùa Nguộn, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
-    heroImage: "https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?auto=format&fit=crop&w=600&q=80",
+    heroImage: "./assets/images/hero-vat-the.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80",
     tags: ["Chùa Tứ Giáp", "Sáu điều Bác Hồ dạy", "Công an nhân dân", "Đại Phúc Tự", "Làng Nguộn", "Yên Thế"],
     overview: "Nơi phát tích lịch sử thiêng liêng ra đời Sáu điều Bác Hồ dạy Công an nhân dân ngày 11/3/1948, nằm trong hệ thống di tích Quốc gia đặc biệt.",
     
-    // Nội dung chi tiết về di tích
     content: {
       intro: "Chùa Tứ Giáp (tên chữ là Đại Phúc Tự, thường gọi là chùa Làng Nguộn) tọa lạc uy nghiêm tại tổ dân phố Chùa Nguộn, thị trấn Nhã Nam. Ngôi chùa không chỉ là trung tâm tín ngưỡng Phật giáo lâu đời từ thế kỷ XVIII thời hậu Lê (trùng tu lớn năm 1886 thời Nguyễn) mà còn là 'địa chỉ đỏ' cách mạng rực rỡ của toàn quốc.",
       historicalSignificance: [
@@ -67,33 +67,27 @@ const TANGIBLE_HERITAGE_DATA = [
         "Lưu giữ nhiều bảo vật quý: bia đá niên hiệu Cảnh Hưng (1771), chuông đồng đúc thế kỷ XIX, các pho tượng Phật sơn son thếp vàng cổ kính.",
         "Khuôn viên hiện nay được mở rộng xây dựng Khu lưu niệm Sáu điều Bác Hồ dạy CAND với tượng đài Bác Hồ trang nghiêm, hoa viên xanh mát và nhà truyền thống giáo dục thế hệ trẻ."
       ],
-      studyNote: "Đối với học sinh: Chùa Tứ Giáp là bài học thực tế sống động nhất về lòng yêu nước, đạo đức chí công vô tư và sự tri ân các anh hùng liệt sĩ cách mạng của quê hương Tân Yên."
+      studyNote: "Đối với học sinh Trường THPT Nhã Nam: Chùa Tứ Giáp là bài học thực tế sống động nhất về lòng yêu nước, đạo đức chí công vô tư và sự tri ân các anh hùng liệt sĩ cách mạng của quê hương Tân Yên."
     },
 
-    // Bản đồ Google Map
     map: {
       embedUrl: "https://www.google.com/maps?q=Ch%C3%B9a+T%E1%BB%A9+Gi%C3%A1p,+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
       directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Chùa+Tứ+Giáp,+Tổ+dân+phố+Chùa+Nguộn,+Nhã+Nam,+Tân+Yên,+Bắc+Giang",
       locationName: "Chùa Tứ Giáp & Khu lưu niệm Sáu điều Bác Hồ dạy CAND"
     },
 
-    // Thư viện ảnh di tích
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?auto=format&fit=crop&w=1000&q=80",
+        url: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
         caption: "Toàn cảnh tam quan và khuôn viên thanh tịnh rợp bóng cây xanh tại chùa Tứ Giáp"
       },
       {
-        url: "https://images.unsplash.com/photo-1548625361-195fe578cb27?auto=format&fit=crop&w=1000&q=80",
+        url: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1000&q=80",
         caption: "Nét chạm khắc rồng phượng tinh xảo trên bờ nóc mái chùa cổ Đại Phúc Tự"
       },
       {
-        url: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
+        url: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80",
         caption: "Khuôn viên lưu niệm trang nghiêm - nơi tổ chức các lễ báo công dâng Bác"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?auto=format&fit=crop&w=1000&q=80",
-        caption: "Không gian nhà bia và các hiện vật lịch sử gắn với Công an Khu XII năm 1948"
       }
     ]
   },
@@ -123,7 +117,7 @@ const TANGIBLE_HERITAGE_DATA = [
         "Kết cấu gian tiền tế và hậu cung bằng khung gỗ tứ thiết vững chãi, chạm nổi các đề tài tứ linh (Long, Lân, Quy, Phụng) và tứ quý (Tùng, Cúc, Trúc, Mai).",
         "Lưu giữ hương án gỗ thếp vàng, đại tự, câu đối ca ngợi khí phách kiên cường bất khuất của dân tộc và các sắc phong cổ."
       ],
-      studyNote: "Đền Gốc Khế nhắc nhở các bạn học sinh lòng dũng cảm, mưu trí và tình đoàn kết gắn bó keo sơn của cha ông trong cuộc chiến đấu chống ngoại xâm bảo vệ quê hương."
+      studyNote: "Đền Gốc Khế nhắc nhở các bạn học sinh Trường THPT Nhã Nam về lòng dũng cảm, mưu trí và tinh thần kiên cường bất khuất của cha ông trong cuộc chiến bảo vệ quê hương."
     },
 
     map: {
@@ -140,10 +134,6 @@ const TANGIBLE_HERITAGE_DATA = [
       {
         url: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80",
         caption: "Không gian thờ tự trang nghiêm bên trong hậu cung thờ Đức Thánh Trần"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1000&q=80",
-        caption: "Cây xanh cổ thụ che bóng mát quanh di tích Đền Gốc Khế"
       }
     ]
   },
@@ -188,12 +178,8 @@ const TANGIBLE_HERITAGE_DATA = [
         caption: "Cảnh quan xanh mát trên đỉnh Đồi Phủ - nơi lưu giữ dấu tích lịch sử"
       },
       {
-        url: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80",
-        caption: "Hàng cây cổ thụ và đường lên di tích Đồi Phủ lịch sử Nhã Nam"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=80",
-        caption: "Tầm nhìn bao quát toàn bộ thị trấn Nhã Nam từ trên cao Đồi Phủ"
+        url: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
+        caption: "Đường lên di tích Đồi Phủ lịch sử rợp bóng cây xanh tại Nhã Nam"
       }
     ]
   },
@@ -206,8 +192,8 @@ const TANGIBLE_HERITAGE_DATA = [
     title: "Đình Nhã Nam",
     shortTitle: "Đình Nhã Nam (Đình Làng Cổ)",
     address: "Tổ dân phố Nam Sơn, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
-    heroImage: "https://images.unsplash.com/photo-1590059390046-52c676778f24?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1590059390046-52c676778f24?auto=format&fit=crop&w=600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    thumbnail: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80",
     tags: ["Đình Nhã Nam", "Thành hoàng làng", "Kiến trúc điêu khắc cổ", "Nam Sơn", "Quýt Bo bò Sỏi đình Nhã Nam"],
     overview: "Ngôi đình cổ nổi tiếng xứ Kinh Bắc qua câu ca cổ truyền, biểu tượng sinh hoạt văn hóa làng xã và nghệ thuật chạm khắc gỗ độc đáo thế kỷ XIX.",
 
@@ -234,16 +220,12 @@ const TANGIBLE_HERITAGE_DATA = [
 
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1590059390046-52c676778f24?auto=format&fit=crop&w=1000&q=80",
+        url: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
         caption: "Kiến trúc mái đình uốn cong cổ kính đặc trưng phong cách truyền thống Bắc Bộ"
       },
       {
-        url: "https://images.unsplash.com/photo-1548625361-195fe578cb27?auto=format&fit=crop&w=1000&q=80",
+        url: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1000&q=80",
         caption: "Các chi tiết vì kèo và điêu khắc gỗ chạm khắc tinh vi tại Đình Nhã Nam"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
-        caption: "Khoảng sân đình rộng rãi rợp bóng mát - nơi diễn ra hội làng đầu xuân"
       }
     ]
   },
@@ -256,8 +238,8 @@ const TANGIBLE_HERITAGE_DATA = [
     title: "Chùa Nam Thiên",
     shortTitle: "Chùa Nam Thiên (Chùa Phố)",
     address: "Tổ dân phố Tân Quang, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
-    heroImage: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80",
+    thumbnail: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=600&q=80",
     tags: ["Chùa Nam Thiên", "Chùa Phố", "Tân Quang", "Phật giáo Bắc Giang", "Di tích văn hóa", "Nhã Nam"],
     overview: "Ngôi cổ tự thanh tịnh xây dựng từ năm 1882, nơi gìn giữ hệ thống tượng Phật cổ và lan tỏa tinh thần từ bi hỷ xả trong cộng đồng.",
 
@@ -284,16 +266,12 @@ const TANGIBLE_HERITAGE_DATA = [
 
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80",
+        url: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1000&q=80",
         caption: "Cổng chùa Nam Thiên tôn nghiêm tĩnh lặng giữa lòng thị trấn Nhã Nam"
       },
       {
         url: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80",
         caption: "Điện Phật trang nghiêm với hệ thống tượng cổ sơn son thếp vàng"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
-        caption: "Vườn tháp và không gian thanh mát bao bọc quanh cổ tự"
       }
     ]
   }
@@ -319,8 +297,8 @@ const INTANGIBLE_HERITAGE_DATA = [
     title: "Lễ hội Chùa Tứ Giáp & Đền Gốc Khế",
     shortTitle: "Lễ hội Chùa Tứ Giáp & Đền Gốc Khế",
     scope: "Thị trấn Nhã Nam và các làng xã lân cận thuộc vùng Cầu Vồng - Tân Yên, tỉnh Bắc Giang",
-    heroImage: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+    heroImage: "./assets/images/hero-phi-vat-the.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=80",
     tags: ["Lễ hội truyền thống", "Rước kiệu", "Chùa Tứ Giáp", "Đền Gốc Khế", "Hội xuân", "Tân Yên"],
     overview: "Lễ hội mùa xuân tôn nghiêm kết hợp hài hòa giữa nghi thức tâm linh, tri ân anh hùng dân tộc và lễ báo công dâng Bác xúc động.",
 
@@ -334,7 +312,7 @@ const INTANGIBLE_HERITAGE_DATA = [
         "**Phần Lễ trang nghiêm:** Lễ rước kiệu thánh uy nghi từ các thôn làng về trung tâm đền - chùa; nghi thức tế lễ cổ truyền; lễ dâng hương tưởng niệm danh nhân Hoàng Hoa Thám và các nghĩa sĩ; lễ dâng hoa báo công trước Tượng đài Bác Hồ.",
         "**Phần Hội sôi động:** Các trò chơi dân gian đặc sắc như cờ người, đấu vật cổ truyền, chọi gà, kéo co, đập niêu đất, hội thi làm bánh khảo - kẹo lạc và các đêm giao lưu hát Chèo, dân ca Quan họ trên thuyền rực rỡ sắc màu."
       ],
-      preservationValue: "Lễ hội bồi đắp tinh thần đoàn kết cộng đồng, gắn kết bền chặt tình quân - dân và giáo dục truyền thống đạo lý 'Uống nước nhớ nguồn' cho các thế hệ học sinh vùng đất Tân Yên."
+      preservationValue: "Lễ hội bồi đắp tinh thần đoàn kết cộng đồng, gắn kết bền chặt tình quân - dân và giáo dục truyền thống đạo lý 'Uống nước nhớ nguồn' cho các thế hệ học sinh Trường THPT Nhã Nam."
     },
 
     map: {
@@ -345,15 +323,11 @@ const INTANGIBLE_HERITAGE_DATA = [
 
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1000&q=80",
-        caption: "Không khí rộn ràng cờ hội và hoa đăng rực rỡ trong ngày khai hội truyền thống"
+        url: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1000&q=80",
+        caption: "Không khí rộn ràng cờ hội và lồng đèn rực rỡ trong ngày khai hội truyền thống"
       },
       {
-        url: "https://images.unsplash.com/photo-1548625361-195fe578cb27?auto=format&fit=crop&w=1000&q=80",
-        caption: "Đoàn rước kiệu trang trọng với trang phục cổ truyền rực rỡ sắc màu xứ Kinh Bắc"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
+        url: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80",
         caption: "Lễ dâng hương báo công tưởng niệm thiêng liêng thu hút đông đảo người dân"
       }
     ]
@@ -396,14 +370,6 @@ const INTANGIBLE_HERITAGE_DATA = [
       {
         url: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=80",
         caption: "Nghệ nhân và diễn viên chèo say sưa biểu diễn trích đoạn cổ trên sân khấu"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1000&q=80",
-        caption: "Dàn nhạc cụ dân tộc truyền thống: Trống chèo, đàn nhị, sáo trúc hòa quyện"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1000&q=80",
-        caption: "Buổi giao lưu truyền dạy hát chèo cho các em thiếu nhi tại địa phương"
       }
     ]
   },
@@ -416,8 +382,8 @@ const INTANGIBLE_HERITAGE_DATA = [
     title: "Nghề làm bánh khảo, kẹo lạc truyền thống Nhã Nam",
     shortTitle: "Bánh Khảo, Kẹo Lạc Truyền Thống",
     scope: "Các hộ gia đình nghệ nhân và làng nghề ẩm thực tại thị trấn Nhã Nam, huyện Tân Yên",
-    heroImage: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?auto=format&fit=crop&w=1200&q=80",
+    thumbnail: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?auto=format&fit=crop&w=600&q=80",
     tags: ["Bánh khảo", "Kẹo lạc", "Ẩm thực Nhã Nam", "Quà quê truyền thống", "Làng nghề", "Tân Yên"],
     overview: "Thức quà quê mộc mạc thơm lừng hương nếp cái hoa vàng, vị bùi ngọt của vừng lạc, đậm đà tình làng nghĩa xóm xứ Kinh Bắc.",
 
@@ -444,16 +410,8 @@ const INTANGIBLE_HERITAGE_DATA = [
 
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80",
+        url: "https://images.unsplash.com/photo-1509023464722-18d996393ca8?auto=format&fit=crop&w=1000&q=80",
         caption: "Bánh khảo nếp thơm trắng ngần - thức quà truyền thống ngày Tết Nhã Nam"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=1000&q=80",
-        caption: "Kẹo lạc vừng giòn tan màu cánh gián thơm phức bên ấm trà xanh"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80",
-        caption: "Các công đoạn thủ công tỉ mỉ gìn giữ hương vị cổ truyền qua nhiều đời"
       }
     ]
   },
@@ -495,14 +453,6 @@ const INTANGIBLE_HERITAGE_DATA = [
       {
         url: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
         caption: "Lễ dâng hương tri ân vị anh hùng dân tộc Hoàng Hoa Thám và nghĩa quân"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80",
-        caption: "Không gian trang nghiêm tôn vinh hào khí bất khuất của nghĩa binh Yên Thế"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1000&q=80",
-        caption: "Thế hệ trẻ học sinh thắp nến tri ân và tìm hiểu lịch sử hào hùng quê hương"
       }
     ]
   },
@@ -515,8 +465,8 @@ const INTANGIBLE_HERITAGE_DATA = [
     title: "Trò chơi dân gian & Võ cổ truyền trong lễ hội Nhã Nam",
     shortTitle: "Võ Cổ Truyền & Trò Chơi Dân Gian",
     scope: "Sới vật làng, trường học và sân đình trung tâm thị trấn Nhã Nam, huyện Tân Yên",
-    heroImage: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80",
-    thumbnail: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80",
+    heroImage: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=80",
+    thumbnail: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=80",
     tags: ["Võ cổ truyền", "Đấu vật dân tộc", "Cờ người", "Trò chơi dân gian", "Hội làng", "Nhã Nam"],
     overview: "Tái hiện khí phách dũng mãnh của nghĩa quân Yên Thế xưa, rèn luyện sức khỏe, ý chí kiên cường và tinh thần thượng võ cho thanh thiếu niên.",
 
@@ -542,26 +492,13 @@ const INTANGIBLE_HERITAGE_DATA = [
 
     gallery: [
       {
-        url: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80",
+        url: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1000&q=80",
         caption: "Màn biểu diễn võ thuật cổ truyền tái hiện khí phách nghĩa quân Yên Thế"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1000&q=80",
-        caption: "Keo vật dân tộc đầy kịch tính thu hút đông đảo bà con nhân dân cổ vũ"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=80",
-        caption: "Trò chơi cờ người truyền thống trí tuệ và đặc sắc trong ngày hội làng"
       }
     ]
   }
 ];
 
-/**
- * --------------------------------------------------------------------
- * BỘ CÂU HỎI TRẮC NGHIỆM TÌM HIỂU DI SẢN (DÀNH CHO HỌC SINH)
- * --------------------------------------------------------------------
- */
 const QUIZ_DATA = [
   {
     id: 1,
@@ -625,7 +562,6 @@ const QUIZ_DATA = [
   }
 ];
 
-// Danh sách từ khóa tìm kiếm nhanh
 const QUICK_SEARCH_TAGS = [
   "Chùa Tứ Giáp",
   "Đền Gốc Khế",
@@ -640,4 +576,3 @@ const QUICK_SEARCH_TAGS = [
   "Kẹo lạc",
   "Võ cổ truyền"
 ];
-

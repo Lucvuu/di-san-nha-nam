@@ -2,6 +2,7 @@
  * ====================================================================
  * DI SẢN VĂN HÓA NHÃ NAM - XỬ LÝ ỨNG DỤNG CHÍNH (APPLICATION LOGIC)
  * Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang
+ * Đơn vị khởi xướng & phối hợp: Trường THPT Nhã Nam
  * ====================================================================
  */
 
@@ -17,7 +18,8 @@ const state = {
   favorites: JSON.parse(localStorage.getItem('nhanam_heritage_favorites') || '[]'),
   quizAnswers: {},
   quizSubmitted: false,
-  isAudioPlaying: false
+  isAudioPlaying: false,
+  isAudioGuidePlaying: false
 };
 
 // Khởi chạy khi DOM sẵn sàng
@@ -182,9 +184,9 @@ function renderHeritageGrid(items) {
             alt="${escapeHtml(item.title)}" 
             loading="lazy"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1548625361-195fe578cb27?auto=format&fit=crop&w=600&q=80';"
+            onerror="handleImageError(this)"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
           
           <!-- Huy hiệu phân loại -->
           <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
@@ -269,6 +271,15 @@ function renderHeritageGrid(items) {
 /**
  * ====================================================================
  * CHI TIẾT DI TÍCH / DI SẢN (DETAIL MODAL)
+ * Bao gồm chính xác 5 mục bắt buộc:
+ * 1. Tên di tích / di sản
+ * 2. Địa chỉ / Phạm vi
+ * 3. Nội dung về di tích / di sản
+ * 4. Chỉ dẫn đi đến đó bằng Google Map (iframe + button)
+ * 5. Thư viện ảnh di tích / di sản (kèm lightbox preview)
+ * KÈM CÔNG CỤ TƯƠNG TÁC CAO CẤP:
+ * - 🔊 Thuyết minh tự động (Audio Guide)
+ * - 📱 Mã QR Di tích quét trên điện thoại / in tài liệu
  * ====================================================================
  */
 function openDetailModal(itemId) {
@@ -319,7 +330,7 @@ function openDetailModal(itemId) {
           <div class="mt-4 p-4 rounded-xl bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-sm">
             <div class="font-bold flex items-center gap-2 mb-1">
               <svg class="w-4 h-4 text-[#D97706]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-              Góc học tập & Giáo dục truyền thống:
+              Góc học tập & Giáo dục truyền thống (Trường THPT Nhã Nam):
             </div>
             <p class="leading-relaxed">${escapeHtml(item.content.studyNote)}</p>
           </div>
@@ -361,7 +372,7 @@ function openDetailModal(itemId) {
           <div class="mt-4 p-4 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] text-[#166534] text-sm">
             <div class="font-bold flex items-center gap-2 mb-1">
               <svg class="w-4 h-4 text-[#16a34a]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              Giá trị Bảo tồn & Giáo dục Thế hệ trẻ:
+              Giá trị Bảo tồn & Giáo dục Thế hệ trẻ (Trường THPT Nhã Nam):
             </div>
             <p class="leading-relaxed">${escapeHtml(item.content.preservationValue)}</p>
           </div>
@@ -371,8 +382,10 @@ function openDetailModal(itemId) {
   }
 
   state.lightboxImages = item.gallery || [];
+  const qrCodeUrl = getHeritageQRCodeUrl(item.id);
 
   container.innerHTML = `
+    <!-- Thanh điều hướng và nút thao tác trên modal -->
     <div class="flex items-center justify-between pb-4 mb-6 border-b border-[#EADECF]">
       <div class="flex items-center gap-2">
         <span class="px-3 py-1 rounded-full text-xs font-bold ${isVatThe ? 'bg-[#8B1E1E] text-white' : 'bg-[#C59B27] text-white'}">
@@ -382,25 +395,17 @@ function openDetailModal(itemId) {
       </div>
 
       <div class="flex items-center gap-2">
-        <button 
-          id="btn-tts-speaker"
-          type="button" 
-          onclick="handleSpeechRead()"
-          title="Đọc tóm tắt văn bản"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#F5EFE6] text-[#8B1E1E] hover:bg-[#8B1E1E] hover:text-white transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-          <span id="tts-label">Nghe giới thiệu</span>
-        </button>
-
+        <!-- Nút in tài liệu học tập -->
         <button 
           type="button" 
           onclick="window.print()" 
           title="In tài liệu này"
-          class="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#F5EFE6] text-[#5C5248] hover:bg-[#EADECF] transition-colors">
+          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#F5EFE6] text-[#5C5248] hover:bg-[#EADECF] transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
           <span>In tài liệu</span>
         </button>
 
+        <!-- Nút đóng modal -->
         <button 
           type="button" 
           onclick="closeDetailModal()"
@@ -410,8 +415,69 @@ function openDetailModal(itemId) {
       </div>
     </div>
 
+    <!-- CÔNG CỤ TƯƠNG TÁC GIÁO DỤC NỔI BẬT: AUDIO GUIDE & MÃ QR -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#FFFBEB] via-[#FDFBF7] to-[#FFFBEB] border border-[#FDE68A] shadow-sm">
+      
+      <!-- Cột 1 & 2: Audio Guide Thuyết Minh -->
+      <div class="md:col-span-2 flex flex-col justify-center">
+        <div class="flex items-center gap-2 mb-1.5">
+          <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#8B1E1E] text-white uppercase tracking-wider">
+            Audio Guide Tiếng Việt
+          </span>
+          <span class="text-xs text-[#92400E] font-medium">Hỗ trợ học sinh & giáo viên</span>
+        </div>
+        <h4 class="font-heritage-serif font-bold text-base text-[#8B1E1E] mb-2">
+          Thuyết Minh Tự Động Về Di Tích
+        </h4>
+        <p class="text-xs text-[#5C5248] leading-relaxed mb-3">
+          Nhấp nút bên dưới để nghe bài thuyết minh truyền cảm hứng về lịch sử, kiến trúc và giá trị di sản quê hương Nhã Nam.
+        </p>
+        
+        <div class="flex items-center gap-3">
+          <button 
+            id="btn-modal-audioguide"
+            type="button" 
+            onclick="handleAudioGuideNarrate()"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs bg-[#8B1E1E] hover:bg-[#6F1515] text-white shadow-md transition-all">
+            <span class="flex items-center gap-1" id="audioguide-wave">
+              <span class="audio-wave-bar audio-wave-bar-1"></span>
+              <span class="audio-wave-bar audio-wave-bar-2"></span>
+              <span class="audio-wave-bar audio-wave-bar-3"></span>
+              <span class="audio-wave-bar audio-wave-bar-4"></span>
+            </span>
+            <span id="audioguide-btn-label">🔊 Bật Thuyết Minh Tự Động</span>
+          </button>
+
+          <span id="audioguide-status" class="text-xs text-[#8B1E1E] font-semibold hidden">
+            Đang phát thuyết minh...
+          </span>
+        </div>
+      </div>
+
+      <!-- Cột 3: Mã QR Di Tích -->
+      <div class="md:col-span-1 flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-[#EADECF] text-center shadow-inner">
+        <div class="text-[11px] font-bold text-[#8B1E1E] uppercase tracking-wider mb-1.5">
+          📱 Mã QR Di Tích
+        </div>
+        <img 
+          src="${qrCodeUrl}" 
+          alt="Mã QR tra cứu di tích ${escapeHtml(item.title)}" 
+          class="w-28 h-28 object-contain rounded-lg border border-[#EADECF] p-1 bg-white mb-2 shadow-sm"
+          onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' viewBox=\\'0 0 100 100\\'><rect width=\\'100\\' height=\\'100\\' fill=\\'%23F5EFE6\\'/><text x=\\'50\\' y=\\'55\\' font-size=\\'12\\' text-anchor=\\'middle\\' fill=\\'%238B1E1E\\'>Mã QR</text></svg>'"
+        />
+        <div class="text-[10px] text-[#786C5E] leading-tight">
+          Quét bằng Camera điện thoại để xem và chia sẻ bài học
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================================================================
+         NỘI DUNG CHÍNH XÁC 5 PHẦN THEO YÊU CẦU BẮT BUỘC
+         ================================================================ -->
     <div class="space-y-8">
-      <!-- MỤC 1: TÊN DI TÍCH / TÊN DI SẢN -->
+      
+      <!-- PHẦN 1: TÊN DI TÍCH / TÊN DI SẢN -->
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-1">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">1</span>
@@ -428,7 +494,7 @@ function openDetailModal(itemId) {
         ` : ''}
       </section>
 
-      <!-- MỤC 2: ĐỊA CHỈ / PHẠM VI -->
+      <!-- PHẦN 2: ĐỊA CHỈ / PHẠM VI -->
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-2">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">2</span>
@@ -454,7 +520,7 @@ function openDetailModal(itemId) {
         </div>
       </section>
 
-      <!-- MỤC 3: NỘI DUNG VỀ DI TÍCH / NỘI DUNG DI SẢN -->
+      <!-- PHẦN 3: NỘI DUNG VỀ DI TÍCH / NỘI DUNG DI SẢN -->
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">3</span>
@@ -463,7 +529,7 @@ function openDetailModal(itemId) {
         ${section3Html}
       </section>
 
-      <!-- MỤC 4: CHỈ DẪN ĐI ĐẾN ĐÓ BẰNG GOOGLE MAP -->
+      <!-- PHẦN 4: CHỈ DẪN ĐI ĐẾN ĐÓ BẰNG GOOGLE MAP -->
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">4</span>
@@ -502,7 +568,7 @@ function openDetailModal(itemId) {
         </div>
       </section>
 
-      <!-- MỤC 5: ẢNH VỀ DI TÍCH / DI SẢN -->
+      <!-- PHẦN 5: ẢNH VỀ DI TÍCH / DI SẢN -->
       <section>
         <div class="flex items-center justify-between mb-3">
           <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27]">
@@ -522,7 +588,7 @@ function openDetailModal(itemId) {
                 alt="${escapeHtml(img.caption || item.title)}" 
                 loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1548625361-195fe578cb27?auto=format&fit=crop&w=600&q=80';"
+                onerror="handleImageError(this)"
               />
               <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white p-3">
                 <span class="text-xs text-center font-medium line-clamp-2">${escapeHtml(img.caption || 'Phóng to ảnh')}</span>
@@ -534,6 +600,7 @@ function openDetailModal(itemId) {
           `).join('')}
         </div>
       </section>
+
     </div>
   `;
 
@@ -547,29 +614,46 @@ function closeDetailModal() {
     modal.classList.add('hidden');
     document.body.style.overflow = '';
   }
-  stopTextToSpeech();
+  stopAudioGuide();
   history.replaceState(null, '', window.location.pathname + window.location.search);
 }
 
-function handleSpeechRead() {
+/**
+ * Xử lý thuyết minh tự động trong Modal
+ */
+function handleAudioGuideNarrate() {
   if (!state.selectedItem) return;
   const item = state.selectedItem;
-  const labelEl = document.getElementById('tts-label');
+  
+  const btnLabel = document.getElementById('audioguide-btn-label');
+  const waveContainer = document.getElementById('audioguide-wave');
+  const statusEl = document.getElementById('audioguide-status');
 
-  const textToRead = `${item.title}. ${item.categoryName}. ${item.content.intro} ${item.overview}`;
+  // Xây dựng kịch bản thuyết minh hấp dẫn, giàu cảm xúc
+  let textToNarrate = `Chào mừng quý thầy cô và các bạn học sinh đến với ${item.title}. `;
+  textToNarrate += `${item.categoryName}. `;
+  if (item.address) textToNarrate += `Địa chỉ tại: ${item.address}. `;
+  if (item.scope) textToNarrate += `Phạm vi thực hành tại: ${item.scope}. `;
+  textToNarrate += `${item.content.intro} `;
+  textToNarrate += `${item.overview} `;
 
-  toggleTextToSpeech(textToRead, (isPlaying) => {
-    if (labelEl) {
-      labelEl.textContent = isPlaying ? 'Đang đọc...' : 'Nghe giới thiệu';
+  toggleAudioGuide(textToNarrate, (isPlaying) => {
+    state.isAudioGuidePlaying = isPlaying;
+    if (btnLabel) {
+      btnLabel.textContent = isPlaying ? '⏸️ Tạm Dừng Thuyết Minh' : '🔊 Bật Thuyết Minh Tự Động';
     }
-    const btn = document.getElementById('btn-tts-speaker');
-    if (btn) {
+    if (waveContainer) {
       if (isPlaying) {
-        btn.classList.add('bg-[#8B1E1E]', 'text-white');
-        btn.classList.remove('bg-[#F5EFE6]', 'text-[#8B1E1E]');
+        waveContainer.classList.add('is-speaking');
       } else {
-        btn.classList.remove('bg-[#8B1E1E]', 'text-white');
-        btn.classList.add('bg-[#F5EFE6]', 'text-[#8B1E1E]');
+        waveContainer.classList.remove('is-speaking');
+      }
+    }
+    if (statusEl) {
+      if (isPlaying) {
+        statusEl.classList.remove('hidden');
+      } else {
+        statusEl.classList.add('hidden');
       }
     }
   });
@@ -600,6 +684,7 @@ function updateLightboxContent() {
   if (!current || !imgEl) return;
 
   imgEl.src = current.url;
+  imgEl.onerror = () => handleImageError(imgEl);
   imgEl.alt = current.caption || 'Hình ảnh di sản Nhã Nam';
 
   if (captionEl) captionEl.textContent = current.caption || '';
@@ -761,7 +846,7 @@ function showQuizResultModal(score, total) {
   let message = 'Bạn hãy tiếp tục khám phá thêm các di tích lịch sử tuyệt đẹp tại Nhã Nam nhé!';
   
   if (score === 5) {
-    badgeTitle = 'Xuất Sắc! Đại Sứ Di Sản Nhã Nam';
+    badgeTitle = 'Xuất Sắc! Đại Sứ Di Sản THPT Nhã Nam';
     message = 'Tuyệt vời! Bạn am hiểu rất sâu sắc về truyền thống lịch sử hào hùng quê hương Nhã Nam!';
   } else if (score >= 3) {
     badgeTitle = 'Khá Giỏi! Tự Hào Quê Hương Nhã Nam';
@@ -819,21 +904,14 @@ function resetQuiz() {
 
 /**
  * ====================================================================
- * NÂNG CẤP NHẠC CỔ TRUYỀN: "LƯU THỦY KIM TIỀN"
- * Hỗ trợ đồng thời 3 tầng phát:
- * 1. File nội bộ local repo: ./luu-thuy-kim-tien.mp3 (Âm lượng 50%)
- * 2. Nguồn trực tuyến open-access dự phòng
- * 3. Bộ tổng hợp Web Audio API chơi trực tiếp giai điệu "Lưu Thủy - Kim Tiền"
+ * NHẠC NỀN CỔ TRUYỀN: "LƯU THỦY KIM TIỀN"
  * ====================================================================
  */
 let audioCtx = null;
 let synthTimer = null;
 let currentSynthIndex = 0;
 
-// Giai điệu kinh điển chuẩn của bản nhạc cổ "Lưu Thủy - Kim Tiền"
-// Thang ngũ cung Bắc: Hò (Đô), Xự (Rê), Xang (Fa), Xê (Sol), Cống (La)
 const LUU_THUY_KIM_TIEN_NOTES = [
-  // Đoạn 1: Lưu Thủy (Âm hưởng thanh thoát như dòng nước trôi)
   { note: 261.63, dur: 400 }, // Đô
   { note: 220.00, dur: 350 }, // Là
   { note: 261.63, dur: 400 }, // Đô
@@ -862,7 +940,6 @@ const LUU_THUY_KIM_TIEN_NOTES = [
   { note: 293.66, dur: 400 }, // Rề
   { note: 349.23, dur: 800 }, // Pha
 
-  // Đoạn 2: Kim Tiền (Nhịp điệu tươi vui, rộn ràng)
   { note: 349.23, dur: 320 }, // Pha
   { note: 392.00, dur: 320 }, // Son
   { note: 440.00, dur: 350 }, // Lá
@@ -889,7 +966,6 @@ async function toggleTraditionalAudio() {
   const bgMusic = document.getElementById('bg-music');
 
   if (state.isAudioPlaying) {
-    // Tạm dừng phát
     if (bgMusic) {
       bgMusic.pause();
     }
@@ -900,11 +976,10 @@ async function toggleTraditionalAudio() {
     if (label) label.textContent = '♫ Lưu Thủy Kim Tiền';
     showToastNotification('Đã tạm dừng nhạc nền', 'info');
   } else {
-    // Bắt đầu phát
     let playedHtml5 = false;
 
     if (bgMusic) {
-      bgMusic.volume = 0.5; // Thiết lập âm lượng 50%
+      bgMusic.volume = 0.5;
       try {
         const playPromise = bgMusic.play();
         if (playPromise !== undefined) {
@@ -917,7 +992,6 @@ async function toggleTraditionalAudio() {
     }
 
     if (!playedHtml5) {
-      // Dự phòng bộ phát Web Audio API tổng hợp âm sắc Đàn Tranh
       startSynthLuuThuy();
     }
 
@@ -928,9 +1002,6 @@ async function toggleTraditionalAudio() {
   }
 }
 
-/**
- * Bộ phát Web Audio API mô phỏng âm sắc gảy Đàn Tranh bản Lưu Thủy - Kim Tiền
- */
 function startSynthLuuThuy() {
   try {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -961,9 +1032,6 @@ function startSynthLuuThuy() {
   }
 }
 
-/**
- * Tạo âm sắc gảy đàn tranh (Fast attack, harmonic damping & ring)
- */
 function playZitherPluck(freq, durationMs) {
   if (!audioCtx) return;
 
@@ -973,20 +1041,16 @@ function playZitherPluck(freq, durationMs) {
   const gainNode = audioCtx.createGain();
   const filter = audioCtx.createBiquadFilter();
 
-  // Dao động chính
   osc.type = 'triangle';
   osc.frequency.setValueAtTime(freq, now);
 
-  // Họa âm tăng độ lấp lánh như dây kim loại đàn tranh
   oscHarmonic.type = 'sine';
   oscHarmonic.frequency.setValueAtTime(freq * 2, now);
 
-  // Bộ lọc âm ấm áp
   filter.type = 'lowpass';
   filter.frequency.setValueAtTime(1800, now);
   filter.frequency.exponentialRampToValueAtTime(400, now + (durationMs / 1000));
 
-  // Đường bao cường độ gảy dây (Attack nhanh, ngân dốc dần)
   gainNode.gain.setValueAtTime(0.001, now);
   gainNode.gain.exponentialRampToValueAtTime(0.12, now + 0.02);
   gainNode.gain.exponentialRampToValueAtTime(0.0001, now + (durationMs / 1000) * 1.2);
@@ -1007,10 +1071,6 @@ function stopSynthLuuThuy() {
     clearTimeout(synthTimer);
     synthTimer = null;
   }
-}
-
-function toggleTraditionalAudioOld() {
-  toggleTraditionalAudio();
 }
 
 /**

@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Di Sản Văn Hóa Nhã Nam | Cổng Thông Tin Số Hóa Di Sản Tân Yên - Bắc Giang</title>
-  <meta name="description" content="Cổng thông tin số hóa di sản văn hóa vật thể và phi vật thể tại thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang. Khám phá chùa Tứ Giáp, đền Gốc Khế, đồn Nhã Nam, khởi nghĩa Yên Thế, hát chèo, bánh khảo truyền thống." />
-  <meta name="keywords" content="Di sản Nhã Nam, Chùa Tứ Giáp, Đền Gốc Khế, Đồn Nhã Nam, Đồi Phủ, Sáu điều Bác Hồ dạy, Tân Yên Bắc Giang, Khởi nghĩa Yên Thế, Hoàng Hoa Thám" />
-  <meta name="author" content="Ban điều hành dự án Di sản Nhã Nam - Cô Mến" />
+  <title>Di Sản Văn Hóa Nhã Nam | Trường THPT Nhã Nam - Tân Yên - Bắc Giang</title>
+  <meta name="description" content="Cổng thông tin số hóa di sản văn hóa vật thể và phi vật thể tại thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang. Dự án giáo dục truyền thống lịch sử của Trường THPT Nhã Nam." />
+  <meta name="keywords" content="Di sản Nhã Nam, THPT Nhã Nam, Chùa Tứ Giáp, Đền Gốc Khế, Đồn Nhã Nam, Đồi Phủ, Sáu điều Bác Hồ dạy, Tân Yên Bắc Giang, Khởi nghĩa Yên Thế, Hoàng Hoa Thám" />
+  <meta name="author" content="Trường THPT Nhã Nam - Ban điều hành dự án Di sản Nhã Nam" />
+
+  <!-- Favicon chính thức từ BANNER_THPT NHÃ NAM -->
+  <link rel="icon" type="image/png" href="./logo-thpt-nha-nam.png" />
 
   <!-- Tailwind CSS qua CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -28,7 +31,7 @@
             }
           },
           fontFamily: {
-            serif: ['Playfair Display', 'Merriweather', 'serif'],
+            serif: ['Merriweather', 'Georgia', 'serif'],
             sans: ['Be Vietnam Pro', 'Inter', 'sans-serif']
           }
         }
@@ -36,42 +39,41 @@
     }
   </script>
 
-  <!-- Google Fonts: Playfair Display & Be Vietnam Pro -->
+  <!-- Google Fonts: Merriweather (Chuẩn dấu tiếng Việt 100%) & Be Vietnam Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Merriweather:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
-
-  <!-- Favicon SVG Trống Đồng & Hoa Sen -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%238B1E1E'/><circle cx='50' cy='50' r='38' fill='none' stroke='%23C59B27' stroke-width='4'/><polygon points='50,22 58,40 78,40 62,52 68,72 50,60 32,72 38,52 22,40 42,40' fill='%23C59B27'/></svg>" />
 </head>
 
 <body class="bg-[#FDFBF7] text-[#2A2521] antialiased selection:bg-[#8B1E1E] selection:text-white flex flex-col min-h-screen">
 
   <!-- ====================================================================
        1. THANH ĐIỀU HƯỚNG CHÍNH (HEADER & NAVBAR)
-       Đã tối ưu không vỡ dòng, container max-w-[1380px], white-space nowrap
+       Tích hợp BANNER THPT NHÃ NAM làm Logo, giữ 100% tỷ lệ không cắt xén,
+       đảm bảo toàn bộ menu nằm trên 1 hàng ngang duy nhất.
        ==================================================================== -->
   <header class="sticky top-0 z-40 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-[#EADECF] shadow-sm transition-all duration-200">
-    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20 gap-4">
         
-        <!-- Logo & Tên Cổng Thông Tin (Giữ nguyên 1 dòng, không vỡ chữ) -->
+        <!-- Logo THPT Nhã Nam & Tên Cổng Thông Tin (Luôn 1 dòng, không vỡ chữ) -->
         <a href="#" class="flex items-center gap-3 group flex-shrink-0">
-          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#8B1E1E] to-[#6F1515] p-2 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-200 border border-[#C59B27]/40 flex-shrink-0">
-            <svg class="w-6 h-6 text-[#F6E05E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-              <circle cx="12" cy="12" r="10"></circle>
-            </svg>
-          </div>
+          <img 
+            src="./logo-thpt-nha-nam.png" 
+            alt="Trường THPT Nhã Nam" 
+            style="height: 48px; width: auto; max-width: 210px; object-fit: contain; border-radius: 8px; background: #fff; padding: 2px 6px; border: 1px solid rgba(197,155,39,0.4);" 
+            class="shadow-sm group-hover:scale-105 transition-transform duration-200 flex-shrink-0"
+            onerror="this.style.display='none'"
+          />
           <div class="flex flex-col">
-            <span class="font-heritage-serif text-[1.25rem] sm:text-[1.32rem] lg:text-[1.38rem] font-bold tracking-tight text-[#8B1E1E] whitespace-nowrap leading-tight group-hover:text-[#6F1515] transition-colors">
+            <span class="font-heritage-serif text-[1.22rem] sm:text-[1.32rem] lg:text-[1.36rem] font-black tracking-tight text-[#8B1E1E] whitespace-nowrap leading-tight group-hover:text-[#6F1515] transition-colors">
               Di Sản Văn Hóa Nhã Nam
             </span>
             <span class="text-[11px] text-[#5C5248] hidden sm:block font-medium whitespace-nowrap leading-tight mt-0.5">
-              Cổng Thông Tin Số Hóa Di Sản Văn Hóa Địa Phương
+              Cổng Thông Tin Số Hóa Di Sản Văn Hóa Địa Phương • THPT Nhã Nam
             </span>
           </div>
         </a>
@@ -188,68 +190,97 @@
   </audio>
 
   <!-- ====================================================================
-       2. HERO SECTION & 2 THẺ ĐIỀU HƯỚNG CHÍNH (PROMINENT PRIMARY ENTRY CARDS)
-       Đã tinh chỉnh khoảng cách, tăng line-height tránh đè dấu tiếng Việt,
-       thay ảnh tối bầu trời bằng ảnh kiến trúc đình chùa và lễ hội truyền thống ấm áp.
+       2. HERO SECTION & TRỐNG ĐỒNG XOAY NỀN (MUSEUM-GRADE MANDALA WATERMARK)
+       Có bụi vàng bay nhẹ nhàng, phông chữ Merriweather đậm đà,
+       và 2 thẻ danh mục di sản với ảnh thực địa ấm áp, khung góc vàng hoàng gia.
        ==================================================================== -->
-  <section class="relative pt-6 pb-10 md:pt-8 md:pb-12 overflow-hidden bg-gradient-to-b from-[#F5EFE6] via-[#FDFBF7] to-[#FDFBF7] border-b border-[#EADECF]">
+  <section class="relative pt-7 pb-11 md:pt-9 md:pb-14 overflow-hidden bg-gradient-to-b from-[#F5EFE6] via-[#FDFBF7] to-[#FDFBF7] border-b border-[#EADECF]">
     
-    <!-- Background Decor Accent Circles -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
-      <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#C59B27]/15 blur-3xl"></div>
-      <div class="absolute top-1/2 -right-32 w-96 h-96 rounded-full bg-[#8B1E1E]/10 blur-3xl"></div>
-    </div>
+    <!-- HỌA TIẾT TRỐNG ĐỒNG ĐÔNG SƠN XOAY CHẬM (ROTATING BRONZE DRUM MANDALA) -->
+    <svg class="dong-son-mandala" viewBox="0 0 100 100" fill="none" stroke="#C59B27" stroke-width="0.8">
+      <circle cx="50" cy="50" r="48" stroke-dasharray="2,1"/>
+      <circle cx="50" cy="50" r="44"/>
+      <circle cx="50" cy="50" r="39" stroke-dasharray="1.5,1.5"/>
+      <circle cx="50" cy="50" r="33"/>
+      <circle cx="50" cy="50" r="26" stroke-dasharray="3,1.5"/>
+      <circle cx="50" cy="50" r="18"/>
+      <!-- Ngôi sao 14 cánh trung tâm Trống Đồng -->
+      <polygon points="50,34 52,44 62,40 56,48 66,50 56,52 62,60 52,56 50,66 48,56 38,60 44,52 34,50 44,48 38,40 48,44" fill="#C59B27" opacity="0.6"/>
+      <!-- Chim Lạc bay quanh vòng tròn -->
+      <path d="M50 8 A42 42 0 0 1 92 50" stroke-width="0.5" stroke-dasharray="4,2"/>
+      <path d="M92 50 A42 42 0 0 1 50 92" stroke-width="0.5" stroke-dasharray="4,2"/>
+      <path d="M50 92 A42 42 0 0 1 8 50" stroke-width="0.5" stroke-dasharray="4,2"/>
+      <path d="M8 50 A42 42 0 0 1 50 8" stroke-width="0.5" stroke-dasharray="4,2"/>
+    </svg>
 
-    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- HẠT BỤI VÀNG BAY HUYỀN ẢO (FLOATING GOLDEN DUST PARTICLES) -->
+    <div class="dust-particle w-2.5 h-2.5 top-12 left-[12%] delay-0"></div>
+    <div class="dust-particle w-3.5 h-3.5 top-28 right-[15%] delay-700"></div>
+    <div class="dust-particle w-2 h-2 top-48 left-[22%] delay-1000"></div>
+    <div class="dust-particle w-3 h-3 top-20 right-[28%] delay-500"></div>
+    <div class="dust-particle w-1.5 h-1.5 bottom-16 left-[18%] delay-1200"></div>
+    <div class="dust-particle w-2 h-2 bottom-20 right-[12%] delay-300"></div>
+
+    <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Lời chào mở đầu & Giới thiệu văn hóa Nhã Nam (Khoảng cách vừa vặn) -->
+      <!-- Lời chào mở đầu & Giới thiệu văn hóa Nhã Nam -->
       <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-xs font-bold tracking-wide uppercase mb-3 shadow-sm">
-          <span>🚩 Vùng Đất Cầu Vồng • Tân Yên • Bắc Giang</span>
+        
+        <!-- HUY HIỆU CHÍNH THỨC TRƯỜNG THPT NHÃ NAM -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-xs font-black tracking-wide uppercase mb-3 shadow-sm">
+          <span>🎓 TRƯỜNG THPT NHÃ NAM • TÂN YÊN • BẮC GIANG</span>
         </div>
         
-        <!-- Tiêu đề Hero: Line-height 1.35 và margin-top ngăn dấu "Trấn" đè chữ "Di" -->
-        <h1 class="font-heritage-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#8B1E1E] tracking-tight hero-main-heading mb-3">
+        <!-- Tiêu đề Hero: Line-height 1.25 với gradient đỏ đô - vàng đồng -->
+        <h1 class="font-heritage-serif text-3xl sm:text-5xl lg:text-[3.35rem] font-black text-[#8B1E1E] tracking-tight leading-[1.25] mb-3">
           <span>Khám Phá Di Sản Văn Hóa</span>
-          <span class="hero-sub-line text-[#2A2521] italic font-semibold">Thị Trấn Nhã Nam</span>
+          <span class="block mt-2 bg-gradient-to-r from-[#8B1E1E] via-[#B83232] to-[#C59B27] bg-clip-text text-transparent font-black italic">
+            Thị Trấn Nhã Nam
+          </span>
         </h1>
 
-        <p class="text-sm sm:text-base text-[#5C5248] leading-relaxed max-w-2xl mx-auto mb-3">
-          Mảnh đất địa linh nhân kiệt lưu dấu oai hùng của nghĩa quân Hoàng Hoa Thám trong khởi nghĩa Yên Thế, nơi phát tích <strong class="text-[#8B1E1E] font-semibold">Sáu điều Bác Hồ dạy Công an nhân dân</strong> tại chùa Tứ Giáp, cùng kho tàng lễ hội cổ truyền và hương vị ẩm thực đậm đà tình quê.
+        <p class="text-sm sm:text-base text-[#5C5248] leading-relaxed max-w-2xl mx-auto mb-4 font-normal">
+          Mảnh đất địa linh nhân kiệt lưu dấu oai hùng của nghĩa quân Hoàng Hoa Thám trong khởi nghĩa Yên Thế, nơi phát tích <strong class="text-[#8B1E1E] font-bold">Sáu điều Bác Hồ dạy Công an nhân dân</strong> tại chùa Tứ Giáp, cùng kho tàng lễ hội cổ truyền và nét đẹp văn hóa ngàn đời.
         </p>
 
-        <!-- Thống kê nhanh nổi bật -->
-        <div class="flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-xs sm:text-sm font-semibold text-[#5C5248]">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#8B1E1E]"></span>
+        <!-- 3 HUY HIỆU TÍNH NĂNG TRÊN 1 HÀNG NGANG (DESKTOP) TRONG GLASSMORPHIC PILLS -->
+        <div class="flex flex-wrap lg:flex-nowrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-semibold text-[#5C5248]">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#8B1E1E] flex-shrink-0"></span>
             <span>05 Di tích Lịch sử Cấp Quốc gia</span>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#C59B27]"></span>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#C59B27] flex-shrink-0"></span>
             <span>05 Di sản Phi vật thể Đặc sắc</span>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 flex-shrink-0"></span>
             <span>Số hóa Bản đồ & Tích hợp Chỉ đường</span>
           </div>
         </div>
       </div>
 
-      <!-- 2 THẺ TRUY CẬP CHÍNH (ẢNH VĂN HÓA TRUYỀN THỐNG ẤM ÁP, SẮC NÉT) -->
+      <!-- 2 THẺ DANH MỤC LỚN (ẢNH VĂN HÓA TRUYỀN THỐNG ẤM ÁP, KHUNG GÓC VÀNG HOÀNG GIA) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-7 max-w-5xl mx-auto">
         
-        <!-- CARD 1: DI SẢN VẬT THỂ (Mái đình chùa cổ kính rêu phong dưới nắng vàng) -->
+        <!-- CARD 1: DI SẢN VẬT THỂ -->
         <div 
           id="hero-btn-vat-the"
-          class="hero-entry-card rounded-3xl p-6 sm:p-8 flex flex-col justify-end min-h-[270px] sm:min-h-[295px] shadow-lg border-2 border-[#8B1E1E]/30 cursor-pointer text-white relative group"
-          style="background-image: url('https://images.unsplash.com/photo-1548625361-195fe578cb27?auto=format&fit=crop&w=1200&q=80');">
+          class="hero-entry-card rounded-3xl p-6 sm:p-8 flex flex-col justify-end min-h-[275px] sm:min-h-[305px] shadow-lg border-2 border-[#8B1E1E]/30 cursor-pointer text-white relative group"
+          style="background-image: url('./assets/images/hero-vat-the.jpg');">
           
+          <!-- 4 Khung góc vàng di sản -->
+          <span class="golden-frame-corner golden-frame-tl"></span>
+          <span class="golden-frame-corner golden-frame-tr"></span>
+          <span class="golden-frame-corner golden-frame-bl"></span>
+          <span class="golden-frame-corner golden-frame-br"></span>
+
           <div class="relative z-10">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B1E1E] text-white text-xs font-bold uppercase tracking-wider mb-2.5 shadow">
-              <span>🏛️ Danh mục Di sản Vật thể</span>
+              <span>🏛️ 05 Di tích tiêu biểu</span>
             </div>
             
-            <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold mb-2 leading-tight group-hover:text-[#F6E05E] transition-colors">
+            <h2 class="font-heritage-serif text-2xl sm:text-3xl font-black mb-2 leading-tight group-hover:text-[#F6E05E] transition-colors">
               Di Sản Vật Thể
             </h2>
 
@@ -267,18 +298,24 @@
           </div>
         </div>
 
-        <!-- CARD 2: DI SẢN PHI VẬT THỂ (Lễ hội cờ hoa truyền thống ấm áp) -->
+        <!-- CARD 2: DI SẢN PHI VẬT THỂ -->
         <div 
           id="hero-btn-phi-vat-the"
-          class="hero-entry-card rounded-3xl p-6 sm:p-8 flex flex-col justify-end min-h-[270px] sm:min-h-[295px] shadow-lg border-2 border-[#C59B27]/40 cursor-pointer text-white relative group"
-          style="background-image: url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80');">
+          class="hero-entry-card rounded-3xl p-6 sm:p-8 flex flex-col justify-end min-h-[275px] sm:min-h-[305px] shadow-lg border-2 border-[#C59B27]/40 cursor-pointer text-white relative group"
+          style="background-image: url('./assets/images/hero-phi-vat-the.jpg');">
           
+          <!-- 4 Khung góc vàng di sản -->
+          <span class="golden-frame-corner golden-frame-tl"></span>
+          <span class="golden-frame-corner golden-frame-tr"></span>
+          <span class="golden-frame-corner golden-frame-bl"></span>
+          <span class="golden-frame-corner golden-frame-br"></span>
+
           <div class="relative z-10">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C59B27] text-white text-xs font-bold uppercase tracking-wider mb-2.5 shadow">
-              <span>🎭 Danh mục Di sản Phi vật thể</span>
+              <span>🎭 05 Di sản đặc sắc</span>
             </div>
 
-            <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold mb-2 leading-tight group-hover:text-[#F6E05E] transition-colors">
+            <h2 class="font-heritage-serif text-2xl sm:text-3xl font-black mb-2 leading-tight group-hover:text-[#F6E05E] transition-colors">
               Di Sản Phi Vật Thể
             </h2>
 
@@ -305,7 +342,7 @@
        3. TÌM KIẾM THÔNG MINH & CHUYỂN ĐỔI DANH MỤC (SEARCH & EXPLORER SECTION)
        ==================================================================== -->
   <section id="heritage-explorer" class="py-12 md:py-16 bg-[#FDFBF7]">
-    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Tiêu đề phần tra cứu -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
@@ -417,7 +454,7 @@
        4. BẢN ĐỒ TỔNG THỂ KHU DI TÍCH NHÃ NAM (GEOGRAPHIC MAP OVERVIEW)
        ==================================================================== -->
   <section class="py-12 bg-[#F5EFE6] border-y border-[#EADECF]">
-    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div class="lg:w-1/2">
           <span class="text-xs font-bold uppercase tracking-wider text-[#C59B27] block mb-1">
@@ -426,8 +463,8 @@
           <h2 class="font-heritage-serif text-2xl sm:text-4xl font-bold text-[#8B1E1E] mb-4">
             Bản Đồ Số Hóa Vùng Di Sản Nhã Nam
           </h2>
-          <p class="text-sm text-[#5C5248] leading-relaxed mb-6">
-            Thị trấn Nhã Nam sở hữu vị trí chiến lược nối liền vùng đồng bằng trù phú với căn cứ địa Yên Thế lịch sử. Các di tích nằm trong bán kính thuận tiện từ 500m đến 3km, rất thuận lợi để các trường học tổ chức các buổi tham quan học tập ngoại khóa, "Hành trình về nguồn" và trải nghiệm thực tế cho học sinh.
+          <p class="text-sm text-[#5C5248] leading-relaxed mb-6 font-normal">
+            Thị trấn Nhã Nam sở hữu vị trí chiến lược nối liền vùng đồng bằng trù phú với căn cứ địa Yên Thế lịch sử. Các di tích nằm trong bán kính thuận tiện từ 500m đến 3km, rất thuận lợi để Trường THPT Nhã Nam và các trường học tổ chức các buổi tham quan học tập ngoại khóa, "Hành trình về nguồn" và trải nghiệm thực tế cho học sinh.
           </p>
 
           <div class="space-y-3 mb-6">
@@ -478,12 +515,12 @@
       
       <div class="text-center mb-8">
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A] text-xs font-bold uppercase tracking-wider mb-2">
-          🎓 Hoạt Động Giáo Dục Ngoại Khóa
+          🎓 Hoạt Động Ngoại Khóa • THPT Nhã Nam
         </span>
         <h2 class="font-heritage-serif text-2xl sm:text-4xl font-bold text-[#8B1E1E] mb-3">
           Góc Học Tập: Em Tìm Hiểu Di Sản Nhã Nam
         </h2>
-        <p class="text-sm text-[#5C5248] max-w-xl mx-auto leading-relaxed">
+        <p class="text-sm text-[#5C5248] max-w-xl mx-auto leading-relaxed font-normal">
           Cùng trả lời 5 câu hỏi trắc nghiệm lý thú để kiểm tra kiến thức về các di tích và lễ hội quê hương mình nhé!
         </p>
       </div>
@@ -539,8 +576,8 @@
                 Cộng Đồng Yêu Di Sản Nhã Nam
               </h3>
 
-              <p class="text-sm sm:text-base text-[#5C5248] leading-relaxed mb-6">
-                Nơi học sinh, thầy cô giáo, các nhà nghiên cứu và nhân dân giao lưu, chia sẻ những bức ảnh đẹp về di tích, những câu chuyện lịch sử truyền miệng quý báu và cùng chung tay lan tỏa tình yêu quê hương Nhã Nam - Tân Yên.
+              <p class="text-sm sm:text-base text-[#5C5248] leading-relaxed mb-6 font-normal">
+                Nơi học sinh Trường THPT Nhã Nam, thầy cô giáo, các nhà nghiên cứu và nhân dân giao lưu, chia sẻ những bức ảnh đẹp về di tích, những câu chuyện lịch sử truyền miệng quý báu và cùng chung tay lan tỏa tình yêu quê hương Nhã Nam - Tân Yên.
               </p>
 
               <!-- Các hoạt động trong nhóm -->
@@ -585,27 +622,32 @@
 
   <!-- ====================================================================
        7. CHÂN TRANG & THÔNG TIN LIÊN HỆ NGƯỜI ĐIỀU HÀNH (FOOTER & CONTACT)
+       Có logo THPT Nhã Nam và thông tin Cô Mến
        ==================================================================== -->
   <footer id="site-footer" class="bg-[#2A2521] text-white border-t-4 border-[#C59B27] mt-auto">
-    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-12">
         
-        <!-- Cột 1: Giới thiệu cổng thông tin -->
+        <!-- Cột 1: Giới thiệu cổng thông tin & Logo THPT Nhã Nam -->
         <div class="lg:col-span-1">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-xl bg-[#8B1E1E] p-2 flex items-center justify-center border border-[#C59B27]/50 flex-shrink-0">
-              <svg class="w-6 h-6 text-[#F6E05E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2v20"></path></svg>
-            </div>
+            <img 
+              src="./logo-thpt-nha-nam.png" 
+              alt="Trường THPT Nhã Nam" 
+              style="height: 44px; width: auto; max-width: 180px; object-fit: contain; border-radius: 8px; background: #fff; padding: 2px 6px; border: 1px solid rgba(197,155,39,0.4);" 
+              class="shadow-sm flex-shrink-0"
+              onerror="this.style.display='none'"
+            />
             <div class="font-heritage-serif text-lg font-bold text-[#F6E05E] whitespace-nowrap">
               Di Sản Nhã Nam
             </div>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-4">
-            Dự án số hóa di sản văn hóa và lịch sử địa phương, phục vụ công tác giảng dạy, học tập truyền thống cho học sinh, thanh thiếu niên và nhân dân thị trấn Nhã Nam.
+            Dự án số hóa di sản văn hóa và lịch sử địa phương do Trường THPT Nhã Nam và Cô Mến khởi xướng, phục vụ công tác giảng dạy, học tập truyền thống cho học sinh, thanh thiếu niên và nhân dân thị trấn Nhã Nam.
           </p>
-          <div class="text-xs text-[#C59B27]">
-            Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang
+          <div class="text-xs text-[#C59B27] font-medium">
+            Trường THPT Nhã Nam, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang
           </div>
         </div>
 
@@ -637,13 +679,13 @@
           </ul>
         </div>
 
-        <!-- Cột 4: LIÊN HỆ NGƯỜI ĐIỀU HÀNH DỰ ÁN (CÔ MẾN) -->
+        <!-- Cột 4: LIÊN HỆ NGƯỜI ĐIỀU HÀNH DỰ ÁN (CÔ MẾN - THPT NHÃ NAM) -->
         <div class="bg-black/30 p-5 rounded-2xl border border-white/10">
           <div class="text-xs uppercase tracking-wider text-[#C59B27] font-bold mb-1">
             Quản Trị Nội Dung
           </div>
           <h4 class="font-heritage-serif font-bold text-lg text-white mb-2 site-admin-name">
-            Cô Mến & Nhóm Phụ Trách
+            Cô Mến & Nhóm Phụ Trách THPT Nhã Nam
           </h4>
           <p class="text-xs text-gray-300 leading-relaxed mb-4">
             Mọi ý kiến đóng góp, bổ sung tư liệu hoặc phối hợp tổ chức tham quan học tập xin vui lòng liên hệ:
@@ -652,7 +694,7 @@
           <!-- Hotline / Zalo chính thức -->
           <div class="mb-4">
             <div class="text-[11px] text-gray-400">Hotline / Zalo liên hệ:</div>
-            <div class="text-xl font-extrabold text-[#F6E05E] tracking-wider site-admin-phone">
+            <div class="text-xl font-black text-[#F6E05E] tracking-wider site-admin-phone">
               0962.629.650
             </div>
           </div>
@@ -682,7 +724,7 @@
       <!-- Bản quyền & Lưu ý giáo dục -->
       <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
         <div>
-          © 2026 Cổng Thông Tin Di Sản Văn Hóa Nhã Nam - Tân Yên - Bắc Giang. Bảo lưu mọi quyền.
+          © 2026 Cổng Thông Tin Di Sản Văn Hóa Nhã Nam - Trường THPT Nhã Nam - Tân Yên - Bắc Giang. Bảo lưu mọi quyền.
         </div>
         <div class="text-center sm:text-right">
           Trang web phục vụ mục đích giáo dục truyền thống phi lợi nhuận cho học sinh & cộng đồng.
@@ -763,6 +805,7 @@
         src="" 
         alt="Di sản Nhã Nam" 
         class="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl mb-3"
+        onerror="handleImageError(this)"
       />
       <div class="flex items-center justify-between w-full text-white text-xs sm:text-sm px-2">
         <div id="lightbox-caption" class="italic text-gray-200"></div>
@@ -798,7 +841,7 @@
       </h3>
 
       <div class="p-4 rounded-2xl bg-[#FFFBEB] border border-[#FDE68A] text-xs text-[#92400E] leading-relaxed mb-6 font-medium">
-        Group Facebook hiện đang được Ban điều hành và Cô Mến thiết lập. Đường dẫn sẽ sớm được cập nhật!
+        Group Facebook hiện đang được Ban điều hành Trường THPT Nhã Nam và Cô Mến thiết lập. Đường dẫn sẽ sớm được cập nhật!
       </div>
 
       <p class="text-xs text-[#5C5248] leading-relaxed mb-6">
