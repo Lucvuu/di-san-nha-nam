@@ -1,0 +1,20 @@
+{
+  "name": "di-san-van-hoa-nha-nam",
+  "version": "1.0.0",
+  "description": "Cổng thông tin số hóa Di sản văn hóa thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test-verification.js"
+  },
+  "keywords": [
+    "di-san-nha-nam",
+    "chua-tu-giap",
+    "tan-yen",
+    "bac-giang",
+    "khoi-nghia-yen-the"
+  ],
+  "author": "Cô Mến & Ban điều hành Di sản Nhã Nam",
+  "license": "MIT"
+}
+
