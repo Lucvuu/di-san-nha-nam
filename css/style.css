@@ -175,6 +175,40 @@ body {
 .is-speaking .audio-wave-bar-3 { animation: soundWave 0.85s ease-in-out 0.3s infinite; }
 .is-speaking .audio-wave-bar-4 { animation: soundWave 0.65s ease-in-out 0.45s infinite; }
 
+/* Tương tác bản ghi câu thuyết minh (Interactive Audio Guide Transcript) */
+.transcript-sentence-item {
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  color: #4A4036;
+}
+
+.transcript-sentence-item:hover {
+  background-color: rgba(197, 155, 39, 0.12);
+  color: #8B1E1E;
+}
+
+.transcript-sentence-item.active-sentence {
+  background-color: #FEF3C7;
+  color: #8B1E1E;
+  font-weight: 600;
+  border-left-color: #8B1E1E;
+  box-shadow: 0 1px 4px rgba(139, 30, 30, 0.12);
+  transform: translateX(2px);
+}
+
+.speed-selector-btn {
+  transition: all 0.2s ease;
+}
+
+.speed-selector-btn.is-active {
+  background-color: #8B1E1E !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 4px rgba(139, 30, 30, 0.25);
+}
+
 /* Họa tiết hoa văn truyền thống */
 .border-heritage-accent {
   border-color: var(--color-border-warm);

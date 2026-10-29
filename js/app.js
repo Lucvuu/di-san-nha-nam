@@ -416,57 +416,110 @@ function openDetailModal(itemId) {
     </div>
 
     <!-- CÔNG CỤ TƯƠNG TÁC GIÁO DỤC NỔI BẬT: AUDIO GUIDE & MÃ QR -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#FFFBEB] via-[#FDFBF7] to-[#FFFBEB] border border-[#FDE68A] shadow-sm">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-8 p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-[#FFFDF9] via-[#FAF6F0] to-[#F5EFE6] border-2 border-[#C59B27]/40 shadow-sm">
       
-      <!-- Cột 1 & 2: Audio Guide Thuyết Minh -->
-      <div class="md:col-span-2 flex flex-col justify-center">
-        <div class="flex items-center gap-2 mb-1.5">
-          <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-[#8B1E1E] text-white uppercase tracking-wider">
-            Audio Guide Tiếng Việt
-          </span>
-          <span class="text-xs text-[#92400E] font-medium">Hỗ trợ học sinh & giáo viên</span>
+      <!-- Cột 1 & 2: Audio Guide Thuyết Minh Chuyên Nghiệp -->
+      <div class="lg:col-span-2 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2 flex-wrap">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#8B1E1E] text-white uppercase tracking-wider shadow-xs">
+                Audio Guide Số Hóa
+              </span>
+              <span id="audioguide-voice-info" class="text-xs text-[#92400E] font-medium flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse inline-block"></span>
+                <span>Thuyết minh giọng Tiếng Việt</span>
+              </span>
+            </div>
+
+            <!-- Tùy chỉnh tốc độ đọc -->
+            <div class="flex items-center gap-1 bg-white/90 p-1 rounded-xl border border-[#EADECF] text-xs">
+              <span class="text-[11px] text-[#786C5E] px-1 font-semibold">Tốc độ:</span>
+              <button type="button" onclick="changeAudioGuideRate(0.85)" id="speed-085" class="speed-selector-btn px-2 py-0.5 rounded font-bold text-[#5C5248] hover:bg-[#F5EFE6]">0.85x</button>
+              <button type="button" onclick="changeAudioGuideRate(1.0)" id="speed-100" class="speed-selector-btn is-active px-2 py-0.5 rounded font-bold text-white bg-[#8B1E1E]">1.0x</button>
+              <button type="button" onclick="changeAudioGuideRate(1.2)" id="speed-120" class="speed-selector-btn px-2 py-0.5 rounded font-bold text-[#5C5248] hover:bg-[#F5EFE6]">1.2x</button>
+            </div>
+          </div>
+
+          <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-1">
+            Thuyết Minh Di Tích Tự Động
+          </h3>
+          <p class="text-xs text-[#5C5248] leading-relaxed mb-3">
+            Bấm nút phát để nghe thuyết minh truyền cảm về lịch sử và văn hóa Nhã Nam. Đồng thời theo dõi bản ghi câu bên dưới (có thể bấm vào từng câu để nghe trực tiếp).
+          </p>
         </div>
-        <h4 class="font-heritage-serif font-bold text-base text-[#8B1E1E] mb-2">
-          Thuyết Minh Tự Động Về Di Tích
-        </h4>
-        <p class="text-xs text-[#5C5248] leading-relaxed mb-3">
-          Nhấp nút bên dưới để nghe bài thuyết minh truyền cảm hứng về lịch sử, kiến trúc và giá trị di sản quê hương Nhã Nam.
-        </p>
-        
-        <div class="flex items-center gap-3">
+
+        <!-- Các nút điều khiển chính -->
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <!-- Nút Phát / Tạm dừng chính -->
           <button 
             id="btn-modal-audioguide"
             type="button" 
-            onclick="handleAudioGuideNarrate()"
-            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs bg-[#8B1E1E] hover:bg-[#6F1515] text-white shadow-md transition-all">
+            onclick="toggleAudioGuideNarration()"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs bg-[#8B1E1E] hover:bg-[#6F1515] text-white shadow-md transition-all active:scale-95">
             <span class="flex items-center gap-1" id="audioguide-wave">
               <span class="audio-wave-bar audio-wave-bar-1"></span>
               <span class="audio-wave-bar audio-wave-bar-2"></span>
               <span class="audio-wave-bar audio-wave-bar-3"></span>
               <span class="audio-wave-bar audio-wave-bar-4"></span>
             </span>
-            <span id="audioguide-btn-label">🔊 Bật Thuyết Minh Tự Động</span>
+            <span id="audioguide-btn-label">🔊 Bật Thuyết Minh</span>
           </button>
 
-          <span id="audioguide-status" class="text-xs text-[#8B1E1E] font-semibold hidden">
-            Đang phát thuyết minh...
+          <!-- Nút Dừng lại -->
+          <button 
+            id="btn-audioguide-stop"
+            type="button" 
+            onclick="stopAudioGuideNarration()"
+            title="Dừng thuyết minh và về câu đầu"
+            class="px-3 py-2 rounded-xl font-semibold text-xs bg-white text-[#5C5248] hover:text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition-all shadow-xs">
+            ⏹️ Dừng
+          </button>
+
+          <!-- Nút Nghe lại từ đầu -->
+          <button 
+            id="btn-audioguide-restart"
+            type="button" 
+            onclick="restartAudioGuideNarration()"
+            title="Đọc lại từ đầu"
+            class="px-3 py-2 rounded-xl font-semibold text-xs bg-white text-[#5C5248] hover:text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition-all shadow-xs">
+            🔄 Đọc lại
+          </button>
+
+          <span id="audioguide-status-badge" class="ml-auto text-xs font-semibold px-2.5 py-1 rounded-full bg-white border border-[#EADECF] text-[#8B1E1E]">
+            Sẵn sàng phát
           </span>
         </div>
+
+        <!-- BẢN GHI LỜI THUYẾT MINH TƯƠNG TÁC (INTERACTIVE TRANSCRIPT BOX) -->
+        <div class="bg-white rounded-xl border border-[#EADECF] p-3 shadow-inner">
+          <div class="flex items-center justify-between text-[11px] font-bold text-[#8B1E1E] mb-1.5 pb-1 border-b border-[#F5EFE6]">
+            <span>📜 LỜI THUYẾT MINH CHI TIẾT (Bấm câu bất kỳ để nghe):</span>
+            <span class="text-[#786C5E] font-normal italic">Tự động đồng bộ</span>
+          </div>
+          <div id="audioguide-transcript-container" class="space-y-1 max-h-40 overflow-y-auto pr-1 text-xs leading-relaxed">
+            <!-- Render danh sách câu qua initAudioGuideForModal -->
+          </div>
+        </div>
+
       </div>
 
       <!-- Cột 3: Mã QR Di Tích -->
-      <div class="md:col-span-1 flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-[#EADECF] text-center shadow-inner">
-        <div class="text-[11px] font-bold text-[#8B1E1E] uppercase tracking-wider mb-1.5">
+      <div class="lg:col-span-1 flex flex-col items-center justify-center p-4 rounded-xl bg-white border border-[#EADECF] text-center shadow-inner">
+        <div class="text-[11px] font-bold text-[#8B1E1E] uppercase tracking-wider mb-2">
           📱 Mã QR Di Tích
         </div>
         <img 
           src="${qrCodeUrl}" 
           alt="Mã QR tra cứu di tích ${escapeHtml(item.title)}" 
-          class="w-28 h-28 object-contain rounded-lg border border-[#EADECF] p-1 bg-white mb-2 shadow-sm"
+          class="w-32 h-32 object-contain rounded-lg border border-[#EADECF] p-1.5 bg-white mb-2 shadow-sm"
           onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' viewBox=\\'0 0 100 100\\'><rect width=\\'100\\' height=\\'100\\' fill=\\'%23F5EFE6\\'/><text x=\\'50\\' y=\\'55\\' font-size=\\'12\\' text-anchor=\\'middle\\' fill=\\'%238B1E1E\\'>Mã QR</text></svg>'"
         />
-        <div class="text-[10px] text-[#786C5E] leading-tight">
-          Quét bằng Camera điện thoại để xem và chia sẻ bài học
+        <div class="text-xs text-[#5C5248] font-medium leading-tight">
+          Quét bằng camera điện thoại
+        </div>
+        <div class="text-[10px] text-[#786C5E] mt-1">
+          Dễ dàng tra cứu hoặc in ấn dán vào phiếu học tập
         </div>
       </div>
 
@@ -606,6 +659,7 @@ function openDetailModal(itemId) {
 
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
+  initAudioGuideForModal(item);
 }
 
 function closeDetailModal() {
@@ -614,49 +668,214 @@ function closeDetailModal() {
     modal.classList.add('hidden');
     document.body.style.overflow = '';
   }
-  stopAudioGuide();
+  stopAudioGuideNarration();
   history.replaceState(null, '', window.location.pathname + window.location.search);
 }
 
 /**
- * Xử lý thuyết minh tự động trong Modal
+ * ====================================================================
+ * HỆ THỐNG THUYẾT MINH DI TÍCH (AUDIO GUIDE ENGINE CONTROLLER)
+ * ====================================================================
  */
-function handleAudioGuideNarrate() {
-  if (!state.selectedItem) return;
-  const item = state.selectedItem;
-  
-  const btnLabel = document.getElementById('audioguide-btn-label');
-  const waveContainer = document.getElementById('audioguide-wave');
-  const statusEl = document.getElementById('audioguide-status');
 
-  // Xây dựng kịch bản thuyết minh hấp dẫn, giàu cảm xúc
-  let textToNarrate = `Chào mừng quý thầy cô và các bạn học sinh đến với ${item.title}. `;
-  textToNarrate += `${item.categoryName}. `;
-  if (item.address) textToNarrate += `Địa chỉ tại: ${item.address}. `;
-  if (item.scope) textToNarrate += `Phạm vi thực hành tại: ${item.scope}. `;
-  textToNarrate += `${item.content.intro} `;
-  textToNarrate += `${item.overview} `;
+/**
+ * Khởi tạo dữ liệu và giao diện Audio Guide cho Modal di tích
+ */
+function initAudioGuideForModal(item) {
+  if (!item) return;
 
-  toggleAudioGuide(textToNarrate, (isPlaying) => {
-    state.isAudioGuidePlaying = isPlaying;
-    if (btnLabel) {
-      btnLabel.textContent = isPlaying ? '⏸️ Tạm Dừng Thuyết Minh' : '🔊 Bật Thuyết Minh Tự Động';
+  // Xây dựng nội dung bài thuyết minh giàu cảm xúc và truyền cảm
+  let story = `Chào mừng quý thầy cô và các bạn học sinh đến với ${item.title}. `;
+  story += `${item.categoryName} tiêu biểu của thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang. `;
+  if (item.address) story += `Địa chỉ tại: ${item.address}. `;
+  if (item.scope) story += `Phạm vi thực hành di sản tại: ${item.scope}. `;
+  if (item.content && item.content.intro) story += `${item.content.intro} `;
+  if (item.overview) story += `${item.overview} `;
+  if (item.content && item.content.historicalSignificance && item.content.historicalSignificance.length > 0) {
+    story += `Về ý nghĩa lịch sử vẻ vang: ${item.content.historicalSignificance[0]} `;
+  }
+  if (item.content && item.content.studyNote) {
+    story += `Lời nhắn gửi tới học sinh trường Trung học phổ thông Nhã Nam: ${item.content.studyNote} `;
+  }
+
+  // Khởi tạo sentences thông qua engine
+  const sentences = heritageAudioGuide.loadStory(
+    story,
+    // Callback tiến trình (được gọi khi bắt đầu đọc mỗi câu)
+    (currentIdx, totalCount, currentText) => {
+      updateAudioGuideProgressUI(currentIdx, totalCount);
+    },
+    // Callback thay đổi trạng thái phát
+    (isPlaying, isPaused) => {
+      updateAudioGuideStateUI(isPlaying, isPaused);
     }
-    if (waveContainer) {
-      if (isPlaying) {
-        waveContainer.classList.add('is-speaking');
-      } else {
-        waveContainer.classList.remove('is-speaking');
-      }
+  );
+
+  // Hiển thị danh sách câu trong khung transcript
+  const transcriptContainer = document.getElementById('audioguide-transcript-container');
+  if (transcriptContainer) {
+    transcriptContainer.innerHTML = sentences.map((sent, idx) => `
+      <div 
+        id="transcript-sent-${idx}" 
+        onclick="jumpToAudioGuideSentence(${idx})"
+        class="transcript-sentence-item flex items-start gap-2"
+        title="Bấm để nghe câu này">
+        <span class="w-5 h-5 rounded-full bg-[#F5EFE6] text-[#8B1E1E] flex-shrink-0 flex items-center justify-center text-[10px] font-bold mt-0.5">${idx + 1}</span>
+        <span class="flex-1">${escapeHtml(sent)}</span>
+      </div>
+    `).join('');
+  }
+
+  // Cập nhật thông tin giọng đọc
+  const voiceInfo = getBestVietnameseVoice();
+  const voiceInfoEl = document.getElementById('audioguide-voice-info');
+  if (voiceInfoEl) {
+    if (voiceInfo.isVietnamese) {
+      voiceInfoEl.innerHTML = `
+        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse inline-block"></span>
+        <span>Giọng Tiếng Việt (${escapeHtml(voiceInfo.name || 'Chuẩn')})</span>
+      `;
+    } else {
+      voiceInfoEl.innerHTML = `
+        <span class="w-2 h-2 rounded-full bg-amber-500 inline-block"></span>
+        <span>Hỗ trợ đọc đa nền tảng</span>
+      `;
     }
-    if (statusEl) {
-      if (isPlaying) {
-        statusEl.classList.remove('hidden');
-      } else {
-        statusEl.classList.add('hidden');
-      }
+  }
+
+  // Đặt lại trạng thái nút bấm
+  updateAudioGuideStateUI(false, false);
+}
+
+/**
+ * Cập nhật giao diện khi đọc tới câu thứ index
+ */
+function updateAudioGuideProgressUI(currentIdx, totalCount) {
+  const statusBadge = document.getElementById('audioguide-status-badge');
+  if (statusBadge) {
+    if (currentIdx < totalCount) {
+      statusBadge.textContent = `Đoạn ${currentIdx + 1} / ${totalCount}`;
+    } else {
+      statusBadge.textContent = '✅ Đã hoàn thành';
+    }
+  }
+
+  // Cập nhật highlight cho từng câu trong transcript
+  const allSentences = document.querySelectorAll('.transcript-sentence-item');
+  allSentences.forEach((el, idx) => {
+    if (idx === currentIdx) {
+      el.classList.add('active-sentence');
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      el.classList.remove('active-sentence');
     }
   });
+}
+
+/**
+ * Cập nhật trạng thái các nút bấm Audio Guide
+ */
+function updateAudioGuideStateUI(isPlaying, isPaused) {
+  state.isAudioGuidePlaying = isPlaying;
+
+  const btnPlay = document.getElementById('btn-modal-audioguide');
+  const btnLabel = document.getElementById('audioguide-btn-label');
+  const wave = document.getElementById('audioguide-wave');
+  const statusBadge = document.getElementById('audioguide-status-badge');
+
+  if (isPlaying) {
+    if (btnLabel) btnLabel.textContent = '⏸️ Tạm Dừng';
+    if (wave) wave.classList.add('is-speaking');
+    if (btnPlay) {
+      btnPlay.classList.add('bg-[#701A1A]');
+    }
+  } else if (isPaused) {
+    if (btnLabel) btnLabel.textContent = '▶️ Tiếp Tục Nghe';
+    if (wave) wave.classList.remove('is-speaking');
+    if (statusBadge) statusBadge.textContent = 'Đang tạm dừng';
+  } else {
+    if (btnLabel) btnLabel.textContent = '🔊 Bật Thuyết Minh';
+    if (wave) wave.classList.remove('is-speaking');
+    if (btnPlay) {
+      btnPlay.classList.remove('bg-[#701A1A]');
+    }
+    if (statusBadge && statusBadge.textContent && statusBadge.textContent.includes('Đoạn')) {
+      statusBadge.textContent = 'Sẵn sàng phát';
+    }
+  }
+}
+
+/**
+ * Bật / Tạm dừng thuyết minh
+ */
+function toggleAudioGuideNarration() {
+  if (heritageAudioGuide.isPlaying) {
+    heritageAudioGuide.pause();
+  } else if (heritageAudioGuide.isPaused) {
+    heritageAudioGuide.play();
+  } else {
+    heritageAudioGuide.play(0);
+  }
+}
+
+/**
+ * Dừng hẳn thuyết minh
+ */
+function stopAudioGuideNarration() {
+  heritageAudioGuide.stop();
+  updateAudioGuideStateUI(false, false);
+  const allSentences = document.querySelectorAll('.transcript-sentence-item');
+  allSentences.forEach(el => el.classList.remove('active-sentence'));
+  const statusBadge = document.getElementById('audioguide-status-badge');
+  if (statusBadge) statusBadge.textContent = 'Đã dừng';
+}
+
+/**
+ * Đọc lại từ đầu
+ */
+function restartAudioGuideNarration() {
+  heritageAudioGuide.restart();
+}
+
+/**
+ * Tua tới câu cụ thể do người dùng click
+ */
+function jumpToAudioGuideSentence(index) {
+  heritageAudioGuide.jumpTo(index);
+}
+
+/**
+ * Đổi tốc độ đọc
+ */
+function changeAudioGuideRate(rate) {
+  heritageAudioGuide.setRate(rate);
+
+  // Cập nhật style nút tốc độ
+  const btn085 = document.getElementById('speed-085');
+  const btn100 = document.getElementById('speed-100');
+  const btn120 = document.getElementById('speed-120');
+
+  [btn085, btn100, btn120].forEach(btn => {
+    if (btn) {
+      btn.classList.remove('is-active', 'bg-[#8B1E1E]', 'text-white');
+      btn.classList.add('text-[#5C5248]');
+    }
+  });
+
+  let activeBtn = btn100;
+  if (rate === 0.85) activeBtn = btn085;
+  if (rate === 1.2) activeBtn = btn120;
+
+  if (activeBtn) {
+    activeBtn.classList.add('is-active', 'bg-[#8B1E1E]', 'text-white');
+    activeBtn.classList.remove('text-[#5C5248]');
+  }
+  showToastNotification(`Đã đổi tốc độ thuyết minh: ${rate}x`, 'info');
+}
+
+// Wrapper tương thích cũ
+function handleAudioGuideNarrate() {
+  toggleAudioGuideNarration();
 }
 
 /**

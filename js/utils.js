@@ -173,65 +173,399 @@ function showToastNotification(message, type = 'info', duration = 3500) {
 
 /**
  * ====================================================================
- * AUDIO GUIDE: THUYẾT MINH DI TÍCH TỰ ĐỘNG BẰNG GIỌNG ĐỌC TIẾNG VIỆT
- * Sử dụng Web Speech API (vi-VN) cho học sinh và thầy cô nghe thuyết minh
+ * AUDIO GUIDE ENGINE: THUYẾT MINH DI TÍCH TỰ ĐỘNG CHUYÊN NGHIỆP
+ * - Chia câu thông minh (Sentence Chunking) chống đứt đoạn sau 15s của Chromium/Safari
+ * - Tự động phát hiện giọng đọc Tiếng Việt (Google Tiếng Việt, Microsoft Hoài My/Nam Minh, v.v.)
+ * - Heartbeat keep-alive chống ngắt kết nối
+ * - Chuông ngân di sản (Temple Bell Chime) mở đầu bằng Web Audio API
+ * - Đồng bộ tương tác: Đổi tốc độ đọc (0.85x, 1.0x, 1.2x), tua câu, highlight karaoke trực quan
+ * - Tự động giảm âm lượng nhạc nền (Ducking) khi thuyết minh đang phát
  * ====================================================================
  */
-let currentSpeechUtterance = null;
-let isSpeakingGuide = false;
 
-function toggleAudioGuide(textToRead, onStateChange) {
-  if (!('speechSynthesis' in window)) {
-    showToastNotification('Trình duyệt của bạn chưa hỗ trợ tính năng thuyết minh tự động.', 'warning');
-    return;
+// Bộ đệm giọng đọc toàn cục
+let cachedSpeechVoices = [];
+
+function initVoiceLoader() {
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    const updateVoices = () => {
+      try {
+        cachedSpeechVoices = window.speechSynthesis.getVoices() || [];
+      } catch (e) {
+        cachedSpeechVoices = [];
+      }
+    };
+    updateVoices();
+    window.speechSynthesis.onvoiceschanged = updateVoices;
+  }
+}
+initVoiceLoader();
+
+// Tìm kiếm giọng tiếng Việt tốt nhất trên thiết bị hiện tại
+function getBestVietnameseVoice() {
+  if (!cachedSpeechVoices.length && typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    cachedSpeechVoices = window.speechSynthesis.getVoices() || [];
   }
 
-  if (isSpeakingGuide) {
+  // 1. Tìm chuẩn mã vùng vi-VN hoặc vi_VN
+  let voice = cachedSpeechVoices.find(v => v.lang === 'vi-VN' || v.lang === 'vi_VN');
+  if (voice) return { voice, isVietnamese: true, name: voice.name };
+
+  // 2. Tìm mã ngôn ngữ bắt đầu bằng vi
+  voice = cachedSpeechVoices.find(v => v.lang && v.lang.toLowerCase().startsWith('vi'));
+  if (voice) return { voice, isVietnamese: true, name: voice.name };
+
+  // 3. Tìm theo tên giọng có chứa từ khóa tiếng Việt
+  voice = cachedSpeechVoices.find(v => {
+    const name = (v.name || '').toLowerCase();
+    return name.includes('vietnam') || name.includes('tiếng việt') || name.includes('vietnamese') || name.includes('hoaimy') || name.includes('namminh');
+  });
+  if (voice) return { voice, isVietnamese: true, name: voice.name };
+
+  // 4. Nếu thiết bị không có gói tiếng Việt (ví dụ Windows US mặc định), lấy giọng mặc định của hệ thống
+  const defaultVoice = cachedSpeechVoices.find(v => v.default) || cachedSpeechVoices[0] || null;
+  return { voice: defaultVoice, isVietnamese: false, name: defaultVoice ? defaultVoice.name : 'Mặc định' };
+}
+
+// Phát tiếng chuông chùa ngân vang thiêng liêng lúc mở đầu thuyết minh
+function playHeritageBellChime() {
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+    const ctx = new AudioContext();
+    if (ctx.state === 'suspended') ctx.resume();
+
+    const now = ctx.currentTime;
+    // Tần số chuông chùa: nốt Đô (C5 = 523.25Hz), Sol (G5 = 783.99Hz), Đô cao (C6 = 1046.5Hz)
+    const tones = [
+      { freq: 523.25, gain: 0.22, decay: 1.8 },
+      { freq: 783.99, gain: 0.12, decay: 1.4 },
+      { freq: 1046.5, gain: 0.08, decay: 1.1 }
+    ];
+
+    tones.forEach(t => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(t.freq, now);
+
+      gain.gain.setValueAtTime(t.gain, now);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + t.decay);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(now);
+      osc.stop(now + t.decay + 0.1);
+    });
+  } catch (err) {
+    // Không làm ảnh hưởng luồng nếu trình duyệt chặn Web Audio
+  }
+}
+
+// Tách đoạn văn thành các câu ngắn hoàn chỉnh (< 140 ký tự) để chống lỗi 15s của Chromium
+function splitTextIntoSentences(text) {
+  if (!text || typeof text !== 'string') return [];
+
+  const normalized = text.replace(/\s+/g, ' ').trim();
+  // Tách theo các dấu kết thúc câu tiếng Việt: . ! ? ;
+  const rawSentences = normalized.match(/[^.!?;\n]+[.!?;\n]*/g) || [normalized];
+  const result = [];
+
+  rawSentences.forEach(sentence => {
+    let s = sentence.trim();
+    if (!s) return;
+
+    if (s.length > 150) {
+      // Nếu câu quá dài, tách tiếp theo dấu phẩy hoặc dấu gạch nối
+      const subParts = s.split(/([,–—]\s+)/);
+      let buffer = '';
+      for (const part of subParts) {
+        if ((buffer + part).length > 130 && buffer.trim()) {
+          result.push(buffer.trim());
+          buffer = part;
+        } else {
+          buffer += part;
+        }
+      }
+      if (buffer.trim()) result.push(buffer.trim());
+    } else {
+      result.push(s);
+    }
+  });
+
+  return result.length ? result : [normalized];
+}
+
+/**
+ * LỚP QUẢN LÝ THUYẾT MINH DI TÍCH (HERITAGE AUDIO GUIDE ENGINE)
+ */
+class HeritageAudioGuideManager {
+  constructor() {
+    this.sentences = [];
+    this.currentIndex = -1;
+    this.isPlaying = false;
+    this.isPaused = false;
+    this.rate = 1.0;
+    this.keepAliveInterval = null;
+    this.activeUtterance = null;
+    this.onProgressCallback = null;
+    this.onStateChangeCallback = null;
+    this.previousMusicState = false;
+  }
+
+  // Khởi tạo bài thuyết minh mới
+  loadStory(fullText, onProgress, onStateChange) {
+    this.stop(false);
+    this.sentences = splitTextIntoSentences(fullText);
+    this.currentIndex = 0;
+    this.onProgressCallback = onProgress;
+    this.onStateChangeCallback = onStateChange;
+    return this.sentences;
+  }
+
+  // Bắt đầu hoặc tiếp tục phát
+  play(fromIndex = null) {
+    if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+      showToastNotification('Trình duyệt không hỗ trợ Web Speech API. Bạn có thể xem toàn văn thuyết minh bên dưới.', 'warning');
+      return false;
+    }
+
+    if (fromIndex !== null && fromIndex >= 0 && fromIndex < this.sentences.length) {
+      this.currentIndex = fromIndex;
+    }
+
+    if (this.currentIndex >= this.sentences.length) {
+      this.currentIndex = 0;
+    }
+
+    // Nếu đang tạm dừng và không đổi câu, chỉ cần resume
+    if (this.isPaused && window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+      this.isPlaying = true;
+      this.isPaused = false;
+      this.startKeepAlive();
+      this.duckMusic();
+      if (this.onStateChangeCallback) this.onStateChangeCallback(true, false);
+      return true;
+    }
+
+    // Phát tiếng chuông chùa nếu phát từ câu đầu tiên
+    if (this.currentIndex === 0) {
+      playHeritageBellChime();
+    }
+
+    this.isPlaying = true;
+    this.isPaused = false;
+    this.duckMusic();
+    this.startKeepAlive();
+
+    // Hủy các lệnh cũ một cách an toàn
     window.speechSynthesis.cancel();
-    isSpeakingGuide = false;
-    if (onStateChange) onStateChange(false);
-    return;
+
+    // Delay ngắn 60ms để tránh Chromium bug hủy nhầm utterance mới
+    setTimeout(() => {
+      this.speakCurrentSentence();
+    }, 60);
+
+    if (this.onStateChangeCallback) this.onStateChangeCallback(true, false);
+    return true;
   }
 
-  window.speechSynthesis.cancel();
+  // Phát câu hiện tại trong danh sách
+  speakCurrentSentence() {
+    if (!this.isPlaying || this.isPaused) return;
 
-  currentSpeechUtterance = new SpeechSynthesisUtterance(textToRead);
-  currentSpeechUtterance.lang = 'vi-VN';
-  currentSpeechUtterance.rate = 0.95; // Tốc độ đĩnh đạc, rõ ràng
-  currentSpeechUtterance.pitch = 1.0;
+    if (this.currentIndex >= this.sentences.length) {
+      this.handlePlaybackComplete();
+      return;
+    }
 
-  const voices = window.speechSynthesis.getVoices();
-  const viVoice = voices.find(v => v.lang.includes('vi') || v.lang.includes('VN'));
-  if (viVoice) {
-    currentSpeechUtterance.voice = viVoice;
+    const text = this.sentences[this.currentIndex];
+    if (!text || !text.trim()) {
+      this.currentIndex++;
+      this.speakCurrentSentence();
+      return;
+    }
+
+    // Cập nhật tiến trình cho giao diện
+    if (this.onProgressCallback) {
+      this.onProgressCallback(this.currentIndex, this.sentences.length, text);
+    }
+
+    try {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'vi-VN';
+      utterance.rate = this.rate;
+      utterance.pitch = 1.0;
+
+      const { voice, isVietnamese } = getBestVietnameseVoice();
+      if (voice) {
+        utterance.voice = voice;
+      }
+
+      utterance.onend = () => {
+        if (!this.isPlaying || this.isPaused) return;
+        this.currentIndex++;
+        // Nghỉ một nhịp nhẹ 150ms giữa các câu cho truyền cảm
+        setTimeout(() => {
+          this.speakCurrentSentence();
+        }, 150);
+      };
+
+      utterance.onerror = (evt) => {
+        // Nếu bị hủy do người dùng bấm Dừng/Chuyển câu thì bỏ qua
+        if (evt.error === 'interrupted' || evt.error === 'canceled') return;
+
+        console.warn('SpeechSynthesis error:', evt);
+        // Tự động chuyển câu tiếp theo nếu một câu gặp trục trặc
+        this.currentIndex++;
+        if (this.currentIndex < this.sentences.length) {
+          setTimeout(() => this.speakCurrentSentence(), 200);
+        } else {
+          this.handlePlaybackComplete();
+        }
+      };
+
+      this.activeUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
+    } catch (err) {
+      console.error('Không thể phát âm thanh thuyết minh:', err);
+      this.stop();
+    }
   }
 
-  currentSpeechUtterance.onstart = () => {
-    isSpeakingGuide = true;
-    if (onStateChange) onStateChange(true);
-  };
+  // Tạm dừng phát
+  pause() {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      if (this.isPlaying) {
+        window.speechSynthesis.pause();
+        this.isPlaying = false;
+        this.isPaused = true;
+        this.stopKeepAlive();
+        this.unduckMusic();
+        if (this.onStateChangeCallback) this.onStateChangeCallback(false, true);
+      }
+    }
+  }
 
-  currentSpeechUtterance.onend = () => {
-    isSpeakingGuide = false;
+  // Dừng hẳn phát và đặt lại trạng thái
+  stop(notify = true) {
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    this.isPlaying = false;
+    this.isPaused = false;
+    this.stopKeepAlive();
+    this.unduckMusic();
+    this.activeUtterance = null;
+    if (notify && this.onStateChangeCallback) {
+      this.onStateChangeCallback(false, false);
+    }
+  }
+
+  // Tua lại từ câu đầu tiên
+  restart() {
+    this.stop(false);
+    this.currentIndex = 0;
+    this.play();
+  }
+
+  // Nhảy tới câu cụ thể do người dùng bấm vào trên bản ghi
+  jumpTo(index) {
+    if (index >= 0 && index < this.sentences.length) {
+      this.stop(false);
+      this.currentIndex = index;
+      this.play();
+    }
+  }
+
+  // Đổi tốc độ đọc
+  setRate(newRate) {
+    this.rate = Math.max(0.7, Math.min(1.5, newRate));
+    if (this.isPlaying) {
+      // Áp dụng ngay cho câu hiện tại
+      this.play(this.currentIndex);
+    }
+  }
+
+  // Xử lý khi đọc xong toàn bộ bài thuyết minh
+  handlePlaybackComplete() {
+    this.isPlaying = false;
+    this.isPaused = false;
+    this.stopKeepAlive();
+    this.unduckMusic();
+    if (this.onProgressCallback) {
+      this.onProgressCallback(this.sentences.length, this.sentences.length, 'Hoàn thành bài thuyết minh');
+    }
+    if (this.onStateChangeCallback) {
+      this.onStateChangeCallback(false, false);
+    }
+    showToastNotification('Đã hoàn thành bài thuyết minh di tích!', 'success');
+  }
+
+  // Heartbeat chống Chromium 15s freeze
+  startKeepAlive() {
+    this.stopKeepAlive();
+    this.keepAliveInterval = setInterval(() => {
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+          window.speechSynthesis.pause();
+          window.speechSynthesis.resume();
+        }
+      }
+    }, 8000);
+  }
+
+  stopKeepAlive() {
+    if (this.keepAliveInterval) {
+      clearInterval(this.keepAliveInterval);
+      this.keepAliveInterval = null;
+    }
+  }
+
+  // Giảm âm lượng nhạc nền "Lưu Thủy Kim Tiền" để nghe rõ lời thuyết minh
+  duckMusic() {
+    if (typeof document === 'undefined') return;
+    const bgMusic = document.getElementById('bg-music');
+    if (typeof window !== 'undefined' && window.state && window.state.isAudioPlaying) {
+      this.previousMusicState = true;
+      if (bgMusic) bgMusic.volume = 0.08;
+    }
+  }
+
+  // Khôi phục lại âm lượng nhạc nền
+  unduckMusic() {
+    if (typeof document === 'undefined') return;
+    const bgMusic = document.getElementById('bg-music');
+    if (this.previousMusicState) {
+      if (bgMusic) bgMusic.volume = 0.5;
+      this.previousMusicState = false;
+    }
+  }
+}
+
+// Khởi tạo đối tượng quản lý thuyết minh duy nhất
+const heritageAudioGuide = new HeritageAudioGuideManager();
+
+// Các hàm tương thích giao diện cũ
+function toggleAudioGuide(textToRead, onStateChange) {
+  if (heritageAudioGuide.isPlaying) {
+    heritageAudioGuide.pause();
     if (onStateChange) onStateChange(false);
-  };
-
-  currentSpeechUtterance.onerror = () => {
-    isSpeakingGuide = false;
-    if (onStateChange) onStateChange(false);
-  };
-
-  window.speechSynthesis.speak(currentSpeechUtterance);
+  } else {
+    heritageAudioGuide.loadStory(textToRead, null, (isPlaying) => {
+      if (onStateChange) onStateChange(isPlaying);
+    });
+    heritageAudioGuide.play();
+  }
 }
 
 function stopAudioGuide() {
-  if ('speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
-    isSpeakingGuide = false;
-  }
+  heritageAudioGuide.stop();
 }
 
-// Hàm tương thích cũ
 function toggleTextToSpeech(text, callback) {
   toggleAudioGuide(text, callback);
 }

@@ -65,4 +65,19 @@ testCases.forEach(({ query, expectedMatch }) => {
   console.log(`  ✓ Search "${query}" successfully matched ${matches.length} items (including "${expectedMatch}")`);
 });
 
-console.log('\nALL INTEGRITY & SEARCH TESTS PASSED SUCCESSFULLY! 🎉');
+console.log('--- 5. TESTING AUDIO GUIDE ENGINE (SENTENCE CHUNKING & LOGIC) ---');
+console.assert(typeof splitTextIntoSentences === 'function', 'splitTextIntoSentences must be a function');
+const sampleText = 'Chào mừng quý thầy cô đến với di tích. Nơi đây lưu giữ nhiều hiện vật quý báu! Các bạn học sinh hãy cùng khám phá; giá trị văn hóa ngàn đời.';
+const chunks = splitTextIntoSentences(sampleText);
+console.assert(chunks.length >= 3, 'Should split into multiple sentences');
+console.assert(chunks.every(c => c.length <= 150), 'All chunks should be under 150 characters to prevent 15s freeze');
+console.log(`  ✓ Sample text successfully split into ${chunks.length} clean sentences (max length: ${Math.max(...chunks.map(c => c.length))} chars)`);
+
+const testManager = new HeritageAudioGuideManager();
+const loadedSentences = testManager.loadStory(sampleText);
+console.assert(loadedSentences.length === chunks.length, 'Loaded sentences count must match chunks count');
+console.assert(testManager.currentIndex === 0, 'Initial sentence index should be 0');
+console.assert(testManager.isPlaying === false, 'Initially isPlaying should be false');
+console.log('  ✓ HeritageAudioGuideManager initialized and loaded story correctly');
+
+console.log('\nALL INTEGRITY, SEARCH & AUDIO GUIDE TESTS PASSED SUCCESSFULLY! 🎉');
