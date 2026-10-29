@@ -65,6 +65,21 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Ngăn vỡ dòng thanh điều hướng */
+.nowrap-text {
+  white-space: nowrap !important;
+}
+
+/* Tránh va chạm dấu thanh tiếng Việt trong Hero Heading */
+.hero-main-heading {
+  line-height: 1.35 !important;
+}
+
+.hero-sub-line {
+  display: block;
+  margin-top: 0.18em;
+}
+
 /* Họa tiết hoa văn truyền thống */
 .bg-drum-pattern {
   background-image: radial-gradient(circle at center, rgba(197, 155, 39, 0.06) 0%, transparent 70%);
@@ -122,7 +137,7 @@ body {
   opacity: 1;
 }
 
-/* Hero Cards lớn */
+/* Hero Cards lớn - Lớp phủ ấm áp văn hóa (Warm Terracotta & Bronze Gradient) */
 .hero-entry-card {
   transition: all 0.4s ease;
   background-size: cover;
@@ -135,17 +150,17 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(20, 15, 12, 0.2) 0%, rgba(20, 15, 12, 0.85) 100%);
+  background: linear-gradient(180deg, rgba(30, 15, 10, 0.2) 0%, rgba(35, 15, 12, 0.82) 100%);
   transition: background 0.3s ease;
 }
 
 .hero-entry-card:hover::before {
-  background: linear-gradient(180deg, rgba(20, 15, 12, 0.1) 0%, rgba(139, 30, 30, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(30, 15, 10, 0.1) 0%, rgba(139, 30, 30, 0.88) 100%);
 }
 
 .hero-entry-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 20px 30px rgba(139, 30, 30, 0.25);
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 18px 30px rgba(139, 30, 30, 0.22);
 }
 
 /* Tab nút bấm */
@@ -272,31 +287,70 @@ body {
   transform: translateY(-3px);
 }
 
-/* Trình phát âm thanh truyền thống */
+/* Trình phát nhạc nền Lưu Thủy Kim Tiền */
 .sound-player-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: 7px;
+  padding: 7px 14px;
   border-radius: 9999px;
-  background-color: rgba(197, 155, 39, 0.15);
-  border: 1px solid rgba(197, 155, 39, 0.3);
+  background-color: rgba(197, 155, 39, 0.12);
+  border: 1px solid rgba(197, 155, 39, 0.35);
   color: var(--color-heritage-gold-dark);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  user-select: none;
 }
 
 .sound-player-btn:hover {
-  background-color: rgba(197, 155, 39, 0.25);
+  background-color: rgba(197, 155, 39, 0.22);
   border-color: var(--color-heritage-gold);
+  transform: translateY(-1px);
 }
 
 .sound-player-btn.playing {
-  background-color: var(--color-heritage-red);
+  background: linear-gradient(135deg, #9B2C2C 0%, #8B1E1E 100%);
   color: #ffffff;
-  border-color: var(--color-heritage-red);
+  border-color: #8B1E1E;
+  box-shadow: 0 4px 12px rgba(139, 30, 30, 0.35);
+}
+
+/* Biểu tượng Equalizer động nhịp nhàng */
+.equalizer-icon {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  width: 14px;
+  height: 13px;
+  overflow: hidden;
+}
+
+.eq-bar {
+  width: 2.5px;
+  height: 100%;
+  background-color: currentColor;
+  border-radius: 1px;
+  transform-origin: bottom;
+  transform: scaleY(0.3);
+  transition: transform 0.2s ease;
+}
+
+.sound-player-btn.playing .eq-bar-1 {
+  animation: eqBounce 0.75s ease-in-out infinite alternate;
+}
+.sound-player-btn.playing .eq-bar-2 {
+  animation: eqBounce 0.55s ease-in-out 0.2s infinite alternate;
+}
+.sound-player-btn.playing .eq-bar-3 {
+  animation: eqBounce 0.85s ease-in-out 0.35s infinite alternate;
+}
+
+@keyframes eqBounce {
+  0% { transform: scaleY(0.2); }
+  100% { transform: scaleY(1); }
 }
 
 /* Modal Dialog */
@@ -365,4 +419,3 @@ body {
     display: none !important;
   }
 }
-

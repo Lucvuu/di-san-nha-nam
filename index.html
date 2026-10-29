@@ -51,86 +51,85 @@
 <body class="bg-[#FDFBF7] text-[#2A2521] antialiased selection:bg-[#8B1E1E] selection:text-white flex flex-col min-h-screen">
 
   <!-- ====================================================================
-       1. THANH ĐIỀU HƯỚNG CHÍNH (HEADER & NAVIGATION)
+       1. THANH ĐIỀU HƯỚNG CHÍNH (HEADER & NAVBAR)
+       Đã tối ưu không vỡ dòng, container max-w-[1380px], white-space nowrap
        ==================================================================== -->
   <header class="sticky top-0 z-40 bg-[#FDFBF7]/95 backdrop-blur-md border-b border-[#EADECF] shadow-sm transition-all duration-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
         
-        <!-- Logo & Tên Cổng Thông Tin -->
-        <a href="#" class="flex items-center gap-3.5 group">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#8B1E1E] to-[#6F1515] p-2 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-200 border border-[#C59B27]/40 flex-shrink-0">
-            <!-- Biểu tượng hoa sen / trống đồng cách điệu -->
-            <svg class="w-7 h-7 text-[#F6E05E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Logo & Tên Cổng Thông Tin (Giữ nguyên 1 dòng, không vỡ chữ) -->
+        <a href="#" class="flex items-center gap-3 group flex-shrink-0">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#8B1E1E] to-[#6F1515] p-2 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-200 border border-[#C59B27]/40 flex-shrink-0">
+            <svg class="w-6 h-6 text-[#F6E05E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
               <circle cx="12" cy="12" r="10"></circle>
             </svg>
           </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="font-heritage-serif text-xl sm:text-2xl font-bold tracking-tight text-[#8B1E1E] group-hover:text-[#6F1515] transition-colors">
-                Di Sản Văn Hóa Nhã Nam
-              </span>
-              <span class="hidden md:inline-block px-2 py-0.5 text-[10px] uppercase font-bold tracking-widest bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A] rounded-md">
-                Tân Yên • Bắc Giang
-              </span>
-            </div>
-            <p class="text-xs text-[#5C5248] hidden sm:block font-medium">
+          <div class="flex flex-col">
+            <span class="font-heritage-serif text-[1.25rem] sm:text-[1.32rem] lg:text-[1.38rem] font-bold tracking-tight text-[#8B1E1E] whitespace-nowrap leading-tight group-hover:text-[#6F1515] transition-colors">
+              Di Sản Văn Hóa Nhã Nam
+            </span>
+            <span class="text-[11px] text-[#5C5248] hidden sm:block font-medium whitespace-nowrap leading-tight mt-0.5">
               Cổng Thông Tin Số Hóa Di Sản Văn Hóa Địa Phương
-            </p>
+            </span>
           </div>
         </a>
 
-        <!-- Danh mục liên kết điều hướng nhanh (Desktop) -->
-        <nav class="hidden lg:flex items-center gap-7">
+        <!-- Danh mục liên kết điều hướng nhanh (Desktop: Luôn trên 1 hàng ngang) -->
+        <nav class="hidden lg:flex items-center gap-5 xl:gap-6 flex-shrink-0">
           <button 
             type="button" 
             onclick="setCategoryFilter('vat-the'); scrollToSection('heritage-explorer');" 
-            class="text-sm font-semibold text-[#5C5248] hover:text-[#8B1E1E] transition-colors flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-[#8B1E1E]"></span>
-            Di sản Vật thể
+            class="text-sm font-semibold text-[#5C5248] hover:text-[#8B1E1E] transition-colors flex items-center gap-1.5 whitespace-nowrap">
+            <span class="w-2 h-2 rounded-full bg-[#8B1E1E] flex-shrink-0"></span>
+            <span>Di sản Vật thể</span>
           </button>
           
           <button 
             type="button" 
             onclick="setCategoryFilter('phi-vat-the'); scrollToSection('heritage-explorer');" 
-            class="text-sm font-semibold text-[#5C5248] hover:text-[#8B1E1E] transition-colors flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-[#C59B27]"></span>
-            Di sản Phi vật thể
+            class="text-sm font-semibold text-[#5C5248] hover:text-[#8B1E1E] transition-colors flex items-center gap-1.5 whitespace-nowrap">
+            <span class="w-2 h-2 rounded-full bg-[#C59B27] flex-shrink-0"></span>
+            <span>Di sản Phi vật thể</span>
           </button>
           
           <a 
             href="#facebook-community" 
-            class="text-sm font-semibold text-[#5C5248] hover:text-[#8B1E1E] transition-colors flex items-center gap-1.5">
-            <svg class="w-4 h-4 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            Cộng đồng thảo luận
+            class="text-sm font-semibold text-[#5C5248] hover:text-[#8B1E1E] transition-colors flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-4 h-4 text-[#1877F2] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <span>Cộng đồng thảo luận</span>
           </a>
           
           <a 
             href="#site-footer" 
-            class="text-sm font-semibold text-[#5C5248] hover:text-[#8B1E1E] transition-colors">
-            Liên hệ
+            class="text-sm font-semibold text-[#5C5248] hover:text-[#8B1E1E] transition-colors whitespace-nowrap">
+            <span>Liên hệ</span>
           </a>
         </nav>
 
-        <!-- Thao tác góc phải: Âm thanh & Nút Zalo / Hotline -->
-        <div class="hidden sm:flex items-center gap-3">
-          <!-- Nút bật/tắt âm thanh truyền thống -->
+        <!-- Thao tác góc phải: Nhạc Lưu Thủy Kim Tiền & Hotline Cô Mến -->
+        <div class="hidden sm:flex items-center gap-2.5 flex-shrink-0">
+          <!-- Nút bật/tắt nhạc nền Lưu Thủy Kim Tiền -->
           <button 
             id="sound-toggle-btn"
             type="button" 
             onclick="toggleTraditionalAudio()"
-            class="sound-player-btn"
-            title="Nghe âm hưởng nhạc cụ dân gian Việt Nam">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
-            <span id="sound-toggle-label">Nhạc truyền thống</span>
+            class="sound-player-btn whitespace-nowrap"
+            title="Bật/Tắt nhạc cổ truyền: Lưu Thủy Kim Tiền">
+            <span class="equalizer-icon" aria-hidden="true">
+              <span class="eq-bar eq-bar-1"></span>
+              <span class="eq-bar eq-bar-2"></span>
+              <span class="eq-bar eq-bar-3"></span>
+            </span>
+            <span id="sound-toggle-label">♫ Lưu Thủy Kim Tiền</span>
           </button>
 
           <!-- Nút gọi hotline admin -->
           <a 
             href="tel:0962629650" 
-            class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#F5EFE6] text-[#8B1E1E] border border-[#EADECF] hover:bg-[#8B1E1E] hover:text-white transition-all duration-200">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-[#F5EFE6] text-[#8B1E1E] border border-[#EADECF] hover:bg-[#8B1E1E] hover:text-white transition-all duration-200 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
             <span>0962.629.650</span>
           </a>
         </div>
@@ -182,10 +181,18 @@
     </div>
   </header>
 
+  <!-- HTML5 Audio Element cho bài Lưu Thủy Kim Tiền -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="./luu-thuy-kim-tien.mp3" type="audio/mpeg">
+    <source src="https://archive.org/download/lp_music-of-viet-nam_various/disc1/02.06.%20Hoa%20Tau%20Bai%20Luu%20Thuy.mp3" type="audio/mpeg">
+  </audio>
+
   <!-- ====================================================================
        2. HERO SECTION & 2 THẺ ĐIỀU HƯỚNG CHÍNH (PROMINENT PRIMARY ENTRY CARDS)
+       Đã tinh chỉnh khoảng cách, tăng line-height tránh đè dấu tiếng Việt,
+       thay ảnh tối bầu trời bằng ảnh kiến trúc đình chùa và lễ hội truyền thống ấm áp.
        ==================================================================== -->
-  <section class="relative pt-10 pb-16 md:pt-16 md:pb-24 overflow-hidden bg-gradient-to-b from-[#F5EFE6] via-[#FDFBF7] to-[#FDFBF7] border-b border-[#EADECF]">
+  <section class="relative pt-6 pb-10 md:pt-8 md:pb-12 overflow-hidden bg-gradient-to-b from-[#F5EFE6] via-[#FDFBF7] to-[#FDFBF7] border-b border-[#EADECF]">
     
     <!-- Background Decor Accent Circles -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-40">
@@ -193,97 +200,98 @@
       <div class="absolute top-1/2 -right-32 w-96 h-96 rounded-full bg-[#8B1E1E]/10 blur-3xl"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Lời chào mở đầu & Giới thiệu văn hóa Nhã Nam -->
-      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-xs font-bold tracking-wide uppercase mb-4 shadow-sm">
+      <!-- Lời chào mở đầu & Giới thiệu văn hóa Nhã Nam (Khoảng cách vừa vặn) -->
+      <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-xs font-bold tracking-wide uppercase mb-3 shadow-sm">
           <span>🚩 Vùng Đất Cầu Vồng • Tân Yên • Bắc Giang</span>
         </div>
         
-        <h1 class="font-heritage-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#8B1E1E] tracking-tight leading-[1.15] mb-5">
-          Khám Phá Di Sản Văn Hóa <br />
-          <span class="text-[#2A2521] italic font-semibold">Thị Trấn Nhã Nam</span>
+        <!-- Tiêu đề Hero: Line-height 1.35 và margin-top ngăn dấu "Trấn" đè chữ "Di" -->
+        <h1 class="font-heritage-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#8B1E1E] tracking-tight hero-main-heading mb-3">
+          <span>Khám Phá Di Sản Văn Hóa</span>
+          <span class="hero-sub-line text-[#2A2521] italic font-semibold">Thị Trấn Nhã Nam</span>
         </h1>
 
-        <p class="text-base sm:text-lg text-[#5C5248] leading-relaxed max-w-2xl mx-auto">
+        <p class="text-sm sm:text-base text-[#5C5248] leading-relaxed max-w-2xl mx-auto mb-3">
           Mảnh đất địa linh nhân kiệt lưu dấu oai hùng của nghĩa quân Hoàng Hoa Thám trong khởi nghĩa Yên Thế, nơi phát tích <strong class="text-[#8B1E1E] font-semibold">Sáu điều Bác Hồ dạy Công an nhân dân</strong> tại chùa Tứ Giáp, cùng kho tàng lễ hội cổ truyền và hương vị ẩm thực đậm đà tình quê.
         </p>
 
         <!-- Thống kê nhanh nổi bật -->
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm font-semibold text-[#5C5248]">
+        <div class="flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-xs sm:text-sm font-semibold text-[#5C5248]">
           <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-[#8B1E1E]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#8B1E1E]"></span>
             <span>05 Di tích Lịch sử Cấp Quốc gia</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-[#C59B27]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#C59B27]"></span>
             <span>05 Di sản Phi vật thể Đặc sắc</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-emerald-600"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
             <span>Số hóa Bản đồ & Tích hợp Chỉ đường</span>
           </div>
         </div>
       </div>
 
-      <!-- 2 NÚT / THẺ TRUY CẬP CHÍNH (PROMINENT PRIMARY ENTRY BUTTONS/CARDS) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+      <!-- 2 THẺ TRUY CẬP CHÍNH (ẢNH VĂN HÓA TRUYỀN THỐNG ẤM ÁP, SẮC NÉT) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-7 max-w-5xl mx-auto">
         
-        <!-- CARD 1: DI SẢN VẬT THỂ -->
+        <!-- CARD 1: DI SẢN VẬT THỂ (Mái đình chùa cổ kính rêu phong dưới nắng vàng) -->
         <div 
           id="hero-btn-vat-the"
-          class="hero-entry-card rounded-3xl p-8 sm:p-10 flex flex-col justify-end min-h-[340px] sm:min-h-[380px] shadow-lg border-2 border-[#8B1E1E]/30 cursor-pointer text-white relative group"
-          style="background-image: url('https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?auto=format&fit=crop&w=800&q=80');">
+          class="hero-entry-card rounded-3xl p-6 sm:p-8 flex flex-col justify-end min-h-[270px] sm:min-h-[295px] shadow-lg border-2 border-[#8B1E1E]/30 cursor-pointer text-white relative group"
+          style="background-image: url('https://images.unsplash.com/photo-1548625361-195fe578cb27?auto=format&fit=crop&w=1200&q=80');">
           
           <div class="relative z-10">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B1E1E] text-white text-xs font-bold uppercase tracking-wider mb-3 shadow">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B1E1E] text-white text-xs font-bold uppercase tracking-wider mb-2.5 shadow">
               <span>🏛️ Danh mục Di sản Vật thể</span>
             </div>
             
-            <h2 class="font-heritage-serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 leading-tight group-hover:text-[#F6E05E] transition-colors">
+            <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold mb-2 leading-tight group-hover:text-[#F6E05E] transition-colors">
               Di Sản Vật Thể
             </h2>
 
-            <p class="text-sm text-gray-200 line-clamp-2 leading-relaxed mb-6 opacity-95">
+            <p class="text-xs sm:text-sm text-gray-200 line-clamp-2 leading-relaxed mb-4 opacity-95">
               Hệ thống đình, chùa, đền và đồn lũy lịch sử oai hùng: Chùa Tứ Giáp (nơi lưu giữ 6 lời Bác dạy CAND), Đền Gốc Khế, Đồn Nhã Nam - Đồi Phủ, Đình Nhã Nam, Chùa Nam Thiên.
             </p>
 
             <div class="flex items-center justify-between">
-              <span class="inline-flex items-center gap-2 font-bold text-sm text-white group-hover:translate-x-1 transition-transform">
+              <span class="inline-flex items-center gap-2 font-bold text-xs sm:text-sm text-white group-hover:translate-x-1 transition-transform">
                 <span>Khám phá 5 di tích ngay</span>
-                <svg class="w-5 h-5 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                <svg class="w-4 h-4 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </span>
-              <span class="text-xs bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full font-bold">5 Di tích</span>
+              <span class="text-xs bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-bold">5 Di tích</span>
             </div>
           </div>
         </div>
 
-        <!-- CARD 2: DI SẢN PHI VẬT THỂ -->
+        <!-- CARD 2: DI SẢN PHI VẬT THỂ (Lễ hội cờ hoa truyền thống ấm áp) -->
         <div 
           id="hero-btn-phi-vat-the"
-          class="hero-entry-card rounded-3xl p-8 sm:p-10 flex flex-col justify-end min-h-[340px] sm:min-h-[380px] shadow-lg border-2 border-[#C59B27]/40 cursor-pointer text-white relative group"
-          style="background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80');">
+          class="hero-entry-card rounded-3xl p-6 sm:p-8 flex flex-col justify-end min-h-[270px] sm:min-h-[295px] shadow-lg border-2 border-[#C59B27]/40 cursor-pointer text-white relative group"
+          style="background-image: url('https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80');">
           
           <div class="relative z-10">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C59B27] text-white text-xs font-bold uppercase tracking-wider mb-3 shadow">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C59B27] text-white text-xs font-bold uppercase tracking-wider mb-2.5 shadow">
               <span>🎭 Danh mục Di sản Phi vật thể</span>
             </div>
 
-            <h2 class="font-heritage-serif text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 leading-tight group-hover:text-[#F6E05E] transition-colors">
+            <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold mb-2 leading-tight group-hover:text-[#F6E05E] transition-colors">
               Di Sản Phi Vật Thể
             </h2>
 
-            <p class="text-sm text-gray-200 line-clamp-2 leading-relaxed mb-6 opacity-95">
+            <p class="text-xs sm:text-sm text-gray-200 line-clamp-2 leading-relaxed mb-4 opacity-95">
               Hồn cốt tinh hoa dân gian lưu truyền ngàn đời: Lễ hội chùa Tứ Giáp & Đền Gốc Khế, nghệ thuật Hát Chèo, nghề làm bánh khảo, kẹo lạc và võ cổ truyền Yên Thế.
             </p>
 
             <div class="flex items-center justify-between">
-              <span class="inline-flex items-center gap-2 font-bold text-sm text-white group-hover:translate-x-1 transition-transform">
+              <span class="inline-flex items-center gap-2 font-bold text-xs sm:text-sm text-white group-hover:translate-x-1 transition-transform">
                 <span>Trải nghiệm 5 di sản ngay</span>
-                <svg class="w-5 h-5 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                <svg class="w-4 h-4 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </span>
-              <span class="text-xs bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full font-bold">5 Di sản</span>
+              <span class="text-xs bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-bold">5 Di sản</span>
             </div>
           </div>
         </div>
@@ -297,7 +305,7 @@
        3. TÌM KIẾM THÔNG MINH & CHUYỂN ĐỔI DANH MỤC (SEARCH & EXPLORER SECTION)
        ==================================================================== -->
   <section id="heritage-explorer" class="py-12 md:py-16 bg-[#FDFBF7]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Tiêu đề phần tra cứu -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
@@ -409,7 +417,7 @@
        4. BẢN ĐỒ TỔNG THỂ KHU DI TÍCH NHÃ NAM (GEOGRAPHIC MAP OVERVIEW)
        ==================================================================== -->
   <section class="py-12 bg-[#F5EFE6] border-y border-[#EADECF]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
         <div class="lg:w-1/2">
           <span class="text-xs font-bold uppercase tracking-wider text-[#C59B27] block mb-1">
@@ -424,15 +432,15 @@
 
           <div class="space-y-3 mb-6">
             <div class="flex items-center gap-3 text-xs sm:text-sm text-[#2A2521] bg-white p-3 rounded-xl border border-[#EADECF]">
-              <span class="w-6 h-6 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs">1</span>
+              <span class="w-6 h-6 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
               <span><strong>Tuyến 1:</strong> Cụm Di tích Chùa Tứ Giáp & Khu lưu niệm Sáu điều Bác Hồ dạy CAND</span>
             </div>
             <div class="flex items-center gap-3 text-xs sm:text-sm text-[#2A2521] bg-white p-3 rounded-xl border border-[#EADECF]">
-              <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center font-bold text-xs">2</span>
+              <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
               <span><strong>Tuyến 2:</strong> Căn cứ Đền Gốc Khế & Di tích lịch sử Đồn Nhã Nam - Đồi Phủ</span>
             </div>
             <div class="flex items-center gap-3 text-xs sm:text-sm text-[#2A2521] bg-white p-3 rounded-xl border border-[#EADECF]">
-              <span class="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs">3</span>
+              <span class="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
               <span><strong>Tuyến 3:</strong> Đình Nhã Nam - Chùa Nam Thiên - Phố nghề ẩm thực Bánh khảo</span>
             </div>
           </div>
@@ -558,8 +566,8 @@
                 type="button" 
                 onclick="handleJoinFacebookGroup()"
                 class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-sm text-white bg-[#1877F2] hover:bg-[#166fe5] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 w-full sm:w-auto">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                <span>Tham Gia Group Facebook</span>
+                <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span class="whitespace-nowrap">Tham Gia Group Facebook</span>
               </button>
               <span class="text-[11px] text-[#786C5E] mt-2 block">
                 Phê duyệt nhanh chóng trong 24h
@@ -579,17 +587,17 @@
        7. CHÂN TRANG & THÔNG TIN LIÊN HỆ NGƯỜI ĐIỀU HÀNH (FOOTER & CONTACT)
        ==================================================================== -->
   <footer id="site-footer" class="bg-[#2A2521] text-white border-t-4 border-[#C59B27] mt-auto">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-12">
         
         <!-- Cột 1: Giới thiệu cổng thông tin -->
         <div class="lg:col-span-1">
           <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-xl bg-[#8B1E1E] p-2 flex items-center justify-center border border-[#C59B27]/50">
+            <div class="w-10 h-10 rounded-xl bg-[#8B1E1E] p-2 flex items-center justify-center border border-[#C59B27]/50 flex-shrink-0">
               <svg class="w-6 h-6 text-[#F6E05E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2v20"></path></svg>
             </div>
-            <div class="font-heritage-serif text-lg font-bold text-[#F6E05E]">
+            <div class="font-heritage-serif text-lg font-bold text-[#F6E05E] whitespace-nowrap">
               Di Sản Nhã Nam
             </div>
           </div>
@@ -655,15 +663,15 @@
               href="https://zalo.me/0962629650" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs bg-[#0068FF] hover:bg-[#0056d6] text-white transition-colors shadow">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.17L2 22l4.98-1.39C8.42 21.49 10.16 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+              class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs bg-[#0068FF] hover:bg-[#0056d6] text-white transition-colors shadow whitespace-nowrap">
+              <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.17L2 22l4.98-1.39C8.42 21.49 10.16 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
               <span>Nhắn tin Zalo ngay</span>
             </a>
 
             <a 
               href="tel:0962629650" 
-              class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs bg-white/10 hover:bg-white/20 text-white transition-colors border border-white/20">
-              <svg class="w-4 h-4 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs bg-white/10 hover:bg-white/20 text-white transition-colors border border-white/20 whitespace-nowrap">
+              <svg class="w-4 h-4 text-[#F6E05E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
               <span>Gọi điện trực tiếp</span>
             </a>
           </div>
@@ -691,10 +699,9 @@
     href="https://zalo.me/0962629650" 
     target="_blank" 
     rel="noopener noreferrer" 
-    class="zalo-floating-btn"
+    class="zalo-floating-btn whitespace-nowrap"
     title="Nhắn tin Zalo với Cô Mến để hỏi đáp tư liệu di sản">
-    <!-- Icon Zalo -->
-    <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-[#0068FF] font-black text-xs">
+    <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-[#0068FF] font-black text-xs flex-shrink-0">
       Z
     </div>
     <span>Zalo Cô Mến</span>
@@ -711,7 +718,6 @@
 
   <!-- ====================================================================
        9. MODAL CHI TIẾT DI TÍCH / DI SẢN (HERITAGE DETAIL MODAL)
-       Hiển thị chính xác 5 mục theo yêu cầu
        ==================================================================== -->
   <div 
     id="heritage-detail-modal" 
@@ -776,7 +782,6 @@
 
   <!-- ====================================================================
        11. MODAL THÔNG BÁO THÂN THIỆN FACEBOOK GROUP
-       Hiển thị khi URL đang ở chế độ chờ cấu hình ("#" hoặc "")
        ==================================================================== -->
   <div 
     id="facebook-notice-modal" 
@@ -837,4 +842,3 @@
   <script src="js/app.js"></script>
 </body>
 </html>
-

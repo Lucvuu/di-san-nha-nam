@@ -33,13 +33,23 @@ function initApp() {
   setupEventListeners();
   renderQuiz();
   checkUrlHash();
+  initAudioPlayerSettings();
+}
+
+/**
+ * Khởi tạo thiết lập âm lượng cho trình phát nhạc Lưu Thủy Kim Tiền
+ */
+function initAudioPlayerSettings() {
+  const bgMusic = document.getElementById('bg-music');
+  if (bgMusic) {
+    bgMusic.volume = 0.5; // Thiết lập âm lượng mặc định 50%
+  }
 }
 
 /**
  * Hiển thị các thông tin cấu hình từ SITE_CONFIG lên giao diện
  */
 function renderConfigElements() {
-  // Cập nhật thông tin Ban điều hành và số điện thoại
   const adminNameEls = document.querySelectorAll('.site-admin-name');
   adminNameEls.forEach(el => el.textContent = SITE_CONFIG.adminName);
 
@@ -172,9 +182,9 @@ function renderHeritageGrid(items) {
             alt="${escapeHtml(item.title)}" 
             loading="lazy"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?auto=format&fit=crop&w=600&q=80';"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1548625361-195fe578cb27?auto=format&fit=crop&w=600&q=80';"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent"></div>
           
           <!-- Huy hiệu phân loại -->
           <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
@@ -259,12 +269,6 @@ function renderHeritageGrid(items) {
 /**
  * ====================================================================
  * CHI TIẾT DI TÍCH / DI SẢN (DETAIL MODAL)
- * Hiển thị chính xác 5 mục theo đúng yêu cầu:
- * 1. Tên di tích / di sản
- * 2. Địa chỉ / Phạm vi
- * 3. Nội dung về di tích / di sản
- * 4. Chỉ dẫn đi đến đó bằng Google Map (kèm iframe và button)
- * 5. Thư viện ảnh di tích / di sản (kèm lightbox preview)
  * ====================================================================
  */
 function openDetailModal(itemId) {
@@ -277,13 +281,10 @@ function openDetailModal(itemId) {
   const container = document.getElementById('modal-dynamic-content');
   if (!modal || !container) return;
 
-  // Cập nhật URL Hash không làm reload trang
   history.replaceState(null, '', `#item=${item.id}`);
 
-  // Tạo nội dung cho Mục 3 tùy theo loại di sản
   let section3Html = '';
   if (isVatThe) {
-    // Di sản Vật thể: Giới thiệu, Ý nghĩa lịch sử, Kiến trúc nghệ thuật, Lưu ý học tập
     section3Html = `
       <div class="space-y-4 text-[#2A2521] leading-relaxed">
         <p class="text-base text-[#4A4036] font-medium leading-relaxed bg-[#FDFBF7] p-4 rounded-xl border-l-4 border-[#8B1E1E]">
@@ -326,7 +327,6 @@ function openDetailModal(itemId) {
       </div>
     `;
   } else {
-    // Di sản Phi vật thể: Giới thiệu, Nguồn gốc & Ý nghĩa, Nghi thức & Hoạt động, Giá trị bảo tồn
     section3Html = `
       <div class="space-y-4 text-[#2A2521] leading-relaxed">
         <p class="text-base text-[#4A4036] font-medium leading-relaxed bg-[#FDFBF7] p-4 rounded-xl border-l-4 border-[#C59B27]">
@@ -370,11 +370,9 @@ function openDetailModal(itemId) {
     `;
   }
 
-  // Chuẩn bị danh sách ảnh cho Lightbox
   state.lightboxImages = item.gallery || [];
 
   container.innerHTML = `
-    <!-- Thanh điều hướng và nút thao tác trên modal -->
     <div class="flex items-center justify-between pb-4 mb-6 border-b border-[#EADECF]">
       <div class="flex items-center gap-2">
         <span class="px-3 py-1 rounded-full text-xs font-bold ${isVatThe ? 'bg-[#8B1E1E] text-white' : 'bg-[#C59B27] text-white'}">
@@ -384,7 +382,6 @@ function openDetailModal(itemId) {
       </div>
 
       <div class="flex items-center gap-2">
-        <!-- Nút đọc văn bản cho học sinh -->
         <button 
           id="btn-tts-speaker"
           type="button" 
@@ -395,7 +392,6 @@ function openDetailModal(itemId) {
           <span id="tts-label">Nghe giới thiệu</span>
         </button>
 
-        <!-- Nút in tài liệu học tập -->
         <button 
           type="button" 
           onclick="window.print()" 
@@ -405,7 +401,6 @@ function openDetailModal(itemId) {
           <span>In tài liệu</span>
         </button>
 
-        <!-- Nút đóng modal -->
         <button 
           type="button" 
           onclick="closeDetailModal()"
@@ -415,10 +410,8 @@ function openDetailModal(itemId) {
       </div>
     </div>
 
-    <!-- NỘI DUNG 5 PHẦN BẮT BUỘC -->
     <div class="space-y-8">
-      
-      <!-- PHẦN 1: TÊN DI TÍCH / TÊN DI SẢN -->
+      <!-- MỤC 1: TÊN DI TÍCH / TÊN DI SẢN -->
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-1">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">1</span>
@@ -435,7 +428,7 @@ function openDetailModal(itemId) {
         ` : ''}
       </section>
 
-      <!-- PHẦN 2: ĐỊA CHỈ / PHẠM VI -->
+      <!-- MỤC 2: ĐỊA CHỈ / PHẠM VI -->
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-2">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">2</span>
@@ -461,7 +454,7 @@ function openDetailModal(itemId) {
         </div>
       </section>
 
-      <!-- PHẦN 3: NỘI DUNG VỀ DI TÍCH / NỘI DUNG DI SẢN -->
+      <!-- MỤC 3: NỘI DUNG VỀ DI TÍCH / NỘI DUNG DI SẢN -->
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">3</span>
@@ -470,7 +463,7 @@ function openDetailModal(itemId) {
         ${section3Html}
       </section>
 
-      <!-- PHẦN 4: CHỈ DẪN ĐI ĐẾN ĐÓ BẰNG GOOGLE MAP -->
+      <!-- MỤC 4: CHỈ DẪN ĐI ĐẾN ĐÓ BẰNG GOOGLE MAP -->
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">4</span>
@@ -478,7 +471,6 @@ function openDetailModal(itemId) {
         </div>
         
         <div class="rounded-2xl overflow-hidden border border-[#EADECF] shadow-sm bg-[#F5EFE6]">
-          <!-- Khung bản đồ iframe trực quan -->
           <div class="relative w-full h-72 sm:h-80 bg-gray-200">
             <iframe 
               src="${item.map.embedUrl}" 
@@ -492,7 +484,6 @@ function openDetailModal(itemId) {
             </iframe>
           </div>
 
-          <!-- Nút bấm nổi bật mở chỉ đường ngoài trình duyệt -->
           <div class="p-4 bg-white flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-[#EADECF]">
             <div class="text-xs text-[#5C5248] text-center sm:text-left">
               <span class="font-bold text-[#8B1E1E]">Địa điểm:</span> ${escapeHtml(item.map.locationName || item.title)}
@@ -511,7 +502,7 @@ function openDetailModal(itemId) {
         </div>
       </section>
 
-      <!-- PHẦN 5: ẢNH VỀ DI TÍCH / DI SẢN -->
+      <!-- MỤC 5: ẢNH VỀ DI TÍCH / DI SẢN -->
       <section>
         <div class="flex items-center justify-between mb-3">
           <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27]">
@@ -531,7 +522,7 @@ function openDetailModal(itemId) {
                 alt="${escapeHtml(img.caption || item.title)}" 
                 loading="lazy"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?auto=format&fit=crop&w=600&q=80';"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1548625361-195fe578cb27?auto=format&fit=crop&w=600&q=80';"
               />
               <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white p-3">
                 <span class="text-xs text-center font-medium line-clamp-2">${escapeHtml(img.caption || 'Phóng to ảnh')}</span>
@@ -543,7 +534,6 @@ function openDetailModal(itemId) {
           `).join('')}
         </div>
       </section>
-
     </div>
   `;
 
@@ -551,9 +541,6 @@ function openDetailModal(itemId) {
   document.body.style.overflow = 'hidden';
 }
 
-/**
- * Đóng Modal chi tiết
- */
 function closeDetailModal() {
   const modal = document.getElementById('heritage-detail-modal');
   if (modal) {
@@ -561,13 +548,9 @@ function closeDetailModal() {
     document.body.style.overflow = '';
   }
   stopTextToSpeech();
-  // Xóa hash trên URL
   history.replaceState(null, '', window.location.pathname + window.location.search);
 }
 
-/**
- * Xử lý giọng đọc tóm tắt di sản cho học sinh
- */
 function handleSpeechRead() {
   if (!state.selectedItem) return;
   const item = state.selectedItem;
@@ -650,7 +633,6 @@ function closeLightbox() {
 function handleJoinFacebookGroup() {
   const url = SITE_CONFIG.facebookGroupUrl;
   
-  // Nếu url trống hoặc là "#", hiển thị thông báo thân thiện theo đúng yêu cầu
   if (!url || url.trim() === '#' || url.trim() === '') {
     showFacebookComingSoonModal();
   } else {
@@ -663,7 +645,6 @@ function showFacebookComingSoonModal() {
   if (modal) {
     modal.classList.remove('hidden');
   } else {
-    // Fallback nếu modal chưa render
     showToastNotification(
       'Group Facebook hiện đang được Ban điều hành và Cô Mến thiết lập. Đường dẫn sẽ sớm được cập nhật!',
       'info',
@@ -812,7 +793,7 @@ function showQuizResultModal(score, total) {
           <button 
             type="button" 
             onclick="closeQuizResultModal()" 
-            class="px-5 py-2 rounded-xl text-xs font-semibold bg-[#8B1E1E] text-white hover:bg-[#6F1515] transition-colors">
+            class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-[#8B1E1E] text-white hover:bg-[#6F1515] transition-colors">
             Đóng
           </button>
         </div>
@@ -838,33 +819,119 @@ function resetQuiz() {
 
 /**
  * ====================================================================
- * ÂM HƯỞNG TRUYỀN THỐNG (TRADITIONAL PENTATONIC AUDIO SYNTHESIZER)
- * Sử dụng Web Audio API tích hợp sẵn để tạo âm thanh ngũ cung du dương
+ * NÂNG CẤP NHẠC CỔ TRUYỀN: "LƯU THỦY KIM TIỀN"
+ * Hỗ trợ đồng thời 3 tầng phát:
+ * 1. File nội bộ local repo: ./luu-thuy-kim-tien.mp3 (Âm lượng 50%)
+ * 2. Nguồn trực tuyến open-access dự phòng
+ * 3. Bộ tổng hợp Web Audio API chơi trực tiếp giai điệu "Lưu Thủy - Kim Tiền"
  * ====================================================================
  */
 let audioCtx = null;
-let audioInterval = null;
+let synthTimer = null;
+let currentSynthIndex = 0;
 
-function toggleTraditionalAudio() {
+// Giai điệu kinh điển chuẩn của bản nhạc cổ "Lưu Thủy - Kim Tiền"
+// Thang ngũ cung Bắc: Hò (Đô), Xự (Rê), Xang (Fa), Xê (Sol), Cống (La)
+const LUU_THUY_KIM_TIEN_NOTES = [
+  // Đoạn 1: Lưu Thủy (Âm hưởng thanh thoát như dòng nước trôi)
+  { note: 261.63, dur: 400 }, // Đô
+  { note: 220.00, dur: 350 }, // Là
+  { note: 261.63, dur: 400 }, // Đô
+  { note: 293.66, dur: 400 }, // Rề
+  { note: 349.23, dur: 600 }, // Pha
+  { note: 392.00, dur: 400 }, // Son
+  { note: 440.00, dur: 450 }, // Lá
+  { note: 392.00, dur: 350 }, // Son
+  { note: 349.23, dur: 700 }, // Pha
+  { note: 261.63, dur: 400 }, // Đồ
+  { note: 220.00, dur: 350 }, // Là
+  { note: 261.63, dur: 400 }, // Đô
+  { note: 293.66, dur: 400 }, // Rề
+  { note: 349.23, dur: 750 }, // Pha
+  { note: 392.00, dur: 380 }, // Son
+  { note: 523.25, dur: 420 }, // Đố
+  { note: 440.00, dur: 380 }, // Lá
+  { note: 392.00, dur: 380 }, // Son
+  { note: 349.23, dur: 550 }, // Pha
+  { note: 440.00, dur: 380 }, // Lá
+  { note: 392.00, dur: 380 }, // Son
+  { note: 349.23, dur: 650 }, // Pha
+  { note: 293.66, dur: 400 }, // Rề
+  { note: 349.23, dur: 400 }, // Pha
+  { note: 261.63, dur: 350 }, // Đồ
+  { note: 293.66, dur: 400 }, // Rề
+  { note: 349.23, dur: 800 }, // Pha
+
+  // Đoạn 2: Kim Tiền (Nhịp điệu tươi vui, rộn ràng)
+  { note: 349.23, dur: 320 }, // Pha
+  { note: 392.00, dur: 320 }, // Son
+  { note: 440.00, dur: 350 }, // Lá
+  { note: 523.25, dur: 400 }, // Đố
+  { note: 440.00, dur: 320 }, // Lá
+  { note: 392.00, dur: 550 }, // Son
+  { note: 349.23, dur: 320 }, // Pha
+  { note: 293.66, dur: 320 }, // Rề
+  { note: 261.63, dur: 350 }, // Đồ
+  { note: 293.66, dur: 350 }, // Rề
+  { note: 349.23, dur: 400 }, // Pha
+  { note: 392.00, dur: 600 }, // Son
+  { note: 440.00, dur: 320 }, // Lá
+  { note: 523.25, dur: 400 }, // Đố
+  { note: 440.00, dur: 320 }, // Lá
+  { note: 392.00, dur: 350 }, // Son
+  { note: 349.23, dur: 380 }, // Pha
+  { note: 293.66, dur: 700 }  // Rề
+];
+
+async function toggleTraditionalAudio() {
   const btn = document.getElementById('sound-toggle-btn');
   const label = document.getElementById('sound-toggle-label');
+  const bgMusic = document.getElementById('bg-music');
 
   if (state.isAudioPlaying) {
-    stopTraditionalAudio();
+    // Tạm dừng phát
+    if (bgMusic) {
+      bgMusic.pause();
+    }
+    stopSynthLuuThuy();
     state.isAudioPlaying = false;
+    
     if (btn) btn.classList.remove('playing');
-    if (label) label.textContent = 'Bật nhạc truyền thống';
-    showToastNotification('Đã tắt âm hưởng truyền thống', 'info');
+    if (label) label.textContent = '♫ Lưu Thủy Kim Tiền';
+    showToastNotification('Đã tạm dừng nhạc nền', 'info');
   } else {
-    startTraditionalAudio();
+    // Bắt đầu phát
+    let playedHtml5 = false;
+
+    if (bgMusic) {
+      bgMusic.volume = 0.5; // Thiết lập âm lượng 50%
+      try {
+        const playPromise = bgMusic.play();
+        if (playPromise !== undefined) {
+          await playPromise;
+          playedHtml5 = true;
+        }
+      } catch (err) {
+        console.warn('HTML5 Audio play failed, falling back to Web Audio API Synth:', err);
+      }
+    }
+
+    if (!playedHtml5) {
+      // Dự phòng bộ phát Web Audio API tổng hợp âm sắc Đàn Tranh
+      startSynthLuuThuy();
+    }
+
     state.isAudioPlaying = true;
     if (btn) btn.classList.add('playing');
-    if (label) label.textContent = 'Đang phát nhạc dân gian';
-    showToastNotification('Đang phát giai điệu truyền thống nhẹ nhàng', 'success');
+    if (label) label.textContent = '♫ Đang phát: Lưu Thủy Kim Tiền';
+    showToastNotification('Đang phát hòa tấu cổ truyền: Lưu Thủy Kim Tiền (Âm lượng 50%)', 'success');
   }
 }
 
-function startTraditionalAudio() {
+/**
+ * Bộ phát Web Audio API mô phỏng âm sắc gảy Đàn Tranh bản Lưu Thủy - Kim Tiền
+ */
+function startSynthLuuThuy() {
   try {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     if (!AudioContext) return;
@@ -876,42 +943,74 @@ function startTraditionalAudio() {
       audioCtx.resume();
     }
 
-    // Tần số thang ngũ cung Việt Nam (D4, E4, G4, A4, C5, D5, E5, G5)
-    const pentatonicNotes = [293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25, 783.99];
+    currentSynthIndex = 0;
 
-    function playNote() {
+    function playNextNote() {
       if (!state.isAudioPlaying || !audioCtx) return;
 
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
+      const item = LUU_THUY_KIM_TIEN_NOTES[currentSynthIndex];
+      playZitherPluck(item.note, item.dur);
 
-      const note = pentatonicNotes[Math.floor(Math.random() * pentatonicNotes.length)];
-      osc.type = 'sine'; // Âm thanh mềm mại tựa sáo trúc/đàn tranh
-      osc.frequency.setValueAtTime(note, audioCtx.currentTime);
-
-      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.04, audioCtx.currentTime + 0.3);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.8);
-
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start();
-      osc.stop(audioCtx.currentTime + 1.9);
+      currentSynthIndex = (currentSynthIndex + 1) % LUU_THUY_KIM_TIEN_NOTES.length;
+      synthTimer = setTimeout(playNextNote, item.dur);
     }
 
-    playNote();
-    audioInterval = setInterval(playNote, 1400);
+    playNextNote();
   } catch (e) {
-    console.warn('Audio API:', e);
+    console.warn('Audio Synthesis Error:', e);
   }
 }
 
-function stopTraditionalAudio() {
-  if (audioInterval) {
-    clearInterval(audioInterval);
-    audioInterval = null;
+/**
+ * Tạo âm sắc gảy đàn tranh (Fast attack, harmonic damping & ring)
+ */
+function playZitherPluck(freq, durationMs) {
+  if (!audioCtx) return;
+
+  const now = audioCtx.currentTime;
+  const osc = audioCtx.createOscillator();
+  const oscHarmonic = audioCtx.createOscillator();
+  const gainNode = audioCtx.createGain();
+  const filter = audioCtx.createBiquadFilter();
+
+  // Dao động chính
+  osc.type = 'triangle';
+  osc.frequency.setValueAtTime(freq, now);
+
+  // Họa âm tăng độ lấp lánh như dây kim loại đàn tranh
+  oscHarmonic.type = 'sine';
+  oscHarmonic.frequency.setValueAtTime(freq * 2, now);
+
+  // Bộ lọc âm ấm áp
+  filter.type = 'lowpass';
+  filter.frequency.setValueAtTime(1800, now);
+  filter.frequency.exponentialRampToValueAtTime(400, now + (durationMs / 1000));
+
+  // Đường bao cường độ gảy dây (Attack nhanh, ngân dốc dần)
+  gainNode.gain.setValueAtTime(0.001, now);
+  gainNode.gain.exponentialRampToValueAtTime(0.12, now + 0.02);
+  gainNode.gain.exponentialRampToValueAtTime(0.0001, now + (durationMs / 1000) * 1.2);
+
+  osc.connect(filter);
+  oscHarmonic.connect(filter);
+  filter.connect(gainNode);
+  gainNode.connect(audioCtx.destination);
+
+  osc.start(now);
+  oscHarmonic.start(now);
+  osc.stop(now + (durationMs / 1000) * 1.3);
+  oscHarmonic.stop(now + (durationMs / 1000) * 1.3);
+}
+
+function stopSynthLuuThuy() {
+  if (synthTimer) {
+    clearTimeout(synthTimer);
+    synthTimer = null;
   }
+}
+
+function toggleTraditionalAudioOld() {
+  toggleTraditionalAudio();
 }
 
 /**
@@ -920,7 +1019,6 @@ function stopTraditionalAudio() {
  * ====================================================================
  */
 function setupEventListeners() {
-  // Thanh tìm kiếm
   const searchInput = document.getElementById('search-input');
   const clearSearchBtn = document.getElementById('clear-search-btn');
 
@@ -950,7 +1048,6 @@ function setupEventListeners() {
     });
   }
 
-  // Các nút Tab lọc thể loại
   const tabButtons = document.querySelectorAll('.category-tab-btn');
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -962,7 +1059,6 @@ function setupEventListeners() {
     });
   });
 
-  // Nút nhảy trực tiếp từ Hero Section
   const heroBtnVatThe = document.getElementById('hero-btn-vat-the');
   if (heroBtnVatThe) {
     heroBtnVatThe.addEventListener('click', () => {
@@ -979,7 +1075,6 @@ function setupEventListeners() {
     });
   }
 
-  // Nút cuộn lên đầu trang (Back to top)
   const backToTopBtn = document.getElementById('back-to-top-btn');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 400) {
@@ -995,7 +1090,6 @@ function setupEventListeners() {
     });
   }
 
-  // Điều khiển bàn phím (ESC để đóng modal)
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeDetailModal();
@@ -1015,7 +1109,6 @@ function setupEventListeners() {
     }
   });
 
-  // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileMenuBtn && mobileMenu) {
@@ -1025,9 +1118,6 @@ function setupEventListeners() {
   }
 }
 
-/**
- * Đặt danh mục lọc và đồng bộ trạng thái Tab
- */
 function setCategoryFilter(category) {
   state.currentCategory = category;
   const tabButtons = document.querySelectorAll('.category-tab-btn');
@@ -1041,9 +1131,6 @@ function setCategoryFilter(category) {
   applyFiltersAndRender();
 }
 
-/**
- * Cuộn mượt đến section
- */
 function scrollToSection(sectionId) {
   const el = document.getElementById(sectionId);
   if (el) {
@@ -1051,9 +1138,6 @@ function scrollToSection(sectionId) {
   }
 }
 
-/**
- * Kiểm tra hash URL khi tải trang (ví dụ: #item=vat-the-1)
- */
 function checkUrlHash() {
   const hash = window.location.hash;
   if (hash && hash.startsWith('#item=')) {
@@ -1064,17 +1148,11 @@ function checkUrlHash() {
   }
 }
 
-/**
- * Định dạng Markdown đơn giản (chuyển **chữ đậm** thành <strong>)
- */
 function formatMarkdownBold(text) {
   if (!text) return '';
   return text.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-[#2A2521]">$1</strong>');
 }
 
-/**
- * Tránh lỗi XSS khi nhúng văn bản
- */
 function escapeHtml(str) {
   if (!str) return '';
   return String(str)
@@ -1084,4 +1162,3 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
-
