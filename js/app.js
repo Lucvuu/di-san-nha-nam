@@ -181,22 +181,22 @@ function updateCategoryCounts() {
   // Cập nhật số lượng trên các badge nếu có
   const heroVatTheBadge = document.getElementById('hero-vat-the-badge-count');
   if (heroVatTheBadge) {
-    heroVatTheBadge.textContent = `37 Di tích Lịch sử - Văn hóa (08 QG đặc biệt • 01 Quốc gia • 07 Cấp tỉnh • 21 Kiểm kê)`;
+    heroVatTheBadge.textContent = `37 di tích lịch sử - văn hóa (08 QG đặc biệt • 01 quốc gia • 07 cấp tỉnh • 21 kiểm kê)`;
   }
   
   const heroPhiVatTheBadge = document.getElementById('hero-phi-vat-the-badge-count');
   if (heroPhiVatTheBadge) {
-    heroPhiVatTheBadge.textContent = `${phiVatTheCount < 10 ? '0' + phiVatTheCount : phiVatTheCount} Di sản Phi vật thể Đặc sắc`;
+    heroPhiVatTheBadge.textContent = `${phiVatTheCount < 10 ? '0' + phiVatTheCount : phiVatTheCount} di sản phi vật thể đặc sắc`;
   }
 
   const heroCardVatTheCount = document.getElementById('hero-card-vat-the-count');
   if (heroCardVatTheCount) {
-    heroCardVatTheCount.textContent = `37 Di tích (08 hồ sơ chi tiết)`;
+    heroCardVatTheCount.textContent = `37 di tích (08 hồ sơ chi tiết)`;
   }
 
   const heroCardPhiVatTheCount = document.getElementById('hero-card-phi-vat-the-count');
   if (heroCardPhiVatTheCount) {
-    heroCardPhiVatTheCount.textContent = `${phiVatTheCount} Di sản`;
+    heroCardPhiVatTheCount.textContent = `${phiVatTheCount} di sản`;
   }
 }
 
@@ -396,7 +396,7 @@ function openDetailModal(itemId) {
         <div>
           <h4 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-2 flex items-center gap-2">
             <svg class="w-5 h-5 text-[#C59B27]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Giá trị & Ý nghĩa Lịch sử Vẻ vang:
+            Giá trị và ý nghĩa lịch sử vẻ vang:
           </h4>
           <ul class="space-y-2 text-sm text-[#4A4036] list-disc list-inside pl-2">
             ${(item.content.historicalSignificance || []).map(point => `
@@ -408,7 +408,7 @@ function openDetailModal(itemId) {
         <div>
           <h4 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-2 flex items-center gap-2">
             <svg class="w-5 h-5 text-[#C59B27]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Đặc trưng Kiến trúc & Điêu khắc:
+            Đặc trưng kiến trúc và điêu khắc:
           </h4>
           <ul class="space-y-2 text-sm text-[#4A4036] list-disc list-inside pl-2">
             ${(item.content.architecture || []).map(point => `
@@ -421,7 +421,7 @@ function openDetailModal(itemId) {
           <div class="mt-4 p-4 rounded-xl bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-sm">
             <div class="font-bold flex items-center gap-2 mb-1">
               <svg class="w-4 h-4 text-[#D97706]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-              Góc học tập & Giáo dục truyền thống (Trường THPT Nhã Nam):
+              Góc học tập và giáo dục truyền thống (Trường THPT Nhã Nam):
             </div>
             <p class="leading-relaxed">${escapeHtml(item.content.studyNote)}</p>
           </div>
@@ -438,7 +438,7 @@ function openDetailModal(itemId) {
         <div>
           <h4 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-2 flex items-center gap-2">
             <svg class="w-5 h-5 text-[#C59B27]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Nguồn gốc & Ý nghĩa Văn hóa:
+            Nguồn gốc và ý nghĩa văn hóa:
           </h4>
           <ul class="space-y-2 text-sm text-[#4A4036] list-disc list-inside pl-2">
             ${(item.content.originAndMeaning || []).map(point => `
@@ -450,7 +450,7 @@ function openDetailModal(itemId) {
         <div>
           <h4 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-2 flex items-center gap-2">
             <svg class="w-5 h-5 text-[#C59B27]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Nghi thức, Hoạt động & Thực hành:
+            Nghi thức, hoạt động và thực hành:
           </h4>
           <ul class="space-y-2 text-sm text-[#4A4036] list-disc list-inside pl-2">
             ${(item.content.ritualsAndActivities || []).map(point => `
@@ -463,7 +463,7 @@ function openDetailModal(itemId) {
           <div class="mt-4 p-4 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] text-[#166534] text-sm">
             <div class="font-bold flex items-center gap-2 mb-1">
               <svg class="w-4 h-4 text-[#16a34a]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              Giá trị Bảo tồn & Giáo dục Thế hệ trẻ (Trường THPT Nhã Nam):
+              Giá trị bảo tồn và giáo dục thế hệ trẻ (Trường THPT Nhã Nam):
             </div>
             <p class="leading-relaxed">${escapeHtml(item.content.preservationValue)}</p>
           </div>
@@ -515,7 +515,7 @@ function openDetailModal(itemId) {
           <div class="flex items-center justify-between gap-2 mb-2 flex-wrap">
             <div class="flex items-center gap-2">
               <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#8B1E1E] text-white uppercase tracking-wider shadow-xs">
-                Audio Guide Số Hóa
+                Audio guide số hóa
               </span>
               <span id="audioguide-voice-info" class="text-xs text-[#92400E] font-medium flex items-center gap-1">
                 <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse inline-block"></span>
@@ -533,7 +533,7 @@ function openDetailModal(itemId) {
           </div>
 
           <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-1">
-            Thuyết Minh Di Tích Tự Động
+            Thuyết minh di tích tự động
           </h3>
           <p class="text-xs text-[#5C5248] leading-relaxed mb-3">
             Bấm nút phát để nghe thuyết minh truyền cảm về lịch sử và văn hóa Nhã Nam. Đồng thời theo dõi bản ghi câu bên dưới (có thể bấm vào từng câu để nghe trực tiếp).
@@ -554,7 +554,7 @@ function openDetailModal(itemId) {
               <span class="audio-wave-bar audio-wave-bar-3"></span>
               <span class="audio-wave-bar audio-wave-bar-4"></span>
             </span>
-            <span id="audioguide-btn-label">🔊 Bật Thuyết Minh</span>
+            <span id="audioguide-btn-label">🔊 Bật thuyết minh</span>
           </button>
 
           <!-- Nút Dừng lại -->
@@ -585,7 +585,7 @@ function openDetailModal(itemId) {
         <!-- BẢN GHI LỜI THUYẾT MINH TƯƠNG TÁC (INTERACTIVE TRANSCRIPT BOX) -->
         <div class="bg-white rounded-xl border border-[#EADECF] p-3 shadow-inner">
           <div class="flex items-center justify-between text-[11px] font-bold text-[#8B1E1E] mb-1.5 pb-1 border-b border-[#F5EFE6]">
-            <span>📜 LỜI THUYẾT MINH CHI TIẾT (Bấm câu bất kỳ để nghe):</span>
+            <span>📜 Lời thuyết minh chi tiết (bấm câu bất kỳ để nghe):</span>
             <span class="text-[#786C5E] font-normal italic">Tự động đồng bộ</span>
           </div>
           <div id="audioguide-transcript-container" class="space-y-1 max-h-40 overflow-y-auto pr-1 text-xs leading-relaxed">
@@ -598,7 +598,7 @@ function openDetailModal(itemId) {
       <!-- Cột 3: Mã QR Di Tích -->
       <div class="lg:col-span-1 flex flex-col items-center justify-center p-4 rounded-xl bg-white border border-[#EADECF] text-center shadow-inner">
         <div class="text-[11px] font-bold text-[#8B1E1E] uppercase tracking-wider mb-2">
-          📱 Mã QR Di Tích
+          📱 Mã QR di tích
         </div>
         <img 
           src="${qrCodeUrl}" 
@@ -625,7 +625,7 @@ function openDetailModal(itemId) {
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-1">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">1</span>
-          ${isVatThe ? 'Tên Di Tích Lịch Sử' : 'Tên Di Sản Văn Hóa'}
+          ${isVatThe ? 'Tên di tích lịch sử' : 'Tên di sản văn hóa'}
         </div>
         <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold text-[#8B1E1E] leading-tight">
           ${escapeHtml(item.title)}
@@ -642,7 +642,7 @@ function openDetailModal(itemId) {
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-2">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">2</span>
-          ${isVatThe ? 'Địa Chỉ Cụ Thể' : 'Phạm Vi Thực Hành Di Sản'}
+          ${isVatThe ? 'Địa chỉ cụ thể' : 'Phạm vi thực hành di sản'}
         </div>
         <div class="bg-[#FDFBF7] p-4 rounded-xl border border-[#EADECF] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div class="flex items-start gap-3">
@@ -668,7 +668,7 @@ function openDetailModal(itemId) {
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">3</span>
-          ${isVatThe ? 'Nội Dung Về Di Tích' : 'Nội Dung Di Sản'}
+          ${isVatThe ? 'Nội dung về di tích' : 'Nội dung di sản'}
         </div>
         ${section3Html}
       </section>
@@ -677,7 +677,7 @@ function openDetailModal(itemId) {
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">4</span>
-          Chỉ Dẫn Đi Đến Đó Bằng Google Map
+          Chỉ dẫn đường đi bằng Google Maps
         </div>
         
         <div class="rounded-2xl overflow-hidden border border-[#EADECF] shadow-sm bg-[#F5EFE6]">
@@ -717,7 +717,7 @@ function openDetailModal(itemId) {
         <div class="flex items-center justify-between mb-3">
           <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27]">
             <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">5</span>
-            ${isVatThe ? 'Thư Viện Ảnh Về Di Tích' : 'Thư Viện Ảnh Di Tích / Di Sản'}
+            ${isVatThe ? 'Thư viện ảnh về di tích' : 'Thư viện ảnh di tích và di sản'}
           </div>
           <span class="text-xs text-[#786C5E] font-medium">Nhấp vào ảnh để phóng to (Lightbox)</span>
         </div>
@@ -885,7 +885,7 @@ function updateAudioGuideStateUI(isPlaying, isPaused) {
     if (wave) wave.classList.remove('is-speaking');
     if (statusBadge) statusBadge.textContent = 'Đang tạm dừng';
   } else {
-    if (btnLabel) btnLabel.textContent = '🔊 Bật Thuyết Minh';
+    if (btnLabel) btnLabel.textContent = '🔊 Bật thuyết minh';
     if (wave) wave.classList.remove('is-speaking');
     if (btnPlay) {
       btnPlay.classList.remove('bg-[#701A1A]');

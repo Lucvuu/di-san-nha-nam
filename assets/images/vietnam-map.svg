@@ -2,10 +2,10 @@
   <defs>
     <!-- Gradient dải đất hình chữ S: Đỏ son sang Vàng đồng sang trọng -->
     <linearGradient id="vnLandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#9B1C1C"/>
-      <stop offset="35%" stop-color="#B83232"/>
-      <stop offset="70%" stop-color="#C59B27"/>
-      <stop offset="100%" stop-color="#B45309"/>
+      <stop offset="0%" stop-color="#8C2D19"/>
+      <stop offset="35%" stop-color="#99351D"/>
+      <stop offset="70%" stop-color="#A33B20"/>
+      <stop offset="100%" stop-color="#842916"/>
     </linearGradient>
 
     <!-- Đổ bóng vàng kim mờ nhẹ nhàng, không đóng hộp -->
@@ -22,15 +22,14 @@
     <style>
       .vn-province {
         fill: url(#vnLandGrad);
-        stroke: #FDE68A;
-        stroke-width: 0.75px;
-        stroke-opacity: 0.55;
+        stroke: rgba(253, 248, 240, 0.35);
+        stroke-width: 0.65px;
         transition: all 0.25s ease;
       }
       .vn-province:hover {
-        fill: #D97706;
-        stroke: #FFF;
-        stroke-width: 1.2px;
+        fill: #B84528;
+        stroke: #FDE68A;
+        stroke-width: 1px;
         stroke-opacity: 0.95;
         cursor: pointer;
       }
@@ -47,13 +46,14 @@
         transform-origin: 191px 93px;
       }
       .island-dot {
-        fill: #F59E0B;
-        stroke: #991B1B;
-        stroke-width: 0.8px;
+        fill: #99351D;
+        stroke: #FDE68A;
+        stroke-width: 0.65px;
         transition: transform 0.2s;
       }
       .island-dot:hover {
-        transform: scale(1.4);
+        transform: scale(1.35);
+        fill: #C59B27;
       }
     </style>
   </defs>
@@ -139,7 +139,7 @@
     <circle cx="4" cy="0" r="2.4" class="island-dot"/>
 
     <!-- Ngôi sao vàng chủ quyền -->
-    <polygon points="26,-18 28,-13 33,-13 29,-10 31,-5 26,-8 21,-5 23,-10 19,-13 24,-13" fill="#D97706"/>
+    <polygon points="26,-18 28,-13 33,-13 29,-10 31,-5 26,-8 21,-5 23,-10 19,-13 24,-13" fill="#C59B27"/>
 
     <!-- Nhãn chữ thanh mảnh trang trọng -->
     <text x="0" y="14" font-family="'Merriweather', serif" font-size="9" font-weight="900" fill="#8B1E1E" text-anchor="middle" letter-spacing="0.2">Quần đảo Hoàng Sa</text>
@@ -165,7 +165,7 @@
     <circle cx="3" cy="18" r="2.5" class="island-dot"/>
 
     <!-- Ngôi sao vàng chủ quyền -->
-    <polygon points="32,-26 34,-21 39,-21 35,-18 37,-13 32,-16 27,-13 29,-18 25,-21 30,-21" fill="#D97706"/>
+    <polygon points="32,-26 34,-21 39,-21 35,-18 37,-13 32,-16 27,-13 29,-18 25,-21 30,-21" fill="#C59B27"/>
 
     <!-- Nhãn chữ thanh mảnh trang trọng -->
     <text x="0" y="24" font-family="'Merriweather', serif" font-size="9" font-weight="900" fill="#8B1E1E" text-anchor="middle" letter-spacing="0.2">Quần đảo Trường Sa</text>
@@ -173,24 +173,22 @@
   </g>
 
   <!-- ========================================================= -->
-  <!-- ĐIỂM ĐỊNH VỊ PHÁT SÁNG RADAR TẠI BẮC GIANG - XÃ NHÃ NAM    -->
+  <!-- ĐIỂM ĐỊNH VỊ TINH TẾ TẠI XÃ NHÃ NAM (BẮC GIANG)            -->
   <!-- ========================================================= -->
   <g id="pin-nha-nam" transform="translate(191.2, 93.0)">
-    <!-- Sóng radar lan tỏa nhẹ nhàng -->
+    <!-- Vòng phát sáng radar thanh nhã -->
     <circle cx="0" cy="0" r="14" fill="url(#pulseGlow)" class="pulse-ring-1"/>
-    <circle cx="0" cy="0" r="8" fill="none" stroke="#F6E05E" stroke-width="1.2" class="pulse-ring-2"/>
+    <circle cx="0" cy="0" r="7" fill="none" stroke="#D4AF37" stroke-width="1.2" class="pulse-ring-2"/>
     
-    <!-- Điểm tâm đỏ sao vàng -->
-    <circle cx="0" cy="0" r="5" fill="#8B1E1E" stroke="#FFF" stroke-width="1.5"/>
-    <polygon points="0,-3.2 0.9,-1 3.2,-1 1.4,0.4 2,2.5 0,1.4 -2,2.5 -1.4,0.4 -3.2,-1 -0.9,-1" fill="#F6E05E"/>
+    <!-- Điểm tâm vàng kim & đỏ son -->
+    <circle cx="0" cy="0" r="3.5" fill="#8C2D19" stroke="#FDF8F0" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="1.5" fill="#F6E05E"/>
 
-    <!-- Nhãn gọn gàng thanh lịch: 📍 Xã Nhã Nam -->
-    <g transform="translate(-108, -26)">
-      <rect width="102" height="22" rx="11" fill="#8B1E1E" stroke="#F6E05E" stroke-width="1.2" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.25))"/>
-      <text x="51" y="15" font-family="'Be Vietnam Pro', sans-serif" font-size="8.5" font-weight="800" fill="#FFF" text-anchor="middle">
-        📍 Xã Nhã Nam
-      </text>
-      <polygon points="96,11 104,11 98,17" fill="#8B1E1E"/>
+    <!-- Nhãn chỉ thị trang nhã phong cách bảo tàng -->
+    <g transform="translate(8, -8)">
+      <rect x="0" y="-8" width="86" height="17" rx="3.5" fill="#FDFBF7" fill-opacity="0.94" stroke="#8C2D19" stroke-width="0.75" stroke-opacity="0.35"/>
+      <text x="7" y="3.5" font-family="'Merriweather', Georgia, serif" font-size="8" font-weight="700" fill="#8C2D19" letter-spacing="0.2">Nhã Nam</text>
+      <text x="48" y="3.5" font-family="'Be Vietnam Pro', sans-serif" font-size="6.8" font-weight="600" fill="#786C5E">• Bắc Giang</text>
     </g>
   </g>
 
@@ -200,10 +198,4 @@
     <text x="-6" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="7.5" font-weight="700" fill="#5C5248" text-anchor="end">Hà Nội</text>
   </g>
 
-  <!-- DÒNG CHỮ KHẲNG ĐỊNH CHỦ QUYỀN THANH MẢNH DƯỚI CHÂN BẢN ĐỒ -->
-  <g transform="translate(265, 688)">
-    <text x="0" y="0" font-family="'Be Vietnam Pro', sans-serif" font-size="8.5" font-weight="700" fill="#8B1E1E" text-anchor="middle" font-style="italic">
-      🇻🇳 "Hoàng Sa, Trường Sa là máu thịt thiêng liêng của Tổ quốc Việt Nam"
-    </text>
-  </g>
-</svg>
+  </svg>

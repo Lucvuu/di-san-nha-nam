@@ -8,8 +8,8 @@
  */
 
 const SITE_CONFIG = {
-  portalName: "Di Sản Văn Hóa Xã Nhã Nam",
-  portalSubtitle: "Cổng Thông Tin Số Hóa Di Sản Văn Hóa & Lịch Sử Địa Phương",
+  portalName: "Di sản văn hóa xã Nhã Nam",
+  portalSubtitle: "Cổng thông tin số hóa di sản văn hóa và lịch sử địa phương",
   schoolName: "Trường THPT Nhã Nam",
   commune: "Xã Nhã Nam",
   city: "Thành phố Bắc Ninh",
@@ -31,7 +31,7 @@ const SITE_CONFIG = {
   facebookGroupStatusNote: "Nhóm có bật chế độ kiểm duyệt bài viết để đảm bảo môi trường học tập văn minh, an toàn cho học sinh",
 
   // Administrator & Contact Configuration
-  adminRole: "Ban điều hành dự án & Quản trị nội dung",
+  adminRole: "Ban điều hành dự án và quản trị nội dung",
   adminName: "Cô Mến & Nhóm phụ trách Di sản THPT Nhã Nam",
   adminPhone: "0962.629.650",
   adminPhoneRaw: "0962629650",
@@ -63,10 +63,10 @@ const OFFICIAL_COMMUNE_RELICS = {
   groups: [
     {
       id: "quoc-gia-dac-biet",
-      name: "Di tích Quốc gia đặc biệt",
-      subName: "Cụm Di tích Những địa điểm Khởi nghĩa Yên Thế",
+      name: "Di tích quốc gia đặc biệt",
+      subName: "Cụm di tích Những địa điểm khởi nghĩa Yên Thế",
       count: 8,
-      badgeText: "08 Di tích Quốc gia đặc biệt",
+      badgeText: "08 di tích quốc gia đặc biệt",
       badgeClass: "bg-[#8B1E1E] text-white",
       icon: "🏛️",
       description: "08 di tích thuộc Di tích quốc gia đặc biệt Những địa điểm Khởi nghĩa Yên Thế theo Quyết định số 548/QĐ-TTg của Thủ tướng Chính phủ.",
@@ -83,10 +83,10 @@ const OFFICIAL_COMMUNE_RELICS = {
     },
     {
       id: "cap-quoc-gia",
-      name: "Di tích Cấp Quốc gia",
-      subName: "Di tích Lịch sử - Kiến trúc Nghệ thuật",
+      name: "Di tích cấp quốc gia",
+      subName: "Di tích lịch sử - kiến trúc nghệ thuật",
       count: 1,
-      badgeText: "01 Di tích Cấp Quốc gia",
+      badgeText: "01 di tích cấp quốc gia",
       badgeClass: "bg-[#C59B27] text-white",
       icon: "⭐",
       description: "Di tích lịch sử - kiến trúc nghệ thuật cấp Quốc gia được Bộ Văn hóa, Thể thao và Du lịch xếp hạng.",
@@ -96,10 +96,10 @@ const OFFICIAL_COMMUNE_RELICS = {
     },
     {
       id: "cap-tinh",
-      name: "Di tích Cấp Tỉnh",
-      subName: "Di tích Lịch sử - Văn hóa cấp Tỉnh",
+      name: "Di tích cấp tỉnh",
+      subName: "Di tích lịch sử - văn hóa cấp tỉnh",
       count: 7,
-      badgeText: "07 Di tích Cấp Tỉnh",
+      badgeText: "07 di tích cấp tỉnh",
       badgeClass: "bg-amber-800 text-white",
       icon: "🎖️",
       description: "07 di tích lịch sử - văn hóa được Chủ tịch UBND tỉnh ban hành Quyết định xếp hạng di tích cấp tỉnh.",
@@ -115,10 +115,10 @@ const OFFICIAL_COMMUNE_RELICS = {
     },
     {
       id: "kiem-ke",
-      name: "Di tích trong Danh mục Kiểm kê",
-      subName: "Đã được Chủ tịch UBND Tỉnh phê duyệt",
+      name: "Di tích trong danh mục kiểm kê",
+      subName: "Đã được Chủ tịch UBND tỉnh phê duyệt",
       count: 21,
-      badgeText: "21 Di tích Kiểm kê",
+      badgeText: "21 di tích kiểm kê",
       badgeClass: "bg-[#5C5248] text-white",
       icon: "📜",
       description: "21 di tích lịch sử, văn hóa, kiến trúc tín ngưỡng nằm trong Danh mục kiểm kê di tích đã được Chủ tịch UBND tỉnh phê duyệt bảo tồn.",
@@ -152,7 +152,7 @@ const OFFICIAL_COMMUNE_RELICS = {
 const MUSIC_PLAYLIST = [
   {
     id: "nha-nam-trong-toi",
-    title: "Nhã Nam Trong Tôi",
+    title: "Nhã Nam trong tôi",
     artist: "Ca khúc truyền thống quê hương",
     src: "./nha-nam-trong-toi.mp3",
     fallbackSrc: "./assets/audio/nha-nam-trong-toi.mp3"
@@ -181,8 +181,8 @@ const TANGIBLE_HERITAGE_DATA = [
   {
     id: "vat-the-1",
     category: "vat-the",
-    categoryName: "Di sản Vật thể",
-    badge: "Di tích Quốc gia đặc biệt",
+    categoryName: "Di sản vật thể",
+    badge: "Di tích quốc gia đặc biệt",
     title: "Khu di tích Đình - Chùa Hả",
     shortTitle: "Đình - Chùa Hả",
     address: "Thôn Hả, xã Nhã Nam, Thành phố Bắc Ninh",
@@ -233,8 +233,8 @@ const TANGIBLE_HERITAGE_DATA = [
   {
     id: "vat-the-2",
     category: "vat-the",
-    categoryName: "Di sản Vật thể",
-    badge: "Di tích Quốc gia",
+    categoryName: "Di sản vật thể",
+    badge: "Di tích cấp quốc gia",
     title: "Cụm di tích Đình - Chùa Tứ Giáp",
     shortTitle: "Chùa Tứ Giáp (Đại Phúc Tự)",
     address: "Tổ dân phố Chùa Nguộn, xã Nhã Nam, Thành phố Bắc Ninh",
@@ -284,7 +284,7 @@ const TANGIBLE_HERITAGE_DATA = [
   {
     id: "vat-the-3",
     category: "vat-the",
-    categoryName: "Di sản Vật thể",
+    categoryName: "Di sản vật thể",
     badge: "Di tích Lịch sử Cách mạng",
     title: "Di tích Lịch sử Thôn Đồng Điều",
     shortTitle: "Chùa Đồng Điều (Căn cứ cách mạng)",
@@ -330,8 +330,8 @@ const TANGIBLE_HERITAGE_DATA = [
   {
     id: "vat-the-4",
     category: "vat-the",
-    categoryName: "Di sản Vật thể",
-    badge: "Di tích Quốc gia đặc biệt",
+    categoryName: "Di sản vật thể",
+    badge: "Di tích quốc gia đặc biệt",
     title: "Đền Gốc Khế",
     shortTitle: "Đền Gốc Khế",
     address: "Tổ dân phố Cầu Thượng, xã Nhã Nam, Thành phố Bắc Ninh",
@@ -376,8 +376,8 @@ const TANGIBLE_HERITAGE_DATA = [
   {
     id: "vat-the-5",
     category: "vat-the",
-    categoryName: "Di sản Vật thể",
-    badge: "Di tích Quốc gia đặc biệt",
+    categoryName: "Di sản vật thể",
+    badge: "Di tích quốc gia đặc biệt",
     title: "Đồn Nhã Nam - Đồi Phủ & Nghĩa Địa Pháp",
     shortTitle: "Đồi Phủ Nhã Nam",
     address: "Đồi Phủ, xã Nhã Nam, Thành phố Bắc Ninh",
@@ -422,8 +422,8 @@ const TANGIBLE_HERITAGE_DATA = [
   {
     id: "vat-the-6",
     category: "vat-the",
-    categoryName: "Di sản Vật thể",
-    badge: "Di tích Quốc gia đặc biệt",
+    categoryName: "Di sản vật thể",
+    badge: "Di tích quốc gia đặc biệt",
     title: "Đình Nhã Nam (Đình Làng Chuông)",
     shortTitle: "Đình Làng Chuông",
     address: "Thôn Tiến Phan 2, xã Nhã Nam, Thành phố Bắc Ninh",
@@ -469,8 +469,8 @@ const TANGIBLE_HERITAGE_DATA = [
   {
     id: "vat-the-7",
     category: "vat-the",
-    categoryName: "Di sản Vật thể",
-    badge: "Di tích Quốc gia đặc biệt",
+    categoryName: "Di sản vật thể",
+    badge: "Di tích quốc gia đặc biệt",
     title: "Chùa Nam Thiên (Chùa Phố Nhã Nam)",
     shortTitle: "Chùa Nam Thiên",
     address: "Tổ dân phố Tân Quang, xã Nhã Nam, Thành phố Bắc Ninh",
@@ -515,8 +515,8 @@ const TANGIBLE_HERITAGE_DATA = [
   {
     id: "vat-the-8",
     category: "vat-the",
-    categoryName: "Di sản Vật thể",
-    badge: "Di tích Cấp Tỉnh",
+    categoryName: "Di sản vật thể",
+    badge: "Di tích cấp tỉnh",
     title: "Đền Đề Truật",
     shortTitle: "Đền Đề Truật",
     address: "Thôn Tiến Phan 1, xã Nhã Nam, Thành phố Bắc Ninh",
@@ -568,7 +568,7 @@ const INTANGIBLE_HERITAGE_DATA = [
   {
     id: "phi-vat-the-1",
     category: "phi-vat-the",
-    categoryName: "Di sản Phi vật thể",
+    categoryName: "Di sản phi vật thể",
     badge: "Lễ hội Truyền thống",
     title: "Lễ hội Khởi nghĩa Yên Thế tại Xã Nhã Nam",
     shortTitle: "Lễ hội Yên Thế tại Nhã Nam",
@@ -613,7 +613,7 @@ const INTANGIBLE_HERITAGE_DATA = [
   {
     id: "phi-vat-the-2",
     category: "phi-vat-the",
-    categoryName: "Di sản Phi vật thể",
+    categoryName: "Di sản phi vật thể",
     badge: "Nghệ thuật Trình diễn Dân gian",
     title: "Nghệ thuật Hát Chèo truyền thống Xã Nhã Nam",
     shortTitle: "Hát Chèo Nhã Nam",
@@ -654,7 +654,7 @@ const INTANGIBLE_HERITAGE_DATA = [
   {
     id: "phi-vat-the-3",
     category: "phi-vat-the",
-    categoryName: "Di sản Phi vật thể",
+    categoryName: "Di sản phi vật thể",
     badge: "Nghề Truyền thống",
     title: "Nghề làm bánh khảo, kẹo lạc truyền thống Xã Nhã Nam",
     shortTitle: "Bánh khảo & Kẹo lạc Nhã Nam",
@@ -694,7 +694,7 @@ const INTANGIBLE_HERITAGE_DATA = [
   {
     id: "phi-vat-the-4",
     category: "phi-vat-the",
-    categoryName: "Di sản Phi vật thể",
+    categoryName: "Di sản phi vật thể",
     badge: "Tập quán Xã hội & Tín ngưỡng",
     title: "Tập quán tưởng niệm Lương Văn Nắm và Hoàng Hoa Thám",
     shortTitle: "Tưởng niệm nghĩa quân Yên Thế",
@@ -734,7 +734,7 @@ const INTANGIBLE_HERITAGE_DATA = [
   {
     id: "phi-vat-the-5",
     category: "phi-vat-the",
-    categoryName: "Di sản Phi vật thể",
+    categoryName: "Di sản phi vật thể",
     badge: "Trò chơi Dân gian & Võ thuật",
     title: "Trò chơi dân gian & Võ cổ truyền trong lễ hội Nhã Nam",
     shortTitle: "Trò chơi dân gian & Võ cổ truyền",
