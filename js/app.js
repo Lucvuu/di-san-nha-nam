@@ -1,7 +1,7 @@
 /**
  * ====================================================================
  * DI SẢN VĂN HÓA XÃ NHÃ NAM - XỬ LÝ ỨNG DỤNG CHÍNH (APPLICATION LOGIC)
- * Xã Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang
+ * Xã Nhã Nam, Thành phố Bắc Ninh
  * Đơn vị khởi xướng & phối hợp: Trường THPT Nhã Nam
  * ====================================================================
  */
@@ -777,7 +777,7 @@ function initAudioGuideForModal(item) {
 
   // Xây dựng nội dung bài thuyết minh giàu cảm xúc và truyền cảm
   let story = `Chào mừng quý thầy cô và các bạn học sinh đến với ${item.title}. `;
-  story += `${item.categoryName} tiêu biểu của xã Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang. `;
+  story += `${item.categoryName} tiêu biểu của xã Nhã Nam, Thành phố Bắc Ninh. `;
   if (item.address) story += `Địa chỉ tại: ${item.address}. `;
   if (item.scope) story += `Phạm vi thực hành di sản tại: ${item.scope}. `;
   if (item.content && item.content.intro) story += `${item.content.intro} `;

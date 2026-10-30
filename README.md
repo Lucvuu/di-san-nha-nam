@@ -1,6 +1,6 @@
 # 🏛️ DI SẢN VĂN HÓA NHÃ NAM
 ### Cổng Thông Tin Số Hóa Di Sản Văn Hóa & Lịch Sử Địa Phương
-**Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang, Việt Nam**
+**Xã Nhã Nam, Thành phố Bắc Ninh, Việt Nam**
 
 ---
 
@@ -140,6 +140,6 @@ Mỗi di tích trong mảng `TANGIBLE_HERITAGE_DATA` hoặc `INTANGIBLE_HERITAGE
 ## 📞 LIÊN HỆ BAN ĐIỀU HÀNH DỰ ÁN
 - **Chủ nhiệm dự án & Quản trị nội dung**: Cô Mến & Nhóm phụ trách
 - **Hotline / Zalo**: `0962.629.650`
-- **Địa chỉ**: Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang
+- **Địa chỉ**: Xã Nhã Nam, Thành phố Bắc Ninh
 - **Mục tiêu**: Phục vụ công tác giáo dục truyền thống phi lợi nhuận cho học sinh và nhân dân.
 
