@@ -13,10 +13,16 @@ Website kết hợp hài hòa giữa **bản sắc văn hóa dân tộc Việt N
 
 ## ✨ CÁC TÍNH NĂNG NỔI BẬT
 
-### 1. Điều hướng Hero & 2 Thẻ Danh Mục Trực Quan
-- Ngay khi vào trang chủ, người dùng được chào đón bằng **2 thẻ điều hướng lớn (Primary Entry Cards)**:
-  - **Di sản Vật thể**: Chùa Tứ Giáp, Đền Gốc Khế, Đồn Nhã Nam - Đồi Phủ, Đình Nhã Nam, Chùa Nam Thiên.
-  - **Di sản Phi vật thể**: Lễ hội Chùa Tứ Giáp & Đền Gốc Khế, Hát Chèo, Nghề bánh khảo kẹo lạc, Tưởng niệm nghĩa quân Hoàng Hoa Thám, Võ cổ truyền & Trò chơi dân gian.
+### 1. Hệ Thống 37 Di Tích Lịch Sử - Văn Hóa & Bảng Thống Kê Chuẩn
+- **Số liệu chính thức theo Báo cáo HĐND Xã & UBND Tỉnh phê duyệt**:
+  - **Tổng số 37 di tích lịch sử - văn hóa (Di sản vật thể)**:
+    * **08 Di tích Quốc gia đặc biệt** (Cụm di tích Khởi nghĩa Yên Thế: Đình Hả, Đền Gốc Khế, Đồi Phủ, Đình Làng Chuông, Chùa Nam Thiên, Nghĩa địa Pháp, Đình Dương Lâm, Đền Cả Trọng).
+    * **01 Di tích Cấp Quốc gia** (Chùa Tứ Giáp - Nơi phát tích Sáu điều Bác Hồ dạy CAND).
+    * **07 Di tích Cấp Tỉnh** (Đền Đề Truật, Chùa Đồng Điều, Đền Cầu Thượng, Đình Sậy, Đình Nẻo, Chùa Dương Sơn, Đình Sặt).
+    * **21 Di tích thuộc Danh mục kiểm kê** đã được Chủ tịch UBND tỉnh phê duyệt bảo tồn.
+  - **05 Di sản Văn hóa Phi vật thể đặc sắc**: Lễ hội Khởi nghĩa Yên Thế, Nghệ thuật Hát Chèo, Nghề làm bánh khảo kẹo lạc, Tập quán tưởng niệm Lương Văn Nắm & Hoàng Hoa Thám, Trò chơi dân gian & Võ cổ truyền Yên Thế.
+- **Bảng tra cứu & Modal kiểm kê 37 di tích**: Tích hợp công cụ tìm kiếm và lọc nhanh cho toàn bộ 37 di tích toàn xã.
+- **08 di tích trọng điểm** được số hóa chuyên sâu với đầy đủ 5 phần bắt buộc, bản đồ GPS, thư viện ảnh HD và giọng đọc thuyết minh Audio Guide.
 
 ### 2. Bộ Lọc Danh Mục & Tìm Kiếm Thông Minh Đa Năng
 - **Chuyển đổi Tab nhanh**: "Tất cả", "Di sản Vật thể", "Di sản Phi vật thể" kèm bộ đếm số lượng thời gian thực.

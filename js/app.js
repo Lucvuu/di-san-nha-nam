@@ -181,7 +181,7 @@ function updateCategoryCounts() {
   // Cập nhật số lượng trên các badge nếu có
   const heroVatTheBadge = document.getElementById('hero-vat-the-badge-count');
   if (heroVatTheBadge) {
-    heroVatTheBadge.textContent = `${vatTheCount < 10 ? '0' + vatTheCount : vatTheCount} Di tích Lịch sử Cấp Quốc gia & Tỉnh`;
+    heroVatTheBadge.textContent = `37 Di tích Lịch sử - Văn hóa (08 QG đặc biệt • 01 Quốc gia • 07 Cấp tỉnh • 21 Kiểm kê)`;
   }
   
   const heroPhiVatTheBadge = document.getElementById('hero-phi-vat-the-badge-count');
@@ -191,7 +191,7 @@ function updateCategoryCounts() {
 
   const heroCardVatTheCount = document.getElementById('hero-card-vat-the-count');
   if (heroCardVatTheCount) {
-    heroCardVatTheCount.textContent = `${vatTheCount} Di tích`;
+    heroCardVatTheCount.textContent = `37 Di tích (08 hồ sơ chi tiết)`;
   }
 
   const heroCardPhiVatTheCount = document.getElementById('hero-card-phi-vat-the-count');
@@ -1226,6 +1226,7 @@ function resetQuiz() {
   state.quizAnswers = {};
   state.quizSubmitted = false;
   closeQuizResultModal();
+      closeRelicsInventoryModal();
   renderQuiz();
 }
 
@@ -1615,6 +1616,119 @@ function checkUrlHash() {
 function formatMarkdownBold(text) {
   if (!text) return '';
   return text.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-[#2A2521]">$1</strong>');
+}
+
+
+/**
+ * ====================================================================
+ * QUẢN LÝ MODAL BẢNG KIỂM KÊ 37 DI TÍCH LỊCH SỬ - VĂN HÓA XÃ NHÃ NAM
+ * ====================================================================
+ */
+function openRelicsInventoryModal() {
+  const modal = document.getElementById('relics-inventory-modal');
+  if (!modal) return;
+  renderRelicsInventoryModalContent();
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  const input = document.getElementById('inventory-modal-search');
+  if (input) {
+    input.value = '';
+    setTimeout(() => input.focus(), 100);
+  }
+}
+
+function closeRelicsInventoryModal() {
+  const modal = document.getElementById('relics-inventory-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+}
+
+function filterInventoryModal(value) {
+  renderRelicsInventoryModalContent(value);
+}
+
+function renderRelicsInventoryModalContent(keyword = '') {
+  const container = document.getElementById('inventory-modal-content');
+  if (!container) return;
+  if (typeof OFFICIAL_COMMUNE_RELICS === 'undefined' || !OFFICIAL_COMMUNE_RELICS.groups) return;
+
+  const kw = (keyword || '').toLowerCase().trim();
+
+  const groupsHtml = OFFICIAL_COMMUNE_RELICS.groups.map(group => {
+    const filteredItems = group.items.filter(item => {
+      if (!kw) return true;
+      const name = (item.name || '').toLowerCase();
+      const type = (item.type || '').toLowerCase();
+      return name.includes(kw) || type.includes(kw);
+    });
+
+    if (kw && filteredItems.length === 0) return '';
+
+    return `
+      <div class="rounded-2xl border border-[#EADECF] p-4 bg-[#FDFBF7]">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-[#EADECF]/80">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">${group.icon}</span>
+            <div>
+              <h4 class="font-heritage-serif font-bold text-base text-[#8B1E1E]">
+                ${group.name}
+              </h4>
+              <span class="text-xs text-[#786C5E]">${group.subName}</span>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded-full text-xs font-bold ${group.badgeClass} self-start sm:self-auto shadow-sm">
+            ${filteredItems.length} / ${group.count} di tích
+          </span>
+        </div>
+
+        <p class="text-xs text-[#5C5248] mb-3 leading-relaxed">
+          ${group.description}
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          ${filteredItems.map((item, idx) => {
+            const hasDetail = !!item.featuredId;
+            return `
+              <div class="p-2.5 rounded-xl bg-white border border-[#EADECF]/70 flex items-center justify-between gap-2 hover:border-[#8B1E1E]/50 transition-colors shadow-xs">
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-5 h-5 rounded-full bg-[#F5EFE6] text-[#8B1E1E] text-[10px] font-bold flex items-center justify-center flex-shrink-0">
+                      ${idx + 1}
+                    </span>
+                    <strong class="text-xs sm:text-sm text-[#2A2521] truncate font-semibold block">
+                      ${escapeHtml(item.name)}
+                    </strong>
+                  </div>
+                  ${item.type ? `<span class="text-[11px] text-[#786C5E] block truncate pl-6">${escapeHtml(item.type)}</span>` : ''}
+                </div>
+                ${hasDetail ? `
+                  <button 
+                    type="button" 
+                    onclick="closeRelicsInventoryModal(); openDetailModal('${item.featuredId}');" 
+                    class="px-2.5 py-1 rounded-lg bg-[#8B1E1E] hover:bg-[#6F1515] text-white text-[11px] font-bold transition-colors whitespace-nowrap flex-shrink-0 shadow-sm cursor-pointer"
+                    title="Xem hồ sơ số hóa chi tiết">
+                    Xem hồ sơ ➔
+                  </button>
+                ` : `
+                  <span class="text-[10px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md whitespace-nowrap flex-shrink-0">
+                    Trong danh mục
+                  </span>
+                `}
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.innerHTML = groupsHtml || `
+    <div class="text-center py-8 text-[#786C5E] text-xs bg-white rounded-2xl border border-[#EADECF]">
+      Không tìm thấy di tích nào phù hợp với từ khóa "<strong>${escapeHtml(kw)}</strong>".
+    </div>
+  `;
 }
 
 function escapeHtml(str) {

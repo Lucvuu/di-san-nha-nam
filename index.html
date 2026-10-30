@@ -49,7 +49,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Merriweather:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=2.3.0" />
+  <link rel="stylesheet" href="css/style.css?v=2.4.0" />
 </head>
 
 <body class="bg-[#FDFBF7] text-[#2A2521] antialiased selection:bg-[#8B1E1E] selection:text-white flex flex-col min-h-screen">
@@ -239,7 +239,7 @@
     <!-- HÌNH TRỐNG ĐỒNG ĐÔNG SƠN THẬT TỪ WIKIMEDIA CHÌM DƯỚI NỀN (BACKGROUND UNDERLAY WATERMARK) -->
     <div class="hero-drum-bg pointer-events-none select-none">
       <img 
-        src="./assets/trong-dong-ngoc-lu-real.svg?v=2.3.0" 
+        src="./assets/trong-dong-ngoc-lu-real.svg?v=2.4.0" 
         alt="Hoa văn Mặt Trống đồng Đông Sơn Ngọc Lũ chuẩn lịch sử" 
         class="w-full h-full object-contain select-none"
         loading="eager"
@@ -288,7 +288,7 @@
             <div class="flex flex-wrap lg:flex-nowrap items-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-semibold text-[#5C5248]">
               <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/85 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
                 <span class="w-2.5 h-2.5 rounded-full bg-[#8B1E1E] flex-shrink-0"></span>
-                <span id="hero-vat-the-badge-count">08 Di tích Quốc gia Đặc biệt & Cấp Tỉnh</span>
+                <span id="hero-vat-the-badge-count">37 Di tích Lịch sử - Văn hóa (08 QG đặc biệt • 01 Quốc gia • 07 Cấp tỉnh • 21 Kiểm kê)</span>
               </div>
               <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/85 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
                 <span class="w-2.5 h-2.5 rounded-full bg-[#C59B27] flex-shrink-0"></span>
@@ -322,7 +322,7 @@
           <!-- Bản đồ Tổ quốc Việt Nam đứng trực tiếp trên nền trong suốt (frameless) với drop-shadow -->
           <div class="w-full max-w-[420px] aspect-[530/710] flex items-center justify-center filter drop-shadow-[0_8px_24px_rgba(139,30,30,0.18)] transition-transform duration-500 hover:scale-[1.02]">
             <img 
-              src="./assets/images/vietnam-map.svg?v=2.3.0" 
+              src="./assets/images/vietnam-map.svg?v=2.4.0" 
               alt="Bản đồ Tổ quốc Việt Nam đầy đủ Quần đảo Hoàng Sa, Trường Sa và điểm định vị Xã Nhã Nam, Thành phố Bắc Ninh" 
               class="w-full h-full object-contain select-none"
               loading="eager"
@@ -342,6 +342,88 @@
 
         </div>
 
+      </div>
+
+      
+      <!-- BẢNG THỐNG KÊ SỐ LIỆU CHÍNH THỨC 37 DI TÍCH LỊCH SỬ - VĂN HÓA (BÁO CÁO HĐND XÃ & UBND TỈNH) -->
+      <div class="mb-6 p-4 sm:p-5 bg-white/95 backdrop-blur-md rounded-3xl border-2 border-[#C59B27]/40 shadow-md max-w-5xl mx-auto">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-[#EADECF]">
+          <div class="flex items-center gap-2.5">
+            <span class="text-2xl">📊</span>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="font-heritage-serif font-bold text-sm sm:text-base text-[#8B1E1E]">
+                  Hệ Thống 37 Di Tích Lịch Sử - Văn Hóa Xã Nhã Nam
+                </h3>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#8B1E1E] text-white uppercase tracking-wide">Số Liệu Chuẩn</span>
+              </div>
+              <p class="text-[11px] text-[#786C5E] mt-0.5">
+                Báo cáo chính thức phục vụ HĐND Xã & Danh mục kiểm kê được UBND Tỉnh phê duyệt
+              </p>
+            </div>
+          </div>
+          <button 
+            type="button" 
+            onclick="openRelicsInventoryModal()" 
+            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#8B1E1E] hover:bg-[#6F1515] text-white text-xs font-bold transition-all shadow-sm flex-shrink-0 cursor-pointer">
+            <span>📋 Tra cứu Danh mục 37 di tích</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 pt-3">
+          <!-- Nhóm 1: Quốc gia đặc biệt -->
+          <div class="p-3 rounded-2xl bg-[#FFF5F5] border border-[#FED7D7] flex flex-col justify-between hover:shadow-sm transition-shadow">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-[#8B1E1E] uppercase tracking-wide">QG Đặc Biệt</span>
+              <span class="text-xs">🏛️</span>
+            </div>
+            <div class="my-1.5">
+              <span class="text-2xl sm:text-3xl font-black text-[#8B1E1E] tabular-nums font-heritage-serif">08</span>
+              <span class="text-xs font-semibold text-[#8B1E1E] ml-1">di tích</span>
+            </div>
+            <p class="text-[11px] text-[#742A2A] leading-tight">Khởi nghĩa Yên Thế (Đình Hả, Gốc Khế, Đồi Phủ...)</p>
+          </div>
+          
+          <!-- Nhóm 2: Cấp Quốc gia -->
+          <div class="p-3 rounded-2xl bg-[#FFFBEB] border border-[#FDE68A] flex flex-col justify-between hover:shadow-sm transition-shadow">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-[#92400E] uppercase tracking-wide">Cấp Quốc Gia</span>
+              <span class="text-xs">⭐</span>
+            </div>
+            <div class="my-1.5">
+              <span class="text-2xl sm:text-3xl font-black text-[#B45309] tabular-nums font-heritage-serif">01</span>
+              <span class="text-xs font-semibold text-[#B45309] ml-1">di tích</span>
+            </div>
+            <p class="text-[11px] text-[#92400E] leading-tight">Chùa Tứ Giáp (Nơi phát tích 6 lời Bác dạy CAND)</p>
+          </div>
+
+          <!-- Nhóm 3: Cấp Tỉnh -->
+          <div class="p-3 rounded-2xl bg-[#FDF8F3] border border-[#F6E05E]/70 flex flex-col justify-between hover:shadow-sm transition-shadow">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-[#A16207] uppercase tracking-wide">Cấp Tỉnh</span>
+              <span class="text-xs">🎖️</span>
+            </div>
+            <div class="my-1.5">
+              <span class="text-2xl sm:text-3xl font-black text-[#A16207] tabular-nums font-heritage-serif">07</span>
+              <span class="text-xs font-semibold text-[#A16207] ml-1">di tích</span>
+            </div>
+            <p class="text-[11px] text-[#78350F] leading-tight">Đền Đề Truật, Chùa Đồng Điều, Đền Cầu Thượng...</p>
+          </div>
+
+          <!-- Nhóm 4: Danh mục kiểm kê -->
+          <div class="p-3 rounded-2xl bg-[#F7FAFC] border border-[#E2E8F0] flex flex-col justify-between hover:shadow-sm transition-shadow">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-[#4A5568] uppercase tracking-wide">Được Kiểm Kê</span>
+              <span class="text-xs">📜</span>
+            </div>
+            <div class="my-1.5">
+              <span class="text-2xl sm:text-3xl font-black text-[#2D3748] tabular-nums font-heritage-serif">21</span>
+              <span class="text-xs font-semibold text-[#2D3748] ml-1">di tích</span>
+            </div>
+            <p class="text-[11px] text-[#4A5568] leading-tight">UBND Tỉnh phê duyệt trong danh mục kiểm kê</p>
+          </div>
+        </div>
       </div>
 
       <!-- 2 THẺ DANH MỤC LỚN (ẢNH VĂN HÓA TRUYỀN THỐNG ẤM ÁP, KHUNG GÓC VÀNG HOÀNG GIA) -->
@@ -983,9 +1065,70 @@
     </div>
   </div>
 
+  
+  <!-- ====================================================================
+       13. MODAL BẢNG KIỂM KÊ 37 DI TÍCH LỊCH SỬ - VĂN HÓA TOÀN XÃ
+       ==================================================================== -->
+  <div 
+    id="relics-inventory-modal" 
+    class="hidden fixed inset-0 z-50 overflow-y-auto modal-overlay flex items-center justify-center p-3 sm:p-5"
+    onclick="if(event.target === this) closeRelicsInventoryModal();">
+    
+    <div class="modal-content-box bg-white w-full max-w-4xl rounded-3xl p-5 sm:p-8 shadow-2xl border border-[#EADECF] my-auto max-h-[90vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between pb-4 border-b border-[#EADECF] flex-shrink-0">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B1E1E] text-white text-xs font-bold uppercase tracking-wider mb-2">
+            <span>🏛️ Số liệu chính thức phục vụ HĐND Xã & UBND Tỉnh</span>
+          </div>
+          <h3 class="font-heritage-serif text-xl sm:text-2xl font-black text-[#8B1E1E]">
+            Hệ Thống 37 Di Tích Lịch Sử - Văn Hóa Xã Nhã Nam
+          </h3>
+          <p class="text-xs text-[#5C5248] mt-1">
+            Gồm 08 Di tích Quốc gia đặc biệt • 01 Di tích Cấp Quốc gia • 07 Di tích Cấp Tỉnh • 21 Di tích thuộc Danh mục kiểm kê
+          </p>
+        </div>
+        <button 
+          type="button" 
+          onclick="closeRelicsInventoryModal()" 
+          class="w-9 h-9 rounded-full bg-[#F5EFE6] text-gray-500 hover:text-[#8B1E1E] hover:bg-[#EADECF] flex items-center justify-center transition-colors cursor-pointer"
+          title="Đóng bảng kiểm kê">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Quick Filter Search within Modal -->
+      <div class="py-3 flex-shrink-0">
+        <input 
+          type="text" 
+          id="inventory-modal-search" 
+          placeholder="Tìm nhanh trong 37 di tích (gõ 'Đình Hả', 'Tứ Giáp', 'Đồng Điều', 'Chùa Sặt'...)" 
+          class="w-full px-4 py-2.5 text-xs sm:text-sm bg-[#FDFBF7] border border-[#EADECF] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1E]"
+          oninput="filterInventoryModal(this.value)"
+        />
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div id="inventory-modal-content" class="overflow-y-auto space-y-4 pr-1 flex-1">
+        <!-- Rendered from js/app.js -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="pt-4 border-t border-[#EADECF] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#5C5248] flex-shrink-0">
+        <span>💡 Các di tích có nút <strong class="text-[#8B1E1E]">"Xem hồ sơ ➔"</strong> đã được số hóa chi tiết tư liệu, bản đồ, ảnh và thuyết minh.</span>
+        <button 
+          type="button" 
+          onclick="closeRelicsInventoryModal()" 
+          class="px-5 py-2 rounded-xl font-bold bg-[#F5EFE6] text-[#5C5248] hover:bg-[#EADECF] transition-colors cursor-pointer">
+          Đóng lại
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- SCRIPT FILES -->
-  <script src="js/data.js?v=2.3.0"></script>
-  <script src="js/utils.js?v=2.3.0"></script>
-  <script src="js/app.js?v=2.3.0"></script>
+  <script src="js/data.js?v=2.4.0"></script>
+  <script src="js/utils.js?v=2.4.0"></script>
+  <script src="js/app.js?v=2.4.0"></script>
 </body>
 </html>

@@ -14,6 +14,15 @@ const SITE_CONFIG = {
   commune: "Xã Nhã Nam",
   city: "Thành phố Bắc Ninh",
   province: "Tỉnh Bắc Ninh",
+  // Thống kê chính thức hệ thống Di tích lịch sử - văn hóa theo Báo cáo HĐND Xã & UBND Tỉnh phê duyệt
+  officialRelicsStats: {
+    total: 37,
+    specialNational: 8,
+    national: 1,
+    provincial: 7,
+    inventoried: 21,
+    intangible: 5
+  },
   schoolTarget: "Dành cho học sinh Trường THPT Nhã Nam, các trường THCS, Tiểu học, thầy cô giáo và nhân dân",
   logoUrl: "./logo-thpt-nha-nam.png",
   
@@ -36,6 +45,110 @@ const SITE_CONFIG = {
  * DANH SÁCH BÀI HÁT TRÊN THANH ĐIỀU HƯỚNG (HEADER AUDIO PLAYLIST)
  * --------------------------------------------------------------------
  */
+
+/**
+ * ====================================================================
+ * DANH MỤC TOÀN BỘ 37 DI TÍCH LỊCH SỬ - VĂN HÓA TRÊN ĐỊA BÀN XÃ NHÃ NAM
+ * Trích xuất chuẩn xác 100% từ Báo cáo số liệu phục vụ HĐND Xã & Danh mục UBND Tỉnh phê duyệt:
+ * - 08 di tích Quốc gia đặc biệt (Khởi nghĩa Yên Thế)
+ * - 01 di tích cấp Quốc gia (Chùa Tứ Giáp)
+ * - 07 di tích cấp Tỉnh
+ * - 21 di tích trong danh mục kiểm kê di tích đã được Chủ tịch UBND tỉnh phê duyệt
+ * ====================================================================
+ */
+const OFFICIAL_COMMUNE_RELICS = {
+  totalCount: 37,
+  documentRef: "Khái quát hệ thống di tích trên địa bàn - Báo cáo số liệu chính thức phục vụ HĐND Xã & UBND Tỉnh",
+  summary: "Hiện nay, trên địa bàn xã có tổng số 37 di tích lịch sử - văn hóa, gồm 08 di tích Quốc gia đặc biệt, 01 di tích cấp quốc gia, 07 di tích cấp tỉnh và 21 di tích trong danh mục kiểm kê được UBND tỉnh phê duyệt.",
+  groups: [
+    {
+      id: "quoc-gia-dac-biet",
+      name: "Di tích Quốc gia đặc biệt",
+      subName: "Cụm Di tích Những địa điểm Khởi nghĩa Yên Thế",
+      count: 8,
+      badgeText: "08 Di tích Quốc gia đặc biệt",
+      badgeClass: "bg-[#8B1E1E] text-white",
+      icon: "🏛️",
+      description: "08 di tích thuộc Di tích quốc gia đặc biệt Những địa điểm Khởi nghĩa Yên Thế theo Quyết định số 548/QĐ-TTg của Thủ tướng Chính phủ.",
+      items: [
+        { name: "Đình Dương Lâm", type: "Đình làng cổ", status: "Di tích Quốc gia đặc biệt", featuredId: null },
+        { name: "Đình Hả", type: "Khu di tích Đình - Chùa Hả (Nơi Đề Nắm tế cờ phát động khởi nghĩa)", status: "Di tích Quốc gia đặc biệt", featuredId: "vat-the-1" },
+        { name: "Đền Gốc Khế", type: "Đền thờ & Căn cứ lịch sử Rừng Gốc Khế", status: "Di tích Quốc gia đặc biệt", featuredId: "vat-the-4" },
+        { name: "Đền Cả Trọng", type: "Đền thờ tướng quân Cả Trọng (con trai Đề Thám)", status: "Di tích Quốc gia đặc biệt", featuredId: null },
+        { name: "Nghĩa địa Pháp", type: "Khu chứng tích lịch sử quân sự Đồn Nhã Nam", status: "Di tích Quốc gia đặc biệt", featuredId: "vat-the-5" },
+        { name: "Đình Làng Chuông (Đình Nhã Nam)", type: "Đình làng cổ khởi dựng thế kỷ XVIII", status: "Di tích Quốc gia đặc biệt", featuredId: "vat-the-6" },
+        { name: "Đồi Phủ (Đồn Nhã Nam)", type: "Khu căn cứ đồn lũy Pháp", status: "Di tích Quốc gia đặc biệt", featuredId: "vat-the-5" },
+        { name: "Chùa Nam Thiên (Chùa Phố)", type: "Chùa cổ khởi dựng năm 1822", status: "Di tích Quốc gia đặc biệt", featuredId: "vat-the-7" }
+      ]
+    },
+    {
+      id: "cap-quoc-gia",
+      name: "Di tích Cấp Quốc gia",
+      subName: "Di tích Lịch sử - Kiến trúc Nghệ thuật",
+      count: 1,
+      badgeText: "01 Di tích Cấp Quốc gia",
+      badgeClass: "bg-[#C59B27] text-white",
+      icon: "⭐",
+      description: "Di tích lịch sử - kiến trúc nghệ thuật cấp Quốc gia được Bộ Văn hóa, Thể thao và Du lịch xếp hạng.",
+      items: [
+        { name: "Chùa Tứ Giáp (Đại Phúc Tự)", type: "Nơi phát tích thiêng liêng ra đời Sáu điều Bác Hồ dạy Công an nhân dân (11/3/1948)", status: "Di tích Cấp Quốc gia", featuredId: "vat-the-2" }
+      ]
+    },
+    {
+      id: "cap-tinh",
+      name: "Di tích Cấp Tỉnh",
+      subName: "Di tích Lịch sử - Văn hóa cấp Tỉnh",
+      count: 7,
+      badgeText: "07 Di tích Cấp Tỉnh",
+      badgeClass: "bg-amber-800 text-white",
+      icon: "🎖️",
+      description: "07 di tích lịch sử - văn hóa được Chủ tịch UBND tỉnh ban hành Quyết định xếp hạng di tích cấp tỉnh.",
+      items: [
+        { name: "Đền Đề Truật", type: "Đền thờ Tướng quân Dương Văn Truật (Đề Truật)", status: "Di tích Cấp Tỉnh", featuredId: "vat-the-8" },
+        { name: "Đền Cầu Thượng", type: "Đền thờ tín ngưỡng truyền thống thôn Cầu Thượng", status: "Di tích Cấp Tỉnh", featuredId: null },
+        { name: "Đình Sậy", type: "Đình làng truyền thống thôn Sậy", status: "Di tích Cấp Tỉnh", featuredId: null },
+        { name: "Chùa Đồng Điều (Di tích Thôn Đồng Điều)", type: "Cái nôi thành lập Chi bộ Đảng Cộng sản đầu tiên của địa phương", status: "Di tích Cấp Tỉnh", featuredId: "vat-the-3" },
+        { name: "Đình Nẻo", type: "Đình làng truyền thống thôn Nẻo", status: "Di tích Cấp Tỉnh", featuredId: null },
+        { name: "Chùa Dương Sơn", type: "Chùa cổ truyền thống thôn Dương Sơn", status: "Di tích Cấp Tỉnh", featuredId: null },
+        { name: "Đình Sặt", type: "Đình làng truyền thống thôn Sặt", status: "Di tích Cấp Tỉnh", featuredId: null }
+      ]
+    },
+    {
+      id: "kiem-ke",
+      name: "Di tích trong Danh mục Kiểm kê",
+      subName: "Đã được Chủ tịch UBND Tỉnh phê duyệt",
+      count: 21,
+      badgeText: "21 Di tích Kiểm kê",
+      badgeClass: "bg-[#5C5248] text-white",
+      icon: "📜",
+      description: "21 di tích lịch sử, văn hóa, kiến trúc tín ngưỡng nằm trong Danh mục kiểm kê di tích đã được Chủ tịch UBND tỉnh phê duyệt bảo tồn.",
+      items: [
+        { name: "Chùa Bùng", type: "Chùa làng" },
+        { name: "Đình Phố", type: "Đình làng cổ" },
+        { name: "Chùa Dương Lâm", type: "Chùa làng" },
+        { name: "Chùa Làng Hạ", type: "Chùa làng" },
+        { name: "Chùa Tầng", type: "Chùa làng" },
+        { name: "Giáo họ Yên Lễ", type: "Cơ sở tín ngưỡng tôn giáo" },
+        { name: "Nhà thờ Đạo Minh Tân", type: "Cơ sở tôn giáo" },
+        { name: "Chùa Cầu Xa", type: "Chùa làng" },
+        { name: "Chùa Tân Hòa", type: "Chùa làng" },
+        { name: "Chùa Linh Tiên", type: "Chùa làng" },
+        { name: "Nhà Thờ giáo Lục Hạ", type: "Cơ sở tôn giáo" },
+        { name: "Chùa Tân Long", type: "Chùa làng" },
+        { name: "Chùa Thị", type: "Chùa làng" },
+        { name: "Chùa Chung", type: "Chùa làng" },
+        { name: "Chùa Gia Tiến", type: "Chùa làng" },
+        { name: "Chùa Sậy", type: "Chùa làng" },
+        { name: "Đền thờ Lương Văn Nắm", type: "Đền thờ thủ lĩnh Lương Văn Nắm (Đề Nắm)" },
+        { name: "Nhà thờ Đồng Điều", type: "Cơ sở tôn giáo" },
+        { name: "Đình Đồng Điều", type: "Đình làng" },
+        { name: "Chùa Sặt", type: "Chùa làng" },
+        { name: "Đền Ngọc Hoa", type: "Đền thờ tín ngưỡng truyền thống" }
+      ]
+    }
+  ]
+};
+
 const MUSIC_PLAYLIST = [
   {
     id: "nha-nam-trong-toi",

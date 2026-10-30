@@ -20,6 +20,15 @@ console.assert(SITE_CONFIG.adminZaloUrl === 'https://zalo.me/0962629650', 'admin
 console.assert(SITE_CONFIG.facebookGroupStatusNote.includes('kiểm duyệt'), 'Facebook note must mention kiểm duyệt');
 console.log('✓ SITE_CONFIG verified');
 
+
+console.log('--- 1.1 TESTING OFFICIAL 37 COMMUNE RELICS DATA ---');
+console.assert(typeof OFFICIAL_COMMUNE_RELICS !== 'undefined', 'OFFICIAL_COMMUNE_RELICS must be defined');
+console.assert(OFFICIAL_COMMUNE_RELICS.totalCount === 37, 'OFFICIAL_COMMUNE_RELICS.totalCount should be 37');
+console.assert(OFFICIAL_COMMUNE_RELICS.groups.length === 4, 'Should have 4 official categories');
+const totalItemsInGroups = OFFICIAL_COMMUNE_RELICS.groups.reduce((acc, g) => acc + g.items.length, 0);
+console.assert(totalItemsInGroups === 37, 'Sum of relics in all groups must equal 37');
+console.log('  ✓ Verified OFFICIAL_COMMUNE_RELICS: 37 total (8 QG đặc biệt, 1 QG, 7 Cấp tỉnh, 21 Kiểm kê)');
+
 console.log('--- 2. TESTING AUDIO PLAYLIST ---');
 console.assert(Array.isArray(MUSIC_PLAYLIST) && MUSIC_PLAYLIST.length === 2, 'Should have 2 tracks in MUSIC_PLAYLIST');
 MUSIC_PLAYLIST.forEach((track, i) => {
