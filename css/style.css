@@ -72,25 +72,77 @@ body {
   white-space: nowrap !important;
 }
 
-/* Trống đồng Đông Sơn xoay chậm ở nền Hero (Rotating Mandala Watermark) */
-@keyframes spinSlow {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+/* Trống đồng Đông Sơn xoay đa tầng ở nền Hero (Dual-Ring Rotating Mandala) */
+@keyframes rotateCW {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCCW {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(197, 155, 39, 0.4), 0 0 30px rgba(139, 30, 30, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(246, 224, 94, 0.7), 0 0 45px rgba(197, 155, 39, 0.4);
+  }
+}
+
+@keyframes radarPing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
 }
 
 .dong-son-mandala {
   position: absolute;
   top: 48%;
   left: 50%;
-  width: 720px;
-  height: 720px;
-  max-width: 90vw;
-  max-height: 90vw;
-  opacity: 0.065;
+  transform: translate(-50%, -50%);
+  width: 580px;
+  height: 580px;
+  max-width: 92vw;
+  max-height: 92vw;
+  opacity: 0.30; /* Độ rõ nét cao theo yêu cầu */
   pointer-events: none;
-  animation: spinSlow 140s linear infinite;
-  transform-origin: center center;
   z-index: 1;
+}
+
+.dong-son-outer-ring {
+  animation: rotateCCW 45s linear infinite;
+}
+
+.dong-son-inner-ring {
+  animation: rotateCW 60s linear infinite;
+}
+
+.dong-son-emblem-rotator {
+  animation: rotateCW 35s linear infinite;
+}
+
+.dong-son-emblem-container {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.radar-ping-circle {
+  animation: radarPing 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  transform-origin: 222px 114px;
+}
+
+.radar-ping-ring {
+  animation: radarPing 2.4s cubic-bezier(0, 0, 0.2, 1) 0.8s infinite;
+  transform-origin: 222px 114px;
 }
 
 /* Bụi vàng bay nhẹ nhàng (Floating Golden Dust Particles) */

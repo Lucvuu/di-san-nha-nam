@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 740" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vietnamLandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9B1C1C"/>
+      <stop offset="45%" stop-color="#B83232"/>
+      <stop offset="85%" stop-color="#C59B27"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <radialGradient id="seaGlow" cx="65%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#EEF6F8" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#E2EDF0" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FAF5EE" stop-opacity="0.95"/>
+    </radialGradient>
+
+    <filter id="landShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="3" dy="5" stdDeviation="6" flood-color="#8B1E1E" flood-opacity="0.25"/>
+    </filter>
+
+    <radialGradient id="pinGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F6E05E" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#8B1E1E" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#8B1E1E" stop-opacity="0"/>
+    </radialGradient>
+
+    <style>
+      @keyframes radarPing {
+        0% { transform: scale(0.6); opacity: 0.95; }
+        100% { transform: scale(2.6); opacity: 0; }
+      }
+      .radar-ping-circle {
+        animation: radarPing 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+        transform-origin: 222px 114px;
+      }
+      .radar-ping-ring {
+        animation: radarPing 2.4s cubic-bezier(0, 0, 0.2, 1) 0.8s infinite;
+        transform-origin: 222px 114px;
+      }
+    </style>
+  </defs>
+
+  <!-- NỀN KHUNG TRANH NGHỆ THUẬT -->
+  <rect width="560" height="740" rx="28" fill="url(#seaGlow)" stroke="#C59B27" stroke-width="1.8" stroke-opacity="0.5"/>
+
+  <!-- TỌA ĐỘ VÀ VẠCH HẢI PHẬN NHẸ -->
+  <g stroke="#C59B27" stroke-width="0.6" stroke-dasharray="4,6" opacity="0.35">
+    <line x1="40" y1="180" x2="520" y2="180"/>
+    <line x1="40" y1="360" x2="520" y2="360"/>
+    <line x1="40" y1="540" x2="520" y2="540"/>
+    <line x1="180" y1="40" x2="180" y2="680"/>
+    <line x1="360" y1="40" x2="360" y2="680"/>
+  </g>
+
+  <!-- HOA TIÊU HÀNG HẢI BIỂN ĐÔNG (COMPASS ROSE) -->
+  <g transform="translate(485, 75) scale(0.65)" opacity="0.65">
+    <circle cx="0" cy="0" r="28" fill="none" stroke="#C59B27" stroke-width="1.2"/>
+    <polygon points="0,-36 6,-8 0,0 -6,-8" fill="#8B1E1E"/>
+    <polygon points="0,36 6,8 0,0 -6,8" fill="#C59B27"/>
+    <polygon points="36,0 8,6 0,0 8,-6" fill="#C59B27"/>
+    <polygon points="-36,0 -8,6 0,0 -8,-6" fill="#C59B27"/>
+    <text x="0" y="-42" font-family="'Merriweather', serif" font-size="13" font-weight="bold" fill="#8B1E1E" text-anchor="middle">B</text>
+  </g>
+
+  <!-- CHỮ "BIỂN ĐÔNG VIỆT NAM" MỜ NGHỆ THUẬT -->
+  <text x="440" y="240" font-family="'Merriweather', serif" font-size="17" font-weight="900" fill="#2E6B7A" opacity="0.45" letter-spacing="4" text-anchor="middle">BIỂN ĐÔNG</text>
+  <text x="440" y="260" font-family="'Be Vietnam Pro', sans-serif" font-size="11" font-weight="700" fill="#2E6B7A" opacity="0.4" letter-spacing="2" text-anchor="middle">VIỆT NAM</text>
+
+  <text x="280" y="185" font-family="'Be Vietnam Pro', sans-serif" font-size="10" font-weight="600" fill="#2E6B7A" opacity="0.5" letter-spacing="1">VỊNH BẮC BỘ</text>
+  <text x="110" y="660" font-family="'Be Vietnam Pro', sans-serif" font-size="10" font-weight="600" fill="#2E6B7A" opacity="0.5" letter-spacing="1">VỊNH THÁI LAN</text>
+
+  <!-- ĐẤT LIỀN TỔ QUỐC VIỆT NAM HÌNH CHỮ S -->
+  <g filter="url(#landShadow)">
+    <path d="M 92,68 
+    C 115,50 145,35 174,36 
+    C 202,37 218,52 236,66 
+    C 248,76 262,88 274,106 
+    C 280,115 272,128 256,134 
+    C 246,138 238,134 230,132 
+    C 224,130 216,136 210,144 
+    C 202,154 196,168 190,182 
+    C 184,196 182,212 186,226 
+    C 192,246 208,260 224,276 
+    C 238,290 252,308 262,328 
+    C 274,352 290,366 308,378 
+    C 322,388 334,402 342,420 
+    C 350,438 354,458 366,478 
+    C 372,488 374,500 368,514 
+    C 360,532 348,548 336,564 
+    C 324,580 306,590 286,596 
+    C 272,600 258,608 244,618 
+    C 230,628 214,642 196,654 
+    C 186,660 176,664 168,658 
+    C 160,652 164,638 172,626 
+    C 182,612 192,596 188,582 
+    C 184,568 168,564 154,560 
+    C 142,556 138,544 148,534 
+    C 160,522 178,518 194,510 
+    C 214,500 226,482 236,462 
+    C 248,438 254,412 258,386 
+    C 260,372 254,358 244,346 
+    C 232,332 216,324 204,310 
+    C 188,292 174,272 166,250 
+    C 158,228 156,204 150,182 
+    C 144,160 132,142 118,126 
+    C 106,112 94,98 88,86 
+    C 84,78 86,72 92,68 Z" fill="url(#vietnamLandGrad)" stroke="#FFE270" stroke-width="1.8"/>
+  </g>
+
+  <!-- CÁC ĐẢO VEN BỜ TIỀN TIÊU CỦA TỔ QUỐC -->
+  
+  <!-- 1. ĐẢO BẠCH LONG VĨ (Vịnh Bắc Bộ) -->
+  <g id="dao-bach-long-vi" transform="translate(305, 168)">
+    <circle cx="0" cy="0" r="4.5" fill="#D97706" stroke="#8B1E1E" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="1.5" fill="#FFF"/>
+    <text x="8" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="9.5" font-weight="700" fill="#8B1E1E">Đ. Bạch Long Vĩ</text>
+  </g>
+
+  <!-- 2. ĐẢO CÁT BÀ & CÔ TÔ (Quảng Ninh - Hải Phòng) -->
+  <g id="dao-cat-ba" transform="translate(268, 138)">
+    <circle cx="0" cy="0" r="4" fill="#D97706" stroke="#8B1E1E" stroke-width="1"/>
+    <circle cx="8" cy="-5" r="3" fill="#D97706" stroke="#8B1E1E" stroke-width="1"/>
+    <text x="14" y="0" font-family="'Be Vietnam Pro', sans-serif" font-size="9" font-weight="600" fill="#5C5248">Cát Bà • Cô Tô</text>
+  </g>
+
+  <!-- 3. ĐẢO CỒN CỎ (Quảng Trị) -->
+  <g id="dao-con-co" transform="translate(288, 328)">
+    <circle cx="0" cy="0" r="4" fill="#D97706" stroke="#8B1E1E" stroke-width="1"/>
+    <text x="8" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="9.5" font-weight="700" fill="#8B1E1E">Đ. Cồn Cỏ</text>
+  </g>
+
+  <!-- 4. ĐẢO LÝ SƠN (Quảng Ngãi) -->
+  <g id="dao-ly-son" transform="translate(352, 396)">
+    <circle cx="0" cy="0" r="4.5" fill="#D97706" stroke="#8B1E1E" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="1.5" fill="#FFF"/>
+    <text x="9" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="9.5" font-weight="700" fill="#8B1E1E">Đ. Lý Sơn</text>
+  </g>
+
+  <!-- 5. ĐẢO PHÚ QUÝ (Bình Thuận) -->
+  <g id="dao-phu-quy" transform="translate(366, 566)">
+    <circle cx="0" cy="0" r="4.5" fill="#D97706" stroke="#8B1E1E" stroke-width="1.2"/>
+    <circle cx="0" cy="0" r="1.5" fill="#FFF"/>
+    <text x="9" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="9.5" font-weight="700" fill="#8B1E1E">Đ. Phú Quý</text>
+  </g>
+
+  <!-- 6. ĐẢO PHÚ QUỐC (Kiên Giang - Hòn ngọc Tây Nam) -->
+  <g id="dao-phu-quoc" transform="translate(136, 608)">
+    <path d="M-6,-14 C-2,-18 4,-16 6,-10 C8,-4 6,8 3,14 C-1,18 -5,14 -7,4 Z" fill="url(#vietnamLandGrad)" stroke="#FFE270" stroke-width="1.2"/>
+    <circle cx="10" cy="18" r="2.2" fill="#D97706"/>
+    <circle cx="15" cy="22" r="1.8" fill="#D97706"/>
+    <text x="-4" y="28" font-family="'Be Vietnam Pro', sans-serif" font-size="9.5" font-weight="800" fill="#8B1E1E" text-anchor="middle">Đ. Phú Quốc</text>
+  </g>
+
+  <!-- 7. QUẦN ĐẢO CÔN ĐẢO (Bà Rịa - Vũng Tàu) -->
+  <g id="con-dao" transform="translate(268, 664)">
+    <circle cx="0" cy="0" r="4" fill="#D97706" stroke="#8B1E1E" stroke-width="1"/>
+    <circle cx="5" cy="3" r="2" fill="#D97706"/>
+    <circle cx="-4" cy="4" r="1.8" fill="#D97706"/>
+    <text x="10" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="9.5" font-weight="700" fill="#8B1E1E">Côn Đảo</text>
+  </g>
+
+  <!-- ============================================================= -->
+  <!-- HAI QUẦN ĐẢO THIÊNG LIÊNG CỦA TỔ QUỐC VIỆT NAM                -->
+  <!-- ============================================================= -->
+
+  <!-- QUẦN ĐẢO HOÀNG SA (ĐÀ NẴNG - VIỆT NAM) -->
+  <g id="quan-dao-hoang-sa" transform="translate(426, 334)">
+    <rect x="-48" y="-36" width="102" height="74" rx="10" fill="#FFF" fill-opacity="0.88" stroke="#C59B27" stroke-width="1.5" stroke-dasharray="4,2.5" filter="drop-shadow(0 2px 5px rgba(0,0,0,0.1))"/>
+    
+    <circle cx="-28" cy="-14" r="3.2" fill="#D97706" stroke="#8B1E1E" stroke-width="0.8"/>
+    <circle cx="-16" cy="-20" r="3" fill="#D97706" stroke="#8B1E1E" stroke-width="0.8"/>
+    <circle cx="-6" cy="-12" r="3.5" fill="#8B1E1E"/>
+    <circle cx="12" cy="-18" r="3" fill="#D97706" stroke="#8B1E1E" stroke-width="0.8"/>
+    <circle cx="24" cy="-8" r="2.8" fill="#D97706" stroke="#8B1E1E" stroke-width="0.8"/>
+    <circle cx="-18" cy="2" r="2.5" fill="#D97706"/>
+    <circle cx="6" cy="-2" r="2.8" fill="#D97706"/>
+
+    <polygon points="32,-24 34,-18 40,-18 35,-14 37,-8 32,-11 27,-8 29,-14 24,-18 30,-18" fill="#D97706"/>
+
+    <text x="3" y="16" font-family="'Merriweather', serif" font-size="9" font-weight="900" fill="#8B1E1E" text-anchor="middle" letter-spacing="0.3">QUẦN ĐẢO HOÀNG SA</text>
+    <text x="3" y="28" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="700" fill="#C59B27" text-anchor="middle">(Đà Nẵng • Việt Nam)</text>
+  </g>
+
+  <!-- QUẦN ĐẢO TRƯỜNG SA (KHÁNH HÒA - VIỆT NAM) -->
+  <g id="quan-dao-truong-sa" transform="translate(434, 532)">
+    <rect x="-56" y="-52" width="114" height="110" rx="12" fill="#FFF" fill-opacity="0.90" stroke="#C59B27" stroke-width="1.5" stroke-dasharray="4,2.5" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.1))"/>
+    
+    <circle cx="-24" cy="-36" r="3.2" fill="#D97706" stroke="#8B1E1E" stroke-width="0.8"/>
+    <circle cx="8" cy="-38" r="3" fill="#D97706" stroke="#8B1E1E" stroke-width="0.8"/>
+    <circle cx="-34" cy="-18" r="2.8" fill="#D97706"/>
+    <circle cx="-6" cy="-16" r="3.5" fill="#8B1E1E"/>
+    <circle cx="22" cy="-22" r="3" fill="#D97706" stroke="#8B1E1E" stroke-width="0.8"/>
+    <circle cx="-16" cy="4" r="3.6" fill="#8B1E1E"/>
+    <circle cx="14" cy="2" r="3" fill="#D97706"/>
+    <circle cx="32" cy="14" r="2.8" fill="#D97706"/>
+    <circle cx="-20" cy="22" r="3.2" fill="#D97706" stroke="#8B1E1E" stroke-width="0.8"/>
+    <circle cx="4" cy="26" r="3" fill="#D97706"/>
+
+    <polygon points="40,-40 42,-34 48,-34 43,-30 45,-24 40,-27 35,-24 37,-30 32,-34 38,-34" fill="#D97706"/>
+
+    <text x="1" y="42" font-family="'Merriweather', serif" font-size="9" font-weight="900" fill="#8B1E1E" text-anchor="middle" letter-spacing="0.3">QUẦN ĐẢO TRƯỜNG SA</text>
+    <text x="1" y="52" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="700" fill="#C59B27" text-anchor="middle">(Khánh Hòa • Việt Nam)</text>
+  </g>
+
+  <!-- ============================================================= -->
+  <!-- ĐIỂM ĐỊNH VỊ PHÁT SÁNG RADAR TẠI BẮC GIANG - XÃ NHÃ NAM      -->
+  <!-- ============================================================= -->
+  <g id="pin-nha-nam" transform="translate(222, 114)">
+    <circle cx="0" cy="0" r="18" fill="url(#pinGlow)" opacity="0.8" class="radar-ping-circle"/>
+    <circle cx="0" cy="0" r="10" fill="none" stroke="#F6E05E" stroke-width="1.5" opacity="0.9" class="radar-ping-ring"/>
+    
+    <circle cx="0" cy="0" r="6" fill="#8B1E1E" stroke="#FFF" stroke-width="1.8"/>
+    <polygon points="0,-4 1.2,-1.2 4,-1.2 1.8,0.5 2.6,3.2 0,1.8 -2.6,3.2 -1.8,0.5 -4,-1.2 -1.2,-1.2" fill="#F6E05E"/>
+
+    <!-- Nhãn huy hiệu địa danh nổi bật -->
+    <g transform="translate(-130, -32)">
+      <rect width="138" height="26" rx="13" fill="#8B1E1E" stroke="#F6E05E" stroke-width="1.4" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.3))"/>
+      <text x="69" y="17" font-family="'Be Vietnam Pro', sans-serif" font-size="9.5" font-weight="800" fill="#FFF" text-anchor="middle">
+        📍 Xã Nhã Nam • Bắc Giang
+      </text>
+      <polygon points="128,13 138,13 131,20" fill="#8B1E1E"/>
+    </g>
+  </g>
+
+  <!-- ĐỊNH VỊ THỦ ĐÔ HÀ NỘI -->
+  <g transform="translate(196, 134)" opacity="0.85">
+    <polygon points="0,-6 1.8,-1.8 6,-1.8 2.6,0.8 3.8,4.8 0,2.6 -3.8,4.8 -2.6,0.8 -6,-1.8 -1.8,-1.8" fill="#F6E05E" stroke="#8B1E1E" stroke-width="0.8"/>
+    <text x="-8" y="4" font-family="'Be Vietnam Pro', sans-serif" font-size="8.5" font-weight="700" fill="#5C5248" text-anchor="end">Hà Nội</text>
+  </g>
+
+  <!-- BĂNG RÔN TUYÊN NGÔN CHỦ QUYỀN TRANG TRỌNG DƯỚI CHÂN BẢN ĐỒ -->
+  <g transform="translate(280, 712)">
+    <rect x="-240" y="-18" width="480" height="28" rx="14" fill="#8B1E1E" stroke="#F6E05E" stroke-width="1.2" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.2))"/>
+    <text x="0" y="0" font-family="'Be Vietnam Pro', sans-serif" font-size="10" font-weight="800" fill="#FFF" text-anchor="middle">
+      🇻🇳 "Hoàng Sa, Trường Sa là máu thịt thiêng liêng của Tổ quốc Việt Nam"
+    </text>
+  </g>
+</svg>

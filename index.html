@@ -221,22 +221,14 @@
        ==================================================================== -->
   <section class="relative pt-7 pb-11 md:pt-9 md:pb-14 overflow-hidden bg-gradient-to-b from-[#F5EFE6] via-[#FDFBF7] to-[#FDFBF7] border-b border-[#EADECF]">
     
-    <!-- HỌA TIẾT TRỐNG ĐỒNG ĐÔNG SƠN XOAY CHẬM (ROTATING BRONZE DRUM MANDALA) -->
-    <svg class="dong-son-mandala" viewBox="0 0 100 100" fill="none" stroke="#C59B27" stroke-width="0.8">
-      <circle cx="50" cy="50" r="48" stroke-dasharray="2,1"/>
-      <circle cx="50" cy="50" r="44"/>
-      <circle cx="50" cy="50" r="39" stroke-dasharray="1.5,1.5"/>
-      <circle cx="50" cy="50" r="33"/>
-      <circle cx="50" cy="50" r="26" stroke-dasharray="3,1.5"/>
-      <circle cx="50" cy="50" r="18"/>
-      <!-- Ngôi sao 14 cánh trung tâm Trống Đồng -->
-      <polygon points="50,34 52,44 62,40 56,48 66,50 56,52 62,60 52,56 50,66 48,56 38,60 44,52 34,50 44,48 38,40 48,44" fill="#C59B27" opacity="0.6"/>
-      <!-- Chim Lạc bay quanh vòng tròn -->
-      <path d="M50 8 A42 42 0 0 1 92 50" stroke-width="0.5" stroke-dasharray="4,2"/>
-      <path d="M92 50 A42 42 0 0 1 50 92" stroke-width="0.5" stroke-dasharray="4,2"/>
-      <path d="M50 92 A42 42 0 0 1 8 50" stroke-width="0.5" stroke-dasharray="4,2"/>
-      <path d="M8 50 A42 42 0 0 1 50 8" stroke-width="0.5" stroke-dasharray="4,2"/>
-    </svg>
+    <!-- HỌA TIẾT TRỐNG ĐỒNG ĐÔNG SƠN NGỌC LŨ XOAY ĐA TẦNG ĐỘ CHI TIẾT CAO -->
+    <div class="dong-son-mandala flex items-center justify-center pointer-events-none select-none">
+      <img 
+        src="./assets/images/dong-son-drum.svg" 
+        alt="Trống đồng Đông Sơn Ngọc Lũ xoay đa tầng" 
+        class="w-full h-full object-contain"
+      />
+    </div>
 
     <!-- HẠT BỤI VÀNG BAY HUYỀN ẢO (FLOATING GOLDEN DUST PARTICLES) -->
     <div class="dust-particle w-2.5 h-2.5 top-12 left-[12%] delay-0"></div>
@@ -248,41 +240,125 @@
 
     <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Lời chào mở đầu & Giới thiệu văn hóa Nhã Nam -->
-      <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+      <!-- BỐ CỤC ĐỐI XỨNG HERO: TIÊU ĐỀ HÀO HÙNG & BẢN ĐỒ TỔ QUỐC VIỆT NAM CHỦ QUYỀN -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-10 sm:mb-12">
         
-        <!-- HUY HIỆU CHÍNH THỨC TRƯỜNG THPT NHÃ NAM -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-xs font-black tracking-wide uppercase mb-3 shadow-sm">
-          <span>🎓 TRƯỜNG THPT NHÃ NAM • TÂN YÊN • BẮC GIANG</span>
-        </div>
-        
-        <!-- Tiêu đề Hero: Line-height 1.25 với gradient đỏ đô - vàng đồng -->
-        <h1 class="font-heritage-serif text-3xl sm:text-5xl lg:text-[3.35rem] font-black text-[#8B1E1E] tracking-tight leading-[1.25] mb-3">
-          <span>Khám Phá Di Sản Văn Hóa</span>
-          <span class="block mt-2 bg-gradient-to-r from-[#8B1E1E] via-[#B83232] to-[#C59B27] bg-clip-text text-transparent font-black italic">
-            Xã Nhã Nam
-          </span>
-        </h1>
+        <!-- CỘT TRÁI (LG: 7 CỘT): TIÊU ĐỀ, HUY HIỆU TRỐNG ĐỒNG 3D & GIỚI THIỆU -->
+        <div class="lg:col-span-7 text-left">
+          
+          <!-- KHỐI HUY HIỆU TRỐNG ĐỒNG 3D XOAY & BADGE TRƯỜNG THPT NHÃ NAM -->
+          <div class="flex items-center gap-3.5 mb-4">
+            <div class="dong-son-emblem-container w-16 h-16 sm:w-20 sm:h-20 rounded-full flex-shrink-0 cursor-pointer p-0.5 border-2 border-[#C59B27] bg-[#FFFBEB] shadow-lg" title="Biểu tượng Trống đồng Đông Sơn 3D xoay liên tục">
+              <img src="./assets/images/dong-son-emblem.svg" alt="Huy hiệu Trống đồng Đông Sơn 3D" class="w-full h-full object-contain rounded-full" />
+            </div>
+            <div>
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-xs font-black tracking-wide uppercase shadow-sm mb-1">
+                <span>🎓 TRƯỜNG THPT NHÃ NAM • BẮC GIANG</span>
+              </div>
+              <div class="text-[11px] sm:text-xs text-[#786C5E] font-medium">
+                Cổng Thông Tin Số Hóa Di Sản Văn Hóa & Lịch Sử Địa Phương
+              </div>
+            </div>
+          </div>
+          
+          <!-- Tiêu đề Hero: Line-height 1.25 với gradient đỏ đô - vàng đồng -->
+          <h1 class="font-heritage-serif text-3xl sm:text-5xl lg:text-[3.25rem] font-black text-[#8B1E1E] tracking-tight leading-[1.25] mb-3">
+            <span>Khám Phá Di Sản Văn Hóa</span>
+            <span class="block mt-2 bg-gradient-to-r from-[#8B1E1E] via-[#B83232] to-[#C59B27] bg-clip-text text-transparent font-black italic">
+              Xã Nhã Nam
+            </span>
+          </h1>
 
-        <p class="text-sm sm:text-base text-[#5C5248] leading-relaxed max-w-2xl mx-auto mb-4 font-normal">
-          Mảnh đất địa linh nhân kiệt lưu dấu oai hùng của thủ lĩnh Lương Văn Nắm (Đề Nắm) và nghĩa quân Hoàng Hoa Thám trong khởi nghĩa Yên Thế, nơi phát tích <strong class="text-[#8B1E1E] font-bold">Sáu điều Bác Hồ dạy Công an nhân dân</strong> tại chùa Tứ Giáp, nơi thành lập <strong class="text-[#8B1E1E] font-bold">Chi bộ Đảng đầu tiên</strong> tại thôn Đồng Điều, cùng 37 di tích lịch sử văn hóa ngàn đời.
-        </p>
+          <p class="text-sm sm:text-base text-[#5C5248] leading-relaxed mb-5 font-normal">
+            Mảnh đất địa linh nhân kiệt lưu dấu oai hùng của thủ lĩnh Lương Văn Nắm (Đề Nắm) tế cờ năm 1884 và nghĩa quân Hoàng Hoa Thám trong khởi nghĩa Yên Thế, nơi phát tích <strong class="text-[#8B1E1E] font-bold">Sáu điều Bác Hồ dạy Công an nhân dân</strong> tại chùa Tứ Giáp, nơi thành lập <strong class="text-[#8B1E1E] font-bold">Chi bộ Đảng đầu tiên</strong> tại thôn Đồng Điều, cùng 37 di tích lịch sử văn hóa ngàn đời.
+          </p>
 
-        <!-- 3 HUY HIỆU TÍNH NĂNG TRÊN 1 HÀNG NGANG (DESKTOP) TRONG GLASSMORPHIC PILLS -->
-        <div class="flex flex-wrap lg:flex-nowrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-semibold text-[#5C5248]">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#8B1E1E] flex-shrink-0"></span>
-            <span id="hero-vat-the-badge-count">08 Di tích Quốc gia Đặc biệt & Cấp Tỉnh</span>
+          <!-- 3 HUY HIỆU TÍNH NĂNG TRÊN HÀNG NGANG TRONG GLASSMORPHIC PILLS -->
+          <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-semibold text-[#5C5248] mb-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/85 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#8B1E1E] flex-shrink-0"></span>
+              <span id="hero-vat-the-badge-count">08 Di tích Quốc gia Đặc biệt & Cấp Tỉnh</span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/85 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#C59B27] flex-shrink-0"></span>
+              <span id="hero-phi-vat-the-badge-count">05 Di sản Phi vật thể Đặc sắc</span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/85 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 flex-shrink-0"></span>
+              <span>Số hóa Bản đồ & Tích hợp Chỉ đường</span>
+            </div>
           </div>
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#C59B27] flex-shrink-0"></span>
-            <span id="hero-phi-vat-the-badge-count">05 Di sản Phi vật thể Đặc sắc</span>
+
+          <!-- Nút hành động nhanh -->
+          <div class="flex flex-wrap items-center gap-3">
+            <a 
+              href="#heritage-explorer" 
+              class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl font-bold text-xs sm:text-sm bg-[#8B1E1E] text-white hover:bg-[#6F1515] transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 whitespace-nowrap">
+              <svg class="w-4 h-4 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+              <span>Khám Phá Kho Di Sản Ngay</span>
+            </a>
+            <a 
+              href="#map-section" 
+              class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl font-bold text-xs sm:text-sm bg-white/90 text-[#5C5248] hover:text-[#8B1E1E] border border-[#EADECF] hover:bg-white transition-all shadow-sm whitespace-nowrap">
+              <svg class="w-4 h-4 text-[#C59B27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+              <span>Bản Đồ 8 Di Tích</span>
+            </a>
           </div>
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 flex-shrink-0"></span>
-            <span>Số hóa Bản đồ & Tích hợp Chỉ đường</span>
+
+        </div>
+
+        <!-- CỘT PHẢI (LG: 5 CỘT): KHUNG TRANH BẢN ĐỒ VIỆT NAM ĐẦY ĐỦ HOÀNG SA, TRƯỜNG SA & CÁC ĐẢO -->
+        <div class="lg:col-span-5">
+          <div class="relative bg-white/85 backdrop-blur-md rounded-3xl p-3.5 sm:p-5 border-2 border-[#C59B27]/40 shadow-2xl overflow-hidden group">
+            
+            <!-- 4 Khung góc vàng di sản -->
+            <span class="golden-frame-corner golden-frame-tl"></span>
+            <span class="golden-frame-corner golden-frame-tr"></span>
+            <span class="golden-frame-corner golden-frame-bl"></span>
+            <span class="golden-frame-corner golden-frame-br"></span>
+
+            <!-- Tiêu đề khung bản đồ -->
+            <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-[#EADECF]">
+              <div class="flex items-center gap-2">
+                <span class="text-lg">🇻🇳</span>
+                <div>
+                  <h3 class="font-heritage-serif text-xs sm:text-sm font-black text-[#8B1E1E] uppercase tracking-wide">
+                    Bản Đồ Tổ Quốc Việt Nam
+                  </h3>
+                  <div class="text-[10px] text-[#786C5E] font-medium">
+                    Toàn vẹn lãnh thổ, hải đảo & biển trời
+                  </div>
+                </div>
+              </div>
+              <span class="text-[10px] sm:text-[11px] font-bold text-[#C59B27] bg-[#FFFBEB] px-2.5 py-1 rounded-full border border-[#FDE68A] whitespace-nowrap shadow-sm">
+                Đủ Hoàng Sa • Trường Sa
+              </span>
+            </div>
+
+            <!-- Khung hiển thị Bản đồ Tổ quốc Việt Nam SVG -->
+            <div class="relative w-full aspect-[560/740] max-h-[460px] sm:max-h-[490px] mx-auto flex items-center justify-center overflow-hidden rounded-2xl bg-[#EEF6F8]/60 shadow-inner">
+              <img 
+                src="./assets/images/vietnam-map.svg" 
+                alt="Bản đồ Tổ quốc Việt Nam đầy đủ Quần đảo Hoàng Sa, Trường Sa và điểm định vị Xã Nhã Nam, Bắc Giang" 
+                class="w-full h-full object-contain select-none transition-transform duration-500 group-hover:scale-[1.02]"
+                loading="eager"
+              />
+            </div>
+
+            <!-- Chú thích chân bản đồ -->
+            <div class="mt-2.5 flex items-center justify-between text-[11px] text-[#5C5248]">
+              <span class="flex items-center gap-1 font-bold text-[#8B1E1E]">
+                <span class="inline-block w-2 h-2 rounded-full bg-[#8B1E1E] animate-ping"></span>
+                <span>Điểm đỏ: Xã Nhã Nam (Bắc Giang)</span>
+              </span>
+              <span class="text-[10px] text-[#C59B27] font-semibold">
+                ⭐ Hoàng Sa • Trường Sa • Phú Quốc
+              </span>
+            </div>
+
           </div>
         </div>
+
       </div>
 
       <!-- 2 THẺ DANH MỤC LỚN (ẢNH VĂN HÓA TRUYỀN THỐNG ẤM ÁP, KHUNG GÓC VÀNG HOÀNG GIA) -->
