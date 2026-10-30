@@ -67,6 +67,77 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Typography refinements (better-typography) */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  line-height: 1.25;
+}
+
+p {
+  text-wrap: pretty;
+  line-height: 1.6;
+}
+
+/* Tabular numbers for counters, timers and numerical displays */
+.tabular-nums, [id^="count-"], #lightbox-counter, .audio-timestamp, .quiz-timer {
+  font-variant-numeric: tabular-nums;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+}
+
+/* Accessibility: Skip-link for screen reader and keyboard users */
+.skip-to-content-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-heritage-red);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-warm-lg);
+  border: 2px solid var(--color-heritage-gold);
+  transition: top 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.skip-to-content-link:focus {
+  top: 1rem;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Accessibility: Focus-visible outline for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-heritage-gold);
+  outline-offset: 2px;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid var(--color-heritage-gold);
+  outline-offset: 2px;
+}
+
+/* UI UX Pro Max: Cursor pointer enforcement */
+button, [role="button"], a, input[type="button"], input[type="submit"], select, .tab-btn, .category-tab-btn, .hero-entry-card {
+  cursor: pointer;
+}
+
+/* Accessibility: Respect prefers-reduced-motion (UI UX Pro Max & better-accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-drum-bg img, .hero-drum-bg svg {
+    animation: none !important;
+  }
+}
+
 /* Ngăn vỡ dòng thanh điều hướng */
 .nowrap-text {
   white-space: nowrap !important;

@@ -290,11 +290,12 @@ function renderHeritageGrid(items) {
             ` : ''}
           </div>
 
-          <!-- Nút Yêu thích / Lưu lại -->
+          <!-- Nút Yêu thích / Lưu lại (Accessible) -->
           <button 
             type="button" 
             onclick="event.stopPropagation(); toggleFavorite('${item.id}');" 
             title="${isFav ? 'Bỏ lưu' : 'Lưu lại di tích này'}"
+            aria-label="${isFav ? 'Bỏ lưu di tích ' + escapeHtml(item.title) : 'Lưu lại di tích ' + escapeHtml(item.title)}"
             class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-[#8B1E1E] hover:bg-white transition-all shadow">
             <svg class="w-5 h-5 ${isFav ? 'text-[#8B1E1E] fill-[#8B1E1E]' : 'fill-none'}" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
@@ -1572,7 +1573,8 @@ function setupEventListeners() {
   const mobileMenu = document.getElementById('mobile-menu');
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
     });
   }
 }
@@ -1581,10 +1583,13 @@ function setCategoryFilter(category) {
   state.currentCategory = category;
   const tabButtons = document.querySelectorAll('.category-tab-btn');
   tabButtons.forEach(btn => {
-    if (btn.getAttribute('data-category') === category) {
+    const isTarget = btn.getAttribute('data-category') === category;
+    if (isTarget) {
       btn.classList.add('active', 'bg-[#8B1E1E]', 'text-white');
+      btn.setAttribute('aria-selected', 'true');
     } else {
       btn.classList.remove('active', 'bg-[#8B1E1E]', 'text-white');
+      btn.setAttribute('aria-selected', 'false');
     }
   });
   applyFiltersAndRender();

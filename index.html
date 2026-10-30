@@ -54,6 +54,9 @@
 
 <body class="bg-[#FDFBF7] text-[#2A2521] antialiased selection:bg-[#8B1E1E] selection:text-white flex flex-col min-h-screen">
 
+  <!-- Tùy chọn trợ năng: Chuyển nhanh đến nội dung chính (UI UX Pro Max & better-accessibility) -->
+  <a href="#main-content" class="skip-to-content-link">Chuyển đến nội dung chính</a>
+
   <!-- ====================================================================
        1. THANH ĐIỀU HƯỚNG CHÍNH (HEADER & NAVBAR)
        Tích hợp BANNER THPT NHÃ NAM làm Logo, giữ 100% tỷ lệ không cắt xén,
@@ -134,9 +137,10 @@
             <button 
               type="button" 
               onclick="nextTrack()"
-              class="w-5 h-5 rounded-full bg-white text-[#8B1E1E] hover:bg-[#8B1E1E] hover:text-white transition-all flex items-center justify-center font-black text-[11px] shadow-xs flex-shrink-0 ml-0.5"
+              aria-label="Chuyển sang bài tiếp theo (Nhã Nam Trong Tôi ⮂ THPT Nhã Nam)"
+              class="w-6 h-6 rounded-full bg-white text-[#8B1E1E] hover:bg-[#8B1E1E] hover:text-white transition-all flex items-center justify-center shadow-xs flex-shrink-0 ml-0.5"
               title="Đổi bài tiếp theo (Nhã Nam Trong Tôi ⮂ THPT Nhã Nam)">
-              ⏭
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M5.586 19.414A2 2 0 012 18V6a2 2 0 013.586-1.414l8 6a2 2 0 010 2.828l-8 6zM18 5a1 1 0 011 1v12a1 1 0 11-2 0V6a1 1 0 011-1z"/></svg>
             </button>
           </div>
 
@@ -149,10 +153,12 @@
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
+        <!-- Mobile Menu Toggle Button (Accessible) -->
         <button 
           id="mobile-menu-btn"
           type="button" 
+          aria-expanded="false"
+          aria-controls="mobile-menu"
           class="lg:hidden p-2 rounded-xl text-[#5C5248] hover:bg-[#F5EFE6] transition-colors"
           aria-label="Mở thanh điều hướng">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -175,8 +181,10 @@
         <button 
           type="button" 
           onclick="nextTrack()"
-          class="px-2.5 py-1 rounded-lg bg-white text-[#8B1E1E] font-bold shadow-xs">
-          Đổi bài ⏭
+          aria-label="Đổi bài tiếp theo"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white text-[#8B1E1E] font-bold shadow-xs hover:bg-[#8B1E1E] hover:text-white transition-colors">
+          <span>Đổi bài</span>
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M5.586 19.414A2 2 0 012 18V6a2 2 0 013.586-1.414l8 6a2 2 0 010 2.828l-8 6zM18 5a1 1 0 011 1v12a1 1 0 11-2 0V6a1 1 0 011-1z"/></svg>
         </button>
       </div>
 
@@ -217,6 +225,9 @@
   <audio id="bg-music" preload="auto">
     <source id="audio-source" src="./nha-nam-trong-toi.mp3" type="audio/mpeg">
   </audio>
+
+  <!-- MAIN CONTENT LANDMARK (better-accessibility & WCAG) -->
+  <main id="main-content">
 
   <!-- ====================================================================
        2. HERO SECTION & TRỐNG ĐỒNG XOAY NỀN (MUSEUM-GRADE MANDALA WATERMARK)
@@ -429,29 +440,38 @@
         </div>
 
         <!-- Các Tab chuyển đổi danh mục -->
-        <div class="flex items-center p-1.5 bg-[#F5EFE6] rounded-2xl border border-[#EADECF] self-start md:self-auto shadow-inner">
+        <div role="tablist" aria-label="Phân loại di sản" class="flex items-center p-1.5 bg-[#F5EFE6] rounded-2xl border border-[#EADECF] self-start md:self-auto shadow-inner">
           <button 
             type="button" 
+            role="tab"
+            aria-selected="true"
+            aria-controls="heritage-grid"
             class="category-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-[#8B1E1E] text-white shadow-sm flex items-center gap-1.5"
             data-category="all">
             <span>Tất cả</span>
-            <span id="count-all" class="px-1.5 py-0.2 rounded-full bg-black/20 text-[11px]">13</span>
+            <span id="count-all" class="px-1.5 py-0.2 rounded-full bg-black/20 text-[11px] tabular-nums">13</span>
           </button>
           
           <button 
             type="button" 
+            role="tab"
+            aria-selected="false"
+            aria-controls="heritage-grid"
             class="category-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-[#5C5248] hover:text-[#8B1E1E] transition-all flex items-center gap-1.5"
             data-category="vat-the">
             <span>Di sản Vật thể</span>
-            <span id="count-vat-the" class="px-1.5 py-0.2 rounded-full bg-white/80 text-[11px] text-[#8B1E1E]">8</span>
+            <span id="count-vat-the" class="px-1.5 py-0.2 rounded-full bg-white/80 text-[11px] text-[#8B1E1E] tabular-nums">8</span>
           </button>
           
           <button 
             type="button" 
+            role="tab"
+            aria-selected="false"
+            aria-controls="heritage-grid"
             class="category-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-[#5C5248] hover:text-[#8B1E1E] transition-all flex items-center gap-1.5"
             data-category="phi-vat-the">
             <span>Di sản Phi vật thể</span>
-            <span id="count-phi-vat-the" class="px-1.5 py-0.2 rounded-full bg-white/80 text-[11px] text-[#C59B27]">5</span>
+            <span id="count-phi-vat-the" class="px-1.5 py-0.2 rounded-full bg-white/80 text-[11px] text-[#C59B27] tabular-nums">5</span>
           </button>
         </div>
       </div>
@@ -466,6 +486,7 @@
           <input 
             type="text" 
             id="search-input" 
+            aria-label="Tìm kiếm di sản Nhã Nam" 
             placeholder="Tìm theo tên di tích, đền, chùa, lễ hội, bánh khảo, Sáu điều Bác dạy... (hỗ trợ gõ 'tu giap', 'goc khe', v.v.)"
             class="w-full pl-12 pr-12 py-3.5 sm:py-4 bg-[#FDFBF7] border border-[#EADECF] rounded-2xl text-sm sm:text-base text-[#2A2521] placeholder-[#8C7D6F] focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] focus:bg-white transition-all duration-200"
             autocomplete="off"
@@ -475,6 +496,7 @@
           <button 
             id="clear-search-btn" 
             type="button" 
+            aria-label="Xóa nội dung tìm kiếm" 
             class="hidden absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-[#8B1E1E]"
             title="Xóa tìm kiếm">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -697,6 +719,8 @@
        7. CHÂN TRANG & THÔNG TIN LIÊN HỆ NGƯỜI ĐIỀU HÀNH (FOOTER & CONTACT)
        Có logo THPT Nhã Nam và thông tin Cô Mến
        ==================================================================== -->
+  </main>
+
   <footer id="site-footer" class="bg-[#2A2521] text-white border-t-4 border-[#C59B27] mt-auto">
     <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
       
@@ -829,6 +853,7 @@
   <button 
     id="back-to-top-btn" 
     type="button" 
+    aria-label="Cuộn lên đầu trang" 
     class="back-to-top-btn"
     title="Lên đầu trang">
     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
@@ -859,6 +884,7 @@
     
     <button 
       type="button" 
+      aria-label="Đóng xem ảnh phóng to" 
       onclick="closeLightbox()"
       class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/20 hover:bg-white text-white hover:text-black flex items-center justify-center transition-colors z-10"
       title="Đóng (ESC)">
@@ -868,6 +894,7 @@
     <!-- Nút Lùi ảnh -->
     <button 
       type="button" 
+      aria-label="Xem ảnh trước đó" 
       onclick="prevLightboxImage()" 
       class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 hover:bg-white text-white hover:text-black flex items-center justify-center transition-colors z-10"
       title="Ảnh trước (Phím mũi tên trái)">
@@ -892,6 +919,7 @@
     <!-- Nút Tiếp ảnh -->
     <button 
       type="button" 
+      aria-label="Xem ảnh tiếp theo" 
       onclick="nextLightboxImage()" 
       class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/20 hover:bg-white text-white hover:text-black flex items-center justify-center transition-colors z-10"
       title="Ảnh tiếp theo (Phím mũi tên phải)">
