@@ -1,5 +1,5 @@
 /**
- * Test script to verify data integrity and search algorithms
+ * Test script to verify data integrity, search algorithms, audio playlist, and normalization
  */
 const fs = require('fs');
 const vm = require('vm');
@@ -12,47 +12,63 @@ const utilsCode = fs.readFileSync('./js/utils.js', 'utf8');
 vm.runInThisContext(dataCode);
 vm.runInThisContext(utilsCode);
 
-console.log('--- 1. TESTING SITE_CONFIG ---');
+console.log('--- 1. TESTING SITE_CONFIG & ADMINISTRATIVE NORMALIZATION ---');
+console.assert(SITE_CONFIG.commune === 'Xã Nhã Nam', 'Commune should be Xã Nhã Nam');
 console.assert(SITE_CONFIG.adminPhone === '0962.629.650', 'adminPhone should be 0962.629.650');
 console.assert(SITE_CONFIG.adminZaloUrl === 'https://zalo.me/0962629650', 'adminZaloUrl should be correct');
 console.assert(SITE_CONFIG.facebookGroupStatusNote.includes('kiểm duyệt'), 'Facebook note must mention kiểm duyệt');
 console.log('✓ SITE_CONFIG verified');
 
-console.log('--- 2. TESTING TANGIBLE HERITAGE (DI SẢN VẬT THỂ) ---');
-console.assert(TANGIBLE_HERITAGE_DATA.length === 5, 'Should have 5 tangible heritage items');
+console.log('--- 2. TESTING AUDIO PLAYLIST ---');
+console.assert(Array.isArray(MUSIC_PLAYLIST) && MUSIC_PLAYLIST.length === 2, 'Should have 2 tracks in MUSIC_PLAYLIST');
+MUSIC_PLAYLIST.forEach((track, i) => {
+  console.assert(track.title && track.artist && track.src, `Track ${i} must have title, artist, src`);
+  console.assert(fs.existsSync(track.src), `Audio file ${track.src} must exist on disk`);
+  console.log(`  ✓ Track ${i+1}: "${track.title}" (${track.artist}) -> ${track.src} exists`);
+});
+
+console.log('--- 3. TESTING TANGIBLE HERITAGE (DI SẢN VẬT THỂ) ---');
+console.assert(TANGIBLE_HERITAGE_DATA.length === 8, `Should have 8 tangible heritage items (found ${TANGIBLE_HERITAGE_DATA.length})`);
 TANGIBLE_HERITAGE_DATA.forEach((item, i) => {
   console.assert(item.title, `Item ${i} must have title`);
   console.assert(item.address, `Item ${i} must have address`);
   console.assert(item.content && item.content.intro, `Item ${i} must have content`);
   console.assert(item.map && item.map.embedUrl && item.map.directionsUrl, `Item ${i} must have map embed & directionsUrl`);
   console.assert(item.gallery && item.gallery.length > 0, `Item ${i} must have gallery photos`);
-  console.log(`  ✓ [Vật thể ${i+1}] ${item.title} -> Verified 5 sections`);
+  console.log(`  ✓ [Vật thể ${i+1}] ${item.title} -> Verified 5 required sections`);
 });
 
-console.log('--- 3. TESTING INTANGIBLE HERITAGE (DI SẢN PHI VẬT THỂ) ---');
-console.assert(INTANGIBLE_HERITAGE_DATA.length === 5, 'Should have 5 intangible heritage items');
+console.log('--- 4. TESTING INTANGIBLE HERITAGE (DI SẢN PHI VẬT THỂ) ---');
+console.assert(INTANGIBLE_HERITAGE_DATA.length === 5, `Should have 5 intangible heritage items (found ${INTANGIBLE_HERITAGE_DATA.length})`);
 INTANGIBLE_HERITAGE_DATA.forEach((item, i) => {
   console.assert(item.title, `Item ${i} must have title`);
   console.assert(item.scope, `Item ${i} must have scope`);
   console.assert(item.content && item.content.intro, `Item ${i} must have content`);
   console.assert(item.map && item.map.embedUrl && item.map.directionsUrl, `Item ${i} must have map embed & directionsUrl`);
   console.assert(item.gallery && item.gallery.length > 0, `Item ${i} must have gallery photos`);
-  console.log(`  ✓ [Phi vật thể ${i+1}] ${item.title} -> Verified 5 sections`);
+  console.log(`  ✓ [Phi vật thể ${i+1}] ${item.title} -> Verified 5 required sections`);
 });
 
-console.log('--- 4. TESTING VIETNAMESE ACCENT-INSENSITIVE SEARCH ---');
+console.log('--- 5. TESTING VIETNAMESE ACCENT-INSENSITIVE SEARCH ---');
 const testCases = [
-  { query: 'tu giap', expectedMatch: 'Cụm di tích Đình - Chùa Tứ Giáp' },
-  { query: 'chua tu giap', expectedMatch: 'Cụm di tích Đình - Chùa Tứ Giáp' },
+  { query: 'dinh ha', expectedMatch: 'Đình - Chùa Hả' },
+  { query: 'chua ha', expectedMatch: 'Đình - Chùa Hả' },
+  { query: 'de nam', expectedMatch: 'Đình - Chùa Hả' },
+  { query: 'dong dieu', expectedMatch: 'Thôn Đồng Điều' },
+  { query: 'chi bo dang', expectedMatch: 'Thôn Đồng Điều' },
+  { query: 'de truat', expectedMatch: 'Đền Đề Truật' },
+  { query: 'tu giap', expectedMatch: 'Chùa Tứ Giáp' },
+  { query: 'chua tu giap', expectedMatch: 'Chùa Tứ Giáp' },
   { query: 'goc khe', expectedMatch: 'Đền Gốc Khế' },
-  { query: 'doi phu', expectedMatch: 'Đồn Nhã Nam - Đồi Phủ' },
-  { query: 'don nha nam', expectedMatch: 'Đồn Nhã Nam - Đồi Phủ' },
+  { query: 'doi phu', expectedMatch: 'Đồi Phủ' },
+  { query: 'don nha nam', expectedMatch: 'Đồi Phủ' },
   { query: 'dinh nha nam', expectedMatch: 'Đình Nhã Nam' },
+  { query: 'lang chuong', expectedMatch: 'Đình Nhã Nam' },
   { query: 'nam thien', expectedMatch: 'Chùa Nam Thiên' },
-  { query: 'hat cheo', expectedMatch: 'Nghệ thuật Hát Chèo truyền thống Nhã Nam' },
-  { query: 'banh khao', expectedMatch: 'Nghề làm bánh khảo, kẹo lạc truyền thống Nhã Nam' },
-  { query: 'keo lac', expectedMatch: 'Nghề làm bánh khảo, kẹo lạc truyền thống Nhã Nam' },
-  { query: 'vo co truyen', expectedMatch: 'Trò chơi dân gian & Võ cổ truyền trong lễ hội Nhã Nam' },
+  { query: 'hat cheo', expectedMatch: 'Hát Chèo' },
+  { query: 'banh khao', expectedMatch: 'Nghề làm bánh khảo, kẹo lạc' },
+  { query: 'keo lac', expectedMatch: 'Nghề làm bánh khảo, kẹo lạc' },
+  { query: 'vo co truyen', expectedMatch: 'Trò chơi dân gian & Võ cổ truyền' },
   { query: 'hoang hoa tham', expectedMatch: 'Đền Gốc Khế' }
 ];
 
@@ -65,7 +81,7 @@ testCases.forEach(({ query, expectedMatch }) => {
   console.log(`  ✓ Search "${query}" successfully matched ${matches.length} items (including "${expectedMatch}")`);
 });
 
-console.log('--- 5. TESTING AUDIO GUIDE ENGINE (SENTENCE CHUNKING & LOGIC) ---');
+console.log('--- 6. TESTING AUDIO GUIDE ENGINE (SENTENCE CHUNKING & LOGIC) ---');
 console.assert(typeof splitTextIntoSentences === 'function', 'splitTextIntoSentences must be a function');
 const sampleText = 'Chào mừng quý thầy cô đến với di tích. Nơi đây lưu giữ nhiều hiện vật quý báu! Các bạn học sinh hãy cùng khám phá; giá trị văn hóa ngàn đời.';
 const chunks = splitTextIntoSentences(sampleText);
@@ -80,4 +96,6 @@ console.assert(testManager.currentIndex === 0, 'Initial sentence index should be
 console.assert(testManager.isPlaying === false, 'Initially isPlaying should be false');
 console.log('  ✓ HeritageAudioGuideManager initialized and loaded story correctly');
 
-console.log('\nALL INTEGRITY, SEARCH & AUDIO GUIDE TESTS PASSED SUCCESSFULLY! 🎉');
+console.log('\n======================================================');
+console.log('ALL INTEGRITY, SEARCH & AUDIO GUIDE TESTS PASSED! 🎉');
+console.log('======================================================\n');

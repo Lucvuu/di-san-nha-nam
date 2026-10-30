@@ -1,7 +1,7 @@
 /**
  * ====================================================================
- * DI SẢN VĂN HÓA NHÃ NAM - XỬ LÝ ỨNG DỤNG CHÍNH (APPLICATION LOGIC)
- * Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang
+ * DI SẢN VĂN HÓA XÃ NHÃ NAM - XỬ LÝ ỨNG DỤNG CHÍNH (APPLICATION LOGIC)
+ * Xã Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang
  * Đơn vị khởi xướng & phối hợp: Trường THPT Nhã Nam
  * ====================================================================
  */
@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initApp() {
+  state.allItems = [...TANGIBLE_HERITAGE_DATA, ...INTANGIBLE_HERITAGE_DATA];
   renderConfigElements();
   renderQuickSearchTags();
   updateCategoryCounts();
@@ -38,14 +39,59 @@ function initApp() {
   initAudioPlayerSettings();
 }
 
+let currentTrackIndex = 0;
+
+function getActivePlaylist() {
+  return (typeof MUSIC_PLAYLIST !== 'undefined' && MUSIC_PLAYLIST.length) ? MUSIC_PLAYLIST : [
+    {
+      id: "nha-nam-trong-toi",
+      title: "Nhã Nam Trong Tôi",
+      artist: "Ca khúc truyền thống",
+      src: "./nha-nam-trong-toi.mp3",
+      fallbackSrc: "./assets/audio/nha-nam-trong-toi.mp3"
+    },
+    {
+      id: "thpt-nha-nam",
+      title: "THPT Nhã Nam",
+      artist: "Trường THPT Nhã Nam",
+      src: "./thpt-nha-nam.mp3",
+      fallbackSrc: "./assets/audio/thpt-nha-nam.mp3"
+    }
+  ];
+}
+
 /**
- * Khởi tạo thiết lập âm lượng cho trình phát nhạc Lưu Thủy Kim Tiền
+ * Khởi tạo thiết lập âm lượng và danh sách phát nhạc (Playlist Loop)
  */
 function initAudioPlayerSettings() {
   const bgMusic = document.getElementById('bg-music');
+  const playlist = getActivePlaylist();
+  
   if (bgMusic) {
     bgMusic.volume = 0.5; // Thiết lập âm lượng mặc định 50%
+    const currentTrack = playlist[currentTrackIndex];
+    if (currentTrack && (!bgMusic.src || !bgMusic.src.includes(currentTrack.id))) {
+      bgMusic.src = currentTrack.src;
+    }
+
+    // Tự động chuyển bài khi kết thúc và lặp lại danh sách (Playlist Loop)
+    bgMusic.onended = () => {
+      nextTrack(true);
+    };
+
+    // Xử lý nếu tải lỗi file gốc thì thử sang fallbackSrc
+    bgMusic.onerror = () => {
+      const track = playlist[currentTrackIndex];
+      if (track && track.fallbackSrc && bgMusic.src !== track.fallbackSrc) {
+        bgMusic.src = track.fallbackSrc;
+        if (state.isAudioPlaying) {
+          bgMusic.play().catch(e => console.warn('Audio fallback play error:', e));
+        }
+      }
+    };
   }
+
+  updateMusicPlayerUI();
 }
 
 /**
@@ -93,12 +139,12 @@ function renderQuickSearchTags() {
 }
 
 /**
- * Cập nhật số lượng di sản trên các Tab
+ * Cập nhật số lượng di sản trên các Tab & Trang chủ
  */
 function updateCategoryCounts() {
   const totalCount = state.allItems.length;
-  const vatTheCount = TANGIBLE_HERITAGE_DATA.length;
-  const phiVatTheCount = INTANGIBLE_HERITAGE_DATA.length;
+  const vatTheCount = state.allItems.filter(i => i.category === 'vat-the').length;
+  const phiVatTheCount = state.allItems.filter(i => i.category === 'phi-vat-the').length;
 
   const countAllEl = document.getElementById('count-all');
   if (countAllEl) countAllEl.textContent = totalCount;
@@ -108,6 +154,27 @@ function updateCategoryCounts() {
 
   const countPhiVatTheEl = document.getElementById('count-phi-vat-the');
   if (countPhiVatTheEl) countPhiVatTheEl.textContent = phiVatTheCount;
+
+  // Cập nhật số lượng trên các badge nếu có
+  const heroVatTheBadge = document.getElementById('hero-vat-the-badge-count');
+  if (heroVatTheBadge) {
+    heroVatTheBadge.textContent = `${vatTheCount < 10 ? '0' + vatTheCount : vatTheCount} Di tích Lịch sử Cấp Quốc gia & Tỉnh`;
+  }
+  
+  const heroPhiVatTheBadge = document.getElementById('hero-phi-vat-the-badge-count');
+  if (heroPhiVatTheBadge) {
+    heroPhiVatTheBadge.textContent = `${phiVatTheCount < 10 ? '0' + phiVatTheCount : phiVatTheCount} Di sản Phi vật thể Đặc sắc`;
+  }
+
+  const heroCardVatTheCount = document.getElementById('hero-card-vat-the-count');
+  if (heroCardVatTheCount) {
+    heroCardVatTheCount.textContent = `${vatTheCount} Di tích`;
+  }
+
+  const heroCardPhiVatTheCount = document.getElementById('hero-card-phi-vat-the-count');
+  if (heroCardPhiVatTheCount) {
+    heroCardPhiVatTheCount.textContent = `${phiVatTheCount} Di sản`;
+  }
 }
 
 /**
@@ -686,7 +753,7 @@ function initAudioGuideForModal(item) {
 
   // Xây dựng nội dung bài thuyết minh giàu cảm xúc và truyền cảm
   let story = `Chào mừng quý thầy cô và các bạn học sinh đến với ${item.title}. `;
-  story += `${item.categoryName} tiêu biểu của thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang. `;
+  story += `${item.categoryName} tiêu biểu của xã Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang. `;
   if (item.address) story += `Địa chỉ tại: ${item.address}. `;
   if (item.scope) story += `Phạm vi thực hành di sản tại: ${item.scope}. `;
   if (item.content && item.content.intro) story += `${item.content.intro} `;
@@ -1179,46 +1246,119 @@ const LUU_THUY_KIM_TIEN_NOTES = [
   { note: 293.66, dur: 700 }  // Rề
 ];
 
-async function toggleTraditionalAudio() {
+/**
+ * ====================================================================
+ * TRÌNH PHÁT NHẠC CA KHÚC QUÊ HƯƠNG ("NHÃ NAM TRONG TÔI" & "THPT NHÃ NAM")
+ * ====================================================================
+ */
+
+/**
+ * Cập nhật hiển thị giao diện trình phát nhạc trên thanh điều hướng
+ */
+function updateMusicPlayerUI() {
+  const playlist = getActivePlaylist();
+  const track = playlist[currentTrackIndex];
+  if (!track) return;
+
+  const labels = document.querySelectorAll('#sound-toggle-label, .sound-track-label');
+  labels.forEach(label => {
+    label.textContent = state.isAudioPlaying ? `♫ Đang phát: ${track.title}` : `♫ ${track.title}`;
+  });
+
+  const containers = document.querySelectorAll('.music-player-pill, .sound-player-btn');
+  containers.forEach(container => {
+    if (state.isAudioPlaying) {
+      container.classList.add('playing');
+    } else {
+      container.classList.remove('playing');
+    }
+  });
+
   const btn = document.getElementById('sound-toggle-btn');
-  const label = document.getElementById('sound-toggle-label');
+  if (btn) {
+    btn.title = state.isAudioPlaying ? `Tạm dừng: ${track.title}` : `Phát bài: ${track.title}`;
+  }
+}
+
+/**
+ * Bật / Tạm dừng phát bài hát hiện tại
+ */
+async function toggleMusicPlayback() {
   const bgMusic = document.getElementById('bg-music');
+  const playlist = getActivePlaylist();
+  const track = playlist[currentTrackIndex];
+
+  if (!bgMusic) return;
 
   if (state.isAudioPlaying) {
-    if (bgMusic) {
-      bgMusic.pause();
-    }
-    stopSynthLuuThuy();
+    bgMusic.pause();
     state.isAudioPlaying = false;
-    
-    if (btn) btn.classList.remove('playing');
-    if (label) label.textContent = '♫ Lưu Thủy Kim Tiền';
-    showToastNotification('Đã tạm dừng nhạc nền', 'info');
+    updateMusicPlayerUI();
+    showToastNotification(`Đã tạm dừng: ${track.title}`, 'info');
   } else {
-    let playedHtml5 = false;
+    // Đảm bảo trỏ đúng bài hát
+    if (!bgMusic.src || !bgMusic.src.includes(track.id)) {
+      bgMusic.src = track.src;
+    }
+    bgMusic.volume = 0.5;
 
-    if (bgMusic) {
-      bgMusic.volume = 0.5;
-      try {
-        const playPromise = bgMusic.play();
-        if (playPromise !== undefined) {
-          await playPromise;
-          playedHtml5 = true;
+    try {
+      await bgMusic.play();
+      state.isAudioPlaying = true;
+      updateMusicPlayerUI();
+      showToastNotification(`Đang phát ca khúc: ${track.title} (${track.artist || 'THPT Nhã Nam'})`, 'success');
+    } catch (err) {
+      console.warn('Playback error, trying fallback:', err);
+      if (track.fallbackSrc) {
+        bgMusic.src = track.fallbackSrc;
+        try {
+          await bgMusic.play();
+          state.isAudioPlaying = true;
+          updateMusicPlayerUI();
+          showToastNotification(`Đang phát ca khúc: ${track.title}`, 'success');
+        } catch (e2) {
+          showToastNotification('Chạm vào màn hình để bắt đầu phát nhạc', 'info');
         }
-      } catch (err) {
-        console.warn('HTML5 Audio play failed, falling back to Web Audio API Synth:', err);
       }
     }
-
-    if (!playedHtml5) {
-      startSynthLuuThuy();
-    }
-
-    state.isAudioPlaying = true;
-    if (btn) btn.classList.add('playing');
-    if (label) label.textContent = '♫ Đang phát: Lưu Thủy Kim Tiền';
-    showToastNotification('Đang phát hòa tấu cổ truyền: Lưu Thủy Kim Tiền (Âm lượng 50%)', 'success');
   }
+}
+
+/**
+ * Chuyển sang bài tiếp theo trong Playlist
+ */
+async function nextTrack(auto = false) {
+  const bgMusic = document.getElementById('bg-music');
+  const playlist = getActivePlaylist();
+  currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+  const track = playlist[currentTrackIndex];
+
+  if (bgMusic) {
+    bgMusic.src = track.src;
+    bgMusic.currentTime = 0;
+    try {
+      await bgMusic.play();
+      state.isAudioPlaying = true;
+      updateMusicPlayerUI();
+      if (!auto) {
+        showToastNotification(`Đã chuyển bài: ${track.title}`, 'success');
+      }
+    } catch (err) {
+      console.warn('Next track playback error:', err);
+      if (track.fallbackSrc) {
+        bgMusic.src = track.fallbackSrc;
+        bgMusic.play().then(() => {
+          state.isAudioPlaying = true;
+          updateMusicPlayerUI();
+        }).catch(e => console.warn(e));
+      }
+    }
+  }
+}
+
+// Hàm tương thích cũ
+function toggleTraditionalAudio() {
+  toggleMusicPlayback();
 }
 
 function startSynthLuuThuy() {

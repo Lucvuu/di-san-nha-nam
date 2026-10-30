@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Di Sản Văn Hóa Nhã Nam | Trường THPT Nhã Nam - Tân Yên - Bắc Giang</title>
-  <meta name="description" content="Cổng thông tin số hóa di sản văn hóa vật thể và phi vật thể tại thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang. Dự án giáo dục truyền thống lịch sử của Trường THPT Nhã Nam." />
-  <meta name="keywords" content="Di sản Nhã Nam, THPT Nhã Nam, Chùa Tứ Giáp, Đền Gốc Khế, Đồn Nhã Nam, Đồi Phủ, Sáu điều Bác Hồ dạy, Tân Yên Bắc Giang, Khởi nghĩa Yên Thế, Hoàng Hoa Thám" />
+  <title>Di Sản Văn Hóa Xã Nhã Nam | Trường THPT Nhã Nam - Tân Yên - Bắc Giang</title>
+  <meta name="description" content="Cổng thông tin số hóa di sản văn hóa vật thể và phi vật thể tại xã Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang. Dự án giáo dục truyền thống lịch sử của Trường THPT Nhã Nam." />
+  <meta name="keywords" content="Di sản Nhã Nam, Xã Nhã Nam, THPT Nhã Nam, Đình Hả, Chùa Hả, Chùa Tứ Giáp, Chùa Đồng Điều, Đền Gốc Khế, Đồn Nhã Nam, Đồi Phủ, Đền Đề Truật, Đình Làng Chuông, Chùa Nam Thiên, Khởi nghĩa Yên Thế, Lương Văn Nắm, Hoàng Hoa Thám, Tân Yên Bắc Giang" />
   <meta name="author" content="Trường THPT Nhã Nam - Ban điều hành dự án Di sản Nhã Nam" />
 
   <!-- Favicon chính thức từ BANNER_THPT NHÃ NAM -->
@@ -70,7 +70,7 @@
           />
           <div class="flex flex-col">
             <span class="font-heritage-serif text-[1.22rem] sm:text-[1.32rem] lg:text-[1.36rem] font-black tracking-tight text-[#8B1E1E] whitespace-nowrap leading-tight group-hover:text-[#6F1515] transition-colors">
-              Di Sản Văn Hóa Nhã Nam
+              Di Sản Văn Hóa Xã Nhã Nam
             </span>
             <span class="text-[11px] text-[#5C5248] hidden sm:block font-medium whitespace-nowrap leading-tight mt-0.5">
               Cổng Thông Tin Số Hóa Di Sản Văn Hóa Địa Phương • THPT Nhã Nam
@@ -110,22 +110,31 @@
           </a>
         </nav>
 
-        <!-- Thao tác góc phải: Nhạc Lưu Thủy Kim Tiền & Hotline Cô Mến -->
-        <div class="hidden sm:flex items-center gap-2.5 flex-shrink-0">
-          <!-- Nút bật/tắt nhạc nền Lưu Thủy Kim Tiền -->
-          <button 
-            id="sound-toggle-btn"
-            type="button" 
-            onclick="toggleTraditionalAudio()"
-            class="sound-player-btn whitespace-nowrap"
-            title="Bật/Tắt nhạc cổ truyền: Lưu Thủy Kim Tiền">
-            <span class="equalizer-icon" aria-hidden="true">
-              <span class="eq-bar eq-bar-1"></span>
-              <span class="eq-bar eq-bar-2"></span>
-              <span class="eq-bar eq-bar-3"></span>
-            </span>
-            <span id="sound-toggle-label">♫ Lưu Thủy Kim Tiền</span>
-          </button>
+        <!-- Thao tác góc phải: Trình phát nhạc 2 bài ("Nhã Nam trong tôi" & "THPT Nhã Nam") + Hotline -->
+        <div class="hidden sm:flex items-center gap-2 flex-shrink-0">
+          <!-- Trình phát nhạc 2 ca khúc quê hương -->
+          <div class="music-player-pill flex items-center gap-1.5 bg-[#F5EFE6] border border-[#C59B27]/40 rounded-full py-1 px-3 shadow-xs whitespace-nowrap">
+            <button 
+              id="sound-toggle-btn"
+              type="button" 
+              onclick="toggleMusicPlayback()"
+              class="flex items-center gap-1.5 text-xs font-bold text-[#8B1E1E] hover:text-[#701A1A] transition-colors whitespace-nowrap"
+              title="Phát / Tạm dừng ca khúc quê hương">
+              <span class="equalizer-icon" id="header-eq" aria-hidden="true">
+                <span class="eq-bar eq-bar-1"></span>
+                <span class="eq-bar eq-bar-2"></span>
+                <span class="eq-bar eq-bar-3"></span>
+              </span>
+              <span id="sound-toggle-label" class="whitespace-nowrap font-semibold">♫ Nhã Nam Trong Tôi</span>
+            </button>
+            <button 
+              type="button" 
+              onclick="nextTrack()"
+              class="w-5 h-5 rounded-full bg-white text-[#8B1E1E] hover:bg-[#8B1E1E] hover:text-white transition-all flex items-center justify-center font-black text-[11px] shadow-xs flex-shrink-0 ml-0.5"
+              title="Đổi bài tiếp theo (Nhã Nam Trong Tôi ⮂ THPT Nhã Nam)">
+              ⏭
+            </button>
+          </div>
 
           <!-- Nút gọi hotline admin -->
           <a 
@@ -150,6 +159,23 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-[#EADECF] bg-[#FDFBF7] px-4 pt-3 pb-5 space-y-3 shadow-lg">
+      <!-- Trình phát nhạc trên mobile -->
+      <div class="flex items-center justify-between p-2.5 rounded-xl bg-[#F5EFE6] border border-[#C59B27]/30 text-xs">
+        <button 
+          type="button" 
+          onclick="toggleMusicPlayback()"
+          class="flex items-center gap-2 font-bold text-[#8B1E1E]">
+          <span>🎵 Ca khúc:</span>
+          <span class="sound-track-label">Nhã Nam Trong Tôi</span>
+        </button>
+        <button 
+          type="button" 
+          onclick="nextTrack()"
+          class="px-2.5 py-1 rounded-lg bg-white text-[#8B1E1E] font-bold shadow-xs">
+          Đổi bài ⏭
+        </button>
+      </div>
+
       <button 
         type="button" 
         onclick="setCategoryFilter('vat-the'); scrollToSection('heritage-explorer'); document.getElementById('mobile-menu').classList.add('hidden');" 
@@ -183,10 +209,9 @@
     </div>
   </header>
 
-  <!-- HTML5 Audio Element cho bài Lưu Thủy Kim Tiền -->
-  <audio id="bg-music" loop preload="auto">
-    <source src="./luu-thuy-kim-tien.mp3" type="audio/mpeg">
-    <source src="https://archive.org/download/lp_music-of-viet-nam_various/disc1/02.06.%20Hoa%20Tau%20Bai%20Luu%20Thuy.mp3" type="audio/mpeg">
+  <!-- HTML5 Audio Element cho ca khúc quê hương -->
+  <audio id="bg-music" preload="auto">
+    <source id="audio-source" src="./nha-nam-trong-toi.mp3" type="audio/mpeg">
   </audio>
 
   <!-- ====================================================================
@@ -235,23 +260,23 @@
         <h1 class="font-heritage-serif text-3xl sm:text-5xl lg:text-[3.35rem] font-black text-[#8B1E1E] tracking-tight leading-[1.25] mb-3">
           <span>Khám Phá Di Sản Văn Hóa</span>
           <span class="block mt-2 bg-gradient-to-r from-[#8B1E1E] via-[#B83232] to-[#C59B27] bg-clip-text text-transparent font-black italic">
-            Thị Trấn Nhã Nam
+            Xã Nhã Nam
           </span>
         </h1>
 
         <p class="text-sm sm:text-base text-[#5C5248] leading-relaxed max-w-2xl mx-auto mb-4 font-normal">
-          Mảnh đất địa linh nhân kiệt lưu dấu oai hùng của nghĩa quân Hoàng Hoa Thám trong khởi nghĩa Yên Thế, nơi phát tích <strong class="text-[#8B1E1E] font-bold">Sáu điều Bác Hồ dạy Công an nhân dân</strong> tại chùa Tứ Giáp, cùng kho tàng lễ hội cổ truyền và nét đẹp văn hóa ngàn đời.
+          Mảnh đất địa linh nhân kiệt lưu dấu oai hùng của thủ lĩnh Lương Văn Nắm (Đề Nắm) và nghĩa quân Hoàng Hoa Thám trong khởi nghĩa Yên Thế, nơi phát tích <strong class="text-[#8B1E1E] font-bold">Sáu điều Bác Hồ dạy Công an nhân dân</strong> tại chùa Tứ Giáp, nơi thành lập <strong class="text-[#8B1E1E] font-bold">Chi bộ Đảng đầu tiên</strong> tại thôn Đồng Điều, cùng 37 di tích lịch sử văn hóa ngàn đời.
         </p>
 
         <!-- 3 HUY HIỆU TÍNH NĂNG TRÊN 1 HÀNG NGANG (DESKTOP) TRONG GLASSMORPHIC PILLS -->
         <div class="flex flex-wrap lg:flex-nowrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-semibold text-[#5C5248]">
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
             <span class="w-2.5 h-2.5 rounded-full bg-[#8B1E1E] flex-shrink-0"></span>
-            <span>05 Di tích Lịch sử Cấp Quốc gia</span>
+            <span id="hero-vat-the-badge-count">08 Di tích Quốc gia Đặc biệt & Cấp Tỉnh</span>
           </div>
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
             <span class="w-2.5 h-2.5 rounded-full bg-[#C59B27] flex-shrink-0"></span>
-            <span>05 Di sản Phi vật thể Đặc sắc</span>
+            <span id="hero-phi-vat-the-badge-count">05 Di sản Phi vật thể Đặc sắc</span>
           </div>
           <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-[#C59B27]/40 shadow-sm whitespace-nowrap">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 flex-shrink-0"></span>
@@ -277,7 +302,7 @@
 
           <div class="relative z-10">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B1E1E] text-white text-xs font-bold uppercase tracking-wider mb-2.5 shadow">
-              <span>🏛️ 05 Di tích tiêu biểu</span>
+              <span>🏛️ 08 Di tích tiêu biểu</span>
             </div>
             
             <h2 class="font-heritage-serif text-2xl sm:text-3xl font-black mb-2 leading-tight group-hover:text-[#F6E05E] transition-colors">
@@ -285,15 +310,15 @@
             </h2>
 
             <p class="text-xs sm:text-sm text-gray-200 line-clamp-2 leading-relaxed mb-4 opacity-95">
-              Hệ thống đình, chùa, đền và đồn lũy lịch sử oai hùng: Chùa Tứ Giáp (nơi lưu giữ 6 lời Bác dạy CAND), Đền Gốc Khế, Đồn Nhã Nam - Đồi Phủ, Đình Nhã Nam, Chùa Nam Thiên.
+              Hệ thống đình, đền, chùa và đồn lũy oai hùng: Khu di tích Đình - Chùa Hả (nơi Đề Nắm tế cờ phát động khởi nghĩa), Chùa Tứ Giáp (nơi lưu giữ 6 lời Bác dạy CAND), Di tích Thôn Đồng Điều, Đền Gốc Khế, Đồi Phủ Nhã Nam, Đình Làng Chuông, Chùa Nam Thiên, Đền Đề Truật.
             </p>
 
             <div class="flex items-center justify-between">
               <span class="inline-flex items-center gap-2 font-bold text-xs sm:text-sm text-white group-hover:translate-x-1 transition-transform">
-                <span>Khám phá 5 di tích ngay</span>
+                <span>Khám phá 8 di tích ngay</span>
                 <svg class="w-4 h-4 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </span>
-              <span class="text-xs bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-bold">5 Di tích</span>
+              <span id="hero-card-vat-the-count" class="text-xs bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-bold">8 Di tích</span>
             </div>
           </div>
         </div>
@@ -320,7 +345,7 @@
             </h2>
 
             <p class="text-xs sm:text-sm text-gray-200 line-clamp-2 leading-relaxed mb-4 opacity-95">
-              Hồn cốt tinh hoa dân gian lưu truyền ngàn đời: Lễ hội chùa Tứ Giáp & Đền Gốc Khế, nghệ thuật Hát Chèo, nghề làm bánh khảo, kẹo lạc và võ cổ truyền Yên Thế.
+              Hồn cốt tinh hoa dân gian lưu truyền ngàn đời: Lễ hội Khởi nghĩa Yên Thế (Đình Hả, Chùa Tứ Giáp), nghệ thuật Hát Chèo truyền thống, nghề làm bánh khảo, kẹo lạc, tập quán tưởng niệm và võ cổ truyền Yên Thế.
             </p>
 
             <div class="flex items-center justify-between">
@@ -328,7 +353,7 @@
                 <span>Trải nghiệm 5 di sản ngay</span>
                 <svg class="w-4 h-4 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </span>
-              <span class="text-xs bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-bold">5 Di sản</span>
+              <span id="hero-card-phi-vat-the-count" class="text-xs bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-bold">5 Di sản</span>
             </div>
           </div>
         </div>
@@ -461,24 +486,24 @@
             Không Gian Địa Lý Lịch Sử
           </span>
           <h2 class="font-heritage-serif text-2xl sm:text-4xl font-bold text-[#8B1E1E] mb-4">
-            Bản Đồ Số Hóa Vùng Di Sản Nhã Nam
+            Bản Đồ Số Hóa Vùng Di Sản Xã Nhã Nam
           </h2>
           <p class="text-sm text-[#5C5248] leading-relaxed mb-6 font-normal">
-            Thị trấn Nhã Nam sở hữu vị trí chiến lược nối liền vùng đồng bằng trù phú với căn cứ địa Yên Thế lịch sử. Các di tích nằm trong bán kính thuận tiện từ 500m đến 3km, rất thuận lợi để Trường THPT Nhã Nam và các trường học tổ chức các buổi tham quan học tập ngoại khóa, "Hành trình về nguồn" và trải nghiệm thực tế cho học sinh.
+            Xã Nhã Nam sở hữu vị trí chiến lược nối liền vùng đồng bằng trù phú với căn cứ địa Yên Thế lịch sử. Các di tích nằm trong bán kính thuận tiện từ 500m đến 3km, rất thuận lợi để Trường THPT Nhã Nam và các trường học tổ chức các buổi tham quan học tập ngoại khóa, "Hành trình về nguồn" và trải nghiệm thực tế cho học sinh.
           </p>
 
           <div class="space-y-3 mb-6">
             <div class="flex items-center gap-3 text-xs sm:text-sm text-[#2A2521] bg-white p-3 rounded-xl border border-[#EADECF]">
               <span class="w-6 h-6 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
-              <span><strong>Tuyến 1:</strong> Cụm Di tích Chùa Tứ Giáp & Khu lưu niệm Sáu điều Bác Hồ dạy CAND</span>
+              <span><strong>Tuyến 1 (Cội nguồn & Kháng chiến):</strong> Khu di tích Đình - Chùa Hả (tế cờ 1884) & Chùa Tứ Giáp (6 điều Bác Hồ dạy)</span>
             </div>
             <div class="flex items-center gap-3 text-xs sm:text-sm text-[#2A2521] bg-white p-3 rounded-xl border border-[#EADECF]">
               <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
-              <span><strong>Tuyến 2:</strong> Căn cứ Đền Gốc Khế & Di tích lịch sử Đồn Nhã Nam - Đồi Phủ</span>
+              <span><strong>Tuyến 2 (Mốc son Cách mạng):</strong> Di tích Lịch sử Thôn Đồng Điều (Chi bộ Đảng đầu tiên) & Đền Đề Truật</span>
             </div>
             <div class="flex items-center gap-3 text-xs sm:text-sm text-[#2A2521] bg-white p-3 rounded-xl border border-[#EADECF]">
               <span class="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
-              <span><strong>Tuyến 3:</strong> Đình Nhã Nam - Chùa Nam Thiên - Phố nghề ẩm thực Bánh khảo</span>
+              <span><strong>Tuyến 3 (Chiến tích oai hùng):</strong> Căn cứ Đền Gốc Khế, Đồn Nhã Nam - Đồi Phủ, Đình Làng Chuông & Chùa Nam Thiên</span>
             </div>
           </div>
 
@@ -500,7 +525,7 @@
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
-            title="Bản đồ tổng thể thị trấn Nhã Nam, Tân Yên, Bắc Giang">
+            title="Bản đồ tổng thể xã Nhã Nam, Tân Yên, Bắc Giang">
           </iframe>
         </div>
       </div>
@@ -644,24 +669,27 @@
             </div>
           </div>
           <p class="text-xs text-gray-300 leading-relaxed mb-4">
-            Dự án số hóa di sản văn hóa và lịch sử địa phương do Trường THPT Nhã Nam và Cô Mến khởi xướng, phục vụ công tác giảng dạy, học tập truyền thống cho học sinh, thanh thiếu niên và nhân dân thị trấn Nhã Nam.
+            Dự án số hóa di sản văn hóa và lịch sử địa phương do Trường THPT Nhã Nam và Cô Mến khởi xướng, phục vụ công tác giảng dạy, học tập truyền thống cho học sinh, thanh thiếu niên và nhân dân xã Nhã Nam.
           </p>
           <div class="text-xs text-[#C59B27] font-medium">
-            Trường THPT Nhã Nam, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang
+            Trường THPT Nhã Nam, xã Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang
           </div>
         </div>
 
         <!-- Cột 2: Danh mục di sản nhanh -->
         <div>
           <h4 class="font-heritage-serif font-bold text-base text-[#F6E05E] mb-4">
-            Di Tích Tiêu Biểu
+            Di Tích Tiêu Biểu (8 Di Tích)
           </h4>
-          <ul class="space-y-2 text-xs text-gray-300">
+          <ul class="space-y-1.5 text-xs text-gray-300">
+            <li><a href="javascript:void(0)" onclick="openDetailModal('vat-the-6')" class="hover:text-white transition-colors">🏛️ Đình - Chùa Hả (Đặc biệt)</a></li>
             <li><a href="javascript:void(0)" onclick="openDetailModal('vat-the-1')" class="hover:text-white transition-colors">🏛️ Chùa Tứ Giáp (6 lời Bác dạy)</a></li>
+            <li><a href="javascript:void(0)" onclick="openDetailModal('vat-the-7')" class="hover:text-white transition-colors">🏛️ Thôn Đồng Điều (Chi bộ đầu tiên)</a></li>
             <li><a href="javascript:void(0)" onclick="openDetailModal('vat-the-2')" class="hover:text-white transition-colors">🏛️ Đền Gốc Khế (Căn cứ Yên Thế)</a></li>
             <li><a href="javascript:void(0)" onclick="openDetailModal('vat-the-3')" class="hover:text-white transition-colors">🏛️ Đồn Nhã Nam - Đồi Phủ</a></li>
-            <li><a href="javascript:void(0)" onclick="openDetailModal('vat-the-4')" class="hover:text-white transition-colors">🏛️ Đình Cổ Nhã Nam</a></li>
+            <li><a href="javascript:void(0)" onclick="openDetailModal('vat-the-4')" class="hover:text-white transition-colors">🏛️ Đình Làng Chuông</a></li>
             <li><a href="javascript:void(0)" onclick="openDetailModal('vat-the-5')" class="hover:text-white transition-colors">🏛️ Chùa Nam Thiên (Chùa Phố)</a></li>
+            <li><a href="javascript:void(0)" onclick="openDetailModal('vat-the-8')" class="hover:text-white transition-colors">🏛️ Đền Đề Truật (Bắn nỏ Yên Thế)</a></li>
           </ul>
         </div>
 
@@ -724,7 +752,7 @@
       <!-- Bản quyền & Lưu ý giáo dục -->
       <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
         <div>
-          © 2026 Cổng Thông Tin Di Sản Văn Hóa Nhã Nam - Trường THPT Nhã Nam - Tân Yên - Bắc Giang. Bảo lưu mọi quyền.
+          © 2026 Cổng Thông Tin Di Sản Văn Hóa Xã Nhã Nam - Trường THPT Nhã Nam - Tân Yên - Bắc Giang. Bảo lưu mọi quyền.
         </div>
         <div class="text-center sm:text-right">
           Trang web phục vụ mục đích giáo dục truyền thống phi lợi nhuận cho học sinh & cộng đồng.

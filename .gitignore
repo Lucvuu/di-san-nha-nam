@@ -4,4 +4,6 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
+.ai-skills/
+.extracted/
 
