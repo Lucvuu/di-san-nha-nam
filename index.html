@@ -221,6 +221,1040 @@
        ==================================================================== -->
   <section class="relative pt-7 pb-11 md:pt-9 md:pb-14 overflow-hidden bg-gradient-to-b from-[#F5EFE6] via-[#FDFBF7] to-[#FDFBF7] border-b border-[#EADECF]">
     
+    <!-- VỊ TRÍ 1: MẶT TRỐNG ĐỒNG ĐẠI CẢNH Ở TRUNG TÂM HERO (560px x 560px, ĐA TẦNG XOAY NGƯỢC CHIỀU) -->
+    <div class="dong-son-centerpiece-halo flex items-center justify-center pointer-events-none select-none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+
+  <defs>
+    <!-- Gradient Ánh Kim Vàng Đồng Hoàng Gia -->
+    <radialGradient id="goldRadialGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF8DC" stop-opacity="1"/>
+      <stop offset="25%" stop-color="#FDE047" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#EAB308" stop-opacity="0.9"/>
+      <stop offset="78%" stop-color="#C59B27" stop-opacity="0.95"/>
+      <stop offset="92%" stop-color="#92400E" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#8B1E1E" stop-opacity="1"/>
+    </radialGradient>
+
+    <radialGradient id="starGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#FEF08A"/>
+      <stop offset="70%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#CA8A04"/>
+    </radialGradient>
+
+    <linearGradient id="bronzeMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="25%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="75%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+
+    <!-- Đổ bóng hào quang ánh kim -->
+    <filter id="drumGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <style>
+      @keyframes spinCW_45 {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes spinCCW_35 {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+      }
+      @keyframes spinCW_60 {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .dong-son-core-layer {
+        animation: spinCW_45 45s linear infinite;
+        transform-origin: 500px 500px;
+      }
+      .dong-son-middle-layer {
+        animation: spinCCW_35 35s linear infinite;
+        transform-origin: 500px 500px;
+      }
+      .dong-son-outer-layer {
+        animation: spinCW_60 60s linear infinite;
+        transform-origin: 500px 500px;
+      }
+      .ds-line {
+        fill: none;
+        stroke: #C59B27;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .ds-line-fine {
+        fill: none;
+        stroke: #EAB308;
+        stroke-width: 1.0;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .ds-fill-gold {
+        fill: url(#goldRadialGlow);
+      }
+      .ds-accent {
+        fill: #FDE047;
+      }
+      .ds-deep-red {
+        fill: #8B1E1E;
+      }
+    </style>
+  </defs>
+  
+  <!-- Nền đĩa đồng với gradient ánh kim và vành tròn đồng tâm nền -->
+  <circle cx="500" cy="500" r="496" fill="url(#goldRadialGlow)" stroke="#FDE68A" stroke-width="2.5" opacity="0.98" filter="url(#drumGlow)"/>
+  <circle cx="500" cy="500" r="492" fill="none" stroke="#78350F" stroke-width="2"/>
+  <circle cx="500" cy="500" r="486" fill="none" stroke="#FEF08A" stroke-width="1.2"/>
+
+  <g class="dong-son-core-layer">
+    <circle cx="500" cy="500" r="30" fill="url(#starGradient)" stroke="#8B1E1E" stroke-width="2"/>
+    <circle cx="500" cy="500" r="18" fill="#FFFBEB" stroke="#92400E" stroke-width="1.5"/>
+    <circle cx="500" cy="500" r="8" fill="#8B1E1E"/>
+    <!-- Ngôi sao 14 cánh Ngọc Lũ sắc nét -->
+    <polygon points="638.0,500.0 537.0,508.5 624.3,559.9 529.7,523.7 586.0,607.9 516.5,534.2 530.7,634.5 500.0,538.0 469.3,634.5 483.5,534.2 414.0,607.9 470.3,523.7 375.7,559.9 463.0,508.5 362.0,500.0 463.0,491.5 375.7,440.1 470.3,476.3 414.0,392.1 483.5,465.8 469.3,365.5 500.0,462.0 530.7,365.5 516.5,465.8 586.0,392.1 529.7,476.3 624.3,440.1 537.0,491.5" fill="url(#starGradient)" stroke="#8B1E1E" stroke-width="2.5" stroke-linejoin="round"/>
+    <line x1="518.0" y1="500.0" x2="638.0" y2="500.0" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="516.2" y1="507.8" x2="624.3" y2="559.9" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="511.2" y1="514.1" x2="586.0" y2="607.9" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="504.0" y1="517.5" x2="530.7" y2="634.5" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="496.0" y1="517.5" x2="469.3" y2="634.5" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="488.8" y1="514.1" x2="414.0" y2="607.9" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="483.8" y1="507.8" x2="375.7" y2="559.9" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="482.0" y1="500.0" x2="362.0" y2="500.0" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="483.8" y1="492.2" x2="375.7" y2="440.1" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="488.8" y1="485.9" x2="414.0" y2="392.1" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="496.0" y1="482.5" x2="469.3" y2="365.5" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="504.0" y1="482.5" x2="530.7" y2="365.5" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="511.2" y1="485.9" x2="586.0" y2="392.1" stroke="#FEF08A" stroke-width="1.5"/>
+    <line x1="516.2" y1="492.2" x2="624.3" y2="440.1" stroke="#FEF08A" stroke-width="1.5"/>
+    <!-- Họa tiết Lông Công tam giác đồng tâm xen giữa 14 cánh sao -->
+    <polygon points="632.6,530.3 541.2,508.0 540.6,510.7" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="615.0,526.3 552.8,511.2 552.5,512.8" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="579.9" cy="518.2" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="606.3,584.8 533.7,525.1 532.0,527.2" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="592.3,573.6 542.7,533.0 541.7,534.3" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="564.1" cy="551.1" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="559.0,622.5 519.4,537.2 517.0,538.4" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="551.2,606.3 524.2,548.3 522.7,549.0" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="535.6" cy="573.9" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="500.0,636.0 501.4,542.0 498.6,542.0" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="500.0,618.0 500.8,554.0 499.2,554.0" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="500.0" cy="582.0" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="441.0,622.5 483.0,538.4 480.6,537.2" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="448.8,606.3 477.3,549.0 475.8,548.3" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="464.4" cy="573.9" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="393.7,584.8 468.0,527.2 466.3,525.1" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="407.7,573.6 458.3,534.3 457.3,533.0" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="435.9" cy="551.1" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="367.4,530.3 459.4,510.7 458.8,508.0" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="385.0,526.3 447.5,512.8 447.2,511.2" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="420.1" cy="518.2" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="367.4,469.7 458.8,492.0 459.4,489.3" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="385.0,473.7 447.2,488.8 447.5,487.2" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="420.1" cy="481.8" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="393.7,415.2 466.3,474.9 468.0,472.8" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="407.7,426.4 457.3,467.0 458.3,465.7" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="435.9" cy="448.9" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="441.0,377.5 480.6,462.8 483.0,461.6" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="448.8,393.7 475.8,451.7 477.3,451.0" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="464.4" cy="426.1" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="500.0,364.0 498.6,458.0 501.4,458.0" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="500.0,382.0 499.2,446.0 500.8,446.0" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="500.0" cy="418.0" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="559.0,377.5 517.0,461.6 519.4,462.8" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="551.2,393.7 522.7,451.0 524.2,451.7" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="535.6" cy="426.1" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="606.3,415.2 532.0,472.8 533.7,474.9" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="592.3,426.4 541.7,465.7 542.7,467.0" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="564.1" cy="448.9" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <polygon points="632.6,469.7 540.6,489.3 541.2,492.0" fill="#78350F" opacity="0.85" stroke="#FDE68A" stroke-width="1"/>
+    <polygon points="615.0,473.7 552.5,487.2 552.8,488.8" fill="#CA8A04" opacity="0.9" stroke="#FEF08A" stroke-width="0.75"/>
+    <circle cx="579.9" cy="481.8" r="3.2" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1"/>
+    <!-- Vành 1: Hạt gạo chấm nổi -->
+    <circle cx="500" cy="500" r="142" fill="none" stroke="#FDE68A" stroke-width="1.5"/>
+    <circle cx="500" cy="500" r="154" fill="none" stroke="#FDE68A" stroke-width="1.5"/>
+    <circle cx="648.0" cy="500.0" r="1.8" fill="#FFFBEB"/>
+    <circle cx="647.6" cy="511.1" r="1.8" fill="#FFFBEB"/>
+    <circle cx="646.3" cy="522.1" r="1.8" fill="#FFFBEB"/>
+    <circle cx="644.3" cy="532.9" r="1.8" fill="#FFFBEB"/>
+    <circle cx="641.4" cy="543.6" r="1.8" fill="#FFFBEB"/>
+    <circle cx="637.8" cy="554.1" r="1.8" fill="#FFFBEB"/>
+    <circle cx="633.3" cy="564.2" r="1.8" fill="#FFFBEB"/>
+    <circle cx="628.2" cy="574.0" r="1.8" fill="#FFFBEB"/>
+    <circle cx="622.3" cy="583.4" r="1.8" fill="#FFFBEB"/>
+    <circle cx="615.7" cy="592.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="608.5" cy="600.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="600.7" cy="608.5" r="1.8" fill="#FFFBEB"/>
+    <circle cx="592.3" cy="615.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="583.4" cy="622.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="574.0" cy="628.2" r="1.8" fill="#FFFBEB"/>
+    <circle cx="564.2" cy="633.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="554.1" cy="637.8" r="1.8" fill="#FFFBEB"/>
+    <circle cx="543.6" cy="641.4" r="1.8" fill="#FFFBEB"/>
+    <circle cx="532.9" cy="644.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="522.1" cy="646.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="511.1" cy="647.6" r="1.8" fill="#FFFBEB"/>
+    <circle cx="500.0" cy="648.0" r="1.8" fill="#FFFBEB"/>
+    <circle cx="488.9" cy="647.6" r="1.8" fill="#FFFBEB"/>
+    <circle cx="477.9" cy="646.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="467.1" cy="644.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="456.4" cy="641.4" r="1.8" fill="#FFFBEB"/>
+    <circle cx="445.9" cy="637.8" r="1.8" fill="#FFFBEB"/>
+    <circle cx="435.8" cy="633.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="426.0" cy="628.2" r="1.8" fill="#FFFBEB"/>
+    <circle cx="416.6" cy="622.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="407.7" cy="615.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="399.3" cy="608.5" r="1.8" fill="#FFFBEB"/>
+    <circle cx="391.5" cy="600.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="384.3" cy="592.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="377.7" cy="583.4" r="1.8" fill="#FFFBEB"/>
+    <circle cx="371.8" cy="574.0" r="1.8" fill="#FFFBEB"/>
+    <circle cx="366.7" cy="564.2" r="1.8" fill="#FFFBEB"/>
+    <circle cx="362.2" cy="554.1" r="1.8" fill="#FFFBEB"/>
+    <circle cx="358.6" cy="543.6" r="1.8" fill="#FFFBEB"/>
+    <circle cx="355.7" cy="532.9" r="1.8" fill="#FFFBEB"/>
+    <circle cx="353.7" cy="522.1" r="1.8" fill="#FFFBEB"/>
+    <circle cx="352.4" cy="511.1" r="1.8" fill="#FFFBEB"/>
+    <circle cx="352.0" cy="500.0" r="1.8" fill="#FFFBEB"/>
+    <circle cx="352.4" cy="488.9" r="1.8" fill="#FFFBEB"/>
+    <circle cx="353.7" cy="477.9" r="1.8" fill="#FFFBEB"/>
+    <circle cx="355.7" cy="467.1" r="1.8" fill="#FFFBEB"/>
+    <circle cx="358.6" cy="456.4" r="1.8" fill="#FFFBEB"/>
+    <circle cx="362.2" cy="445.9" r="1.8" fill="#FFFBEB"/>
+    <circle cx="366.7" cy="435.8" r="1.8" fill="#FFFBEB"/>
+    <circle cx="371.8" cy="426.0" r="1.8" fill="#FFFBEB"/>
+    <circle cx="377.7" cy="416.6" r="1.8" fill="#FFFBEB"/>
+    <circle cx="384.3" cy="407.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="391.5" cy="399.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="399.3" cy="391.5" r="1.8" fill="#FFFBEB"/>
+    <circle cx="407.7" cy="384.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="416.6" cy="377.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="426.0" cy="371.8" r="1.8" fill="#FFFBEB"/>
+    <circle cx="435.8" cy="366.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="445.9" cy="362.2" r="1.8" fill="#FFFBEB"/>
+    <circle cx="456.4" cy="358.6" r="1.8" fill="#FFFBEB"/>
+    <circle cx="467.1" cy="355.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="477.9" cy="353.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="488.9" cy="352.4" r="1.8" fill="#FFFBEB"/>
+    <circle cx="500.0" cy="352.0" r="1.8" fill="#FFFBEB"/>
+    <circle cx="511.1" cy="352.4" r="1.8" fill="#FFFBEB"/>
+    <circle cx="522.1" cy="353.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="532.9" cy="355.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="543.6" cy="358.6" r="1.8" fill="#FFFBEB"/>
+    <circle cx="554.1" cy="362.2" r="1.8" fill="#FFFBEB"/>
+    <circle cx="564.2" cy="366.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="574.0" cy="371.8" r="1.8" fill="#FFFBEB"/>
+    <circle cx="583.4" cy="377.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="592.3" cy="384.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="600.7" cy="391.5" r="1.8" fill="#FFFBEB"/>
+    <circle cx="608.5" cy="399.3" r="1.8" fill="#FFFBEB"/>
+    <circle cx="615.7" cy="407.7" r="1.8" fill="#FFFBEB"/>
+    <circle cx="622.3" cy="416.6" r="1.8" fill="#FFFBEB"/>
+    <circle cx="628.2" cy="426.0" r="1.8" fill="#FFFBEB"/>
+    <circle cx="633.3" cy="435.8" r="1.8" fill="#FFFBEB"/>
+    <circle cx="637.8" cy="445.9" r="1.8" fill="#FFFBEB"/>
+    <circle cx="641.4" cy="456.4" r="1.8" fill="#FFFBEB"/>
+    <circle cx="644.3" cy="467.1" r="1.8" fill="#FFFBEB"/>
+    <circle cx="646.3" cy="477.9" r="1.8" fill="#FFFBEB"/>
+    <circle cx="647.6" cy="488.9" r="1.8" fill="#FFFBEB"/>
+    <!-- Vành 2: Văn chữ S xoắn ốc gãy khúc liên hoàn -->
+    <circle cx="500" cy="500" r="182" fill="none" stroke="#FDE68A" stroke-width="1.5"/>
+    <path d="M 659.0 500.0 Q 678.5 513.1 677.5 523.4 M 659.0 500.0 Q 658.7 509.2 677.5 523.4" class="ds-line-fine"/>
+    <path d="M 657.2 523.7 Q 674.6 539.6 672.0 549.6 M 657.2 523.7 Q 655.6 532.7 672.0 549.6" class="ds-line-fine"/>
+    <path d="M 651.9 546.9 Q 666.7 565.1 662.7 574.6 M 651.9 546.9 Q 649.0 555.5 662.7 574.6" class="ds-line-fine"/>
+    <path d="M 643.3 569.0 Q 655.2 589.3 649.8 598.1 M 643.3 569.0 Q 639.0 577.1 649.8 598.1" class="ds-line-fine"/>
+    <path d="M 631.4 589.6 Q 640.1 611.4 633.5 619.3 M 631.4 589.6 Q 626.0 597.0 633.5 619.3" class="ds-line-fine"/>
+    <path d="M 616.6 608.1 Q 621.9 631.0 614.2 637.8 M 616.6 608.1 Q 610.1 614.7 614.2 637.8" class="ds-line-fine"/>
+    <path d="M 599.1 624.3 Q 601.1 647.7 592.4 653.3 M 599.1 624.3 Q 591.8 629.8 592.4 653.3" class="ds-line-fine"/>
+    <path d="M 579.5 637.7 Q 577.9 661.2 568.5 665.4 M 579.5 637.7 Q 571.4 642.0 568.5 665.4" class="ds-line-fine"/>
+    <path d="M 558.1 648.0 Q 553.0 671.0 543.1 673.7 M 558.1 648.0 Q 549.5 651.1 543.1 673.7" class="ds-line-fine"/>
+    <path d="M 535.4 655.0 Q 526.9 677.0 516.7 678.2 M 535.4 655.0 Q 526.4 656.8 516.7 678.2" class="ds-line-fine"/>
+    <path d="M 511.9 658.6 Q 500.3 679.0 490.0 678.7 M 511.9 658.6 Q 502.7 659.0 490.0 678.7" class="ds-line-fine"/>
+    <path d="M 488.1 658.6 Q 473.6 677.0 463.4 675.2 M 488.1 658.6 Q 479.0 657.6 463.4 675.2" class="ds-line-fine"/>
+    <path d="M 464.6 655.0 Q 447.5 671.1 437.7 667.8 M 464.6 655.0 Q 455.8 652.7 437.7 667.8" class="ds-line-fine"/>
+    <path d="M 441.9 648.0 Q 422.6 661.4 413.4 656.7 M 441.9 648.0 Q 433.5 644.4 413.4 656.7" class="ds-line-fine"/>
+    <path d="M 420.5 637.7 Q 399.4 648.0 391.0 642.0 M 420.5 637.7 Q 412.7 632.9 391.0 642.0" class="ds-line-fine"/>
+    <path d="M 400.9 624.3 Q 378.4 631.4 371.1 624.2 M 400.9 624.3 Q 393.9 618.4 371.1 624.2" class="ds-line-fine"/>
+    <path d="M 383.4 608.1 Q 360.2 611.8 354.0 603.6 M 383.4 608.1 Q 377.4 601.3 354.0 603.6" class="ds-line-fine"/>
+    <path d="M 368.6 589.6 Q 345.1 589.7 340.2 580.7 M 368.6 589.6 Q 363.7 581.9 340.2 580.7" class="ds-line-fine"/>
+    <path d="M 356.7 569.0 Q 333.5 565.6 330.0 556.0 M 356.7 569.0 Q 353.0 560.6 330.0 556.0" class="ds-line-fine"/>
+    <path d="M 348.1 546.9 Q 325.5 540.1 323.5 530.0 M 348.1 546.9 Q 345.6 538.0 323.5 530.0" class="ds-line-fine"/>
+    <path d="M 342.8 523.7 Q 321.5 513.6 321.0 503.3 M 342.8 523.7 Q 341.7 514.6 321.0 503.3" class="ds-line-fine"/>
+    <path d="M 341.0 500.0 Q 321.5 486.9 322.5 476.6 M 341.0 500.0 Q 341.3 490.8 322.5 476.6" class="ds-line-fine"/>
+    <path d="M 342.8 476.3 Q 325.4 460.4 328.0 450.4 M 342.8 476.3 Q 344.4 467.3 328.0 450.4" class="ds-line-fine"/>
+    <path d="M 348.1 453.1 Q 333.3 434.9 337.3 425.4 M 348.1 453.1 Q 351.0 444.5 337.3 425.4" class="ds-line-fine"/>
+    <path d="M 356.7 431.0 Q 344.8 410.7 350.2 401.9 M 356.7 431.0 Q 361.0 422.9 350.2 401.9" class="ds-line-fine"/>
+    <path d="M 368.6 410.4 Q 359.9 388.6 366.5 380.7 M 368.6 410.4 Q 374.0 403.0 366.5 380.7" class="ds-line-fine"/>
+    <path d="M 383.4 391.9 Q 378.1 369.0 385.8 362.2 M 383.4 391.9 Q 389.9 385.3 385.8 362.2" class="ds-line-fine"/>
+    <path d="M 400.9 375.7 Q 398.9 352.3 407.6 346.7 M 400.9 375.7 Q 408.2 370.2 407.6 346.7" class="ds-line-fine"/>
+    <path d="M 420.5 362.3 Q 422.1 338.8 431.5 334.6 M 420.5 362.3 Q 428.6 358.0 431.5 334.6" class="ds-line-fine"/>
+    <path d="M 441.9 352.0 Q 447.0 329.0 456.9 326.3 M 441.9 352.0 Q 450.5 348.9 456.9 326.3" class="ds-line-fine"/>
+    <path d="M 464.6 345.0 Q 473.1 323.0 483.3 321.8 M 464.6 345.0 Q 473.6 343.2 483.3 321.8" class="ds-line-fine"/>
+    <path d="M 488.1 341.4 Q 499.7 321.0 510.0 321.3 M 488.1 341.4 Q 497.3 341.0 510.0 321.3" class="ds-line-fine"/>
+    <path d="M 511.9 341.4 Q 526.4 323.0 536.6 324.8 M 511.9 341.4 Q 521.0 342.4 536.6 324.8" class="ds-line-fine"/>
+    <path d="M 535.4 345.0 Q 552.5 328.9 562.3 332.2 M 535.4 345.0 Q 544.2 347.3 562.3 332.2" class="ds-line-fine"/>
+    <path d="M 558.1 352.0 Q 577.4 338.6 586.6 343.3 M 558.1 352.0 Q 566.5 355.6 586.6 343.3" class="ds-line-fine"/>
+    <path d="M 579.5 362.3 Q 600.6 352.0 609.0 358.0 M 579.5 362.3 Q 587.3 367.1 609.0 358.0" class="ds-line-fine"/>
+    <path d="M 599.1 375.7 Q 621.6 368.6 628.9 375.8 M 599.1 375.7 Q 606.1 381.6 628.9 375.8" class="ds-line-fine"/>
+    <path d="M 616.6 391.9 Q 639.8 388.2 646.0 396.4 M 616.6 391.9 Q 622.6 398.7 646.0 396.4" class="ds-line-fine"/>
+    <path d="M 631.4 410.4 Q 654.9 410.3 659.8 419.3 M 631.4 410.4 Q 636.3 418.1 659.8 419.3" class="ds-line-fine"/>
+    <path d="M 643.3 431.0 Q 666.5 434.4 670.0 444.0 M 643.3 431.0 Q 647.0 439.4 670.0 444.0" class="ds-line-fine"/>
+    <path d="M 651.9 453.1 Q 674.5 459.9 676.5 470.0 M 651.9 453.1 Q 654.4 462.0 676.5 470.0" class="ds-line-fine"/>
+    <path d="M 657.2 476.3 Q 678.5 486.4 679.0 496.7 M 657.2 476.3 Q 658.3 485.4 679.0 496.7" class="ds-line-fine"/>
+    <!-- Vành 3: Vòng tròn đồng tâm có tiếp tuyến nối nhau -->
+    <circle cx="500" cy="500" r="216" fill="none" stroke="#FDE68A" stroke-width="1.8"/>
+    <circle cx="700.0" cy="500.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="700.0" cy="500.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="700.0" cy="500.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="707.3" y1="509.1" x2="690.9" y2="525.1" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="697.0" cy="534.7" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="697.0" cy="534.7" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="697.0" cy="534.7" r="1.5" fill="#8B1E1E"/>
+    <line x1="702.6" y1="544.9" x2="683.6" y2="557.9" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="687.9" cy="568.4" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="687.9" cy="568.4" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="687.9" cy="568.4" r="1.5" fill="#8B1E1E"/>
+    <line x1="691.7" y1="579.4" x2="670.7" y2="588.9" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="673.2" cy="600.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="673.2" cy="600.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="673.2" cy="600.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="675.0" y1="611.5" x2="652.7" y2="617.2" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="653.2" cy="628.6" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="653.2" cy="628.6" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="653.2" cy="628.6" r="1.5" fill="#8B1E1E"/>
+    <line x1="653.0" y1="640.2" x2="630.1" y2="641.9" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="628.6" cy="653.2" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="628.6" cy="653.2" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="628.6" cy="653.2" r="1.5" fill="#8B1E1E"/>
+    <line x1="626.3" y1="664.6" x2="603.4" y2="662.4" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="600.0" cy="673.2" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="600.0" cy="673.2" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="600.0" cy="673.2" r="1.5" fill="#8B1E1E"/>
+    <line x1="595.8" y1="684.1" x2="573.7" y2="677.8" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="568.4" cy="687.9" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="568.4" cy="687.9" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="568.4" cy="687.9" r="1.5" fill="#8B1E1E"/>
+    <line x1="562.4" y1="697.9" x2="541.7" y2="687.9" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="534.7" cy="697.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="534.7" cy="697.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="534.7" cy="697.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="527.1" y1="705.7" x2="508.4" y2="692.3" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="500.0" cy="700.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="500.0" cy="700.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="500.0" cy="700.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="490.9" y1="707.3" x2="474.9" y2="690.9" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="465.3" cy="697.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="465.3" cy="697.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="465.3" cy="697.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="455.1" y1="702.6" x2="442.1" y2="683.6" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="431.6" cy="687.9" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="431.6" cy="687.9" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="431.6" cy="687.9" r="1.5" fill="#8B1E1E"/>
+    <line x1="420.6" y1="691.7" x2="411.1" y2="670.7" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="400.0" cy="673.2" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="400.0" cy="673.2" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="400.0" cy="673.2" r="1.5" fill="#8B1E1E"/>
+    <line x1="388.5" y1="675.0" x2="382.8" y2="652.7" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="371.4" cy="653.2" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="371.4" cy="653.2" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="371.4" cy="653.2" r="1.5" fill="#8B1E1E"/>
+    <line x1="359.8" y1="653.0" x2="358.1" y2="630.1" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="346.8" cy="628.6" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="346.8" cy="628.6" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="346.8" cy="628.6" r="1.5" fill="#8B1E1E"/>
+    <line x1="335.4" y1="626.3" x2="337.6" y2="603.4" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="326.8" cy="600.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="326.8" cy="600.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="326.8" cy="600.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="315.9" y1="595.8" x2="322.2" y2="573.7" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="312.1" cy="568.4" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="312.1" cy="568.4" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="312.1" cy="568.4" r="1.5" fill="#8B1E1E"/>
+    <line x1="302.1" y1="562.4" x2="312.1" y2="541.7" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="303.0" cy="534.7" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="303.0" cy="534.7" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="303.0" cy="534.7" r="1.5" fill="#8B1E1E"/>
+    <line x1="294.3" y1="527.1" x2="307.7" y2="508.4" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="300.0" cy="500.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="300.0" cy="500.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="300.0" cy="500.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="292.7" y1="490.9" x2="309.1" y2="474.9" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="303.0" cy="465.3" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="303.0" cy="465.3" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="303.0" cy="465.3" r="1.5" fill="#8B1E1E"/>
+    <line x1="297.4" y1="455.1" x2="316.4" y2="442.1" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="312.1" cy="431.6" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="312.1" cy="431.6" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="312.1" cy="431.6" r="1.5" fill="#8B1E1E"/>
+    <line x1="308.3" y1="420.6" x2="329.3" y2="411.1" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="326.8" cy="400.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="326.8" cy="400.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="326.8" cy="400.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="325.0" y1="388.5" x2="347.3" y2="382.8" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="346.8" cy="371.4" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="346.8" cy="371.4" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="346.8" cy="371.4" r="1.5" fill="#8B1E1E"/>
+    <line x1="347.0" y1="359.8" x2="369.9" y2="358.1" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="371.4" cy="346.8" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="371.4" cy="346.8" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="371.4" cy="346.8" r="1.5" fill="#8B1E1E"/>
+    <line x1="373.7" y1="335.4" x2="396.6" y2="337.6" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="400.0" cy="326.8" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="400.0" cy="326.8" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="400.0" cy="326.8" r="1.5" fill="#8B1E1E"/>
+    <line x1="404.2" y1="315.9" x2="426.3" y2="322.2" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="431.6" cy="312.1" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="431.6" cy="312.1" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="431.6" cy="312.1" r="1.5" fill="#8B1E1E"/>
+    <line x1="437.6" y1="302.1" x2="458.3" y2="312.1" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="465.3" cy="303.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="465.3" cy="303.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="465.3" cy="303.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="472.9" y1="294.3" x2="491.6" y2="307.7" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="500.0" cy="300.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="500.0" cy="300.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="500.0" cy="300.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="509.1" y1="292.7" x2="525.1" y2="309.1" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="534.7" cy="303.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="534.7" cy="303.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="534.7" cy="303.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="544.9" y1="297.4" x2="557.9" y2="316.4" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="568.4" cy="312.1" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="568.4" cy="312.1" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="568.4" cy="312.1" r="1.5" fill="#8B1E1E"/>
+    <line x1="579.4" y1="308.3" x2="588.9" y2="329.3" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="600.0" cy="326.8" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="600.0" cy="326.8" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="600.0" cy="326.8" r="1.5" fill="#8B1E1E"/>
+    <line x1="611.5" y1="325.0" x2="617.2" y2="347.3" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="628.6" cy="346.8" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="628.6" cy="346.8" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="628.6" cy="346.8" r="1.5" fill="#8B1E1E"/>
+    <line x1="640.2" y1="347.0" x2="641.9" y2="369.9" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="653.2" cy="371.4" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="653.2" cy="371.4" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="653.2" cy="371.4" r="1.5" fill="#8B1E1E"/>
+    <line x1="664.6" y1="373.7" x2="662.4" y2="396.6" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="673.2" cy="400.0" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="673.2" cy="400.0" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="673.2" cy="400.0" r="1.5" fill="#8B1E1E"/>
+    <line x1="684.1" y1="404.2" x2="677.8" y2="426.3" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="687.9" cy="431.6" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="687.9" cy="431.6" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="687.9" cy="431.6" r="1.5" fill="#8B1E1E"/>
+    <line x1="697.9" y1="437.6" x2="687.9" y2="458.3" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="697.0" cy="465.3" r="8.5" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <circle cx="697.0" cy="465.3" r="4.5" fill="#FFFBEB" stroke="#92400E" stroke-width="0.8"/>
+    <circle cx="697.0" cy="465.3" r="1.5" fill="#8B1E1E"/>
+    <line x1="705.7" y1="472.9" x2="692.3" y2="491.6" stroke="#FEF08A" stroke-width="1.2"/>
+    <!-- Vành 4: Văn Răng Cưa đối xứng -->
+    <circle cx="500" cy="500" r="252" fill="none" stroke="#FDE68A" stroke-width="2"/>
+    <path d="M 722.0 500.0 L 747.8 510.8 L 721.2 519.3 Z M 721.2 519.3 L 745.9 532.4 L 718.6 538.5 Z M 718.6 538.5 L 742.1 553.7 L 714.4 557.5 Z M 714.4 557.5 L 736.5 574.6 L 708.6 575.9 Z M 708.6 575.9 L 729.1 594.9 L 701.2 593.8 Z M 701.2 593.8 L 720.0 614.5 L 692.3 611.0 Z M 692.3 611.0 L 709.2 633.3 L 681.9 627.3 Z M 681.9 627.3 L 696.8 651.0 L 670.1 642.7 Z M 670.1 642.7 L 682.8 667.5 L 657.0 657.0 Z M 657.0 657.0 L 667.5 682.8 L 642.7 670.1 Z M 642.7 670.1 L 651.0 696.8 L 627.3 681.9 Z M 627.3 681.9 L 633.3 709.2 L 611.0 692.3 Z M 611.0 692.3 L 614.5 720.0 L 593.8 701.2 Z M 593.8 701.2 L 594.9 729.1 L 575.9 708.6 Z M 575.9 708.6 L 574.6 736.5 L 557.5 714.4 Z M 557.5 714.4 L 553.7 742.1 L 538.5 718.6 Z M 538.5 718.6 L 532.4 745.9 L 519.3 721.2 Z M 519.3 721.2 L 510.8 747.8 L 500.0 722.0 Z M 500.0 722.0 L 489.2 747.8 L 480.7 721.2 Z M 480.7 721.2 L 467.6 745.9 L 461.5 718.6 Z M 461.5 718.6 L 446.3 742.1 L 442.5 714.4 Z M 442.5 714.4 L 425.4 736.5 L 424.1 708.6 Z M 424.1 708.6 L 405.1 729.1 L 406.2 701.2 Z M 406.2 701.2 L 385.5 720.0 L 389.0 692.3 Z M 389.0 692.3 L 366.7 709.2 L 372.7 681.9 Z M 372.7 681.9 L 349.0 696.8 L 357.3 670.1 Z M 357.3 670.1 L 332.5 682.8 L 343.0 657.0 Z M 343.0 657.0 L 317.2 667.5 L 329.9 642.7 Z M 329.9 642.7 L 303.2 651.0 L 318.1 627.3 Z M 318.1 627.3 L 290.8 633.3 L 307.7 611.0 Z M 307.7 611.0 L 280.0 614.5 L 298.8 593.8 Z M 298.8 593.8 L 270.9 594.9 L 291.4 575.9 Z M 291.4 575.9 L 263.5 574.6 L 285.6 557.5 Z M 285.6 557.5 L 257.9 553.7 L 281.4 538.5 Z M 281.4 538.5 L 254.1 532.4 L 278.8 519.3 Z M 278.8 519.3 L 252.2 510.8 L 278.0 500.0 Z M 278.0 500.0 L 252.2 489.2 L 278.8 480.7 Z M 278.8 480.7 L 254.1 467.6 L 281.4 461.5 Z M 281.4 461.5 L 257.9 446.3 L 285.6 442.5 Z M 285.6 442.5 L 263.5 425.4 L 291.4 424.1 Z M 291.4 424.1 L 270.9 405.1 L 298.8 406.2 Z M 298.8 406.2 L 280.0 385.5 L 307.7 389.0 Z M 307.7 389.0 L 290.8 366.7 L 318.1 372.7 Z M 318.1 372.7 L 303.2 349.0 L 329.9 357.3 Z M 329.9 357.3 L 317.2 332.5 L 343.0 343.0 Z M 343.0 343.0 L 332.5 317.2 L 357.3 329.9 Z M 357.3 329.9 L 349.0 303.2 L 372.7 318.1 Z M 372.7 318.1 L 366.7 290.8 L 389.0 307.7 Z M 389.0 307.7 L 385.5 280.0 L 406.2 298.8 Z M 406.2 298.8 L 405.1 270.9 L 424.1 291.4 Z M 424.1 291.4 L 425.4 263.5 L 442.5 285.6 Z M 442.5 285.6 L 446.3 257.9 L 461.5 281.4 Z M 461.5 281.4 L 467.6 254.1 L 480.7 278.8 Z M 480.7 278.8 L 489.2 252.2 L 500.0 278.0 Z M 500.0 278.0 L 510.8 252.2 L 519.3 278.8 Z M 519.3 278.8 L 532.4 254.1 L 538.5 281.4 Z M 538.5 281.4 L 553.7 257.9 L 557.5 285.6 Z M 557.5 285.6 L 574.6 263.5 L 575.9 291.4 Z M 575.9 291.4 L 594.9 270.9 L 593.8 298.8 Z M 593.8 298.8 L 614.5 280.0 L 611.0 307.7 Z M 611.0 307.7 L 633.3 290.8 L 627.3 318.1 Z M 627.3 318.1 L 651.0 303.2 L 642.7 329.9 Z M 642.7 329.9 L 667.5 317.2 L 657.0 343.0 Z M 657.0 343.0 L 682.8 332.5 L 670.1 357.3 Z M 670.1 357.3 L 696.8 349.0 L 681.9 372.7 Z M 681.9 372.7 L 709.2 366.7 L 692.3 389.0 Z M 692.3 389.0 L 720.0 385.5 L 701.2 406.2 Z M 701.2 406.2 L 729.1 405.1 L 708.6 424.1 Z M 708.6 424.1 L 736.5 425.4 L 714.4 442.5 Z M 714.4 442.5 L 742.1 446.3 L 718.6 461.5 Z M 718.6 461.5 L 745.9 467.6 L 721.2 480.7 Z M 721.2 480.7 L 747.8 489.2 L 722.0 500.0 Z" fill="#92400E" stroke="#FEF08A" stroke-width="0.9"/>
+  </g>
+  <g class="dong-son-middle-layer">
+    <!-- Vành ranh giới trong của vành chính -->
+    <circle cx="500" cy="500" r="256" fill="none" stroke="#FDE68A" stroke-width="1.5"/>
+    <circle cx="500" cy="500" r="338" fill="none" stroke="#FDE68A" stroke-width="1.8"/>
+    <!-- Vành Nhà Sàn Lạc Việt hình thuyền & Người múa hóa trang lông chim -->
+    <!-- Nhà sàn 1 -->
+    <path d="M 817.7 390.6 Q 816.0 500.0 817.7 609.4 L 815.3 590.4 Q 816.0 500.0 815.3 409.6 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <line x1="774.8" y1="436.6" x2="774.8" y2="563.4" stroke="#FEF08A" stroke-width="2"/>
+    <line x1="778.5" y1="455.9" x2="758.8" y2="459.0" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="781.3" y1="480.3" x2="761.4" y2="481.7" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="782.0" y1="500.0" x2="762.0" y2="500.0" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="781.3" y1="519.7" x2="761.4" y2="518.3" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="778.5" y1="544.1" x2="758.8" y2="541.0" stroke="#FEF08A" stroke-width="1.4"/>
+    <circle cx="838.0" cy="500.0" r="3" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="0.8"/>
+    <line x1="793.8" y1="621.7" x2="743.9" y2="601.0" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="793.8" cy="621.7" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 793.8 621.7 Q 818.5 600.4 820.5 598.4" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="793.8" y1="621.7" x2="790.9" y2="645.0" stroke="#FFFBEB" stroke-width="1.2"/>
+    <line x1="724.9" y1="724.9" x2="686.7" y2="686.7" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="724.9" cy="724.9" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 724.9 724.9 Q 755.9 714.7 757.9 712.7" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="724.9" y1="724.9" x2="713.2" y2="745.3" stroke="#FFFBEB" stroke-width="1.2"/>
+    <line x1="621.7" y1="793.8" x2="601.0" y2="743.9" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="621.7" cy="793.8" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 621.7 793.8 Q 654.2 796.3 656.2 794.3" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="621.7" y1="793.8" x2="603.1" y2="808.2" stroke="#FFFBEB" stroke-width="1.2"/>
+    <!-- Nhà sàn 2 -->
+    <path d="M 609.4 817.7 Q 500.0 816.0 390.6 817.7 L 409.6 815.3 Q 500.0 816.0 590.4 815.3 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <line x1="563.4" y1="774.8" x2="436.6" y2="774.8" stroke="#FEF08A" stroke-width="2"/>
+    <line x1="544.1" y1="778.5" x2="541.0" y2="758.8" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="519.7" y1="781.3" x2="518.3" y2="761.4" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="500.0" y1="782.0" x2="500.0" y2="762.0" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="480.3" y1="781.3" x2="481.7" y2="761.4" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="455.9" y1="778.5" x2="459.0" y2="758.8" stroke="#FEF08A" stroke-width="1.4"/>
+    <circle cx="500.0" cy="838.0" r="3" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="0.8"/>
+    <line x1="378.3" y1="793.8" x2="399.0" y2="743.9" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="378.3" cy="793.8" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 378.3 793.8 Q 399.6 818.5 401.6 816.5" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="378.3" y1="793.8" x2="355.0" y2="790.9" stroke="#FFFBEB" stroke-width="1.2"/>
+    <line x1="275.1" y1="724.9" x2="313.3" y2="686.7" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="275.1" cy="724.9" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 275.1 724.9 Q 285.3 755.9 287.3 753.9" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="275.1" y1="724.9" x2="254.7" y2="713.2" stroke="#FFFBEB" stroke-width="1.2"/>
+    <line x1="206.2" y1="621.7" x2="256.1" y2="601.0" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="206.2" cy="621.7" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 206.2 621.7 Q 203.7 654.2 205.7 652.2" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="206.2" y1="621.7" x2="191.8" y2="603.1" stroke="#FFFBEB" stroke-width="1.2"/>
+    <!-- Nhà sàn 3 -->
+    <path d="M 182.3 609.4 Q 184.0 500.0 182.3 390.6 L 184.7 409.6 Q 184.0 500.0 184.7 590.4 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <line x1="225.2" y1="563.4" x2="225.2" y2="436.6" stroke="#FEF08A" stroke-width="2"/>
+    <line x1="221.5" y1="544.1" x2="241.2" y2="541.0" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="218.7" y1="519.7" x2="238.6" y2="518.3" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="218.0" y1="500.0" x2="238.0" y2="500.0" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="218.7" y1="480.3" x2="238.6" y2="481.7" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="221.5" y1="455.9" x2="241.2" y2="459.0" stroke="#FEF08A" stroke-width="1.4"/>
+    <circle cx="162.0" cy="500.0" r="3" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="0.8"/>
+    <line x1="206.2" y1="378.3" x2="256.1" y2="399.0" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="206.2" cy="378.3" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 206.2 378.3 Q 181.5 399.6 183.5 397.6" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="206.2" y1="378.3" x2="209.1" y2="355.0" stroke="#FFFBEB" stroke-width="1.2"/>
+    <line x1="275.1" y1="275.1" x2="313.3" y2="313.3" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="275.1" cy="275.1" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 275.1 275.1 Q 244.1 285.3 246.1 283.3" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="275.1" y1="275.1" x2="286.8" y2="254.7" stroke="#FFFBEB" stroke-width="1.2"/>
+    <line x1="378.3" y1="206.2" x2="399.0" y2="256.1" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="378.3" cy="206.2" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 378.3 206.2 Q 345.8 203.7 347.8 201.7" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="378.3" y1="206.2" x2="396.9" y2="191.8" stroke="#FFFBEB" stroke-width="1.2"/>
+    <!-- Nhà sàn 4 -->
+    <path d="M 390.6 182.3 Q 500.0 184.0 609.4 182.3 L 590.4 184.7 Q 500.0 184.0 409.6 184.7 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.2"/>
+    <line x1="436.6" y1="225.2" x2="563.4" y2="225.2" stroke="#FEF08A" stroke-width="2"/>
+    <line x1="455.9" y1="221.5" x2="459.0" y2="241.2" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="480.3" y1="218.7" x2="481.7" y2="238.6" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="500.0" y1="218.0" x2="500.0" y2="238.0" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="519.7" y1="218.7" x2="518.3" y2="238.6" stroke="#FEF08A" stroke-width="1.4"/>
+    <line x1="544.1" y1="221.5" x2="541.0" y2="241.2" stroke="#FEF08A" stroke-width="1.4"/>
+    <circle cx="500.0" cy="162.0" r="3" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="0.8"/>
+    <line x1="621.7" y1="206.2" x2="601.0" y2="256.1" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="621.7" cy="206.2" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 621.7 206.2 Q 600.4 181.5 602.4 179.5" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="621.7" y1="206.2" x2="645.0" y2="209.1" stroke="#FFFBEB" stroke-width="1.2"/>
+    <line x1="724.9" y1="275.1" x2="686.7" y2="313.3" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="724.9" cy="275.1" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 724.9 275.1 Q 714.7 244.1 716.7 242.1" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="724.9" y1="275.1" x2="745.3" y2="286.8" stroke="#FFFBEB" stroke-width="1.2"/>
+    <line x1="793.8" y1="378.3" x2="743.9" y2="399.0" stroke="#FEF08A" stroke-width="1.8"/>
+    <circle cx="793.8" cy="378.3" r="3.2" fill="#FFFBEB" stroke="#92400E" stroke-width="1"/>
+    <path d="M 793.8 378.3 Q 796.3 345.8 798.3 343.8" stroke="#FEF08A" stroke-width="1.2" fill="none"/>
+    <line x1="793.8" y1="378.3" x2="808.2" y2="396.9" stroke="#FFFBEB" stroke-width="1.2"/>
+    <!-- VÀNH CHIM LẠC: 16 CON CHIM LẠC BAY NGƯỢC CHIỀU KIM ĐỒNG HỒ -->
+    <circle cx="500" cy="500" r="342" fill="none" stroke="#FDE68A" stroke-width="1.8"/>
+    <circle cx="500" cy="500" r="428" fill="none" stroke="#FDE68A" stroke-width="2.2"/>
+
+      <!-- Chim Lạc 1 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 880.7 563.7 L 885.6 532.4 L 894.1 526.2 Q 881.9 493.3 869.6 457.9 L 846.9 440.1 L 842.5 450.7 Q 863.9 507.6 885.6 532.4 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 894.1 526.2 Q 915.6 481.9 917.4 437.6 Q 913.6 483.9 881.9 493.3" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 881.9 493.3 Q 911.9 510.8 920.4 555.3 L 909.7 543.1 L 900.5 535.0 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="889.9" cy="528.6" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="863.9" y1="507.6" x2="857.9" y2="490.6" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="857.9" y1="490.6" x2="847.2" y2="475.7" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 2 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 827.3 704.5 L 843.9 677.5 L 854.1 675.0 Q 855.4 640.0 857.6 602.5 L 843.4 577.4 L 835.3 585.5 Q 833.3 646.3 843.9 677.5 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 854.1 675.0 Q 890.9 642.3 909.5 602.1 Q 888.9 644.3 855.4 640.0" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 855.4 640.0 Q 876.4 667.6 867.2 712.0 L 862.1 696.6 L 856.6 685.6 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="849.3" cy="675.7" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="833.3" y1="646.3" x2="834.2" y2="628.3" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="834.2" y1="628.3" x2="830.0" y2="610.4" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 3 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 724.2 814.2 L 749.8 795.6 L 760.2 797.2 Q 774.8 765.4 791.1 731.6 L 787.6 702.9 L 777.1 707.3 Q 751.9 762.7 749.8 795.6 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 760.2 797.2 Q 806.7 781.0 839.2 751.0 Q 804.7 783.0 774.8 765.4" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 774.8 765.4 Q 783.6 798.9 758.1 836.4 L 759.3 820.2 L 758.4 807.9 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="755.5" cy="796.0" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="751.9" y1="762.7" x2="759.7" y2="746.4" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="759.7" y1="746.4" x2="762.6" y2="728.3" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 4 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 586.8 876.1 L 617.7 868.7 L 626.6 874.1 Q 652.3 850.3 680.3 825.4 L 688.1 797.5 L 676.6 797.5 Q 632.2 839.1 617.7 868.7 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 626.6 874.1 Q 675.8 877.0 717.3 861.7 Q 673.8 879.0 652.3 850.3" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 652.3 850.3 Q 647.6 884.6 609.7 909.6 L 617.0 895.0 L 620.9 883.4 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="622.8" cy="871.2" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="632.2" y1="839.1" x2="645.6" y2="827.0" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="645.6" y1="827.0" x2="655.3" y2="811.4" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 5 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 436.3 880.7 L 467.6 885.6 L 473.8 894.1 Q 506.7 881.9 542.1 869.6 L 559.9 846.9 L 549.3 842.5 Q 492.4 863.9 467.6 885.6 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 473.8 894.1 Q 518.1 915.6 562.4 917.4 Q 516.1 917.6 506.7 881.9" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 506.7 881.9 Q 489.2 911.9 444.7 920.4 L 456.9 909.7 L 465.0 900.5 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="471.4" cy="889.9" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="492.4" y1="863.9" x2="509.4" y2="857.9" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="509.4" y1="857.9" x2="524.3" y2="847.2" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 6 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 295.5 827.3 L 322.5 843.9 L 325.0 854.1 Q 360.0 855.4 397.5 857.6 L 422.6 843.4 L 414.5 835.3 Q 353.7 833.3 322.5 843.9 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 325.0 854.1 Q 357.7 890.9 397.9 909.5 Q 355.7 892.9 360.0 855.4" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 360.0 855.4 Q 332.4 876.4 288.0 867.2 L 303.4 862.1 L 314.4 856.6 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="324.3" cy="849.3" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="353.7" y1="833.3" x2="371.7" y2="834.2" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="371.7" y1="834.2" x2="389.6" y2="830.0" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 7 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 185.8 724.2 L 204.4 749.8 L 202.8 760.2 Q 234.6 774.8 268.4 791.1 L 297.1 787.6 L 292.7 777.1 Q 237.3 751.9 204.4 749.8 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 202.8 760.2 Q 219.0 806.7 249.0 839.2 Q 217.0 808.7 234.6 774.8" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 234.6 774.8 Q 201.1 783.6 163.6 758.1 L 179.8 759.3 L 192.1 758.4 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="204.0" cy="755.5" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="237.3" y1="751.9" x2="253.6" y2="759.7" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="253.6" y1="759.7" x2="271.7" y2="762.6" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 8 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 123.9 586.8 L 131.3 617.7 L 125.9 626.6 Q 149.7 652.3 174.6 680.3 L 202.5 688.1 L 202.5 676.6 Q 160.9 632.2 131.3 617.7 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 125.9 626.6 Q 123.0 675.8 138.3 717.3 Q 121.0 677.8 149.7 652.3" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 149.7 652.3 Q 115.4 647.6 90.4 609.7 L 105.0 617.0 L 116.6 620.9 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="128.8" cy="622.8" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="160.9" y1="632.2" x2="173.0" y2="645.6" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="173.0" y1="645.6" x2="188.6" y2="655.3" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 9 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 119.3 436.3 L 114.4 467.6 L 105.9 473.8 Q 118.1 506.7 130.4 542.1 L 153.1 559.9 L 157.5 549.3 Q 136.1 492.4 114.4 467.6 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 105.9 473.8 Q 84.4 518.1 82.6 562.4 Q 82.4 520.1 118.1 506.7" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 118.1 506.7 Q 88.1 489.2 79.6 444.7 L 90.3 456.9 L 99.5 465.0 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="110.1" cy="471.4" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="136.1" y1="492.4" x2="142.1" y2="509.4" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="142.1" y1="509.4" x2="152.8" y2="524.3" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 10 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 172.7 295.5 L 156.1 322.5 L 145.9 325.0 Q 144.6 360.0 142.4 397.5 L 156.6 422.6 L 164.7 414.5 Q 166.7 353.7 156.1 322.5 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 145.9 325.0 Q 109.1 357.7 90.5 397.9 Q 107.1 359.7 144.6 360.0" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 144.6 360.0 Q 123.6 332.4 132.8 288.0 L 137.9 303.4 L 143.4 314.4 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="150.7" cy="324.3" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="166.7" y1="353.7" x2="165.8" y2="371.7" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="165.8" y1="371.7" x2="170.0" y2="389.6" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 11 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 275.8 185.8 L 250.2 204.4 L 239.8 202.8 Q 225.2 234.6 208.9 268.4 L 212.4 297.1 L 222.9 292.7 Q 248.1 237.3 250.2 204.4 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 239.8 202.8 Q 193.3 219.0 160.8 249.0 Q 191.3 221.0 225.2 234.6" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 225.2 234.6 Q 216.4 201.1 241.9 163.6 L 240.7 179.8 L 241.6 192.1 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="244.5" cy="204.0" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="248.1" y1="237.3" x2="240.3" y2="253.6" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="240.3" y1="253.6" x2="237.4" y2="271.7" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 12 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 413.2 123.9 L 382.3 131.3 L 373.4 125.9 Q 347.7 149.7 319.7 174.6 L 311.9 202.5 L 323.4 202.5 Q 367.8 160.9 382.3 131.3 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 373.4 125.9 Q 324.2 123.0 282.7 138.3 Q 322.2 125.0 347.7 149.7" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 347.7 149.7 Q 352.4 115.4 390.3 90.4 L 383.0 105.0 L 379.1 116.6 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="377.2" cy="128.8" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="367.8" y1="160.9" x2="354.4" y2="173.0" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="354.4" y1="173.0" x2="344.7" y2="188.6" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 13 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 563.7 119.3 L 532.4 114.4 L 526.2 105.9 Q 493.3 118.1 457.9 130.4 L 440.1 153.1 L 450.7 157.5 Q 507.6 136.1 532.4 114.4 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 526.2 105.9 Q 481.9 84.4 437.6 82.6 Q 479.9 86.4 493.3 118.1" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 493.3 118.1 Q 510.8 88.1 555.3 79.6 L 543.1 90.3 L 535.0 99.5 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="528.6" cy="110.1" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="507.6" y1="136.1" x2="490.6" y2="142.1" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="490.6" y1="142.1" x2="475.7" y2="152.8" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 14 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 704.5 172.7 L 677.5 156.1 L 675.0 145.9 Q 640.0 144.6 602.5 142.4 L 577.4 156.6 L 585.5 164.7 Q 646.3 166.7 677.5 156.1 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 675.0 145.9 Q 642.3 109.1 602.1 90.5 Q 640.3 111.1 640.0 144.6" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 640.0 144.6 Q 667.6 123.6 712.0 132.8 L 696.6 137.9 L 685.6 143.4 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="675.7" cy="150.7" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="646.3" y1="166.7" x2="628.3" y2="165.8" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="628.3" y1="165.8" x2="610.4" y2="170.0" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 15 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 814.2 275.8 L 795.6 250.2 L 797.2 239.8 Q 765.4 225.2 731.6 208.9 L 702.9 212.4 L 707.3 222.9 Q 762.7 248.1 795.6 250.2 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 797.2 239.8 Q 781.0 193.3 751.0 160.8 Q 779.0 195.3 765.4 225.2" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 765.4 225.2 Q 798.9 216.4 836.4 241.9 L 820.2 240.7 L 807.9 241.6 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="796.0" cy="244.5" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="762.7" y1="248.1" x2="746.4" y2="240.3" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="746.4" y1="240.3" x2="728.3" y2="237.4" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+
+      <!-- Chim Lạc 16 -->
+      <g class="ds-lac-bird">
+        <!-- Thân và mỏ Chim Lạc -->
+        <path d="M 876.1 413.2 L 868.7 382.3 L 874.1 373.4 Q 850.3 347.7 825.4 319.7 L 797.5 311.9 L 797.5 323.4 Q 839.1 367.8 868.7 382.3 Z" fill="#78350F" stroke="#FEF08A" stroke-width="1.3"/>
+        
+        <!-- Mào chim dài uốn lượn ngược chiều gió -->
+        <path d="M 874.1 373.4 Q 877.0 324.2 861.7 282.7 Q 875.0 326.2 850.3 347.7" fill="none" stroke="#FEF08A" stroke-width="1.4"/>
+        
+        <!-- Cánh lớn sải tung bay -->
+        <path d="M 850.3 347.7 Q 884.6 352.4 909.6 390.3 L 895.0 383.0 L 883.4 379.1 Z" fill="#CA8A04" stroke="#FFFBEB" stroke-width="1.2"/>
+        
+        <!-- Mắt chim -->
+        <circle cx="871.2" cy="377.2" r="1.6" fill="#FFFBEB"/>
+        
+        <!-- Chân chim thon thả -->
+        <line x1="839.1" y1="367.8" x2="827.0" y2="354.4" stroke="#FEF08A" stroke-width="1.2"/>
+        <line x1="827.0" y1="354.4" x2="811.4" y2="344.7" stroke="#FEF08A" stroke-width="1.2"/>
+      </g>
+  </g>
+  <g class="dong-son-outer-layer">
+    <!-- Vành 7: Chuỗi vòng tròn tiếp tuyến ngoài -->
+    <circle cx="500" cy="500" r="454" fill="none" stroke="#FDE68A" stroke-width="1.8"/>
+    <circle cx="944.0" cy="500.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="944.0" cy="500.0" r="2" fill="#FFFBEB"/>
+    <line x1="948.8" y1="514.1" x2="937.6" y2="535.4" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="941.2" cy="549.7" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="941.2" cy="549.7" r="2" fill="#FFFBEB"/>
+    <line x1="944.4" y1="564.3" x2="930.9" y2="584.2" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="932.9" cy="598.8" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="932.9" cy="598.8" r="2" fill="#FFFBEB"/>
+    <line x1="934.4" y1="613.6" x2="918.7" y2="631.9" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="919.1" cy="646.6" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="919.1" cy="646.6" r="2" fill="#FFFBEB"/>
+    <line x1="918.9" y1="661.5" x2="901.3" y2="678.0" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="900.0" cy="692.6" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="900.0" cy="692.6" r="2" fill="#FFFBEB"/>
+    <line x1="898.2" y1="707.4" x2="878.9" y2="721.8" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="875.9" cy="736.2" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="875.9" cy="736.2" r="2" fill="#FFFBEB"/>
+    <line x1="872.5" y1="750.7" x2="851.7" y2="762.8" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="847.1" cy="776.8" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="847.1" cy="776.8" r="2" fill="#FFFBEB"/>
+    <line x1="842.1" y1="790.8" x2="820.0" y2="800.5" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="814.0" cy="814.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="814.0" cy="814.0" r="2" fill="#FFFBEB"/>
+    <line x1="807.4" y1="827.3" x2="784.4" y2="834.5" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="776.8" cy="847.1" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="776.8" cy="847.1" r="2" fill="#FFFBEB"/>
+    <line x1="768.8" y1="859.7" x2="745.1" y2="864.2" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="736.2" cy="875.9" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="736.2" cy="875.9" r="2" fill="#FFFBEB"/>
+    <line x1="726.8" y1="887.5" x2="702.8" y2="889.3" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="692.6" cy="900.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="692.6" cy="900.0" r="2" fill="#FFFBEB"/>
+    <line x1="682.0" y1="910.5" x2="657.9" y2="909.6" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="646.6" cy="919.1" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="646.6" cy="919.1" r="2" fill="#FFFBEB"/>
+    <line x1="634.9" y1="928.3" x2="611.1" y2="924.7" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="598.8" cy="932.9" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="598.8" cy="932.9" r="2" fill="#FFFBEB"/>
+    <line x1="586.1" y1="940.7" x2="562.8" y2="934.5" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="549.7" cy="941.2" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="549.7" cy="941.2" r="2" fill="#FFFBEB"/>
+    <line x1="536.2" y1="947.5" x2="513.8" y2="938.8" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="500.0" cy="944.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="500.0" cy="944.0" r="2" fill="#FFFBEB"/>
+    <line x1="485.9" y1="948.8" x2="464.6" y2="937.6" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="450.3" cy="941.2" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="450.3" cy="941.2" r="2" fill="#FFFBEB"/>
+    <line x1="435.7" y1="944.4" x2="415.8" y2="930.9" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="401.2" cy="932.9" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="401.2" cy="932.9" r="2" fill="#FFFBEB"/>
+    <line x1="386.4" y1="934.4" x2="368.1" y2="918.7" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="353.4" cy="919.1" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="353.4" cy="919.1" r="2" fill="#FFFBEB"/>
+    <line x1="338.5" y1="918.9" x2="322.0" y2="901.3" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="307.4" cy="900.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="307.4" cy="900.0" r="2" fill="#FFFBEB"/>
+    <line x1="292.6" y1="898.2" x2="278.2" y2="878.9" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="263.8" cy="875.9" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="263.8" cy="875.9" r="2" fill="#FFFBEB"/>
+    <line x1="249.3" y1="872.5" x2="237.2" y2="851.7" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="223.2" cy="847.1" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="223.2" cy="847.1" r="2" fill="#FFFBEB"/>
+    <line x1="209.2" y1="842.1" x2="199.5" y2="820.0" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="186.0" cy="814.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="186.0" cy="814.0" r="2" fill="#FFFBEB"/>
+    <line x1="172.7" y1="807.4" x2="165.5" y2="784.4" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="152.9" cy="776.8" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="152.9" cy="776.8" r="2" fill="#FFFBEB"/>
+    <line x1="140.3" y1="768.8" x2="135.8" y2="745.1" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="124.1" cy="736.2" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="124.1" cy="736.2" r="2" fill="#FFFBEB"/>
+    <line x1="112.5" y1="726.8" x2="110.7" y2="702.8" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="100.0" cy="692.6" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="100.0" cy="692.6" r="2" fill="#FFFBEB"/>
+    <line x1="89.5" y1="682.0" x2="90.4" y2="657.9" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="80.9" cy="646.6" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="80.9" cy="646.6" r="2" fill="#FFFBEB"/>
+    <line x1="71.7" y1="634.9" x2="75.3" y2="611.1" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="67.1" cy="598.8" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="67.1" cy="598.8" r="2" fill="#FFFBEB"/>
+    <line x1="59.3" y1="586.1" x2="65.5" y2="562.8" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="58.8" cy="549.7" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="58.8" cy="549.7" r="2" fill="#FFFBEB"/>
+    <line x1="52.5" y1="536.2" x2="61.2" y2="513.8" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="56.0" cy="500.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="56.0" cy="500.0" r="2" fill="#FFFBEB"/>
+    <line x1="51.2" y1="485.9" x2="62.4" y2="464.6" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="58.8" cy="450.3" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="58.8" cy="450.3" r="2" fill="#FFFBEB"/>
+    <line x1="55.6" y1="435.7" x2="69.1" y2="415.8" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="67.1" cy="401.2" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="67.1" cy="401.2" r="2" fill="#FFFBEB"/>
+    <line x1="65.6" y1="386.4" x2="81.3" y2="368.1" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="80.9" cy="353.4" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="80.9" cy="353.4" r="2" fill="#FFFBEB"/>
+    <line x1="81.1" y1="338.5" x2="98.7" y2="322.0" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="100.0" cy="307.4" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="100.0" cy="307.4" r="2" fill="#FFFBEB"/>
+    <line x1="101.8" y1="292.6" x2="121.1" y2="278.2" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="124.1" cy="263.8" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="124.1" cy="263.8" r="2" fill="#FFFBEB"/>
+    <line x1="127.5" y1="249.3" x2="148.3" y2="237.2" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="152.9" cy="223.2" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="152.9" cy="223.2" r="2" fill="#FFFBEB"/>
+    <line x1="157.9" y1="209.2" x2="180.0" y2="199.5" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="186.0" cy="186.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="186.0" cy="186.0" r="2" fill="#FFFBEB"/>
+    <line x1="192.6" y1="172.7" x2="215.6" y2="165.5" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="223.2" cy="152.9" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="223.2" cy="152.9" r="2" fill="#FFFBEB"/>
+    <line x1="231.2" y1="140.3" x2="254.9" y2="135.8" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="263.8" cy="124.1" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="263.8" cy="124.1" r="2" fill="#FFFBEB"/>
+    <line x1="273.2" y1="112.5" x2="297.2" y2="110.7" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="307.4" cy="100.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="307.4" cy="100.0" r="2" fill="#FFFBEB"/>
+    <line x1="318.0" y1="89.5" x2="342.1" y2="90.4" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="353.4" cy="80.9" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="353.4" cy="80.9" r="2" fill="#FFFBEB"/>
+    <line x1="365.1" y1="71.7" x2="388.9" y2="75.3" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="401.2" cy="67.1" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="401.2" cy="67.1" r="2" fill="#FFFBEB"/>
+    <line x1="413.9" y1="59.3" x2="437.2" y2="65.5" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="450.3" cy="58.8" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="450.3" cy="58.8" r="2" fill="#FFFBEB"/>
+    <line x1="463.8" y1="52.5" x2="486.2" y2="61.2" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="500.0" cy="56.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="500.0" cy="56.0" r="2" fill="#FFFBEB"/>
+    <line x1="514.1" y1="51.2" x2="535.4" y2="62.4" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="549.7" cy="58.8" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="549.7" cy="58.8" r="2" fill="#FFFBEB"/>
+    <line x1="564.3" y1="55.6" x2="584.2" y2="69.1" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="598.8" cy="67.1" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="598.8" cy="67.1" r="2" fill="#FFFBEB"/>
+    <line x1="613.6" y1="65.6" x2="631.9" y2="81.3" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="646.6" cy="80.9" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="646.6" cy="80.9" r="2" fill="#FFFBEB"/>
+    <line x1="661.5" y1="81.1" x2="678.0" y2="98.7" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="692.6" cy="100.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="692.6" cy="100.0" r="2" fill="#FFFBEB"/>
+    <line x1="707.4" y1="101.8" x2="721.8" y2="121.1" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="736.2" cy="124.1" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="736.2" cy="124.1" r="2" fill="#FFFBEB"/>
+    <line x1="750.7" y1="127.5" x2="762.8" y2="148.3" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="776.8" cy="152.9" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="776.8" cy="152.9" r="2" fill="#FFFBEB"/>
+    <line x1="790.8" y1="157.9" x2="800.5" y2="180.0" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="814.0" cy="186.0" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="814.0" cy="186.0" r="2" fill="#FFFBEB"/>
+    <line x1="827.3" y1="192.6" x2="834.5" y2="215.6" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="847.1" cy="223.2" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="847.1" cy="223.2" r="2" fill="#FFFBEB"/>
+    <line x1="859.7" y1="231.2" x2="864.2" y2="254.9" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="875.9" cy="263.8" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="875.9" cy="263.8" r="2" fill="#FFFBEB"/>
+    <line x1="887.5" y1="273.2" x2="889.3" y2="297.2" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="900.0" cy="307.4" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="900.0" cy="307.4" r="2" fill="#FFFBEB"/>
+    <line x1="910.5" y1="318.0" x2="909.6" y2="342.1" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="919.1" cy="353.4" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="919.1" cy="353.4" r="2" fill="#FFFBEB"/>
+    <line x1="928.3" y1="365.1" x2="924.7" y2="388.9" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="932.9" cy="401.2" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="932.9" cy="401.2" r="2" fill="#FFFBEB"/>
+    <line x1="940.7" y1="413.9" x2="934.5" y2="437.2" stroke="#FEF08A" stroke-width="0.9"/>
+    <circle cx="941.2" cy="450.3" r="5.5" fill="#78350F" stroke="#FEF08A" stroke-width="1"/>
+    <circle cx="941.2" cy="450.3" r="2" fill="#FFFBEB"/>
+    <line x1="947.5" y1="463.8" x2="938.8" y2="486.2" stroke="#FEF08A" stroke-width="0.9"/>
+    <!-- Vành 8: Răng cưa kép & chuỗi hạt ngọc -->
+    <circle cx="500" cy="500" r="480" fill="none" stroke="#FDE68A" stroke-width="2"/>
+    <path d="M 958.0 500.0 L 977.7 515.6 L 957.0 530.0 Z M 957.0 530.0 L 975.7 546.9 L 954.1 559.8 Z M 954.1 559.8 L 971.6 577.9 L 949.2 589.4 Z M 949.2 589.4 L 965.5 608.5 L 942.4 618.5 Z M 942.4 618.5 L 957.4 638.8 L 933.7 647.2 Z M 933.7 647.2 L 947.4 668.4 L 923.1 675.3 Z M 923.1 675.3 L 935.4 697.3 L 910.8 702.6 Z M 910.8 702.6 L 921.6 725.3 L 896.6 729.0 Z M 896.6 729.0 L 905.9 752.4 L 880.8 754.5 Z M 880.8 754.5 L 888.5 778.4 L 863.4 778.8 Z M 863.4 778.8 L 869.5 803.2 L 844.3 802.0 Z M 844.3 802.0 L 848.9 826.8 L 823.9 823.9 Z M 823.9 823.9 L 826.8 848.9 L 802.0 844.3 Z M 802.0 844.3 L 803.2 869.5 L 778.8 863.4 Z M 778.8 863.4 L 778.4 888.5 L 754.5 880.8 Z M 754.5 880.8 L 752.4 905.9 L 729.0 896.6 Z M 729.0 896.6 L 725.3 921.6 L 702.6 910.8 Z M 702.6 910.8 L 697.3 935.4 L 675.3 923.1 Z M 675.3 923.1 L 668.4 947.4 L 647.2 933.7 Z M 647.2 933.7 L 638.8 957.4 L 618.5 942.4 Z M 618.5 942.4 L 608.5 965.5 L 589.4 949.2 Z M 589.4 949.2 L 577.9 971.6 L 559.8 954.1 Z M 559.8 954.1 L 546.9 975.7 L 530.0 957.0 Z M 530.0 957.0 L 515.6 977.7 L 500.0 958.0 Z M 500.0 958.0 L 484.4 977.7 L 470.0 957.0 Z M 470.0 957.0 L 453.1 975.7 L 440.2 954.1 Z M 440.2 954.1 L 422.1 971.6 L 410.6 949.2 Z M 410.6 949.2 L 391.5 965.5 L 381.5 942.4 Z M 381.5 942.4 L 361.2 957.4 L 352.8 933.7 Z M 352.8 933.7 L 331.6 947.4 L 324.7 923.1 Z M 324.7 923.1 L 302.7 935.4 L 297.4 910.8 Z M 297.4 910.8 L 274.7 921.6 L 271.0 896.6 Z M 271.0 896.6 L 247.6 905.9 L 245.5 880.8 Z M 245.5 880.8 L 221.6 888.5 L 221.2 863.4 Z M 221.2 863.4 L 196.8 869.5 L 198.0 844.3 Z M 198.0 844.3 L 173.2 848.9 L 176.1 823.9 Z M 176.1 823.9 L 151.1 826.8 L 155.7 802.0 Z M 155.7 802.0 L 130.5 803.2 L 136.6 778.8 Z M 136.6 778.8 L 111.5 778.4 L 119.2 754.5 Z M 119.2 754.5 L 94.1 752.4 L 103.4 729.0 Z M 103.4 729.0 L 78.4 725.3 L 89.2 702.6 Z M 89.2 702.6 L 64.6 697.3 L 76.9 675.3 Z M 76.9 675.3 L 52.6 668.4 L 66.3 647.2 Z M 66.3 647.2 L 42.6 638.8 L 57.6 618.5 Z M 57.6 618.5 L 34.5 608.5 L 50.8 589.4 Z M 50.8 589.4 L 28.4 577.9 L 45.9 559.8 Z M 45.9 559.8 L 24.3 546.9 L 43.0 530.0 Z M 43.0 530.0 L 22.3 515.6 L 42.0 500.0 Z M 42.0 500.0 L 22.3 484.4 L 43.0 470.0 Z M 43.0 470.0 L 24.3 453.1 L 45.9 440.2 Z M 45.9 440.2 L 28.4 422.1 L 50.8 410.6 Z M 50.8 410.6 L 34.5 391.5 L 57.6 381.5 Z M 57.6 381.5 L 42.6 361.2 L 66.3 352.8 Z M 66.3 352.8 L 52.6 331.6 L 76.9 324.7 Z M 76.9 324.7 L 64.6 302.7 L 89.2 297.4 Z M 89.2 297.4 L 78.4 274.7 L 103.4 271.0 Z M 103.4 271.0 L 94.1 247.6 L 119.2 245.5 Z M 119.2 245.5 L 111.5 221.6 L 136.6 221.2 Z M 136.6 221.2 L 130.5 196.8 L 155.7 198.0 Z M 155.7 198.0 L 151.1 173.2 L 176.1 176.1 Z M 176.1 176.1 L 173.2 151.1 L 198.0 155.7 Z M 198.0 155.7 L 196.8 130.5 L 221.2 136.6 Z M 221.2 136.6 L 221.6 111.5 L 245.5 119.2 Z M 245.5 119.2 L 247.6 94.1 L 271.0 103.4 Z M 271.0 103.4 L 274.7 78.4 L 297.4 89.2 Z M 297.4 89.2 L 302.7 64.6 L 324.7 76.9 Z M 324.7 76.9 L 331.6 52.6 L 352.8 66.3 Z M 352.8 66.3 L 361.2 42.6 L 381.5 57.6 Z M 381.5 57.6 L 391.5 34.5 L 410.6 50.8 Z M 410.6 50.8 L 422.1 28.4 L 440.2 45.9 Z M 440.2 45.9 L 453.1 24.3 L 470.0 43.0 Z M 470.0 43.0 L 484.4 22.3 L 500.0 42.0 Z M 500.0 42.0 L 515.6 22.3 L 530.0 43.0 Z M 530.0 43.0 L 546.9 24.3 L 559.8 45.9 Z M 559.8 45.9 L 577.9 28.4 L 589.4 50.8 Z M 589.4 50.8 L 608.5 34.5 L 618.5 57.6 Z M 618.5 57.6 L 638.8 42.6 L 647.2 66.3 Z M 647.2 66.3 L 668.4 52.6 L 675.3 76.9 Z M 675.3 76.9 L 697.3 64.6 L 702.6 89.2 Z M 702.6 89.2 L 725.3 78.4 L 729.0 103.4 Z M 729.0 103.4 L 752.4 94.1 L 754.5 119.2 Z M 754.5 119.2 L 778.4 111.5 L 778.8 136.6 Z M 778.8 136.6 L 803.2 130.5 L 802.0 155.7 Z M 802.0 155.7 L 826.8 151.1 L 823.9 176.1 Z M 823.9 176.1 L 848.9 173.2 L 844.3 198.0 Z M 844.3 198.0 L 869.5 196.8 L 863.4 221.2 Z M 863.4 221.2 L 888.5 221.6 L 880.8 245.5 Z M 880.8 245.5 L 905.9 247.6 L 896.6 271.0 Z M 896.6 271.0 L 921.6 274.7 L 910.8 297.4 Z M 910.8 297.4 L 935.4 302.7 L 923.1 324.7 Z M 923.1 324.7 L 947.4 331.6 L 933.7 352.8 Z M 933.7 352.8 L 957.4 361.2 L 942.4 381.5 Z M 942.4 381.5 L 965.5 391.5 L 949.2 410.6 Z M 949.2 410.6 L 971.6 422.1 L 954.1 440.2 Z M 954.1 440.2 L 975.7 453.1 L 957.0 470.0 Z M 957.0 470.0 L 977.7 484.4 L 958.0 500.0 Z" fill="#92400E" stroke="#FEF08A" stroke-width="0.8"/>
+    <!-- Vành 9: Vành ngoài cùng và 4 tượng Cóc (cầu mưa thuận gió hòa) -->
+    <circle cx="500" cy="500" r="488" fill="none" stroke="#FFFBEB" stroke-width="2"/>
+    <circle cx="500" cy="500" r="494" fill="none" stroke="#78350F" stroke-width="1.8"/>
+    <!-- Tượng Cóc 1 -->
+    <g>
+      <ellipse cx="843.7" cy="843.7" rx="7" ry="4.5" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1.2" transform="rotate(135 843.7 843.7)"/>
+      <circle cx="827.2" cy="863.4" r="3" fill="#FEF08A" stroke="#78350F" stroke-width="0.8"/>
+    </g>
+    <!-- Tượng Cóc 2 -->
+    <g>
+      <ellipse cx="156.3" cy="843.7" rx="7" ry="4.5" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1.2" transform="rotate(225 156.3 843.7)"/>
+      <circle cx="136.6" cy="827.2" r="3" fill="#FEF08A" stroke="#78350F" stroke-width="0.8"/>
+    </g>
+    <!-- Tượng Cóc 3 -->
+    <g>
+      <ellipse cx="156.3" cy="156.3" rx="7" ry="4.5" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1.2" transform="rotate(315 156.3 156.3)"/>
+      <circle cx="172.8" cy="136.6" r="3" fill="#FEF08A" stroke="#78350F" stroke-width="0.8"/>
+    </g>
+    <!-- Tượng Cóc 4 -->
+    <g>
+      <ellipse cx="843.7" cy="156.3" rx="7" ry="4.5" fill="#FFFBEB" stroke="#8B1E1E" stroke-width="1.2" transform="rotate(405 843.7 156.3)"/>
+      <circle cx="863.4" cy="172.8" r="3" fill="#FEF08A" stroke="#78350F" stroke-width="0.8"/>
+    </g>
+  </g>
+</svg>
+    </div>
+    
     <!-- HẠT BỤI VÀNG BAY HUYỀN ẢO (FLOATING GOLDEN DUST PARTICLES) -->
     <div class="dust-particle w-2.5 h-2.5 top-12 left-[12%] delay-0"></div>
     <div class="dust-particle w-3.5 h-3.5 top-28 right-[15%] delay-700"></div>
@@ -237,14 +1271,7 @@
         <!-- CỘT TRÁI (LG: 7 CỘT): TIÊU ĐỀ & HÀO QUANG TRỐNG ĐỒNG ĐÔNG SƠN NGỌC LŨ XOAY TÂM -->
         <div class="lg:col-span-7 text-left relative">
           
-          <!-- HÀO QUANG TRỐNG ĐỒNG ĐÔNG SƠN NGỌC LŨ XOAY CHẬM SAU TIÊU ĐỀ (CENTERPIECE HALO) -->
-          <div class="dong-son-mandala flex items-center justify-center pointer-events-none select-none">
-            <img 
-              src="./assets/images/dong-son-drum.svg" 
-              alt="Trống đồng Đông Sơn Ngọc Lũ xoay đa tầng" 
-              class="w-full h-full object-contain"
-            />
-          </div>
+
 
           <div class="relative z-10">
             <!-- HUY HIỆU TRƯỜNG THPT NHÃ NAM & CỔNG THÔNG TIN -->
@@ -314,19 +1341,41 @@
             />
           </div>
 
-          <!-- Chú thích chân bản đồ -->
+          <!-- Chú thích chân bản đồ: white-space: nowrap không rớt dòng -->
           <div class="mt-2.5 flex items-center justify-between w-full max-w-[420px] px-2 text-[11px] text-[#5C5248]">
-            <span class="flex items-center gap-1.5 font-bold text-[#8B1E1E]">
+            <span class="flex items-center gap-1.5 font-bold text-[#8B1E1E] whitespace-nowrap">
               <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#8B1E1E] animate-ping"></span>
               <span>Điểm đỏ: Xã Nhã Nam (Bắc Giang)</span>
             </span>
-            <span class="text-[11px] text-[#92400E] font-semibold bg-[#FFFBEB] px-2.5 py-0.5 rounded-full border border-[#FDE68A]/60">
+            <span class="text-[11px] text-[#92400E] font-semibold bg-[#FFFBEB] px-2.5 py-0.5 rounded-full border border-[#FDE68A]/60 whitespace-nowrap">
               ⭐ Hoàng Sa • Trường Sa • Phú Quốc
             </span>
           </div>
 
         </div>
 
+      </div>
+
+      <!-- VỊ TRÍ 2: HUY HIỆU BẢO VẬT TRỐNG ĐỒNG ĐÔNG SƠN 3D Ở GIỮA PHÍA DƯỚI (TÂM ĐIỂM KẾT NỐI 2 DI SẢN) -->
+      <div class="relative flex flex-col items-center justify-center mb-6 z-20 group/emblem">
+        <div class="dong-son-3d-medallion relative w-[130px] h-[130px] sm:w-[136px] sm:h-[136px] rounded-full p-1.5 cursor-pointer bg-gradient-to-br from-[#FEF08A] via-[#C59B27] to-[#8B1E1E] shadow-[0_10px_30px_rgba(139,30,30,0.35),0_0_20px_rgba(197,155,39,0.5)] border-2 border-[#FEF08A]">
+          <!-- Vành ngọc bích / đỏ son và hào quang -->
+          <div class="w-full h-full rounded-full overflow-hidden bg-[#78350F] p-0.5 border border-[#FEF08A]/70 shadow-inner">
+            <img 
+              src="./assets/images/trong-dong-ngoc-lu.svg" 
+              alt="Huy hiệu Bảo vật Trống đồng Ngọc Lũ 3D" 
+              class="w-full h-full object-contain pointer-events-none select-none"
+              loading="eager"
+            />
+          </div>
+          <!-- Phản quang 3D lấp lánh -->
+          <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/25 to-transparent pointer-events-none"></div>
+        </div>
+        
+        <!-- Dòng chú giải tinh tế hiển thị khi rê chuột hoặc luôn hiển thị trang nhã -->
+        <div class="mt-2.5 px-4 py-1.5 rounded-full bg-[#FFFBEB]/95 border border-[#FDE68A] text-[#8B1E1E] text-xs font-bold tracking-wide shadow-sm transition-all duration-300 group-hover/emblem:bg-[#8B1E1E] group-hover/emblem:text-[#FEF08A] group-hover/emblem:border-[#FEF08A] whitespace-nowrap cursor-pointer">
+          <span>✨ Hồn thiêng sông núi • Tinh hoa văn hóa Lạc Việt - Nhã Nam ✨</span>
+        </div>
       </div>
 
       <!-- 2 THẺ DANH MỤC LỚN (ẢNH VĂN HÓA TRUYỀN THỐNG ẤM ÁP, KHUNG GÓC VÀNG HOÀNG GIA) -->

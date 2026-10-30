@@ -105,18 +105,59 @@ body {
   }
 }
 
-.dong-son-mandala {
+.dong-son-centerpiece-halo {
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 520px;
-  height: 520px;
-  max-width: 100%;
-  max-height: 100%;
-  opacity: 0.16;
+  width: 560px;
+  height: 560px;
+  max-width: 90vw;
+  max-height: 90vw;
+  opacity: 0.46; /* Rõ nét 42% - 50% theo yêu cầu */
+  filter: drop-shadow(0 0 35px rgba(197, 155, 39, 0.35));
   pointer-events: none;
   z-index: 0;
+  transition: opacity 0.4s ease;
+}
+
+.dong-son-3d-medallion {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dong-son-3d-medallion:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 30px rgba(254, 240, 138, 0.85)) drop-shadow(0 10px 25px rgba(139, 30, 30, 0.45));
+}
+
+@keyframes spinCW_45 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinCCW_35 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes spinCW_60 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.dong-son-core-layer {
+  animation: spinCW_45 45s linear infinite;
+  transform-origin: 500px 500px;
+}
+
+.dong-son-middle-layer {
+  animation: spinCCW_35 35s linear infinite;
+  transform-origin: 500px 500px;
+}
+
+.dong-son-outer-layer {
+  animation: spinCW_60 60s linear infinite;
+  transform-origin: 500px 500px;
 }
 
 .dong-son-outer-ring {
