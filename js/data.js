@@ -727,3 +727,31 @@ const HERITAGE_QUIZ_DATA = [
     explanation: "Chính xác! Đồn Nhã Nam trên Đồi Phủ từng là trung tâm chỉ huy quân sự khét tiếng của Pháp tại Yên Thế từ năm 1885."
   }
 ];
+
+// Alias để tương thích cả hai tên biến QUIZ_DATA và HERITAGE_QUIZ_DATA
+const QUIZ_DATA = HERITAGE_QUIZ_DATA;
+
+/**
+ * --------------------------------------------------------------------
+ * DANH SÁCH TỪ KHÓA TÌM KIẾM NHANH (QUICK SEARCH TAGS)
+ * --------------------------------------------------------------------
+ */
+const QUICK_SEARCH_TAGS = [
+  "Đình - Chùa Hả",
+  "Chùa Tứ Giáp",
+  "Thôn Đồng Điều",
+  "Đền Gốc Khế",
+  "Đồi Phủ Nhã Nam",
+  "Đình Nhã Nam",
+  "Chùa Nam Thiên",
+  "Đền Đề Truật",
+  "Đề Nắm",
+  "Lương Văn Nắm",
+  "Khởi nghĩa Yên Thế",
+  "Hoàng Hoa Thám",
+  "Sáu điều Bác Hồ dạy",
+  "Hát Chèo",
+  "Bánh khảo",
+  "Kẹo lạc",
+  "Võ cổ truyền"
+];

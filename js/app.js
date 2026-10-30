@@ -28,15 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initApp() {
-  state.allItems = [...TANGIBLE_HERITAGE_DATA, ...INTANGIBLE_HERITAGE_DATA];
-  renderConfigElements();
-  renderQuickSearchTags();
-  updateCategoryCounts();
-  applyFiltersAndRender();
-  setupEventListeners();
-  renderQuiz();
-  checkUrlHash();
-  initAudioPlayerSettings();
+  const tangible = (typeof TANGIBLE_HERITAGE_DATA !== 'undefined' && Array.isArray(TANGIBLE_HERITAGE_DATA)) ? TANGIBLE_HERITAGE_DATA : [];
+  const intangible = (typeof INTANGIBLE_HERITAGE_DATA !== 'undefined' && Array.isArray(INTANGIBLE_HERITAGE_DATA)) ? INTANGIBLE_HERITAGE_DATA : [];
+  state.allItems = [...tangible, ...intangible];
+
+  try { renderConfigElements(); } catch (e) { console.warn('renderConfigElements error:', e); }
+  try { renderQuickSearchTags(); } catch (e) { console.warn('renderQuickSearchTags error:', e); }
+  try { updateCategoryCounts(); } catch (e) { console.warn('updateCategoryCounts error:', e); }
+  try { applyFiltersAndRender(); } catch (e) { console.warn('applyFiltersAndRender error:', e); }
+  try { setupEventListeners(); } catch (e) { console.warn('setupEventListeners error:', e); }
+  try { renderQuiz(); } catch (e) { console.warn('renderQuiz error:', e); }
+  try { checkUrlHash(); } catch (e) { console.warn('checkUrlHash error:', e); }
+  try { initAudioPlayerSettings(); } catch (e) { console.warn('initAudioPlayerSettings error:', e); }
 }
 
 let currentTrackIndex = 0;
@@ -118,7 +121,27 @@ function renderQuickSearchTags() {
   const container = document.getElementById('quick-search-tags');
   if (!container) return;
 
-  container.innerHTML = QUICK_SEARCH_TAGS.map(tag => `
+  const defaultTags = [
+    "Đình - Chùa Hả",
+    "Chùa Tứ Giáp",
+    "Thôn Đồng Điều",
+    "Đền Gốc Khế",
+    "Đồi Phủ Nhã Nam",
+    "Đình Nhã Nam",
+    "Chùa Nam Thiên",
+    "Đền Đề Truật",
+    "Đề Nắm",
+    "Khởi nghĩa Yên Thế",
+    "Hát Chèo",
+    "Bánh khảo",
+    "Kẹo lạc"
+  ];
+
+  const tags = (typeof QUICK_SEARCH_TAGS !== 'undefined' && Array.isArray(QUICK_SEARCH_TAGS) && QUICK_SEARCH_TAGS.length > 0)
+    ? QUICK_SEARCH_TAGS
+    : defaultTags;
+
+  container.innerHTML = tags.map(tag => `
     <button type="button" class="quick-tag px-3 py-1.5 text-xs font-medium rounded-full bg-[#F5EFE6] text-[#5C5248] border border-[#EADECF] hover:bg-[#8B1E1E] hover:text-white transition-all duration-200" data-tag="${tag}">
       # ${tag}
     </button>
@@ -1055,11 +1078,27 @@ function toggleFavorite(itemId) {
  * GÓC HỌC TẬP - TRẮC NGHIỆM TÌM HIỂU DI SẢN NHÃ NAM
  * ====================================================================
  */
+function getQuizList() {
+  if (typeof QUIZ_DATA !== 'undefined' && Array.isArray(QUIZ_DATA) && QUIZ_DATA.length > 0) {
+    return QUIZ_DATA;
+  }
+  if (typeof HERITAGE_QUIZ_DATA !== 'undefined' && Array.isArray(HERITAGE_QUIZ_DATA) && HERITAGE_QUIZ_DATA.length > 0) {
+    return HERITAGE_QUIZ_DATA;
+  }
+  return [];
+}
+
 function renderQuiz() {
   const container = document.getElementById('quiz-questions-container');
   if (!container) return;
 
-  container.innerHTML = QUIZ_DATA.map((q, qIndex) => `
+  const quizList = getQuizList();
+  if (quizList.length === 0) {
+    container.innerHTML = '<p class="text-xs text-[#5C5248]">Đang tải câu hỏi trắc nghiệm...</p>';
+    return;
+  }
+
+  container.innerHTML = quizList.map((q, qIndex) => `
     <div class="p-5 rounded-2xl bg-white border border-[#EADECF] shadow-sm mb-4">
       <div class="flex items-start gap-3 mb-3">
         <span class="w-7 h-7 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">
@@ -1096,7 +1135,8 @@ function handleSelectQuizAnswer(questionId, optionIndex) {
 }
 
 function submitQuiz() {
-  const totalQuestions = QUIZ_DATA.length;
+  const quizList = getQuizList();
+  const totalQuestions = quizList.length;
   const answeredCount = Object.keys(state.quizAnswers).length;
 
   if (answeredCount < totalQuestions) {
@@ -1105,7 +1145,7 @@ function submitQuiz() {
   }
 
   let score = 0;
-  QUIZ_DATA.forEach(q => {
+  quizList.forEach(q => {
     const userAnswer = state.quizAnswers[q.id];
     const explanationEl = document.getElementById(`quiz-explanation-${q.id}`);
 

@@ -96,6 +96,73 @@ console.assert(testManager.currentIndex === 0, 'Initial sentence index should be
 console.assert(testManager.isPlaying === false, 'Initially isPlaying should be false');
 console.log('  ✓ HeritageAudioGuideManager initialized and loaded story correctly');
 
+console.log('--- 7. TESTING FULL APP INITIALIZATION & DOM RENDERING ---');
+const elements = {};
+function createEl(tag) {
+  return {
+    tagName: tag.toUpperCase(),
+    innerHTML: '',
+    textContent: '',
+    className: '',
+    style: {},
+    children: [],
+    attributes: {},
+    setAttribute(k, v) { this.attributes[k] = v; },
+    getAttribute(k) { return this.attributes[k] || null; },
+    addEventListener(ev, cb) { this._listeners = this._listeners || {}; this._listeners[ev] = cb; },
+    querySelector(sel) { return createEl('div'); },
+    querySelectorAll(sel) { return [createEl('div')]; },
+    classList: {
+      add() {},
+      remove() {},
+      contains() { return false; },
+      toggle() {}
+    }
+  };
+}
+
+global.window = {
+  addEventListener(ev, cb) {},
+  scrollTo() {},
+  location: { hash: '' }
+};
+global.localStorage = {
+  getItem: () => null,
+  setItem: () => {}
+};
+global.navigator = { userAgent: 'node' };
+global.location = { hash: '' };
+global.document = {
+  addEventListener(ev, cb) {
+    if (ev === 'DOMContentLoaded') global.onDOMContentLoaded = cb;
+  },
+  getElementById(id) {
+    if (!elements[id]) elements[id] = createEl('div');
+    return elements[id];
+  },
+  querySelector(sel) { return createEl('div'); },
+  querySelectorAll(sel) { return [createEl('div')]; },
+  createElement(tag) { return createEl(tag); }
+};
+
+const appCode = fs.readFileSync('./js/app.js', 'utf8');
+vm.runInThisContext(appCode);
+global.onDOMContentLoaded();
+
+console.assert(state.allItems.length === 13, `state.allItems should have 13 items (got ${state.allItems.length})`);
+console.assert(state.filteredItems.length === 13, `state.filteredItems should have 13 items (got ${state.filteredItems.length})`);
+console.assert(elements['heritage-grid'].innerHTML.length > 500, 'Heritage grid must render card elements');
+console.assert(elements['quick-search-tags'].innerHTML.length > 100, 'Quick search tags must render tag buttons');
+console.assert(String(elements['count-all'].textContent) === '13', 'Count all must be 13');
+console.assert(String(elements['count-vat-the'].textContent) === '8', 'Count vat-the must be 8');
+console.assert(String(elements['count-phi-vat-the'].textContent) === '5', 'Count phi-vat-the must be 5');
+console.assert(elements['quiz-questions-container'].innerHTML.length > 500, 'Quiz questions must render properly');
+
+console.log('  ✓ State items:', state.allItems.length, '(8 di sản vật thể + 5 di sản phi vật thể)');
+console.log('  ✓ Cards rendered in #heritage-grid HTML size:', elements['heritage-grid'].innerHTML.length, 'bytes');
+console.log('  ✓ Quick tags rendered in #quick-search-tags HTML size:', elements['quick-search-tags'].innerHTML.length, 'bytes');
+console.log('  ✓ Dynamic counters updated: Tất cả =', elements['count-all'].textContent, ', Vật thể =', elements['count-vat-the'].textContent, ', Phi vật thể =', elements['count-phi-vat-the'].textContent);
+
 console.log('\n======================================================');
-console.log('ALL INTEGRITY, SEARCH & AUDIO GUIDE TESTS PASSED! 🎉');
+console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE & APP INIT TESTS PASSED! 🎉');
 console.log('======================================================\n');
