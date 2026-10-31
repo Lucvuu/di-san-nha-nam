@@ -143,7 +143,7 @@ function renderQuickSearchTags() {
 : defaultTags;
 
   container.innerHTML = tags.map(tag => `
-    <button type="button" class="quick-tag px-3 py-1.5 text-xs font-medium rounded-full bg-[#F5EFE6] text-[#5C5248] border border-[#EADECF] hover:bg-[#8B1E1E] hover:text-white transition-all duration-200" data-tag="${tag}">
+    <button type="button" class="quick-tag px-3 py-1.5 text-xs font-medium rounded-full bg-[#F5EFE6] text-[#5C5248] border border-[#EADECF] hover:bg-[#8B1E1E] hover:text-white transition duration-200" data-tag="${tag}">
       # ${tag}
     </button>
   `).join('');
@@ -288,7 +288,7 @@ function renderHeritageGrid(items) {
     const isFav = state.favorites.includes(item.id);
 
     return `
-      <article class="heritage-card rounded-2xl overflow-hidden flex flex-col h-full shadow-sm hover:shadow-xl transition-all duration-300 group">
+      <article class="heritage-card rounded-2xl overflow-hidden flex flex-col h-full shadow-sm hover:shadow-xl transition duration-300 group">
         <!-- Ảnh đại diện -->
         <div class="relative h-56 sm:h-64 overflow-hidden bg-[#EADECF] cursor-pointer" onclick="openDetailModal('${item.id}')">
           ${item.hasRealPhoto && item.thumbnail? `
@@ -338,7 +338,7 @@ function renderHeritageGrid(items) {
             onclick="event.stopPropagation(); toggleFavorite('${item.id}');" 
             title="${isFav? 'Bỏ lưu': 'Lưu lại di tích này'}"
             aria-label="${isFav? 'Bỏ lưu di tích ' + escapeHtml(item.title): 'Lưu lại di tích ' + escapeHtml(item.title)}"
-            class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-[#8B1E1E] hover:bg-white transition-all shadow">
+            class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-[#8B1E1E] hover:bg-white transition shadow">
             <svg class="w-5 h-5 ${isFav? 'text-[#8B1E1E] fill-[#8B1E1E]': 'fill-none'}" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
             </svg>
@@ -419,7 +419,7 @@ function renderHeritageGrid(items) {
             <button 
               type="button" 
               onclick="openDetailModal('${item.id}')"
-              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#C59B27] hover:bg-[#A67C18]'} transition-all shadow-sm hover:shadow">
+              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#C59B27] hover:bg-[#A67C18]'} transition shadow-sm hover:shadow">
               <span>Xem chi tiết & bản đồ</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>
@@ -579,7 +579,7 @@ function openDetailModal(itemId) {
         <!-- Nút đóng modal -->
         <button 
           type="button" 
-          onclick="closeDetailModal()"
+          onclick="closeDetailModal()" aria-label="Đóng hồ sơ di tích"
           class="w-8 h-8 rounded-full bg-[#F5EFE6] text-[#5C5248] hover:text-[#8B1E1E] hover:bg-[#EADECF] flex items-center justify-center transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
@@ -627,7 +627,7 @@ function openDetailModal(itemId) {
             id="btn-modal-audioguide"
             type="button" 
             onclick="toggleAudioGuideNarration()"
-            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs bg-[#8B1E1E] hover:bg-[#6F1515] text-white shadow-md transition-all active:scale-95">
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs bg-[#8B1E1E] hover:bg-[#6F1515] text-white shadow-md transition active:scale-95">
             <span class="flex items-center gap-1" id="audioguide-wave">
               <span class="audio-wave-bar audio-wave-bar-1"></span>
               <span class="audio-wave-bar audio-wave-bar-2"></span>
@@ -643,7 +643,7 @@ function openDetailModal(itemId) {
             type="button" 
             onclick="stopAudioGuideNarration()"
             title="Dừng thuyết minh và về câu đầu"
-            class="px-3 py-2 rounded-xl font-semibold text-xs bg-white text-[#5C5248] hover:text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition-all shadow-xs">
+            class="px-3 py-2 rounded-xl font-semibold text-xs bg-white text-[#5C5248] hover:text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition shadow-xs">
             ⏹️ Dừng
           </button>
 
@@ -653,7 +653,7 @@ function openDetailModal(itemId) {
             type="button" 
             onclick="restartAudioGuideNarration()"
             title="Đọc lại từ đầu"
-            class="px-3 py-2 rounded-xl font-semibold text-xs bg-white text-[#5C5248] hover:text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition-all shadow-xs">
+            class="px-3 py-2 rounded-xl font-semibold text-xs bg-white text-[#5C5248] hover:text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition shadow-xs">
             🔄 Đọc lại
           </button>
 
@@ -780,7 +780,7 @@ function openDetailModal(itemId) {
               href="${item.map.directionsUrl}" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-[#8B1E1E] hover:bg-[#6F1515] shadow-md hover:shadow-lg transition-all duration-200">
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-[#8B1E1E] hover:bg-[#6F1515] shadow-md hover:shadow-lg transition duration-200">
               <svg class="w-5 h-5 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
               <span>Mở chỉ đường trên Google Maps</span>
               <svg class="w-4 h-4 ml-1 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -861,8 +861,10 @@ function openDetailModal(itemId) {
 
   if (item.docFile) renderDocFullText(item.docFile.fileName);
 
+  if (modal.classList.contains('hidden')) state.lastFocus = document.activeElement;
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
+  container.querySelector('button[onclick="closeDetailModal()"]')?.focus({ preventScroll: true });
   initAudioGuideForModal(item);
 }
 
@@ -875,7 +877,7 @@ function loadDocTexts() {
   if (!loadDocTexts.promise) {
     loadDocTexts.promise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = './js/doc-texts.js?v=2.7.0';
+      s.src = './js/doc-texts.js?v=2.8.0';
       s.onload = () => resolve(window.DOC_TEXTS || {});
       s.onerror = () => { loadDocTexts.promise = null; reject(); };
       document.head.appendChild(s);
@@ -909,10 +911,11 @@ function renderDocFullText(fileName) {
 
 function closeDetailModal() {
   const modal = document.getElementById('heritage-detail-modal');
-  if (modal) {
-    modal.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
+  if (!modal || modal.classList.contains('hidden')) return;
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+  state.lastFocus?.focus?.({ preventScroll: true });
+  state.lastFocus = null;
   stopAudioGuideNarration();
   history.replaceState(null, '', window.location.pathname + window.location.search);
 }
@@ -1249,7 +1252,7 @@ function renderQuiz() {
 
   const quizList = getQuizList();
   if (quizList.length === 0) {
-    container.innerHTML = '<p class="text-xs text-[#5C5248]">Đang tải câu hỏi trắc nghiệm...</p>';
+    container.innerHTML = '<p class="text-xs text-[#5C5248]">Đang tải câu hỏi trắc nghiệm…</p>';
     return;
   }
 
@@ -1711,6 +1714,11 @@ function setupEventListeners() {
       closeLightbox();
       closeFacebookNoticeModal();
       closeQuizResultModal();
+      if (typeof closeRelicsInventoryModal === 'function') closeRelicsInventoryModal();
+    } else if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('[role="button"]:not(button)')) {
+      // Thẻ tuyến / thẻ danh mục là <div role="button">: cho bấm bằng bàn phím
+      e.preventDefault();
+      e.target.click();
     } else if (e.key === 'ArrowLeft') {
       const lightbox = document.getElementById('lightbox-modal');
       if (lightbox &&!lightbox.classList.contains('hidden')) {
