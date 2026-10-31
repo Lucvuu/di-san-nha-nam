@@ -31,7 +31,7 @@ const HERITAGE_FALLBACK_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
   <rect x="300" y="285" width="200" height="110" fill="#2A0B0B" opacity="0.75" rx="4"/>
   <rect x="360" y="315" width="80" height="80" fill="#C59B27" rx="40" opacity="0.6"/>
   <text x="400" y="445" font-family="serif" font-size="24" font-weight="bold" fill="#F6E05E" text-anchor="middle" letter-spacing="2">DI SẢN VĂN HÓA NHÃ NAM</text>
-  <text x="400" y="475" font-family="sans-serif" font-size="14" fill="#EADECF" text-anchor="middle">Trường THPT Nhã Nam • Tân Yên • Bắc Giang</text>
+  <text x="400" y="475" font-family="sans-serif" font-size="14" fill="#EADECF" text-anchor="middle">Trường THPT Nhã Nam • xã Nhã Nam • tỉnh Bắc Ninh</text>
 </svg>
 `);
 

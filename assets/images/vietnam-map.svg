@@ -39,17 +39,21 @@
       }
       .pulse-ring-1 {
         animation: radarPing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
-        transform-origin: 191px 93px;
+        transform-box: fill-box;
+        transform-origin: center;
       }
       .pulse-ring-2 {
         animation: radarPing 2.2s cubic-bezier(0, 0, 0.2, 1) 0.7s infinite;
-        transform-origin: 191px 93px;
+        transform-box: fill-box;
+        transform-origin: center;
       }
       .island-dot {
         fill: #99351D;
         stroke: #FDE68A;
         stroke-width: 0.65px;
         transition: transform 0.2s;
+        transform-box: fill-box;
+        transform-origin: center;
       }
       .island-dot:hover {
         transform: scale(1.35);
@@ -64,8 +68,7 @@
   </g>
 
   <!-- ĐƯỜNG BỜ BIỂN VIỆT NAM (DÒNG CHỮ NGHỆ THUẬT BIỂN ĐÔNG VIỆT NAM) -->
-  <text x="430" y="210" font-family="'Merriweather', Georgia, serif" font-size="14" font-weight="900" fill="#2E6B7A" opacity="0.32" letter-spacing="3" text-anchor="middle">BIỂN ĐÔNG</text>
-  <text x="430" y="228" font-family="'Be Vietnam Pro', sans-serif" font-size="9.5" font-weight="700" fill="#2E6B7A" opacity="0.28" letter-spacing="2" text-anchor="middle">VIỆT NAM</text>
+  <text x="430" y="210" font-family="'Merriweather', Georgia, serif" font-size="14" font-weight="600" fill="#2E6B7A" opacity="0.32" letter-spacing="3" text-anchor="middle">BIỂN ĐÔNG</text>
 
   <!-- ========================================================= -->
   <!-- CÁC ĐẢO VEN BỜ TIỀN TIÊU CỦA TỔ QUỐC                      -->
@@ -75,7 +78,7 @@
   <g id="dao-bach-long-vi" transform="translate(268, 140)">
     <circle cx="0" cy="0" r="3.5" class="island-dot"/>
     <circle cx="0" cy="0" r="1.2" fill="#FFF"/>
-    <text x="6" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="700" fill="#8B1E1E">Bạch Long Vĩ</text>
+    <text x="6" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="600" fill="#8B1E1E">Bạch Long Vĩ</text>
   </g>
 
   <!-- 2. Cát Bà & Cô Tô (Quảng Ninh) -->
@@ -88,35 +91,35 @@
   <!-- 3. Đảo Cồn Cỏ (Quảng Trị) -->
   <g id="dao-con-co" transform="translate(242, 272)">
     <circle cx="0" cy="0" r="3" class="island-dot"/>
-    <text x="6" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="700" fill="#8B1E1E">Đ. Cồn Cỏ</text>
+    <text x="6" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="600" fill="#8B1E1E">Đảo Cồn Cỏ</text>
   </g>
 
   <!-- 4. Đảo Lý Sơn (Quảng Ngãi) -->
   <g id="dao-ly-son" transform="translate(326, 342)">
     <circle cx="0" cy="0" r="3.5" class="island-dot"/>
     <circle cx="0" cy="0" r="1.2" fill="#FFF"/>
-    <text x="7" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="700" fill="#8B1E1E">Đ. Lý Sơn</text>
+    <text x="7" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="600" fill="#8B1E1E">Đảo Lý Sơn</text>
   </g>
 
   <!-- 5. Đảo Phú Quý (Bình Thuận) -->
   <g id="dao-phu-quy" transform="translate(328, 535)">
     <circle cx="0" cy="0" r="3.5" class="island-dot"/>
     <circle cx="0" cy="0" r="1.2" fill="#FFF"/>
-    <text x="7" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="700" fill="#8B1E1E">Đ. Phú Quý</text>
+    <text x="7" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="600" fill="#8B1E1E">Đảo Phú Quý</text>
   </g>
 
   <!-- 6. Đảo Phú Quốc (Kiên Giang) -->
   <g id="dao-phu-quoc" transform="translate(82, 588)">
     <path d="M-4,-10 C-1,-14 3,-12 4,-8 C6,-3 4,5 2,10 C-1,13 -4,10 -5,3 Z" fill="url(#vnLandGrad)" stroke="#FDE68A" stroke-width="0.8"/>
     <circle cx="8" cy="12" r="1.8" class="island-dot"/> <!-- Thổ Chu -->
-    <text x="0" y="22" font-family="'Be Vietnam Pro', sans-serif" font-size="8.5" font-weight="800" fill="#8B1E1E" text-anchor="middle">Đ. Phú Quốc</text>
+    <text x="0" y="22" font-family="'Be Vietnam Pro', sans-serif" font-size="8.5" font-weight="600" fill="#8B1E1E" text-anchor="middle">Đảo Phú Quốc</text>
   </g>
 
   <!-- 7. Côn Đảo (Bà Rịa - Vũng Tàu) -->
   <g id="con-dao" transform="translate(228, 636)">
     <circle cx="0" cy="0" r="3.2" class="island-dot"/>
     <circle cx="4" cy="2" r="1.8" class="island-dot"/>
-    <text x="8" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="700" fill="#8B1E1E">Côn Đảo</text>
+    <text x="8" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="8" font-weight="600" fill="#8B1E1E">Côn Đảo</text>
   </g>
 
   <!-- ========================================================= -->
@@ -142,8 +145,7 @@
     <polygon points="26,-18 28,-13 33,-13 29,-10 31,-5 26,-8 21,-5 23,-10 19,-13 24,-13" fill="#C59B27"/>
 
     <!-- Nhãn chữ thanh mảnh trang trọng -->
-    <text x="0" y="14" font-family="'Merriweather', serif" font-size="9" font-weight="900" fill="#8B1E1E" text-anchor="middle" letter-spacing="0.2">Quần đảo Hoàng Sa</text>
-    <text x="0" y="24" font-family="'Be Vietnam Pro', sans-serif" font-size="7.5" font-weight="700" fill="#C59B27" text-anchor="middle">(Đà Nẵng • Việt Nam)</text>
+    <text x="0" y="14" font-family="'Merriweather', serif" font-size="9" font-weight="600" fill="#8B1E1E" text-anchor="middle" letter-spacing="0.2">Quần đảo Hoàng Sa</text>
   </g>
 
   <!-- QUẦN ĐẢO TRƯỜNG SA (KHÁNH HÒA - VIỆT NAM) -->
@@ -168,17 +170,15 @@
     <polygon points="32,-26 34,-21 39,-21 35,-18 37,-13 32,-16 27,-13 29,-18 25,-21 30,-21" fill="#C59B27"/>
 
     <!-- Nhãn chữ thanh mảnh trang trọng -->
-    <text x="0" y="24" font-family="'Merriweather', serif" font-size="9" font-weight="900" fill="#8B1E1E" text-anchor="middle" letter-spacing="0.2">Quần đảo Trường Sa</text>
-    <text x="0" y="34" font-family="'Be Vietnam Pro', sans-serif" font-size="7.5" font-weight="700" fill="#C59B27" text-anchor="middle">(Khánh Hòa • Việt Nam)</text>
+    <text x="0" y="24" font-family="'Merriweather', serif" font-size="9" font-weight="600" fill="#8B1E1E" text-anchor="middle" letter-spacing="0.2">Quần đảo Trường Sa</text>
   </g>
 
   <!-- ========================================================= -->
-  <!-- ĐIỂM ĐỊNH VỊ TINH TẾ TẠI XÃ NHÃ NAM (BẮC GIANG)            -->
+  <!-- ĐIỂM ĐỊNH VỊ TINH TẾ TẠI XÃ NHÃ NAM (TỈNH BẮC NINH) -->
   <!-- ========================================================= -->
   <g id="pin-nha-nam" transform="translate(191.2, 93.0)">
     <!-- Vòng phát sáng radar thanh nhã -->
-    <circle cx="0" cy="0" r="14" fill="url(#pulseGlow)" class="pulse-ring-1"/>
-    <circle cx="0" cy="0" r="7" fill="none" stroke="#D4AF37" stroke-width="1.2" class="pulse-ring-2"/>
+    
     
     <!-- Điểm tâm vàng kim & đỏ son -->
     <circle cx="0" cy="0" r="3.5" fill="#8C2D19" stroke="#FDF8F0" stroke-width="1.2"/>
@@ -186,16 +186,16 @@
 
     <!-- Nhãn chỉ thị trang nhã phong cách bảo tàng -->
     <g transform="translate(8, -8)">
-      <rect x="0" y="-8" width="86" height="17" rx="3.5" fill="#FDFBF7" fill-opacity="0.94" stroke="#8C2D19" stroke-width="0.75" stroke-opacity="0.35"/>
-      <text x="7" y="3.5" font-family="'Merriweather', Georgia, serif" font-size="8" font-weight="700" fill="#8C2D19" letter-spacing="0.2">Nhã Nam</text>
-      <text x="48" y="3.5" font-family="'Be Vietnam Pro', sans-serif" font-size="6.8" font-weight="600" fill="#786C5E">• Bắc Giang</text>
+      <rect x="0" y="-8" width="98" height="17" rx="3.5" fill="#FDFBF7" fill-opacity="0.94" stroke="#8C2D19" stroke-width="0.75" stroke-opacity="0.35"/>
+      <text x="7" y="3.5" font-family="'Merriweather', Georgia, serif" font-size="8" font-weight="600" fill="#8C2D19" letter-spacing="0.2">Xã Nhã Nam</text>
+      <text x="58" y="3.5" font-family="'Be Vietnam Pro', sans-serif" font-size="6.8" font-weight="600" fill="#786C5E">• Bắc Ninh</text>
     </g>
   </g>
 
   <!-- THỦ ĐÔ HÀ NỘI -->
   <g transform="translate(162, 114)" opacity="0.85">
     <circle cx="0" cy="0" r="2.2" fill="#8B1E1E" stroke="#F6E05E" stroke-width="0.8"/>
-    <text x="-6" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="7.5" font-weight="700" fill="#5C5248" text-anchor="end">Hà Nội</text>
+    <text x="-6" y="3" font-family="'Be Vietnam Pro', sans-serif" font-size="7.5" font-weight="600" fill="#5C5248" text-anchor="end">Hà Nội</text>
   </g>
 
   </svg>

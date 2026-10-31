@@ -1,7 +1,7 @@
 /**
  * ====================================================================
  * DI SẢN VĂN HÓA XÃ NHÃ NAM - XỬ LÝ ỨNG DỤNG CHÍNH (APPLICATION LOGIC)
- * Xã Nhã Nam, Thành phố Bắc Ninh
+ * Xã Nhã Nam, tỉnh Bắc Ninh
  * Đơn vị khởi xướng & phối hợp: Trường THPT Nhã Nam
  * ====================================================================
  */
@@ -48,7 +48,7 @@ function getActivePlaylist() {
   return (typeof MUSIC_PLAYLIST !== 'undefined' && MUSIC_PLAYLIST.length) ? MUSIC_PLAYLIST : [
     {
       id: "nha-nam-trong-toi",
-      title: "Nhã Nam Trong Tôi",
+      title: "Nhã Nam trong tôi",
       artist: "Ca khúc truyền thống",
       src: "./nha-nam-trong-toi.mp3",
       fallbackSrc: "./assets/audio/nha-nam-trong-toi.mp3"
@@ -122,7 +122,7 @@ function renderQuickSearchTags() {
   if (!container) return;
 
   const defaultTags = [
-    "Đình - Chùa Hả",
+    "Đình - chùa Hả",
     "Chùa Tứ Giáp",
     "Thôn Đồng Điều",
     "Đền Gốc Khế",
@@ -132,7 +132,7 @@ function renderQuickSearchTags() {
     "Đền Đề Truật",
     "Đề Nắm",
     "Khởi nghĩa Yên Thế",
-    "Hát Chèo",
+    "Hát chèo",
     "Bánh khảo",
     "Kẹo lạc"
   ];
@@ -168,6 +168,9 @@ function updateCategoryCounts() {
   const totalCount = state.allItems.length;
   const vatTheCount = state.allItems.filter(i => i.category === 'vat-the').length;
   const phiVatTheCount = state.allItems.filter(i => i.category === 'phi-vat-the').length;
+  const qgDacBietCount = state.allItems.filter(i => i.rank === 'quoc-gia-dac-biet' || (i.category === 'vat-the' && i.badge && i.badge.includes('đặc biệt'))).length;
+  const qgCount = state.allItems.filter(i => i.rank === 'quoc-gia' || (i.category === 'vat-the' && i.badge && i.badge.includes('cấp quốc gia') && !i.badge.includes('đặc biệt'))).length;
+  const capTinhCount = state.allItems.filter(i => i.rank === 'cap-tinh' || (i.category === 'vat-the' && i.badge && i.badge.includes('cấp tỉnh'))).length;
 
   const countAllEl = document.getElementById('count-all');
   if (countAllEl) countAllEl.textContent = totalCount;
@@ -176,28 +179,16 @@ function updateCategoryCounts() {
   if (countVatTheEl) countVatTheEl.textContent = vatTheCount;
 
   const countPhiVatTheEl = document.getElementById('count-phi-vat-the');
-  if (countPhiVatTheEl) countPhiVatTheEl.textContent = phiVatTheCount;
+  if (countPhiVatTheEl) countPhiVatTheEl.textContent = phiVatTheCount < 10 ? '0' + phiVatTheCount : phiVatTheCount;
 
-  // Cập nhật số lượng trên các badge nếu có
-  const heroVatTheBadge = document.getElementById('hero-vat-the-badge-count');
-  if (heroVatTheBadge) {
-    heroVatTheBadge.textContent = `37 di tích lịch sử - văn hóa (08 QG đặc biệt • 01 quốc gia • 07 cấp tỉnh • 21 kiểm kê)`;
-  }
-  
-  const heroPhiVatTheBadge = document.getElementById('hero-phi-vat-the-badge-count');
-  if (heroPhiVatTheBadge) {
-    heroPhiVatTheBadge.textContent = `${phiVatTheCount < 10 ? '0' + phiVatTheCount : phiVatTheCount} di sản phi vật thể đặc sắc`;
-  }
+  const countQgDacBietEl = document.getElementById('count-qg-dac-biet');
+  if (countQgDacBietEl) countQgDacBietEl.textContent = qgDacBietCount < 10 ? '0' + qgDacBietCount : qgDacBietCount;
 
-  const heroCardVatTheCount = document.getElementById('hero-card-vat-the-count');
-  if (heroCardVatTheCount) {
-    heroCardVatTheCount.textContent = `37 di tích (08 hồ sơ chi tiết)`;
-  }
+  const countQgEl = document.getElementById('count-quoc-gia');
+  if (countQgEl) countQgEl.textContent = qgCount < 10 ? '0' + qgCount : qgCount;
 
-  const heroCardPhiVatTheCount = document.getElementById('hero-card-phi-vat-the-count');
-  if (heroCardPhiVatTheCount) {
-    heroCardPhiVatTheCount.textContent = `${phiVatTheCount} di sản`;
-  }
+  const countCapTinhEl = document.getElementById('count-cap-tinh');
+  if (countCapTinhEl) countCapTinhEl.textContent = capTinhCount < 10 ? '0' + capTinhCount : capTinhCount;
 }
 
 /**
@@ -206,9 +197,15 @@ function updateCategoryCounts() {
 function applyFiltersAndRender() {
   let items = state.allItems;
 
-  // Lọc theo danh mục
+  // Lọc theo danh mục hoặc cấp xếp hạng
   if (state.currentCategory === 'vat-the') {
     items = items.filter(item => item.category === 'vat-the');
+  } else if (state.currentCategory === 'quoc-gia-dac-biet') {
+    items = items.filter(item => item.rank === 'quoc-gia-dac-biet' || (item.category === 'vat-the' && item.badge && item.badge.includes('đặc biệt')));
+  } else if (state.currentCategory === 'quoc-gia') {
+    items = items.filter(item => item.rank === 'quoc-gia' || (item.category === 'vat-the' && item.badge && item.badge.includes('cấp quốc gia') && !item.badge.includes('đặc biệt')));
+  } else if (state.currentCategory === 'cap-tinh') {
+    items = items.filter(item => item.rank === 'cap-tinh' || (item.category === 'vat-the' && item.badge && item.badge.includes('cấp tỉnh')));
   } else if (state.currentCategory === 'phi-vat-the') {
     items = items.filter(item => item.category === 'phi-vat-the');
   }
@@ -276,21 +273,21 @@ function renderHeritageGrid(items) {
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             onerror="handleImageError(this)"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
           
           <!-- Huy hiệu phân loại -->
-          <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+          <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[80%]">
             <span class="px-2.5 py-1 text-xs font-semibold rounded-full shadow-sm ${isVatThe ? 'bg-[#8B1E1E] text-white' : 'bg-[#C59B27] text-white'}">
-              ${item.categoryName}
+              ${escapeHtml(item.badge || item.categoryName)}
             </span>
-            ${item.badge ? `
+            ${item.relicType ? `
               <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-black/60 backdrop-blur-sm text-white/95 border border-white/20">
-                ${item.badge}
+                ${escapeHtml(item.relicType)}
               </span>
             ` : ''}
           </div>
 
-          <!-- Nút Yêu thích / Lưu lại (Accessible) -->
+          <!-- Nút Yêu thích / Lưu lại -->
           <button 
             type="button" 
             onclick="event.stopPropagation(); toggleFavorite('${item.id}');" 
@@ -302,7 +299,7 @@ function renderHeritageGrid(items) {
             </svg>
           </button>
 
-          <!-- Tên ngắn di tích nằm đè góc ảnh -->
+          <!-- Tên di tích nằm đè góc ảnh -->
           <div class="absolute bottom-3 left-3 right-3 text-white">
             <h3 class="font-heritage-serif font-bold text-lg leading-snug drop-shadow-md group-hover:text-[#F6E05E] transition-colors">
               ${escapeHtml(item.title)}
@@ -313,11 +310,27 @@ function renderHeritageGrid(items) {
         <!-- Thân Card -->
         <div class="p-5 flex-1 flex flex-col justify-between bg-white">
           <div>
+            <!-- Quyết định xếp hạng (nếu có) -->
+            ${item.decision ? `
+              <div class="mb-2.5 px-2.5 py-1.5 rounded-lg bg-[#FFF5F5] border border-[#FED7D7] text-xs font-medium text-[#8B1E1E] flex items-center gap-1.5">
+                <span class="font-bold flex-shrink-0">📜 QĐ:</span>
+                <span class="line-clamp-1" title="${escapeHtml(item.decision)}">${escapeHtml(item.decision)}</span>
+              </div>
+            ` : ''}
+
+            <!-- Đối tượng thờ (nếu có) -->
+            ${item.worship ? `
+              <div class="mb-2.5 px-2.5 py-1.5 rounded-lg bg-[#FFFBEB] border border-[#FDE68A] text-xs text-[#78350F]">
+                <strong class="font-semibold text-[#8B1E1E]">Thờ phụng:</strong> ${escapeHtml(item.worship)}
+              </div>
+            ` : ''}
+
             <!-- Địa chỉ / Phạm vi thực hành -->
             <div class="flex items-start gap-2 text-xs text-[#5C5248] mb-3 bg-[#FDFBF7] p-2.5 rounded-xl border border-[#EADECF]/60">
               ${locationIcon}
               <div class="leading-relaxed">
-                <strong class="font-semibold text-[#2A2521]">${locationLabel}:</strong> ${escapeHtml(locationValue)}
+                <div><strong class="font-semibold text-[#2A2521]">${locationLabel}:</strong> ${escapeHtml(locationValue)}</div>
+                ${item.oldAddress ? `<div class="text-[11px] text-[#786C5E] mt-0.5"><span class="font-medium text-[#5C5248]">Trước 01/7/2025:</span> ${escapeHtml(item.oldAddress)}</div>` : ''}
               </div>
             </div>
 
@@ -340,7 +353,7 @@ function renderHeritageGrid(items) {
               type="button" 
               onclick="openDetailModal('${item.id}')"
               class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe ? 'bg-[#8B1E1E] hover:bg-[#6F1515]' : 'bg-[#C59B27] hover:bg-[#A67C18]'} transition-all shadow-sm hover:shadow">
-              <span>Xem chi tiết & Bản đồ</span>
+              <span>Xem chi tiết & bản đồ</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>
 
@@ -349,8 +362,9 @@ function renderHeritageGrid(items) {
               target="_blank" 
               rel="noopener noreferrer" 
               title="Chỉ đường trên Google Maps"
-              class="w-10 h-10 rounded-xl border border-[#EADECF] flex items-center justify-center text-[#8B1E1E] hover:bg-[#F5EFE6] transition-colors flex-shrink-0">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+              class="p-2.5 rounded-xl border border-[#EADECF] hover:border-[#8B1E1E] text-[#5C5248] hover:text-[#8B1E1E] transition-colors"
+              aria-label="Chỉ đường đến ${escapeHtml(item.title)}">
+              <svg class="w-5 h-5 text-[#8B1E1E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
             </a>
           </div>
         </div>
@@ -519,7 +533,7 @@ function openDetailModal(itemId) {
               </span>
               <span id="audioguide-voice-info" class="text-xs text-[#92400E] font-medium flex items-center gap-1">
                 <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse inline-block"></span>
-                <span>Thuyết minh giọng Tiếng Việt</span>
+                <span>Thuyết minh giọng tiếng Việt</span>
               </span>
             </div>
 
@@ -777,7 +791,7 @@ function initAudioGuideForModal(item) {
 
   // Xây dựng nội dung bài thuyết minh giàu cảm xúc và truyền cảm
   let story = `Chào mừng quý thầy cô và các bạn học sinh đến với ${item.title}. `;
-  story += `${item.categoryName} tiêu biểu của xã Nhã Nam, Thành phố Bắc Ninh. `;
+  story += `${item.categoryName} tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. `;
   if (item.address) story += `Địa chỉ tại: ${item.address}. `;
   if (item.scope) story += `Phạm vi thực hành di sản tại: ${item.scope}. `;
   if (item.content && item.content.intro) story += `${item.content.intro} `;
@@ -1169,11 +1183,11 @@ function submitQuiz() {
 }
 
 function showQuizResultModal(score, total) {
-  let badgeTitle = 'Nhà Tìm Hiểu Di Sản Nhã Nam';
+  let badgeTitle = 'Nhà tìm hiểu di sản Nhã Nam';
   let message = 'Bạn hãy tiếp tục khám phá thêm các di tích lịch sử tuyệt đẹp tại Nhã Nam nhé!';
   
   if (score === 5) {
-    badgeTitle = 'Xuất Sắc! Đại Sứ Di Sản THPT Nhã Nam';
+    badgeTitle = 'Xuất sắc! Đại sứ di sản THPT Nhã Nam';
     message = 'Tuyệt vời! Bạn am hiểu rất sâu sắc về truyền thống lịch sử hào hùng quê hương Nhã Nam!';
   } else if (score >= 3) {
     badgeTitle = 'Khá Giỏi! Tự Hào Quê Hương Nhã Nam';

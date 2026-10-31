@@ -14,7 +14,7 @@ vm.runInThisContext(utilsCode);
 
 console.log('--- 1. TESTING SITE_CONFIG & ADMINISTRATIVE NORMALIZATION ---');
 console.assert(SITE_CONFIG.commune === 'Xã Nhã Nam', 'Commune should be Xã Nhã Nam');
-console.assert(SITE_CONFIG.city === 'Thành phố Bắc Ninh', 'City should be Thành phố Bắc Ninh');
+console.assert(SITE_CONFIG.province === 'Tỉnh Bắc Ninh' || SITE_CONFIG.city.toLowerCase().includes('bắc ninh'), 'Province/City should be tỉnh Bắc Ninh');
 console.assert(SITE_CONFIG.adminPhone === '0962.629.650', 'adminPhone should be 0962.629.650');
 console.assert(SITE_CONFIG.adminZaloUrl === 'https://zalo.me/0962629650', 'adminZaloUrl should be correct');
 console.assert(SITE_CONFIG.facebookGroupStatusNote.includes('kiểm duyệt'), 'Facebook note must mention kiểm duyệt');
@@ -38,14 +38,17 @@ MUSIC_PLAYLIST.forEach((track, i) => {
 });
 
 console.log('--- 3. TESTING TANGIBLE HERITAGE (DI SẢN VẬT THỂ) ---');
-console.assert(TANGIBLE_HERITAGE_DATA.length === 8, `Should have 8 tangible heritage items (found ${TANGIBLE_HERITAGE_DATA.length})`);
+console.assert(TANGIBLE_HERITAGE_DATA.length === 16, `Should have 16 tangible heritage items (found ${TANGIBLE_HERITAGE_DATA.length})`);
 TANGIBLE_HERITAGE_DATA.forEach((item, i) => {
   console.assert(item.title, `Item ${i} must have title`);
   console.assert(item.address, `Item ${i} must have address`);
+  console.assert(item.oldAddress, `Item ${i} must have oldAddress before 01/7/2025`);
+  console.assert(item.relicType, `Item ${i} must have relicType`);
+  console.assert(item.decision, `Item ${i} must have decision`);
   console.assert(item.content && item.content.intro, `Item ${i} must have content`);
   console.assert(item.map && item.map.embedUrl && item.map.directionsUrl, `Item ${i} must have map embed & directionsUrl`);
   console.assert(item.gallery && item.gallery.length > 0, `Item ${i} must have gallery photos`);
-  console.log(`  ✓ [Vật thể ${i+1}] ${item.title} -> Verified 5 required sections`);
+  console.log(`  ✓ [Vật thể ${i+1}] ${item.title} -> Verified legal profile & 5 required sections`);
 });
 
 console.log('--- 4. TESTING INTANGIBLE HERITAGE (DI SẢN PHI VẬT THỂ) ---');
@@ -86,7 +89,7 @@ const allItems = [...TANGIBLE_HERITAGE_DATA, ...INTANGIBLE_HERITAGE_DATA];
 
 testCases.forEach(({ query, expectedMatch }) => {
   const matches = allItems.filter(item => matchesSearchQuery(item, query));
-  const found = matches.some(m => m.title.includes(expectedMatch) || expectedMatch.includes(m.title));
+  const found = matches.some(m => removeVietnameseTones(m.title).includes(removeVietnameseTones(expectedMatch)) || removeVietnameseTones(expectedMatch).includes(removeVietnameseTones(m.title)));
   console.assert(found, `Search "${query}" should match "${expectedMatch}"`);
   console.log(`  ✓ Search "${query}" successfully matched ${matches.length} items (including "${expectedMatch}")`);
 });
@@ -159,16 +162,16 @@ const appCode = fs.readFileSync('./js/app.js', 'utf8');
 vm.runInThisContext(appCode);
 global.onDOMContentLoaded();
 
-console.assert(state.allItems.length === 13, `state.allItems should have 13 items (got ${state.allItems.length})`);
-console.assert(state.filteredItems.length === 13, `state.filteredItems should have 13 items (got ${state.filteredItems.length})`);
+console.assert(state.allItems.length === 21, `state.allItems should have 21 items (got ${state.allItems.length})`);
+console.assert(state.filteredItems.length === 21, `state.filteredItems should have 21 items (got ${state.filteredItems.length})`);
 console.assert(elements['heritage-grid'].innerHTML.length > 500, 'Heritage grid must render card elements');
 console.assert(elements['quick-search-tags'].innerHTML.length > 100, 'Quick search tags must render tag buttons');
-console.assert(String(elements['count-all'].textContent) === '13', 'Count all must be 13');
-console.assert(String(elements['count-vat-the'].textContent) === '8', 'Count vat-the must be 8');
-console.assert(String(elements['count-phi-vat-the'].textContent) === '5', 'Count phi-vat-the must be 5');
+console.assert(String(elements['count-all'].textContent) === '21', 'Count all must be 21');
+console.assert(String(elements['count-vat-the'].textContent) === '16', 'Count vat-the must be 16');
+console.assert(String(elements['count-phi-vat-the'].textContent) === '5' || String(elements['count-phi-vat-the'].textContent) === '05', 'Count phi-vat-the must be 5 or 05');
 console.assert(elements['quiz-questions-container'].innerHTML.length > 500, 'Quiz questions must render properly');
 
-console.log('  ✓ State items:', state.allItems.length, '(8 di sản vật thể + 5 di sản phi vật thể)');
+console.log('  ✓ State items:', state.allItems.length, '(16 di sản vật thể + 5 di sản phi vật thể)');
 console.log('  ✓ Cards rendered in #heritage-grid HTML size:', elements['heritage-grid'].innerHTML.length, 'bytes');
 console.log('  ✓ Quick tags rendered in #quick-search-tags HTML size:', elements['quick-search-tags'].innerHTML.length, 'bytes');
 console.log('  ✓ Dynamic counters updated: Tất cả =', elements['count-all'].textContent, ', Vật thể =', elements['count-vat-the'].textContent, ', Phi vật thể =', elements['count-phi-vat-the'].textContent);

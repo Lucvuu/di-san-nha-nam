@@ -49,12 +49,6 @@ body {
   padding: 0;
   overflow-x: hidden;
   background-color: var(--color-bg-ivory);
-  background-image: 
-    radial-gradient(#C59B27 0.6px, transparent 0.6px), 
-    radial-gradient(#8B1E1E 0.6px, #FDFBF7 0.6px);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
-  background-attachment: fixed;
 }
 
 /* Lớp phủ hoa văn giấy Dó truyền thống & vân lụa cổ (Vietnamese Dó Paper Grain) */
@@ -154,51 +148,17 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   white-space: nowrap !important;
 }
 
-/* Trống đồng Đông Sơn xoay đa tầng ở nền Hero (Dual-Ring Rotating Mandala) */
-@keyframes rotateCW {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes rotateCCW {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 15px rgba(197, 155, 39, 0.4), 0 0 30px rgba(139, 30, 30, 0.2);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(246, 224, 94, 0.7), 0 0 45px rgba(197, 155, 39, 0.4);
-  }
-}
-
-@keyframes radarPing {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.95;
-  }
-  100% {
-    transform: scale(2.6);
-    opacity: 0;
-  }
-}
-
+/* Trống đồng chìm, căn tâm sau khối tiêu đề Hero; mask làm mờ viền nên không lan xuống 2 thẻ bên dưới */
 .hero-drum-bg {
   position: absolute;
-  top: 44%;
-  left: 52%;
+  top: 50%;
+  left: 38%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
-  max-width: 500px;
-  max-height: 500px;
-  z-index: 0; /* Nằm chìm hoàn toàn dưới chữ và bản đồ */
-  pointer-events: none; /* Không cản trở thao tác chuột */
-  opacity: 0.11; /* Độ mờ vừa phải, tinh tế như hình chìm trên giấy dó */
+  width: min(420px, 90vw);
+  aspect-ratio: 1;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.10;
   mix-blend-mode: multiply;
   -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
   mask-image: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
@@ -214,53 +174,6 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
 @keyframes spinSlow {
   from { transform: rotate(0deg); }
   to { transform: rotate(-360deg); }
-}
-
-.dong-son-outer-ring {
-  animation: rotateCCW 45s linear infinite;
-}
-
-.dong-son-inner-ring {
-  animation: rotateCW 60s linear infinite;
-}
-
-.dong-son-emblem-rotator {
-  animation: rotateCW 35s linear infinite;
-}
-
-.dong-son-emblem-container {
-  animation: pulseGlow 4s ease-in-out infinite;
-}
-
-.radar-ping-circle {
-  animation: radarPing 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
-  transform-origin: 222px 114px;
-}
-
-.radar-ping-ring {
-  animation: radarPing 2.4s cubic-bezier(0, 0, 0.2, 1) 0.8s infinite;
-  transform-origin: 222px 114px;
-}
-
-/* Bụi vàng bay nhẹ nhàng (Floating Golden Dust Particles) */
-@keyframes floatDust {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.35;
-  }
-  50% {
-    transform: translateY(-28px) scale(1.35);
-    opacity: 0.85;
-  }
-}
-
-.dust-particle {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, #F6E05E 0%, #C59B27 65%, transparent 100%);
-  pointer-events: none;
-  animation: floatDust 6s ease-in-out infinite;
-  z-index: 2;
 }
 
 /* Khung góc vàng di sản (Golden Decorative Corner Frames) */
