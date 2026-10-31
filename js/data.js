@@ -308,8 +308,8 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Đối với thế hệ trẻ và học sinh Trường THPT Nhã Nam: Đình - chùa Hả là cội nguồn của tinh thần quật cường Yên Thế, là bài học đầu tiên về lòng yêu nước nồng nàn và ý chí bất khuất trước quân thù."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Hả,+Thôn+Hả,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
+      "embedUrl": "https://www.google.com/maps?q=21.4357253,106.116718&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4357253,106.116718",
       "locationName": "Khu di tích đình - chùa Hả (di tích quốc gia đặc biệt)"
     },
     "gallery": [
@@ -394,9 +394,9 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Đối với học sinh Trường THPT Nhã Nam: Chùa Tứ Giáp là bài học thực tế sống động nhất về lòng yêu nước, đạo đức chí công vô tư và sự tri ân các anh hùng liệt sĩ cách mạng của quê hương Nhã Nam."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=Ch%C3%B9a+T%E1%BB%A9+Gi%C3%A1p,+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Tứ+Giáp,+thôn+Chùa+Nguộn,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Chùa Tứ Giáp (nơi phát tích 6 điều Bác Hồ dạy CAND)"
+      "embedUrl": "https://www.google.com/maps?q=21.4448892,106.0901463&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4448892,106.0901463",
+      "locationName": "Chùa Tứ Giáp (nơi phát tích Sáu điều Bác Hồ dạy CAND)"
     },
     "gallery": [
       {
@@ -516,9 +516,9 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Đền Gốc Khế nhắc nhở các bạn học sinh về sự mưu trí, dũng cảm và tinh thần dựa vào lòng dân để chống giặc ngoại xâm của thế hệ cha anh đi trước."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%E1%BB%81n+G%E1%BB%91c+Kh%E1%BA%BF,+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đền+Gốc+Khế,+Tổ+dân+phố+Cầu+Thượng,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Đền Gốc Khế & rừng Gốc Khế lịch sử"
+      "embedUrl": "https://www.google.com/maps?q=21.4443835,106.0966726&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4443835,106.0966726",
+      "locationName": "Đền Gốc Khế (căn cứ nghĩa quân Yên Thế)"
     },
     "gallery": [
       {
@@ -578,9 +578,9 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Di tích là chứng tích lịch sử không thể phai mờ về sự thất bại của chủ nghĩa thực dân trước lòng yêu nước bất diệt của nhân dân ta."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%E1%BB%93i+Ph%E1%BB%A7+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đồi+Phủ+Nhã+Nam,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Đồi Phủ (địa điểm: Ao ông Chấn Ký)"
+      "embedUrl": "https://www.google.com/maps?q=21.4444805,106.0971055&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4444805,106.0971055",
+      "locationName": "Đồi Phủ Nhã Nam (đồn Nhã Nam thời Pháp)"
     },
     "gallery": [
       {
@@ -641,9 +641,9 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Đình làng Chuông là niềm tự hào sâu sắc của bà con thôn Tiến Phan 2 và học sinh xã Nhã Nam về nghệ thuật điêu khắc gỗ cổ truyền và truyền thống đánh giặc giữ làng."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Nhã+Nam,+Thôn+Tiến+Phan+2,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Đình làng Chuông (đình Nhã Nam)"
+      "embedUrl": "https://www.google.com/maps?q=21.4443874,106.0991677&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4443874,106.0991677",
+      "locationName": "Đình làng Chuông (đình Nhã Nam thế kỷ XVIII)"
     },
     "gallery": [
       {
@@ -703,9 +703,9 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Chùa Nam Thiên là bài học sâu sắc về tinh thần hộ quốc an dân của Phật giáo Việt Nam trong công cuộc đấu tranh bảo vệ độc lập dân tộc."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=Ch%C3%B9a+Nam+Thi%C3%AAn,+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Nam+Thiên,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Chùa Nam Thiên (chùa Phố)"
+      "embedUrl": "https://www.google.com/maps?q=21.4442158,106.0973672&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4442158,106.0973672",
+      "locationName": "Chùa Nam Thiên (chùa Phố 1822)"
     },
     "gallery": [
       {
@@ -765,9 +765,9 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Tấm gương quả cảm, tài năng quân sự và lòng trung thành tuyệt đối của tướng Đề Truật là ngọn lửa truyền cảm hứng mạnh mẽ cho học sinh Trường THPT Nhã Nam rèn luyện tài đức."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%E1%BB%81n+%C4%90%E1%BB%81+Tru%E1%BA%ADt,+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đền+Đề+Truật,+Thôn+Tiến+Phan+1,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Đền Đề Truật (di tích cấp tỉnh)"
+      "embedUrl": "https://www.google.com/maps?q=21.4525861,106.0980009&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4525861,106.0980009",
+      "locationName": "Đền Đề Truật (tướng quân Dương Văn Truật)"
     },
     "gallery": [
       {
@@ -834,8 +834,8 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Di tích giúp học sinh nhận thức sâu sắc về cái giá của hòa bình và sự quả cảm phi thường của các thế hệ nghĩa binh Yên Thế chống ngoại xâm."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%E1%BB%93i+Ph%E1%BB%A7+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Nghĩa+địa+Pháp,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
+      "embedUrl": "https://www.google.com/maps?q=21.4444805,106.0971055&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4444805,106.0971055",
       "locationName": "Nghĩa địa Pháp (khu vực đồi Phủ Nhã Nam)"
     },
     "gallery": [],
@@ -888,8 +888,8 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Hình tượng người tướng trẻ Cả Trọng là tấm gương sáng ngời về tuổi trẻ dấn thân, lòng quả cảm và khí phách kiên cường cho học sinh noi theo."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%E1%BB%81n+C%E1%BA%A3+Tr%E1%BB%8Dng,+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đền+thờ+Cả+Trọng,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
+      "embedUrl": "https://www.google.com/maps?q=21.4443835,106.0966726&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4443835,106.0966726",
       "locationName": "Đền thờ Cả Trọng (đền Gốc Dẻ)"
     },
     "gallery": [],
@@ -946,8 +946,8 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Đình Dương Lâm là biểu tượng cho sự đoàn kết bền chặt giữa tín ngưỡng truyền thống và phong trào đấu tranh giữ nước của đồng bào Nhã Nam."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+D%C6%B0%C6%A1ng+L%C3%A2m,+An+D%C6%B0%C6%A1ng,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Dương+Lâm,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
+      "embedUrl": "https://www.google.com/maps?q=21.4210834,106.0960966&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4210834,106.0960966",
       "locationName": "Đình Dương Lâm (di tích quốc gia đặc biệt)"
     },
     "gallery": [
@@ -1005,9 +1005,9 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Tìm hiểu về đình Cầu Thượng giúp học sinh hiểu sâu sắc hơn về nét đẹp văn hóa làng xã và tín ngưỡng tôn thờ tiền nhân của vùng đất Nhã Nam."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+C%E1%BA%A7u+Th%C6%B0%E1%BB%A3ng,+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Cầu+Thượng,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Đình Cầu Thượng (di tích cấp tỉnh)"
+      "embedUrl": "https://www.google.com/maps?q=21.4397723,106.0893274&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4397723,106.0893274",
+      "locationName": "Đình Cầu Thượng (di tích lịch sử - văn hóa cấp tỉnh)"
     },
     "gallery": [],
     "hasRealPhoto": false,
@@ -1034,7 +1034,11 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Sậy, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/dinh-say/anh-dai-dien.jpg",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-dinh-say.mp3",
+      "title": "Thuyết minh di tích đình Sậy"
+    },
     "tags": [
       "Đình Sậy",
       "Thôn Sậy",
@@ -1056,13 +1060,18 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Đình Sậy là minh chứng sống động cho bản sắc cộng đồng làng quê thanh bình nhưng quật cường của nhân dân xã Nhã Nam."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+S%E1%BA%ADy,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Sậy,+Thôn+Sậy,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Đình Sậy (di tích cấp tỉnh)"
+      "embedUrl": "https://www.google.com/maps?q=21.4371635,106.1091383&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4371635,106.1091383",
+      "locationName": "Đình Sậy (chùa làng Sậy, di tích cấp tỉnh)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/dinh-say/anh-dai-dien.jpg",
+        "caption": "Đình Sậy - Di tích lịch sử - văn hóa cấp tỉnh tại xã Nhã Nam"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Ảnh tư liệu thực tế tại đình Sậy (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "dinh-say.docx",
       "title": "Hồ sơ di tích đình Sậy",
@@ -1085,7 +1094,11 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Nẻo, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/dinh-neo/anh-dai-dien.jpg",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-dinh-neo.mp3",
+      "title": "Thuyết minh di tích đình Nẻo"
+    },
     "tags": [
       "Đình Nẻo",
       "Thôn Nẻo",
@@ -1107,13 +1120,18 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Khám phá đình Nẻo giúp bồi đắp lòng tự hào về truyền thống bảo tồn di sản của các thế hệ nhân dân thôn Nẻo nói riêng và xã Nhã Nam nói chung."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+N%E1%BA%BBo,+Li%C3%AAn+S%C6%A1n,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Nẻo,+Thôn+Nẻo,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Đình Nẻo (di tích cấp tỉnh)"
+      "embedUrl": "https://www.google.com/maps?q=21.408497,106.1126369&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.408497,106.1126369",
+      "locationName": "Đình Nẻo (di tích lịch sử - văn hóa cấp tỉnh)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/dinh-neo/anh-dai-dien.jpg",
+        "caption": "Đình Nẻo - Di tích lịch sử - văn hóa cấp tỉnh tại xã Nhã Nam"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Ảnh tư liệu thực tế tại đình Nẻo (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "dinh-neo.docx",
       "title": "Hồ sơ di tích đình Nẻo",
@@ -1168,9 +1186,9 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Chùa Dương Sơn giáo dục học sinh về lòng từ bi, nhân ái và sự trân trọng gìn giữ không gian văn hóa tâm linh thanh tịnh của quê hương."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=Ch%C3%B9a+D%C6%B0%C6%A1ng+S%C6%A1n,+Li%C3%AAn+S%C6%A1n,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Dương+Sơn,+Thôn+Dương+Sơn,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Chùa Dương Sơn (di tích cấp tỉnh)"
+      "embedUrl": "https://www.google.com/maps?q=21.408497,106.1126369&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.408497,106.1126369",
+      "locationName": "Chùa Dương Sơn (di tích cấp tỉnh, làng Dương Sơn)"
     },
     "gallery": [
       {
@@ -1210,36 +1228,48 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Sặt, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/dinh-sat/anh-dai-dien.jpg",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-dinh-sat.mp3",
+      "title": "Thuyết minh di tích đình làng Sặt"
+    },
     "tags": [
       "Đình làng Sặt",
       "Thôn Sặt",
       "Cao Sơn Quý Minh",
       "Liên Sơn",
+      "Khởi nghĩa Yên Thế",
       "Trận làng Sặt 1889",
       "Di tích cấp tỉnh"
     ],
-    "overview": "Địa danh lịch sử ghi dấu các trận tập kích anh dũng năm 1889 của nghĩa quân Yên Thế chống thực dân Pháp, di tích lịch sử cấp tỉnh.",
+    "overview": "Địa danh lịch sử gắn liền phong trào khởi nghĩa Yên Thế, nơi họp bàn của nghĩa quân và trung tâm sinh hoạt văn hóa tín ngưỡng 5 thôn, di tích lịch sử cấp tỉnh.",
     "content": {
-      "intro": "Đình làng Sặt tọa lạc tại thôn Sặt, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang). Đình làng Sặt là trung tâm tín ngưỡng cổ truyền của dân làng Sặt, đồng thời ghi dấu chiến công oanh liệt của nghĩa quân Hoàng Hoa Thám.",
+      "intro": "Đình làng Sặt tọa lạc tại thôn Sặt, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang). Cuối thế kỷ XIX, đình làng Sặt là một trong những địa điểm có nhiều sự kiện gắn liền với phong trào khởi nghĩa Yên Thế oanh liệt.",
       "historicalSignificance": [
-        "**Địa danh trận chiến làng Sặt năm 1889:** Năm 1889, quân Pháp từ đồn Nhã Nam tiến hành càn quét làng Sặt hòng tiêu diệt lực lượng nghĩa quân. Dưới sự chỉ huy mưu trí của thủ lĩnh Yên Thế và sự hiệp lực của dân làng Sặt, nghĩa quân đã phục kích đánh bại nhiều đợt tấn công của địch, tiêu hao sinh lực giặc.",
-        "**Xếp hạng di tích:** Đình làng Sặt được Chủ tịch UBND tỉnh ban hành Quyết định số 2012/QĐ-UBND ngày 24/12/2018 xếp hạng di tích lịch sử cấp tỉnh."
+        "**Căn cứ hội họp của nghĩa quân Yên Thế:** Nơi đây thường được các thủ lĩnh cuộc khởi nghĩa chọn làm nơi hội họp của bộ đội và du kích địa phương trong kháng chiến chống thực dân Pháp.",
+        "**Địa danh trận chiến làng Sặt năm 1889:** Năm 1889, quân Pháp từ đồn Nhã Nam tiến hành càn quét làng Sặt. Dưới sự hiệp lực của dân làng Sặt và tài mưu trí của nghĩa quân Yên Thế, ta đã phục kích bẻ gãy nhiều đợt tấn công của địch.",
+        "**Xếp hạng di tích:** Năm 2018, đình làng Sặt được Chủ tịch UBND tỉnh ban hành Quyết định số 2012/QĐ-UBND ngày 24/12/2018 xếp hạng di tích lịch sử cấp tỉnh."
       ],
       "architecture": [
         "Đình khởi dựng mang phong cách kiến trúc thời Nguyễn, tường gạch cổ kính, mái ngói mũi hài rêu phong vững chãi.",
-        "Gian thờ Hậu cung tôn nghiêm thờ Đức thánh Cao Sơn, Quý Minh, cùng nhiều hoành phi, câu đối và di vật thiêng liêng của làng."
+        "Trải qua biến cố thời gian, đình làng Sặt còn bảo lưu nhiều tài liệu và hiện vật quý giá: ngai thờ, bài vị, hòm sắc, sắc phong niên hiệu Duy Tân thứ 3 (1909), bát hương gốm Phù Lãng cổ, sập thờ và bộ bát bửu trang nghiêm.",
+        "Đình là trung tâm sinh hoạt văn hóa tín ngưỡng chung của nhân dân 5 thôn trong xã Liên Sơn cũ: Chài, Quân, Đồn, Thượng và Phố."
       ],
-      "studyNote": "Đình làng Sặt là bài học lịch sử hào hùng về tinh thần chiến đấu bảo vệ quê hương của thế hệ ông cha vùng đất Liên Sơn - Nhã Nam."
+      "studyNote": "Đình làng Sặt là minh chứng hào hùng về tinh thần chiến đấu bảo vệ quê hương và ý thức gìn giữ cổ vật quý báu của các thế hệ nhân dân xã Nhã Nam."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+l%C3%A0ng+S%E1%BA%B7t,+Li%C3%AAn+S%C6%A1n,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+làng+Sặt,+Thôn+Sặt,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Đình làng Sặt (di tích cấp tỉnh)"
+      "embedUrl": "https://www.google.com/maps?q=21.4160672,106.1089053&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4160672,106.1089053",
+      "locationName": "Đình làng Sặt (di tích lịch sử - văn hóa cấp tỉnh)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/dinh-sat/anh-dai-dien.jpg",
+        "caption": "Đình làng Sặt - Di tích lịch sử cấp tỉnh tại xã Nhã Nam"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Ảnh tư liệu thực tế tại đình làng Sặt (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "dinh-sat.docx",
       "title": "Hồ sơ di tích đình làng Sặt",
