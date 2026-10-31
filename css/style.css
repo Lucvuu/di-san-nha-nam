@@ -652,3 +652,74 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   font-size: 13px;
   letter-spacing: 4px;
 }
+
+
+/* ====================================================================
+   BẢN ĐỒ TUYẾN HÀNH TRÌNH TƯƠNG TÁC (INTERACTIVE HERITAGE ROUTES)
+   ==================================================================== */
+.heritage-route-card {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 4px solid transparent;
+  cursor: pointer;
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+.heritage-route-card:hover {
+  transform: translateX(6px);
+  border-color: #8B1E1E;
+  box-shadow: 0 4px 14px rgba(139, 30, 30, 0.08);
+}
+
+.heritage-route-card.active {
+  background-color: #FFFDF9 !important;
+  border-left: 5px solid #8B1E1E !important;
+  border-color: #8B1E1E !important;
+  box-shadow: 0 6px 18px rgba(139, 30, 30, 0.12) !important;
+}
+
+.heritage-route-card.active .route-status-pill {
+  display: inline-flex !important;
+}
+
+.route-status-pill {
+  display: none;
+}
+
+.route-relic-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #2A2521;
+  background-color: #F5EFE6;
+  border: 1px solid #EADECF;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.route-relic-chip:hover {
+  background-color: #8B1E1E !important;
+  color: #FFFFFF !important;
+  border-color: #8B1E1E !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(139, 30, 30, 0.2);
+}
+
+.route-relic-chip svg {
+  width: 12px;
+  height: 12px;
+  opacity: 0.75;
+}
+
+.route-relic-chip:hover svg {
+  opacity: 1;
+}
+
+#heritage-route-map-frame {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

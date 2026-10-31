@@ -622,58 +622,231 @@
   </section>
 
   <!-- ====================================================================
-       4. BẢN ĐỒ TỔNG THỂ KHU DI TÍCH NHÃ NAM (GEOGRAPHIC MAP OVERVIEW)
+       4. BẢN ĐỒ TỔNG THỂ & CÁC TUYẾN DI SẢN XÃ NHÃ NAM (INTERACTIVE HERITAGE ROUTES)
        ==================================================================== -->
-  <section class="py-12 bg-[#F5EFE6] border-y border-[#EADECF]">
+  <section id="heritage-map-section" class="py-12 bg-[#F5EFE6] border-y border-[#EADECF] relative">
     <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div class="lg:w-1/2">
-          <span class="text-xs font-bold uppercase tracking-wider text-[#C59B27] block mb-1">
-            Không gian địa lý và lịch sử
-          </span>
-          <h2 class="font-heritage-serif text-2xl sm:text-4xl font-bold text-[#8B1E1E] mb-4">
-            Bản đồ số hóa vùng di sản xã Nhã Nam
-          </h2>
-          <p class="text-sm text-[#5C5248] leading-relaxed mb-6 font-normal">
-            Xã Nhã Nam sở hữu vị trí chiến lược nối liền vùng đồng bằng trù phú với căn cứ địa Yên Thế lịch sử. Các di tích nằm trong bán kính thuận tiện từ 500m đến 3km, rất thuận lợi để Trường THPT Nhã Nam và các trường học tổ chức các buổi tham quan học tập ngoại khóa, "Hành trình về nguồn" và trải nghiệm thực tế cho học sinh.
-          </p>
+      <div class="flex flex-col lg:flex-row items-stretch justify-between gap-8">
+        
+        <!-- Left: Route selection & controls -->
+        <div class="lg:w-1/2 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#C59B27] block">
+                Không gian địa lý và lịch sử
+              </span>
+              <button 
+                type="button" 
+                onclick="resetToCommuneMap()" 
+                id="reset-commune-map-btn"
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-[#8B1E1E] bg-white border border-[#EADECF] hover:bg-[#8B1E1E] hover:text-white transition-all shadow-xs cursor-pointer"
+                title="Quay về bản đồ bao quát toàn xã">
+                <span>🌐 Xem toàn xã Nhã Nam</span>
+              </button>
+            </div>
 
-          <div class="space-y-3 mb-6">
-            <div class="flex items-center gap-3 text-xs sm:text-sm text-[#2A2521] bg-white p-3 rounded-xl border border-[#EADECF]">
-              <span class="w-6 h-6 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
-              <span><strong>Tuyến 1 (Cội nguồn và kháng chiến):</strong> Khu di tích đình - chùa Hả (tế cờ 1884) và chùa Tứ Giáp (6 điều Bác Hồ dạy)</span>
-            </div>
-            <div class="flex items-center gap-3 text-xs sm:text-sm text-[#2A2521] bg-white p-3 rounded-xl border border-[#EADECF]">
-              <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
-              <span><strong>Tuyến 2 (Mốc son cách mạng):</strong> Di tích lịch sử thôn Đồng Điều (chi bộ Đảng đầu tiên) và đền Đề Truật</span>
-            </div>
-            <div class="flex items-center gap-3 text-xs sm:text-sm text-[#2A2521] bg-white p-3 rounded-xl border border-[#EADECF]">
-              <span class="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
-              <span><strong>Tuyến 3 (Chiến tích oai hùng):</strong> Căn cứ đền Gốc Khế, đồn Nhã Nam - đồi Phủ, đình làng Chuông và chùa Nam Thiên</span>
+            <h2 class="font-heritage-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#8B1E1E] mb-3">
+              Bản đồ số hóa vùng di sản xã Nhã Nam
+            </h2>
+            <p class="text-sm text-[#5C5248] leading-relaxed mb-5 font-normal">
+              Xã Nhã Nam sở hữu vị trí chiến lược nối liền vùng đồng bằng trù phú với căn cứ địa Yên Thế lịch sử. Các di tích nằm trong bán kính thuận tiện từ 500m đến 3km, rất thuận lợi để Trường THPT Nhã Nam và các trường học tổ chức các buổi tham quan học tập ngoại khóa, "Hành trình về nguồn" và trải nghiệm thực tế cho học sinh. Bấm chọn tuyến hoặc di tích để khám phá trên bản đồ:
+            </p>
+
+            <!-- 3 Heritage Route Cards -->
+            <div id="route-cards-container" class="space-y-3.5 mb-6">
+              
+              <!-- Route 1 -->
+              <div 
+                id="route-card-tuyen-1"
+                onclick="selectRoute('tuyen-1')" 
+                class="heritage-route-card p-4 rounded-2xl border border-[#EADECF] shadow-xs hover:border-[#8B1E1E] transition-all">
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-6 h-6 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-xs">1</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#2A2521]">
+                      Tuyến 1 (Cội nguồn và kháng chiến): <span class="font-normal text-[#5C5248]">Đình - chùa Hả và chùa Tứ Giáp</span>
+                    </h3>
+                  </div>
+                  <span class="route-status-pill text-[10px] font-bold text-[#8B1E1E] bg-[#8B1E1E]/10 px-2.5 py-0.5 rounded-full border border-[#8B1E1E]/30 whitespace-nowrap">
+                    Đang chọn
+                  </span>
+                </div>
+                <p class="text-xs text-[#786C5E] mb-2.5 pl-8.5 font-normal">
+                  Nơi thủ lĩnh Đề Nắm tế cờ phát động khởi nghĩa Yên Thế (1884) và nơi phát tích thiêng liêng 6 điều Bác Hồ dạy Công an nhân dân (1948).
+                </p>
+                <div class="flex flex-wrap items-center gap-2 pl-8.5">
+                  <span class="text-[11px] font-semibold text-[#8B1E1E]">Di tích nổi bật:</span>
+                  <button 
+                    type="button" 
+                    onclick="selectRouteRelic('vat-the-1', event)"
+                    class="route-relic-chip"
+                    title="Bấm để zoom bản đồ và xem hồ sơ di tích">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    <span>Đình - chùa Hả</span>
+                  </button>
+                  <button 
+                    type="button" 
+                    onclick="selectRouteRelic('vat-the-2', event)"
+                    class="route-relic-chip"
+                    title="Bấm để zoom bản đồ và xem hồ sơ di tích">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    <span>Chùa Tứ Giáp</span>
+                  </button>
+                  <span class="text-[11px] text-[#C59B27] ml-auto font-medium hidden sm:inline">Xem trên bản đồ →</span>
+                </div>
+              </div>
+
+              <!-- Route 2 -->
+              <div 
+                id="route-card-tuyen-2"
+                onclick="selectRoute('tuyen-2')" 
+                class="heritage-route-card p-4 rounded-2xl border border-[#EADECF] shadow-xs hover:border-[#8B1E1E] transition-all">
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-xs">2</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#2A2521]">
+                      Tuyến 2 (Mốc son cách mạng): <span class="font-normal text-[#5C5248]">Di tích thôn Đồng Điều và đền Đề Truật</span>
+                    </h3>
+                  </div>
+                  <span class="route-status-pill text-[10px] font-bold text-[#8B1E1E] bg-[#8B1E1E]/10 px-2.5 py-0.5 rounded-full border border-[#8B1E1E]/30 whitespace-nowrap">
+                    Đang chọn
+                  </span>
+                </div>
+                <p class="text-xs text-[#786C5E] mb-2.5 pl-8.5 font-normal">
+                  Cái nôi thành lập chi bộ Đảng Cộng sản đầu tiên của địa phương tại chùa Đồng Điều và đền thờ tướng quân Đề Truật.
+                </p>
+                <div class="flex flex-wrap items-center gap-2 pl-8.5">
+                  <span class="text-[11px] font-semibold text-[#8B1E1E]">Di tích nổi bật:</span>
+                  <button 
+                    type="button" 
+                    onclick="selectRouteRelic('vat-the-3', event)"
+                    class="route-relic-chip"
+                    title="Bấm để zoom bản đồ và xem hồ sơ di tích">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    <span>Chùa Đồng Điều</span>
+                  </button>
+                  <button 
+                    type="button" 
+                    onclick="selectRouteRelic('vat-the-8', event)"
+                    class="route-relic-chip"
+                    title="Bấm để zoom bản đồ và xem hồ sơ di tích">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    <span>Đền Đề Truật</span>
+                  </button>
+                  <span class="text-[11px] text-[#C59B27] ml-auto font-medium hidden sm:inline">Xem trên bản đồ →</span>
+                </div>
+              </div>
+
+              <!-- Route 3 -->
+              <div 
+                id="route-card-tuyen-3"
+                onclick="selectRoute('tuyen-3')" 
+                class="heritage-route-card p-4 rounded-2xl border border-[#EADECF] shadow-xs hover:border-[#8B1E1E] transition-all">
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-xs">3</span>
+                    <h3 class="text-xs sm:text-sm font-bold text-[#2A2521]">
+                      Tuyến 3 (Chiến tích oai hùng): <span class="font-normal text-[#5C5248]">Căn cứ đền Gốc Khế, đồi Phủ, đình làng Chuông và chùa Nam Thiên</span>
+                    </h3>
+                  </div>
+                  <span class="route-status-pill text-[10px] font-bold text-[#8B1E1E] bg-[#8B1E1E]/10 px-2.5 py-0.5 rounded-full border border-[#8B1E1E]/30 whitespace-nowrap">
+                    Đang chọn
+                  </span>
+                </div>
+                <p class="text-xs text-[#786C5E] mb-2.5 pl-8.5 font-normal">
+                  Cụm di tích lịch sử quân sự và tín ngưỡng trung tâm đồn Nhã Nam thời kỳ chống thực dân Pháp oanh liệt.
+                </p>
+                <div class="flex flex-wrap items-center gap-2 pl-8.5">
+                  <span class="text-[11px] font-semibold text-[#8B1E1E]">Di tích nổi bật:</span>
+                  <button 
+                    type="button" 
+                    onclick="selectRouteRelic('vat-the-4', event)"
+                    class="route-relic-chip"
+                    title="Bấm để zoom bản đồ và xem hồ sơ di tích">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    <span>Đền Gốc Khế</span>
+                  </button>
+                  <button 
+                    type="button" 
+                    onclick="selectRouteRelic('vat-the-5', event)"
+                    class="route-relic-chip"
+                    title="Bấm để zoom bản đồ và xem hồ sơ di tích">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    <span>Đồi Phủ</span>
+                  </button>
+                  <button 
+                    type="button" 
+                    onclick="selectRouteRelic('vat-the-6', event)"
+                    class="route-relic-chip"
+                    title="Bấm để zoom bản đồ và xem hồ sơ di tích">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    <span>Đình làng Chuông</span>
+                  </button>
+                  <button 
+                    type="button" 
+                    onclick="selectRouteRelic('vat-the-7', event)"
+                    class="route-relic-chip"
+                    title="Bấm để zoom bản đồ và xem hồ sơ di tích">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                    <span>Chùa Nam Thiên</span>
+                  </button>
+                  <span class="text-[11px] text-[#C59B27] ml-auto font-medium hidden sm:inline">Xem trên bản đồ →</span>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <a 
-            href="https://www.google.com/maps/dir/?api=1&destination=Chùa+Tứ+Giáp,+Nhã+Nam,+Tân+Yên,+Bắc+Giang" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-white bg-[#8B1E1E] hover:bg-[#6F1515] transition-all shadow-md">
-            <svg class="w-4 h-4 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            <span>Dẫn đường đến trung tâm Nhã Nam</span>
-          </a>
+          <!-- Actions -->
+          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <a 
+              id="heritage-route-directions-btn"
+              href="https://www.google.com/maps/dir/?api=1&destination=UBND+xã+Nhã+Nam,+tỉnh+Bắc+Ninh" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-[#8B1E1E] hover:bg-[#6F1515] transition-all shadow-md flex-1">
+              <svg class="w-4 h-4 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <span id="route-directions-label">📍 Dẫn đường đến trung tâm xã Nhã Nam</span>
+            </a>
+
+            <button 
+              type="button"
+              id="filter-route-relics-btn"
+              onclick="filterRelicsByActiveRoute()"
+              class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold text-[#8B1E1E] bg-white border border-[#8B1E1E]/40 hover:bg-[#8B1E1E] hover:text-white transition-all shadow-xs cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              <span>🔍 Xem di tích tuyến này</span>
+            </button>
+          </div>
         </div>
 
-        <div class="lg:w-1/2 w-full h-80 sm:h-96 rounded-3xl overflow-hidden border-2 border-[#EADECF] shadow-lg">
-          <iframe 
-            src="https://www.google.com/maps?q=Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            title="Bản đồ tổng thể xã Nhã Nam, tỉnh Bắc Ninh">
-          </iframe>
+        <!-- Right: Map frame -->
+        <div class="lg:w-1/2 w-full flex flex-col">
+          <div class="relative w-full h-80 sm:h-96 lg:h-full min-h-[420px] rounded-3xl overflow-hidden border-2 border-[#EADECF] shadow-lg bg-[#EADECF]">
+            <div id="map-loading-indicator" class="absolute inset-0 flex items-center justify-center bg-[#F5EFE6]/80 z-10 transition-opacity duration-300 pointer-events-none opacity-0">
+              <div class="flex items-center gap-2 text-xs font-bold text-[#8B1E1E] bg-white px-4 py-2 rounded-full shadow-md border border-[#EADECF]">
+                <svg class="w-4 h-4 animate-spin text-[#8B1E1E]" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+                <span>Đang tải bản đồ...</span>
+              </div>
+            </div>
+            <iframe 
+              id="heritage-route-map-frame"
+              src="https://www.google.com/maps?q=Nh%C3%A3+Nam,+B%E1%BA%AFc+Ninh&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              title="Bản đồ các tuyến di sản xã Nhã Nam, tỉnh Bắc Ninh"
+              class="w-full h-full">
+            </iframe>
+          </div>
+          <div class="mt-2 flex items-center justify-between text-[11px] text-[#786C5E] px-1">
+            <span id="active-route-map-caption">📍 Bản đồ tổng thể xã Nhã Nam, tỉnh Bắc Ninh</span>
+            <span>💡 Bấm vào tên di tích để xem bài thuyết minh</span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>

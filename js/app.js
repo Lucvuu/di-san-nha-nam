@@ -10,6 +10,7 @@
 const state = {
   currentCategory: 'all', // 'all' | 'vat-the' | 'phi-vat-the'
   searchQuery: '',
+  activeRouteFilter: null,
   allItems: [...TANGIBLE_HERITAGE_DATA, ...INTANGIBLE_HERITAGE_DATA],
   filteredItems: [],
   selectedItem: null,
@@ -210,6 +211,14 @@ function applyFiltersAndRender() {
     items = items.filter(item => item.category === 'phi-vat-the');
   }
 
+  // Lọc theo tuyến hành trình (Interactive Heritage Route Explorer)
+  if (state.activeRouteFilter && typeof HERITAGE_ROUTES !== 'undefined') {
+    const route = HERITAGE_ROUTES.find(r => r.id === state.activeRouteFilter);
+    if (route && Array.isArray(route.relicIds)) {
+      items = items.filter(item => route.relicIds.includes(item.id));
+    }
+  }
+
   // Lọc theo từ khóa tìm kiếm (hỗ trợ có dấu và không dấu tiếng Việt)
   if (state.searchQuery && state.searchQuery.trim()) {
     items = items.filter(item => matchesSearchQuery(item, state.searchQuery));
@@ -226,6 +235,22 @@ function applyFiltersAndRender() {
 function updateResultsSummary(count) {
   const summaryEl = document.getElementById('search-results-summary');
   if (!summaryEl) return;
+
+  if (state.activeRouteFilter && typeof HERITAGE_ROUTES !== 'undefined') {
+    const route = HERITAGE_ROUTES.find(r => r.id === state.activeRouteFilter);
+    const routeName = route ? `${route.name} (${route.title})` : 'Tuyến di sản';
+    summaryEl.innerHTML = `<div class="flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-xl bg-[#FFFDF9] border border-[#8B1E1E]/30 text-xs sm:text-sm text-[#2A2521]">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#8B1E1E]"></span>
+        <span>Đang lọc hiển thị <strong class="text-[#8B1E1E] font-bold">${count}</strong> di tích thuộc <strong class="text-[#8B1E1E]">${escapeHtml(routeName)}</strong></span>
+      </div>
+      <button type="button" onclick="clearRouteFilter()" class="text-xs text-[#8B1E1E] underline hover:text-[#6F1515] font-semibold cursor-pointer">
+        ✕ Bỏ lọc tuyến để xem tất cả di sản
+      </button>
+    </div>`;
+    summaryEl.classList.remove('hidden');
+    return;
+  }
 
   if (state.searchQuery.trim()) {
     summaryEl.innerHTML = `Tìm thấy <strong class="text-[#8B1E1E] font-bold">${count}</strong> di sản phù hợp với từ khóa "<span class="italic">${escapeHtml(state.searchQuery)}</span>"`;
@@ -1595,6 +1620,7 @@ function setupEventListeners() {
 }
 
 function setCategoryFilter(category) {
+  state.activeRouteFilter = null;
   state.currentCategory = category;
   const tabButtons = document.querySelectorAll('.category-tab-btn');
   tabButtons.forEach(btn => {
@@ -1753,4 +1779,161 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
+}
+
+/**
+ * ====================================================================
+ * BẢN ĐỒ TUYẾN HÀNH TRÌNH TƯƠNG TÁC (INTERACTIVE HERITAGE ROUTES LOGIC)
+ * ====================================================================
+ */
+let activeRouteId = null;
+
+function selectRoute(routeId) {
+  if (typeof HERITAGE_ROUTES === 'undefined') return;
+  const route = HERITAGE_ROUTES.find(r => r.id === routeId);
+  if (!route) return;
+
+  activeRouteId = routeId;
+
+  // 1. Cập nhật trạng thái active trên các thẻ Tuyến
+  ['tuyen-1', 'tuyen-2', 'tuyen-3'].forEach(id => {
+    const card = document.getElementById(`route-card-${id}`);
+    if (card) {
+      if (id === routeId) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    }
+  });
+
+  // 2. Chuyển iframe bản đồ mượt mà
+  updateMapFrame(route.mapEmbedUrl, `📍 Bản đồ Tuyến ${route.number}: ${route.title} (${route.subtitle})`);
+
+  // 3. Cập nhật nút dẫn đường
+  const dirBtn = document.getElementById('heritage-route-directions-btn');
+  const dirLabel = document.getElementById('route-directions-label');
+  if (dirBtn && route.directionsUrl) {
+    dirBtn.href = route.directionsUrl;
+  }
+  if (dirLabel && route.directionsText) {
+    dirLabel.textContent = route.directionsText;
+  }
+}
+
+function selectRouteRelic(relicId, event) {
+  if (event) {
+    event.stopPropagation();
+  }
+
+  // 1. Zoom iframe bản đồ vào đúng di tích
+  const relic = (typeof TANGIBLE_HERITAGE_DATA !== 'undefined') ? TANGIBLE_HERITAGE_DATA.find(r => r.id === relicId) : null;
+  if (relic && relic.map && relic.map.embedUrl) {
+    updateMapFrame(relic.map.embedUrl, `📍 ${relic.title} - ${relic.address}`);
+
+    const dirBtn = document.getElementById('heritage-route-directions-btn');
+    const dirLabel = document.getElementById('route-directions-label');
+    if (dirBtn && relic.map.directionsUrl) {
+      dirBtn.href = relic.map.directionsUrl;
+    }
+    if (dirLabel) {
+      dirLabel.textContent = `📍 Dẫn đường đến ${relic.shortTitle || relic.title}`;
+    }
+  }
+
+  // 2. Mở trực tiếp Modal thông tin chi tiết
+  if (typeof openDetailModal === 'function') {
+    openDetailModal(relicId);
+  }
+}
+
+function resetToCommuneMap() {
+  activeRouteId = null;
+
+  // 1. Xóa trạng thái active của cả 3 tuyến
+  ['tuyen-1', 'tuyen-2', 'tuyen-3'].forEach(id => {
+    const card = document.getElementById(`route-card-${id}`);
+    if (card) card.classList.remove('active');
+  });
+
+  // 2. Khôi phục iframe bản đồ toàn xã
+  const defaultMap = (typeof DEFAULT_COMMUNE_MAP !== 'undefined') ? DEFAULT_COMMUNE_MAP : {
+    embedUrl: "https://www.google.com/maps?q=Nh%C3%A3+Nam,+B%E1%BA%AFc+Ninh&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=UBND+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
+    directionsText: "📍 Dẫn đường đến trung tâm xã Nhã Nam"
+  };
+
+  updateMapFrame(defaultMap.embedUrl, '📍 Bản đồ tổng thể xã Nhã Nam, tỉnh Bắc Ninh');
+
+  // 3. Khôi phục nút dẫn đường
+  const dirBtn = document.getElementById('heritage-route-directions-btn');
+  const dirLabel = document.getElementById('route-directions-label');
+  if (dirBtn) dirBtn.href = defaultMap.directionsUrl;
+  if (dirLabel) dirLabel.textContent = defaultMap.directionsText;
+}
+
+function updateMapFrame(newUrl, captionText) {
+  const iframe = document.getElementById('heritage-route-map-frame');
+  const caption = document.getElementById('active-route-map-caption');
+  const indicator = document.getElementById('map-loading-indicator');
+
+  if (caption && captionText) {
+    caption.textContent = captionText;
+  }
+
+  if (!iframe) return;
+
+  iframe.style.opacity = '0.35';
+  if (indicator) indicator.style.opacity = '1';
+
+  setTimeout(() => {
+    iframe.src = newUrl;
+    iframe.onload = () => {
+      iframe.style.opacity = '1';
+      if (indicator) indicator.style.opacity = '0';
+    };
+    setTimeout(() => {
+      iframe.style.opacity = '1';
+      if (indicator) indicator.style.opacity = '0';
+    }, 500);
+  }, 150);
+}
+
+function filterRelicsByActiveRoute() {
+  const routeId = activeRouteId || 'tuyen-1';
+  // Nếu chưa chọn tuyến nào, tự động kích hoạt Tuyến 1
+  if (!activeRouteId) {
+    selectRoute('tuyen-1');
+  }
+  filterRelicsByRoute(routeId);
+}
+
+function filterRelicsByRoute(routeId) {
+  state.activeRouteFilter = routeId;
+  state.currentCategory = 'all';
+
+  // Cập nhật giao diện các tab
+  const tabButtons = document.querySelectorAll('.category-tab-btn');
+  tabButtons.forEach(btn => {
+    const isTarget = btn.getAttribute('data-category') === 'all';
+    if (isTarget) {
+      btn.classList.add('active', 'bg-[#8B1E1E]', 'text-white');
+      btn.setAttribute('aria-selected', 'true');
+    } else {
+      btn.classList.remove('active', 'bg-[#8B1E1E]', 'text-white');
+      btn.setAttribute('aria-selected', 'false');
+    }
+  });
+
+  applyFiltersAndRender();
+
+  const explorerEl = document.getElementById('heritage-explorer');
+  if (explorerEl) {
+    explorerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function clearRouteFilter() {
+  state.activeRouteFilter = null;
+  applyFiltersAndRender();
 }

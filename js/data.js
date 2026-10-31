@@ -71,13 +71,13 @@ const OFFICIAL_COMMUNE_RELICS = {
       icon: "🏛️",
       description: "08 di tích thuộc di tích quốc gia đặc biệt Những địa điểm Khởi nghĩa Yên Thế theo Quyết định số 548/QĐ-TTg của Thủ tướng Chính phủ.",
       items: [
-        { name: "Đình Dương Lâm", type: "Đình làng cổ", status: "Di tích quốc gia đặc biệt", featuredId: null },
-        { name: "Đình Hả", type: "Khu di tích đình - chùa Hả (Nơi Đề Nắm tế cờ phát động khởi nghĩa)", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-1" },
-        { name: "Đền Gốc Khế", type: "Đền thờ và căn cứ lịch sử rừng Gốc Khế", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-4" },
-        { name: "Đền Cả Trọng", type: "Đền thờ tướng quân Cả Trọng (con trai Đề Thám)", status: "Di tích quốc gia đặc biệt", featuredId: null },
-        { name: "Nghĩa địa Pháp", type: "Khu chứng tích lịch sử quân sự đồn Nhã Nam", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-5" },
+        { name: "Đình Dương Lâm", type: "Đình làng cổ khởi dựng đầu thế kỷ XIX", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-11" },
+        { name: "Đình Hả", type: "Khu di tích đình - chùa Hả (Nơi Đề Nắm tế cờ phát động khởi nghĩa 1884)", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-1" },
+        { name: "Đền Gốc Khế", type: "Đền thờ và căn cứ lịch sử rừng Gốc Khế của nghĩa quân", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-4" },
+        { name: "Đền Cả Trọng", type: "Đền thờ tướng quân Hoàng Đức Trọng (con trai Đề Thám)", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-10" },
+        { name: "Nghĩa địa Pháp", type: "Khu chứng tích lịch sử quân sự đồn Nhã Nam", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-9" },
         { name: "Đình làng Chuông (đình Nhã Nam)", type: "Đình làng cổ khởi dựng thế kỷ XVIII", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-6" },
-        { name: "Đồi Phủ (đồn Nhã Nam)", type: "Khu căn cứ đồn lũy Pháp", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-5" },
+        { name: "Đồi Phủ (đồn Nhã Nam)", type: "Căn cứ đồn binh Pháp thời thuộc địa (Ao ông Chấn Ký)", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-5" },
         { name: "Chùa Nam Thiên (chùa Phố)", type: "Chùa cổ khởi dựng năm 1822", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-7" }
       ]
     },
@@ -105,12 +105,12 @@ const OFFICIAL_COMMUNE_RELICS = {
       description: "07 di tích lịch sử - văn hóa được Chủ tịch UBND tỉnh ban hành Quyết định xếp hạng di tích cấp tỉnh.",
       items: [
         { name: "Đền Đề Truật", type: "Đền thờ Tướng quân Dương Văn Truật (Đề Truật)", status: "Di tích cấp tỉnh", featuredId: "vat-the-8" },
-        { name: "Đền Cầu Thượng", type: "Đền thờ tín ngưỡng truyền thống thôn Cầu Thượng", status: "Di tích cấp tỉnh", featuredId: null },
-        { name: "Đình Sậy", type: "Đình làng truyền thống thôn Sậy", status: "Di tích cấp tỉnh", featuredId: null },
+        { name: "Đền Cầu Thượng", type: "Đền thờ Đức thánh Cao Sơn, Quý Minh thôn Cầu Thượng", status: "Di tích cấp tỉnh", featuredId: "vat-the-12" },
+        { name: "Đình Sậy", type: "Đình làng truyền thống thôn Sậy", status: "Di tích cấp tỉnh", featuredId: "vat-the-13" },
         { name: "Chùa Đồng Điều (di tích thôn Đồng Điều)", type: "Cái nôi thành lập chi bộ Đảng Cộng sản đầu tiên của địa phương", status: "Di tích cấp tỉnh", featuredId: "vat-the-3" },
-        { name: "Đình Nẻo", type: "Đình làng truyền thống thôn Nẻo", status: "Di tích cấp tỉnh", featuredId: null },
-        { name: "Chùa Dương Sơn", type: "Chùa cổ truyền thống thôn Dương Sơn", status: "Di tích cấp tỉnh", featuredId: null },
-        { name: "Đình Sặt", type: "Đình làng truyền thống thôn Sặt", status: "Di tích cấp tỉnh", featuredId: null }
+        { name: "Đình Nẻo", type: "Đình làng truyền thống thôn Nẻo", status: "Di tích cấp tỉnh", featuredId: "vat-the-14" },
+        { name: "Chùa Dương Sơn", type: "Chùa cổ truyền thống thôn Dương Sơn", status: "Di tích cấp tỉnh", featuredId: "vat-the-15" },
+        { name: "Đình Sặt", type: "Đình làng truyền thống thôn Sặt", status: "Di tích cấp tỉnh", featuredId: "vat-the-16" }
       ]
     },
     {
@@ -126,7 +126,7 @@ const OFFICIAL_COMMUNE_RELICS = {
         { name: "Chùa Bùng", type: "Chùa làng" },
         { name: "Đình Phố", type: "Đình làng cổ" },
         { name: "Chùa Dương Lâm", type: "Chùa làng" },
-        { name: "Chùa làng Hạ", type: "Chùa làng" },
+        { name: "Chùa Làng Hạ", type: "Chùa làng" },
         { name: "Chùa Tầng", type: "Chùa làng" },
         { name: "Giáo họ Yên Lễ", type: "Cơ sở tín ngưỡng tôn giáo" },
         { name: "Nhà thờ Đạo Minh Tân", type: "Cơ sở tôn giáo" },
@@ -147,6 +147,77 @@ const OFFICIAL_COMMUNE_RELICS = {
       ]
     }
   ]
+};
+
+/**
+ * ====================================================================
+ * CẤU HÌNH CÁC TUYẾN DU LỊCH & HỌC TẬP NGOẠI KHÓA DI SẢN XÃ NHÃ NAM
+ * Hỗ trợ bản đồ tương tác, tự động zoom và dẫn đường Google Maps
+ * ====================================================================
+ */
+const HERITAGE_ROUTES = [
+  {
+    id: "tuyen-1",
+    number: "1",
+    name: "Tuyến 1",
+    title: "Cội nguồn và kháng chiến",
+    subtitle: "Khu di tích đình - chùa Hả và chùa Tứ Giáp",
+    themeColor: "#8B1E1E",
+    badgeBg: "bg-[#8B1E1E]",
+    relicIds: ["vat-the-1", "vat-the-2"],
+    relics: [
+      { id: "vat-the-1", name: "Đình - chùa Hả", note: "Nơi tế cờ 1884", q: "Khu+di+tích+Đình+Chùa+Hả+Nhã+Nam" },
+      { id: "vat-the-2", name: "Chùa Tứ Giáp", note: "Nơi phát tích 6 điều Bác Hồ dạy", q: "Chùa+Tứ+Giáp+Nhã+Nam" }
+    ],
+    mapEmbedUrl: "https://www.google.com/maps?q=Khu+di+t%C3%ADch+%C4%90%C3%ACnh+Ch%C3%B9a+H%E1%BA%A3+v%C3%A0+Ch%C3%B9a+T%E1%BB%A9+Gi%C3%A1p+Nh%C3%A3+Nam&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đình+chùa+Hả+Nhã+Nam&destination=Chùa+Tứ+Giáp+Nhã+Nam",
+    directionsText: "📍 Dẫn đường Tuyến 1 (Đình Hả → Chùa Tứ Giáp)",
+    description: "Kết nối nơi khởi phát ngọn cờ Yên Thế (đình Hả) với nơi phát tích 6 điều Bác Hồ dạy Công an nhân dân (chùa Tứ Giáp). Cung đường giáo dục truyền thống yêu nước và bản lĩnh cách mạng."
+  },
+  {
+    id: "tuyen-2",
+    number: "2",
+    name: "Tuyến 2",
+    title: "Mốc son cách mạng",
+    subtitle: "Di tích lịch sử thôn Đồng Điều và đền Đề Truật",
+    themeColor: "#C59B27",
+    badgeBg: "bg-[#C59B27]",
+    relicIds: ["vat-the-3", "vat-the-8"],
+    relics: [
+      { id: "vat-the-3", name: "Chùa Đồng Điều", note: "Chi bộ Đảng đầu tiên", q: "Chùa+Đồng+Điều+Nhã+Nam" },
+      { id: "vat-the-8", name: "Đền Đề Truật", note: "Tướng quân Đề Truật", q: "Đền+Đề+Truật+Nhã+Nam" }
+    ],
+    mapEmbedUrl: "https://www.google.com/maps?q=Ch%C3%B9a+%C4%90%E1%BB%93ng+%C4%90i%E1%BB%81u+v%C3%A0+%C4%90%E1%BB%81n+%C4%90%E1%BB%81+Tru%E1%BA%ADt+Nh%C3%A3+Nam&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Chùa+Đồng+Điều+Nhã+Nam&destination=Đền+Đề+Truật+Nhã+Nam",
+    directionsText: "📍 Dẫn đường Tuyến 2 (Đồng Điều → Đền Đề Truật)",
+    description: "Hành trình về với cái nôi gieo mầm cách mạng của chi bộ Đảng Cộng sản đầu tiên tại địa phương và tấm gương trung dũng của nghĩa quân Đề Truật."
+  },
+  {
+    id: "tuyen-3",
+    number: "3",
+    name: "Tuyến 3",
+    title: "Chiến tích oai hùng",
+    subtitle: "Căn cứ đền Gốc Khế, đồi Phủ, đình làng Chuông và chùa Nam Thiên",
+    themeColor: "#166534",
+    badgeBg: "bg-[#166534]",
+    relicIds: ["vat-the-4", "vat-the-5", "vat-the-6", "vat-the-7"],
+    relics: [
+      { id: "vat-the-4", name: "Đền Gốc Khế", note: "Căn cứ rừng Gốc Khế", q: "Đền+Gốc+Khế+Nhã+Nam" },
+      { id: "vat-the-5", name: "Đồi Phủ (đồn Nhã Nam)", note: "Ao ông Chấn Ký", q: "Đồi+Phủ+Nhã+Nam" },
+      { id: "vat-the-6", name: "Đình làng Chuông", note: "Đình cổ thế kỷ XVIII", q: "Đình+làng+Chuông+Nhã+Nam" },
+      { id: "vat-the-7", name: "Chùa Nam Thiên", note: "Chùa Phố 1822", q: "Chùa+Nam+Thiên+Nhã+Nam" }
+    ],
+    mapEmbedUrl: "https://www.google.com/maps?q=%C4%90%E1%BB%93i+Ph%E1%BB%A7+v%C3%A0+%C4%90%C3%ACnh+l%C3%A0ng+Chu%C3%B4ng+Nh%C3%A3+Nam&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đền+Gốc+Khế+Nhã+Nam&destination=Chùa+Nam+Thiên+Nhã+Nam&waypoints=Đồi+Phủ+Nhã+Nam|Đình+làng+Chuông+Nhã+Nam",
+    directionsText: "📍 Dẫn đường Tuyến 3 (Đền Gốc Khế → Đồi Phủ → Chùa Nam Thiên)",
+    description: "Cụm di tích lịch sử quân sự và tín ngưỡng trung tâm đồn Nhã Nam - chiến trường thử lửa oanh liệt chống giặc ngoại xâm của nghĩa quân Yên Thế."
+  }
+];
+
+const DEFAULT_COMMUNE_MAP = {
+  embedUrl: "https://www.google.com/maps?q=Nh%C3%A3+Nam,+B%E1%BA%AFc+Ninh&output=embed",
+  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=UBND+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
+  directionsText: "📍 Dẫn đường đến trung tâm xã Nhã Nam"
 };
 
 const MUSIC_PLAYLIST = [
@@ -760,13 +831,14 @@ const TANGIBLE_HERITAGE_DATA = [
     "relicType": "Di tích lịch sử - văn hóa",
     "decision": "QĐ số 10/QĐ-UBND, ngày 06/01/2012 của Chủ tịch UBND tỉnh",
     "worship": "Đức thánh Cao Sơn, Quý Minh",
-    "title": "Đình Cầu Thượng",
-    "shortTitle": "Đình Cầu Thượng",
+    "title": "Đền Cầu Thượng (đình Cầu Thượng)",
+    "shortTitle": "Đền Cầu Thượng",
     "address": "Thôn Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
     "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
     "tags": [
+      "Đền Cầu Thượng",
       "Đình Cầu Thượng",
       "Cao Sơn Quý Minh",
       "Cầu Thượng",

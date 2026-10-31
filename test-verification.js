@@ -27,7 +27,15 @@ console.assert(OFFICIAL_COMMUNE_RELICS.totalCount === 37, 'OFFICIAL_COMMUNE_RELI
 console.assert(OFFICIAL_COMMUNE_RELICS.groups.length === 4, 'Should have 4 official categories');
 const totalItemsInGroups = OFFICIAL_COMMUNE_RELICS.groups.reduce((acc, g) => acc + g.items.length, 0);
 console.assert(totalItemsInGroups === 37, 'Sum of relics in all groups must equal 37');
+const rankedRelics = OFFICIAL_COMMUNE_RELICS.groups.slice(0, 3).flatMap(g => g.items);
+console.assert(rankedRelics.length === 16, 'Should have 16 ranked relics in first 3 groups');
+rankedRelics.forEach(item => {
+  console.assert(item.featuredId, `Ranked relic ${item.name} must have featuredId linked`);
+  const found = TANGIBLE_HERITAGE_DATA.find(r => r.id === item.featuredId);
+  console.assert(found, `featuredId ${item.featuredId} must exist in TANGIBLE_HERITAGE_DATA`);
+});
 console.log('  ✓ Verified OFFICIAL_COMMUNE_RELICS: 37 total (8 QG đặc biệt, 1 QG, 7 Cấp tỉnh, 21 Kiểm kê)');
+console.log('  ✓ Verified 16 ranked relics have 100% 1-to-1 linkage to TANGIBLE_HERITAGE_DATA');
 
 console.log('--- 2. TESTING AUDIO PLAYLIST ---');
 console.assert(Array.isArray(MUSIC_PLAYLIST) && MUSIC_PLAYLIST.length === 2, 'Should have 2 tracks in MUSIC_PLAYLIST');
@@ -175,6 +183,25 @@ console.log('  ✓ State items:', state.allItems.length, '(16 di sản vật th�
 console.log('  ✓ Cards rendered in #heritage-grid HTML size:', elements['heritage-grid'].innerHTML.length, 'bytes');
 console.log('  ✓ Quick tags rendered in #quick-search-tags HTML size:', elements['quick-search-tags'].innerHTML.length, 'bytes');
 console.log('  ✓ Dynamic counters updated: Tất cả =', elements['count-all'].textContent, ', Vật thể =', elements['count-vat-the'].textContent, ', Phi vật thể =', elements['count-phi-vat-the'].textContent);
+
+console.log('--- 8. TESTING INTERACTIVE HERITAGE ROUTES ---');
+console.assert(Array.isArray(HERITAGE_ROUTES) && HERITAGE_ROUTES.length === 3, 'HERITAGE_ROUTES must have 3 routes');
+HERITAGE_ROUTES.forEach((route, i) => {
+  console.assert(route.id && route.name && route.title, `Route ${i} must have id, name, title`);
+  console.assert(route.relicIds && route.relicIds.length > 0, `Route ${i} must have relicIds`);
+  console.assert(route.mapEmbedUrl && route.directionsUrl, `Route ${i} must have embed & directions URL`);
+  route.relicIds.forEach(relicId => {
+    const relic = TANGIBLE_HERITAGE_DATA.find(r => r.id === relicId);
+    console.assert(relic, `Relic ${relicId} in route ${route.id} must exist in TANGIBLE_HERITAGE_DATA`);
+  });
+  console.log(`  ✓ [Tuyến ${route.number}] ${route.title} (${route.relicIds.length} di tích) -> Validated URLs & Relic links`);
+});
+
+console.assert(typeof selectRoute === 'function', 'selectRoute must be a function');
+console.assert(typeof selectRouteRelic === 'function', 'selectRouteRelic must be a function');
+console.assert(typeof resetToCommuneMap === 'function', 'resetToCommuneMap must be a function');
+console.assert(typeof filterRelicsByRoute === 'function', 'filterRelicsByRoute must be a function');
+console.log('  ✓ All 4 Interactive Heritage Route controller functions verified');
 
 console.log('\n======================================================');
 console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE & APP INIT TESTS PASSED! 🎉');
