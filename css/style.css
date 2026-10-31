@@ -243,7 +243,6 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   border-radius: 8px;
   transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
   cursor: pointer;
-  border-left: 3px solid transparent;
   color: #4A4036;
 }
 
@@ -256,8 +255,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   background-color: #FEF3C7;
   color: #8B1E1E;
   font-weight: 600;
-  border-left-color: #8B1E1E;
-  box-shadow: 0 1px 4px rgba(139, 30, 30, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(139, 30, 30, 0.25), 0 1px 4px rgba(139, 30, 30, 0.12);
   transform: translateX(2px);
 }
 
@@ -659,7 +657,6 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
    ==================================================================== */
 .heritage-route-card {
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  border-left: 4px solid transparent;
   cursor: pointer;
   position: relative;
   background-color: #FFFFFF;
@@ -672,10 +669,9 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
 }
 
 .heritage-route-card.active {
-  background-color: #FFFDF9 !important;
-  border-left: 5px solid #8B1E1E !important;
+  background-color: #FBF3EC !important;
   border-color: #8B1E1E !important;
-  box-shadow: 0 6px 18px rgba(139, 30, 30, 0.12) !important;
+  box-shadow: inset 0 0 0 1px #8B1E1E, 0 6px 18px rgba(139, 30, 30, 0.12) !important;
 }
 
 .heritage-route-card.active .route-status-pill {
@@ -724,15 +720,12 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Khung chờ ảnh thật: viền kép đỏ - vàng, nền hoa văn trám mờ */
+/* Khung chờ ảnh thật: viền kép đỏ - vàng */
 .photo-pending-frame {
   border: 1px solid rgba(197, 155, 39, 0.55);
   outline: 4px double rgba(139, 30, 30, 0.18);
   outline-offset: -10px;
   background-color: #FBF6EE;
-  background-image:
-    repeating-linear-gradient(45deg, rgba(197, 155, 39, 0.07) 0 1px, transparent 1px 14px),
-    repeating-linear-gradient(-45deg, rgba(139, 30, 30, 0.05) 0 1px, transparent 1px 14px);
 }
 
 /* Bề mặt trình duyệt theo bảng màu di sản */
