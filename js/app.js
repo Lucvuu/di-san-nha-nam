@@ -421,8 +421,8 @@ function renderHeritageGrid(items) {
                 type="button" 
                 onclick="event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'}), 350);"
                 class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 transition shadow-xs" 
-                aria-label="Xem video Lễ tế cờ Đề Nắm">
-                <span>🎬 Xem video Lễ tế cờ Đề Nắm</span>
+                aria-label="Xem video lễ tế cờ Đề Nắm">
+                ${ic('video')} <span>Xem video lễ tế cờ Đề Nắm</span>
               </button>
             ` : (item.video ? `
               <button 
@@ -430,7 +430,7 @@ function renderHeritageGrid(items) {
                 onclick="event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'}), 350);"
                 class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 transition shadow-xs" 
                 aria-label="Xem video tư liệu ${escapeHtml(item.title)}">
-                <span>🎬 Xem video tư liệu</span>
+                ${ic('video')} <span>Xem video tư liệu</span>
               </button>
             ` : '')}
 
@@ -649,7 +649,7 @@ function openDetailModal(itemId) {
           ` : ''}
           ${item.video ? `
             <button type="button" onclick="document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'})" class="px-3 py-1.5 rounded-lg font-semibold bg-red-600 text-white hover:bg-red-700 transition flex items-center gap-1.5 shadow-xs">
-              <span>🎬</span> <span>Xem video tư liệu</span>
+              ${ic('video', 'w-3.5 h-3.5')} <span>Xem video tư liệu</span>
             </button>
           ` : ''}
           <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#166534] border border-[#EADECF] hover:bg-[#F0FDF4] transition flex items-center gap-1.5 shadow-xs">
@@ -674,7 +674,7 @@ function openDetailModal(itemId) {
               <div class="text-[11px] text-[#5C5248] mt-0.5">${escapeHtml(item.audioFile.title)} (Tư liệu Trường THPT Nhã Nam)</div>
             </div>
           </div>
-          <audio id="modal-real-audio" controls class="h-9 w-full sm:w-64 max-w-full rounded-lg" preload="none">
+          <audio id="modal-real-audio" onplay="pauseModalMedia('real')" controls class="h-9 w-full sm:w-64 max-w-full rounded-lg" preload="none">
             <source src="${item.audioFile.src}" type="audio/mpeg">
             Trình duyệt không hỗ trợ nghe âm thanh.
           </audio>
@@ -763,6 +763,26 @@ function openDetailModal(itemId) {
 
       </div>
       </section>
+
+      ${item.video ? `
+      <!-- VIDEO TƯ LIỆU YOUTUBE -->
+      <section id="modal-video-section" class="border-b border-[#EADECF]/80 pb-6 scroll-mt-4">
+        <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-3 flex items-center gap-2">${ic('video', 'w-5 h-5')} Video tư liệu</h3>
+        <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
+          <iframe
+            src="${item.video.embedUrl}?rel=0&enablejsapi=1"
+            title="${escapeHtml(item.video.title)}"
+            class="absolute inset-0 w-full h-full"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <p class="mt-2 text-xs text-[#5C5248]">${escapeHtml(item.video.title)} •
+          <a href="${item.video.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="text-[#8B1E1E] underline underline-offset-2">Mở trên YouTube</a>
+        </p>
+      </section>
+      ` : ''}
 
       <!-- PHẦN 2: ĐỊA CHỈ / PHẠM VI -->
       <section class="border-b border-[#EADECF]/80 pb-5">
@@ -911,7 +931,7 @@ function loadDocTexts() {
   if (!loadDocTexts.promise) {
     loadDocTexts.promise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = './js/doc-texts.js?v=3.0.1';
+      s.src = './js/doc-texts.js?v=3.1.0';
       s.onload = () => resolve(window.DOC_TEXTS || {});
       s.onerror = () => { loadDocTexts.promise = null; reject(); };
       document.head.appendChild(s);
@@ -1108,7 +1128,28 @@ function updateAudioGuideStateUI(isPlaying, isPaused) {
 /**
  * Bật / Tạm dừng thuyết minh
  */
+/**
+ * Chỉ cho một nguồn âm thanh chạy trong modal: bản ghi âm gốc, giọng đọc tự động
+ * hoặc video YouTube. Nhạc nền của trang luôn được tạm dừng.
+ */
+function pauseModalMedia(keep) {
+  const modal = document.getElementById('heritage-detail-modal');
+  if (keep !== 'real') {
+    const real = modal?.querySelector('#modal-real-audio');
+    if (real && !real.paused) real.pause();
+  }
+  if (keep !== 'tts' && (heritageAudioGuide.isPlaying || heritageAudioGuide.isPaused)) stopAudioGuideNarration();
+  if (keep !== 'video') {
+    modal?.querySelectorAll('iframe[src*="youtube"]').forEach(f => {
+      f.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    });
+  }
+  const bg = document.getElementById('bg-music');
+  if (bg && !bg.paused && typeof toggleMusicPlayback === 'function') toggleMusicPlayback();
+}
+
 function toggleAudioGuideNarration() {
+  if (!heritageAudioGuide.isPlaying) pauseModalMedia('tts');
   if (heritageAudioGuide.isPlaying) {
     heritageAudioGuide.pause();
   } else if (heritageAudioGuide.isPaused) {
