@@ -660,12 +660,12 @@ function openDetailModal(itemId) {
 
       <section id="audioguide-section" class="border-b border-[#EADECF]/80 pb-6">
       ${item.audioFile ? `
-        <!-- BẢN GHI ÂM THUYẾT MINH THỰC TẾ (ÂM THANH GỐC DO TRƯỜNG THỰC HIỆN) -->
+        <!-- BẢN GHI ÂM THUYẾT MINH THỰC TẾ (ÂM THANH GỐC DO HỌC SINH / THẦY CÔ THỰC HIỆN) -->
         <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#FAF5EE] via-[#FFFDF9] to-[#FFFBEB] border-2 border-[#8B1E1E]/25 shadow-sm">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div class="flex items-center gap-3.5">
-              <div class="w-11 h-11 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center flex-shrink-0 shadow-md">
-                ${ic('volume', 'w-5 h-5')}
+              <div class="w-12 h-12 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center flex-shrink-0 shadow-md">
+                ${ic('volume', 'w-6 h-6')}
               </div>
               <div>
                 <div class="text-sm font-bold text-[#8B1E1E] flex items-center gap-2">
@@ -682,81 +682,14 @@ function openDetailModal(itemId) {
           </div>
         </div>
       ` : `
-        <!-- NẾU CHƯA CÓ BẢN GHI ÂM THỰC TẾ: MỚI DÙNG BẢN THUYẾT MINH TỰ ĐỘNG -->
-        <div class="flex flex-col">
+        <!-- DI TÍCH ĐANG TIẾP TỤC BỔ SUNG FILE GHI ÂM THỰC TẾ -->
+        <div class="p-4 rounded-xl bg-[#FAF5EE] border border-[#EADECF] text-xs flex items-center gap-3.5">
+          <div class="w-10 h-10 rounded-full bg-[#EADECF] text-[#8B1E1E] flex items-center justify-center flex-shrink-0">
+            ${ic('volume', 'w-5 h-5')}
+          </div>
           <div>
-            <div class="flex items-center justify-between gap-2 mb-2 flex-wrap">
-              <div class="flex items-center gap-2">
-                <span id="audioguide-voice-info" class="text-xs text-[#92400E] font-medium flex items-center gap-1">
-                  <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse inline-block"></span>
-                  <span>Thuyết minh giọng tiếng Việt</span>
-                </span>
-              </div>
-
-              <!-- Tùy chỉnh tốc độ đọc -->
-              <div class="flex items-center gap-1 bg-white/90 p-1 rounded-xl border border-[#EADECF] text-xs">
-                <span class="text-[11px] text-[#786C5E] px-1 font-semibold">Tốc độ:</span>
-                <button type="button" onclick="changeAudioGuideRate(0.85)" id="speed-085" class="speed-selector-btn px-2 py-0.5 rounded font-bold text-[#5C5248] hover:bg-[#F5EFE6]">0.85x</button>
-                <button type="button" onclick="changeAudioGuideRate(1.0)" id="speed-100" class="speed-selector-btn is-active px-2 py-0.5 rounded font-bold text-white bg-[#8B1E1E]">1.0x</button>
-                <button type="button" onclick="changeAudioGuideRate(1.2)" id="speed-120" class="speed-selector-btn px-2 py-0.5 rounded font-bold text-[#5C5248] hover:bg-[#F5EFE6]">1.2x</button>
-              </div>
-            </div>
-
-            <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-1">
-              Nghe thuyết minh di tích
-            </h3>
-            <p class="text-xs text-[#5C5248] leading-relaxed mb-3">
-              Bấm nút phát để nghe thuyết minh về lịch sử và văn hóa Nhã Nam. Đồng thời theo dõi bản ghi câu bên dưới (có thể bấm vào từng câu để nghe trực tiếp).
-            </p>
-          </div>
-
-          <!-- Các nút điều khiển chính -->
-          <div class="flex flex-wrap items-center gap-2 mb-3">
-            <button 
-              id="btn-modal-audioguide"
-              type="button" 
-              onclick="toggleAudioGuideNarration()"
-              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs bg-[#8B1E1E] hover:bg-[#6F1515] text-white shadow-md transition active:scale-95">
-              <span class="flex items-center gap-1" id="audioguide-wave">
-                <span class="audio-wave-bar audio-wave-bar-1"></span>
-                <span class="audio-wave-bar audio-wave-bar-2"></span>
-                <span class="audio-wave-bar audio-wave-bar-3"></span>
-                <span class="audio-wave-bar audio-wave-bar-4"></span>
-              </span>
-              <span id="audioguide-btn-label">Bật thuyết minh</span>
-            </button>
-
-            <button 
-              id="btn-audioguide-stop"
-              type="button" 
-              onclick="stopAudioGuideNarration()"
-              title="Dừng thuyết minh và về câu đầu"
-              class="px-3 py-2 rounded-xl font-semibold text-xs bg-white text-[#5C5248] hover:text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition shadow-xs">
-              ${ic('square','w-3.5 h-3.5')} Dừng
-            </button>
-
-            <button 
-              id="btn-audioguide-restart"
-              type="button" 
-              onclick="restartAudioGuideNarration()"
-              title="Đọc lại từ đầu"
-              class="px-3 py-2 rounded-xl font-semibold text-xs bg-white text-[#5C5248] hover:text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition shadow-xs">
-              ${ic('rotate','w-3.5 h-3.5')} Đọc lại
-            </button>
-
-            <span id="audioguide-status-badge" class="ml-auto text-xs font-semibold px-2.5 py-1 rounded-full bg-white border border-[#EADECF] text-[#8B1E1E]">
-              Sẵn sàng phát
-            </span>
-          </div>
-
-          <!-- BẢN GHI LỜI THUYẾT MINH TƯƠNG TÁC (INTERACTIVE TRANSCRIPT BOX) -->
-          <div class="bg-white rounded-xl border border-[#EADECF] p-3 shadow-inner">
-            <div class="flex items-center justify-between text-[11px] font-bold text-[#8B1E1E] mb-1.5 pb-1 border-b border-[#F5EFE6]">
-              <span class="inline-flex items-center gap-1">${ic('scroll','w-3.5 h-3.5')} Lời thuyết minh chi tiết (bấm câu bất kỳ để nghe):</span>
-              <span class="text-[#786C5E] font-normal italic">Tự động đồng bộ</span>
-            </div>
-            <div id="audioguide-transcript-container" class="space-y-1 max-h-40 overflow-y-auto pr-1 text-xs leading-relaxed">
-            </div>
+            <div class="font-bold text-[#8B1E1E]">Bản ghi âm thuyết minh thực tế</div>
+            <div class="text-[11px] text-[#5C5248] mt-0.5">Tư liệu âm thanh gốc đang được các thầy cô và học sinh Trường THPT Nhã Nam tiếp tục ghi âm và bổ sung trong thời gian sớm nhất.</div>
           </div>
         </div>
       `}
@@ -959,6 +892,22 @@ function renderDocFullText(fileName) {
     const el = box();
     if (el) el.innerHTML = '<p class="text-[#786C5E] italic">Không tải được nội dung. Vui lòng tải file .docx ở trên.</p>';
   });
+}
+
+
+/**
+ * Phát bản ghi âm thuyết minh thực tế của di tích khi bấm nút "Nghe thuyết minh"
+ */
+function playModalRealAudio() {
+  const section = document.getElementById('audioguide-section');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+  const realAudio = document.getElementById('modal-real-audio');
+  if (realAudio) {
+    pauseModalMedia('real');
+    realAudio.play().catch(e => console.warn('Cannot auto play real audio:', e));
+  }
 }
 
 function closeDetailModal() {
