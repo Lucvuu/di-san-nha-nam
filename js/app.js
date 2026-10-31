@@ -322,7 +322,7 @@ function renderHeritageGrid(items) {
           
           <!-- Huy hiệu phân loại -->
           <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[80%]">
-            <span class="px-2.5 py-1 text-xs font-semibold rounded-full shadow-sm ${isVatThe? 'bg-[#8B1E1E] text-white': 'bg-[#C59B27] text-white'}">
+            <span class="px-2.5 py-1 text-xs font-semibold rounded-full shadow-sm ${isVatThe? 'bg-[#8B1E1E] text-white': 'bg-[#8B6914] text-white'}">
               ${escapeHtml(item.badge || item.categoryName)}
             </span>
             ${item.relicType? `
@@ -419,7 +419,7 @@ function renderHeritageGrid(items) {
             <button 
               type="button" 
               onclick="openDetailModal('${item.id}')"
-              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#C59B27] hover:bg-[#A67C18]'} transition shadow-sm hover:shadow">
+              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#8B6914] hover:bg-[#6F540F]'} transition shadow-sm hover:shadow">
               <span>Xem chi tiết & bản đồ</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>
@@ -470,7 +470,7 @@ function openDetailModal(itemId) {
   if (isVatThe) {
     section3Html = `
       <div class="space-y-4 text-[#2A2521] leading-relaxed">
-        <p class="text-base text-[#4A4036] font-medium leading-relaxed bg-[#FDFBF7] p-4 rounded-xl border-l-4 border-[#8B1E1E]">
+        <p class="text-base text-[#4A4036] font-medium leading-relaxed bg-[#FDFBF7] p-4 rounded-xl border border-[#8B1E1E]/15">
           ${escapeHtml(item.content.intro)}
         </p>
 
@@ -512,7 +512,7 @@ function openDetailModal(itemId) {
   } else {
     section3Html = `
       <div class="space-y-4 text-[#2A2521] leading-relaxed">
-        <p class="text-base text-[#4A4036] font-medium leading-relaxed bg-[#FDFBF7] p-4 rounded-xl border-l-4 border-[#C59B27]">
+        <p class="text-base text-[#4A4036] font-medium leading-relaxed bg-[#FDFBF7] p-4 rounded-xl border border-[#C59B27]/30">
           ${escapeHtml(item.content.intro)}
         </p>
 
@@ -559,7 +559,7 @@ function openDetailModal(itemId) {
     <!-- Thanh điều hướng và nút thao tác trên modal -->
     <div class="flex items-center justify-between pb-4 mb-6 border-b border-[#EADECF]">
       <div class="flex items-center gap-2">
-        <span class="px-3 py-1 rounded-full text-xs font-bold ${isVatThe? 'bg-[#8B1E1E] text-white': 'bg-[#C59B27] text-white'}">
+        <span class="px-3 py-1 rounded-full text-xs font-bold ${isVatThe? 'bg-[#8B1E1E] text-white': 'bg-[#8B6914] text-white'}">
           ${item.categoryName}
         </span>
         <span class="text-xs text-[#786C5E] font-medium">Mã số: #${item.id}</span>
@@ -700,8 +700,8 @@ function openDetailModal(itemId) {
       
       <!-- PHẦN 1: TÊN DI TÍCH / TÊN DI SẢN -->
       <section class="border-b border-[#EADECF]/80 pb-5">
-        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-1">
-          <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">1</span>
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8B6914] mb-1">
+          <span class="w-6 h-6 rounded-full bg-[#8B6914] text-white flex items-center justify-center text-xs">1</span>
           ${isVatThe? 'Tên di tích lịch sử': 'Tên di sản văn hóa'}
         </div>
         <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold text-[#8B1E1E] leading-tight">
@@ -717,8 +717,8 @@ function openDetailModal(itemId) {
 
       <!-- PHẦN 2: ĐỊA CHỈ / PHẠM VI -->
       <section class="border-b border-[#EADECF]/80 pb-5">
-        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-2">
-          <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">2</span>
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8B6914] mb-2">
+          <span class="w-6 h-6 rounded-full bg-[#8B6914] text-white flex items-center justify-center text-xs">2</span>
           ${isVatThe? 'Địa chỉ cụ thể': 'Phạm vi thực hành di sản'}
         </div>
         <div class="bg-[#FDFBF7] p-4 rounded-xl border border-[#EADECF] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
@@ -743,8 +743,8 @@ function openDetailModal(itemId) {
 
       <!-- PHẦN 3: NỘI DUNG VỀ DI TÍCH / NỘI DUNG DI SẢN -->
       <section class="border-b border-[#EADECF]/80 pb-5">
-        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
-          <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">3</span>
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8B6914] mb-3">
+          <span class="w-6 h-6 rounded-full bg-[#8B6914] text-white flex items-center justify-center text-xs">3</span>
           ${isVatThe? 'Nội dung về di tích': 'Nội dung di sản'}
         </div>
         ${section3Html}
@@ -752,8 +752,8 @@ function openDetailModal(itemId) {
 
       <!-- PHẦN 4: CHỈ DẪN ĐI ĐẾN ĐÓ BẰNG GOOGLE MAP -->
       <section class="border-b border-[#EADECF]/80 pb-5">
-        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
-          <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">4</span>
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8B6914] mb-3">
+          <span class="w-6 h-6 rounded-full bg-[#8B6914] text-white flex items-center justify-center text-xs">4</span>
           Chỉ dẫn đường đi bằng Google Maps
         </div>
         
@@ -792,8 +792,8 @@ function openDetailModal(itemId) {
       <!-- PHẦN 5: ẢNH VỀ DI TÍCH / DI SẢN -->
       <section>
         <div class="flex items-center justify-between mb-3">
-          <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27]">
-            <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">5</span>
+          <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8B6914]">
+            <span class="w-6 h-6 rounded-full bg-[#8B6914] text-white flex items-center justify-center text-xs">5</span>
             ${isVatThe? 'Thư viện ảnh về di tích': 'Thư viện ảnh di tích và di sản'}
           </div>
           ${(item.gallery || []).length? '<span class="text-xs text-[#786C5E] font-medium">Bấm vào ảnh để phóng to</span>': ''}
@@ -833,8 +833,8 @@ function openDetailModal(itemId) {
       ${item.docFile? `
       <!-- PHẦN 6: FILE CHỮ GIỚI THIỆU (.docx) + TOÀN VĂN -->
       <section class="border-t border-[#EADECF]/80 pt-5">
-        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
-          <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">6</span>
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8B6914] mb-3">
+          <span class="w-6 h-6 rounded-full bg-[#8B6914] text-white flex items-center justify-center text-xs">6</span>
           Tài liệu giới thiệu
         </div>
         <div class="rounded-2xl border border-[#BFDBFE] bg-[#F8FBFF] p-4 sm:p-5">
@@ -877,7 +877,7 @@ function loadDocTexts() {
   if (!loadDocTexts.promise) {
     loadDocTexts.promise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = './js/doc-texts.js?v=2.8.0';
+      s.src = './js/doc-texts.js?v=2.9.0';
       s.onload = () => resolve(window.DOC_TEXTS || {});
       s.onerror = () => { loadDocTexts.promise = null; reject(); };
       document.head.appendChild(s);
@@ -1282,7 +1282,7 @@ function renderQuiz() {
         `).join('')}
       </div>
 
-      <div id="quiz-explanation-${q.id}" class="hidden mt-3 pl-10 text-xs p-3 rounded-xl bg-[#F5EFE6] text-[#5C5248] leading-relaxed border-l-2 border-[#C59B27]">
+      <div id="quiz-explanation-${q.id}" class="hidden mt-3 pl-10 text-xs p-3 rounded-xl bg-[#F5EFE6] text-[#5C5248] leading-relaxed border border-[#C59B27]/30">
       </div>
     </div>
   `).join('');
@@ -1310,12 +1310,12 @@ function submitQuiz() {
     if (userAnswer === q.correctAnswer) {
       score++;
       if (explanationEl) {
-        explanationEl.className = 'mt-3 pl-10 text-xs p-3 rounded-xl bg-green-50 text-green-800 leading-relaxed border-l-4 border-green-600 block';
+        explanationEl.className = 'mt-3 pl-10 text-xs p-3 rounded-xl bg-green-50 text-green-800 leading-relaxed border border-green-200 block';
         explanationEl.innerHTML = `<strong>Chính xác!</strong> ${escapeHtml(q.explanation)}`;
       }
     } else {
       if (explanationEl) {
-        explanationEl.className = 'mt-3 pl-10 text-xs p-3 rounded-xl bg-red-50 text-red-800 leading-relaxed border-l-4 border-red-600 block';
+        explanationEl.className = 'mt-3 pl-10 text-xs p-3 rounded-xl bg-red-50 text-red-800 leading-relaxed border border-red-200 block';
         explanationEl.innerHTML = `<strong>Chưa đúng:</strong> Đáp án đúng là <em>"${escapeHtml(q.options[q.correctAnswer])}"</em>.<br>${escapeHtml(q.explanation)}`;
       }
     }
@@ -1344,7 +1344,7 @@ function showQuizResultModal(score, total) {
         <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-[#FFFBEB] border-2 border-[#C59B27] flex items-center justify-center text-3xl">
           ${score === 5? '🏆': '🌟'}
         </div>
-        <div class="text-xs uppercase font-bold tracking-wider text-[#C59B27] mb-1">Kết quả góc học tập</div>
+        <div class="text-xs uppercase font-bold tracking-wider text-[#8B6914] mb-1">Kết quả góc học tập</div>
         <h3 class="font-heritage-serif text-2xl font-bold text-[#8B1E1E] mb-2">${badgeTitle}</h3>
         <div class="text-4xl font-extrabold text-[#2A2521] mb-2">
           ${score} / ${total}

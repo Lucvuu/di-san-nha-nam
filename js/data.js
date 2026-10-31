@@ -87,7 +87,7 @@ const OFFICIAL_COMMUNE_RELICS = {
       subName: "Di tích lịch sử - kiến trúc nghệ thuật",
       count: 1,
       badgeText: "01 di tích cấp quốc gia",
-      badgeClass: "bg-[#C59B27] text-white",
+      badgeClass: "bg-[#8B6914] text-white",
       icon: "⭐",
       description: "Di tích lịch sử - kiến trúc nghệ thuật cấp quốc gia được Bộ Văn hóa, Thể thao và Du lịch xếp hạng.",
       items: [
