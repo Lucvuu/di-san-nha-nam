@@ -172,7 +172,7 @@ const HERITAGE_ROUTES = [
     ],
     mapEmbedUrl: "https://www.google.com/maps?q=Khu+di+t%C3%ADch+%C4%90%C3%ACnh+Ch%C3%B9a+H%E1%BA%A3+v%C3%A0+Ch%C3%B9a+T%E1%BB%A9+Gi%C3%A1p+Nh%C3%A3+Nam&output=embed",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đình+chùa+Hả+Nhã+Nam&destination=Đình+Dương+Lâm+Nhã+Nam&waypoints=Chùa+Tứ+Giáp+Nhã+Nam",
-    directionsText: "Dẫn đường Tuyến 1 (Đình Hả → Chùa Tứ Giáp → Đình Dương Lâm)",
+    directionsText: "Dẫn đường tuyến 1 (đình Hả → chùa Tứ Giáp → đình Dương Lâm)",
     description: "Kết nối nơi khởi phát ngọn cờ Yên Thế (đình Hả) với nơi phát tích 6 điều Bác Hồ dạy CAND (chùa Tứ Giáp) và căn cứ kháng chiến kiên trung đình Dương Lâm."
   },
   {
@@ -191,7 +191,7 @@ const HERITAGE_ROUTES = [
     ],
     mapEmbedUrl: "https://www.google.com/maps?q=Ch%C3%B9a+%C4%90%E1%BB%93ng+%C4%90i%E1%BB%81u+v%C3%A0+%C4%90%E1%BB%81n+%C4%90%E1%BB%81+Tru%E1%BA%ADt+Nh%C3%A3+Nam&output=embed",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Chùa+Đồng+Điều+Nhã+Nam&destination=Chùa+Dương+Sơn+Nhã+Nam&waypoints=Đền+Đề+Truật+Nhã+Nam",
-    directionsText: "Dẫn đường Tuyến 2 (Đồng Điều → Đền Đề Truật → Chùa Dương Sơn)",
+    directionsText: "Dẫn đường tuyến 2 (Đồng Điều → đền Đề Truật → chùa Dương Sơn)",
     description: "Hành trình về với cái nôi gieo mầm cách mạng của chi bộ Đảng Cộng sản đầu tiên, tấm gương trung dũng của nghĩa quân Đề Truật và không gian văn hóa thanh tịnh chùa Dương Sơn."
   },
   {
@@ -212,7 +212,7 @@ const HERITAGE_ROUTES = [
     ],
     mapEmbedUrl: "https://www.google.com/maps?q=%C4%90%E1%BB%93i+Ph%E1%BB%A7+v%C3%A0+%C4%90%C3%ACnh+l%C3%A0ng+Chu%C3%B4ng+Nh%C3%A3+Nam&output=embed",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đền+Gốc+Khế+Nhã+Nam&destination=Đình+Cầu+Thượng+Nhã+Nam&waypoints=Đồi+Phủ+Nhã+Nam|Đình+làng+Chuông+Nhã+Nam|Chùa+Nam+Thiên+Nhã+Nam",
-    directionsText: "Dẫn đường Tuyến 3 (Đền Gốc Khế → Đồi Phủ → Đình Cầu Thượng)",
+    directionsText: "Dẫn đường tuyến 3 (đền Gốc Khế → đồi Phủ → đình Cầu Thượng)",
     description: "Cụm di tích lịch sử quân sự và tín ngưỡng trung tâm Nhã Nam - chiến trường thử lửa oanh liệt chống giặc ngoại xâm của nghĩa quân Yên Thế và thiết chế đình làng cổ kính."
   }
 ];
@@ -273,7 +273,7 @@ const TANGIBLE_HERITAGE_DATA = [
       "title": "Thuyết minh di tích đình - chùa Hả"
     },
     "video": {
-      "title": "Đề Nắm tế cờ khởi nghĩa tại Đình Hả, Nhã Nam, Bắc Ninh (Tư liệu: Thầy Bùi Công)",
+      "title": "Đề Nắm tế cờ khởi nghĩa tại đình Hả, Nhã Nam, Bắc Ninh (tư liệu: thầy Bùi Công)",
       "youtubeId": "13WbD3DOeQc",
       "youtubeUrl": "https://www.youtube.com/watch?v=13WbD3DOeQc",
       "embedUrl": "https://www.youtube.com/embed/13WbD3DOeQc"
@@ -339,7 +339,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Bộ sưu tập 06 ảnh tư liệu thực tế tại đình - chùa Hả (Tài liệu Thầy Bùi Công & Cô Thúy Mến)",
+    "photoNotice": "Bộ sưu tập 06 ảnh tư liệu thực tế tại đình - chùa Hả (Tài liệu thầy Bùi Công và cô Thúy Mến)",
     "docFile": {
       "fileName": "dinh-chua-ha.docx",
       "title": "Hồ sơ di tích đình - chùa Hả",
@@ -389,7 +389,7 @@ const TANGIBLE_HERITAGE_DATA = [
         "Kiến trúc truyền thống kiểu tiền chữ Nhất (-), hậu chữ Đinh (丁) vững chãi, tường gạch cổ, mái lợp ngói mũi hài thanh thoát.",
         "Hệ thống cột gỗ lim chắc khỏe, vì kèo kết cấu con chồng giá chiêng được chạm trổ hoa lá, rồng mây tinh tế.",
         "Lưu giữ nhiều bảo vật quý: bia đá niên hiệu Cảnh Hưng (1771), chuông đồng đúc thế kỷ XIX, các pho tượng Phật sơn son thếp vàng cổ kính.",
-        "Khuôn viên hiện nay được mở rộng xây dựng khu lưu niệm Sáu điều Bác Hồ dạy CAND với tượng đài Bác Hồ trang nghiêm, hoa viên xanh mát và nhà truyền thống giáo dục thế hệ trẻ."
+        "Khuôn viên hiện nay được mở rộng xây dựng khu lưu niệm Sáu điều Bác Hồ dạy Công an nhân dân với tượng đài Bác Hồ trang nghiêm, hoa viên xanh mát và nhà truyền thống giáo dục thế hệ trẻ."
       ],
       "studyNote": "Đối với học sinh Trường THPT Nhã Nam: Chùa Tứ Giáp là bài học thực tế sống động nhất về lòng yêu nước, đạo đức chí công vô tư và sự tri ân các anh hùng liệt sĩ cách mạng của quê hương Nhã Nam."
     },
@@ -401,7 +401,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "gallery": [
       {
         "url": "./assets/images/chua-tu-giap/anh-dai-dien.jpg",
-        "caption": "Chùa Tứ Giáp (Đại Phúc tự) - Nơi phát tích Sáu điều Bác Hồ dạy CAND"
+        "caption": "Chùa Tứ Giáp (Đại Phúc tự) - Nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân"
       },
       {
         "url": "./assets/images/chua-tu-giap/tu-giap-2.jpg",
@@ -565,7 +565,7 @@ const TANGIBLE_HERITAGE_DATA = [
     ],
     "overview": "Địa điểm lịch sử ghi dấu căn cứ đầu não của thực dân Pháp và các cuộc đụng độ quyết liệt của nghĩa quân Yên Thế, di tích quốc gia đặc biệt.",
     "content": {
-      "intro": "Đồi Phủ (địa điểm: Ao ông Chấn Ký) tọa lạc trên quả đồi cao khống chế ngã tư Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Nơi đây từng bị thực dân Pháp chiếm đóng từ năm 1885 để lập đồn bốt khét tiếng và đặt Tòa đại lý Phủ Yên Thế nhằm trấn áp phong trào nông dân.",
+      "intro": "Đồi Phủ (địa điểm: Ao ông Chấn Ký) tọa lạc trên quả đồi cao khống chế ngã tư Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Nơi đây từng bị thực dân Pháp chiếm đóng từ năm 1885 để lập đồn bốt khét tiếng và đặt tòa đại lý phủ Yên Thế nhằm trấn áp phong trào nông dân.",
       "historicalSignificance": [
         "**Đại bản doanh đàn áp của thực dân Pháp (1885):** Để đối phó với nghĩa quân của Đề Nắm và Đề Thám, thực dân Pháp đã thiết lập đồn bốt kiên cố trên đồi Phủ. Từ đây, các tướng chỉ huy Pháp đã xuất quân tấn công nhiều đồn lũy nghĩa quân nhưng liên tục chịu tổn thất nặng nề.",
         "**Địa điểm Ao ông Chấn Ký:** Địa điểm gắn liền với các trận phục kích, giao tranh dũng cảm của các nghĩa sĩ Yên Thế và phong trào cách mạng địa phương.",
@@ -585,11 +585,11 @@ const TANGIBLE_HERITAGE_DATA = [
     "gallery": [
       {
         "url": "./assets/images/doi-phu-nha-nam/anh-dai-dien.jpg",
-        "caption": "Đồi Phủ Nhã Nam - Nơi thực dân Pháp lập đồn bốt và Tòa đại lý Phủ Yên Thế năm 1885"
+        "caption": "Đồi Phủ Nhã Nam - Nơi thực dân Pháp lập đồn bốt và tòa đại lý phủ Yên Thế năm 1885"
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh tư liệu thực tế tại Đồi Phủ (Hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Ảnh tư liệu thực tế tại đồi Phủ (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "doi-phu-nha-nam.docx",
       "title": "Tư liệu lịch sử đồi Phủ - đồn Nhã Nam",
@@ -807,10 +807,10 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Khu vực đồi Phủ, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "./assets/images/nghia-dia-phap/anh-dai-dien.jpg",
+    "thumbnail": null,
     "audioFile": {
       "src": "./assets/audio/thuyet-minh-nghia-dia-phap.mp3",
-      "title": "Thuyết minh di tích Nghĩa địa Pháp"
+      "title": "Thuyết minh di tích nghĩa địa Pháp"
     },
     "tags": [
       "Nghĩa địa Pháp",
@@ -838,17 +838,12 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Nghĩa+địa+Pháp,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Nghĩa địa Pháp (khu vực đồi Phủ Nhã Nam)"
     },
-    "gallery": [
-      {
-        "url": "./assets/images/nghia-dia-phap/anh-dai-dien.jpg",
-        "caption": "Chứng tích Nghĩa địa Pháp và Đồi Phủ tại xã Nhã Nam"
-      }
-    ],
-    "hasRealPhoto": true,
-    "photoNotice": "Ảnh tư liệu thực tế tại Nghĩa địa Pháp và Đồi Phủ (Hồ sơ Trường THPT Nhã Nam)",
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "nghia-dia-phap.docx",
-      "title": "Chứng tích lịch sử quân sự Nghĩa địa Pháp",
+      "title": "Thuyết minh đồi Phủ - nghĩa địa Pháp",
       "path": "./assets/docs/nghia-dia-phap.docx",
       "size": "19 KB"
     }
@@ -916,7 +911,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "badge": "Di tích quốc gia đặc biệt",
     "relicType": "Di tích lịch sử",
     "decision": "QĐ số 548/QĐ-TTg, ngày 10/05/2012 của Thủ tướng Chính phủ",
-    "worship": "Đức thánh Cao Sơn; phối thờ ba vị Quận công Dương Đình Bột, Dương Đình Tuấn, Dương Đình Cúc",
+    "worship": "Đức thánh Cao Sơn; phối thờ ba vị quận công Dương Đình Bột, Dương Đình Tuấn, Dương Đình Cúc",
     "title": "Đình Dương Lâm",
     "shortTitle": "Đình Dương Lâm",
     "address": "Thôn Dương Lâm, xã Nhã Nam, tỉnh Bắc Ninh",
@@ -934,18 +929,18 @@ const TANGIBLE_HERITAGE_DATA = [
       "Khởi nghĩa Yên Thế",
       "Di tích quốc gia đặc biệt"
     ],
-    "overview": "Ngôi đình cổ thời Lê thờ Cao Sơn và ba vị Quận công họ Dương. Nơi Đề Thám cùng cụ Cai Hậu bàn việc chuyển đình về giữa làng, đào hầm bí mật cho nghĩa quân Yên Thế hoạt động.",
+    "overview": "Ngôi đình cổ thời Lê thờ Cao Sơn và ba vị quận công họ Dương. Nơi Đề Thám cùng cụ Cai Hậu bàn việc chuyển đình về giữa làng, đào hầm bí mật cho nghĩa quân Yên Thế hoạt động.",
     "content": {
       "intro": "Đình Dương Lâm là ngôi đình cổ thời Lê tọa lạc ở vị trí trung tâm làng Dương Lâm, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc xã An Dương, huyện Tân Yên, tỉnh Bắc Giang). Đình nằm cách thành phố Bắc Giang khoảng 22km về phía Tây Bắc, là di tích quốc gia đặc biệt tiêu biểu trong hệ thống Những địa điểm Khởi nghĩa Yên Thế.",
       "historicalSignificance": [
         "**Ngôi đình cổ dời vị trí theo kế sách kháng chiến của Đề Thám:** Đình xưa vốn tọa lạc ở khu đất Bãi Đình. Do giặc giã nhiều, Hoàng Hoa Thám và nghĩa quân Yên Thế đã bàn với dân làng chuyển đình về giữa làng như hiện nay để tiện trông nom và bảo đảm hoạt động bí mật.",
         "**Căn cứ vững chắc của cụ Cai Hậu và nghĩa quân:** Cụ Cai Hậu (Dương Văn Hậu) là người giúp Hoàng Hoa Thám rất đắc lực (1885 - 1895). Cụ đã cho đào một đường hầm bí mật từ hậu cung đình Dương Lâm xuyên ra bờ ao để nghĩa quân rút lui an toàn khi bị vây hãm; dấu vết đường hầm nay vẫn còn.",
         "**Tình nghĩa gắn bó sâu nặng với Đề Thám:** Đề Thám đã tin tưởng gửi con trai cả của mình là Cả Trọng về Dương Lâm ăn học tại nhà cụ Cai Hậu. Đề Thám cùng cụ Cai Hậu còn trồng cây dã hương kỷ niệm trước sân đình.",
-        "**Quê hương của ba vị Quận công họ Dương:** Dương Lâm là quê hương Quận công Dương Đình Bột, Dương Đình Tuấn, Dương Đình Cúc. Năm 1826, Dương Đình Cúc đã dựng cờ khởi nghĩa chống triều Nguyễn ngay tại đình làng mình.",
+        "**Quê hương của ba vị quận công họ Dương:** Dương Lâm là quê hương quận công Dương Đình Bột, Dương Đình Tuấn, Dương Đình Cúc. Năm 1826, Dương Đình Cúc đã dựng cờ khởi nghĩa chống triều Nguyễn ngay tại đình làng mình.",
         "**Xếp hạng di tích quốc gia đặc biệt:** Được xếp hạng theo Quyết định số 548/QĐ-TTg ngày 10/05/2012 của Thủ tướng Chính phủ."
       ],
       "architecture": [
-        "Đình Dương Lâm là nơi thờ Đức Thánh Cao Sơn từ thời Hùng Vương thứ 18 và phối thờ ba vị Quận công họ Dương có công đánh giặc cứu nước.",
+        "Đình Dương Lâm là nơi thờ Đức thánh Cao Sơn từ thời Hùng Vương thứ 18 và phối thờ ba vị quận công họ Dương có công đánh giặc cứu nước.",
         "Kiến trúc đình cổ thời Lê bảo lưu kết cấu gỗ lim cổ kính, vì kèo vững chãi, chạm khắc rồng mây hoa lá tinh xảo và khuôn viên trang nghiêm giữa làng quê yên bình."
       ],
       "studyNote": "Đình Dương Lâm là biểu tượng cho sự đoàn kết bền chặt giữa tín ngưỡng truyền thống và phong trào đấu tranh giữ nước của đồng bào Nhã Nam."
@@ -1266,7 +1261,7 @@ const INTANGIBLE_HERITAGE_DATA = [
     "heroImage": "./assets/images/hero-phi-vat-the.jpg",
     "thumbnail": null,
     "video": {
-      "title": "Đề Nắm tế cờ khởi nghĩa tại Đình Hả, Nhã Nam, Bắc Ninh (Tư liệu: Thầy Bùi Công)",
+      "title": "Đề Nắm tế cờ khởi nghĩa tại đình Hả, Nhã Nam, Bắc Ninh (tư liệu: thầy Bùi Công)",
       "youtubeId": "13WbD3DOeQc",
       "youtubeUrl": "https://www.youtube.com/watch?v=13WbD3DOeQc",
       "embedUrl": "https://www.youtube.com/embed/13WbD3DOeQc"

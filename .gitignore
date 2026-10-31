@@ -9,3 +9,17 @@ Thumbs.db
 
 .agent/
 .agents/
+
+# Tư liệu gốc: giữ trên máy, không đưa lên GitHub Pages.
+# Bản đã chuẩn hóa nằm trong assets/ (tên không dấu).
+Tài liệu di sản/
+*.rar
+*.zip
+*.py
+/*.doc
+/*.docx
+/*.pdf
+/4 THPNN Bùi Công.mp3
+/Nha nam trong toi.mp3
+/luu-thuy-kim-tien.mp3
+/BANNER_THPT NHÃ NAM.png
