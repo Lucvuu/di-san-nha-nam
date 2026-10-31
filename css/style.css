@@ -241,7 +241,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
 .transcript-sentence-item {
   padding: 6px 10px;
   border-radius: 8px;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
   cursor: pointer;
   border-left: 3px solid transparent;
   color: #4A4036;
@@ -262,7 +262,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
 }
 
 .speed-selector-btn {
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .speed-selector-btn.is-active {
@@ -294,7 +294,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
 
 /* Card Di sản Hiệu ứng */
 .heritage-card {
-  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
   border: 1px solid var(--color-border-warm);
   background: #ffffff;
   position: relative;
@@ -326,7 +326,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
 
 /* Hero Cards lớn - Lớp phủ ấm áp văn hóa */
 .hero-entry-card {
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -352,7 +352,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
 
 /* Tab nút bấm */
 .tab-btn {
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
   position: relative;
 }
 
@@ -367,7 +367,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   background: linear-gradient(135deg, #D4AF37 0%, #C59B27 100%);
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(197, 155, 39, 0.3);
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 .btn-gold:hover {
@@ -381,7 +381,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   background: linear-gradient(135deg, #9B2C2C 0%, #8B1E1E 100%);
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(139, 30, 30, 0.3);
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 .btn-crimson:hover {
@@ -392,7 +392,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
 
 /* Thẻ Tag nhanh */
 .quick-tag {
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .quick-tag:hover {
@@ -419,7 +419,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   animation: zaloPulse 2.4s infinite;
 }
 
@@ -460,7 +460,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .back-to-top-btn.visible {
@@ -488,7 +488,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
   user-select: none;
 }
 
@@ -539,7 +539,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
 }
 
 .music-player-pill {
-  transition: all 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 .music-player-pill.playing {
@@ -658,7 +658,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
    BẢN ĐỒ TUYẾN HÀNH TRÌNH TƯƠNG TÁC (INTERACTIVE HERITAGE ROUTES)
    ==================================================================== */
 .heritage-route-card {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border-left: 4px solid transparent;
   cursor: pointer;
   position: relative;
@@ -697,7 +697,7 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   color: #2A2521;
   background-color: #F5EFE6;
   border: 1px solid #EADECF;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
   user-select: none;
 }
@@ -734,3 +734,11 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
     repeating-linear-gradient(45deg, rgba(197, 155, 39, 0.07) 0 1px, transparent 1px 14px),
     repeating-linear-gradient(-45deg, rgba(139, 30, 30, 0.05) 0 1px, transparent 1px 14px);
 }
+
+/* Bề mặt trình duyệt theo bảng màu di sản */
+html { -webkit-tap-highlight-color: rgba(139, 30, 30, 0.12); }
+a, button, [role="button"], input, label { touch-action: manipulation; }
+::selection { background: rgba(197, 155, 39, 0.35); color: #2A2521; }
+[role="button"]:not(button):focus-visible { outline: 2px solid var(--color-heritage-gold); outline-offset: 3px; }
+#heritage-detail-modal, #relics-inventory-modal, .doc-fulltext, #audioguide-transcript-container { overscroll-behavior: contain; }
+.doc-fulltext { scrollbar-color: rgba(139, 30, 30, 0.35) transparent; }
