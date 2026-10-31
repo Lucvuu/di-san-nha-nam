@@ -2009,7 +2009,6 @@ function selectRouteRelic(relicId, event) {
   // 1. Zoom iframe bản đồ vào đúng vị trí tọa độ di tích
   const relic = (typeof TANGIBLE_HERITAGE_DATA !== 'undefined') ? TANGIBLE_HERITAGE_DATA.find(r => r.id === relicId) : null;
   if (relic && relic.map && relic.map.embedUrl) {
-    // Luôn đảm bảo zoom rõ nét bằng cách thêm z=16 nếu chưa có
     let zoomUrl = relic.map.embedUrl;
     if (!zoomUrl.includes('&z=')) {
       zoomUrl = zoomUrl.replace('&output=embed', '&z=16&output=embed');
@@ -2024,7 +2023,7 @@ function selectRouteRelic(relicId, event) {
       dirBtn.href = relic.map.directionsUrl;
     }
     if (dirLabel) {
-      dirLabel.innerHTML = `Chỉ đường đi <strong>${escapeHtml(relic.shortTitle || relic.title)}</strong> (Google Maps)`;
+      dirLabel.innerHTML = `Chỉ đường từ vị trí của bạn đến <strong>${escapeHtml(relic.shortTitle || relic.title)}</strong>`;
     }
     if (openDocBtn) {
       openDocBtn.style.display = 'inline-flex';
