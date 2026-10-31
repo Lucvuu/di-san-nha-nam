@@ -74,6 +74,15 @@ TANGIBLE_HERITAGE_DATA.forEach((item, i) => {
   console.log(`  ✓ [Vật thể ${i+1}] ${item.title} -> Verified multimedia components (RealPhoto: ${item.hasRealPhoto}, Audio: ${!!item.audioFile}, Video: ${!!item.video}, Map, Doc: ${item.docFile.fileName})`);
 });
 
+// Specific checks for newly integrated relics
+const relicSay = TANGIBLE_HERITAGE_DATA.find(r => r.id === 'vat-the-13');
+console.assert(relicSay && relicSay.hasRealPhoto && relicSay.audioFile && relicSay.map.embedUrl.includes('21.4371635'), 'Đình Sậy must have real photo, audio, and teacher coordinates');
+const relicNeo = TANGIBLE_HERITAGE_DATA.find(r => r.id === 'vat-the-14');
+console.assert(relicNeo && relicNeo.hasRealPhoto && relicNeo.audioFile && relicNeo.map.embedUrl.includes('21.408497'), 'Đình Nẻo must have real photo, audio, and teacher coordinates');
+const relicSat = TANGIBLE_HERITAGE_DATA.find(r => r.id === 'vat-the-16');
+console.assert(relicSat && relicSat.hasRealPhoto && relicSat.audioFile && relicSat.map.embedUrl.includes('21.4160672'), 'Đình làng Sặt must have real photo, audio, and teacher coordinates');
+console.log('  ✓ Verified 3 newly added relics (Đình Sậy, Đình Nẻo, Đình làng Sặt) have 100% real photos, real audios, and teacher verified coordinates');
+
 console.log('--- 4. TESTING INTANGIBLE HERITAGE (DI SẢN PHI VẬT THỂ) ---');
 console.assert(INTANGIBLE_HERITAGE_DATA.length === 6, `Should have 6 intangible heritage items (found ${INTANGIBLE_HERITAGE_DATA.length})`);
 INTANGIBLE_HERITAGE_DATA.forEach((item, i) => {
