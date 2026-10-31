@@ -166,13 +166,13 @@ const HERITAGE_ROUTES = [
     badgeBg: "bg-[#8B1E1E]",
     relicIds: ["vat-the-1", "vat-the-2", "vat-the-11"],
     relics: [
-      { id: "vat-the-1", name: "Đình - chùa Hả", note: "Nơi tế cờ 1884", q: "Khu+di+tích+Đình+Chùa+Hả+Nhã+Nam" },
-      { id: "vat-the-2", name: "Chùa Tứ Giáp", note: "Nơi phát tích 6 điều Bác Hồ dạy", q: "Chùa+Tứ+Giáp+Nhã+Nam" },
-      { id: "vat-the-11", name: "Đình Dương Lâm", note: "Di tích quốc gia đặc biệt thời Lê", q: "Đình+Dương+Lâm+Nhã+Nam" }
+      { id: "vat-the-1", name: "Đình - chùa Hả", note: "Nơi tế cờ 1884", q: "21.4357253,106.116718" },
+      { id: "vat-the-2", name: "Chùa Tứ Giáp", note: "Nơi phát tích 6 điều Bác Hồ dạy", q: "21.4448892,106.0901463" },
+      { id: "vat-the-11", name: "Đình Dương Lâm", note: "Di tích quốc gia đặc biệt thời Lê", q: "21.4210834,106.0960966" }
     ],
-    mapEmbedUrl: "https://www.google.com/maps?q=Khu+di+t%C3%ADch+%C4%90%C3%ACnh+Ch%C3%B9a+H%E1%BA%A3+v%C3%A0+Ch%C3%B9a+T%E1%BB%A9+Gi%C3%A1p+Nh%C3%A3+Nam&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đình+chùa+Hả+Nhã+Nam&destination=Đình+Dương+Lâm+Nhã+Nam&waypoints=Chùa+Tứ+Giáp+Nhã+Nam",
-    directionsText: "Dẫn đường tuyến 1 (đình Hả → chùa Tứ Giáp → đình Dương Lâm)",
+    mapEmbedUrl: "https://www.google.com/maps?q=21.4357253,106.116718&z=15&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=21.4357253,106.116718&destination=21.4210834,106.0960966&waypoints=21.4448892,106.0901463",
+    directionsText: "Chỉ đường Tuyến 1: Đình Hả → Chùa Tứ Giáp → Đình Dương Lâm",
     description: "Kết nối nơi khởi phát ngọn cờ Yên Thế (đình Hả) với nơi phát tích 6 điều Bác Hồ dạy CAND (chùa Tứ Giáp) và căn cứ kháng chiến kiên trung đình Dương Lâm."
   },
   {
@@ -185,13 +185,13 @@ const HERITAGE_ROUTES = [
     badgeBg: "bg-[#C59B27]",
     relicIds: ["vat-the-3", "vat-the-8", "vat-the-15"],
     relics: [
-      { id: "vat-the-3", name: "Chùa Đồng Điều", note: "chi bộ Đảng đầu tiên", q: "Chùa+Đồng+Điều+Nhã+Nam" },
-      { id: "vat-the-8", name: "Đền Đề Truật", note: "Tướng quân Đề Truật", q: "Đền+Đề+Truật+Nhã+Nam" },
-      { id: "vat-the-15", name: "Chùa Dương Sơn", note: "Di tích cấp tỉnh - văn hóa làng Dương Sơn", q: "Chùa+Dương+Sơn+Nhã+Nam" }
+      { id: "vat-the-3", name: "Chùa Đồng Điều", note: "Chi bộ Đảng đầu tiên", q: "Chùa+Đồng+Điều,+xã+Nhã+Nam" },
+      { id: "vat-the-8", name: "Đền Đề Truật", note: "Tướng quân Đề Truật", q: "21.4525861,106.0980009" },
+      { id: "vat-the-15", name: "Chùa Dương Sơn", note: "Di tích cấp tỉnh - văn hóa làng Dương Sơn", q: "21.408497,106.1126369" }
     ],
-    mapEmbedUrl: "https://www.google.com/maps?q=Ch%C3%B9a+%C4%90%E1%BB%93ng+%C4%90i%E1%BB%81u+v%C3%A0+%C4%90%E1%BB%81n+%C4%90%E1%BB%81+Tru%E1%BA%ADt+Nh%C3%A3+Nam&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Chùa+Đồng+Điều+Nhã+Nam&destination=Chùa+Dương+Sơn+Nhã+Nam&waypoints=Đền+Đề+Truật+Nhã+Nam",
-    directionsText: "Dẫn đường tuyến 2 (Đồng Điều → đền Đề Truật → chùa Dương Sơn)",
+    mapEmbedUrl: "https://www.google.com/maps?q=21.4525861,106.0980009&z=15&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=21.4525861,106.0980009&destination=21.408497,106.1126369&waypoints=Chùa+Đồng+Điều,+xã+Nhã+Nam",
+    directionsText: "Chỉ đường Tuyến 2: Đền Đề Truật → Chùa Đồng Điều → Chùa Dương Sơn",
     description: "Hành trình về với cái nôi gieo mầm cách mạng của chi bộ Đảng Cộng sản đầu tiên, tấm gương trung dũng của nghĩa quân Đề Truật và không gian văn hóa thanh tịnh chùa Dương Sơn."
   },
   {
@@ -204,23 +204,23 @@ const HERITAGE_ROUTES = [
     badgeBg: "bg-[#166534]",
     relicIds: ["vat-the-4", "vat-the-5", "vat-the-6", "vat-the-7", "vat-the-12"],
     relics: [
-      { id: "vat-the-4", name: "Đền Gốc Khế", note: "Căn cứ rừng Gốc Khế", q: "Đền+Gốc+Khế+Nhã+Nam" },
-      { id: "vat-the-5", name: "Đồi Phủ (đồn Nhã Nam)", note: "Ao ông Chấn Ký", q: "Đồi+Phủ+Nhã+Nam" },
-      { id: "vat-the-6", name: "Đình làng Chuông", note: "Đình cổ thế kỷ XVIII", q: "Đình+làng+Chuông+Nhã+Nam" },
-      { id: "vat-the-7", name: "Chùa Nam Thiên", note: "Chùa Phố 1822", q: "Chùa+Nam+Thiên+Nhã+Nam" },
-      { id: "vat-the-12", name: "Đình Cầu Thượng", note: "Di tích cấp tỉnh thờ Cao Sơn, Quý Minh", q: "Đình+Cầu+Thượng+Nhã+Nam" }
+      { id: "vat-the-4", name: "Đền Gốc Khế", note: "Căn cứ rừng Gốc Khế", q: "21.4443835,106.0966726" },
+      { id: "vat-the-5", name: "Đồi Phủ (đồn Nhã Nam)", note: "Ao ông Chấn Ký", q: "21.4444805,106.0971055" },
+      { id: "vat-the-6", name: "Đình làng Chuông", note: "Đình cổ thế kỷ XVIII", q: "21.4443874,106.0991677" },
+      { id: "vat-the-7", name: "Chùa Nam Thiên", note: "Chùa Phố 1822", q: "21.4442158,106.0973672" },
+      { id: "vat-the-12", name: "Đình Cầu Thượng", note: "Di tích cấp tỉnh thờ Cao Sơn, Quý Minh", q: "21.4397723,106.0893274" }
     ],
-    mapEmbedUrl: "https://www.google.com/maps?q=%C4%90%E1%BB%93i+Ph%E1%BB%A7+v%C3%A0+%C4%90%C3%ACnh+l%C3%A0ng+Chu%C3%B4ng+Nh%C3%A3+Nam&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đền+Gốc+Khế+Nhã+Nam&destination=Đình+Cầu+Thượng+Nhã+Nam&waypoints=Đồi+Phủ+Nhã+Nam|Đình+làng+Chuông+Nhã+Nam|Chùa+Nam+Thiên+Nhã+Nam",
-    directionsText: "Dẫn đường tuyến 3 (đền Gốc Khế → đồi Phủ → đình Cầu Thượng)",
+    mapEmbedUrl: "https://www.google.com/maps?q=21.4444805,106.0971055&z=16&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=21.4443835,106.0966726&destination=21.4397723,106.0893274&waypoints=21.4444805,106.0971055|21.4443874,106.0991677|21.4442158,106.0973672",
+    directionsText: "Chỉ đường Tuyến 3: Đền Gốc Khế → Đồi Phủ → Đình làng Chuông → Chùa Nam Thiên → Đình Cầu Thượng",
     description: "Cụm di tích lịch sử quân sự và tín ngưỡng trung tâm Nhã Nam - chiến trường thử lửa oanh liệt chống giặc ngoại xâm của nghĩa quân Yên Thế và thiết chế đình làng cổ kính."
   }
 ];
 
 const DEFAULT_COMMUNE_MAP = {
-  embedUrl: "https://www.google.com/maps?q=Nh%C3%A3+Nam,+B%E1%BA%AFc+Ninh&output=embed",
-  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=UBND+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-  directionsText: "Dẫn đường đến trung tâm xã Nhã Nam"
+  embedUrl: "https://www.google.com/maps?q=21.4404,106.0965&z=15&output=embed",
+  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4404,106.0965",
+  directionsText: "Chỉ đường đến trung tâm xã Nhã Nam (Google Maps)"
 };
 
 const MUSIC_PLAYLIST = [

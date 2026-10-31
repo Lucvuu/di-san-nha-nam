@@ -1980,7 +1980,7 @@ function selectRoute(routeId) {
   });
 
   // 2. Chuyển iframe bản đồ mượt mà
-  updateMapFrame(route.mapEmbedUrl, `Bản đồ Tuyến ${route.number}: ${route.title} (${route.subtitle})`);
+  updateMapFrame(route.mapEmbedUrl, `Bản đồ Tuyến ${route.number}: ${route.title} (${route.subtitle})`, route.directionsUrl);
 
   // 3. Cập nhật nút dẫn đường
   const dirBtn = document.getElementById('heritage-route-directions-btn');
@@ -1998,28 +1998,56 @@ function selectRouteRelic(relicId, event) {
     event.stopPropagation();
   }
 
-  // 1. Zoom iframe bản đồ vào đúng di tích
-  const relic = (typeof TANGIBLE_HERITAGE_DATA!== 'undefined')? TANGIBLE_HERITAGE_DATA.find(r => r.id === relicId): null;
+  // Cập nhật trạng thái active chip
+  document.querySelectorAll('.route-relic-chip').forEach(btn => {
+    btn.classList.remove('ring-2', 'ring-[#8B1E1E]', 'bg-[#8B1E1E]', 'text-white');
+  });
+  if (event && event.currentTarget) {
+    event.currentTarget.classList.add('ring-2', 'ring-[#8B1E1E]', 'bg-[#8B1E1E]', 'text-white');
+  }
+
+  // 1. Zoom iframe bản đồ vào đúng vị trí tọa độ di tích
+  const relic = (typeof TANGIBLE_HERITAGE_DATA !== 'undefined') ? TANGIBLE_HERITAGE_DATA.find(r => r.id === relicId) : null;
   if (relic && relic.map && relic.map.embedUrl) {
-    updateMapFrame(relic.map.embedUrl, `${relic.title} - ${relic.address}`);
+    // Luôn đảm bảo zoom rõ nét bằng cách thêm z=16 nếu chưa có
+    let zoomUrl = relic.map.embedUrl;
+    if (!zoomUrl.includes('&z=')) {
+      zoomUrl = zoomUrl.replace('&output=embed', '&z=16&output=embed');
+    }
+    updateMapFrame(zoomUrl, `${relic.title} (${relic.address})`, relic.map.directionsUrl);
 
     const dirBtn = document.getElementById('heritage-route-directions-btn');
     const dirLabel = document.getElementById('route-directions-label');
+    const openDocBtn = document.getElementById('route-relic-doc-btn');
+    
     if (dirBtn && relic.map.directionsUrl) {
       dirBtn.href = relic.map.directionsUrl;
     }
     if (dirLabel) {
-      dirLabel.textContent = `Dẫn đường đến ${relic.shortTitle || relic.title}`;
+      dirLabel.innerHTML = `Chỉ đường đi <strong>${escapeHtml(relic.shortTitle || relic.title)}</strong> (Google Maps)`;
     }
-  }
+    if (openDocBtn) {
+      openDocBtn.style.display = 'inline-flex';
+      openDocBtn.onclick = () => openDetailModal(relicId);
+      openDocBtn.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg> Xem hồ sơ ${escapeHtml(relic.shortTitle || relic.title)}`;
+    }
 
-  // 2. Mở trực tiếp Modal thông tin chi tiết
-  if (typeof openDetailModal === 'function') {
-    openDetailModal(relicId);
+    // Cuộn nhẹ tới bản đồ trên thiết bị di động
+    if (window.innerWidth < 1024) {
+      const mapContainer = document.getElementById('heritage-route-map-frame');
+      if (mapContainer) {
+        mapContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
   }
 }
 
 function resetToCommuneMap() {
+  const openDocBtn = document.getElementById('route-relic-doc-btn');
+  if (openDocBtn) openDocBtn.style.display = 'none';
+  document.querySelectorAll('.route-relic-chip').forEach(btn => {
+    btn.classList.remove('ring-2', 'ring-[#8B1E1E]', 'bg-[#8B1E1E]', 'text-white');
+  });
   activeRouteId = null;
 
   // 1. Xóa trạng thái active của cả 3 tuyến
@@ -2035,7 +2063,7 @@ function resetToCommuneMap() {
     directionsText: "Dẫn đường đến trung tâm xã Nhã Nam"
   };
 
-  updateMapFrame(defaultMap.embedUrl, 'Bản đồ tổng thể xã Nhã Nam, tỉnh Bắc Ninh');
+  updateMapFrame(defaultMap.embedUrl, 'Bản đồ tổng thể xã Nhã Nam, tỉnh Bắc Ninh', defaultMap.directionsUrl);
 
   // 3. Khôi phục nút dẫn đường
   const dirBtn = document.getElementById('heritage-route-directions-btn');
