@@ -58,11 +58,24 @@ TANGIBLE_HERITAGE_DATA.forEach((item, i) => {
   console.assert(Array.isArray(item.gallery), `Item ${i} gallery must be an array`);
   console.assert(!JSON.stringify(item).includes('images.unsplash.com'), `Item ${i} must NOT contain any Unsplash URLs`);
   console.assert(item.docFile && item.docFile.path && fs.existsSync(item.docFile.path), `Item ${i} docFile must exist on disk (${item.docFile ? item.docFile.path : 'missing'})`);
-  console.log(`  ✓ [Vật thể ${i+1}] ${item.title} -> Verified 4 multimedia components (photo, audio, map, doc: ${item.docFile.fileName})`);
+  
+  if (item.hasRealPhoto) {
+    console.assert(item.thumbnail && fs.existsSync(item.thumbnail), `Real photo thumbnail for ${item.id} must exist: ${item.thumbnail}`);
+    item.gallery.forEach((g, gIdx) => {
+      console.assert(g.url && fs.existsSync(g.url), `Gallery photo ${gIdx} for ${item.id} must exist: ${g.url}`);
+    });
+  }
+  if (item.audioFile) {
+    console.assert(fs.existsSync(item.audioFile.src), `Audio narration file for ${item.id} must exist: ${item.audioFile.src}`);
+  }
+  if (item.video) {
+    console.assert(item.video.youtubeId && item.video.embedUrl, `Video for ${item.id} must have valid youtubeId & embedUrl`);
+  }
+  console.log(`  ✓ [Vật thể ${i+1}] ${item.title} -> Verified multimedia components (RealPhoto: ${item.hasRealPhoto}, Audio: ${!!item.audioFile}, Video: ${!!item.video}, Map, Doc: ${item.docFile.fileName})`);
 });
 
 console.log('--- 4. TESTING INTANGIBLE HERITAGE (DI SẢN PHI VẬT THỂ) ---');
-console.assert(INTANGIBLE_HERITAGE_DATA.length === 5, `Should have 5 intangible heritage items (found ${INTANGIBLE_HERITAGE_DATA.length})`);
+console.assert(INTANGIBLE_HERITAGE_DATA.length === 6, `Should have 6 intangible heritage items (found ${INTANGIBLE_HERITAGE_DATA.length})`);
 INTANGIBLE_HERITAGE_DATA.forEach((item, i) => {
   console.assert(item.title, `Item ${i} must have title`);
   console.assert(item.scope, `Item ${i} must have scope`);
@@ -94,7 +107,11 @@ const testCases = [
   { query: 'banh khao', expectedMatch: 'Nghề làm bánh khảo, kẹo lạc' },
   { query: 'keo lac', expectedMatch: 'Nghề làm bánh khảo, kẹo lạc' },
   { query: 'vo co truyen', expectedMatch: 'Trò chơi dân gian và võ cổ truyền' },
-  { query: 'hoang hoa tham', expectedMatch: 'Đền Gốc Khế' }
+  { query: 'hoang hoa tham', expectedMatch: 'Đền Gốc Khế' },
+  { query: 'duong lam', expectedMatch: 'Đình Dương Lâm' },
+  { query: 'dinh duong lam', expectedMatch: 'Đình Dương Lâm' },
+  { query: 'lang noi phet', expectedMatch: 'Làng nói phét Dương Sơn' },
+  { query: 'duong son', expectedMatch: 'Làng nói phét Dương Sơn' }
 ];
 
 const allItems = [...TANGIBLE_HERITAGE_DATA, ...INTANGIBLE_HERITAGE_DATA];
@@ -174,16 +191,16 @@ const appCode = fs.readFileSync('./js/app.js', 'utf8');
 vm.runInThisContext(appCode);
 global.onDOMContentLoaded();
 
-console.assert(state.allItems.length === 21, `state.allItems should have 21 items (got ${state.allItems.length})`);
-console.assert(state.filteredItems.length === 21, `state.filteredItems should have 21 items (got ${state.filteredItems.length})`);
+console.assert(state.allItems.length === 22, `state.allItems should have 22 items (got ${state.allItems.length})`);
+console.assert(state.filteredItems.length === 22, `state.filteredItems should have 22 items (got ${state.filteredItems.length})`);
 console.assert(elements['heritage-grid'].innerHTML.length > 500, 'Heritage grid must render card elements');
 console.assert(elements['quick-search-tags'].innerHTML.length > 100, 'Quick search tags must render tag buttons');
-console.assert(String(elements['count-all'].textContent) === '21', 'Count all must be 21');
+console.assert(String(elements['count-all'].textContent) === '22', 'Count all must be 22');
 console.assert(String(elements['count-vat-the'].textContent) === '16', 'Count vat-the must be 16');
-console.assert(String(elements['count-phi-vat-the'].textContent) === '5' || String(elements['count-phi-vat-the'].textContent) === '05', 'Count phi-vat-the must be 5 or 05');
+console.assert(String(elements['count-phi-vat-the'].textContent) === '6' || String(elements['count-phi-vat-the'].textContent) === '06', 'Count phi-vat-the must be 6 or 06');
 console.assert(elements['quiz-questions-container'].innerHTML.length > 500, 'Quiz questions must render properly');
 
-console.log('  ✓ State items:', state.allItems.length, '(16 di sản vật thể + 5 di sản phi vật thể)');
+console.log('  ✓ State items:', state.allItems.length, '(16 di sản vật thể + 6 di sản phi vật thể)');
 console.log('  ✓ Cards rendered in #heritage-grid HTML size:', elements['heritage-grid'].innerHTML.length, 'bytes');
 console.log('  ✓ Quick tags rendered in #quick-search-tags HTML size:', elements['quick-search-tags'].innerHTML.length, 'bytes');
 console.log('  ✓ Dynamic counters updated: Tất cả =', elements['count-all'].textContent, ', Vật thể =', elements['count-vat-the'].textContent, ', Phi vật thể =', elements['count-phi-vat-the'].textContent);

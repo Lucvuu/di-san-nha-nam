@@ -264,7 +264,17 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Hả, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/dinh-chua-ha/anh-dai-dien.jpg",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-dinh-chua-ha.mp3",
+      "title": "Thuyết minh di tích đình - chùa Hả"
+    },
+    "video": {
+      "title": "Đề Nắm tế cờ khởi nghĩa tại Đình Hả, Nhã Nam, Bắc Ninh (Tư liệu: Thầy Bùi Công)",
+      "youtubeId": "13WbD3DOeQc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=13WbD3DOeQc",
+      "embedUrl": "https://www.youtube.com/embed/13WbD3DOeQc"
+    },
     "tags": [
       "Đình Hả",
       "Chùa Hả",
@@ -299,9 +309,34 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Hả,+Thôn+Hả,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Khu di tích đình - chùa Hả (di tích quốc gia đặc biệt)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/dinh-chua-ha/anh-dai-dien.jpg",
+        "caption": "Đình Hả - Nơi thủ lĩnh Lương Văn Nắm làm lễ tế cờ khởi nghĩa ngày 16/3/1884"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/dinh-ha-1.jpg",
+        "caption": "Đình Hả - Góc nghiêng mái ngói cổ kính và đầu đao cong vút"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/dinh-ha-2.jpg",
+        "caption": "Toàn cảnh sân đình Hả và gian tiền tế trang nghiêm"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/dinh-ha-3.jpg",
+        "caption": "Hậu cung đình Hả với kết cấu vì kèo gỗ lim cổ truyền"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/dinh-ha-4.jpg",
+        "caption": "Khuôn viên di tích đình - chùa Hả rợp bóng cây xanh mát"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/dinh-ha-5.jpg",
+        "caption": "Quần thể di tích quốc gia đặc biệt đình - chùa Hả tại xã Nhã Nam"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Bộ sưu tập 06 ảnh tư liệu thực tế tại đình - chùa Hả (Tài liệu Thầy Bùi Công & Cô Thúy Mến)",
     "docFile": {
       "fileName": "dinh-chua-ha.docx",
       "title": "Hồ sơ di tích đình - chùa Hả",
@@ -324,7 +359,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Tổ dân phố Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/chua-tu-giap/anh-dai-dien.jpg",
     "tags": [
       "Chùa Tứ Giáp",
       "Sáu điều Bác Hồ dạy",
@@ -335,6 +370,10 @@ const TANGIBLE_HERITAGE_DATA = [
       "Xã Nhã Nam",
       "tỉnh Bắc Ninh"
     ],
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-chua-tu-giap.mp3",
+      "title": "Thuyết minh di tích chùa Tứ Giáp"
+    },
     "overview": "Nơi phát tích lịch sử thiêng liêng ra đời Sáu điều Bác Hồ dạy Công an nhân dân ngày 11/3/1948, di tích lịch sử và nghệ thuật cấp quốc gia.",
     "content": {
       "intro": "Chùa Tứ Giáp (tên chữ là Đại Phúc tự, thường gọi là chùa làng Nguộn) tọa lạc uy nghiêm tại thôn Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Ngôi chùa không chỉ là trung tâm tín ngưỡng Phật giáo lâu đời từ thế kỷ XVIII thời hậu Lê mà còn là 'địa chỉ đỏ' cách mạng rực rỡ của toàn quốc.",
@@ -353,12 +392,21 @@ const TANGIBLE_HERITAGE_DATA = [
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=Ch%C3%B9a+T%E1%BB%A9+Gi%C3%A1p,+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Tứ+Giáp,+Tổ+dân+phố+Chùa+Nguộn,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-      "locationName": "Chùa Tứ Giáp & khu lưu niệm Sáu điều Bác Hồ dạy CAND"
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Tứ+Giáp,+thôn+Chùa+Nguộn,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
+      "locationName": "Chùa Tứ Giáp (nơi phát tích 6 điều Bác Hồ dạy CAND)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/chua-tu-giap/anh-dai-dien.jpg",
+        "caption": "Chùa Tứ Giáp (Đại Phúc tự) - Nơi phát tích Sáu điều Bác Hồ dạy CAND"
+      },
+      {
+        "url": "./assets/images/chua-tu-giap/tu-giap-2.jpg",
+        "caption": "Khuôn viên và kiến trúc tiền tế chùa Tứ Giáp tại thôn Chùa Nguộn"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Bộ sưu tập 02 ảnh tư liệu thực tế tại chùa Tứ Giáp (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "chua-tu-giap.docx",
       "title": "Hồ sơ di tích chùa Tứ Giáp",
@@ -435,7 +483,11 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Tổ dân phố Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/den-goc-khe/anh-dai-dien.webp",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-den-goc-khe.mp3",
+      "title": "Thuyết minh di tích đền Gốc Khế"
+    },
     "tags": [
       "Đền Gốc Khế",
       "Rừng Gốc Khế",
@@ -465,9 +517,14 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đền+Gốc+Khế,+Tổ+dân+phố+Cầu+Thượng,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đền Gốc Khế & rừng Gốc Khế lịch sử"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/den-goc-khe/anh-dai-dien.webp",
+        "caption": "Đền Gốc Khế - Căn cứ bí mật của Hoàng Hoa Thám và nghĩa quân Yên Thế"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Ảnh tư liệu thực tế tại đền Gốc Khế (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "den-goc-khe.docx",
       "title": "Thuyết minh dự án tu bổ Đền Gốc Khế",
@@ -490,7 +547,11 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Đồi Phủ, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/doi-phu-nha-nam/anh-dai-dien.jpg",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-doi-phu.mp3",
+      "title": "Thuyết minh di tích Đồi Phủ"
+    },
     "tags": [
       "Đồi Phủ",
       "Ao ông Chấn Ký",
@@ -518,9 +579,14 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đồi+Phủ+Nhã+Nam,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đồi Phủ (địa điểm: Ao ông Chấn Ký)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/doi-phu-nha-nam/anh-dai-dien.jpg",
+        "caption": "Đồi Phủ Nhã Nam - Nơi thực dân Pháp lập đồn bốt và Tòa đại lý Phủ Yên Thế năm 1885"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Ảnh tư liệu thực tế tại Đồi Phủ (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "doi-phu-nha-nam.docx",
       "title": "Tư liệu lịch sử đồi Phủ - đồn Nhã Nam",
@@ -543,7 +609,11 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Tiến Phan 2, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/dinh-lang-chuong/anh-dai-dien.webp",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-dinh-lang-chuong.mp3",
+      "title": "Thuyết minh di tích đình làng Chuông"
+    },
     "tags": [
       "Đình Nhã Nam",
       "Đình làng Chuông",
@@ -572,9 +642,14 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Nhã+Nam,+Thôn+Tiến+Phan+2,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đình làng Chuông (đình Nhã Nam)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/dinh-lang-chuong/anh-dai-dien.webp",
+        "caption": "Đình làng Chuông - Ngôi đình cổ thời Hậu Lê (thế kỷ XVIII) tại thôn Tiến Phan 2"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Ảnh tư liệu thực tế tại đình làng Chuông (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "dinh-lang-chuong.docx",
       "title": "Tư liệu khoa học đình làng Chuông",
@@ -597,7 +672,11 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Tổ dân phố Tân Quang, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/chua-nam-thien/anh-dai-dien.jpg",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-chua-nam-thien.mp3",
+      "title": "Thuyết minh di tích chùa Nam Thiên"
+    },
     "tags": [
       "Chùa Nam Thiên",
       "Chùa Phố",
@@ -625,9 +704,14 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Nam+Thiên,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Chùa Nam Thiên (chùa Phố)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/chua-nam-thien/anh-dai-dien.jpg",
+        "caption": "Chùa Nam Thiên (chùa Phố) - Ngôi chùa cổ khởi dựng năm 1822 tại phố Nhã Nam"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Ảnh tư liệu thực tế tại chùa Nam Thiên (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "chua-nam-thien.docx",
       "title": "Tư liệu khoa học chùa Nam Thiên (chùa Phố)",
@@ -650,7 +734,11 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Tiến Phan 1, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/den-de-truat/anh-dai-dien.jpg",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-den-de-truat.mp3",
+      "title": "Thuyết minh di tích đền Đề Truật"
+    },
     "tags": [
       "Đền Đề Truật",
       "Dương Văn Truật",
@@ -678,9 +766,22 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đền+Đề+Truật,+Thôn+Tiến+Phan+1,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đền Đề Truật (di tích cấp tỉnh)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/den-de-truat/anh-dai-dien.jpg",
+        "caption": "Đền Đề Truật - Thờ tướng quân Dương Văn Truật (Đề Truật)"
+      },
+      {
+        "url": "./assets/images/den-de-truat/de-truat-anh-2.jpg",
+        "caption": "Kiến trúc tiền tế đền Đề Truật tại thôn Mai Hoàng"
+      },
+      {
+        "url": "./assets/images/den-de-truat/de-truat-anh-3.jpg",
+        "caption": "Ban thờ và không gian trang nghiêm trong đền Đề Truật"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại đền Đề Truật (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "den-de-truat.docx",
       "title": "Tư liệu nghiên cứu đền Đề Truật",
@@ -703,7 +804,11 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Khu vực đồi Phủ, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/nghia-dia-phap/anh-dai-dien.jpg",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-nghia-dia-phap.mp3",
+      "title": "Thuyết minh di tích Nghĩa địa Pháp"
+    },
     "tags": [
       "Nghĩa địa Pháp",
       "Đồi Phủ",
@@ -730,9 +835,14 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Nghĩa+địa+Pháp,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Nghĩa địa Pháp (khu vực đồi Phủ Nhã Nam)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/nghia-dia-phap/anh-dai-dien.jpg",
+        "caption": "Chứng tích Nghĩa địa Pháp và Đồi Phủ tại xã Nhã Nam"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Ảnh tư liệu thực tế tại Nghĩa địa Pháp và Đồi Phủ (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "nghia-dia-phap.docx",
       "title": "Chứng tích lịch sử quân sự Nghĩa địa Pháp",
@@ -803,13 +913,17 @@ const TANGIBLE_HERITAGE_DATA = [
     "badge": "Di tích quốc gia đặc biệt",
     "relicType": "Di tích lịch sử",
     "decision": "QĐ số 548/QĐ-TTg, ngày 10/05/2012 của Thủ tướng Chính phủ",
-    "worship": "Cao Sơn, Quý Minh, Lâm Giang đại vương",
+    "worship": "Đức thánh Cao Sơn; phối thờ ba vị Quận công Dương Đình Bột, Dương Đình Tuấn, Dương Đình Cúc",
     "title": "Đình Dương Lâm",
     "shortTitle": "Đình Dương Lâm",
     "address": "Thôn Dương Lâm, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã An Dương, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/dinh-duong-lam/anh-dai-dien.jpg",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-dinh-duong-lam.mp3",
+      "title": "Thuyết minh di tích đình Dương Lâm"
+    },
     "tags": [
       "Đình Dương Lâm",
       "An Dương",
@@ -817,17 +931,19 @@ const TANGIBLE_HERITAGE_DATA = [
       "Khởi nghĩa Yên Thế",
       "Di tích quốc gia đặc biệt"
     ],
-    "overview": "Ngôi đình cổ linh thiêng của làng Dương Lâm thuộc hệ thống di tích khởi nghĩa Yên Thế, di tích quốc gia đặc biệt.",
+    "overview": "Ngôi đình cổ thời Lê thờ Cao Sơn và ba vị Quận công họ Dương. Nơi Đề Thám cùng cụ Cai Hậu bàn việc chuyển đình về giữa làng, đào hầm bí mật cho nghĩa quân Yên Thế hoạt động.",
     "content": {
-      "intro": "Đình Dương Lâm tọa lạc tại thôn Dương Lâm, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc xã An Dương, huyện Tân Yên, tỉnh Bắc Giang). Ngôi đình là trung tâm văn hóa tín ngưỡng lớn của làng Dương Lâm xưa, được xếp hạng là di tích quốc gia đặc biệt.",
+      "intro": "Đình Dương Lâm là ngôi đình cổ thời Lê tọa lạc ở vị trí trung tâm làng Dương Lâm, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc xã An Dương, huyện Tân Yên, tỉnh Bắc Giang). Đình nằm cách thành phố Bắc Giang khoảng 22km về phía Tây Bắc, là di tích quốc gia đặc biệt tiêu biểu trong hệ thống Những địa điểm Khởi nghĩa Yên Thế.",
       "historicalSignificance": [
-        "**Căn cứ hội tụ của nghĩa binh:** Vùng đất Dương Lâm xưa là nơi nhân dân đồng lòng ủng hộ cuộc khởi nghĩa Yên Thế, đóng góp lương thảo, vũ khí và con em ưu tú tham gia nghĩa quân.",
-        "**Nơi sinh hoạt cộng đồng kháng chiến:** Đình là nơi hội tụ nghĩa binh, tổ chức tuyên thệ đánh giặc giữ làng và tiếp sức cho các mặt trận lân cận.",
-        "**Xếp hạng quốc gia đặc biệt:** Xếp hạng theo Quyết định số 548/QĐ-TTg ngày 10/05/2012 của Thủ tướng Chính phủ."
+        "**Ngôi đình cổ dời vị trí theo kế sách kháng chiến của Đề Thám:** Đình xưa vốn tọa lạc ở khu đất Bãi Đình. Do giặc giã nhiều, Hoàng Hoa Thám và nghĩa quân Yên Thế đã bàn với dân làng chuyển đình về giữa làng như hiện nay để tiện trông nom và bảo đảm hoạt động bí mật.",
+        "**Căn cứ vững chắc của cụ Cai Hậu và nghĩa quân:** Cụ Cai Hậu (Dương Văn Hậu) là người giúp Hoàng Hoa Thám rất đắc lực (1885 - 1895). Cụ đã cho đào một đường hầm bí mật từ hậu cung đình Dương Lâm xuyên ra bờ ao để nghĩa quân rút lui an toàn khi bị vây hãm; dấu vết đường hầm nay vẫn còn.",
+        "**Tình nghĩa gắn bó sâu nặng với Đề Thám:** Đề Thám đã tin tưởng gửi con trai cả của mình là Cả Trọng về Dương Lâm ăn học tại nhà cụ Cai Hậu. Đề Thám cùng cụ Cai Hậu còn trồng cây dã hương kỷ niệm trước sân đình.",
+        "**Quê hương của ba vị Quận công họ Dương:** Dương Lâm là quê hương Quận công Dương Đình Bột, Dương Đình Tuấn, Dương Đình Cúc. Năm 1826, Dương Đình Cúc đã dựng cờ khởi nghĩa chống triều Nguyễn ngay tại đình làng mình.",
+        "**Xếp hạng di tích quốc gia đặc biệt:** Được xếp hạng theo Quyết định số 548/QĐ-TTg ngày 10/05/2012 của Thủ tướng Chính phủ."
       ],
       "architecture": [
-        "Đình khởi dựng với quy mô bề thế, kiến trúc gỗ lim truyền thống, mái đao cong uốn lượn mềm mại.",
-        "Nội thất đình lưu giữ nhiều mảng điêu khắc gỗ tinh tế hình rồng mây, hoa lá mang đậm phong cách nghệ thuật cổ truyền thời Hậu Lê và thời Nguyễn."
+        "Đình Dương Lâm là nơi thờ Đức Thánh Cao Sơn từ thời Hùng Vương thứ 18 và phối thờ ba vị Quận công họ Dương có công đánh giặc cứu nước.",
+        "Kiến trúc đình cổ thời Lê bảo lưu kết cấu gỗ lim cổ kính, vì kèo vững chãi, chạm khắc rồng mây hoa lá tinh xảo và khuôn viên trang nghiêm giữa làng quê yên bình."
       ],
       "studyNote": "Đình Dương Lâm là biểu tượng cho sự đoàn kết bền chặt giữa tín ngưỡng truyền thống và phong trào đấu tranh giữ nước của đồng bào Nhã Nam."
     },
@@ -836,9 +952,14 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Dương+Lâm,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đình Dương Lâm (di tích quốc gia đặc biệt)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/dinh-duong-lam/anh-dai-dien.jpg",
+        "caption": "Đình Dương Lâm - Di tích quốc gia đặc biệt thời Lê thuộc xã Nhã Nam"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Ảnh tư liệu thực tế tại đình Dương Lâm (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "dinh-duong-lam.docx",
       "title": "Hồ sơ di tích đình Dương Lâm",
@@ -1014,6 +1135,12 @@ const TANGIBLE_HERITAGE_DATA = [
     "oldAddress": "Xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
     "thumbnail": null,
+    "video": {
+      "title": "Khám phá làng nói phét Dương Sơn (Nhã Nam) và những câu chuyện dân gian hấp dẫn",
+      "youtubeId": "w-SSxpYTbUs",
+      "youtubeUrl": "https://www.youtube.com/watch?v=w-SSxpYTbUs",
+      "embedUrl": "https://www.youtube.com/embed/w-SSxpYTbUs"
+    },
     "tags": [
       "Chùa Dương Sơn",
       "Dương Sơn",
@@ -1114,6 +1241,12 @@ const INTANGIBLE_HERITAGE_DATA = [
     "scope": "Địa bàn toàn xã Nhã Nam (trọng tâm tại đình - chùa Hả, chùa Tứ Giáp và đồi Phủ)",
     "heroImage": "./assets/images/hero-phi-vat-the.jpg",
     "thumbnail": null,
+    "video": {
+      "title": "Đề Nắm tế cờ khởi nghĩa tại Đình Hả, Nhã Nam, Bắc Ninh (Tư liệu: Thầy Bùi Công)",
+      "youtubeId": "13WbD3DOeQc",
+      "youtubeUrl": "https://www.youtube.com/watch?v=13WbD3DOeQc",
+      "embedUrl": "https://www.youtube.com/embed/13WbD3DOeQc"
+    },
     "tags": [
       "Lễ hội Yên Thế",
       "Lễ hội đình Hả",
@@ -1162,6 +1295,12 @@ const INTANGIBLE_HERITAGE_DATA = [
     "scope": "Các câu lạc bộ chèo tại các thôn: Làng Chuông, Chùa Nguộn, Cầu Thượng, xã Nhã Nam",
     "heroImage": "./assets/images/hero-phi-vat-the.jpg",
     "thumbnail": null,
+    "video": {
+      "title": "Vở diễn \"Duyên hài lứa đôi\" — Đơn vị Nhã Nam (Hội diễn quần chúng tỉnh Bắc Ninh)",
+      "youtubeId": "K_7f4eD1l_0",
+      "youtubeUrl": "https://www.youtube.com/watch?v=K_7f4eD1l_0",
+      "embedUrl": "https://www.youtube.com/embed/K_7f4eD1l_0"
+    },
     "tags": [
       "Hát chèo",
       "Chiếu chèo",
@@ -1338,6 +1477,64 @@ const INTANGIBLE_HERITAGE_DATA = [
       "path": "./assets/docs/tro-choi-dan-gian-vo-co-truyen.docx",
       "size": "37 KB"
     }
+  },
+  {
+    "id": "phi-vat-the-6",
+    "category": "phi-vat-the",
+    "categoryName": "Di sản phi vật thể",
+    "rank": "phi-vat-the",
+    "rankName": "Di sản văn hóa phi vật thể",
+    "badge": "Văn hóa dân gian đặc sắc",
+    "title": "Nghệ thuật kể chuyện dân gian – Làng nói phét Dương Sơn",
+    "shortTitle": "Làng nói phét Dương Sơn",
+    "scope": "Thôn Dương Sơn, xã Nhã Nam, tỉnh Bắc Ninh",
+    "address": "Thôn Dương Sơn, xã Nhã Nam, tỉnh Bắc Ninh",
+    "heroImage": "./assets/images/hero-phi-vat-the.jpg",
+    "thumbnail": null,
+    "tags": [
+      "Làng nói phét",
+      "Dương Sơn",
+      "Kể chuyện dân gian",
+      "Tiếng cười trào lộng",
+      "Văn hóa dân gian",
+      "Nhã Nam",
+      "Bắc Ninh"
+    ],
+    "video": {
+      "title": "Khám phá làng nói phét Dương Sơn (Nhã Nam) và những câu chuyện dân gian hấp dẫn",
+      "youtubeId": "w-SSxpYTbUs",
+      "youtubeUrl": "https://www.youtube.com/watch?v=w-SSxpYTbUs",
+      "embedUrl": "https://www.youtube.com/embed/w-SSxpYTbUs"
+    },
+    "overview": "Nét sinh hoạt văn hóa dân gian độc đáo của người dân làng Dương Sơn với nghệ thuật nói khoác, trào lộng hóm hỉnh mang lại tiếng cười sảng khoái và tinh thần lạc quan.",
+    "content": {
+      "intro": "Làng Dương Sơn (xã Nhã Nam, tỉnh Bắc Ninh) từ lâu đã nổi tiếng khắp vùng Kinh Bắc với danh xưng độc đáo 'Làng nói phét Dương Sơn'. Đây không phải là thói xấu lừa lọc, dối trá mà là một nghệ thuật kể chuyện dân gian trào lộng, khoa trương đầy trí tuệ và khiếu hài hước của những người nông dân chân lấm tay bùn.",
+      "originAndMeaning": [
+        "**Nguồn gốc tiếng cười lạc quan:** Xuất phát từ đời sống lao động đồng áng vất vả, người dân Dương Sơn sáng tạo ra cách nói cường điệu, phóng đại những sự vật, hiện tượng quen thuộc (củ khoai to bằng cái thuyền, con ếch to bằng cái nong...) để xua tan mệt nhọc sau ngày dài lao động.",
+        "**Nghệ thuật ngôn từ hóm hỉnh:** Người kể chuyện Dương Sơn có tài 'nói khoác như thật', khuôn mặt nghiêm túc, tình tiết ly kỳ bất ngờ khiến người nghe đi từ tò mò đến bật cười sảng khoái.",
+        "**Giá trị nhân văn và tinh thần yêu đời:** Tiếng cười Dương Sơn thể hiện niềm ước mơ chinh phục tự nhiên, mong ước mùa màng bội thu, đời sống no ấm và tinh thần lạc quan vượt lên gian khó của nhân dân lao động xứ Kinh Bắc."
+      ],
+      "practice": [
+        "**Không gian sinh hoạt:** Thường diễn ra bên ấm chè xanh nơi quán nước đầu làng, dưới bóng đa sân đình, trong những lúc nông nhàn hay dịp hội làng rộn rã.",
+        "**Các nghệ nhân dân gian:** Nhiều bậc cao niên trong làng được ví như những 'kho chuyện sống', thuộc lòng hàng trăm giai thoại trào lộng được truyền khẩu qua nhiều thế hệ.",
+        "**Giao lưu và lan tỏa:** Làng nói phét Dương Sơn đã trở thành điểm đến hấp dẫn với các nhà nghiên cứu văn hóa dân gian, đài truyền hình và du khách gần xa muốn tìm về tiếng cười hồn nhiên, thuần hậu của làng quê Việt Nam."
+      ],
+      "studyNote": "Đối với học sinh và thế hệ trẻ Nhã Nam: Văn hóa làng nói phét Dương Sơn là minh chứng cho sự giàu đẹp, hóm hỉnh của tiếng Việt và tâm hồn lạc quan, yêu đời tha thiết của cha ông ta."
+    },
+    "map": {
+      "embedUrl": "https://www.google.com/maps?q=Chùa+Dương+Sơn,+Tân+Trung,+Tân+Yên,+Bắc+Giang&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Dương+Sơn,+thôn+Dương+Sơn,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
+      "locationName": "Làng Dương Sơn & Chùa Dương Sơn (xã Nhã Nam, tỉnh Bắc Ninh)"
+    },
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế nghệ nhân kể chuyện đang được Ban biên tập tiếp tục bổ sung",
+    "docFile": {
+      "fileName": "lang-noi-phet-duong-son.docx",
+      "title": "Tài liệu văn hóa làng nói phét Dương Sơn",
+      "path": "./assets/docs/lang-noi-phet-duong-son.docx",
+      "size": "24 KB"
+    }
   }
 ];
 
@@ -1415,12 +1612,14 @@ const QUIZ_DATA = HERITAGE_QUIZ_DATA;
 const QUICK_SEARCH_TAGS = [
   "Đình - chùa Hả",
   "Chùa Tứ Giáp",
+  "Đình Dương Lâm",
   "Thôn Đồng Điều",
   "Đền Gốc Khế",
   "Đồi Phủ Nhã Nam",
-  "Đình Nhã Nam",
+  "Đình làng Chuông",
   "Chùa Nam Thiên",
   "Đền Đề Truật",
+  "Làng nói phét Dương Sơn",
   "Đề Nắm",
   "Lương Văn Nắm",
   "Khởi nghĩa Yên Thế",

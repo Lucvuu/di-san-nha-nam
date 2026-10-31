@@ -747,3 +747,14 @@ a, button, [role="button"], input, label { touch-action: manipulation; }
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+
+/* Khung video tư liệu responsive 16:9 */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+}
