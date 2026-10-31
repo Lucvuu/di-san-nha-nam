@@ -161,56 +161,59 @@ const HERITAGE_ROUTES = [
     number: "1",
     name: "Tuyến 1",
     title: "Cội nguồn và kháng chiến",
-    subtitle: "Khu di tích đình - chùa Hả và chùa Tứ Giáp",
+    subtitle: "Khu di tích đình - chùa Hả, chùa Tứ Giáp và đình Dương Lâm",
     themeColor: "#8B1E1E",
     badgeBg: "bg-[#8B1E1E]",
-    relicIds: ["vat-the-1", "vat-the-2"],
+    relicIds: ["vat-the-1", "vat-the-2", "vat-the-11"],
     relics: [
       { id: "vat-the-1", name: "Đình - chùa Hả", note: "Nơi tế cờ 1884", q: "Khu+di+tích+Đình+Chùa+Hả+Nhã+Nam" },
-      { id: "vat-the-2", name: "Chùa Tứ Giáp", note: "Nơi phát tích 6 điều Bác Hồ dạy", q: "Chùa+Tứ+Giáp+Nhã+Nam" }
+      { id: "vat-the-2", name: "Chùa Tứ Giáp", note: "Nơi phát tích 6 điều Bác Hồ dạy", q: "Chùa+Tứ+Giáp+Nhã+Nam" },
+      { id: "vat-the-11", name: "Đình Dương Lâm", note: "Di tích quốc gia đặc biệt thời Lê", q: "Đình+Dương+Lâm+Nhã+Nam" }
     ],
     mapEmbedUrl: "https://www.google.com/maps?q=Khu+di+t%C3%ADch+%C4%90%C3%ACnh+Ch%C3%B9a+H%E1%BA%A3+v%C3%A0+Ch%C3%B9a+T%E1%BB%A9+Gi%C3%A1p+Nh%C3%A3+Nam&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đình+chùa+Hả+Nhã+Nam&destination=Chùa+Tứ+Giáp+Nhã+Nam",
-    directionsText: "Dẫn đường Tuyến 1 (Đình Hả → Chùa Tứ Giáp)",
-    description: "Kết nối nơi khởi phát ngọn cờ Yên Thế (đình Hả) với nơi phát tích 6 điều Bác Hồ dạy Công an nhân dân (chùa Tứ Giáp). Cung đường giáo dục truyền thống yêu nước và bản lĩnh cách mạng."
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đình+chùa+Hả+Nhã+Nam&destination=Đình+Dương+Lâm+Nhã+Nam&waypoints=Chùa+Tứ+Giáp+Nhã+Nam",
+    directionsText: "Dẫn đường Tuyến 1 (Đình Hả → Chùa Tứ Giáp → Đình Dương Lâm)",
+    description: "Kết nối nơi khởi phát ngọn cờ Yên Thế (đình Hả) với nơi phát tích 6 điều Bác Hồ dạy CAND (chùa Tứ Giáp) và căn cứ kháng chiến kiên trung đình Dương Lâm."
   },
   {
     id: "tuyen-2",
     number: "2",
     name: "Tuyến 2",
-    title: "Mốc son cách mạng",
-    subtitle: "Di tích lịch sử thôn Đồng Điều và đền Đề Truật",
+    title: "Mốc son cách mạng & văn hóa",
+    subtitle: "Di tích thôn Đồng Điều, đền Đề Truật và chùa Dương Sơn",
     themeColor: "#C59B27",
     badgeBg: "bg-[#C59B27]",
-    relicIds: ["vat-the-3", "vat-the-8"],
+    relicIds: ["vat-the-3", "vat-the-8", "vat-the-15"],
     relics: [
       { id: "vat-the-3", name: "Chùa Đồng Điều", note: "chi bộ Đảng đầu tiên", q: "Chùa+Đồng+Điều+Nhã+Nam" },
-      { id: "vat-the-8", name: "Đền Đề Truật", note: "Tướng quân Đề Truật", q: "Đền+Đề+Truật+Nhã+Nam" }
+      { id: "vat-the-8", name: "Đền Đề Truật", note: "Tướng quân Đề Truật", q: "Đền+Đề+Truật+Nhã+Nam" },
+      { id: "vat-the-15", name: "Chùa Dương Sơn", note: "Di tích cấp tỉnh - văn hóa làng Dương Sơn", q: "Chùa+Dương+Sơn+Nhã+Nam" }
     ],
     mapEmbedUrl: "https://www.google.com/maps?q=Ch%C3%B9a+%C4%90%E1%BB%93ng+%C4%90i%E1%BB%81u+v%C3%A0+%C4%90%E1%BB%81n+%C4%90%E1%BB%81+Tru%E1%BA%ADt+Nh%C3%A3+Nam&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Chùa+Đồng+Điều+Nhã+Nam&destination=Đền+Đề+Truật+Nhã+Nam",
-    directionsText: "Dẫn đường Tuyến 2 (Đồng Điều → Đền Đề Truật)",
-    description: "Hành trình về với cái nôi gieo mầm cách mạng của chi bộ Đảng Cộng sản đầu tiên tại địa phương và tấm gương trung dũng của nghĩa quân Đề Truật."
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Chùa+Đồng+Điều+Nhã+Nam&destination=Chùa+Dương+Sơn+Nhã+Nam&waypoints=Đền+Đề+Truật+Nhã+Nam",
+    directionsText: "Dẫn đường Tuyến 2 (Đồng Điều → Đền Đề Truật → Chùa Dương Sơn)",
+    description: "Hành trình về với cái nôi gieo mầm cách mạng của chi bộ Đảng Cộng sản đầu tiên, tấm gương trung dũng của nghĩa quân Đề Truật và không gian văn hóa thanh tịnh chùa Dương Sơn."
   },
   {
     id: "tuyen-3",
     number: "3",
     name: "Tuyến 3",
-    title: "Chiến tích oai hùng",
-    subtitle: "Căn cứ đền Gốc Khế, đồi Phủ, đình làng Chuông và chùa Nam Thiên",
+    title: "Chiến tích oai hùng & tín ngưỡng cổ truyền",
+    subtitle: "Căn cứ đền Gốc Khế, đồi Phủ, đình làng Chuông, chùa Nam Thiên và đình Cầu Thượng",
     themeColor: "#166534",
     badgeBg: "bg-[#166534]",
-    relicIds: ["vat-the-4", "vat-the-5", "vat-the-6", "vat-the-7"],
+    relicIds: ["vat-the-4", "vat-the-5", "vat-the-6", "vat-the-7", "vat-the-12"],
     relics: [
       { id: "vat-the-4", name: "Đền Gốc Khế", note: "Căn cứ rừng Gốc Khế", q: "Đền+Gốc+Khế+Nhã+Nam" },
       { id: "vat-the-5", name: "Đồi Phủ (đồn Nhã Nam)", note: "Ao ông Chấn Ký", q: "Đồi+Phủ+Nhã+Nam" },
       { id: "vat-the-6", name: "Đình làng Chuông", note: "Đình cổ thế kỷ XVIII", q: "Đình+làng+Chuông+Nhã+Nam" },
-      { id: "vat-the-7", name: "Chùa Nam Thiên", note: "Chùa Phố 1822", q: "Chùa+Nam+Thiên+Nhã+Nam" }
+      { id: "vat-the-7", name: "Chùa Nam Thiên", note: "Chùa Phố 1822", q: "Chùa+Nam+Thiên+Nhã+Nam" },
+      { id: "vat-the-12", name: "Đình Cầu Thượng", note: "Di tích cấp tỉnh thờ Cao Sơn, Quý Minh", q: "Đình+Cầu+Thượng+Nhã+Nam" }
     ],
     mapEmbedUrl: "https://www.google.com/maps?q=%C4%90%E1%BB%93i+Ph%E1%BB%A7+v%C3%A0+%C4%90%C3%ACnh+l%C3%A0ng+Chu%C3%B4ng+Nh%C3%A3+Nam&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đền+Gốc+Khế+Nhã+Nam&destination=Chùa+Nam+Thiên+Nhã+Nam&waypoints=Đồi+Phủ+Nhã+Nam|Đình+làng+Chuông+Nhã+Nam",
-    directionsText: "Dẫn đường Tuyến 3 (Đền Gốc Khế → Đồi Phủ → Chùa Nam Thiên)",
-    description: "Cụm di tích lịch sử quân sự và tín ngưỡng trung tâm đồn Nhã Nam - chiến trường thử lửa oanh liệt chống giặc ngoại xâm của nghĩa quân Yên Thế."
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đền+Gốc+Khế+Nhã+Nam&destination=Đình+Cầu+Thượng+Nhã+Nam&waypoints=Đồi+Phủ+Nhã+Nam|Đình+làng+Chuông+Nhã+Nam|Chùa+Nam+Thiên+Nhã+Nam",
+    directionsText: "Dẫn đường Tuyến 3 (Đền Gốc Khế → Đồi Phủ → Đình Cầu Thượng)",
+    description: "Cụm di tích lịch sử quân sự và tín ngưỡng trung tâm Nhã Nam - chiến trường thử lửa oanh liệt chống giặc ngoại xâm của nghĩa quân Yên Thế và thiết chế đình làng cổ kính."
   }
 ];
 
@@ -983,6 +986,10 @@ const TANGIBLE_HERITAGE_DATA = [
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
     "thumbnail": null,
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-dinh-cau-thuong.mp3",
+      "title": "Thuyết minh di tích đình Cầu Thượng"
+    },
     "tags": [
       "Đình Cầu Thượng",
       "Cao Sơn Quý Minh",
@@ -1014,7 +1021,7 @@ const TANGIBLE_HERITAGE_DATA = [
       "fileName": "dinh-cau-thuong.docx",
       "title": "Hồ sơ di tích đình Cầu Thượng",
       "path": "./assets/docs/dinh-cau-thuong.docx",
-      "size": "37 KB"
+      "size": "13 KB"
     }
   },
   {
@@ -1134,7 +1141,11 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Dương Sơn, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/chua-duong-son/anh-dai-dien.jpg",
+    "audioFile": {
+      "src": "./assets/audio/thuyet-minh-chua-duong-son.mp3",
+      "title": "Thuyết minh di tích chùa Dương Sơn"
+    },
     "video": {
       "title": "Khám phá làng nói phét Dương Sơn (Nhã Nam) và những câu chuyện dân gian hấp dẫn",
       "youtubeId": "w-SSxpYTbUs",
@@ -1166,14 +1177,27 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Dương+Sơn,+Thôn+Dương+Sơn,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Chùa Dương Sơn (di tích cấp tỉnh)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/chua-duong-son/anh-dai-dien.jpg",
+        "caption": "Chùa Dương Sơn - Ngôi chùa cổ thanh tịnh tại thôn Dương Sơn, xã Nhã Nam"
+      },
+      {
+        "url": "./assets/images/chua-duong-son/chua-duong-son-2.jpg",
+        "caption": "Không gian kiến trúc cổ truyền và khuôn viên chùa Dương Sơn"
+      },
+      {
+        "url": "./assets/images/chua-duong-son/chua-duong-son-3.jpg",
+        "caption": "Ban thờ Phật trang nghiêm và hệ thống tượng pháp cổ tại chùa Dương Sơn"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại chùa Dương Sơn (Hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "chua-duong-son.docx",
       "title": "Hồ sơ di tích chùa Dương Sơn",
       "path": "./assets/docs/chua-duong-son.docx",
-      "size": "37 KB"
+      "size": "13 KB"
     }
   },
   {

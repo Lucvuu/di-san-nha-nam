@@ -28,29 +28,8 @@ window.DOC_TEXTS = {
     "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
   ],
   "chua-duong-son.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
-    "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "CHÙA DƯƠNG SƠN",
-    "Xếp hạng: Di tích cấp tỉnh",
-    "I. THÔNG TIN PHÁP LÝ VÀ ĐỊA ĐIỂM",
-    "Địa chỉ hiện nay: Thôn Dương Sơn, xã Nhã Nam, tỉnh Bắc Ninh",
-    "Địa chỉ trước ngày 01/7/2025: Xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang",
-    "Quyết định xếp hạng: QĐ số 2169/QĐ-UBND, ngày 29/12/2010 của Chủ tịch UBND tỉnh",
-    "Loại hình di tích: Di tích lịch sử - văn hóa",
-    "Đối tượng thờ: Thờ Phật",
-    "II. TỔNG QUAN",
-    "Ngôi chùa cổ kính thanh tịnh của làng Dương Sơn, nơi lưu giữ tinh hoa Phật giáo và đạo lý truyền thống, di tích lịch sử - văn hóa cấp tỉnh.",
-    "III. NỘI DUNG GIỚI THIỆU",
-    "Chùa Dương Sơn tọa lạc tại thôn Dương Sơn, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang). Ngôi chùa cổ thanh tịnh giữa làng quê trù phú, là chốn tu tâm hướng thiện của bà con Phật tử địa phương.",
-    "IV. Ý NGHĨA LỊCH SỬ VÀ SỰ KIỆN NỔI BẬT",
-    "Nơi nuôi dưỡng tâm thiện và tinh thần yêu nước: Trong những năm tháng chiến tranh, chùa Dương Sơn luôn là điểm tựa tâm linh vững chắc cho dân làng an tâm sản xuất và chi viện cho tiền tuyến.",
-    "Xếp hạng di tích: Được Chủ tịch UBND tỉnh ban hành Quyết định số 2169/QĐ-UBND ngày 29/12/2010 xếp hạng di tích lịch sử - văn hóa cấp tỉnh.",
-    "V. KIẾN TRÚC VÀ CÔNG TÁC BẢO TỒN",
-    "Chùa gồm Tòa Tiền đường, Thượng điện và vườn cây ăn trái, hoa viên tĩnh lặng.",
-    "Hệ thống tượng Phật sơn son thếp vàng, bia ký và chuông đồng cổ được bảo quản trang trọng.",
-    "VI. GÓC HỌC TẬP",
-    "Chùa Dương Sơn giáo dục học sinh về lòng từ bi, nhân ái và sự trân trọng gìn giữ không gian văn hóa tâm linh thanh tịnh của quê hương.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
+    "Chào mừng quý thầy cô và các bạn học sinh đến với Chùa Dương Sơn.Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Ngôi chùa cổ thanh tịnh giữa làng quê trù phú, là chốn tu tâm hướng thiện của bà con Phật tử địa phương nơi lưu giữ tinh hoa Phật giáo và đạo lý truyền thống, di tích lịch sử - văn hóa cấp tỉnh. Trong những năm tháng chiến tranh,chùa Dương Sơn luôn là điểm tựa tâm linh vững chắc cho dân làng an tâm sản xuất và chi viện cho tiền tuyến.Chùa Dương Sơn giáo dục học sinh về lòng từ bi,nhân ái và sự trân trọng gìn giữ không gian văn hóa tâm linh thanh tịnh của quê hương."
   ],
   "chua-nam-thien.docx": [
     "Chùa Nam Thiên (chùa Phố)",
@@ -396,29 +375,8 @@ window.DOC_TEXTS = {
     "Đề nghị Chủ đầu tư sớm trình các cơ quan chức năng thỏa thuận, thẩm định và phê duyệt dự án, làm cơ sở pháp lý cho việc triển khai các bước tiếp theo./."
   ],
   "dinh-cau-thuong.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
-    "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "ĐÌNH CẦU THƯỢNG",
-    "Xếp hạng: Di tích cấp tỉnh",
-    "I. THÔNG TIN PHÁP LÝ VÀ ĐỊA ĐIỂM",
-    "Địa chỉ hiện nay: Thôn Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh",
-    "Địa chỉ trước ngày 01/7/2025: Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
-    "Quyết định xếp hạng: QĐ số 10/QĐ-UBND, ngày 06/01/2012 của Chủ tịch UBND tỉnh",
-    "Loại hình di tích: Di tích lịch sử - văn hóa",
-    "Đối tượng thờ: Đức thánh Cao Sơn, Quý Minh",
-    "II. TỔNG QUAN",
-    "Ngôi đình làng cổ kính thờ Đức thánh Cao Sơn, Quý Minh, trung tâm tín ngưỡng gắn liền với lịch sử Nhã Nam, di tích lịch sử - văn hóa cấp tỉnh.",
-    "III. NỘI DUNG GIỚI THIỆU",
-    "Đình Cầu Thượng tọa lạc tại thôn Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Ngôi đình là thiết chế văn hóa tâm linh thiêng liêng của nhân dân làng Cầu Thượng qua bao thế hệ.",
-    "IV. Ý NGHĨA LỊCH SỬ VÀ SỰ KIỆN NỔI BẬT",
-    "Hậu phương vững chắc của các phong trào yêu nước: Nhân dân thôn Cầu Thượng có truyền thống đoàn kết, kiên cường đánh giặc bảo vệ quê hương.",
-    "Xếp hạng di tích: Đình Cầu Thượng được Chủ tịch UBND tỉnh ban hành Quyết định số 10/QĐ-UBND ngày 06/01/2012 xếp hạng di tích lịch sử - văn hóa cấp tỉnh.",
-    "V. KIẾN TRÚC VÀ CÔNG TÁC BẢO TỒN",
-    "Kiến trúc đình gồm gian Tiền tế và Hậu cung, vì nóc kết cấu chồng rường giá chiêng cổ truyền, cột gỗ lim vững chãi.",
-    "Lưu giữ kiệu thờ, hương án cổ, hoành phi câu đối sơn son thếp vàng ca ngợi công đức thánh thần phù trợ dân làng.",
-    "VI. GÓC HỌC TẬP",
-    "Tìm hiểu về đình Cầu Thượng giúp học sinh hiểu sâu sắc hơn về nét đẹp văn hóa làng xã và tín ngưỡng tôn thờ tiền nhân của vùng đất Nhã Nam.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
+    "Chào mừng quý thầy cô và các bạn học sinh đến với Đình Cầu Thượng.Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Ngôi đình là thiết chế văn hóa tâm linh thiêng liêng của nhân dân làng Cầu Thượng qua bao thế hệ. Ngôi đình làng cổ kính thờ Đức thánh Cao Sơn, Quý Minh, trung tâm tín ngưỡng gắn liền với lịch sử Nhã Nam, di tích lịch sử - văn hóa cấp tỉnh.Về ý nghĩa lịch sử vẻ vang: **Hậu phương vững chắc của các phong trào yêu nước:** Nhân dân thôn Cầu Thượng có truyền thống đoàn kết , kiên cường đánh giặc bảo vệ quê hương.Tìm hiểu về đình Cầu Thượng giúp học sinh hiểu sâu sắc hơn về nét đẹp văn hóa làng xã và tín ngưỡng tôn thờ tiền nhân của vùng đất Nhã Nam."
   ],
   "dinh-chua-ha.docx": [
     "Đình- chùa Hả",
