@@ -166,12 +166,12 @@ const HERITAGE_ROUTES = [
     badgeBg: "bg-[#8B1E1E]",
     relicIds: ["vat-the-1", "vat-the-2", "vat-the-11"],
     relics: [
-      { id: "vat-the-1", name: "Đình - chùa Hả", note: "Nơi tế cờ 1884", q: "21.4357253,106.116718" },
+      { id: "vat-the-1", name: "Đình - chùa Hả", note: "Nơi tế cờ 1884", q: "Đình+Hả,+Tân+Trung,+Tân+Yên,+Bắc+Giang" },
       { id: "vat-the-2", name: "Chùa Tứ Giáp", note: "Nơi phát tích 6 điều Bác Hồ dạy", q: "21.4448892,106.0901463" },
       { id: "vat-the-11", name: "Đình Dương Lâm", note: "Di tích quốc gia đặc biệt thời Lê", q: "21.4210834,106.0960966" }
     ],
-    mapEmbedUrl: "https://www.google.com/maps?q=21.4357253,106.116718&z=15&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4357253,106.116718",
+    mapEmbedUrl: "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang",
     directionsText: "Chỉ đường từ vị trí của bạn đến Đình Hả (Điểm đầu Tuyến 1)",
     description: "Kết nối nơi khởi phát ngọn cờ Yên Thế (đình Hả) với nơi phát tích 6 điều Bác Hồ dạy CAND (chùa Tứ Giáp) và căn cứ kháng chiến kiên trung đình Dương Lâm."
   },
@@ -308,8 +308,8 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Đối với thế hệ trẻ và học sinh Trường THPT Nhã Nam: Đình - chùa Hả là cội nguồn của tinh thần quật cường Yên Thế, là bài học đầu tiên về lòng yêu nước nồng nàn và ý chí bất khuất trước quân thù."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=21.4357253,106.116718&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4357253,106.116718",
+      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang",
       "locationName": "Khu di tích đình - chùa Hả (di tích quốc gia đặc biệt)"
     },
     "gallery": [
@@ -1321,7 +1321,7 @@ const INTANGIBLE_HERITAGE_DATA = [
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Hả,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang",
       "locationName": "Trung tâm lễ hội Yên Thế tại đình Hả - xã Nhã Nam"
     },
     "gallery": [],
@@ -1467,7 +1467,7 @@ const INTANGIBLE_HERITAGE_DATA = [
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Hả,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang",
       "locationName": "Khu tưởng niệm nghĩa sĩ Yên Thế - xã Nhã Nam"
     },
     "gallery": [],
