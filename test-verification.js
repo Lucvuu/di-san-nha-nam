@@ -93,7 +93,7 @@ const testCases = [
   { query: 'hat cheo', expectedMatch: 'Hát Chèo' },
   { query: 'banh khao', expectedMatch: 'Nghề làm bánh khảo, kẹo lạc' },
   { query: 'keo lac', expectedMatch: 'Nghề làm bánh khảo, kẹo lạc' },
-  { query: 'vo co truyen', expectedMatch: 'Trò chơi dân gian & Võ cổ truyền' },
+  { query: 'vo co truyen', expectedMatch: 'Trò chơi dân gian và võ cổ truyền' },
   { query: 'hoang hoa tham', expectedMatch: 'Đền Gốc Khế' }
 ];
 

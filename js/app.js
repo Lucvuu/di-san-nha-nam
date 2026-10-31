@@ -312,10 +312,9 @@ function renderHeritageGrid(items) {
                 <div class="w-12 h-12 rounded-full bg-white/90 border border-[#C59B27]/40 shadow-xs flex items-center justify-center text-xl mb-1.5 text-[#8B1E1E]">
                   🏛️
                 </div>
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 border border-[#C59B27]/40 shadow-xs text-[11px] font-semibold text-[#8B1E1E]">
-                  📷 Ảnh thực tế đang cập nhật
+                <span class="max-w-[15rem] px-3 py-1.5 rounded-xl bg-white/95 border border-[#C59B27]/40 shadow-xs text-[11px] leading-snug font-semibold text-[#8B1E1E]">
+                  Ảnh tư liệu thực tế tại di tích đang được Ban biên tập cập nhật
                 </span>
-                <span class="text-[11px] text-[#786C5E] mt-1 font-medium">Trường THPT Nhã Nam đang số hóa</span>
               </div>
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
             </div>
@@ -401,7 +400,7 @@ function renderHeritageGrid(items) {
             </span>
             <div class="flex items-center gap-1 flex-wrap">
               <span class="px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#2A2521] border border-[#EADECF] font-medium" title="Ảnh tư liệu thực tế">
-                🖼️ ${item.hasRealPhoto? 'Ảnh thật': 'Chờ ảnh'}
+                🖼️ ${item.hasRealPhoto? 'Ảnh thực tế': 'Ảnh đang cập nhật'}
               </span>
               <span class="px-2 py-0.5 rounded-md bg-[#FFF5F5] text-[#8B1E1E] border border-[#FED7D7] font-medium" title="Thuyết minh âm thanh tự động">
                 🔊 Thuyết minh
@@ -410,7 +409,7 @@ function renderHeritageGrid(items) {
                 🗺️ Bản đồ
               </span>
               <span class="px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] font-medium" title="Tải file Word (.docx) bài giới thiệu">
-                📄 File Word
+                📄 File giới thiệu
               </span>
             </div>
           </div>
@@ -555,7 +554,6 @@ function openDetailModal(itemId) {
   }
 
   state.lightboxImages = item.gallery || [];
-  const qrCodeUrl = getHeritageQRCodeUrl(item.id);
 
   container.innerHTML = `
     <!-- Thanh điều hướng và nút thao tác trên modal -->
@@ -596,8 +594,8 @@ function openDetailModal(itemId) {
         <div>
           <div class="flex items-center justify-between gap-2 mb-2 flex-wrap">
             <div class="flex items-center gap-2">
-              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#8B1E1E] text-white uppercase tracking-wider shadow-xs">
-                Audio guide số hóa
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#8B1E1E] text-white uppercase tracking-wider shadow-xs whitespace-nowrap">
+                Thuyết minh số
               </span>
               <span id="audioguide-voice-info" class="text-xs text-[#92400E] font-medium flex items-center gap-1">
                 <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse inline-block"></span>
@@ -615,7 +613,7 @@ function openDetailModal(itemId) {
           </div>
 
           <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-1">
-            Thuyết minh di tích tự động
+            Nghe thuyết minh di tích
           </h3>
           <p class="text-xs text-[#5C5248] leading-relaxed mb-3">
             Bấm nút phát để nghe thuyết minh truyền cảm về lịch sử và văn hóa Nhã Nam. Đồng thời theo dõi bản ghi câu bên dưới (có thể bấm vào từng câu để nghe trực tiếp).
@@ -680,19 +678,16 @@ function openDetailModal(itemId) {
       <!-- Cột 3: Mã QR Di Tích -->
       <div class="lg:col-span-1 flex flex-col items-center justify-center p-4 rounded-xl bg-white border border-[#EADECF] text-center shadow-inner">
         <div class="text-[11px] font-bold text-[#8B1E1E] uppercase tracking-wider mb-2">
-          📱 Mã QR di tích
+          🔗 Chia sẻ di tích
         </div>
-        <img 
-          src="${qrCodeUrl}" 
-          alt="Mã QR tra cứu di tích ${escapeHtml(item.title)}" 
-          class="w-32 h-32 object-contain rounded-lg border border-[#EADECF] p-1.5 bg-white mb-2 shadow-sm"
-          onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' viewBox=\\'0 0 100 100\\'><rect width=\\'100\\' height=\\'100\\' fill=\\'%23F5EFE6\\'/><text x=\\'50\\' y=\\'55\\' font-size=\\'12\\' text-anchor=\\'middle\\' fill=\\'%238B1E1E\\'>Mã QR</text></svg>'"
-        />
-        <div class="text-xs text-[#5C5248] font-medium leading-tight">
-          Quét bằng camera điện thoại
-        </div>
-        <div class="text-[10px] text-[#786C5E] mt-1">
-          Dễ dàng tra cứu hoặc in ấn dán vào phiếu học tập
+        <button
+          type="button"
+          onclick="copyToClipboard('${getHeritageShareUrl(item.id)}', 'Đã sao chép liên kết di tích!')"
+          class="px-4 py-2.5 rounded-xl text-xs font-bold bg-[#8B1E1E] hover:bg-[#6F1515] text-white shadow-sm transition-colors mb-2">
+          Sao chép liên kết
+        </button>
+        <div class="text-[10px] text-[#786C5E] mt-1 leading-snug">
+          Gửi qua Zalo hoặc dán vào phiếu học tập để mở thẳng hồ sơ này
         </div>
       </div>
 
@@ -801,8 +796,16 @@ function openDetailModal(itemId) {
             <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">5</span>
             ${isVatThe? 'Thư viện ảnh về di tích': 'Thư viện ảnh di tích và di sản'}
           </div>
-          <span class="text-xs text-[#786C5E] font-medium">Nhấp vào ảnh để phóng to (Lightbox)</span>
+          ${(item.gallery || []).length? '<span class="text-xs text-[#786C5E] font-medium">Bấm vào ảnh để phóng to</span>': ''}
         </div>
+
+        ${(item.gallery || []).length? '': `
+          <div class="photo-pending-frame rounded-2xl p-8 text-center">
+            <div class="text-3xl mb-2" aria-hidden="true">🏛️</div>
+            <p class="font-heritage-serif font-bold text-[#8B1E1E]">Ảnh tư liệu thực tế tại di tích đang được Ban biên tập cập nhật</p>
+            <p class="text-xs text-[#786C5E] mt-1">Thầy cô, học sinh có ảnh chụp thật tại di tích xin gửi qua Zalo cô Mến 0962.629.650.</p>
+          </div>
+        `}
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           ${(item.gallery || []).map((img, idx) => `
@@ -816,8 +819,8 @@ function openDetailModal(itemId) {
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 onerror="handleImageError(this)"
               />
-              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white p-3">
-                <span class="text-xs text-center font-medium line-clamp-2">${escapeHtml(img.caption || 'Phóng to ảnh')}</span>
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent text-white px-3 pt-6 pb-2 pr-10">
+                <span class="text-xs font-medium line-clamp-2">${escapeHtml(img.caption || item.title)}</span>
               </div>
               <div class="absolute bottom-2 right-2 w-7 h-7 rounded-full bg-black/60 text-white flex items-center justify-center text-xs">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
@@ -827,12 +830,81 @@ function openDetailModal(itemId) {
         </div>
       </section>
 
+      ${item.docFile? `
+      <!-- PHẦN 6: FILE CHỮ GIỚI THIỆU (.docx) + TOÀN VĂN -->
+      <section class="border-t border-[#EADECF]/80 pt-5">
+        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
+          <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">6</span>
+          Tài liệu giới thiệu
+        </div>
+        <div class="rounded-2xl border border-[#BFDBFE] bg-[#F8FBFF] p-4 sm:p-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+            <div>
+              <div class="font-semibold text-[#1E3A8A]">${escapeHtml(item.docFile.title)}</div>
+              <div class="text-xs text-[#5C5248]">${escapeHtml(item.docFile.fileName)} • ${escapeHtml(item.docFile.size || '')}</div>
+            </div>
+            <a href="${item.docFile.path}" download="${escapeHtml(item.docFile.fileName)}"
+              class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm text-white bg-[#1E40AF] hover:bg-[#1E3A8A] shadow-sm transition-colors">
+              📥 Tải file chữ giới thiệu (.docx)
+            </a>
+          </div>
+          <h4 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-2">📖 Nội dung chi tiết về di tích</h4>
+          <div id="doc-fulltext" class="doc-fulltext bg-white rounded-xl border border-[#EADECF] p-4 sm:p-5 max-h-[32rem] overflow-y-auto text-sm leading-relaxed text-[#2A2521]">
+            <p class="text-[#786C5E] italic">Đang tải nội dung…</p>
+          </div>
+        </div>
+      </section>
+      `: ''}
+
     </div>
   `;
+
+  if (item.docFile) renderDocFullText(item.docFile.fileName);
 
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
   initAudioGuideForModal(item);
+}
+
+/**
+ * Toàn văn file Word nằm trong js/doc-texts.js (~150KB), chỉ tải khi mở modal lần đầu.
+ * Dùng thẻ <script> thay cho fetch để chạy được cả khi mở index.html trực tiếp (file://).
+ */
+function loadDocTexts() {
+  if (window.DOC_TEXTS) return Promise.resolve(window.DOC_TEXTS);
+  if (!loadDocTexts.promise) {
+    loadDocTexts.promise = new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = './js/doc-texts.js?v=2.7.0';
+      s.onload = () => resolve(window.DOC_TEXTS || {});
+      s.onerror = () => { loadDocTexts.promise = null; reject(); };
+      document.head.appendChild(s);
+    });
+  }
+  return loadDocTexts.promise;
+}
+
+function renderDocFullText(fileName) {
+  const box = () => document.getElementById('doc-fulltext');
+  loadDocTexts().then(texts => {
+    const el = box();
+    if (!el || state.selectedItem?.docFile?.fileName !== fileName) return;
+    const paras = texts[fileName] || [];
+    if (!paras.length) {
+      el.innerHTML = '<p class="text-[#786C5E] italic">Chưa trích được nội dung, vui lòng tải file .docx ở trên.</p>';
+      return;
+    }
+    el.innerHTML = paras.map(t => {
+      const letters = t.replace(/[^\p{L}]/gu, '');
+      const isHeading = t.length < 140 && letters.length > 3 && (letters === letters.toUpperCase() || /^[IVX]+\.\s/.test(t));
+      if (isHeading) return `<h5 class="font-bold text-[#8B1E1E] mt-4 mb-1">${escapeHtml(t)}</h5>`;
+      if (/^[•\-+]\s/.test(t)) return `<p class="pl-4 -indent-3 mb-1.5">${escapeHtml(t)}</p>`;
+      return `<p class="mb-3 text-justify">${escapeHtml(t)}</p>`;
+    }).join('');
+  }).catch(() => {
+    const el = box();
+    if (el) el.innerHTML = '<p class="text-[#786C5E] italic">Không tải được nội dung. Vui lòng tải file .docx ở trên.</p>';
+  });
 }
 
 function closeDetailModal() {
@@ -906,7 +978,7 @@ function initAudioGuideForModal(item) {
     if (voiceInfo.isVietnamese) {
       voiceInfoEl.innerHTML = `
         <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse inline-block"></span>
-        <span>Giọng Tiếng Việt (${escapeHtml(voiceInfo.name || 'Chuẩn')})</span>
+        <span>Giọng tiếng Việt (${escapeHtml(voiceInfo.name || 'Chuẩn')})</span>
       `;
     } else {
       voiceInfoEl.innerHTML = `
@@ -963,7 +1035,7 @@ function updateAudioGuideStateUI(isPlaying, isPaused) {
       btnPlay.classList.add('bg-[#701A1A]');
     }
   } else if (isPaused) {
-    if (btnLabel) btnLabel.textContent = '▶️ Tiếp Tục Nghe';
+    if (btnLabel) btnLabel.textContent = '▶️ Tiếp tục nghe';
     if (wave) wave.classList.remove('is-speaking');
     if (statusBadge) statusBadge.textContent = 'Đang tạm dừng';
   } else {
@@ -1123,7 +1195,7 @@ function showFacebookComingSoonModal() {
     modal.classList.remove('hidden');
   } else {
     showToastNotification(
-      'Group Facebook hiện đang được Ban điều hành và Cô Mến thiết lập. Đường dẫn sẽ sớm được cập nhật!',
+      'Nhóm Facebook đang được ban điều hành và cô Mến thiết lập. Đường dẫn sẽ sớm được cập nhật!',
       'info',
       5000
     );
@@ -1269,7 +1341,7 @@ function showQuizResultModal(score, total) {
         <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-[#FFFBEB] border-2 border-[#C59B27] flex items-center justify-center text-3xl">
           ${score === 5? '🏆': '🌟'}
         </div>
-        <div class="text-xs uppercase font-bold tracking-wider text-[#C59B27] mb-1">Kết Quả Góc Học Tập</div>
+        <div class="text-xs uppercase font-bold tracking-wider text-[#C59B27] mb-1">Kết quả góc học tập</div>
         <h3 class="font-heritage-serif text-2xl font-bold text-[#8B1E1E] mb-2">${badgeTitle}</h3>
         <div class="text-4xl font-extrabold text-[#2A2521] mb-2">
           ${score} / ${total}
