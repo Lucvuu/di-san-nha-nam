@@ -414,25 +414,45 @@ function renderHeritageGrid(items) {
             </div>
           </div>
 
-          <!-- Nút hành động xem chi tiết -->
-          <div class="pt-3 border-t border-[#EADECF]/60 flex items-center justify-between gap-2">
-            <button 
-              type="button" 
-              onclick="openDetailModal('${item.id}')"
-              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#8B6914] hover:bg-[#6F540F]'} transition shadow-sm hover:shadow">
-              <span>Xem chi tiết & bản đồ</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </button>
+          <!-- Nút hành động xem chi tiết & video -->
+          <div class="pt-3 border-t border-[#EADECF]/60 flex flex-col gap-2">
+            ${item.id === 'vat-the-1' ? `
+              <button 
+                type="button" 
+                onclick="event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'}), 350);"
+                class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 transition shadow-xs" 
+                aria-label="Xem video Lễ tế cờ Đề Nắm">
+                <span>🎬 Xem video Lễ tế cờ Đề Nắm</span>
+              </button>
+            ` : (item.video ? `
+              <button 
+                type="button" 
+                onclick="event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'}), 350);"
+                class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 transition shadow-xs" 
+                aria-label="Xem video tư liệu ${escapeHtml(item.title)}">
+                <span>🎬 Xem video tư liệu</span>
+              </button>
+            ` : '')}
 
-            <a 
-              href="${item.map.directionsUrl}" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              title="Chỉ đường trên Google Maps"
-              class="p-2.5 rounded-xl border border-[#EADECF] hover:border-[#8B1E1E] text-[#5C5248] hover:text-[#8B1E1E] transition-colors"
-              aria-label="Chỉ đường đến ${escapeHtml(item.title)}">
-              <svg class="w-5 h-5 text-[#8B1E1E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
-            </a>
+            <div class="flex items-center justify-between gap-2">
+              <button 
+                type="button" 
+                onclick="openDetailModal('${item.id}')"
+                class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#8B6914] hover:bg-[#6F540F]'} transition shadow-sm hover:shadow">
+                <span>Xem chi tiết & bản đồ</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+
+              <a 
+                href="${item.map.directionsUrl}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                title="Chỉ đường trên Google Maps"
+                class="p-2.5 rounded-xl border border-[#EADECF] hover:border-[#8B1E1E] text-[#5C5248] hover:text-[#8B1E1E] transition-colors"
+                aria-label="Chỉ đường đến ${escapeHtml(item.title)}">
+                <svg class="w-5 h-5 text-[#8B1E1E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+              </a>
+            </div>
           </div>
         </div>
       </article>
@@ -616,10 +636,51 @@ function openDetailModal(itemId) {
             ${item.badge}
           </div>
         `: ''}
+
+        <!-- RICH MEDIA BAR: ĐIỀU HƯỚNG NHANH 5 ĐỊNH DẠNG ĐA PHƯƠNG TIỆN -->
+        <div class="rich-media-bar mt-4 flex flex-wrap items-center gap-2 p-2.5 rounded-xl bg-[#FAF5EE] border border-[#EADECF] text-xs">
+          <button type="button" onclick="document.getElementById('audioguide-section')?.scrollIntoView({behavior: 'smooth'})" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition flex items-center gap-1.5 shadow-xs">
+            ${ic('volume', 'w-3.5 h-3.5')} <span>Nghe thuyết minh</span>
+          </button>
+          ${item.docFile ? `
+            <a href="${item.docFile.path}" download="${escapeHtml(item.docFile.fileName)}" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#1E40AF] border border-[#EADECF] hover:bg-[#EFF6FF] transition flex items-center gap-1.5 shadow-xs">
+              ${ic('download', 'w-3.5 h-3.5')} <span>Tải file chữ (.docx)</span>
+            </a>
+          ` : ''}
+          ${item.video ? `
+            <button type="button" onclick="document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'})" class="px-3 py-1.5 rounded-lg font-semibold bg-red-600 text-white hover:bg-red-700 transition flex items-center gap-1.5 shadow-xs">
+              <span>🎬</span> <span>Xem video tư liệu</span>
+            </button>
+          ` : ''}
+          <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#166534] border border-[#EADECF] hover:bg-[#F0FDF4] transition flex items-center gap-1.5 shadow-xs">
+            ${ic('map', 'w-3.5 h-3.5')} <span>Chỉ đường Google Maps</span>
+          </a>
+        </div>
       </section>
 
-      <section class="border-b border-[#EADECF]/80 pb-6">
-      <!-- NGHE THUYẾT MINH (Web Speech API vi-VN) -->
+      <section id="audioguide-section" class="border-b border-[#EADECF]/80 pb-6">
+      <!-- BẢN GHI ÂM THUYẾT MINH THỰC TẾ (NẾU CÓ) -->
+      ${item.audioFile ? `
+        <div class="mb-4 p-3.5 rounded-xl bg-gradient-to-r from-[#FAF5EE] via-[#FFFDF9] to-[#FFFBEB] border border-[#C59B27]/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+              ${ic('volume', 'w-5 h-5')}
+            </div>
+            <div>
+              <div class="text-xs font-bold text-[#8B1E1E] flex items-center gap-1.5">
+                <span>Bản ghi âm thuyết minh tư liệu thực tế</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] bg-emerald-100 text-emerald-800 font-semibold">Âm thanh gốc</span>
+              </div>
+              <div class="text-[11px] text-[#5C5248] mt-0.5">${escapeHtml(item.audioFile.title)} (Tư liệu Trường THPT Nhã Nam)</div>
+            </div>
+          </div>
+          <audio id="modal-real-audio" controls class="h-9 w-full sm:w-64 max-w-full rounded-lg" preload="none">
+            <source src="${item.audioFile.src}" type="audio/mpeg">
+            Trình duyệt không hỗ trợ nghe âm thanh.
+          </audio>
+        </div>
+      ` : ''}
+      <!-- NGHE THUYẾT MINH TỰ ĐỘNG (Web Speech API vi-VN) -->
       <div class="flex flex-col">
         <div>
           <div class="flex items-center justify-between gap-2 mb-2 flex-wrap">
@@ -885,6 +946,24 @@ function renderDocFullText(fileName) {
 function closeDetailModal() {
   const modal = document.getElementById('heritage-detail-modal');
   if (!modal || modal.classList.contains('hidden')) return;
+
+  // Dừng phát tất cả video YouTube bên trong modal bằng cách xóa src của iframe
+  const iframes = modal.querySelectorAll('iframe');
+  iframes.forEach(iframe => {
+    if (iframe.src && (iframe.src.includes('youtube') || iframe.src.includes('youtu.be'))) {
+      iframe.src = '';
+    }
+  });
+
+  // Dừng bản ghi âm thực tế nếu đang phát
+  const realAudio = modal.querySelector('#modal-real-audio');
+  if (realAudio) {
+    try {
+      realAudio.pause();
+      realAudio.currentTime = 0;
+    } catch (e) {}
+  }
+
   modal.classList.add('hidden');
   document.body.style.overflow = '';
   state.lastFocus?.focus?.({ preventScroll: true });
