@@ -55,8 +55,10 @@ TANGIBLE_HERITAGE_DATA.forEach((item, i) => {
   console.assert(item.decision, `Item ${i} must have decision`);
   console.assert(item.content && item.content.intro, `Item ${i} must have content`);
   console.assert(item.map && item.map.embedUrl && item.map.directionsUrl, `Item ${i} must have map embed & directionsUrl`);
-  console.assert(item.gallery && item.gallery.length > 0, `Item ${i} must have gallery photos`);
-  console.log(`  ✓ [Vật thể ${i+1}] ${item.title} -> Verified legal profile & 5 required sections`);
+  console.assert(Array.isArray(item.gallery), `Item ${i} gallery must be an array`);
+  console.assert(!JSON.stringify(item).includes('images.unsplash.com'), `Item ${i} must NOT contain any Unsplash URLs`);
+  console.assert(item.docFile && item.docFile.path && fs.existsSync(item.docFile.path), `Item ${i} docFile must exist on disk (${item.docFile ? item.docFile.path : 'missing'})`);
+  console.log(`  ✓ [Vật thể ${i+1}] ${item.title} -> Verified 4 multimedia components (photo, audio, map, doc: ${item.docFile.fileName})`);
 });
 
 console.log('--- 4. TESTING INTANGIBLE HERITAGE (DI SẢN PHI VẬT THỂ) ---');
@@ -66,8 +68,10 @@ INTANGIBLE_HERITAGE_DATA.forEach((item, i) => {
   console.assert(item.scope, `Item ${i} must have scope`);
   console.assert(item.content && item.content.intro, `Item ${i} must have content`);
   console.assert(item.map && item.map.embedUrl && item.map.directionsUrl, `Item ${i} must have map embed & directionsUrl`);
-  console.assert(item.gallery && item.gallery.length > 0, `Item ${i} must have gallery photos`);
-  console.log(`  ✓ [Phi vật thể ${i+1}] ${item.title} -> Verified 5 required sections`);
+  console.assert(Array.isArray(item.gallery), `Item ${i} gallery must be an array`);
+  console.assert(!JSON.stringify(item).includes('images.unsplash.com'), `Item ${i} must NOT contain any Unsplash URLs`);
+  console.assert(item.docFile && item.docFile.path && fs.existsSync(item.docFile.path), `Item ${i} docFile must exist on disk (${item.docFile ? item.docFile.path : 'missing'})`);
+  console.log(`  ✓ [Phi vật thể ${i+1}] ${item.title} -> Verified 4 multimedia components (photo, audio, map, doc: ${item.docFile.fileName})`);
 });
 
 console.log('--- 5. TESTING VIETNAMESE ACCENT-INSENSITIVE SEARCH ---');

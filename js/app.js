@@ -11,7 +11,7 @@ const state = {
   currentCategory: 'all', // 'all' | 'vat-the' | 'phi-vat-the'
   searchQuery: '',
   activeRouteFilter: null,
-  allItems: [...TANGIBLE_HERITAGE_DATA, ...INTANGIBLE_HERITAGE_DATA],
+  allItems: [...TANGIBLE_HERITAGE_DATA,...INTANGIBLE_HERITAGE_DATA],
   filteredItems: [],
   selectedItem: null,
   lightboxImages: [],
@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initApp() {
-  const tangible = (typeof TANGIBLE_HERITAGE_DATA !== 'undefined' && Array.isArray(TANGIBLE_HERITAGE_DATA)) ? TANGIBLE_HERITAGE_DATA : [];
-  const intangible = (typeof INTANGIBLE_HERITAGE_DATA !== 'undefined' && Array.isArray(INTANGIBLE_HERITAGE_DATA)) ? INTANGIBLE_HERITAGE_DATA : [];
-  state.allItems = [...tangible, ...intangible];
+  const tangible = (typeof TANGIBLE_HERITAGE_DATA!== 'undefined' && Array.isArray(TANGIBLE_HERITAGE_DATA))? TANGIBLE_HERITAGE_DATA: [];
+  const intangible = (typeof INTANGIBLE_HERITAGE_DATA!== 'undefined' && Array.isArray(INTANGIBLE_HERITAGE_DATA))? INTANGIBLE_HERITAGE_DATA: [];
+  state.allItems = [...tangible,...intangible];
 
   try { renderConfigElements(); } catch (e) { console.warn('renderConfigElements error:', e); }
   try { renderQuickSearchTags(); } catch (e) { console.warn('renderQuickSearchTags error:', e); }
@@ -46,7 +46,7 @@ function initApp() {
 let currentTrackIndex = 0;
 
 function getActivePlaylist() {
-  return (typeof MUSIC_PLAYLIST !== 'undefined' && MUSIC_PLAYLIST.length) ? MUSIC_PLAYLIST : [
+  return (typeof MUSIC_PLAYLIST!== 'undefined' && MUSIC_PLAYLIST.length)? MUSIC_PLAYLIST: [
     {
       id: "nha-nam-trong-toi",
       title: "Nhã Nam trong tôi",
@@ -74,7 +74,7 @@ function initAudioPlayerSettings() {
   if (bgMusic) {
     bgMusic.volume = 0.5; // Thiết lập âm lượng mặc định 50%
     const currentTrack = playlist[currentTrackIndex];
-    if (currentTrack && (!bgMusic.src || !bgMusic.src.includes(currentTrack.id))) {
+    if (currentTrack && (!bgMusic.src ||!bgMusic.src.includes(currentTrack.id))) {
       bgMusic.src = currentTrack.src;
     }
 
@@ -86,7 +86,7 @@ function initAudioPlayerSettings() {
     // Xử lý nếu tải lỗi file gốc thì thử sang fallbackSrc
     bgMusic.onerror = () => {
       const track = playlist[currentTrackIndex];
-      if (track && track.fallbackSrc && bgMusic.src !== track.fallbackSrc) {
+      if (track && track.fallbackSrc && bgMusic.src!== track.fallbackSrc) {
         bgMusic.src = track.fallbackSrc;
         if (state.isAudioPlaying) {
           bgMusic.play().catch(e => console.warn('Audio fallback play error:', e));
@@ -138,9 +138,9 @@ function renderQuickSearchTags() {
     "Kẹo lạc"
   ];
 
-  const tags = (typeof QUICK_SEARCH_TAGS !== 'undefined' && Array.isArray(QUICK_SEARCH_TAGS) && QUICK_SEARCH_TAGS.length > 0)
-    ? QUICK_SEARCH_TAGS
-    : defaultTags;
+  const tags = (typeof QUICK_SEARCH_TAGS!== 'undefined' && Array.isArray(QUICK_SEARCH_TAGS) && QUICK_SEARCH_TAGS.length > 0)
+? QUICK_SEARCH_TAGS
+: defaultTags;
 
   container.innerHTML = tags.map(tag => `
     <button type="button" class="quick-tag px-3 py-1.5 text-xs font-medium rounded-full bg-[#F5EFE6] text-[#5C5248] border border-[#EADECF] hover:bg-[#8B1E1E] hover:text-white transition-all duration-200" data-tag="${tag}">
@@ -170,7 +170,7 @@ function updateCategoryCounts() {
   const vatTheCount = state.allItems.filter(i => i.category === 'vat-the').length;
   const phiVatTheCount = state.allItems.filter(i => i.category === 'phi-vat-the').length;
   const qgDacBietCount = state.allItems.filter(i => i.rank === 'quoc-gia-dac-biet' || (i.category === 'vat-the' && i.badge && i.badge.includes('đặc biệt'))).length;
-  const qgCount = state.allItems.filter(i => i.rank === 'quoc-gia' || (i.category === 'vat-the' && i.badge && i.badge.includes('cấp quốc gia') && !i.badge.includes('đặc biệt'))).length;
+  const qgCount = state.allItems.filter(i => i.rank === 'quoc-gia' || (i.category === 'vat-the' && i.badge && i.badge.includes('cấp quốc gia') &&!i.badge.includes('đặc biệt'))).length;
   const capTinhCount = state.allItems.filter(i => i.rank === 'cap-tinh' || (i.category === 'vat-the' && i.badge && i.badge.includes('cấp tỉnh'))).length;
 
   const countAllEl = document.getElementById('count-all');
@@ -180,16 +180,16 @@ function updateCategoryCounts() {
   if (countVatTheEl) countVatTheEl.textContent = vatTheCount;
 
   const countPhiVatTheEl = document.getElementById('count-phi-vat-the');
-  if (countPhiVatTheEl) countPhiVatTheEl.textContent = phiVatTheCount < 10 ? '0' + phiVatTheCount : phiVatTheCount;
+  if (countPhiVatTheEl) countPhiVatTheEl.textContent = phiVatTheCount < 10? '0' + phiVatTheCount: phiVatTheCount;
 
   const countQgDacBietEl = document.getElementById('count-qg-dac-biet');
-  if (countQgDacBietEl) countQgDacBietEl.textContent = qgDacBietCount < 10 ? '0' + qgDacBietCount : qgDacBietCount;
+  if (countQgDacBietEl) countQgDacBietEl.textContent = qgDacBietCount < 10? '0' + qgDacBietCount: qgDacBietCount;
 
   const countQgEl = document.getElementById('count-quoc-gia');
-  if (countQgEl) countQgEl.textContent = qgCount < 10 ? '0' + qgCount : qgCount;
+  if (countQgEl) countQgEl.textContent = qgCount < 10? '0' + qgCount: qgCount;
 
   const countCapTinhEl = document.getElementById('count-cap-tinh');
-  if (countCapTinhEl) countCapTinhEl.textContent = capTinhCount < 10 ? '0' + capTinhCount : capTinhCount;
+  if (countCapTinhEl) countCapTinhEl.textContent = capTinhCount < 10? '0' + capTinhCount: capTinhCount;
 }
 
 /**
@@ -204,7 +204,7 @@ function applyFiltersAndRender() {
   } else if (state.currentCategory === 'quoc-gia-dac-biet') {
     items = items.filter(item => item.rank === 'quoc-gia-dac-biet' || (item.category === 'vat-the' && item.badge && item.badge.includes('đặc biệt')));
   } else if (state.currentCategory === 'quoc-gia') {
-    items = items.filter(item => item.rank === 'quoc-gia' || (item.category === 'vat-the' && item.badge && item.badge.includes('cấp quốc gia') && !item.badge.includes('đặc biệt')));
+    items = items.filter(item => item.rank === 'quoc-gia' || (item.category === 'vat-the' && item.badge && item.badge.includes('cấp quốc gia') &&!item.badge.includes('đặc biệt')));
   } else if (state.currentCategory === 'cap-tinh') {
     items = items.filter(item => item.rank === 'cap-tinh' || (item.category === 'vat-the' && item.badge && item.badge.includes('cấp tỉnh')));
   } else if (state.currentCategory === 'phi-vat-the') {
@@ -212,7 +212,7 @@ function applyFiltersAndRender() {
   }
 
   // Lọc theo tuyến hành trình (Interactive Heritage Route Explorer)
-  if (state.activeRouteFilter && typeof HERITAGE_ROUTES !== 'undefined') {
+  if (state.activeRouteFilter && typeof HERITAGE_ROUTES!== 'undefined') {
     const route = HERITAGE_ROUTES.find(r => r.id === state.activeRouteFilter);
     if (route && Array.isArray(route.relicIds)) {
       items = items.filter(item => route.relicIds.includes(item.id));
@@ -236,9 +236,9 @@ function updateResultsSummary(count) {
   const summaryEl = document.getElementById('search-results-summary');
   if (!summaryEl) return;
 
-  if (state.activeRouteFilter && typeof HERITAGE_ROUTES !== 'undefined') {
+  if (state.activeRouteFilter && typeof HERITAGE_ROUTES!== 'undefined') {
     const route = HERITAGE_ROUTES.find(r => r.id === state.activeRouteFilter);
-    const routeName = route ? `${route.name} (${route.title})` : 'Tuyến di sản';
+    const routeName = route? `${route.name} (${route.title})`: 'Tuyến di sản';
     summaryEl.innerHTML = `<div class="flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-xl bg-[#FFFDF9] border border-[#8B1E1E]/30 text-xs sm:text-sm text-[#2A2521]">
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-[#8B1E1E]"></span>
@@ -279,11 +279,11 @@ function renderHeritageGrid(items) {
   gridContainer.innerHTML = items.map(item => {
     const isVatThe = item.category === 'vat-the';
     const locationIcon = isVatThe 
-      ? `<svg class="w-4 h-4 text-[#8B1E1E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>`
-      : `<svg class="w-4 h-4 text-[#C59B27] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>`;
+? `<svg class="w-4 h-4 text-[#8B1E1E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>`
+: `<svg class="w-4 h-4 text-[#C59B27] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>`;
 
-    const locationLabel = isVatThe ? 'Địa chỉ' : 'Phạm vi';
-    const locationValue = isVatThe ? item.address : item.scope;
+    const locationLabel = isVatThe? 'Địa chỉ': 'Phạm vi';
+    const locationValue = isVatThe? item.address: item.scope;
 
     const isFav = state.favorites.includes(item.id);
 
@@ -291,35 +291,56 @@ function renderHeritageGrid(items) {
       <article class="heritage-card rounded-2xl overflow-hidden flex flex-col h-full shadow-sm hover:shadow-xl transition-all duration-300 group">
         <!-- Ảnh đại diện -->
         <div class="relative h-56 sm:h-64 overflow-hidden bg-[#EADECF] cursor-pointer" onclick="openDetailModal('${item.id}')">
-          <img 
-            src="${item.thumbnail}" 
-            alt="${escapeHtml(item.title)}" 
-            loading="lazy"
-            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            onerror="handleImageError(this)"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+          ${item.hasRealPhoto && item.thumbnail? `
+            <img 
+              src="${item.thumbnail}" 
+              alt="${escapeHtml(item.title)}" 
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              onerror="handleImageError(this)"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+          `: `
+            <div class="w-full h-full relative flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#FAF5EE] via-[#F3ECE0] to-[#EAE0D0] overflow-hidden">
+              <img 
+                src="./assets/trong-dong-ngoc-lu-real.png" 
+                alt="" 
+                aria-hidden="true"
+                class="absolute -right-10 -bottom-10 w-44 h-44 opacity-[0.14] pointer-events-none select-none mix-blend-multiply" 
+              />
+              <div class="relative z-10 flex flex-col items-center">
+                <div class="w-12 h-12 rounded-full bg-white/90 border border-[#C59B27]/40 shadow-xs flex items-center justify-center text-xl mb-1.5 text-[#8B1E1E]">
+                  🏛️
+                </div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 border border-[#C59B27]/40 shadow-xs text-[11px] font-semibold text-[#8B1E1E]">
+                  📷 Ảnh thực tế đang cập nhật
+                </span>
+                <span class="text-[11px] text-[#786C5E] mt-1 font-medium">Trường THPT Nhã Nam đang số hóa</span>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            </div>
+          `}
           
           <!-- Huy hiệu phân loại -->
           <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[80%]">
-            <span class="px-2.5 py-1 text-xs font-semibold rounded-full shadow-sm ${isVatThe ? 'bg-[#8B1E1E] text-white' : 'bg-[#C59B27] text-white'}">
+            <span class="px-2.5 py-1 text-xs font-semibold rounded-full shadow-sm ${isVatThe? 'bg-[#8B1E1E] text-white': 'bg-[#C59B27] text-white'}">
               ${escapeHtml(item.badge || item.categoryName)}
             </span>
-            ${item.relicType ? `
+            ${item.relicType? `
               <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-black/60 backdrop-blur-sm text-white/95 border border-white/20">
                 ${escapeHtml(item.relicType)}
               </span>
-            ` : ''}
+            `: ''}
           </div>
 
           <!-- Nút Yêu thích / Lưu lại -->
           <button 
             type="button" 
             onclick="event.stopPropagation(); toggleFavorite('${item.id}');" 
-            title="${isFav ? 'Bỏ lưu' : 'Lưu lại di tích này'}"
-            aria-label="${isFav ? 'Bỏ lưu di tích ' + escapeHtml(item.title) : 'Lưu lại di tích ' + escapeHtml(item.title)}"
+            title="${isFav? 'Bỏ lưu': 'Lưu lại di tích này'}"
+            aria-label="${isFav? 'Bỏ lưu di tích ' + escapeHtml(item.title): 'Lưu lại di tích ' + escapeHtml(item.title)}"
             class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-[#8B1E1E] hover:bg-white transition-all shadow">
-            <svg class="w-5 h-5 ${isFav ? 'text-[#8B1E1E] fill-[#8B1E1E]' : 'fill-none'}" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 ${isFav? 'text-[#8B1E1E] fill-[#8B1E1E]': 'fill-none'}" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
             </svg>
           </button>
@@ -336,26 +357,26 @@ function renderHeritageGrid(items) {
         <div class="p-5 flex-1 flex flex-col justify-between bg-white">
           <div>
             <!-- Quyết định xếp hạng (nếu có) -->
-            ${item.decision ? `
+            ${item.decision? `
               <div class="mb-2.5 px-2.5 py-1.5 rounded-lg bg-[#FFF5F5] border border-[#FED7D7] text-xs font-medium text-[#8B1E1E] flex items-center gap-1.5">
                 <span class="font-bold flex-shrink-0">📜 QĐ:</span>
                 <span class="line-clamp-1" title="${escapeHtml(item.decision)}">${escapeHtml(item.decision)}</span>
               </div>
-            ` : ''}
+            `: ''}
 
             <!-- Đối tượng thờ (nếu có) -->
-            ${item.worship ? `
+            ${item.worship? `
               <div class="mb-2.5 px-2.5 py-1.5 rounded-lg bg-[#FFFBEB] border border-[#FDE68A] text-xs text-[#78350F]">
                 <strong class="font-semibold text-[#8B1E1E]">Thờ phụng:</strong> ${escapeHtml(item.worship)}
               </div>
-            ` : ''}
+            `: ''}
 
             <!-- Địa chỉ / Phạm vi thực hành -->
             <div class="flex items-start gap-2 text-xs text-[#5C5248] mb-3 bg-[#FDFBF7] p-2.5 rounded-xl border border-[#EADECF]/60">
               ${locationIcon}
               <div class="leading-relaxed">
                 <div><strong class="font-semibold text-[#2A2521]">${locationLabel}:</strong> ${escapeHtml(locationValue)}</div>
-                ${item.oldAddress ? `<div class="text-[11px] text-[#786C5E] mt-0.5"><span class="font-medium text-[#5C5248]">Trước 01/7/2025:</span> ${escapeHtml(item.oldAddress)}</div>` : ''}
+                ${item.oldAddress? `<div class="text-[11px] text-[#786C5E] mt-0.5"><span class="font-medium text-[#5C5248]">Trước 01/7/2025:</span> ${escapeHtml(item.oldAddress)}</div>`: ''}
               </div>
             </div>
 
@@ -372,12 +393,34 @@ function renderHeritageGrid(items) {
             </div>
           </div>
 
+          <!-- Dải biểu tượng đa phương tiện (Nhiệm vụ 3) -->
+          <div class="mb-3 pt-2.5 border-t border-[#EADECF]/70 flex flex-wrap items-center justify-between gap-1.5 text-[11px]">
+            <span class="font-semibold text-[#8B1E1E] flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#8B1E1E]"></span>
+              Đa phương tiện:
+            </span>
+            <div class="flex items-center gap-1 flex-wrap">
+              <span class="px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#2A2521] border border-[#EADECF] font-medium" title="Ảnh tư liệu thực tế">
+                🖼️ ${item.hasRealPhoto? 'Ảnh thật': 'Chờ ảnh'}
+              </span>
+              <span class="px-2 py-0.5 rounded-md bg-[#FFF5F5] text-[#8B1E1E] border border-[#FED7D7] font-medium" title="Thuyết minh âm thanh tự động">
+                🔊 Thuyết minh
+              </span>
+              <span class="px-2 py-0.5 rounded-md bg-[#F0FDF4] text-[#166534] border border-[#BBF7D0] font-medium" title="Bản đồ Google Maps & Dẫn đường">
+                🗺️ Bản đồ
+              </span>
+              <span class="px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] font-medium" title="Tải file Word (.docx) bài giới thiệu">
+                📄 File Word
+              </span>
+            </div>
+          </div>
+
           <!-- Nút hành động xem chi tiết -->
           <div class="pt-3 border-t border-[#EADECF]/60 flex items-center justify-between gap-2">
             <button 
               type="button" 
               onclick="openDetailModal('${item.id}')"
-              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe ? 'bg-[#8B1E1E] hover:bg-[#6F1515]' : 'bg-[#C59B27] hover:bg-[#A67C18]'} transition-all shadow-sm hover:shadow">
+              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#C59B27] hover:bg-[#A67C18]'} transition-all shadow-sm hover:shadow">
               <span>Xem chi tiết & bản đồ</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>
@@ -420,7 +463,7 @@ function openDetailModal(itemId) {
   const isVatThe = item.category === 'vat-the';
   const modal = document.getElementById('heritage-detail-modal');
   const container = document.getElementById('modal-dynamic-content');
-  if (!modal || !container) return;
+  if (!modal ||!container) return;
 
   history.replaceState(null, '', `#item=${item.id}`);
 
@@ -456,7 +499,7 @@ function openDetailModal(itemId) {
           </ul>
         </div>
 
-        ${item.content.studyNote ? `
+        ${item.content.studyNote? `
           <div class="mt-4 p-4 rounded-xl bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-sm">
             <div class="font-bold flex items-center gap-2 mb-1">
               <svg class="w-4 h-4 text-[#D97706]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
@@ -464,7 +507,7 @@ function openDetailModal(itemId) {
             </div>
             <p class="leading-relaxed">${escapeHtml(item.content.studyNote)}</p>
           </div>
-        ` : ''}
+        `: ''}
       </div>
     `;
   } else {
@@ -498,7 +541,7 @@ function openDetailModal(itemId) {
           </ul>
         </div>
 
-        ${item.content.preservationValue ? `
+        ${item.content.preservationValue? `
           <div class="mt-4 p-4 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] text-[#166534] text-sm">
             <div class="font-bold flex items-center gap-2 mb-1">
               <svg class="w-4 h-4 text-[#16a34a]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
@@ -506,7 +549,7 @@ function openDetailModal(itemId) {
             </div>
             <p class="leading-relaxed">${escapeHtml(item.content.preservationValue)}</p>
           </div>
-        ` : ''}
+        `: ''}
       </div>
     `;
   }
@@ -518,7 +561,7 @@ function openDetailModal(itemId) {
     <!-- Thanh điều hướng và nút thao tác trên modal -->
     <div class="flex items-center justify-between pb-4 mb-6 border-b border-[#EADECF]">
       <div class="flex items-center gap-2">
-        <span class="px-3 py-1 rounded-full text-xs font-bold ${isVatThe ? 'bg-[#8B1E1E] text-white' : 'bg-[#C59B27] text-white'}">
+        <span class="px-3 py-1 rounded-full text-xs font-bold ${isVatThe? 'bg-[#8B1E1E] text-white': 'bg-[#C59B27] text-white'}">
           ${item.categoryName}
         </span>
         <span class="text-xs text-[#786C5E] font-medium">Mã số: #${item.id}</span>
@@ -664,38 +707,38 @@ function openDetailModal(itemId) {
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-1">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">1</span>
-          ${isVatThe ? 'Tên di tích lịch sử' : 'Tên di sản văn hóa'}
+          ${isVatThe? 'Tên di tích lịch sử': 'Tên di sản văn hóa'}
         </div>
         <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold text-[#8B1E1E] leading-tight">
           ${escapeHtml(item.title)}
         </h2>
-        ${item.badge ? `
+        ${item.badge? `
           <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A]">
             <svg class="w-4 h-4 text-[#D97706]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
             ${item.badge}
           </div>
-        ` : ''}
+        `: ''}
       </section>
 
       <!-- PHẦN 2: ĐỊA CHỈ / PHẠM VI -->
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-2">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">2</span>
-          ${isVatThe ? 'Địa chỉ cụ thể' : 'Phạm vi thực hành di sản'}
+          ${isVatThe? 'Địa chỉ cụ thể': 'Phạm vi thực hành di sản'}
         </div>
         <div class="bg-[#FDFBF7] p-4 rounded-xl border border-[#EADECF] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div class="flex items-start gap-3">
             <svg class="w-5 h-5 text-[#8B1E1E] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
             <div>
-              <div class="text-xs text-[#786C5E] font-medium mb-0.5">${isVatThe ? 'Địa chỉ' : 'Địa bàn cộng đồng'}:</div>
+              <div class="text-xs text-[#786C5E] font-medium mb-0.5">${isVatThe? 'Địa chỉ': 'Địa bàn cộng đồng'}:</div>
               <div class="text-base font-semibold text-[#2A2521] leading-snug">
-                ${escapeHtml(isVatThe ? item.address : item.scope)}
+                ${escapeHtml(isVatThe? item.address: item.scope)}
               </div>
             </div>
           </div>
           <button 
             type="button" 
-            onclick="copyToClipboard('${escapeHtml(isVatThe ? item.address : item.scope)}', 'Đã sao chép địa chỉ!')"
+            onclick="copyToClipboard('${escapeHtml(isVatThe? item.address: item.scope)}', 'Đã sao chép địa chỉ!')"
             class="px-3 py-1.5 rounded-lg text-xs font-medium bg-white text-[#5C5248] border border-[#EADECF] hover:bg-[#F5EFE6] transition-colors flex items-center gap-1.5 flex-shrink-0">
             <svg class="w-4 h-4 text-[#C59B27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
             Sao chép
@@ -707,7 +750,7 @@ function openDetailModal(itemId) {
       <section class="border-b border-[#EADECF]/80 pb-5">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27] mb-3">
           <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">3</span>
-          ${isVatThe ? 'Nội dung về di tích' : 'Nội dung di sản'}
+          ${isVatThe? 'Nội dung về di tích': 'Nội dung di sản'}
         </div>
         ${section3Html}
       </section>
@@ -756,7 +799,7 @@ function openDetailModal(itemId) {
         <div class="flex items-center justify-between mb-3">
           <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#C59B27]">
             <span class="w-6 h-6 rounded-full bg-[#C59B27] text-white flex items-center justify-center text-xs">5</span>
-            ${isVatThe ? 'Thư viện ảnh về di tích' : 'Thư viện ảnh di tích và di sản'}
+            ${isVatThe? 'Thư viện ảnh về di tích': 'Thư viện ảnh di tích và di sản'}
           </div>
           <span class="text-xs text-[#786C5E] font-medium">Nhấp vào ảnh để phóng to (Lightbox)</span>
         </div>
@@ -1030,7 +1073,7 @@ function updateLightboxContent() {
   const counterEl = document.getElementById('lightbox-counter');
   
   const current = state.lightboxImages[state.lightboxIndex];
-  if (!current || !imgEl) return;
+  if (!current ||!imgEl) return;
 
   imgEl.src = current.url;
   imgEl.onerror = () => handleImageError(imgEl);
@@ -1119,10 +1162,10 @@ function toggleFavorite(itemId) {
  * ====================================================================
  */
 function getQuizList() {
-  if (typeof QUIZ_DATA !== 'undefined' && Array.isArray(QUIZ_DATA) && QUIZ_DATA.length > 0) {
+  if (typeof QUIZ_DATA!== 'undefined' && Array.isArray(QUIZ_DATA) && QUIZ_DATA.length > 0) {
     return QUIZ_DATA;
   }
-  if (typeof HERITAGE_QUIZ_DATA !== 'undefined' && Array.isArray(HERITAGE_QUIZ_DATA) && HERITAGE_QUIZ_DATA.length > 0) {
+  if (typeof HERITAGE_QUIZ_DATA!== 'undefined' && Array.isArray(HERITAGE_QUIZ_DATA) && HERITAGE_QUIZ_DATA.length > 0) {
     return HERITAGE_QUIZ_DATA;
   }
   return [];
@@ -1224,7 +1267,7 @@ function showQuizResultModal(score, total) {
     resultContainer.innerHTML = `
       <div class="text-center py-4">
         <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-[#FFFBEB] border-2 border-[#C59B27] flex items-center justify-center text-3xl">
-          ${score === 5 ? '🏆' : '🌟'}
+          ${score === 5? '🏆': '🌟'}
         </div>
         <div class="text-xs uppercase font-bold tracking-wider text-[#C59B27] mb-1">Kết Quả Góc Học Tập</div>
         <h3 class="font-heritage-serif text-2xl font-bold text-[#8B1E1E] mb-2">${badgeTitle}</h3>
@@ -1324,7 +1367,7 @@ const LUU_THUY_KIM_TIEN_NOTES = [
   { note: 440.00, dur: 320 }, // Lá
   { note: 392.00, dur: 350 }, // Son
   { note: 349.23, dur: 380 }, // Pha
-  { note: 293.66, dur: 700 }  // Rề
+  { note: 293.66, dur: 700 } // Rề
 ];
 
 /**
@@ -1341,12 +1384,12 @@ function updateMusicPlayerUI() {
   const track = playlist[currentTrackIndex];
   if (!track) return;
 
-  const labels = document.querySelectorAll('#sound-toggle-label, .sound-track-label');
+  const labels = document.querySelectorAll('#sound-toggle-label,.sound-track-label');
   labels.forEach(label => {
-    label.textContent = state.isAudioPlaying ? `♫ Đang phát: ${track.title}` : `♫ ${track.title}`;
+    label.textContent = state.isAudioPlaying? `♫ Đang phát: ${track.title}`: `♫ ${track.title}`;
   });
 
-  const containers = document.querySelectorAll('.music-player-pill, .sound-player-btn');
+  const containers = document.querySelectorAll('.music-player-pill,.sound-player-btn');
   containers.forEach(container => {
     if (state.isAudioPlaying) {
       container.classList.add('playing');
@@ -1357,7 +1400,7 @@ function updateMusicPlayerUI() {
 
   const btn = document.getElementById('sound-toggle-btn');
   if (btn) {
-    btn.title = state.isAudioPlaying ? `Tạm dừng: ${track.title}` : `Phát bài: ${track.title}`;
+    btn.title = state.isAudioPlaying? `Tạm dừng: ${track.title}`: `Phát bài: ${track.title}`;
   }
 }
 
@@ -1378,7 +1421,7 @@ async function toggleMusicPlayback() {
     showToastNotification(`Đã tạm dừng: ${track.title}`, 'info');
   } else {
     // Đảm bảo trỏ đúng bài hát
-    if (!bgMusic.src || !bgMusic.src.includes(track.id)) {
+    if (!bgMusic.src ||!bgMusic.src.includes(track.id)) {
       bgMusic.src = track.src;
     }
     bgMusic.volume = 0.5;
@@ -1457,7 +1500,7 @@ function startSynthLuuThuy() {
     currentSynthIndex = 0;
 
     function playNextNote() {
-      if (!state.isAudioPlaying || !audioCtx) return;
+      if (!state.isAudioPlaying ||!audioCtx) return;
 
       const item = LUU_THUY_KIM_TIEN_NOTES[currentSynthIndex];
       playZitherPluck(item.note, item.dur);
@@ -1598,12 +1641,12 @@ function setupEventListeners() {
       closeQuizResultModal();
     } else if (e.key === 'ArrowLeft') {
       const lightbox = document.getElementById('lightbox-modal');
-      if (lightbox && !lightbox.classList.contains('hidden')) {
+      if (lightbox &&!lightbox.classList.contains('hidden')) {
         prevLightboxImage();
       }
     } else if (e.key === 'ArrowRight') {
       const lightbox = document.getElementById('lightbox-modal');
-      if (lightbox && !lightbox.classList.contains('hidden')) {
+      if (lightbox &&!lightbox.classList.contains('hidden')) {
         nextLightboxImage();
       }
     }
@@ -1614,7 +1657,7 @@ function setupEventListeners() {
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
       const isHidden = mobileMenu.classList.toggle('hidden');
-      mobileMenuBtn.setAttribute('aria-expanded', isHidden ? 'false' : 'true');
+      mobileMenuBtn.setAttribute('aria-expanded', isHidden? 'false': 'true');
     });
   }
 }
@@ -1692,7 +1735,7 @@ function filterInventoryModal(value) {
 function renderRelicsInventoryModalContent(keyword = '') {
   const container = document.getElementById('inventory-modal-content');
   if (!container) return;
-  if (typeof OFFICIAL_COMMUNE_RELICS === 'undefined' || !OFFICIAL_COMMUNE_RELICS.groups) return;
+  if (typeof OFFICIAL_COMMUNE_RELICS === 'undefined' ||!OFFICIAL_COMMUNE_RELICS.groups) return;
 
   const kw = (keyword || '').toLowerCase().trim();
 
@@ -1729,7 +1772,7 @@ function renderRelicsInventoryModalContent(keyword = '') {
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
           ${filteredItems.map((item, idx) => {
-            const hasDetail = !!item.featuredId;
+            const hasDetail =!!item.featuredId;
             return `
               <div class="p-2.5 rounded-xl bg-white border border-[#EADECF]/70 flex items-center justify-between gap-2 hover:border-[#8B1E1E]/50 transition-colors shadow-xs">
                 <div class="min-w-0 flex-1">
@@ -1741,9 +1784,9 @@ function renderRelicsInventoryModalContent(keyword = '') {
                       ${escapeHtml(item.name)}
                     </strong>
                   </div>
-                  ${item.type ? `<span class="text-[11px] text-[#786C5E] block truncate pl-6">${escapeHtml(item.type)}</span>` : ''}
+                  ${item.type? `<span class="text-[11px] text-[#786C5E] block truncate pl-6">${escapeHtml(item.type)}</span>`: ''}
                 </div>
-                ${hasDetail ? `
+                ${hasDetail? `
                   <button 
                     type="button" 
                     onclick="closeRelicsInventoryModal(); openDetailModal('${item.featuredId}');" 
@@ -1751,7 +1794,7 @@ function renderRelicsInventoryModalContent(keyword = '') {
                     title="Xem hồ sơ số hóa chi tiết">
                     Xem hồ sơ ➔
                   </button>
-                ` : `
+                `: `
                   <span class="text-[10px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md whitespace-nowrap flex-shrink-0">
                     Trong danh mục
                   </span>
@@ -1774,11 +1817,11 @@ function renderRelicsInventoryModalContent(keyword = '') {
 function escapeHtml(str) {
   if (!str) return '';
   return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+.replace(/&/g, '&amp;')
+.replace(/</g, '&lt;')
+.replace(/>/g, '&gt;')
+.replace(/"/g, '&quot;')
+.replace(/'/g, '&#039;');
 }
 
 /**
@@ -1827,7 +1870,7 @@ function selectRouteRelic(relicId, event) {
   }
 
   // 1. Zoom iframe bản đồ vào đúng di tích
-  const relic = (typeof TANGIBLE_HERITAGE_DATA !== 'undefined') ? TANGIBLE_HERITAGE_DATA.find(r => r.id === relicId) : null;
+  const relic = (typeof TANGIBLE_HERITAGE_DATA!== 'undefined')? TANGIBLE_HERITAGE_DATA.find(r => r.id === relicId): null;
   if (relic && relic.map && relic.map.embedUrl) {
     updateMapFrame(relic.map.embedUrl, `📍 ${relic.title} - ${relic.address}`);
 
@@ -1857,7 +1900,7 @@ function resetToCommuneMap() {
   });
 
   // 2. Khôi phục iframe bản đồ toàn xã
-  const defaultMap = (typeof DEFAULT_COMMUNE_MAP !== 'undefined') ? DEFAULT_COMMUNE_MAP : {
+  const defaultMap = (typeof DEFAULT_COMMUNE_MAP!== 'undefined')? DEFAULT_COMMUNE_MAP: {
     embedUrl: "https://www.google.com/maps?q=Nh%C3%A3+Nam,+B%E1%BA%AFc+Ninh&output=embed",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=UBND+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
     directionsText: "📍 Dẫn đường đến trung tâm xã Nhã Nam"

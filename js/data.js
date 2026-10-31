@@ -264,7 +264,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Hả, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đình Hả",
       "Chùa Hả",
@@ -299,16 +299,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Hả,+Thôn+Hả,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Khu di tích đình - chùa Hả (di tích quốc gia đặc biệt)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Toàn cảnh sân đình Hả - nơi chứng kiến lễ tế cờ lịch sử ngày 16/3/1884 mở đầu khởi nghĩa Yên Thế"
-      },
-      {
-        "url": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Hệ thống mái ngói mũi hài rêu phong và đầu đao cong vút thanh thoát của đình Hả"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "dinh-chua-ha.docx",
+      "title": "Hồ sơ di tích Đình - chùa Hả",
+      "path": "./assets/docs/dinh-chua-ha.docx",
+      "size": "39 KB"
+    }
   },
   {
     "id": "vat-the-2",
@@ -325,7 +324,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Tổ dân phố Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Chùa Tứ Giáp",
       "Sáu điều Bác Hồ dạy",
@@ -357,16 +356,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Tứ+Giáp,+Tổ+dân+phố+Chùa+Nguộn,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Chùa Tứ Giáp & khu lưu niệm Sáu điều Bác Hồ dạy CAND"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Toàn cảnh tam quan và khuôn viên thanh tịnh rợp bóng cây xanh tại chùa Tứ Giáp"
-      },
-      {
-        "url": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Nét chạm khắc rồng phượng tinh xảo trên bờ nóc mái chùa cổ Đại Phúc Tự"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "chua-tu-giap.docx",
+      "title": "Hồ sơ di tích Chùa Tứ Giáp",
+      "path": "./assets/docs/chua-tu-giap.docx",
+      "size": "39 KB"
+    }
   },
   {
     "id": "vat-the-3",
@@ -383,7 +381,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Đồng Điều, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Thôn Đồng Điều",
       "Chùa Đồng Điều",
@@ -412,12 +410,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Đồng+Điều,+Thôn+Đồng+Điều,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Di tích lịch sử thôn Đồng Điều (chùa Đồng Điều)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Toàn cảnh di tích lịch sử cách mạng chùa Đồng Điều - xã Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "chua-dong-dieu.docx",
+      "title": "Hồ sơ di tích Chùa Đồng Điều",
+      "path": "./assets/docs/chua-dong-dieu.docx",
+      "size": "39 KB"
+    }
   },
   {
     "id": "vat-the-4",
@@ -434,7 +435,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Tổ dân phố Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đền Gốc Khế",
       "Rừng Gốc Khế",
@@ -464,12 +465,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đền+Gốc+Khế,+Tổ+dân+phố+Cầu+Thượng,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đền Gốc Khế & rừng Gốc Khế lịch sử"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Cổng nghi môn và đền chính đền Gốc Khế uy nghiêm giữa bóng cây xanh ngát"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "den-goc-khe.docx",
+      "title": "Thuyết minh dự án tu bổ Đền Gốc Khế",
+      "path": "./assets/docs/den-goc-khe.docx",
+      "size": "81 KB"
+    }
   },
   {
     "id": "vat-the-5",
@@ -486,7 +490,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Đồi Phủ, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đồi Phủ",
       "Ao ông Chấn Ký",
@@ -514,12 +518,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đồi+Phủ+Nhã+Nam,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đồi Phủ (địa điểm: Ao ông Chấn Ký)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Đỉnh đồi Phủ cao thoáng nhìn bao quát toàn bộ vùng đất di sản Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "doi-phu-nha-nam.docx",
+      "title": "Tư liệu lịch sử Đồi Phủ - Đồn Nhã Nam",
+      "path": "./assets/docs/doi-phu-nha-nam.docx",
+      "size": "39 KB"
+    }
   },
   {
     "id": "vat-the-6",
@@ -536,7 +543,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Tiến Phan 2, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đình Nhã Nam",
       "Đình làng Chuông",
@@ -565,12 +572,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Nhã+Nam,+Thôn+Tiến+Phan+2,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đình làng Chuông (đình Nhã Nam)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Kiến trúc cổ kính với mái đao cong thanh thoát của đình làng Chuông - Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "dinh-lang-chuong.docx",
+      "title": "Tư liệu khoa học Đình làng Chuông",
+      "path": "./assets/docs/dinh-lang-chuong.docx",
+      "size": "16 KB"
+    }
   },
   {
     "id": "vat-the-7",
@@ -587,7 +597,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Tổ dân phố Tân Quang, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Chùa Nam Thiên",
       "Chùa Phố",
@@ -615,12 +625,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Nam+Thiên,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Chùa Nam Thiên (chùa Phố)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Khuôn viên chùa Nam Thiên thanh tịnh rợp mát bóng cây cổ thụ giữa phố Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "chua-nam-thien.docx",
+      "title": "Tư liệu khoa học Chùa Nam Thiên (chùa Phố)",
+      "path": "./assets/docs/chua-nam-thien.docx",
+      "size": "15 KB"
+    }
   },
   {
     "id": "vat-the-8",
@@ -637,7 +650,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Tiến Phan 1, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đền Đề Truật",
       "Dương Văn Truật",
@@ -665,12 +678,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đền+Đề+Truật,+Thôn+Tiến+Phan+1,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đền Đề Truật (di tích cấp tỉnh)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Đền thờ vị tướng tài ba Đề Truật - người con kiên trung của mảnh đất Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "den-de-truat.docx",
+      "title": "Tư liệu nghiên cứu Đền Đề Truật",
+      "path": "./assets/docs/den-de-truat.docx",
+      "size": "21 KB"
+    }
   },
   {
     "id": "vat-the-9",
@@ -687,7 +703,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Khu vực đồi Phủ, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Nghĩa địa Pháp",
       "Đồi Phủ",
@@ -714,12 +730,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Nghĩa+địa+Pháp,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Nghĩa địa Pháp (khu vực đồi Phủ Nhã Nam)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Bia đá chứng tích thời thuộc địa tại khu vực nghĩa địa Pháp - đồi Phủ Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "nghia-dia-phap.docx",
+      "title": "Chứng tích lịch sử quân sự Nghĩa địa Pháp",
+      "path": "./assets/docs/nghia-dia-phap.docx",
+      "size": "20 KB"
+    }
   },
   {
     "id": "vat-the-10",
@@ -736,7 +755,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Khu vực Gốc Dẻ, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đền Cả Trọng",
       "Gốc Dẻ",
@@ -765,12 +784,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đền+thờ+Cả+Trọng,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đền thờ Cả Trọng (đền Gốc Dẻ)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Không gian trang nghiêm đền thờ tướng quân Cả Trọng tại xã Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "den-ca-trong.docx",
+      "title": "Hồ sơ di tích Đền thờ Cả Trọng",
+      "path": "./assets/docs/den-ca-trong.docx",
+      "size": "38 KB"
+    }
   },
   {
     "id": "vat-the-11",
@@ -787,7 +809,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Dương Lâm, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã An Dương, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đình Dương Lâm",
       "An Dương",
@@ -814,12 +836,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Dương+Lâm,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đình Dương Lâm (di tích quốc gia đặc biệt)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Kiến trúc cổ kính của đình làng Dương Lâm - xã Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "dinh-duong-lam.docx",
+      "title": "Hồ sơ di tích Đình Dương Lâm",
+      "path": "./assets/docs/dinh-duong-lam.docx",
+      "size": "38 KB"
+    }
   },
   {
     "id": "vat-the-12",
@@ -836,7 +861,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đền Cầu Thượng",
       "Đình Cầu Thượng",
@@ -862,12 +887,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Cầu+Thượng,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đình Cầu Thượng (di tích cấp tỉnh)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Không gian trang nghiêm đình làng Cầu Thượng - xã Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "den-cau-thuong.docx",
+      "title": "Hồ sơ di tích Đền Cầu Thượng",
+      "path": "./assets/docs/den-cau-thuong.docx",
+      "size": "38 KB"
+    }
   },
   {
     "id": "vat-the-13",
@@ -884,7 +912,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Sậy, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đình Sậy",
       "Thôn Sậy",
@@ -910,12 +938,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Sậy,+Thôn+Sậy,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đình Sậy (di tích cấp tỉnh)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Mái ngói rêu phong đình làng Sậy cổ kính"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "dinh-say.docx",
+      "title": "Hồ sơ di tích Đình Sậy",
+      "path": "./assets/docs/dinh-say.docx",
+      "size": "38 KB"
+    }
   },
   {
     "id": "vat-the-14",
@@ -932,7 +963,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Nẻo, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đình Nẻo",
       "Thôn Nẻo",
@@ -958,12 +989,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Nẻo,+Thôn+Nẻo,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đình Nẻo (di tích cấp tỉnh)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Kiến trúc truyền thống trang nhã của đình làng Nẻo"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "dinh-neo.docx",
+      "title": "Hồ sơ di tích Đình Nẻo",
+      "path": "./assets/docs/dinh-neo.docx",
+      "size": "38 KB"
+    }
   },
   {
     "id": "vat-the-15",
@@ -980,7 +1014,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Dương Sơn, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Chùa Dương Sơn",
       "Dương Sơn",
@@ -1006,12 +1040,15 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Dương+Sơn,+Thôn+Dương+Sơn,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Chùa Dương Sơn (di tích cấp tỉnh)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Chùa cổ Dương Sơn yên bình giữa bóng cây xanh ngát"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "chua-duong-son.docx",
+      "title": "Hồ sơ di tích Chùa Dương Sơn",
+      "path": "./assets/docs/chua-duong-son.docx",
+      "size": "38 KB"
+    }
   },
   {
     "id": "vat-the-16",
@@ -1028,7 +1065,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "address": "Thôn Sặt, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
-    "thumbnail": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80",
+    "thumbnail": null,
     "tags": [
       "Đình làng Sặt",
       "Thôn Sặt",
@@ -1055,234 +1092,256 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+làng+Sặt,+Thôn+Sặt,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
       "locationName": "Đình làng Sặt (di tích cấp tỉnh)"
     },
-    "gallery": [
-      {
-        "url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80",
-        "caption": "Không gian trang nghiêm cổ kính đình làng Sặt - xã Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "dinh-sat.docx",
+      "title": "Hồ sơ di tích Đình làng Sặt",
+      "path": "./assets/docs/dinh-sat.docx",
+      "size": "38 KB"
+    }
   }
 ];
 
-/**
- * --------------------------------------------------------------------
- * DANH MỤC DI SẢN PHI VẬT THỂ (INTANGIBLE HERITAGE DATA - 5 DI SẢN TIÊU BIỂU)
- * --------------------------------------------------------------------
- */
 const INTANGIBLE_HERITAGE_DATA = [
   {
-    id: "phi-vat-the-1",
-    category: "phi-vat-the",
-    categoryName: "Di sản phi vật thể",
-    badge: "Lễ hội truyền thống",
-    title: "Lễ hội khởi nghĩa Yên Thế tại xã Nhã Nam",
-    shortTitle: "Lễ hội Yên Thế tại Nhã Nam",
-    scope: "Địa bàn toàn xã Nhã Nam (trọng tâm tại đình - chùa Hả, chùa Tứ Giáp và đồi Phủ)",
-    heroImage: "./assets/images/hero-phi-vat-the.jpg",
-    thumbnail: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=600&q=80",
-    tags: ["Lễ hội Yên Thế", "Lễ hội đình Hả", "Chùa Tứ Giáp", "16 tháng 3", "Tế cờ", "Lễ hội truyền thống", "Xã Nhã Nam"],
-    overview: "Lễ hội truyền thống tưởng nhớ ngày thủ lĩnh Lương Văn Nắm tế cờ phát động khởi nghĩa ngày 16/3 và tri ân các anh hùng nghĩa sĩ Yên Thế.",
-    
-    content: {
-      intro: "Lễ hội truyền thống tại xã Nhã Nam diễn ra vào tháng Giêng và tháng Ba âm lịch hàng năm (đặc biệt là ngày 15 - 16/3 dương lịch gắn với lễ hội khởi nghĩa Yên Thế). Đây là ngày hội non sông tôn vinh hào khí quật cường của nghĩa quân áo vải và giáo dục truyền thống cách mạng cho muôn đời sau.",
-      originAndMeaning: [
+    "id": "phi-vat-the-1",
+    "category": "phi-vat-the",
+    "categoryName": "Di sản phi vật thể",
+    "badge": "Lễ hội truyền thống",
+    "title": "Lễ hội khởi nghĩa Yên Thế tại xã Nhã Nam",
+    "shortTitle": "Lễ hội Yên Thế tại Nhã Nam",
+    "scope": "Địa bàn toàn xã Nhã Nam (trọng tâm tại đình - chùa Hả, chùa Tứ Giáp và đồi Phủ)",
+    "heroImage": "./assets/images/hero-phi-vat-the.jpg",
+    "thumbnail": null,
+    "tags": [
+      "Lễ hội Yên Thế",
+      "Lễ hội đình Hả",
+      "Chùa Tứ Giáp",
+      "16 tháng 3",
+      "Tế cờ",
+      "Lễ hội truyền thống",
+      "Xã Nhã Nam"
+    ],
+    "overview": "Lễ hội truyền thống tưởng nhớ ngày thủ lĩnh Lương Văn Nắm tế cờ phát động khởi nghĩa ngày 16/3 và tri ân các anh hùng nghĩa sĩ Yên Thế.",
+    "content": {
+      "intro": "Lễ hội truyền thống tại xã Nhã Nam diễn ra vào tháng Giêng và tháng Ba âm lịch hàng năm (đặc biệt là ngày 15 - 16/3 dương lịch gắn với lễ hội khởi nghĩa Yên Thế). Đây là ngày hội non sông tôn vinh hào khí quật cường của nghĩa quân áo vải và giáo dục truyền thống cách mạng cho muôn đời sau.",
+      "originAndMeaning": [
         "**Tưởng niệm ngày lễ tế cờ lịch sử 16/3/1884:** Tái hiện trang nghiêm nghi lễ cắt máu ăn thề của Đề Nắm và nghĩa quân tại sân đình Hả.",
         "**Tôn vinh thủ lĩnh Lương Văn Nắm và Hoàng Hoa Thám:** Khẳng định tầm vóc lịch sử của cuộc khởi nghĩa nông dân vĩ đại nhất cuối thế kỷ XIX - đầu thế kỷ XX.",
         "**Cố kết cộng đồng làng xã:** Dịp tụ hội của con em quê hương Nhã Nam khắp mọi miền đất nước trở về nguồn cội."
       ],
-      ritualsAndActivities: [
+      "ritualsAndActivities": [
         "**Phần lễ trang nghiêm:** Lễ rước kiệu truyền thống từ các làng thôn, lễ dâng hương tưởng niệm, lễ tế cờ tái hiện lịch sử hào hùng.",
         "**Phần hội tưng bừng:** Hội diễn văn nghệ quần chúng, thi đấu cờ tướng, kéo co, đấu vật dân tộc, giải bóng chuyền, hội chọi gà và các trò chơi dân gian đặc sắc."
       ],
-      preservationValue: "Lễ hội là không gian văn hóa sống động kết nối các thế hệ học sinh trường THPT Nhã Nam với cội nguồn lịch sử oanh liệt của ông cha."
+      "preservationValue": "Lễ hội là không gian văn hóa sống động kết nối các thế hệ học sinh trường THPT Nhã Nam với cội nguồn lịch sử oanh liệt của ông cha."
     },
-
-    map: {
-      embedUrl: "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Đình+Hả,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
-      locationName: "Trung tâm lễ hội Yên Thế tại đình Hả - xã Nhã Nam"
+    "map": {
+      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Hả,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
+      "locationName": "Trung tâm lễ hội Yên Thế tại đình Hả - xã Nhã Nam"
     },
-
-    gallery: [
-      {
-        url: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1000&q=80",
-        caption: "Không khí lễ hội tưng bừng cờ hoa rực rỡ sắc màu truyền thống tại Nhã Nam"
-      },
-      {
-        url: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=80",
-        caption: "Đoàn rước kiệu trang nghiêm của các dòng họ tiến về sân đình dự hội"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "le-hoi-yen-the-nha-nam.docx",
+      "title": "Tư liệu Lễ hội Yên Thế tại xã Nhã Nam",
+      "path": "./assets/docs/le-hoi-yen-the-nha-nam.docx",
+      "size": "38 KB"
+    }
   },
-
   {
-    id: "phi-vat-the-2",
-    category: "phi-vat-the",
-    categoryName: "Di sản phi vật thể",
-    badge: "Nghệ thuật trình diễn dân gian",
-    title: "Nghệ thuật hát chèo truyền thống xã Nhã Nam",
-    shortTitle: "Hát chèo Nhã Nam",
-    scope: "Các câu lạc bộ chèo tại các thôn: Làng Chuông, Chùa Nguộn, Cầu Thượng, xã Nhã Nam",
-    heroImage: "./assets/images/hero-phi-vat-the.jpg",
-    thumbnail: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80",
-    tags: ["Hát chèo", "Chiếu chèo", "Nghệ thuật truyền thống", "Dân ca", "Làng Chuông", "Xã Nhã Nam"],
-    overview: "Di sản văn hóa phi vật thể đặc sắc, những làn điệu chèo mượt mà thắm đượm tình làng nghĩa xóm của người dân vùng đất Cầu Vồng.",
-    
-    content: {
-      intro: "Nghệ thuật hát chèo từ lâu đã bén rễ sâu đậm trong đời sống tinh thần của nhân dân xã Nhã Nam. Những làn điệu chèo ngọt ngào, hóm hỉnh mà sâu lắng đã nuôi dưỡng tâm hồn biết bao thế hệ người dân quê hương đất Cầu Vồng.",
-      originAndMeaning: [
+    "id": "phi-vat-the-2",
+    "category": "phi-vat-the",
+    "categoryName": "Di sản phi vật thể",
+    "badge": "Nghệ thuật trình diễn dân gian",
+    "title": "Nghệ thuật hát chèo truyền thống xã Nhã Nam",
+    "shortTitle": "Hát chèo Nhã Nam",
+    "scope": "Các câu lạc bộ chèo tại các thôn: Làng Chuông, Chùa Nguộn, Cầu Thượng, xã Nhã Nam",
+    "heroImage": "./assets/images/hero-phi-vat-the.jpg",
+    "thumbnail": null,
+    "tags": [
+      "Hát chèo",
+      "Chiếu chèo",
+      "Nghệ thuật truyền thống",
+      "Dân ca",
+      "Làng Chuông",
+      "Xã Nhã Nam"
+    ],
+    "overview": "Di sản văn hóa phi vật thể đặc sắc, những làn điệu chèo mượt mà thắm đượm tình làng nghĩa xóm của người dân vùng đất Cầu Vồng.",
+    "content": {
+      "intro": "Nghệ thuật hát chèo từ lâu đã bén rễ sâu đậm trong đời sống tinh thần của nhân dân xã Nhã Nam. Những làn điệu chèo ngọt ngào, hóm hỉnh mà sâu lắng đã nuôi dưỡng tâm hồn biết bao thế hệ người dân quê hương đất Cầu Vồng.",
+      "originAndMeaning": [
         "**Gắn liền chiếu chèo sân đình:** Ra đời từ các buổi sinh hoạt nông nhàn và hội làng cổ xưa tại đình làng Chuông, chùa Tứ Giáp.",
         "**Nội dung phản ánh cuộc sống:** Ngợi ca tình yêu quê hương, đất nước, đạo hiếu làm con, phê phán thói hư tật xấu và biểu dương lòng kiên trinh.",
         "**Đặc trưng chiếu chèo Nhã Nam:** Giữ được chất chèo cổ mộc mạc với các điệu Đào liễu, Quân thư, Luyện năm cung thắm thiết."
       ],
-      ritualsAndActivities: [
+      "ritualsAndActivities": [
         "Biểu diễn giao lưu tại sân đình vào mỗi dịp lễ hội mùa xuân, ngày hội Đại đoàn kết toàn dân tộc.",
         "Các câu lạc bộ chèo thường xuyên mở lớp truyền dạy làn điệu cho các em học sinh, thế hệ thanh thiếu niên địa phương."
       ],
-      preservationValue: "Hát chèo là cây cầu nối tâm hồn, giáo dục tình yêu văn hóa dân tộc trong các hoạt động ngoại khóa của học sinh THPT Nhã Nam."
+      "preservationValue": "Hát chèo là cây cầu nối tâm hồn, giáo dục tình yêu văn hóa dân tộc trong các hoạt động ngoại khóa của học sinh THPT Nhã Nam."
     },
-
-    map: {
-      embedUrl: "https://www.google.com/maps?q=%C4%90%C3%ACnh+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Đình+Nhã+Nam,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
-      locationName: "Chiếu chèo làng Chuông - xã Nhã Nam"
+    "map": {
+      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Nhã+Nam,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
+      "locationName": "Chiếu chèo làng Chuông - xã Nhã Nam"
     },
-
-    gallery: [
-      {
-        url: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=80",
-        caption: "Các liền anh liền chị câu lạc bộ chèo Nhã Nam trong trang phục tứ thân truyền thống"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "hat-cheo-truyen-thong-nha-nam.docx",
+      "title": "Tư liệu Nghệ thuật hát chèo truyền thống xã Nhã Nam",
+      "path": "./assets/docs/hat-cheo-truyen-thong-nha-nam.docx",
+      "size": "38 KB"
+    }
   },
-
   {
-    id: "phi-vat-the-3",
-    category: "phi-vat-the",
-    categoryName: "Di sản phi vật thể",
-    badge: "Nghề truyền thống",
-    title: "Nghề làm bánh khảo, kẹo lạc truyền thống xã Nhã Nam",
-    shortTitle: "Bánh khảo & Kẹo lạc Nhã Nam",
-    scope: "Các hộ gia đình nghệ nhân làm nghề truyền thống tại xã Nhã Nam",
-    heroImage: "./assets/images/hero-phi-vat-the.jpg",
-    thumbnail: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
-    tags: ["Bánh khảo", "Kẹo lạc", "Nghề truyền thống", "Ẩm thực dân gian", "Đặc sản", "Xã Nhã Nam"],
-    overview: "Đặc sản ẩm thực dân gian nức tiếng, thức quà quê mộc mạc thơm đượm hương vị gạo nếp cái hoa vàng và mật mía quê nhà.",
-    
-    content: {
-      intro: "Bánh khảo và kẹo lạc Nhã Nam là thức quà ẩm thực truyền thống nức tiếng gần xa. Mỗi phong bánh khảo thơm dịu hương nếp, từng thanh kẹo lạc giòn tan bùi ngậy đã trở thành nét đẹp văn hóa gắn bó thiết thân với mâm cỗ Tết và lễ vật dâng cúng đình chùa của người dân xã Nhã Nam.",
-      originAndMeaning: [
+    "id": "phi-vat-the-3",
+    "category": "phi-vat-the",
+    "categoryName": "Di sản phi vật thể",
+    "badge": "Nghề truyền thống",
+    "title": "Nghề làm bánh khảo, kẹo lạc truyền thống xã Nhã Nam",
+    "shortTitle": "Bánh khảo & Kẹo lạc Nhã Nam",
+    "scope": "Các hộ gia đình nghệ nhân làm nghề truyền thống tại xã Nhã Nam",
+    "heroImage": "./assets/images/hero-phi-vat-the.jpg",
+    "thumbnail": null,
+    "tags": [
+      "Bánh khảo",
+      "Kẹo lạc",
+      "Nghề truyền thống",
+      "Ẩm thực dân gian",
+      "Đặc sản",
+      "Xã Nhã Nam"
+    ],
+    "overview": "Đặc sản ẩm thực dân gian nức tiếng, thức quà quê mộc mạc thơm đượm hương vị gạo nếp cái hoa vàng và mật mía quê nhà.",
+    "content": {
+      "intro": "Bánh khảo và kẹo lạc Nhã Nam là thức quà ẩm thực truyền thống nức tiếng gần xa. Mỗi phong bánh khảo thơm dịu hương nếp, từng thanh kẹo lạc giòn tan bùi ngậy đã trở thành nét đẹp văn hóa gắn bó thiết thân với mâm cỗ Tết và lễ vật dâng cúng đình chùa của người dân xã Nhã Nam.",
+      "originAndMeaning": [
         "**Nét văn hóa hiếu nghĩa:** Bánh khảo, kẹo lạc là thức quà quý dâng cúng tổ tiên, trời đất trong các dịp Tết Nguyên đán và lễ hội cổ truyền.",
         "**Kế thừa tinh hoa ẩm thực:** Nguyên liệu được tuyển chọn từ gạo nếp cái hoa vàng hạt mẩy, lạc đồi thơm bùi của vùng đất đồi bãi Nhã Nam kết hợp mật mía đường phèn tự nhiên."
       ],
-      ritualsAndActivities: [
+      "ritualsAndActivities": [
         "Quy trình tỉ mỉ: Rang gạo nếp vừa độ chín tới, xay mịn thành bột, ủ đường cho ngấu rồi đem đóng khuôn gỗ thủ công.",
         "Làm kẹo lạc: Nấu đường mạch nha sôi dẻo, thả lạc rang chín vàng đều, dàn mỏng trên mặt bàn rồi cắt thành thanh thơm giòn."
       ],
-      preservationValue: "Gìn giữ hương vị cội nguồn của quê hương, khơi gợi niềm tự hào về sản vật nông nghiệp của địa phương trong các dự án học tập sáng tạo."
+      "preservationValue": "Gìn giữ hương vị cội nguồn của quê hương, khơi gợi niềm tự hào về sản vật nông nghiệp của địa phương trong các dự án học tập sáng tạo."
     },
-
-    map: {
-      embedUrl: "https://www.google.com/maps?q=Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
-      locationName: "Làng nghề bánh khảo & kẹo lạc - xã Nhã Nam"
+    "map": {
+      "embedUrl": "https://www.google.com/maps?q=Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
+      "locationName": "Làng nghề bánh khảo & kẹo lạc - xã Nhã Nam"
     },
-
-    gallery: [
-      {
-        url: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80",
-        caption: "Bánh khảo trắng tinh khôi đóng khuôn chữ Phúc - Lộc thơm mùi gạo nếp cái hoa vàng"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "nghe-lam-banh-khao-keo-lac-nha-nam.docx",
+      "title": "Tư liệu Nghề làm bánh khảo, kẹo lạc truyền thống",
+      "path": "./assets/docs/nghe-lam-banh-khao-keo-lac-nha-nam.docx",
+      "size": "38 KB"
+    }
   },
-
   {
-    id: "phi-vat-the-4",
-    category: "phi-vat-the",
-    categoryName: "Di sản phi vật thể",
-    badge: "Tập quán xã hội & tín ngưỡng",
-    title: "Tập quán tưởng niệm Lương Văn Nắm và Hoàng Hoa Thám",
-    shortTitle: "Tưởng niệm nghĩa quân Yên Thế",
-    scope: "Địa bàn toàn xã Nhã Nam, trung tâm tại đình Hả, đền Gốc Khế, đền Đề Truật",
-    heroImage: "./assets/images/hero-phi-vat-the.jpg",
-    thumbnail: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80",
-    tags: ["Lương Văn Nắm", "Hoàng Hoa Thám", "Đề Truật", "Tưởng niệm", "Tập quán tín ngưỡng", "Uống nước nhớ nguồn", "Xã Nhã Nam"],
-    overview: "Tập quán tín ngưỡng tâm linh thành kính của nhân dân Nhã Nam đối với các vị thủ lĩnh và nghĩa sĩ hy sinh vì nền độc lập của Tổ quốc.",
-    
-    content: {
-      intro: "Tập quán tưởng niệm thủ lĩnh Đề Nắm, cụ Hoàng Hoa Thám cùng các nghĩa binh Yên Thế là nét đẹp văn hóa tâm linh thấm đượm truyền thống 'Uống nước nhớ nguồn'. Qua hàng trăm năm dâu bể, nhân dân xã Nhã Nam vẫn gìn giữ vẹn nguyên lòng thành kính, đời đời hương khói tri ân những người con anh hùng của quê hương.",
-      originAndMeaning: [
+    "id": "phi-vat-the-4",
+    "category": "phi-vat-the",
+    "categoryName": "Di sản phi vật thể",
+    "badge": "Tập quán xã hội & tín ngưỡng",
+    "title": "Tập quán tưởng niệm Lương Văn Nắm và Hoàng Hoa Thám",
+    "shortTitle": "Tưởng niệm nghĩa quân Yên Thế",
+    "scope": "Địa bàn toàn xã Nhã Nam, trung tâm tại đình Hả, đền Gốc Khế, đền Đề Truật",
+    "heroImage": "./assets/images/hero-phi-vat-the.jpg",
+    "thumbnail": null,
+    "tags": [
+      "Lương Văn Nắm",
+      "Hoàng Hoa Thám",
+      "Đề Truật",
+      "Tưởng niệm",
+      "Tập quán tín ngưỡng",
+      "Uống nước nhớ nguồn",
+      "Xã Nhã Nam"
+    ],
+    "overview": "Tập quán tín ngưỡng tâm linh thành kính của nhân dân Nhã Nam đối với các vị thủ lĩnh và nghĩa sĩ hy sinh vì nền độc lập của Tổ quốc.",
+    "content": {
+      "intro": "Tập quán tưởng niệm thủ lĩnh Đề Nắm, cụ Hoàng Hoa Thám cùng các nghĩa binh Yên Thế là nét đẹp văn hóa tâm linh thấm đượm truyền thống 'Uống nước nhớ nguồn'. Qua hàng trăm năm dâu bể, nhân dân xã Nhã Nam vẫn gìn giữ vẹn nguyên lòng thành kính, đời đời hương khói tri ân những người con anh hùng của quê hương.",
+      "originAndMeaning": [
         "**Đạo lý tri ân ngàn đời:** Xuất phát từ lòng biết ơn vô hạn của người dân đối với những người đã xả thân cứu nước cứu làng.",
         "**Biểu tượng tinh thần độc lập:** Hình tượng Đề Nắm và Đề Thám trở thành biểu tượng tinh thần của ý chí không khuất phục trước ngoại bang."
       ],
-      ritualsAndActivities: [
+      "ritualsAndActivities": [
         "Nghi thức thắp hương tưởng niệm vào ngày rằm, mùng một và ngày giỗ trận tại đình Hả, đền Gốc Khế, đền Đề Truật.",
         "Lễ dâng hương báo công của học sinh trường THPT Nhã Nam trước thềm các kỳ thi và sự kiện trọng đại của nhà trường."
       ],
-      preservationValue: "Là bài học đạo đức, lý tưởng cách mạng sâu sắc nhất cho đoàn viên, học sinh xã Nhã Nam trên con đường rèn đức luyện tài."
+      "preservationValue": "Là bài học đạo đức, lý tưởng cách mạng sâu sắc nhất cho đoàn viên, học sinh xã Nhã Nam trên con đường rèn đức luyện tài."
     },
-
-    map: {
-      embedUrl: "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Đình+Hả,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
-      locationName: "Khu tưởng niệm nghĩa sĩ Yên Thế - xã Nhã Nam"
+    "map": {
+      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Hả,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
+      "locationName": "Khu tưởng niệm nghĩa sĩ Yên Thế - xã Nhã Nam"
     },
-
-    gallery: [
-      {
-        url: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1000&q=80",
-        caption: "Nghi lễ dâng hương thành kính tri ân các anh hùng nghĩa sĩ tại di tích lịch sử"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "tap-quan-tuong-niem-de-nam-de-tham.docx",
+      "title": "Tư liệu Tập quán tưởng niệm Lương Văn Nắm và Hoàng Hoa Thám",
+      "path": "./assets/docs/tap-quan-tuong-niem-de-nam-de-tham.docx",
+      "size": "38 KB"
+    }
   },
-
   {
-    id: "phi-vat-the-5",
-    category: "phi-vat-the",
-    categoryName: "Di sản phi vật thể",
-    badge: "Trò chơi dân gian & võ thuật",
-    title: "Trò chơi dân gian & Võ cổ truyền trong lễ hội Nhã Nam",
-    shortTitle: "Trò chơi dân gian & Võ cổ truyền",
-    scope: "Không gian lễ hội truyền thống tại các thôn trong xã Nhã Nam",
-    heroImage: "./assets/images/hero-phi-vat-the.jpg",
-    thumbnail: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=600&q=80",
-    tags: ["Võ cổ truyền", "Vật dân tộc", "Trò chơi dân gian", "Cờ người", "Kéo co", "Hội làng", "Xã Nhã Nam"],
-    overview: "Kho tàng các thế võ Yên Thế anh hùng cùng các môn thể thao dân gian tráng kiện, thể hiện tinh thần thượng võ kiên cường của vùng đất Cầu Vồng.",
-    
-    content: {
-      intro: "Vùng đất Nhã Nam từ ngàn xưa đã nổi danh là 'đất Cầu Vồng' với tinh thần thượng võ ngút trời. Trong các dịp hội làng mùa xuân, các bài quyền võ cổ truyền, môn vật dân tộc và trò chơi dân gian luôn là tâm điểm thu hút đông đảo nam thanh nữ tú và bà con khắp vùng.",
-      originAndMeaning: [
+    "id": "phi-vat-the-5",
+    "category": "phi-vat-the",
+    "categoryName": "Di sản phi vật thể",
+    "badge": "Trò chơi dân gian & võ thuật",
+    "title": "Trò chơi dân gian & Võ cổ truyền trong lễ hội Nhã Nam",
+    "shortTitle": "Trò chơi dân gian & Võ cổ truyền",
+    "scope": "Không gian lễ hội truyền thống tại các thôn trong xã Nhã Nam",
+    "heroImage": "./assets/images/hero-phi-vat-the.jpg",
+    "thumbnail": null,
+    "tags": [
+      "Võ cổ truyền",
+      "Vật dân tộc",
+      "Trò chơi dân gian",
+      "Cờ người",
+      "Kéo co",
+      "Hội làng",
+      "Xã Nhã Nam"
+    ],
+    "overview": "Kho tàng các thế võ Yên Thế anh hùng cùng các môn thể thao dân gian tráng kiện, thể hiện tinh thần thượng võ kiên cường của vùng đất Cầu Vồng.",
+    "content": {
+      "intro": "Vùng đất Nhã Nam từ ngàn xưa đã nổi danh là 'đất Cầu Vồng' với tinh thần thượng võ ngút trời. Trong các dịp hội làng mùa xuân, các bài quyền võ cổ truyền, môn vật dân tộc và trò chơi dân gian luôn là tâm điểm thu hút đông đảo nam thanh nữ tú và bà con khắp vùng.",
+      "originAndMeaning": [
         "**Gắn với thao lược quân sự của nghĩa quân Yên Thế:** Nhiều bài võ thuật, đấu gậy, đấu nỏ cổ truyền bắt nguồn từ các bài tập luyện chiến đấu của nghĩa binh thời Đề Nắm, Đề Thám.",
         "**Rèn luyện sức khỏe và ý chí:** Tinh thần thượng võ 'đất Cầu Vồng' hun đúc nên lòng quả cảm, đức tính kiên nhẫn và sức bền bỉ cho người dân."
       ],
-      ritualsAndActivities: [
+      "ritualsAndActivities": [
         "Sới vật dân tộc đầu xuân: Tiếng trống thúc giục, các đô vật tranh tài quyết liệt trên nền cát mịn với tinh thần thượng võ mãnh liệt.",
         "Hội thi cờ người, kéo co, đập niêu đất, chọi gà và giao lưu võ thuật cổ truyền giữa các trường học và câu lạc bộ thanh niên."
       ],
-      preservationValue: "Góp phần rèn luyện thể lực và bồi dưỡng lòng dũng cảm, tinh thần đồng đội cho học sinh thế hệ trẻ Trường THPT Nhã Nam."
+      "preservationValue": "Góp phần rèn luyện thể lực và bồi dưỡng lòng dũng cảm, tinh thần đồng đội cho học sinh thế hệ trẻ Trường THPT Nhã Nam."
     },
-
-    map: {
-      embedUrl: "https://www.google.com/maps?q=%C4%90%C3%ACnh+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Sới+vật+lễ+hội,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
-      locationName: "Sới vật & không gian hội thao dân gian - xã Nhã Nam"
+    "map": {
+      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Sới+vật+lễ+hội,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
+      "locationName": "Sới vật & không gian hội thao dân gian - xã Nhã Nam"
     },
-
-    gallery: [
-      {
-        url: "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=1000&q=80",
-        caption: "Không khí tưng bừng hào hứng của sới vật dân gian truyền thống đầu xuân tại Nhã Nam"
-      }
-    ]
+    "gallery": [],
+    "hasRealPhoto": false,
+    "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "docFile": {
+      "fileName": "tro-choi-dan-gian-vo-co-truyen.docx",
+      "title": "Tư liệu Trò chơi dân gian và Võ cổ truyền trong lễ hội Nhã Nam",
+      "path": "./assets/docs/tro-choi-dan-gian-vo-co-truyen.docx",
+      "size": "38 KB"
+    }
   }
 ];
 
-/**
- * --------------------------------------------------------------------
- * BỘ CÂU HỎI TRẮC NGHIỆM TƯƠNG TÁC (QUIZ CHALLENGE - 5 CÂU HỎI)
- * Cập nhật các câu hỏi theo dữ liệu mới của xã Nhã Nam
- * --------------------------------------------------------------------
- */
 const HERITAGE_QUIZ_DATA = [
   {
     id: 1,
