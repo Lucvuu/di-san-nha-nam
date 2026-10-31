@@ -639,7 +639,7 @@ function openDetailModal(itemId) {
 
         <!-- RICH MEDIA BAR: ĐIỀU HƯỚNG NHANH 5 ĐỊNH DẠNG ĐA PHƯƠNG TIỆN -->
         <div class="rich-media-bar mt-4 flex flex-wrap items-center gap-2 p-2.5 rounded-xl bg-[#FAF5EE] border border-[#EADECF] text-xs">
-          <button type="button" onclick="document.getElementById('audioguide-section')?.scrollIntoView({behavior: 'smooth'})" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition flex items-center gap-1.5 shadow-xs">
+          <button type="button" onclick="playModalRealAudio()" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition flex items-center gap-1.5 shadow-xs cursor-pointer">
             ${ic('volume', 'w-3.5 h-3.5')} <span>Nghe thuyết minh</span>
           </button>
           ${item.docFile ? `
@@ -951,15 +951,14 @@ function closeDetailModal() {
 function initAudioGuideForModal(item) {
   if (!item) return;
 
-  // Dừng mọi thuyết minh tự động đang chạy
+  // Dừng mọi thuyết minh tự động / Web Speech API nếu còn tồn tại
   if (typeof stopAudioGuideNarration === 'function') {
     stopAudioGuideNarration();
   }
 
-  // Nếu di tích đã có bản ghi âm thuyết minh thực tế từ nhà trường, không dùng giọng đọc máy ngoài
-  if (item.audioFile) {
-    return;
-  }
+  // Toàn bộ dự án ưu tiên 100% bản ghi âm tư liệu thực tế của Trường THPT Nhã Nam
+  // Tuyệt đối không kích hoạt giọng đọc máy tự động ngoài (Web Speech API)
+  return;
 
   // Xây dựng nội dung bài thuyết minh giàu cảm xúc và truyền cảm
   let story = `Chào mừng quý thầy cô và các bạn học sinh đến với ${item.title}. `;
@@ -2071,13 +2070,17 @@ function resetToCommuneMap() {
   if (dirLabel) dirLabel.textContent = defaultMap.directionsText;
 }
 
-function updateMapFrame(newUrl, captionText) {
+function updateMapFrame(newUrl, captionText, directionsUrl) {
   const iframe = document.getElementById('heritage-route-map-frame');
   const caption = document.getElementById('active-route-map-caption');
   const indicator = document.getElementById('map-loading-indicator');
+  const openDirectBtn = document.getElementById('open-map-direct-btn');
 
   if (caption && captionText) {
     caption.textContent = captionText;
+  }
+  if (openDirectBtn && directionsUrl) {
+    openDirectBtn.href = directionsUrl;
   }
 
   if (!iframe) return;
