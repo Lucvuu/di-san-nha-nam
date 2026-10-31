@@ -68,7 +68,7 @@ const OFFICIAL_COMMUNE_RELICS = {
       count: 8,
       badgeText: "08 di tích quốc gia đặc biệt",
       badgeClass: "bg-[#8B1E1E] text-white",
-      icon: "🏛️",
+      icon: "landmark",
       description: "08 di tích thuộc di tích quốc gia đặc biệt Những địa điểm Khởi nghĩa Yên Thế theo Quyết định số 548/QĐ-TTg của Thủ tướng Chính phủ.",
       items: [
         { name: "Đình Dương Lâm", type: "Đình làng cổ khởi dựng đầu thế kỷ XIX", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-11" },
@@ -88,7 +88,7 @@ const OFFICIAL_COMMUNE_RELICS = {
       count: 1,
       badgeText: "01 di tích cấp quốc gia",
       badgeClass: "bg-[#8B6914] text-white",
-      icon: "⭐",
+      icon: "star",
       description: "Di tích lịch sử - kiến trúc nghệ thuật cấp quốc gia được Bộ Văn hóa, Thể thao và Du lịch xếp hạng.",
       items: [
         { name: "Chùa Tứ Giáp", type: "Nơi phát tích thiêng liêng ra đời Sáu điều Bác Hồ dạy Công an nhân dân (11/3/1948)", status: "Di tích cấp quốc gia", featuredId: "vat-the-2" }
@@ -101,7 +101,7 @@ const OFFICIAL_COMMUNE_RELICS = {
       count: 7,
       badgeText: "07 di tích cấp tỉnh",
       badgeClass: "bg-amber-800 text-white",
-      icon: "🎖️",
+      icon: "award",
       description: "07 di tích lịch sử - văn hóa được Chủ tịch UBND tỉnh ban hành Quyết định xếp hạng di tích cấp tỉnh.",
       items: [
         { name: "Đền Đề Truật", type: "Đền thờ tướng quân Dương Văn Truật (Đề Truật)", status: "Di tích cấp tỉnh", featuredId: "vat-the-8" },
@@ -120,7 +120,7 @@ const OFFICIAL_COMMUNE_RELICS = {
       count: 21,
       badgeText: "21 di tích kiểm kê",
       badgeClass: "bg-[#5C5248] text-white",
-      icon: "📜",
+      icon: "scroll",
       description: "21 di tích lịch sử, văn hóa, kiến trúc tín ngưỡng nằm trong danh mục kiểm kê di tích đã được Chủ tịch UBND tỉnh phê duyệt bảo tồn.",
       items: [
         { name: "Chùa Bùng", type: "Chùa làng" },
@@ -171,7 +171,7 @@ const HERITAGE_ROUTES = [
     ],
     mapEmbedUrl: "https://www.google.com/maps?q=Khu+di+t%C3%ADch+%C4%90%C3%ACnh+Ch%C3%B9a+H%E1%BA%A3+v%C3%A0+Ch%C3%B9a+T%E1%BB%A9+Gi%C3%A1p+Nh%C3%A3+Nam&output=embed",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đình+chùa+Hả+Nhã+Nam&destination=Chùa+Tứ+Giáp+Nhã+Nam",
-    directionsText: "📍 Dẫn đường Tuyến 1 (Đình Hả → Chùa Tứ Giáp)",
+    directionsText: "Dẫn đường Tuyến 1 (Đình Hả → Chùa Tứ Giáp)",
     description: "Kết nối nơi khởi phát ngọn cờ Yên Thế (đình Hả) với nơi phát tích 6 điều Bác Hồ dạy Công an nhân dân (chùa Tứ Giáp). Cung đường giáo dục truyền thống yêu nước và bản lĩnh cách mạng."
   },
   {
@@ -189,7 +189,7 @@ const HERITAGE_ROUTES = [
     ],
     mapEmbedUrl: "https://www.google.com/maps?q=Ch%C3%B9a+%C4%90%E1%BB%93ng+%C4%90i%E1%BB%81u+v%C3%A0+%C4%90%E1%BB%81n+%C4%90%E1%BB%81+Tru%E1%BA%ADt+Nh%C3%A3+Nam&output=embed",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Chùa+Đồng+Điều+Nhã+Nam&destination=Đền+Đề+Truật+Nhã+Nam",
-    directionsText: "📍 Dẫn đường Tuyến 2 (Đồng Điều → Đền Đề Truật)",
+    directionsText: "Dẫn đường Tuyến 2 (Đồng Điều → Đền Đề Truật)",
     description: "Hành trình về với cái nôi gieo mầm cách mạng của chi bộ Đảng Cộng sản đầu tiên tại địa phương và tấm gương trung dũng của nghĩa quân Đề Truật."
   },
   {
@@ -209,7 +209,7 @@ const HERITAGE_ROUTES = [
     ],
     mapEmbedUrl: "https://www.google.com/maps?q=%C4%90%E1%BB%93i+Ph%E1%BB%A7+v%C3%A0+%C4%90%C3%ACnh+l%C3%A0ng+Chu%C3%B4ng+Nh%C3%A3+Nam&output=embed",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&origin=Đền+Gốc+Khế+Nhã+Nam&destination=Chùa+Nam+Thiên+Nhã+Nam&waypoints=Đồi+Phủ+Nhã+Nam|Đình+làng+Chuông+Nhã+Nam",
-    directionsText: "📍 Dẫn đường Tuyến 3 (Đền Gốc Khế → Đồi Phủ → Chùa Nam Thiên)",
+    directionsText: "Dẫn đường Tuyến 3 (Đền Gốc Khế → Đồi Phủ → Chùa Nam Thiên)",
     description: "Cụm di tích lịch sử quân sự và tín ngưỡng trung tâm đồn Nhã Nam - chiến trường thử lửa oanh liệt chống giặc ngoại xâm của nghĩa quân Yên Thế."
   }
 ];
@@ -217,7 +217,7 @@ const HERITAGE_ROUTES = [
 const DEFAULT_COMMUNE_MAP = {
   embedUrl: "https://www.google.com/maps?q=Nh%C3%A3+Nam,+B%E1%BA%AFc+Ninh&output=embed",
   directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=UBND+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-  directionsText: "📍 Dẫn đường đến trung tâm xã Nhã Nam"
+  directionsText: "Dẫn đường đến trung tâm xã Nhã Nam"
 };
 
 const MUSIC_PLAYLIST = [
