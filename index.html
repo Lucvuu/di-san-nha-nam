@@ -776,13 +776,23 @@
           <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <a 
               id="heritage-route-directions-btn"
-              href="https://www.google.com/maps/dir/?api=1&destination=UBND+xã+Nhã+Nam,+tỉnh+Bắc+Ninh" 
+              href="https://www.google.com/maps/dir/?api=1&origin=21.4357253,106.116718&destination=21.4210834,106.0960966&waypoints=21.4448892,106.0901463" 
               target="_blank" 
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-[#8B1E1E] hover:bg-[#6F1515] transition shadow-md flex-1">
               <svg class="w-4 h-4 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-              <svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-map-pin"/></svg><span id="route-directions-label">Dẫn đường đến trung tâm xã Nhã Nam</span>
+              <svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-map-pin"/></svg><span id="route-directions-label">Chỉ đường Tuyến 1: Đình Hả → Chùa Tứ Giáp → Đình Dương Lâm</span>
             </a>
+
+            <!-- Nút xem hồ sơ khi click chọn di tích -->
+            <button 
+              type="button"
+              id="route-relic-doc-btn"
+              style="display: none;"
+              class="inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-[#1E3A8A] hover:bg-[#1E40AF] transition shadow-xs cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              <span>Xem hồ sơ chi tiết</span>
+            </button>
 
             <button 
               type="button"
@@ -798,6 +808,18 @@
         <!-- Right: Map frame -->
         <div class="lg:w-1/2 w-full flex flex-col">
           <div class="relative w-full h-80 sm:h-96 lg:h-full min-h-[420px] rounded-3xl overflow-hidden border-2 border-[#EADECF] shadow-lg bg-[#EADECF]">
+            <!-- Nút mở trực tiếp ứng dụng Google Maps chỉ đường góc trên phải -->
+            <a 
+              id="open-map-direct-btn"
+              href="https://www.google.com/maps/dir/?api=1&origin=21.4357253,106.116718&destination=21.4210834,106.0960966&waypoints=21.4448892,106.0901463"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="absolute top-3.5 right-3.5 z-20 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-[#8B1E1E] hover:bg-[#6F1515] shadow-lg border border-white/30 transition active:scale-95"
+              title="Mở ứng dụng Google Maps để dẫn đường trực tiếp">
+              <svg class="w-3.5 h-3.5 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <span>Mở Google Maps chỉ đường đi ngay ↗</span>
+            </a>
+
             <div id="map-loading-indicator" class="absolute inset-0 flex items-center justify-center bg-[#F5EFE6]/80 z-10 transition-opacity duration-300 pointer-events-none opacity-0">
               <div class="flex items-center gap-2 text-xs font-bold text-[#8B1E1E] bg-white px-4 py-2 rounded-full shadow-md border border-[#EADECF]">
                 <svg class="w-4 h-4 animate-spin text-[#8B1E1E]" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
@@ -806,7 +828,7 @@
             </div>
             <iframe 
               id="heritage-route-map-frame"
-              src="https://www.google.com/maps?q=Nh%C3%A3+Nam,+B%E1%BA%AFc+Ninh&output=embed" 
+              src="https://www.google.com/maps?q=21.4357253,106.116718&z=15&output=embed" 
               width="100%" 
               height="100%" 
               style="border:0;" 
