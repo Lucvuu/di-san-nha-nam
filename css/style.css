@@ -723,3 +723,14 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
 #heritage-route-map-frame {
   transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Khung chờ ảnh thật: viền kép đỏ - vàng, nền hoa văn trám mờ */
+.photo-pending-frame {
+  border: 1px solid rgba(197, 155, 39, 0.55);
+  outline: 4px double rgba(139, 30, 30, 0.18);
+  outline-offset: -10px;
+  background-color: #FBF6EE;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(197, 155, 39, 0.07) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(-45deg, rgba(139, 30, 30, 0.05) 0 1px, transparent 1px 14px);
+}

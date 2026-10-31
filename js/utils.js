@@ -574,14 +574,7 @@ function stopTextToSpeech() {
   stopAudioGuide();
 }
 
-/**
- * ====================================================================
- * TẠO MÃ QR DI TÍCH ĐỘNG (QR CODE GENERATOR)
- * Phục vụ học sinh, giáo viên quét bằng điện thoại hoặc in dán bảng tin
- * ====================================================================
- */
-function getHeritageQRCodeUrl(itemId) {
-  // Tạo URL chỉ thẳng đến di tích trên website chính thức
-  const targetUrl = `https://lucvuu.github.io/di-san-nha-nam/#item=${itemId}`;
-  return `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(targetUrl)}&color=8B1E1E&bgcolor=FFFFFF&margin=6`;
+/** Liên kết mở thẳng hồ sơ một di tích (dùng cho nút "Sao chép liên kết"). */
+function getHeritageShareUrl(itemId) {
+  return `${location.href.split("#")[0]}#item=${itemId}`;
 }

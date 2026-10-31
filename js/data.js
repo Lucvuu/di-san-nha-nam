@@ -32,7 +32,7 @@ const SITE_CONFIG = {
 
   // Administrator & Contact Configuration
   adminRole: "Ban điều hành dự án và quản trị nội dung",
-  adminName: "Cô Mến & Nhóm phụ trách di sản THPT Nhã Nam",
+  adminName: "Cô Mến và nhóm phụ trách di sản THPT Nhã Nam",
   adminPhone: "0962.629.650",
   adminPhoneRaw: "0962629650",
   adminZaloUrl: "https://zalo.me/0962629650",
@@ -72,9 +72,9 @@ const OFFICIAL_COMMUNE_RELICS = {
       description: "08 di tích thuộc di tích quốc gia đặc biệt Những địa điểm Khởi nghĩa Yên Thế theo Quyết định số 548/QĐ-TTg của Thủ tướng Chính phủ.",
       items: [
         { name: "Đình Dương Lâm", type: "Đình làng cổ khởi dựng đầu thế kỷ XIX", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-11" },
-        { name: "Đình Hả", type: "Khu di tích đình - chùa Hả (Nơi Đề Nắm tế cờ phát động khởi nghĩa 1884)", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-1" },
+        { name: "Đình - chùa Hả", type: "Khu di tích đình - chùa Hả (nơi Đề Nắm tế cờ phát động khởi nghĩa 1884)", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-1" },
         { name: "Đền Gốc Khế", type: "Đền thờ và căn cứ lịch sử rừng Gốc Khế của nghĩa quân", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-4" },
-        { name: "Đền Cả Trọng", type: "Đền thờ tướng quân Hoàng Đức Trọng (con trai Đề Thám)", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-10" },
+        { name: "Đền thờ Cả Trọng (đền Gốc Dẻ)", type: "Đền thờ Cả Trọng, con trai cả của Hoàng Hoa Thám", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-10" },
         { name: "Nghĩa địa Pháp", type: "Khu chứng tích lịch sử quân sự đồn Nhã Nam", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-9" },
         { name: "Đình làng Chuông (đình Nhã Nam)", type: "Đình làng cổ khởi dựng thế kỷ XVIII", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-6" },
         { name: "Đồi Phủ (đồn Nhã Nam)", type: "Căn cứ đồn binh Pháp thời thuộc địa (Ao ông Chấn Ký)", status: "Di tích quốc gia đặc biệt", featuredId: "vat-the-5" },
@@ -91,7 +91,7 @@ const OFFICIAL_COMMUNE_RELICS = {
       icon: "⭐",
       description: "Di tích lịch sử - kiến trúc nghệ thuật cấp quốc gia được Bộ Văn hóa, Thể thao và Du lịch xếp hạng.",
       items: [
-        { name: "Chùa Tứ Giáp (Đại Phúc Tự)", type: "Nơi phát tích thiêng liêng ra đời Sáu điều Bác Hồ dạy Công an nhân dân (11/3/1948)", status: "Di tích cấp quốc gia", featuredId: "vat-the-2" }
+        { name: "Chùa Tứ Giáp", type: "Nơi phát tích thiêng liêng ra đời Sáu điều Bác Hồ dạy Công an nhân dân (11/3/1948)", status: "Di tích cấp quốc gia", featuredId: "vat-the-2" }
       ]
     },
     {
@@ -104,13 +104,13 @@ const OFFICIAL_COMMUNE_RELICS = {
       icon: "🎖️",
       description: "07 di tích lịch sử - văn hóa được Chủ tịch UBND tỉnh ban hành Quyết định xếp hạng di tích cấp tỉnh.",
       items: [
-        { name: "Đền Đề Truật", type: "Đền thờ Tướng quân Dương Văn Truật (Đề Truật)", status: "Di tích cấp tỉnh", featuredId: "vat-the-8" },
-        { name: "Đền Cầu Thượng", type: "Đền thờ Đức thánh Cao Sơn, Quý Minh thôn Cầu Thượng", status: "Di tích cấp tỉnh", featuredId: "vat-the-12" },
+        { name: "Đền Đề Truật", type: "Đền thờ tướng quân Dương Văn Truật (Đề Truật)", status: "Di tích cấp tỉnh", featuredId: "vat-the-8" },
+        { name: "Đình Cầu Thượng", type: "Đình thờ Đức thánh Cao Sơn, Quý Minh", status: "Di tích cấp tỉnh", featuredId: "vat-the-12" },
         { name: "Đình Sậy", type: "Đình làng truyền thống thôn Sậy", status: "Di tích cấp tỉnh", featuredId: "vat-the-13" },
         { name: "Chùa Đồng Điều (di tích thôn Đồng Điều)", type: "Cái nôi thành lập chi bộ Đảng Cộng sản đầu tiên của địa phương", status: "Di tích cấp tỉnh", featuredId: "vat-the-3" },
         { name: "Đình Nẻo", type: "Đình làng truyền thống thôn Nẻo", status: "Di tích cấp tỉnh", featuredId: "vat-the-14" },
         { name: "Chùa Dương Sơn", type: "Chùa cổ truyền thống thôn Dương Sơn", status: "Di tích cấp tỉnh", featuredId: "vat-the-15" },
-        { name: "Đình Sặt", type: "Đình làng truyền thống thôn Sặt", status: "Di tích cấp tỉnh", featuredId: "vat-the-16" }
+        { name: "Đình làng Sặt", type: "Đình làng truyền thống thôn Sặt", status: "Di tích cấp tỉnh", featuredId: "vat-the-16" }
       ]
     },
     {
@@ -133,7 +133,7 @@ const OFFICIAL_COMMUNE_RELICS = {
         { name: "Chùa Cầu Xa", type: "Chùa làng" },
         { name: "Chùa Tân Hòa", type: "Chùa làng" },
         { name: "Chùa Linh Tiên", type: "Chùa làng" },
-        { name: "Nhà Thờ giáo Lục Hạ", type: "Cơ sở tôn giáo" },
+        { name: "Nhà thờ giáo Lục Hạ", type: "Cơ sở tôn giáo" },
         { name: "Chùa Tân Long", type: "Chùa làng" },
         { name: "Chùa Thị", type: "Chùa làng" },
         { name: "Chùa Chung", type: "Chùa làng" },
@@ -184,7 +184,7 @@ const HERITAGE_ROUTES = [
     badgeBg: "bg-[#C59B27]",
     relicIds: ["vat-the-3", "vat-the-8"],
     relics: [
-      { id: "vat-the-3", name: "Chùa Đồng Điều", note: "Chi bộ Đảng đầu tiên", q: "Chùa+Đồng+Điều+Nhã+Nam" },
+      { id: "vat-the-3", name: "Chùa Đồng Điều", note: "chi bộ Đảng đầu tiên", q: "Chùa+Đồng+Điều+Nhã+Nam" },
       { id: "vat-the-8", name: "Đền Đề Truật", note: "Tướng quân Đề Truật", q: "Đền+Đề+Truật+Nhã+Nam" }
     ],
     mapEmbedUrl: "https://www.google.com/maps?q=Ch%C3%B9a+%C4%90%E1%BB%93ng+%C4%90i%E1%BB%81u+v%C3%A0+%C4%90%E1%BB%81n+%C4%90%E1%BB%81+Tru%E1%BA%ADt+Nh%C3%A3+Nam&output=embed",
@@ -258,7 +258,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "badge": "Di tích quốc gia đặc biệt",
     "relicType": "Di tích lịch sử",
     "decision": "QĐ số 548/QĐ-TTg, ngày 10/05/2012 của Thủ tướng Chính phủ",
-    "worship": "Đức thánh Cao Sơn, Quý Minh; Thủ lĩnh Lương Văn Nắm (Đề Nắm)",
+    "worship": "Đức thánh Cao Sơn, Quý Minh; thủ lĩnh Lương Văn Nắm (Đề Nắm)",
     "title": "Khu di tích đình - chùa Hả",
     "shortTitle": "Đình - chùa Hả",
     "address": "Thôn Hả, xã Nhã Nam, tỉnh Bắc Ninh",
@@ -304,9 +304,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "dinh-chua-ha.docx",
-      "title": "Hồ sơ di tích Đình - chùa Hả",
+      "title": "Hồ sơ di tích đình - chùa Hả",
       "path": "./assets/docs/dinh-chua-ha.docx",
-      "size": "39 KB"
+      "size": "38 KB"
     }
   },
   {
@@ -318,9 +318,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "badge": "Di tích cấp quốc gia",
     "relicType": "Di tích lịch sử và nghệ thuật",
     "decision": "QĐ số 138/QĐ, ngày 31/01/1992 của Bộ Văn hóa - Thông tin",
-    "worship": "Thờ Phật (Nơi phát tích Sáu điều Bác Hồ dạy CAND)",
-    "title": "Cụm di tích đình - chùa Tứ Giáp",
-    "shortTitle": "Chùa Tứ Giáp (Đại Phúc Tự)",
+    "worship": "Thờ Phật",
+    "title": "Chùa Tứ Giáp",
+    "shortTitle": "Chùa Tứ Giáp (Đại Phúc tự)",
     "address": "Tổ dân phố Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
@@ -329,7 +329,7 @@ const TANGIBLE_HERITAGE_DATA = [
       "Chùa Tứ Giáp",
       "Sáu điều Bác Hồ dạy",
       "Công an nhân dân",
-      "Đại Phúc Tự",
+      "Đại Phúc tự",
       "Làng Nguộn",
       "Yên Thế",
       "Xã Nhã Nam",
@@ -337,7 +337,7 @@ const TANGIBLE_HERITAGE_DATA = [
     ],
     "overview": "Nơi phát tích lịch sử thiêng liêng ra đời Sáu điều Bác Hồ dạy Công an nhân dân ngày 11/3/1948, di tích lịch sử và nghệ thuật cấp quốc gia.",
     "content": {
-      "intro": "Chùa Tứ Giáp (tên chữ là Đại Phúc Tự, thường gọi là chùa làng Nguộn) tọa lạc uy nghiêm tại thôn Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Ngôi chùa không chỉ là trung tâm tín ngưỡng Phật giáo lâu đời từ thế kỷ XVIII thời hậu Lê mà còn là 'địa chỉ đỏ' cách mạng rực rỡ của toàn quốc.",
+      "intro": "Chùa Tứ Giáp (tên chữ là Đại Phúc tự, thường gọi là chùa làng Nguộn) tọa lạc uy nghiêm tại thôn Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Ngôi chùa không chỉ là trung tâm tín ngưỡng Phật giáo lâu đời từ thế kỷ XVIII thời hậu Lê mà còn là 'địa chỉ đỏ' cách mạng rực rỡ của toàn quốc.",
       "historicalSignificance": [
         "**Nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân:** Trong kháng chiến chống thực dân Pháp (1946 - 1948), chùa Tứ Giáp là trụ sở đóng quân và làm việc của Công an Khu XII.",
         "**Bức thư lịch sử ngày 11/3/1948:** Nhận được báo Tết 'Bạn Dân' do đồng chí Hoàng Mai (Giám đốc Công an Khu XII) kính biếu, Chủ tịch Hồ Chí Minh đã gửi bức thư lịch sử căn dặn về 'Tư cách người Công an cách mệnh'. Sáu lời dạy thiêng liêng đã trở thành kim chỉ nam rèn luyện của mọi thế hệ chiến sĩ CAND Việt Nam.",
@@ -361,9 +361,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "chua-tu-giap.docx",
-      "title": "Hồ sơ di tích Chùa Tứ Giáp",
+      "title": "Hồ sơ di tích chùa Tứ Giáp",
       "path": "./assets/docs/chua-tu-giap.docx",
-      "size": "39 KB"
+      "size": "38 KB"
     }
   },
   {
@@ -375,7 +375,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "badge": "Di tích cấp tỉnh",
     "relicType": "Di tích lịch sử - văn hóa",
     "decision": "QĐ số 2087/QĐ-UBND, ngày 25/12/2006 của Chủ tịch UBND tỉnh",
-    "worship": "Thờ Phật (Gắn liền di tích thành lập Chi bộ Đảng đầu tiên)",
+    "worship": "Thờ Phật",
     "title": "Chùa Đồng Điều (di tích lịch sử thôn Đồng Điều)",
     "shortTitle": "Chùa Đồng Điều",
     "address": "Thôn Đồng Điều, xã Nhã Nam, tỉnh Bắc Ninh",
@@ -385,7 +385,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "tags": [
       "Thôn Đồng Điều",
       "Chùa Đồng Điều",
-      "Chi bộ Đảng đầu tiên",
+      "chi bộ Đảng đầu tiên",
       "Lịch sử cách mạng",
       "tỉnh Bắc Ninh",
       "Xã Nhã Nam"
@@ -415,9 +415,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "chua-dong-dieu.docx",
-      "title": "Hồ sơ di tích Chùa Đồng Điều",
+      "title": "Hồ sơ di tích chùa Đồng Điều",
       "path": "./assets/docs/chua-dong-dieu.docx",
-      "size": "39 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -429,7 +429,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "badge": "Di tích quốc gia đặc biệt",
     "relicType": "Di tích lịch sử",
     "decision": "QĐ số 548/QĐ-TTg, ngày 10/05/2012 của Thủ tướng Chính phủ",
-    "worship": "Thờ Mẫu & Tưởng niệm nghĩa sĩ Hoàng Hoa Thám",
+    "worship": "Thờ Mẫu",
     "title": "Đền Gốc Khế",
     "shortTitle": "Đền Gốc Khế",
     "address": "Tổ dân phố Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh",
@@ -472,7 +472,7 @@ const TANGIBLE_HERITAGE_DATA = [
       "fileName": "den-goc-khe.docx",
       "title": "Thuyết minh dự án tu bổ Đền Gốc Khế",
       "path": "./assets/docs/den-goc-khe.docx",
-      "size": "81 KB"
+      "size": "79 KB"
     }
   },
   {
@@ -484,7 +484,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "badge": "Di tích quốc gia đặc biệt",
     "relicType": "Di tích lịch sử",
     "decision": "QĐ số 548/QĐ-TTg, ngày 10/05/2012 của Thủ tướng Chính phủ",
-    "worship": "Địa điểm lịch sử Khởi nghĩa Yên Thế (Ao ông Chấn Ký)",
+    "worship": null,
     "title": "Đồi Phủ (địa điểm: Ao ông Chấn Ký)",
     "shortTitle": "Đồi Phủ (Ao ông Chấn Ký)",
     "address": "Đồi Phủ, xã Nhã Nam, tỉnh Bắc Ninh",
@@ -523,9 +523,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "doi-phu-nha-nam.docx",
-      "title": "Tư liệu lịch sử Đồi Phủ - Đồn Nhã Nam",
+      "title": "Tư liệu lịch sử đồi Phủ - đồn Nhã Nam",
       "path": "./assets/docs/doi-phu-nha-nam.docx",
-      "size": "39 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -577,7 +577,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "dinh-lang-chuong.docx",
-      "title": "Tư liệu khoa học Đình làng Chuông",
+      "title": "Tư liệu khoa học đình làng Chuông",
       "path": "./assets/docs/dinh-lang-chuong.docx",
       "size": "16 KB"
     }
@@ -630,7 +630,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "chua-nam-thien.docx",
-      "title": "Tư liệu khoa học Chùa Nam Thiên (chùa Phố)",
+      "title": "Tư liệu khoa học chùa Nam Thiên (chùa Phố)",
       "path": "./assets/docs/chua-nam-thien.docx",
       "size": "15 KB"
     }
@@ -644,7 +644,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "badge": "Di tích cấp tỉnh",
     "relicType": "Di tích lịch sử - văn hóa",
     "decision": "QĐ số 1987/QĐ-UBND, ngày 12/12/2014 của Chủ tịch UBND tỉnh",
-    "worship": "Tướng quân Dương Văn Truật (Đề Truật, Đề Thuật, Đề Hậu, Hội Thuật)",
+    "worship": "Tướng Đề Truật (còn gọi là Dương Văn Truật, Đề Thuật, Đề Hậu, Hội Thuật)",
     "title": "Đền Đề Truật",
     "shortTitle": "Đền Đề Truật",
     "address": "Thôn Tiến Phan 1, xã Nhã Nam, tỉnh Bắc Ninh",
@@ -668,7 +668,7 @@ const TANGIBLE_HERITAGE_DATA = [
         "**Xếp hạng di tích:** Đền Đề Truật được xếp hạng di tích lịch sử - văn hóa cấp tỉnh theo Quyết định số 1987/QĐ-UBND ngày 12/12/2014."
       ],
       "architecture": [
-        "Đền mang kiến trúc chữ Đinh truyền thống, bài trí trang nghiêm ban thờ Tướng quân Đề Truật, lư hương đồng và biểu tượng cây nỏ thần kỳ.",
+        "Đền mang kiến trúc chữ Đinh truyền thống, bài trí trang nghiêm ban thờ tướng quân Đề Truật, lư hương đồng và biểu tượng cây nỏ thần kỳ.",
         "Khuôn viên có sân tế lễ râm mát, cây cổ thụ che phủ, là nơi sinh hoạt văn hóa truyền thống của nhân dân."
       ],
       "studyNote": "Tấm gương quả cảm, tài năng quân sự và lòng trung thành tuyệt đối của tướng Đề Truật là ngọn lửa truyền cảm hứng mạnh mẽ cho học sinh Trường THPT Nhã Nam rèn luyện tài đức."
@@ -683,7 +683,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "den-de-truat.docx",
-      "title": "Tư liệu nghiên cứu Đền Đề Truật",
+      "title": "Tư liệu nghiên cứu đền Đề Truật",
       "path": "./assets/docs/den-de-truat.docx",
       "size": "21 KB"
     }
@@ -697,7 +697,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "badge": "Di tích quốc gia đặc biệt",
     "relicType": "Di tích lịch sử",
     "decision": "QĐ số 548/QĐ-TTg, ngày 10/05/2012 của Thủ tướng Chính phủ",
-    "worship": "Chứng tích lịch sử chống thực dân Pháp",
+    "worship": null,
     "title": "Nghĩa địa Pháp",
     "shortTitle": "Nghĩa địa Pháp",
     "address": "Khu vực đồi Phủ, xã Nhã Nam, tỉnh Bắc Ninh",
@@ -737,7 +737,7 @@ const TANGIBLE_HERITAGE_DATA = [
       "fileName": "nghia-dia-phap.docx",
       "title": "Chứng tích lịch sử quân sự Nghĩa địa Pháp",
       "path": "./assets/docs/nghia-dia-phap.docx",
-      "size": "20 KB"
+      "size": "19 KB"
     }
   },
   {
@@ -749,7 +749,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "badge": "Di tích quốc gia đặc biệt",
     "relicType": "Di tích lịch sử",
     "decision": "QĐ số 548/QĐ-TTg, ngày 10/05/2012 của Thủ tướng Chính phủ",
-    "worship": "Tướng quân Cả Trọng (con trai cả Hoàng Hoa Thám)",
+    "worship": "Cả Trọng (con trai cả của Hoàng Hoa Thám)",
     "title": "Đền thờ Cả Trọng (đền Gốc Dẻ)",
     "shortTitle": "Đền thờ Cả Trọng",
     "address": "Khu vực Gốc Dẻ, xã Nhã Nam, tỉnh Bắc Ninh",
@@ -789,9 +789,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "den-ca-trong.docx",
-      "title": "Hồ sơ di tích Đền thờ Cả Trọng",
+      "title": "Hồ sơ di tích đền thờ Cả Trọng",
       "path": "./assets/docs/den-ca-trong.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -817,7 +817,7 @@ const TANGIBLE_HERITAGE_DATA = [
       "Khởi nghĩa Yên Thế",
       "Di tích quốc gia đặc biệt"
     ],
-    "overview": "Ngôi đình cổ linh thiêng của làng Dương Lâm thuộc hệ thống di tích Khởi nghĩa Yên Thế, di tích quốc gia đặc biệt.",
+    "overview": "Ngôi đình cổ linh thiêng của làng Dương Lâm thuộc hệ thống di tích khởi nghĩa Yên Thế, di tích quốc gia đặc biệt.",
     "content": {
       "intro": "Đình Dương Lâm tọa lạc tại thôn Dương Lâm, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc xã An Dương, huyện Tân Yên, tỉnh Bắc Giang). Ngôi đình là trung tâm văn hóa tín ngưỡng lớn của làng Dương Lâm xưa, được xếp hạng là di tích quốc gia đặc biệt.",
       "historicalSignificance": [
@@ -841,9 +841,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "dinh-duong-lam.docx",
-      "title": "Hồ sơ di tích Đình Dương Lâm",
+      "title": "Hồ sơ di tích đình Dương Lâm",
       "path": "./assets/docs/dinh-duong-lam.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -856,14 +856,13 @@ const TANGIBLE_HERITAGE_DATA = [
     "relicType": "Di tích lịch sử - văn hóa",
     "decision": "QĐ số 10/QĐ-UBND, ngày 06/01/2012 của Chủ tịch UBND tỉnh",
     "worship": "Đức thánh Cao Sơn, Quý Minh",
-    "title": "Đền Cầu Thượng (đình Cầu Thượng)",
-    "shortTitle": "Đền Cầu Thượng",
+    "title": "Đình Cầu Thượng",
+    "shortTitle": "Đình Cầu Thượng",
     "address": "Thôn Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "heroImage": "./assets/images/hero-vat-the.jpg",
     "thumbnail": null,
     "tags": [
-      "Đền Cầu Thượng",
       "Đình Cầu Thượng",
       "Cao Sơn Quý Minh",
       "Cầu Thượng",
@@ -891,10 +890,10 @@ const TANGIBLE_HERITAGE_DATA = [
     "hasRealPhoto": false,
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
-      "fileName": "den-cau-thuong.docx",
-      "title": "Hồ sơ di tích Đền Cầu Thượng",
-      "path": "./assets/docs/den-cau-thuong.docx",
-      "size": "38 KB"
+      "fileName": "dinh-cau-thuong.docx",
+      "title": "Hồ sơ di tích đình Cầu Thượng",
+      "path": "./assets/docs/dinh-cau-thuong.docx",
+      "size": "37 KB"
     }
   },
   {
@@ -943,9 +942,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "dinh-say.docx",
-      "title": "Hồ sơ di tích Đình Sậy",
+      "title": "Hồ sơ di tích đình Sậy",
       "path": "./assets/docs/dinh-say.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -994,9 +993,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "dinh-neo.docx",
-      "title": "Hồ sơ di tích Đình Nẻo",
+      "title": "Hồ sơ di tích đình Nẻo",
       "path": "./assets/docs/dinh-neo.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -1045,9 +1044,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "chua-duong-son.docx",
-      "title": "Hồ sơ di tích Chùa Dương Sơn",
+      "title": "Hồ sơ di tích chùa Dương Sơn",
       "path": "./assets/docs/chua-duong-son.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -1097,9 +1096,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "dinh-sat.docx",
-      "title": "Hồ sơ di tích Đình làng Sặt",
+      "title": "Hồ sơ di tích đình làng Sặt",
       "path": "./assets/docs/dinh-sat.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   }
 ];
@@ -1148,9 +1147,9 @@ const INTANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "le-hoi-yen-the-nha-nam.docx",
-      "title": "Tư liệu Lễ hội Yên Thế tại xã Nhã Nam",
+      "title": "Tư liệu lễ hội Yên Thế tại xã Nhã Nam",
       "path": "./assets/docs/le-hoi-yen-the-nha-nam.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -1195,9 +1194,9 @@ const INTANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "hat-cheo-truyen-thong-nha-nam.docx",
-      "title": "Tư liệu Nghệ thuật hát chèo truyền thống xã Nhã Nam",
+      "title": "Tư liệu nghệ thuật hát chèo truyền thống xã Nhã Nam",
       "path": "./assets/docs/hat-cheo-truyen-thong-nha-nam.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -1241,9 +1240,9 @@ const INTANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "nghe-lam-banh-khao-keo-lac-nha-nam.docx",
-      "title": "Tư liệu Nghề làm bánh khảo, kẹo lạc truyền thống",
+      "title": "Tư liệu nghề làm bánh khảo, kẹo lạc truyền thống",
       "path": "./assets/docs/nghe-lam-banh-khao-keo-lac-nha-nam.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -1288,9 +1287,9 @@ const INTANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "tap-quan-tuong-niem-de-nam-de-tham.docx",
-      "title": "Tư liệu Tập quán tưởng niệm Lương Văn Nắm và Hoàng Hoa Thám",
+      "title": "Tư liệu tập quán tưởng niệm Lương Văn Nắm và Hoàng Hoa Thám",
       "path": "./assets/docs/tap-quan-tuong-niem-de-nam-de-tham.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   },
   {
@@ -1298,8 +1297,8 @@ const INTANGIBLE_HERITAGE_DATA = [
     "category": "phi-vat-the",
     "categoryName": "Di sản phi vật thể",
     "badge": "Trò chơi dân gian & võ thuật",
-    "title": "Trò chơi dân gian & Võ cổ truyền trong lễ hội Nhã Nam",
-    "shortTitle": "Trò chơi dân gian & Võ cổ truyền",
+    "title": "Trò chơi dân gian và võ cổ truyền trong lễ hội Nhã Nam",
+    "shortTitle": "Trò chơi dân gian và võ cổ truyền",
     "scope": "Không gian lễ hội truyền thống tại các thôn trong xã Nhã Nam",
     "heroImage": "./assets/images/hero-phi-vat-the.jpg",
     "thumbnail": null,
@@ -1335,9 +1334,9 @@ const INTANGIBLE_HERITAGE_DATA = [
     "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
     "docFile": {
       "fileName": "tro-choi-dan-gian-vo-co-truyen.docx",
-      "title": "Tư liệu Trò chơi dân gian và Võ cổ truyền trong lễ hội Nhã Nam",
+      "title": "Tư liệu trò chơi dân gian và võ cổ truyền trong lễ hội Nhã Nam",
       "path": "./assets/docs/tro-choi-dan-gian-vo-co-truyen.docx",
-      "size": "38 KB"
+      "size": "37 KB"
     }
   }
 ];
@@ -1360,7 +1359,7 @@ const HERITAGE_QUIZ_DATA = [
     question: "Sáu điều Bác Hồ dạy Công an nhân dân được phát tích tại ngôi chùa nào ở xã Nhã Nam vào ngày 11/3/1948?",
     options: [
       "Chùa Nam Thiên (chùa Phố)",
-      "Chùa Tứ Giáp (Đại Phúc Tự)",
+      "Chùa Tứ Giáp (Đại Phúc tự)",
       "Chùa Đồng Điều",
       "Chùa Hả (Thanh Âm Tự)"
     ],
@@ -1369,7 +1368,7 @@ const HERITAGE_QUIZ_DATA = [
   },
   {
     id: 3,
-    question: "Chi bộ Đảng Cộng sản đầu tiên của địa phương trước đây được thành lập tại thôn nào thuộc xã Nhã Nam?",
+    question: "Chi bộ Đảng Cộng sản Việt Nam đầu tiên của địa phương trước đây được thành lập tại thôn nào thuộc xã Nhã Nam?",
     options: [
       "Thôn Tiến Phan 1",
       "Thôn Cầu Thượng",
