@@ -735,3 +735,15 @@ a, button, [role="button"], input, label { touch-action: manipulation; }
 [role="button"]:not(button):focus-visible { outline: 2px solid var(--color-heritage-gold); outline-offset: 3px; }
 #heritage-detail-modal, #relics-inventory-modal, .doc-fulltext, #audioguide-transcript-container { overscroll-behavior: contain; }
 .doc-fulltext { scrollbar-color: rgba(139, 30, 30, 0.35) transparent; }
+
+/* Bộ biểu tượng nét (sprite #i-* trong index.html), thay cho emoji */
+.ic {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: -0.15em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
