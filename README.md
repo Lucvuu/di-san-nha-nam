@@ -59,10 +59,10 @@ Mỗi khi nhấp vào bất kỳ di sản nào, giao diện chi tiết (Detail M
 
 ### 6. Chân Trang & Kênh Liên Hệ Người Điều Hành (Cô Mến)
 - Thông tin quản trị rõ ràng: **Cô Mến & Nhóm phụ trách Di sản Nhã Nam**.
-- **Hotline / Zalo chính thức**: `0962.629.650`.
+- **Hotline / Zalo chính thức**: `0985.449.123`.
 - Nút bấm trực tiếp:
-  - **"Nhắn tin Zalo ngay"**: Mở trực tiếp `https://zalo.me/0962629650`.
-  - **"Gọi điện trực tiếp"**: Quay số `tel:0962629650`.
+  - **"Nhắn tin Zalo ngay"**: Mở trực tiếp `https://zalo.me/0985449123`.
+  - **"Gọi điện trực tiếp"**: Quay số `tel:0985449123`.
 - Nút nổi Zalo ở góc phải màn hình với hiệu ứng lan tỏa (pulse animation) dễ dàng liên hệ bất cứ lúc nào.
 
 ### 7. Góc Học Tập - Trắc Nghiệm Tương Tác
@@ -145,7 +145,7 @@ Mỗi di tích trong mảng `TANGIBLE_HERITAGE_DATA` hoặc `INTANGIBLE_HERITAGE
 
 ## 📞 LIÊN HỆ BAN ĐIỀU HÀNH DỰ ÁN
 - **Chủ nhiệm dự án & Quản trị nội dung**: Cô Mến & Nhóm phụ trách
-- **Hotline / Zalo**: `0962.629.650`
+- **Hotline / Zalo**: `0985.449.123`
 - **Địa chỉ**: Xã Nhã Nam, Thành phố Bắc Ninh
 - **Mục tiêu**: Phục vụ công tác giáo dục truyền thống phi lợi nhuận cho học sinh và nhân dân.
 

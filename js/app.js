@@ -904,7 +904,7 @@ function openDetailModal(itemId) {
           <div class="photo-pending-frame rounded-2xl p-8 text-center">
             <div class="mb-2 text-[#8B1E1E] flex justify-center">${ic('landmark','w-8 h-8')}</div>
             <p class="font-heritage-serif font-bold text-[#8B1E1E]">Ảnh tư liệu thực tế tại di tích đang được Ban biên tập cập nhật</p>
-            <p class="text-xs text-[#786C5E] mt-1">Thầy cô, học sinh có ảnh chụp thật tại di tích xin gửi qua Zalo cô Mến 0962.629.650.</p>
+            <p class="text-xs text-[#786C5E] mt-1">Thầy cô, học sinh có ảnh chụp thật tại di tích xin gửi qua Zalo cô Mến 0985.449.123.</p>
           </div>
         `}
 
