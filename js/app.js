@@ -41,6 +41,26 @@ function unlockScroll(force = false) {
  * ====================================================================
  */
 
+// Phiếu góp ý Google Biểu mẫu: link báo lỗi từng di tích tự điền sẵn tên di tích.
+// entry.299450819 = câu "Bạn đã xem những di tích nào?" (giá trị phải trùng đúng lựa chọn trong form),
+// entry.1121841917 = câu "Chỗ nào trong nội dung chưa chính xác?".
+const FEEDBACK_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd8dhq3sS6yTca3nX9z0V0CJdj3SkRFUXYmcUsmLCJvDf0rCA/viewform';
+const FEEDBACK_FORM_OPTIONS = {
+  'vat-the-1': 'Khu di tích đình - chùa Hả', 'vat-the-2': 'Chùa Tứ Giáp', 'vat-the-3': 'Chùa Đồng Điều',
+  'vat-the-4': 'Đền Gốc Khế', 'vat-the-5': 'Đồi Phủ', 'vat-the-6': 'Đình làng Chuông',
+  'vat-the-7': 'Chùa Nam Thiên (chùa Phố)', 'vat-the-8': 'Đền Đề Truật', 'vat-the-9': 'Nghĩa địa Pháp',
+  'vat-the-10': 'Đền thờ Cả Trọng', 'vat-the-11': 'Đình Dương Lâm', 'vat-the-12': 'Đình Cầu Thượng',
+  'vat-the-13': 'Đình Sậy', 'vat-the-14': 'Đình Nẻo', 'vat-the-15': 'Chùa Dương Sơn', 'vat-the-16': 'Đình làng Sặt',
+  'phi-vat-the-1': 'Lễ hội khởi nghĩa Yên Thế', 'phi-vat-the-2': 'Hát chèo truyền thống',
+  'phi-vat-the-3': 'Nghề làm bánh khảo, kẹo lạc', 'phi-vat-the-4': 'Tập quán tưởng niệm Lương Văn Nắm và Hoàng Hoa Thám',
+  'phi-vat-the-5': 'Trò chơi dân gian và võ cổ truyền', 'phi-vat-the-6': 'Làng nói phét Dương Sơn',
+};
+function feedbackUrl(item) {
+  const p = new URLSearchParams({ usp: 'pp_url', 'entry.1121841917': `[${item.title}] ` });
+  if (FEEDBACK_FORM_OPTIONS[item.id]) p.set('entry.299450819', FEEDBACK_FORM_OPTIONS[item.id]);
+  return `${FEEDBACK_FORM_URL}?${p}`;
+}
+
 // Trạng thái ứng dụng (Application State)
 const state = {
   currentCategory: 'all', // 'all' | 'vat-the' | 'phi-vat-the'
@@ -689,6 +709,9 @@ function openDetailModal(itemId) {
           ` : ''}
           <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#166534] border border-[#EADECF] hover:bg-[#F0FDF4] transition flex items-center gap-1.5 shadow-xs">
             ${ic('map', 'w-3.5 h-3.5')} <span>Chỉ đường Google Maps</span>
+          </a>
+          <a href="${escapeHtml(feedbackUrl(item))}" target="_blank" rel="noopener noreferrer" title="Mở phiếu góp ý, tên di tích đã điền sẵn" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#C59B27]/60 hover:bg-[#FFFBEB] transition flex items-center gap-1.5 shadow-xs">
+            ${ic('scroll', 'w-3.5 h-3.5')} <span>Báo lỗi nội dung này ↗</span>
           </a>
         </div>
       </section>

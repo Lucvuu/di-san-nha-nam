@@ -114,6 +114,13 @@
             class="text-sm font-medium text-[#5C5248] hover:text-[#8B1E1E] transition relative py-1 border-b-2 border-transparent hover:border-[#C59B27] whitespace-nowrap">
             <span>Liên hệ</span>
           </a>
+
+          <a
+            href="https://forms.gle/DAm42WZF4JRAYzns6" target="_blank" rel="noopener noreferrer"
+            title="Mở phiếu góp ý (Google Biểu mẫu, ẩn danh)"
+            class="text-sm font-semibold text-[#8B1E1E] hover:text-[#6F1515] transition relative py-1 border-b-2 border-[#C59B27] whitespace-nowrap">
+            <span>Góp ý ↗</span>
+          </a>
         </nav>
 
         <!-- Thao tác góc phải: Trình phát nhạc 2 bài ("Nhã Nam trong tôi" & "THPT Nhã Nam") + Hotline -->
@@ -216,6 +223,11 @@
         onclick="document.getElementById('mobile-menu').classList.add('hidden');"
         class="block px-3 py-2 rounded-xl text-base font-semibold text-[#5C5248] hover:bg-[#F5EFE6]">
         <svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-phone"/></svg> Liên hệ người điều hành (cô Mến)
+      </a>
+      <a
+        href="https://forms.gle/DAm42WZF4JRAYzns6" target="_blank" rel="noopener noreferrer"
+        class="block px-3 py-2 rounded-xl text-base font-bold text-[#8B1E1E] bg-[#F5EFE6] border border-[#C59B27]/50 hover:bg-[#EADECF]">
+        <svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-scroll"/></svg> Gửi góp ý / báo lỗi trang web ↗
       </a>
     </div>
   </header>
@@ -1099,11 +1111,23 @@
     <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
 
       <!-- Thông điệp giáo dục -->
-      <blockquote class="max-w-3xl mx-auto text-center mb-12 pb-10 border-b border-white/10">
-        <p class="font-heritage-serif italic text-base sm:text-lg text-[#F6E05E] leading-relaxed">
-          “Người trẻ hiểu về ngày hôm qua cũng như hiểu về bộ rễ đã âm thầm cắm sâu vào lòng đất mẹ, tạo thế đứng vững chãi cho cây đời vươn cành xanh tốt hôm nay và mai sau.”
-        </p>
-      </blockquote>
+      <div class="max-w-3xl mx-auto text-center mb-12 pb-10 border-b border-white/10">
+        <blockquote>
+          <p class="font-heritage-serif italic text-base sm:text-lg text-[#F6E05E] leading-relaxed">
+            “Người trẻ hiểu về ngày hôm qua cũng như hiểu về bộ rễ đã âm thầm cắm sâu vào lòng đất mẹ, tạo thế đứng vững chãi cho cây đời vươn cành xanh tốt hôm nay và mai sau.”
+          </p>
+        </blockquote>
+
+        <!-- Phiếu góp ý (Google Biểu mẫu) -->
+        <div id="feedback" class="mt-10 p-5 sm:p-6 rounded-2xl bg-[#8B1E1E] border border-[#C59B27] shadow-lg">
+          <p class="font-heritage-serif font-bold text-lg sm:text-xl text-[#F5EFE6]">Thầy cô và các em đã xem trang?</p>
+          <p class="mt-1 text-sm text-[#F5EFE6]/85">Mỗi góp ý giúp Ban biên tập sửa lỗi và bổ sung tư liệu. Phiếu ẩn danh, chỉ mất khoảng 2 phút.</p>
+          <a href="https://forms.gle/DAm42WZF4JRAYzns6" target="_blank" rel="noopener noreferrer"
+            class="mt-4 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-[#2A2521] bg-[#F6E05E] hover:bg-[#F5EFE6] transition-colors shadow-sm">
+            <svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-scroll"/></svg> Gửi góp ý / báo lỗi ↗
+          </a>
+        </div>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-12">
         
@@ -1422,6 +1446,6 @@
   <!-- SCRIPT FILES -->
   <script src="js/data.js?v=3.2.1"></script>
   <script src="js/utils.js?v=3.2.1"></script>
-  <script src="js/app.js?v=3.2.1"></script>
+  <script src="js/app.js?v=3.2.2"></script>
 </body>
 </html>
