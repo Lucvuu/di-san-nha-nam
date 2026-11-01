@@ -199,9 +199,7 @@ function renderQuickSearchTags() {
 : defaultTags;
 
   container.innerHTML = tags.map(tag => `
-    <button type="button" class="quick-tag px-3 py-1.5 text-xs font-medium rounded-full bg-[#F5EFE6] text-[#5C5248] border border-[#EADECF] hover:bg-[#8B1E1E] hover:text-white transition duration-200" data-tag="${tag}">
-      # ${tag}
-    </button>
+    <button type="button" class="quick-tag" data-tag="${tag}">${tag}</button>
   `).join('');
 
   container.querySelectorAll('button').forEach(btn => {
@@ -302,8 +300,7 @@ function updateResultsSummary(count) {
     const routeName = route? `${route.name} (${route.title})`: 'Tuyến di sản';
     summaryEl.innerHTML = `<div class="flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-xl bg-[#FFFDF9] border border-[#8B1E1E]/30 text-xs sm:text-sm text-[#2A2521]">
       <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-[#8B1E1E]"></span>
-        <span>Đang lọc hiển thị <strong class="text-[#8B1E1E] font-bold">${count}</strong> di tích thuộc <strong class="text-[#8B1E1E]">${escapeHtml(routeName)}</strong></span>
+                <span>Đang lọc hiển thị <strong class="text-[#8B1E1E] font-bold">${count}</strong> di tích thuộc <strong class="text-[#8B1E1E]">${escapeHtml(routeName)}</strong></span>
       </div>
       <button type="button" onclick="clearRouteFilter()" class="text-xs text-[#8B1E1E] underline hover:text-[#6F1515] font-semibold cursor-pointer">
         ${ic('x')} Bỏ lọc tuyến để xem tất cả di sản
@@ -339,181 +336,54 @@ function renderHeritageGrid(items) {
 
   gridContainer.innerHTML = items.map(item => {
     const isVatThe = item.category === 'vat-the';
-    const locationIcon = isVatThe 
-? `<svg class="w-4 h-4 text-[#8B1E1E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>`
-: `<svg class="w-4 h-4 text-[#C59B27] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>`;
-
-    const locationLabel = isVatThe? 'Địa chỉ': 'Phạm vi';
-    const locationValue = isVatThe? item.address: item.scope;
-
     const isFav = state.favorites.includes(item.id);
+    const title = escapeHtml(item.title);
+    // Nhãn xếp hạng kiểu chữ báo: "Quốc gia đặc biệt · 2012" / "Phi vật thể · Lễ hội truyền thống"
+    const rankYear = isVatThe && item.decision ? (item.decision.match(/\d{4}/g) || []).pop() : '';
+    const rankLabel = isVatThe
+      ? [String(item.badge || '').replace(/^Di tích\s+/i, ''), rankYear].filter(Boolean).join(' · ')
+      : ['Phi vật thể', item.badge].filter(Boolean).join(' · ');
+    const openVideo = `event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'}), 350);`;
 
     return `
-      <article class="heritage-card rounded-2xl overflow-hidden flex flex-col h-full shadow-sm hover:shadow-xl transition duration-300 group">
-        <!-- Ảnh đại diện -->
-        <div class="relative h-56 sm:h-64 overflow-hidden bg-[#EADECF] cursor-pointer" onclick="openDetailModal('${item.id}')">
-          ${item.hasRealPhoto && item.thumbnail? `
-            <img 
-              src="${item.thumbnail}" 
-              alt="${escapeHtml(item.title)}" 
-              loading="lazy"
-              loading="lazy" decoding="async" style="object-position: ${item.imagePosition || 'center 30%'};" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              onerror="handleImageError(this)"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
-          `: `
-            <div class="w-full h-full relative flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#FAF5EE] via-[#F3ECE0] to-[#EAE0D0] overflow-hidden">
-              <img 
-                src="./assets/images/share/trong-dong-360.webp" 
-                alt="" loading="lazy" decoding="async" 
-                aria-hidden="true"
-                class="absolute -right-10 -bottom-10 w-44 h-44 opacity-[0.14] pointer-events-none select-none mix-blend-multiply" 
-              />
-              <div class="relative z-10 flex flex-col items-center">
-                <div class="w-12 h-12 rounded-full bg-white/90 border border-[#C59B27]/40 shadow-xs flex items-center justify-center text-xl mb-1.5 text-[#8B1E1E]">
-                  ${ic('landmark','w-6 h-6')}
-                </div>
-                <span class="max-w-[15rem] px-3 py-1.5 rounded-xl bg-white/95 border border-[#C59B27]/40 shadow-xs text-[11px] leading-snug font-semibold text-[#8B1E1E]">
-                  Ảnh tư liệu thực tế tại di tích đang được Ban biên tập cập nhật
-                </span>
-              </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+      <article class="heritage-card rounded-lg overflow-hidden flex flex-col h-full">
+        <div class="relative h-52 sm:h-56 overflow-hidden bg-[#EADECF] cursor-pointer" onclick="openDetailModal('${item.id}')">
+          ${item.hasRealPhoto && item.thumbnail ? `
+            <img src="${item.thumbnail}" alt="${title}" loading="lazy" decoding="async"
+              style="object-position: ${item.imagePosition || 'center 30%'};" class="w-full h-full object-cover"
+              onerror="handleImageError(this)" />
+          ` : `
+            <div class="photo-pending-frame w-full h-full relative flex items-end p-4 overflow-hidden">
+              <img src="./assets/images/share/trong-dong-360.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"
+                class="absolute -right-10 -bottom-10 w-44 h-44 opacity-[0.12] pointer-events-none select-none mix-blend-multiply" />
+              <span class="relative eyebrow eyebrow-muted">Ảnh tư liệu đang được cập nhật</span>
             </div>
           `}
-          
-          <!-- Huy hiệu phân loại -->
-          <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 max-w-[80%]">
-            <span class="px-2.5 py-1 text-xs font-semibold rounded-full shadow-sm ${isVatThe? 'bg-[#8B1E1E] text-white': 'bg-[#8B6914] text-white'}">
-              ${escapeHtml(item.badge || item.categoryName)}
-            </span>
-            ${item.relicType? `
-              <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-black/60 backdrop-blur-sm text-white/95 border border-white/20">
-                ${escapeHtml(item.relicType)}
-              </span>
-            `: ''}
-          </div>
-
-          <!-- Nút Yêu thích / Lưu lại -->
-          <button 
-            type="button" 
-            onclick="event.stopPropagation(); toggleFavorite('${item.id}');" 
-            title="${isFav? 'Bỏ lưu': 'Lưu lại di tích này'}"
-            aria-label="${isFav? 'Bỏ lưu di tích ' + escapeHtml(item.title): 'Lưu lại di tích ' + escapeHtml(item.title)}"
-            class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-gray-700 hover:text-[#8B1E1E] hover:bg-white transition shadow">
-            <svg class="w-5 h-5 ${isFav? 'text-[#8B1E1E] fill-[#8B1E1E]': 'fill-none'}" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-            </svg>
+          <button type="button"
+            onclick="event.stopPropagation(); toggleFavorite('${item.id}');"
+            title="${isFav ? 'Bỏ lưu' : 'Lưu lại di tích này'}"
+            aria-label="${isFav ? 'Bỏ lưu ' + title : 'Lưu lại ' + title}"
+            class="absolute top-2.5 right-2.5 w-8 h-8 rounded-md bg-[#FFFCF7]/90 border border-[rgba(139,30,30,0.12)] flex items-center justify-center text-[#7A5C3E] hover:text-[#8B1E1E] transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="${isFav ? 'currentColor' : 'none'}" class="${isFav ? 'text-[#8B1E1E]' : ''}" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
           </button>
-
-          <!-- Tên di tích nằm đè góc ảnh -->
-          <div class="absolute bottom-3 left-3 right-3 text-white">
-            <h3 class="font-heritage-serif font-bold text-lg leading-snug drop-shadow-md group-hover:text-[#F6E05E] transition-colors" style="text-wrap: balance;">
-              ${escapeHtml(item.title)}
-            </h3>
-          </div>
         </div>
 
-        <!-- Thân Card -->
-        <div class="p-5 flex-1 flex flex-col justify-between bg-white">
-          <div>
-            <!-- Quyết định xếp hạng (nếu có) -->
-            ${item.decision? `
-              <div class="mb-2.5 px-2.5 py-1.5 rounded-lg bg-[#FFF5F5] border border-[#FED7D7] text-xs font-medium text-[#8B1E1E] flex items-center gap-1.5">
-                <span class="font-bold flex-shrink-0 inline-flex items-center gap-1">${ic('scroll','w-3.5 h-3.5')} QĐ:</span>
-                <span class="line-clamp-1" title="${escapeHtml(item.decision)}">${escapeHtml(item.decision)}</span>
-              </div>
-            `: ''}
+        <div class="p-5 flex-1 flex flex-col">
+          <p class="eyebrow mb-2">${escapeHtml(rankLabel)}</p>
+          <h3 class="font-heritage-serif font-bold text-lg leading-snug text-[#2A2521] mb-2" style="text-wrap: balance;">
+            <button type="button" onclick="openDetailModal('${item.id}')" class="text-left hover:text-[#8B1E1E] transition-colors">${title}</button>
+          </h3>
+          <p class="text-sm text-[#5C5248] leading-relaxed line-clamp-2 mb-4">${escapeHtml(item.overview)}</p>
 
-            <!-- Đối tượng thờ (nếu có) -->
-            ${item.worship? `
-              <div class="mb-2.5 px-2.5 py-1.5 rounded-lg bg-[#FFFBEB] border border-[#FDE68A] text-xs text-[#78350F]">
-                <strong class="font-semibold text-[#8B1E1E]">Thờ phụng:</strong> ${escapeHtml(item.worship)}
-              </div>
-            `: ''}
-
-            <!-- Địa chỉ / Phạm vi thực hành -->
-            <div class="flex items-start gap-2 text-xs text-[#5C5248] mb-3 bg-[#FDFBF7] p-2.5 rounded-xl border border-[#EADECF]/60">
-              ${locationIcon}
-              <div class="leading-relaxed">
-                <div><strong class="font-semibold text-[#2A2521]">${locationLabel}:</strong> ${escapeHtml(locationValue)}</div>
-                ${item.oldAddress? `<div class="text-[11px] text-[#786C5E] mt-0.5"><span class="font-medium text-[#5C5248]">Trước 01/7/2025:</span> ${escapeHtml(item.oldAddress)}</div>`: ''}
-              </div>
+          <div class="mt-auto pt-3 border-t border-[rgba(44,30,24,0.1)] flex items-center justify-between gap-3">
+            <div class="card-media flex items-center gap-3.5 text-[#7A5C3E]">
+              ${item.hasRealPhoto ? `<span title="Ảnh thực tế">${ic('image')}<span class="sr-only">Ảnh thực tế</span></span>` : ''}
+              ${item.audioFile ? `<span title="Bản ghi âm thuyết minh">${ic('volume')}<span class="sr-only">Thuyết minh</span></span>` : ''}
+              ${item.video ? `<button type="button" onclick="${openVideo}" title="Xem video tư liệu" class="hover:text-[#8B1E1E] transition-colors">${ic('video')}<span class="sr-only">Video tư liệu ${title}</span></button>` : ''}
+              ${item.docFile ? `<span title="Có file Word giới thiệu (.docx)">${ic('file-text')}<span class="sr-only">File giới thiệu</span></span>` : ''}
+              <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" title="Chỉ đường trên Google Maps" aria-label="Chỉ đường đến ${title}" class="hover:text-[#8B1E1E] transition-colors">${ic('map')}</a>
             </div>
-
-            <!-- Tóm tắt -->
-            <p class="text-sm text-[#5C5248] line-clamp-3 leading-relaxed mb-4">
-              ${escapeHtml(item.overview)}
-            </p>
-
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              ${(item.tags || []).slice(0, 3).map(t => `
-                <span class="text-[11px] px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#786C5E] font-medium whitespace-nowrap">#${escapeHtml(t)}</span>
-              `).join('')}
-            </div>
-          </div>
-
-          <!-- Dải biểu tượng đa phương tiện (Nhiệm vụ 3) -->
-          <div class="mt-auto mb-3 pt-2.5 border-t border-[#EADECF]/70 flex flex-wrap items-center justify-between gap-1.5 text-[11px]">
-            <span class="font-semibold text-[#8B1E1E] flex items-center gap-1 whitespace-nowrap">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#8B1E1E]"></span>
-              Đa phương tiện:
-            </span>
-            <div class="flex items-center gap-1 flex-wrap">
-              <span class="px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#2A2521] border border-[#EADECF] font-medium whitespace-nowrap" title="Ảnh tư liệu thực tế">
-                ${ic('image','w-3.5 h-3.5')} ${!item.hasRealPhoto? 'Ảnh đang cập nhật': (item.thumbnail || '').includes('video-tu-lieu')? 'Ảnh từ video': 'Ảnh thực tế'}
-              </span>
-              <span class="px-2 py-0.5 rounded-md bg-[#FFF5F5] text-[#8B1E1E] border border-[#FED7D7] font-medium whitespace-nowrap" title="Bản ghi âm thuyết minh thực tế">
-                ${ic('volume','w-3.5 h-3.5')} Thuyết minh
-              </span>
-              <span class="px-2 py-0.5 rounded-md bg-[#F0FDF4] text-[#166534] border border-[#BBF7D0] font-medium whitespace-nowrap" title="Bản đồ Google Maps & Dẫn đường">
-                ${ic('map','w-3.5 h-3.5')} Bản đồ
-              </span>
-              <span class="px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] font-medium whitespace-nowrap" title="Tải file Word (.docx) bài giới thiệu">
-                ${ic('file-text','w-3.5 h-3.5')} File giới thiệu
-              </span>
-            </div>
-          </div>
-
-          <!-- Nút hành động xem chi tiết & video -->
-          <div class="pt-3 border-t border-[#EADECF]/60 flex flex-col gap-2">
-            ${item.id === 'vat-the-1' || item.id === 'phi-vat-the-1' ? `
-              <button 
-                type="button" 
-                onclick="event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'}), 350);"
-                class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 transition shadow-xs" 
-                aria-label="Xem video diễn tích Đề Nắm tế cờ (từ 05:54)">
-                ${ic('video')} <span>Xem video diễn tích Đề Nắm tế cờ <span class="whitespace-nowrap">(từ 05:54)</span></span>
-              </button>
-            ` : (item.video ? `
-              <button 
-                type="button" 
-                onclick="event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'}), 350);"
-                class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 transition shadow-xs" 
-                aria-label="Xem video tư liệu ${escapeHtml(item.title)}">
-                ${ic('video')} <span>Xem video tư liệu</span>
-              </button>
-            ` : '')}
-
-            <div class="flex items-center justify-between gap-2">
-              <button 
-                type="button" 
-                onclick="openDetailModal('${item.id}')"
-                class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#8B6914] hover:bg-[#6F540F]'} transition shadow-sm hover:shadow whitespace-nowrap">
-                <span>Xem chi tiết và bản đồ</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </button>
-
-              <a 
-                href="${item.map.directionsUrl}" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                title="Chỉ đường trên Google Maps"
-                class="p-2.5 rounded-xl border border-[#EADECF] hover:border-[#8B1E1E] text-[#5C5248] hover:text-[#8B1E1E] transition-colors"
-                aria-label="Chỉ đường đến ${escapeHtml(item.title)}">
-                <svg class="w-5 h-5 text-[#8B1E1E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
-              </a>
-            </div>
+            <button type="button" onclick="openDetailModal('${item.id}')" class="text-xs font-semibold text-[#8B1E1E] hover:underline underline-offset-4 whitespace-nowrap">Xem hồ sơ →</button>
           </div>
         </div>
       </article>
@@ -556,16 +426,15 @@ function openDetailModal(itemId) {
   if (isVatThe) {
     section3Html = `
       <div class="space-y-4 text-[#2A2521] leading-relaxed">
-        <p class="text-base text-[#4A4036] font-medium leading-relaxed bg-[#FDFBF7] p-4 rounded-xl border border-[#8B1E1E]/15">
+        <p class="modal-lede">
           ${escapeHtml(item.content.intro)}
         </p>
 
         <div>
-          <h4 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-2 flex items-center gap-2">
-            <svg class="w-5 h-5 text-[#C59B27]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Giá trị và ý nghĩa lịch sử vẻ vang:
+          <h4 class="modal-subhead">
+            Giá trị lịch sử
           </h4>
-          <ul class="space-y-2 text-sm text-[#4A4036] list-disc list-inside pl-2">
+          <ul class="modal-list">
             ${(item.content.historicalSignificance || []).map(point => `
               <li class="leading-relaxed">${formatMarkdownBold(point)}</li>
             `).join('')}
@@ -573,11 +442,10 @@ function openDetailModal(itemId) {
         </div>
 
         <div>
-          <h4 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-2 flex items-center gap-2">
-            <svg class="w-5 h-5 text-[#C59B27]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Đặc trưng kiến trúc và điêu khắc:
+          <h4 class="modal-subhead">
+            Kiến trúc và di vật
           </h4>
-          <ul class="space-y-2 text-sm text-[#4A4036] list-disc list-inside pl-2">
+          <ul class="modal-list">
             ${(item.content.architecture || []).map(point => `
               <li class="leading-relaxed">${formatMarkdownBold(point)}</li>
             `).join('')}
@@ -585,29 +453,25 @@ function openDetailModal(itemId) {
         </div>
 
         ${item.content.studyNote? `
-          <div class="mt-4 p-4 rounded-xl bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] text-sm">
-            <div class="font-bold flex items-center gap-2 mb-1">
-              <svg class="w-4 h-4 text-[#D97706]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-              Góc học tập và giáo dục truyền thống (Trường THPT Nhã Nam):
-            </div>
-            <p class="leading-relaxed">${escapeHtml(item.content.studyNote)}</p>
-          </div>
+          <aside class="modal-aside">
+            <div class="eyebrow mb-1">Ghi chú học tập <span aria-hidden="true">·</span> Trường THPT Nhã Nam</div>
+            <p>${escapeHtml(item.content.studyNote)}</p>
+          </aside>
         `: ''}
       </div>
     `;
   } else {
     section3Html = `
       <div class="space-y-4 text-[#2A2521] leading-relaxed">
-        <p class="text-base text-[#4A4036] font-medium leading-relaxed bg-[#FDFBF7] p-4 rounded-xl border border-[#C59B27]/30">
+        <p class="modal-lede">
           ${escapeHtml(item.content.intro)}
         </p>
 
         <div>
-          <h4 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-2 flex items-center gap-2">
-            <svg class="w-5 h-5 text-[#C59B27]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Nguồn gốc và ý nghĩa văn hóa:
+          <h4 class="modal-subhead">
+            Nguồn gốc và ý nghĩa
           </h4>
-          <ul class="space-y-2 text-sm text-[#4A4036] list-disc list-inside pl-2">
+          <ul class="modal-list">
             ${(item.content.originAndMeaning || []).map(point => `
               <li class="leading-relaxed">${formatMarkdownBold(point)}</li>
             `).join('')}
@@ -615,11 +479,10 @@ function openDetailModal(itemId) {
         </div>
 
         <div>
-          <h4 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-2 flex items-center gap-2">
-            <svg class="w-5 h-5 text-[#C59B27]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-            Nghi thức, hoạt động và thực hành:
+          <h4 class="modal-subhead">
+            Nghi thức và thực hành
           </h4>
-          <ul class="space-y-2 text-sm text-[#4A4036] list-disc list-inside pl-2">
+          <ul class="modal-list">
             ${(item.content.ritualsAndActivities || []).map(point => `
               <li class="leading-relaxed">${formatMarkdownBold(point)}</li>
             `).join('')}
@@ -627,13 +490,10 @@ function openDetailModal(itemId) {
         </div>
 
         ${item.content.preservationValue? `
-          <div class="mt-4 p-4 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] text-[#166534] text-sm">
-            <div class="font-bold flex items-center gap-2 mb-1">
-              <svg class="w-4 h-4 text-[#16a34a]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              Giá trị bảo tồn và giáo dục thế hệ trẻ (Trường THPT Nhã Nam):
-            </div>
-            <p class="leading-relaxed">${escapeHtml(item.content.preservationValue)}</p>
-          </div>
+          <aside class="modal-aside">
+            <div class="eyebrow mb-1">Bảo tồn và giáo dục <span aria-hidden="true">·</span> Trường THPT Nhã Nam</div>
+            <p>${escapeHtml(item.content.preservationValue)}</p>
+          </aside>
         `: ''}
       </div>
     `;
@@ -642,99 +502,82 @@ function openDetailModal(itemId) {
   state.lightboxImages = item.gallery || [];
 
   container.innerHTML = `
-    <!-- Thanh điều hướng và nút thao tác trên modal -->
-    <div class="flex items-center justify-between pb-4 mb-6 border-b border-[#EADECF]">
-      <div class="flex items-center gap-2">
-        <span class="px-3 py-1 rounded-full text-xs font-bold ${isVatThe? 'bg-[#8B1E1E] text-white': 'bg-[#8B6914] text-white'}">
-          ${item.categoryName}
-        </span>
-        <span class="text-xs text-[#786C5E] font-medium">Mã số: #${item.id}</span>
-      </div>
+    <!-- Thanh thao tác trên modal -->
+    <div class="flex items-center justify-between pb-4 mb-6 border-b border-[rgba(44,30,24,0.1)]">
+      <p class="eyebrow">${escapeHtml(item.categoryName)} <span aria-hidden="true">·</span> <span class="eyebrow-muted">Mã ${item.id}</span></p>
 
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-1">
         <button
           type="button"
           onclick="copyToClipboard('${getHeritageShareUrl(item.id)}', 'Đã sao chép liên kết di tích!')"
           title="Sao chép liên kết mở thẳng hồ sơ này" aria-label="Sao chép liên kết hồ sơ"
-          class="inline-flex items-center justify-center gap-1.5 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#F5EFE6] text-[#5C5248] hover:bg-[#EADECF] transition-colors">
+          class="inline-flex items-center justify-center gap-1.5 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-2.5 py-1.5 rounded-md text-xs font-medium text-[#5C5248] hover:text-[#8B1E1E] hover:bg-[#F5EFE6] transition-colors">
           ${ic('link')}
           <span class="hidden sm:inline">Sao chép liên kết</span>
         </button>
-
-        <!-- Nút in tài liệu học tập -->
-        <button 
-          type="button" 
-          onclick="window.print()" 
+        <button
+          type="button"
+          onclick="window.print()"
           title="In tài liệu này"
-          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#F5EFE6] text-[#5C5248] hover:bg-[#EADECF] transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-          <span>In tài liệu</span>
+          class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium text-[#5C5248] hover:text-[#8B1E1E] hover:bg-[#F5EFE6] transition-colors">
+          ${ic('file-text')}
+          <span>In</span>
         </button>
-
-        <!-- Nút đóng modal -->
-        <button 
-          type="button" 
+        <button
+          type="button"
           onclick="closeDetailModal()" aria-label="Đóng hồ sơ di tích"
-          class="w-11 h-11 flex-shrink-0 rounded-full bg-[#F5EFE6] text-[#5C5248] hover:text-[#8B1E1E] hover:bg-[#EADECF] flex items-center justify-center transition-colors">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          class="w-11 h-11 flex-shrink-0 rounded-md text-[#5C5248] hover:text-[#8B1E1E] hover:bg-[#F5EFE6] flex items-center justify-center transition-colors">
+          ${ic('x', 'w-5 h-5')}
         </button>
       </div>
     </div>
 
-    <!-- ================================================================
-         NỘI DUNG CHÍNH XÁC 5 PHẦN THEO YÊU CẦU BẮT BUỘC
-         ================================================================ -->
     <div class="space-y-8">
-      
-      <!-- PHẦN 1: TÊN DI TÍCH / TÊN DI SẢN -->
-      <section class="border-b border-[#EADECF]/80 pb-5">
-        <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold text-[#8B1E1E] leading-tight" style="text-wrap: balance;">
+
+      <!-- PHẦN 1: TÊN + BẢNG THÔNG MỤC (địa chỉ, quyết định, đối tượng thờ...) -->
+      <section class="pb-2">
+        <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold text-[#8B1E1E] leading-tight mb-5" style="text-wrap: balance;">
           ${escapeHtml(item.title)}
         </h2>
-        ${item.badge? `
-          <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A] whitespace-nowrap">
-            <svg class="w-4 h-4 text-[#D97706]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-            ${item.badge}
-          </div>
-        `: ''}
 
-        <!-- RICH MEDIA BAR: ĐIỀU HƯỚNG NHANH 5 ĐỊNH DẠNG ĐA PHƯƠNG TIỆN -->
-        <div class="rich-media-bar mt-4 flex flex-wrap items-center gap-2 p-2.5 rounded-xl bg-[#FAF5EE] border border-[#EADECF] text-xs">
-          <button type="button" onclick="playModalRealAudio()" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition flex items-center gap-1.5 shadow-xs cursor-pointer whitespace-nowrap">
-            ${ic('volume', 'w-3.5 h-3.5')} <span>Nghe thuyết minh</span>
-          </button>
-          ${item.docFile ? `
-            <a href="${item.docFile.path}" download="${escapeHtml(item.docFile.fileName)}" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#1E40AF] border border-[#EADECF] hover:bg-[#EFF6FF] transition flex items-center gap-1.5 shadow-xs whitespace-nowrap">
-              ${ic('download', 'w-3.5 h-3.5')} <span>Tải file chữ (.docx)</span>
-            </a>
-          ` : ''}
-          ${item.video ? `
-            <button type="button" onclick="document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'})" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-red-600 text-white hover:bg-red-700 transition flex items-center gap-1.5 shadow-xs whitespace-nowrap">
-              ${ic('video', 'w-3.5 h-3.5')} <span>Xem video tư liệu</span>
-            </button>
-          ` : ''}
-          <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#166534] border border-[#EADECF] hover:bg-[#F0FDF4] transition flex items-center gap-1.5 shadow-xs whitespace-nowrap">
-            ${ic('map', 'w-3.5 h-3.5')} <span>Chỉ đường Google Maps</span>
-          </a>
-          <a href="${escapeHtml(feedbackUrl(item))}" target="_blank" rel="noopener noreferrer" title="Mở phiếu góp ý, tên di tích đã điền sẵn" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#C59B27]/60 hover:bg-[#FFFBEB] transition flex items-center gap-1.5 shadow-xs whitespace-nowrap">
-            ${ic('scroll', 'w-3.5 h-3.5')} <span>Báo lỗi nội dung này ↗</span>
-          </a>
+        ${(() => {
+          const parentRoute = (typeof HERITAGE_ROUTES !== 'undefined') ? HERITAGE_ROUTES.find(r => r.relicIds && r.relicIds.includes(item.id)) : null;
+          const place = isVatThe ? item.address : item.scope;
+          const rows = [
+            [isVatThe ? 'Cấp xếp hạng' : 'Loại hình', item.badge],
+            ['Loại hình di tích', isVatThe ? item.relicType : ''],
+            ['Quyết định', item.decision],
+            ['Đối tượng thờ', item.worship],
+            [isVatThe ? 'Địa chỉ' : 'Phạm vi', place && !isVatThe ? escapeHtml(place) : place ? `${escapeHtml(place)} <button type="button" onclick="copyToClipboard('${escapeHtml(place)}', 'Đã sao chép địa chỉ!')" class="spec-action">Sao chép</button>` : '', true],
+            ['Trước 01/7/2025', item.oldAddress],
+            ['Tuyến tham quan', parentRoute ? `Tuyến ${parentRoute.number} · ${escapeHtml(parentRoute.title)} <button type="button" onclick="closeDetailModal(); selectRoute('${parentRoute.id}'); selectRouteRelic('${item.id}'); document.getElementById('heritage-map-section')?.scrollIntoView({behavior: 'smooth'});" class="spec-action">Xem trên bản đồ →</button>` : '', true]
+          ].filter(r => r[1]);
+          return `<dl class="spec-table">${rows.map(([k, v, raw]) => `<div><dt>${k}</dt><dd>${raw ? v : escapeHtml(v)}</dd></div>`).join('')}</dl>`;
+        })()}
+
+        <!-- Liên kết nhanh -->
+        <div class="rich-media-bar mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-[#7A5C3E]">
+          <button type="button" onclick="playModalRealAudio()" class="modal-link">${ic('volume')} <span>Nghe thuyết minh</span></button>
+          ${item.video ? `<button type="button" onclick="document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'})" class="modal-link">${ic('video')} <span>Video tư liệu</span></button>` : ''}
+          ${item.docFile ? `<a href="${item.docFile.path}" download="${escapeHtml(item.docFile.fileName)}" class="modal-link">${ic('download')} <span>Tải file Word</span></a>` : ''}
+          <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" class="modal-link">${ic('map')} <span>Chỉ đường Google Maps</span></a>
+          <a href="${escapeHtml(feedbackUrl(item))}" target="_blank" rel="noopener noreferrer" title="Mở phiếu góp ý, tên di tích đã điền sẵn" class="modal-link">${ic('pencil')} <span>Báo lỗi nội dung ↗</span></a>
         </div>
       </section>
 
-      <section id="audioguide-section" class="border-b border-[#EADECF]/80 pb-6">
+      <section id="audioguide-section" class="border-b border-[rgba(44,30,24,0.1)] pb-6">
       ${item.audioFile ? `
         <!-- BẢN GHI ÂM THUYẾT MINH THỰC TẾ (ÂM THANH GỐC DO HỌC SINH / THẦY CÔ THỰC HIỆN) -->
-        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#FAF5EE] via-[#FFFDF9] to-[#FFFBEB] border-2 border-[#8B1E1E]/25 shadow-sm space-y-4">
+        <div class="p-4 sm:p-5 rounded-lg bg-[#FFFCF7] border border-[rgba(139,30,30,0.12)] space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div class="flex items-center gap-3.5">
-              <div class="w-12 h-12 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center flex-shrink-0 shadow-md">
+              <div class="w-10 h-10 rounded-md border border-[rgba(139,30,30,0.2)] text-[#8B1E1E] flex items-center justify-center flex-shrink-0">
                 ${ic('volume', 'w-6 h-6')}
               </div>
               <div>
                 <div class="text-sm font-bold text-[#8B1E1E] flex items-center gap-2">
-                  <span>Bản ghi âm thuyết minh tư liệu thực tế</span>
-                  <span class="px-2.5 py-0.5 rounded-full whitespace-nowrap flex-shrink-0 text-[10px] bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">Âm thanh gốc</span>
+                  <span>Bản ghi âm thuyết minh</span>
+                  <span class="eyebrow eyebrow-muted whitespace-nowrap">Âm thanh gốc</span>
                 </div>
                 <div id="modal-audio-current-title" class="text-xs text-[#5C5248] mt-1 font-medium">${escapeHtml(item.audioFile.title)} (tư liệu thực tế do Trường THPT Nhã Nam thực hiện)</div>
               </div>
@@ -747,7 +590,7 @@ function openDetailModal(itemId) {
 
           ${item.audioTracks && item.audioTracks.length > 1 ? `
           <!-- DANH SÁCH BẢN THUYẾT MINH CHUYÊN ĐỀ (MULTI-TRACK SELECTOR) -->
-          <div class="pt-3 border-t border-[#EADECF]/80">
+          <div class="pt-3 border-t border-[rgba(44,30,24,0.1)]">
             <div class="text-[11px] font-bold text-[#786C5E] uppercase tracking-wider mb-2 flex items-center gap-1.5">
               <svg class="w-3.5 h-3.5 text-[#8B1E1E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"></path></svg>
               <span>Chọn bản ghi âm thuyết minh (${item.audioTracks.length} bản):</span>
@@ -769,7 +612,7 @@ function openDetailModal(itemId) {
                       <div class="text-[10px] opacity-80 truncate">${escapeHtml(tr.subtitle || '')}</div>
                     </div>
                   </div>
-                  <span class="text-[10px] px-2 py-0.5 rounded-full font-mono font-bold flex-shrink-0 border border-current opacity-80">
+                  <span class="text-[11px] tabular-nums flex-shrink-0 opacity-80">
                     ${tr.duration || 'Âm thanh'}
                   </span>
                 </button>
@@ -780,13 +623,13 @@ function openDetailModal(itemId) {
         </div>
       ` : `
         <!-- DI TÍCH ĐANG TIẾP TỤC BỔ SUNG FILE GHI ÂM THỰC TẾ -->
-        <div class="p-4 rounded-xl bg-[#FAF5EE] border border-[#EADECF] text-xs flex items-center gap-3.5">
+        <div class="p-4 rounded-lg border border-[rgba(139,30,30,0.12)] text-xs flex items-center gap-3.5">
           <div class="w-10 h-10 rounded-full bg-[#EADECF] text-[#8B1E1E] flex items-center justify-center flex-shrink-0">
             ${ic('volume', 'w-5 h-5')}
           </div>
           <div>
             <div class="font-bold text-[#8B1E1E]">Bản ghi âm thuyết minh thực tế</div>
-            <div class="text-[11px] text-[#5C5248] mt-0.5">Tư liệu âm thanh gốc đang được các thầy cô và học sinh Trường THPT Nhã Nam tiếp tục ghi âm và bổ sung trong thời gian sớm nhất.</div>
+            <div class="text-[11px] text-[#5C5248] mt-0.5">Thầy cô và học sinh Trường THPT Nhã Nam đang ghi âm bản thuyết minh cho mục này.</div>
           </div>
         </div>
       `}
@@ -794,8 +637,8 @@ function openDetailModal(itemId) {
 
       ${item.video ? `
       <!-- VIDEO TƯ LIỆU YOUTUBE -->
-      <section id="modal-video-section" class="border-b border-[#EADECF]/80 pb-6 scroll-mt-4">
-        <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-3 flex items-center gap-2">${ic('video', 'w-5 h-5')} Video tư liệu</h3>
+      <section id="modal-video-section" class="border-b border-[rgba(44,30,24,0.1)] pb-6 scroll-mt-4">
+        <h3 class="modal-section-title flex items-center gap-2">${ic('video', 'w-5 h-5')} Video tư liệu</h3>
         <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
           <iframe
             src="${item.video.embedUrl}${item.video.embedUrl.includes('?') ? '&' : '?'}rel=0&enablejsapi=1"
@@ -812,62 +655,17 @@ function openDetailModal(itemId) {
       </section>
       ` : ''}
 
-      <!-- PHẦN 2: ĐỊA CHỈ / PHẠM VI -->
-      <section class="border-b border-[#EADECF]/80 pb-5">
-        <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-2">${isVatThe? 'Địa chỉ cụ thể': 'Phạm vi thực hành di sản'}</h3>
-        <div class="bg-[#FDFBF7] p-4 rounded-xl border border-[#EADECF] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <div class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-[#8B1E1E] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            <div>
-              <div class="text-xs text-[#786C5E] font-medium mb-0.5">${isVatThe? 'Địa chỉ': 'Địa bàn cộng đồng'}:</div>
-              <div class="text-base font-semibold text-[#2A2521] leading-snug">
-                ${escapeHtml(isVatThe? item.address: item.scope)}
-              </div>
-            </div>
-          </div>
-          <button 
-            type="button" 
-            onclick="copyToClipboard('${escapeHtml(isVatThe? item.address: item.scope)}', 'Đã sao chép địa chỉ!')"
-            class="px-3 py-1.5 rounded-lg text-xs font-medium bg-white text-[#5C5248] border border-[#EADECF] hover:bg-[#F5EFE6] transition-colors flex items-center gap-1.5 flex-shrink-0">
-            <svg class="w-4 h-4 text-[#C59B27]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-            Sao chép
-          </button>
-        </div>
-
-        ${(() => {
-          const parentRoute = (typeof HERITAGE_ROUTES !== 'undefined') ? HERITAGE_ROUTES.find(r => r.relicIds && r.relicIds.includes(item.id)) : null;
-          if (!parentRoute) return '';
-          return `
-            <div class="mt-3 p-3.5 rounded-xl bg-[#FAF5EE] border border-[#EADECF] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
-              <div class="flex items-center gap-2.5 min-w-0">
-                <span class="w-6 h-6 rounded-full bg-[#8B1E1E] text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0 shadow-xs">${parentRoute.number}</span>
-                <div>
-                  <div class="font-bold text-[#8B1E1E]">Thuộc tuyến ${parentRoute.number}: ${escapeHtml(parentRoute.title)}</div>
-                  <div class="text-[11px] text-[#786C5E] truncate mt-0.5">Lộ trình kết nối ${parentRoute.relicIds.length} di tích: ${escapeHtml(parentRoute.subtitle)}</div>
-                </div>
-              </div>
-              <button 
-                type="button" 
-                onclick="closeDetailModal(); selectRoute('${parentRoute.id}'); selectRouteRelic('${item.id}'); document.getElementById('heritage-map-section')?.scrollIntoView({behavior: 'smooth'});" 
-                class="px-3.5 py-2 rounded-lg bg-[#8B1E1E] hover:bg-[#6F1515] text-white font-bold transition shadow-xs whitespace-nowrap self-stretch sm:self-auto text-center cursor-pointer">
-                Xem cụm di tích trên bản đồ →
-              </button>
-            </div>
-          `;
-        })()}
-      </section>
-
       <!-- PHẦN 3: NỘI DUNG VỀ DI TÍCH / NỘI DUNG DI SẢN -->
-      <section class="border-b border-[#EADECF]/80 pb-5">
-        <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-3">${isVatThe? 'Nội dung về di tích': 'Nội dung di sản'}</h3>
+      <section class="border-b border-[rgba(44,30,24,0.1)] pb-5">
+        <h3 class="modal-section-title">${isVatThe? 'Nội dung về di tích': 'Nội dung di sản'}</h3>
         ${section3Html}
       </section>
 
       <!-- PHẦN 4: CHỈ DẪN ĐI ĐẾN ĐÓ BẰNG GOOGLE MAP -->
-      <section class="border-b border-[#EADECF]/80 pb-5">
-        <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-3">Chỉ dẫn đường đi bằng Google Maps</h3>
+      <section class="border-b border-[rgba(44,30,24,0.1)] pb-5">
+        <h3 class="modal-section-title">Chỉ dẫn đường đi bằng Google Maps</h3>
         
-        <div class="rounded-2xl overflow-hidden border border-[#EADECF] shadow-sm bg-[#F5EFE6]">
+        <div class="rounded-lg overflow-hidden border border-[rgba(139,30,30,0.12)] bg-[#F5EFE6]">
           <div class="relative w-full h-72 sm:h-80 bg-gray-200">
             <iframe 
               src="${item.map.embedUrl}" 
@@ -881,7 +679,7 @@ function openDetailModal(itemId) {
             </iframe>
           </div>
 
-          <div class="p-4 bg-white flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-[#EADECF]">
+          <div class="p-4 bg-[#FFFCF7] flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-[rgba(139,30,30,0.12)]">
             <div class="text-xs text-[#5C5248] text-center sm:text-left">
               <span class="font-bold text-[#8B1E1E]">Địa điểm:</span> ${escapeHtml(item.map.locationName || item.title)}
             </div>
@@ -890,7 +688,7 @@ function openDetailModal(itemId) {
               href="${item.map.directionsUrl}" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-[#8B1E1E] hover:bg-[#6F1515] shadow-md hover:shadow-lg transition duration-200">
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md font-semibold text-sm text-white bg-[#8B1E1E] hover:bg-[#6F1515] transition-colors duration-200">
               <svg class="w-5 h-5 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
               <span>Mở chỉ đường trên Google Maps</span>
               <svg class="w-4 h-4 ml-1 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -917,13 +715,13 @@ function openDetailModal(itemId) {
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           ${(item.gallery || []).map((img, idx) => `
             <div 
-              class="group relative h-48 rounded-xl overflow-hidden cursor-pointer border border-[#EADECF] bg-[#F5EFE6]"
+              class="group relative h-48 rounded-md overflow-hidden cursor-pointer border border-[rgba(139,30,30,0.12)] bg-[#F5EFE6]"
               onclick="openLightbox(${idx})">
               <img 
                 src="${img.url}" 
                 alt="${escapeHtml(img.caption || item.title)}" 
                 loading="lazy"
-                loading="lazy" decoding="async" style="object-position: ${img.position || 'center 30%'};" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy" decoding="async" style="object-position: ${img.position || 'center 30%'};" class="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-90"
                 onerror="handleImageError(this)"
               />
               <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent text-white px-3 pt-6 pb-2 pr-10">
@@ -939,8 +737,8 @@ function openDetailModal(itemId) {
 
       ${item.docFile? `
       <!-- PHẦN 6: FILE CHỮ GIỚI THIỆU (.docx) + TOÀN VĂN -->
-      <section class="border-t border-[#EADECF]/80 pt-5">
-        <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-3">Tài liệu giới thiệu</h3>
+      <section class="border-t border-[rgba(44,30,24,0.1)] pt-5">
+        <h3 class="modal-section-title">Tài liệu giới thiệu</h3>
         <div>
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
             <div>
@@ -953,7 +751,7 @@ function openDetailModal(itemId) {
             </a>
           </div>
           <h4 class="font-semibold text-[#2A2521] mb-2 flex items-center gap-2">${ic('book','w-4 h-4 text-[#8B1E1E]')} Nội dung chi tiết về di tích</h4>
-          <div id="doc-fulltext" class="doc-fulltext bg-[#FDFBF7] rounded-xl border border-[#EADECF] p-4 sm:p-5 max-h-[32rem] overflow-y-auto text-sm leading-relaxed text-[#2A2521]">
+          <div id="doc-fulltext" class="doc-fulltext bg-[#FFFCF7] rounded-lg border border-[rgba(139,30,30,0.12)] p-4 sm:p-5 max-h-[32rem] overflow-y-auto text-sm leading-relaxed text-[#2A2521]">
             <p class="text-[#786C5E] italic">Đang tải nội dung…</p>
           </div>
 
@@ -1216,12 +1014,10 @@ function initAudioGuideForModal(item) {
   if (voiceInfoEl) {
     if (voiceInfo.isVietnamese) {
       voiceInfoEl.innerHTML = `
-        <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse inline-block"></span>
         <span>Giọng tiếng Việt (${escapeHtml(voiceInfo.name || 'Chuẩn')})</span>
       `;
     } else {
       voiceInfoEl.innerHTML = `
-        <span class="w-2 h-2 rounded-full bg-amber-500 inline-block"></span>
         <span>Hỗ trợ đọc đa nền tảng</span>
       `;
     }
@@ -1585,22 +1381,22 @@ function submitQuiz() {
 }
 
 function showQuizResultModal(score, total) {
-  let badgeTitle = 'Nhà tìm hiểu di sản Nhã Nam';
-  let message = 'Bạn hãy tiếp tục khám phá thêm các di tích lịch sử tuyệt đẹp tại Nhã Nam nhé!';
+  let badgeTitle = 'Cần đọc thêm';
+  let message = 'Đọc lại hồ sơ các di tích rồi làm lại bài để kiểm tra.';
   
   if (score === 5) {
-    badgeTitle = 'Xuất sắc! Đại sứ di sản THPT Nhã Nam';
-    message = 'Tuyệt vời! Bạn am hiểu rất sâu sắc về truyền thống lịch sử hào hùng quê hương Nhã Nam!';
+    badgeTitle = 'Đúng cả năm câu';
+    message = 'Lời giải thích hiện ngay dưới mỗi câu hỏi.';
   } else if (score >= 3) {
-    badgeTitle = 'Khá, giỏi! Tự hào quê hương Nhã Nam';
-    message = 'Rất tốt! Bạn đã nắm được những nét đặc sắc nhất của di sản văn hóa địa phương.';
+    badgeTitle = 'Đạt yêu cầu';
+    message = 'Xem lời giải thích dưới các câu trả lời sai.';
   }
 
   const resultContainer = document.getElementById('quiz-result-content');
   if (resultContainer) {
     resultContainer.innerHTML = `
       <div class="text-center py-4">
-        <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-[#FFFBEB] border-2 border-[#C59B27] flex items-center justify-center text-3xl">
+        <div class="mx-auto mb-3 flex items-center justify-center text-[#8B6914]">
           ${ic(score === 5? 'trophy': 'star', 'w-8 h-8 text-[#8B6914]')}
         </div>
         <h3 class="font-heritage-serif text-2xl font-bold text-[#8B1E1E] mb-2">${badgeTitle}</h3>
@@ -2102,7 +1898,7 @@ function renderRelicsInventoryModalContent(keyword = '') {
 
     return `
       <div id="inventory-group-${group.id}" class="rounded-2xl border border-[#EADECF] p-4 bg-[#FDFBF7] transition-all duration-300">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-[#EADECF]/80">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-[rgba(44,30,24,0.1)]">
           <div class="flex items-center gap-2">
             <span class="text-[#8B1E1E]">${ic(group.icon, 'w-5 h-5')}</span>
             <div>
@@ -2112,7 +1908,7 @@ function renderRelicsInventoryModalContent(keyword = '') {
               <span class="text-xs text-[#786C5E]">${group.subName}</span>
             </div>
           </div>
-          <span class="px-2.5 py-1 rounded-full text-xs font-bold ${group.badgeClass} self-start sm:self-auto shadow-sm">
+          <span class="eyebrow self-start sm:self-auto">
             ${filteredItems.length} / ${group.count} di tích
           </span>
         </div>
