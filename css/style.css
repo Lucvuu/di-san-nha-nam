@@ -815,8 +815,39 @@ body.modal-open .back-to-top-btn {
 .category-tab-btn,
 .rank-filter-btn,
 .nav-link,
-[role="button"],
 .nowrap-badge,
 .route-status-pill {
   white-space: nowrap;
+}
+
+/* Typographic balance & anti-orphan rules */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p, blockquote, figcaption {
+  text-wrap: pretty;
+}
+
+/* Ensure interactive cards wrap text naturally and balance titles */
+.hero-entry-card,
+.relic-stat-interactive-card,
+.heritage-route-card,
+.heritage-card {
+  white-space: normal;
+}
+
+.hero-entry-card p,
+.relic-stat-interactive-card p,
+.heritage-route-card p,
+.heritage-card p {
+  white-space: normal;
+  text-wrap: pretty;
+}
+
+.hero-entry-card h2,
+.relic-stat-interactive-card h4,
+.heritage-route-card h3,
+.heritage-card h3 {
+  text-wrap: balance;
 }

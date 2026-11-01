@@ -407,7 +407,7 @@ function renderHeritageGrid(items) {
 
           <!-- Tên di tích nằm đè góc ảnh -->
           <div class="absolute bottom-3 left-3 right-3 text-white">
-            <h3 class="font-heritage-serif font-bold text-lg leading-snug drop-shadow-md group-hover:text-[#F6E05E] transition-colors">
+            <h3 class="font-heritage-serif font-bold text-lg leading-snug drop-shadow-md group-hover:text-[#F6E05E] transition-colors" style="text-wrap: balance;">
               ${escapeHtml(item.title)}
             </h3>
           </div>
@@ -448,28 +448,28 @@ function renderHeritageGrid(items) {
             <!-- Tags -->
             <div class="flex flex-wrap gap-1.5 mb-4">
               ${(item.tags || []).slice(0, 3).map(t => `
-                <span class="text-[11px] px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#786C5E] font-medium">#${escapeHtml(t)}</span>
+                <span class="text-[11px] px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#786C5E] font-medium whitespace-nowrap">#${escapeHtml(t)}</span>
               `).join('')}
             </div>
           </div>
 
           <!-- Dải biểu tượng đa phương tiện (Nhiệm vụ 3) -->
           <div class="mt-auto mb-3 pt-2.5 border-t border-[#EADECF]/70 flex flex-wrap items-center justify-between gap-1.5 text-[11px]">
-            <span class="font-semibold text-[#8B1E1E] flex items-center gap-1">
+            <span class="font-semibold text-[#8B1E1E] flex items-center gap-1 whitespace-nowrap">
               <span class="w-1.5 h-1.5 rounded-full bg-[#8B1E1E]"></span>
               Đa phương tiện:
             </span>
             <div class="flex items-center gap-1 flex-wrap">
-              <span class="px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#2A2521] border border-[#EADECF] font-medium" title="Ảnh tư liệu thực tế">
+              <span class="px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#2A2521] border border-[#EADECF] font-medium whitespace-nowrap" title="Ảnh tư liệu thực tế">
                 ${ic('image','w-3.5 h-3.5')} ${!item.hasRealPhoto? 'Ảnh đang cập nhật': (item.thumbnail || '').includes('video-tu-lieu')? 'Ảnh từ video': 'Ảnh thực tế'}
               </span>
-              <span class="px-2 py-0.5 rounded-md bg-[#FFF5F5] text-[#8B1E1E] border border-[#FED7D7] font-medium" title="Bản ghi âm thuyết minh thực tế">
+              <span class="px-2 py-0.5 rounded-md bg-[#FFF5F5] text-[#8B1E1E] border border-[#FED7D7] font-medium whitespace-nowrap" title="Bản ghi âm thuyết minh thực tế">
                 ${ic('volume','w-3.5 h-3.5')} Thuyết minh
               </span>
-              <span class="px-2 py-0.5 rounded-md bg-[#F0FDF4] text-[#166534] border border-[#BBF7D0] font-medium" title="Bản đồ Google Maps & Dẫn đường">
+              <span class="px-2 py-0.5 rounded-md bg-[#F0FDF4] text-[#166534] border border-[#BBF7D0] font-medium whitespace-nowrap" title="Bản đồ Google Maps & Dẫn đường">
                 ${ic('map','w-3.5 h-3.5')} Bản đồ
               </span>
-              <span class="px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] font-medium" title="Tải file Word (.docx) bài giới thiệu">
+              <span class="px-2 py-0.5 rounded-md bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] font-medium whitespace-nowrap" title="Tải file Word (.docx) bài giới thiệu">
                 ${ic('file-text','w-3.5 h-3.5')} File giới thiệu
               </span>
             </div>
@@ -483,7 +483,7 @@ function renderHeritageGrid(items) {
                 onclick="event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'}), 350);"
                 class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 transition shadow-xs" 
                 aria-label="Xem video diễn tích Đề Nắm tế cờ (từ 05:54)">
-                ${ic('video')} <span>Xem video diễn tích Đề Nắm tế cờ (từ 05:54)</span>
+                ${ic('video')} <span>Xem video diễn tích Đề Nắm tế cờ <span class="whitespace-nowrap">(từ 05:54)</span></span>
               </button>
             ` : (item.video ? `
               <button 
@@ -499,7 +499,7 @@ function renderHeritageGrid(items) {
               <button 
                 type="button" 
                 onclick="openDetailModal('${item.id}')"
-                class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#8B6914] hover:bg-[#6F540F]'} transition shadow-sm hover:shadow">
+                class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#8B6914] hover:bg-[#6F540F]'} transition shadow-sm hover:shadow whitespace-nowrap">
                 <span>Xem chi tiết và bản đồ</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </button>
@@ -688,11 +688,11 @@ function openDetailModal(itemId) {
       
       <!-- PHẦN 1: TÊN DI TÍCH / TÊN DI SẢN -->
       <section class="border-b border-[#EADECF]/80 pb-5">
-        <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold text-[#8B1E1E] leading-tight">
+        <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold text-[#8B1E1E] leading-tight" style="text-wrap: balance;">
           ${escapeHtml(item.title)}
         </h2>
         ${item.badge? `
-          <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A]">
+          <div class="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A] whitespace-nowrap">
             <svg class="w-4 h-4 text-[#D97706]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
             ${item.badge}
           </div>
@@ -700,23 +700,23 @@ function openDetailModal(itemId) {
 
         <!-- RICH MEDIA BAR: ĐIỀU HƯỚNG NHANH 5 ĐỊNH DẠNG ĐA PHƯƠNG TIỆN -->
         <div class="rich-media-bar mt-4 flex flex-wrap items-center gap-2 p-2.5 rounded-xl bg-[#FAF5EE] border border-[#EADECF] text-xs">
-          <button type="button" onclick="playModalRealAudio()" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition flex items-center gap-1.5 shadow-xs cursor-pointer">
+          <button type="button" onclick="playModalRealAudio()" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition flex items-center gap-1.5 shadow-xs cursor-pointer whitespace-nowrap">
             ${ic('volume', 'w-3.5 h-3.5')} <span>Nghe thuyết minh</span>
           </button>
           ${item.docFile ? `
-            <a href="${item.docFile.path}" download="${escapeHtml(item.docFile.fileName)}" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#1E40AF] border border-[#EADECF] hover:bg-[#EFF6FF] transition flex items-center gap-1.5 shadow-xs">
+            <a href="${item.docFile.path}" download="${escapeHtml(item.docFile.fileName)}" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#1E40AF] border border-[#EADECF] hover:bg-[#EFF6FF] transition flex items-center gap-1.5 shadow-xs whitespace-nowrap">
               ${ic('download', 'w-3.5 h-3.5')} <span>Tải file chữ (.docx)</span>
             </a>
           ` : ''}
           ${item.video ? `
-            <button type="button" onclick="document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'})" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-red-600 text-white hover:bg-red-700 transition flex items-center gap-1.5 shadow-xs">
+            <button type="button" onclick="document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'})" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-red-600 text-white hover:bg-red-700 transition flex items-center gap-1.5 shadow-xs whitespace-nowrap">
               ${ic('video', 'w-3.5 h-3.5')} <span>Xem video tư liệu</span>
             </button>
           ` : ''}
-          <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#166534] border border-[#EADECF] hover:bg-[#F0FDF4] transition flex items-center gap-1.5 shadow-xs">
+          <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#166534] border border-[#EADECF] hover:bg-[#F0FDF4] transition flex items-center gap-1.5 shadow-xs whitespace-nowrap">
             ${ic('map', 'w-3.5 h-3.5')} <span>Chỉ đường Google Maps</span>
           </a>
-          <a href="${escapeHtml(feedbackUrl(item))}" target="_blank" rel="noopener noreferrer" title="Mở phiếu góp ý, tên di tích đã điền sẵn" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#C59B27]/60 hover:bg-[#FFFBEB] transition flex items-center gap-1.5 shadow-xs">
+          <a href="${escapeHtml(feedbackUrl(item))}" target="_blank" rel="noopener noreferrer" title="Mở phiếu góp ý, tên di tích đã điền sẵn" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#C59B27]/60 hover:bg-[#FFFBEB] transition flex items-center gap-1.5 shadow-xs whitespace-nowrap">
             ${ic('scroll', 'w-3.5 h-3.5')} <span>Báo lỗi nội dung này ↗</span>
           </a>
         </div>
