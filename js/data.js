@@ -40,10 +40,14 @@ const SITE_CONFIG = {
 
   // Administrator & Contact Configuration
   adminRole: "Ban điều hành dự án và quản trị nội dung",
-  adminName: "Cô Mến và nhóm phụ trách di sản THPT Nhã Nam",
-  adminPhone: "0985.449.123",
-  adminPhoneRaw: "0985449123",
-  adminZaloUrl: "https://zalo.me/0985449123",
+  adminName: "Thầy Bùi Văn Công và cô Mến (Trường THPT Nhã Nam)",
+  adminPhone: "0982.386.959",
+  adminPhoneRaw: "0982386959",
+  adminZaloUrl: "https://zalo.me/0982386959",
+  secondaryAdminName: "Cô Mến",
+  secondaryAdminPhone: "0985.449.123",
+  secondaryAdminPhoneRaw: "0985449123",
+  secondaryAdminZaloUrl: "https://zalo.me/0985449123",
   adminEmail: "thptnhanam.disan@gmail.com",
   adminAddress: "Trường THPT Nhã Nam, xã Nhã Nam, thành phố Bắc Ninh"
 };

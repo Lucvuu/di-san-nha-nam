@@ -15,8 +15,9 @@ vm.runInThisContext(utilsCode);
 console.log('--- 1. TESTING SITE_CONFIG & ADMINISTRATIVE NORMALIZATION ---');
 console.assert(SITE_CONFIG.commune === 'Xã Nhã Nam', 'Commune should be Xã Nhã Nam');
 console.assert(SITE_CONFIG.province === 'Thành phố Bắc Ninh' || SITE_CONFIG.city.toLowerCase().includes('bắc ninh'), 'Province/City should be thành phố Bắc Ninh');
-console.assert(SITE_CONFIG.adminPhone === '0985.449.123', 'adminPhone should be 0985.449.123');
-console.assert(SITE_CONFIG.adminZaloUrl === 'https://zalo.me/0985449123', 'adminZaloUrl should be correct');
+console.assert(SITE_CONFIG.adminPhone === '0982.386.959', 'adminPhone should be 0982.386.959');
+console.assert(SITE_CONFIG.adminZaloUrl === 'https://zalo.me/0982386959', 'adminZaloUrl should be correct');
+console.assert(SITE_CONFIG.secondaryAdminPhone === '0985.449.123', 'secondaryAdminPhone should be 0985.449.123');
 console.assert(SITE_CONFIG.facebookGroupStatusNote.includes('kiểm duyệt'), 'Facebook note must mention kiểm duyệt');
 console.log('✓ SITE_CONFIG verified');
 
