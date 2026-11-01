@@ -76,7 +76,8 @@ function removeVietnameseTones(str) {
 function matchesSearchQuery(item, rawQuery) {
   if (!rawQuery || !rawQuery.trim()) return true;
 
-  const queryClean = removeVietnameseTones(rawQuery);
+  // Tách từ theo ký tự chữ/số để "548/QĐ" hay "Hả," đều khớp như từ riêng
+  const queryClean = removeVietnameseTones(rawQuery).replace(/[^a-z0-9]+/g, ' ');
   const queryTokens = queryClean.split(/\s+/).filter(Boolean);
 
   const searchableParts = [
@@ -97,9 +98,10 @@ function matchesSearchQuery(item, rawQuery) {
     (item.content && Array.isArray(item.content.historicalSignificance) ? item.content.historicalSignificance.join(' ') : '')
   ];
 
-  const fullSearchableText = removeVietnameseTones(searchableParts.join(' '));
+  const words = ' ' + removeVietnameseTones(searchableParts.join(' ')).replace(/[^a-z0-9]+/g, ' ');
 
-  return queryTokens.every(token => fullSearchableText.includes(token));
+  // Mỗi từ khóa phải khớp đầu một từ: "ha" khớp "Hả" nhưng không khớp "Nhã"
+  return queryTokens.every(token => words.includes(' ' + token));
 }
 
 /**

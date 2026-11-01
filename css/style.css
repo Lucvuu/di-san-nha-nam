@@ -440,6 +440,30 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   }
 }
 
+/* Điện thoại: nút Zalo thu gọn thành hình tròn, không che nội dung */
+@media (max-width: 639px) {
+  .zalo-floating-btn {
+    bottom: max(16px, env(safe-area-inset-bottom));
+    right: 16px;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    justify-content: center;
+  }
+  .zalo-floating-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .back-to-top-btn {
+    bottom: 80px;
+    right: 20px;
+  }
+}
+
 /* Nút cuộn lên đầu trang */
 .back-to-top-btn {
   position: fixed;

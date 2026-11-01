@@ -277,6 +277,11 @@ function applyFiltersAndRender() {
   // Lọc theo từ khóa tìm kiếm (hỗ trợ có dấu và không dấu tiếng Việt)
   if (state.searchQuery && state.searchQuery.trim()) {
     items = items.filter(item => matchesSearchQuery(item, state.searchQuery));
+    // Mục có tên chứa đúng cụm từ khóa lên đầu
+    const norm = t => ' ' + removeVietnameseTones(t || '').replace(/[^a-z0-9]+/g, ' ').trim() + ' ';
+    const q = norm(state.searchQuery);
+    const score = item => (norm(item.title).includes(q) || norm(item.shortTitle).includes(q)) ? 0 : 1;
+    items = items.map((item, i) => [score(item), i, item]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(x => x[2]);
   }
 
   state.filteredItems = items;
@@ -649,10 +654,10 @@ function openDetailModal(itemId) {
         <button
           type="button"
           onclick="copyToClipboard('${getHeritageShareUrl(item.id)}', 'Đã sao chép liên kết di tích!')"
-          title="Sao chép liên kết mở thẳng hồ sơ này"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#F5EFE6] text-[#5C5248] hover:bg-[#EADECF] transition-colors">
+          title="Sao chép liên kết mở thẳng hồ sơ này" aria-label="Sao chép liên kết hồ sơ"
+          class="inline-flex items-center justify-center gap-1.5 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#F5EFE6] text-[#5C5248] hover:bg-[#EADECF] transition-colors">
           ${ic('link')}
-          <span>Sao chép liên kết</span>
+          <span class="hidden sm:inline">Sao chép liên kết</span>
         </button>
 
         <!-- Nút in tài liệu học tập -->
@@ -669,7 +674,7 @@ function openDetailModal(itemId) {
         <button 
           type="button" 
           onclick="closeDetailModal()" aria-label="Đóng hồ sơ di tích"
-          class="w-8 h-8 rounded-full bg-[#F5EFE6] text-[#5C5248] hover:text-[#8B1E1E] hover:bg-[#EADECF] flex items-center justify-center transition-colors">
+          class="w-11 h-11 flex-shrink-0 rounded-full bg-[#F5EFE6] text-[#5C5248] hover:text-[#8B1E1E] hover:bg-[#EADECF] flex items-center justify-center transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
       </div>
@@ -694,23 +699,23 @@ function openDetailModal(itemId) {
 
         <!-- RICH MEDIA BAR: ĐIỀU HƯỚNG NHANH 5 ĐỊNH DẠNG ĐA PHƯƠNG TIỆN -->
         <div class="rich-media-bar mt-4 flex flex-wrap items-center gap-2 p-2.5 rounded-xl bg-[#FAF5EE] border border-[#EADECF] text-xs">
-          <button type="button" onclick="playModalRealAudio()" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition flex items-center gap-1.5 shadow-xs cursor-pointer">
+          <button type="button" onclick="playModalRealAudio()" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#EADECF] hover:bg-[#F5EFE6] transition flex items-center gap-1.5 shadow-xs cursor-pointer">
             ${ic('volume', 'w-3.5 h-3.5')} <span>Nghe thuyết minh</span>
           </button>
           ${item.docFile ? `
-            <a href="${item.docFile.path}" download="${escapeHtml(item.docFile.fileName)}" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#1E40AF] border border-[#EADECF] hover:bg-[#EFF6FF] transition flex items-center gap-1.5 shadow-xs">
+            <a href="${item.docFile.path}" download="${escapeHtml(item.docFile.fileName)}" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#1E40AF] border border-[#EADECF] hover:bg-[#EFF6FF] transition flex items-center gap-1.5 shadow-xs">
               ${ic('download', 'w-3.5 h-3.5')} <span>Tải file chữ (.docx)</span>
             </a>
           ` : ''}
           ${item.video ? `
-            <button type="button" onclick="document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'})" class="px-3 py-1.5 rounded-lg font-semibold bg-red-600 text-white hover:bg-red-700 transition flex items-center gap-1.5 shadow-xs">
+            <button type="button" onclick="document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'})" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-red-600 text-white hover:bg-red-700 transition flex items-center gap-1.5 shadow-xs">
               ${ic('video', 'w-3.5 h-3.5')} <span>Xem video tư liệu</span>
             </button>
           ` : ''}
-          <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#166534] border border-[#EADECF] hover:bg-[#F0FDF4] transition flex items-center gap-1.5 shadow-xs">
+          <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#166534] border border-[#EADECF] hover:bg-[#F0FDF4] transition flex items-center gap-1.5 shadow-xs">
             ${ic('map', 'w-3.5 h-3.5')} <span>Chỉ đường Google Maps</span>
           </a>
-          <a href="${escapeHtml(feedbackUrl(item))}" target="_blank" rel="noopener noreferrer" title="Mở phiếu góp ý, tên di tích đã điền sẵn" class="px-3 py-1.5 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#C59B27]/60 hover:bg-[#FFFBEB] transition flex items-center gap-1.5 shadow-xs">
+          <a href="${escapeHtml(feedbackUrl(item))}" target="_blank" rel="noopener noreferrer" title="Mở phiếu góp ý, tên di tích đã điền sẵn" class="px-3 py-1.5 min-h-[44px] sm:min-h-0 rounded-lg font-semibold bg-white text-[#8B1E1E] border border-[#C59B27]/60 hover:bg-[#FFFBEB] transition flex items-center gap-1.5 shadow-xs">
             ${ic('scroll', 'w-3.5 h-3.5')} <span>Báo lỗi nội dung này ↗</span>
           </a>
         </div>
@@ -728,7 +733,7 @@ function openDetailModal(itemId) {
               <div>
                 <div class="text-sm font-bold text-[#8B1E1E] flex items-center gap-2">
                   <span>Bản ghi âm thuyết minh tư liệu thực tế</span>
-                  <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">Âm thanh gốc</span>
+                  <span class="px-2.5 py-0.5 rounded-full whitespace-nowrap flex-shrink-0 text-[10px] bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">Âm thanh gốc</span>
                 </div>
                 <div id="modal-audio-current-title" class="text-xs text-[#5C5248] mt-1 font-medium">${escapeHtml(item.audioFile.title)} (tư liệu thực tế do Trường THPT Nhã Nam thực hiện)</div>
               </div>
@@ -1960,8 +1965,10 @@ function setupEventListeners() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      // Đang xem ảnh phóng to: Esc chỉ đóng ảnh, giữ nguyên hồ sơ bên dưới
+      const lightbox = document.getElementById('lightbox-modal');
+      if (lightbox && !lightbox.classList.contains('hidden')) { closeLightbox(); return; }
       closeDetailModal();
-      closeLightbox();
       closeFacebookNoticeModal();
       closeQuizResultModal();
       if (typeof closeRelicsInventoryModal === 'function') closeRelicsInventoryModal();
@@ -2470,7 +2477,7 @@ function filterByRankDirect(rankCategory) {
 
   const rankNames = {
     'quoc-gia-dac-biet': '08 di tích quốc gia đặc biệt',
-    'quoc-gia': '01 di tích cấp quốc gia (Chùa Tứ Giáp)',
+    'quoc-gia': '01 di tích cấp quốc gia (chùa Tứ Giáp)',
     'cap-tinh': '07 di tích cấp tỉnh'
   };
   const label = rankNames[rankCategory] || rankCategory;
