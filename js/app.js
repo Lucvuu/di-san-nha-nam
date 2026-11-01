@@ -36,7 +36,7 @@ function unlockScroll(force = false) {
 /**
  * ====================================================================
  * DI SẢN VĂN HÓA XÃ NHÃ NAM - XỬ LÝ ỨNG DỤNG CHÍNH (APPLICATION LOGIC)
- * Xã Nhã Nam, tỉnh Bắc Ninh
+ * Xã Nhã Nam, thành phố Bắc Ninh
  * Đơn vị khởi xướng & phối hợp: Trường THPT Nhã Nam
  * ====================================================================
  */
@@ -1168,7 +1168,7 @@ function initAudioGuideForModal(item) {
 
   // Xây dựng nội dung bài thuyết minh giàu cảm xúc và truyền cảm
   let story = `Chào mừng quý thầy cô và các bạn học sinh đến với ${item.title}. `;
-  story += `${item.categoryName} tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. `;
+  story += `${item.categoryName} tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. `;
   if (item.address) story += `Địa chỉ tại: ${item.address}. `;
   if (item.scope) story += `Phạm vi thực hành di sản tại: ${item.scope}. `;
   if (item.content && item.content.intro) story += `${item.content.intro} `;
@@ -2353,7 +2353,7 @@ function resetToCommuneMap() {
     directionsText: "Chỉ đường từ vị trí của bạn đến trung tâm xã Nhã Nam (UBND xã Nhã Nam)"
   };
 
-  updateMapFrame(defaultMap.embedUrl, 'Bản đồ tổng thể vùng di sản xã Nhã Nam, tỉnh Bắc Ninh', defaultMap.directionsUrl, 'Mở Google Maps chỉ đường ↗');
+  updateMapFrame(defaultMap.embedUrl, 'Bản đồ tổng thể vùng di sản xã Nhã Nam, thành phố Bắc Ninh', defaultMap.directionsUrl, 'Mở Google Maps chỉ đường ↗');
 
   // 3. Khôi phục các nút dẫn đường
   const fromUserBtn = document.getElementById('route-from-user-directions-btn');
