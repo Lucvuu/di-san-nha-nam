@@ -739,7 +739,7 @@ function openDetailModal(itemId) {
                 <div id="modal-audio-current-title" class="text-xs text-[#5C5248] mt-1 font-medium">${escapeHtml(item.audioFile.title)} (tư liệu thực tế do Trường THPT Nhã Nam thực hiện)</div>
               </div>
             </div>
-            <audio id="modal-real-audio" onplay="pauseModalMedia('real')" controls class="h-10 w-full sm:w-72 max-w-full rounded-xl shadow-xs" preload="none">
+            <audio id="modal-real-audio" onplay="pauseModalMedia('real'); this.volume = 1.0;" controls class="h-10 w-full sm:w-72 max-w-full rounded-xl shadow-xs" preload="none">
               <source src="${item.audioFile.src}" type="audio/mpeg">
               Trình duyệt không hỗ trợ nghe âm thanh.
             </audio>
@@ -1077,6 +1077,7 @@ function switchModalAudioTrack(src, title, btnEl) {
   if (audio) {
     audio.pause();
     audio.src = src;
+    audio.volume = 1.0;
     audio.load();
     pauseModalMedia('real');
     audio.play().catch(e => console.warn('Audio play prevented:', e));
@@ -1111,6 +1112,7 @@ function playModalRealAudio() {
   }
   const realAudio = document.getElementById('modal-real-audio');
   if (realAudio) {
+    realAudio.volume = 1.0;
     pauseModalMedia('real');
     realAudio.play().catch(e => console.warn('Cannot auto play real audio:', e));
   }

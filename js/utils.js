@@ -407,6 +407,7 @@ class HeritageAudioGuideManager {
     try {
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'vi-VN';
+      utterance.volume = 1.0; // Âm lượng giọng đọc tối đa (100%) theo yêu cầu
       utterance.rate = this.rate;
       utterance.pitch = 1.0;
 
