@@ -68,6 +68,11 @@ TANGIBLE_HERITAGE_DATA.forEach((item, i) => {
   if (item.audioFile) {
     console.assert(fs.existsSync(item.audioFile.src), `Audio narration file for ${item.id} must exist: ${item.audioFile.src}`);
   }
+  if (item.audioTracks) {
+    item.audioTracks.forEach((tr, tIdx) => {
+      console.assert(fs.existsSync(tr.src), `Audio track ${tIdx} for ${item.id} must exist: ${tr.src}`);
+    });
+  }
   if (item.video) {
     console.assert(item.video.youtubeId && item.video.embedUrl, `Video for ${item.id} must have valid youtubeId & embedUrl`);
   }
@@ -82,6 +87,10 @@ console.assert(relicNeo && relicNeo.hasRealPhoto && relicNeo.audioFile && relicN
 const relicSat = TANGIBLE_HERITAGE_DATA.find(r => r.id === 'vat-the-16');
 console.assert(relicSat && relicSat.hasRealPhoto && relicSat.audioFile && relicSat.map.embedUrl.includes('21.4160672'), 'Đình làng Sặt must have real photo, audio, and teacher coordinates');
 console.log('  ✓ Verified 3 newly added relics (Đình Sậy, Đình Nẻo, Đình làng Sặt) have 100% real photos, real audios, and teacher verified coordinates');
+const relicTuGiap = TANGIBLE_HERITAGE_DATA.find(r => r.id === 'vat-the-2');
+console.assert(relicTuGiap && relicTuGiap.audioTracks && relicTuGiap.audioTracks.length === 2, 'Chùa Tứ Giáp must have 2 audio tracks (Khu lưu niệm 6 điều Bác Hồ dạy CAND and di tích chùa Tứ Giáp)');
+console.assert(relicTuGiap.audioFile.src.includes('khu-luu-niem-6-dieu-bac-ho-day-cand'), 'Primary audio must be the newly added Khu lưu niệm 6 điều Bác Hồ dạy CAND');
+console.log('  ✓ Verified Chùa Tứ Giáp has multi-track audio with new 3-minute Khu lưu niệm 6 điều Bác Hồ dạy CAND narration');
 
 console.log('--- 4. TESTING INTANGIBLE HERITAGE (DI SẢN PHI VẬT THỂ) ---');
 console.assert(INTANGIBLE_HERITAGE_DATA.length === 6, `Should have 6 intangible heritage items (found ${INTANGIBLE_HERITAGE_DATA.length})`);
@@ -120,7 +129,10 @@ const testCases = [
   { query: 'duong lam', expectedMatch: 'Đình Dương Lâm' },
   { query: 'dinh duong lam', expectedMatch: 'Đình Dương Lâm' },
   { query: 'lang noi phet', expectedMatch: 'Làng nói phét Dương Sơn' },
-  { query: 'duong son', expectedMatch: 'Làng nói phét Dương Sơn' }
+  { query: 'duong son', expectedMatch: 'Làng nói phét Dương Sơn' },
+  { query: 'khu luu niem', expectedMatch: 'Chùa Tứ Giáp' },
+  { query: '6 dieu bac day', expectedMatch: 'Chùa Tứ Giáp' },
+  { query: 'cand', expectedMatch: 'Chùa Tứ Giáp' }
 ];
 
 const allItems = [...TANGIBLE_HERITAGE_DATA, ...INTANGIBLE_HERITAGE_DATA];

@@ -365,6 +365,9 @@ const TANGIBLE_HERITAGE_DATA = [
     "thumbnail": "./assets/images/chua-tu-giap/anh-dai-dien.jpg",
     "tags": [
       "Chùa Tứ Giáp",
+      "Khu lưu niệm 6 điều Bác Hồ dạy CAND",
+      "Khu lưu niệm Sáu điều Bác Hồ dạy CAND",
+      "Khu lưu niệm Công an nhân dân",
       "Sáu điều Bác Hồ dạy",
       "Công an nhân dân",
       "Đại Phúc tự",
@@ -374,9 +377,27 @@ const TANGIBLE_HERITAGE_DATA = [
       "tỉnh Bắc Ninh"
     ],
     "audioFile": {
-      "src": "./assets/audio/thuyet-minh-chua-tu-giap.mp3",
-      "title": "Thuyết minh di tích chùa Tứ Giáp"
+      "src": "./assets/audio/thuyet-minh-khu-luu-niem-6-dieu-bac-ho-day-cand.mp3",
+      "title": "Thuyết minh Khu lưu niệm Sáu điều Bác Hồ dạy Công an nhân dân"
     },
+    "audioTracks": [
+      {
+        "id": "cand",
+        "title": "Khu lưu niệm Sáu điều Bác Hồ dạy CAND",
+        "subtitle": "Bản thu âm chuyên đề mới nhất (Thời lượng 3:05)",
+        "src": "./assets/audio/thuyet-minh-khu-luu-niem-6-dieu-bac-ho-day-cand.mp3",
+        "duration": "3:05",
+        "isPrimary": true
+      },
+      {
+        "id": "tu-giap",
+        "title": "Di tích lịch sử chùa Tứ Giáp (Đại Phúc tự)",
+        "subtitle": "Bản thu âm di tích chùa Tứ Giáp cổ truyền (Thời lượng 0:51)",
+        "src": "./assets/audio/thuyet-minh-chua-tu-giap.mp3",
+        "duration": "0:51",
+        "isPrimary": false
+      }
+    ],
     "overview": "Nơi phát tích lịch sử thiêng liêng ra đời Sáu điều Bác Hồ dạy Công an nhân dân ngày 11/3/1948, di tích lịch sử và nghệ thuật cấp quốc gia.",
     "content": {
       "intro": "Chùa Tứ Giáp (tên chữ là Đại Phúc tự, thường gọi là chùa làng Nguộn) tọa lạc uy nghiêm tại thôn Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Ngôi chùa không chỉ là trung tâm tín ngưỡng Phật giáo lâu đời từ thế kỷ XVIII thời hậu Lê mà còn là 'địa chỉ đỏ' cách mạng rực rỡ của toàn quốc.",

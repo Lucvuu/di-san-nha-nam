@@ -661,7 +661,7 @@ function openDetailModal(itemId) {
       <section id="audioguide-section" class="border-b border-[#EADECF]/80 pb-6">
       ${item.audioFile ? `
         <!-- BẢN GHI ÂM THUYẾT MINH THỰC TẾ (ÂM THANH GỐC DO HỌC SINH / THẦY CÔ THỰC HIỆN) -->
-        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#FAF5EE] via-[#FFFDF9] to-[#FFFBEB] border-2 border-[#8B1E1E]/25 shadow-sm">
+        <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-[#FAF5EE] via-[#FFFDF9] to-[#FFFBEB] border-2 border-[#8B1E1E]/25 shadow-sm space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div class="flex items-center gap-3.5">
               <div class="w-12 h-12 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center flex-shrink-0 shadow-md">
@@ -672,7 +672,7 @@ function openDetailModal(itemId) {
                   <span>Bản ghi âm thuyết minh tư liệu thực tế</span>
                   <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">Âm thanh gốc</span>
                 </div>
-                <div class="text-xs text-[#5C5248] mt-1 font-medium">${escapeHtml(item.audioFile.title)} (Tư liệu thực tế do Trường THPT Nhã Nam thực hiện)</div>
+                <div id="modal-audio-current-title" class="text-xs text-[#5C5248] mt-1 font-medium">${escapeHtml(item.audioFile.title)} (Tư liệu thực tế do Trường THPT Nhã Nam thực hiện)</div>
               </div>
             </div>
             <audio id="modal-real-audio" onplay="pauseModalMedia('real')" controls class="h-10 w-full sm:w-72 max-w-full rounded-xl shadow-xs" preload="none">
@@ -680,6 +680,38 @@ function openDetailModal(itemId) {
               Trình duyệt không hỗ trợ nghe âm thanh.
             </audio>
           </div>
+
+          ${item.audioTracks && item.audioTracks.length > 1 ? `
+          <!-- DANH SÁCH BẢN THUYẾT MINH CHUYÊN ĐỀ (MULTI-TRACK SELECTOR) -->
+          <div class="pt-3 border-t border-[#EADECF]/80">
+            <div class="text-[11px] font-bold text-[#786C5E] uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-[#8B1E1E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"></path></svg>
+              <span>Chọn chuyên đề thuyết minh âm thanh gốc (${item.audioTracks.length} bản ghi):</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              ${item.audioTracks.map((tr, tIdx) => `
+                <button
+                  type="button"
+                  onclick="switchModalAudioTrack('${tr.src}', '${escapeHtml(tr.title)}', this)"
+                  class="audio-track-pill flex items-center justify-between p-2.5 rounded-xl border text-left transition cursor-pointer ${tIdx === 0 ? 'bg-[#8B1E1E] text-white border-[#8B1E1E] shadow-xs is-active' : 'bg-white text-[#2A2521] border-[#EADECF] hover:bg-[#FAF5EE]'}"
+                >
+                  <div class="flex items-center gap-2.5 min-w-0 pr-2">
+                    <span class="track-indicator flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${tIdx === 0 ? 'bg-white/20 text-white' : 'bg-[#FAF5EE] text-[#8B1E1E]'}">
+                      ${tIdx + 1}
+                    </span>
+                    <div class="min-w-0 truncate">
+                      <div class="text-xs font-bold truncate">${escapeHtml(tr.title)}</div>
+                      <div class="text-[10px] ${tIdx === 0 ? 'text-white/80' : 'text-[#786C5E]'} truncate">${escapeHtml(tr.subtitle || '')}</div>
+                    </div>
+                  </div>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full font-mono flex-shrink-0 ${tIdx === 0 ? 'bg-white/20 text-white' : 'bg-[#FAF5EE] text-[#8B1E1E] font-bold'}">
+                    ${tr.duration || 'Âm thanh'}
+                  </span>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+          ` : ''}
         </div>
       ` : `
         <!-- DI TÍCH ĐANG TIẾP TỤC BỔ SUNG FILE GHI ÂM THỰC TẾ -->
@@ -898,6 +930,37 @@ function renderDocFullText(fileName) {
 /**
  * Phát bản ghi âm thuyết minh thực tế của di tích khi bấm nút "Nghe thuyết minh"
  */
+function switchModalAudioTrack(src, title, btnEl) {
+  const audio = document.getElementById('modal-real-audio');
+  const titleEl = document.getElementById('modal-audio-current-title');
+  if (audio) {
+    audio.pause();
+    audio.src = src;
+    audio.load();
+    pauseModalMedia('real');
+    audio.play().catch(e => console.warn('Audio play prevented:', e));
+  }
+  if (titleEl) {
+    titleEl.textContent = `${title} (Tư liệu thực tế do Trường THPT Nhã Nam thực hiện)`;
+  }
+  document.querySelectorAll('.audio-track-pill').forEach(btn => {
+    btn.classList.remove('bg-[#8B1E1E]', 'text-white', 'border-[#8B1E1E]', 'shadow-xs', 'is-active');
+    btn.classList.add('bg-white', 'text-[#2A2521]', 'border-[#EADECF]');
+    const ind = btn.querySelector('.track-indicator');
+    if (ind) {
+      ind.className = 'track-indicator flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-[#FAF5EE] text-[#8B1E1E]';
+    }
+  });
+  if (btnEl) {
+    btnEl.classList.remove('bg-white', 'text-[#2A2521]', 'border-[#EADECF]');
+    btnEl.classList.add('bg-[#8B1E1E]', 'text-white', 'border-[#8B1E1E]', 'shadow-xs', 'is-active');
+    const ind = btnEl.querySelector('.track-indicator');
+    if (ind) {
+      ind.className = 'track-indicator flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-white/20 text-white';
+    }
+  }
+}
+
 function playModalRealAudio() {
   const section = document.getElementById('audioguide-section');
   if (section) {
