@@ -58,15 +58,15 @@ const SITE_CONFIG = {
  */
 const OFFICIAL_COMMUNE_RELICS = {
   totalCount: 37,
-  documentRef: "Khái quát hệ thống di tích trên địa bàn - Báo cáo số liệu chính thức phục vụ HĐND xã & UBND tỉnh",
-  summary: "Hiện nay, trên địa bàn xã có tổng số 37 di tích lịch sử - văn hóa, gồm 08 di tích quốc gia đặc biệt, 01 di tích cấp quốc gia, 07 di tích cấp tỉnh và 21 di tích trong danh mục kiểm kê được UBND tỉnh phê duyệt.",
+  documentRef: "Khái quát hệ thống di tích trên địa bàn - Tổng hợp theo hồ sơ xếp hạng di tích (đến ngày 15/02/2026) và danh mục kiểm kê của UBND tỉnh Bắc Ninh",
+  summary: "Hiện nay, trên địa bàn xã có tổng số 37 di tích lịch sử - văn hóa, gồm 08 di tích quốc gia đặc biệt, 01 di tích cấp quốc gia, 07 di tích cấp tỉnh và 21 di tích trong danh mục kiểm kê được Chủ tịch UBND tỉnh phê duyệt bảo vệ.",
   groups: [
     {
       id: "quoc-gia-dac-biet",
       name: "Di tích quốc gia đặc biệt",
       subName: "Cụm di tích Những địa điểm khởi nghĩa Yên Thế",
       count: 8,
-      badgeText: "08 di tích quốc gia đặc biệt",
+      badgeText: "08 Di tích quốc gia đặc biệt",
       badgeClass: "bg-[#8B1E1E] text-white",
       icon: "landmark",
       description: "08 di tích thuộc di tích quốc gia đặc biệt Những địa điểm Khởi nghĩa Yên Thế theo Quyết định số 548/QĐ-TTg của Thủ tướng Chính phủ.",
@@ -86,7 +86,7 @@ const OFFICIAL_COMMUNE_RELICS = {
       name: "Di tích cấp quốc gia",
       subName: "Di tích lịch sử - kiến trúc nghệ thuật",
       count: 1,
-      badgeText: "01 di tích cấp quốc gia",
+      badgeText: "01 Di tích cấp quốc gia",
       badgeClass: "bg-[#8B6914] text-white",
       icon: "star",
       description: "Di tích lịch sử - kiến trúc nghệ thuật cấp quốc gia được Bộ Văn hóa, Thể thao và Du lịch xếp hạng.",
@@ -99,7 +99,7 @@ const OFFICIAL_COMMUNE_RELICS = {
       name: "Di tích cấp tỉnh",
       subName: "Di tích lịch sử - văn hóa cấp tỉnh",
       count: 7,
-      badgeText: "07 di tích cấp tỉnh",
+      badgeText: "07 Di tích cấp tỉnh",
       badgeClass: "bg-amber-800 text-white",
       icon: "award",
       description: "07 di tích lịch sử - văn hóa được Chủ tịch UBND tỉnh ban hành Quyết định xếp hạng di tích cấp tỉnh.",
@@ -118,7 +118,7 @@ const OFFICIAL_COMMUNE_RELICS = {
       name: "Di tích trong danh mục kiểm kê",
       subName: "Đã được Chủ tịch UBND tỉnh phê duyệt",
       count: 21,
-      badgeText: "21 di tích kiểm kê",
+      badgeText: "21 Di tích trong danh mục kiểm kê",
       badgeClass: "bg-[#5C5248] text-white",
       icon: "scroll",
       description: "21 di tích lịch sử, văn hóa, kiến trúc tín ngưỡng nằm trong danh mục kiểm kê di tích đã được Chủ tịch UBND tỉnh phê duyệt bảo tồn.",
@@ -179,7 +179,7 @@ const HERITAGE_ROUTES = [
     id: "tuyen-2",
     number: "2",
     name: "Tuyến 2",
-    title: "Mốc son cách mạng & văn hóa",
+    title: "Mốc son cách mạng và văn hóa",
     subtitle: "Chùa Đồng Điều ➔ đền Đề Truật ➔ chùa Dương Sơn",
     themeColor: "#C59B27",
     badgeBg: "bg-[#C59B27]",
@@ -198,7 +198,7 @@ const HERITAGE_ROUTES = [
     id: "tuyen-3",
     number: "3",
     name: "Tuyến 3",
-    title: "Chiến tích oai hùng & tín ngưỡng cổ truyền",
+    title: "Chiến tích oai hùng và tín ngưỡng cổ truyền",
     subtitle: "Đền Gốc Khế ➔ đồi Phủ ➔ đình làng Chuông ➔ chùa Nam Thiên ➔ đình Cầu Thượng",
     themeColor: "#166534",
     badgeBg: "bg-[#166534]",
@@ -1406,7 +1406,7 @@ const INTANGIBLE_HERITAGE_DATA = [
     "categoryName": "Di sản phi vật thể",
     "badge": "Nghề truyền thống",
     "title": "Nghề làm bánh khảo, kẹo lạc truyền thống xã Nhã Nam",
-    "shortTitle": "Bánh khảo & Kẹo lạc Nhã Nam",
+    "shortTitle": "Bánh khảo và kẹo lạc Nhã Nam",
     "scope": "Các hộ gia đình nghệ nhân làm nghề truyền thống tại xã Nhã Nam",
     "thumbnail": null,
     "tags": [
@@ -1433,7 +1433,7 @@ const INTANGIBLE_HERITAGE_DATA = [
     "map": {
       "embedUrl": "https://www.google.com/maps?q=Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
-      "locationName": "Làng nghề bánh khảo & kẹo lạc - xã Nhã Nam"
+      "locationName": "Làng nghề bánh khảo và kẹo lạc - xã Nhã Nam"
     },
     "gallery": [],
     "hasRealPhoto": false,
@@ -1449,7 +1449,7 @@ const INTANGIBLE_HERITAGE_DATA = [
     "id": "phi-vat-the-4",
     "category": "phi-vat-the",
     "categoryName": "Di sản phi vật thể",
-    "badge": "Tập quán xã hội & tín ngưỡng",
+    "badge": "Tập quán xã hội và tín ngưỡng",
     "title": "Tập quán tưởng niệm Lương Văn Nắm và Hoàng Hoa Thám",
     "shortTitle": "Tưởng niệm nghĩa quân Yên Thế",
     "scope": "Địa bàn toàn xã Nhã Nam, trung tâm tại đình Hả, đền Gốc Khế, đền Đề Truật",
@@ -1495,7 +1495,7 @@ const INTANGIBLE_HERITAGE_DATA = [
     "id": "phi-vat-the-5",
     "category": "phi-vat-the",
     "categoryName": "Di sản phi vật thể",
-    "badge": "Trò chơi dân gian & võ thuật",
+    "badge": "Trò chơi dân gian và võ thuật",
     "title": "Trò chơi dân gian và võ cổ truyền trong lễ hội Nhã Nam",
     "shortTitle": "Trò chơi dân gian và võ cổ truyền",
     "scope": "Không gian lễ hội truyền thống tại các thôn trong xã Nhã Nam",
@@ -1525,7 +1525,7 @@ const INTANGIBLE_HERITAGE_DATA = [
     "map": {
       "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Sới+vật+lễ+hội,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
-      "locationName": "Sới vật & không gian hội thao dân gian - xã Nhã Nam"
+      "locationName": "Sới vật và không gian hội thao dân gian - xã Nhã Nam"
     },
     "gallery": [],
     "hasRealPhoto": false,

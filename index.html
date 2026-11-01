@@ -356,7 +356,7 @@
   </div>
 
   <!-- ====================================================================
-       3. TÌM KIẾM THÔNG MINH & CHUYỂN ĐỔI DANH MỤC (SEARCH & EXPLORER SECTION)
+       3. TÌM KIẾM THÔNG MINH VÀ CHUYỂN ĐỔI DANH MỤC (SEARCH & EXPLORER SECTION)
        ==================================================================== -->
   <section id="heritage-explorer" class="py-12 md:py-16 bg-[#FDFBF7]">
     <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -441,8 +441,8 @@
             type="button" 
             onclick="openRelicsInventoryModal()"
             class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold bg-[#8B1E1E]/10 hover:bg-[#8B1E1E] text-[#8B1E1E] hover:text-white transition flex items-center gap-1 cursor-pointer"
-            title="Xem danh mục 21 di tích kiểm kê và toàn bộ 37 di tích xã Nhã Nam">
-            <span><svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-scroll"/></svg> 21 di tích kiểm kê</span>
+            title="Xem danh mục 21 Di tích kiểm kê và toàn bộ 37 di tích xã Nhã Nam">
+            <span><svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-scroll"/></svg> 21 Di tích kiểm kê</span>
           </button>
         </div>
       </div>
@@ -461,49 +461,134 @@
         </p>
       </div>
 
-      <!-- BẢNG THỐNG KÊ SỐ LIỆU CHÍNH THỨC 37 DI TÍCH LỊCH SỬ - VĂN HÓA (BÁO CÁO HĐND XÃ & UBND TỈNH) -->
-      <div class="mb-8 p-4 sm:p-5 bg-white rounded-3xl border border-[#C59B27]/40 shadow-sm">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-[#EADECF]">
+      <!-- BẢNG THỐNG KÊ SỐ LIỆU CHÍNH THỨC 37 DI TÍCH LỊCH SỬ - VĂN HÓA (UBND TỈNH BẮC NINH) -->
+      <div class="mb-8 p-4 sm:p-6 bg-white rounded-3xl border border-[#C59B27]/40 shadow-sm">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-4 border-b border-[#EADECF]">
           <div class="flex items-center gap-2.5">
             <svg class="ic w-6 h-6 text-[#8B1E1E]" aria-hidden="true"><use href="#i-chart"/></svg>
             <div>
-              <div class="flex items-center gap-2">
-                <h3 class="font-heritage-serif font-bold text-sm sm:text-base text-[#8B1E1E]">
-                  Hệ thống 37 di tích lịch sử - văn hóa xã Nhã Nam
-                </h3>
-                              </div>
-              <p class="text-[11px] text-[#786C5E] mt-0.5">
-                Báo cáo chính thức phục vụ HĐND xã & danh mục kiểm kê được UBND tỉnh phê duyệt
+              <h3 class="font-heritage-serif font-bold text-sm sm:text-base text-[#8B1E1E]">
+                Hệ thống 37 di tích lịch sử - văn hóa xã Nhã Nam
+              </h3>
+              <p class="text-[11px] sm:text-xs text-[#786C5E] mt-0.5">
+                Tổng hợp theo hồ sơ xếp hạng di tích (đến ngày 15/02/2026) và danh mục kiểm kê của UBND tỉnh Bắc Ninh
               </p>
             </div>
           </div>
           <button 
             type="button" 
             onclick="openRelicsInventoryModal()" 
-            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#8B1E1E] hover:bg-[#6F1515] text-white text-xs font-bold transition shadow-sm flex-shrink-0 cursor-pointer">
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#8B1E1E] hover:bg-[#6F1515] text-white text-xs font-bold transition shadow-sm flex-shrink-0 cursor-pointer">
             <span><svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-list"/></svg> Tra cứu danh mục 37 di tích</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
           </button>
         </div>
         
-        <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-8 pt-1">
-          <div class="flex items-baseline gap-3 py-2.5 border-b border-[#EADECF]/70">
-            <dt class="font-heritage-serif text-xl font-bold text-[#8B1E1E] tabular-nums w-8 flex-shrink-0">08</dt>
-            <dd class="text-sm text-[#2A2521] leading-snug"><span class="font-semibold">di tích quốc gia đặc biệt</span><span class="block text-xs text-[#786C5E] mt-0.5">Những địa điểm khởi nghĩa Yên Thế: đình - chùa Hả, đền Gốc Khế, đồi Phủ…</span></dd>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4 pt-4">
+          <!-- Ô 1: 08 Di tích quốc gia đặc biệt -->
+          <div 
+            role="button" 
+            tabindex="0"
+            onclick="filterByRankDirect('quoc-gia-dac-biet')"
+            onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); filterByRankDirect('quoc-gia-dac-biet'); }"
+            class="relic-stat-interactive-card group flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#FAF5EE]/60 hover:bg-[#FFFDF9] border border-[#EADECF] hover:border-[#8B1E1E] hover:shadow-md transition-all duration-200 cursor-pointer"
+            title="Bấm để lọc hiển thị 08 di tích quốc gia đặc biệt">
+            <div class="stat-number-box flex-shrink-0 w-14 min-w-[52px] h-14 rounded-xl bg-white border border-[#EADECF] flex items-center justify-center text-[#8B1E1E] font-heritage-serif text-[2rem] font-extrabold leading-none tabular-nums shadow-xs group-hover:bg-[#8B1E1E] group-hover:text-white group-hover:border-[#8B1E1E] transition-colors">
+              08
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
+                <h4 class="font-heritage-serif font-bold text-sm sm:text-base text-[#2A2521] group-hover:text-[#8B1E1E] transition-colors leading-snug">
+                  Di tích quốc gia đặc biệt
+                </h4>
+                <span class="text-[11px] font-semibold text-[#8B1E1E] bg-[#FFF5F5] px-2 py-0.5 rounded-md border border-[#FED7D7] whitespace-nowrap">
+                  Quyết định số 548/QĐ-TTg
+                </span>
+              </div>
+              <p class="text-xs text-[#5C4A42] leading-relaxed">
+                Thuộc hệ thống di tích khởi nghĩa Yên Thế: đình - chùa Hả, đền Gốc Khế, đồi Phủ, đình Dương Lâm, chùa Nam Thiên, đình làng Chuông, đền thờ Cả Trọng, nghĩa địa Pháp
+              </p>
+            </div>
           </div>
-          <div class="flex items-baseline gap-3 py-2.5 border-b border-[#EADECF]/70">
-            <dt class="font-heritage-serif text-xl font-bold text-[#8B1E1E] tabular-nums w-8 flex-shrink-0">01</dt>
-            <dd class="text-sm text-[#2A2521] leading-snug"><span class="font-semibold">di tích cấp quốc gia</span><span class="block text-xs text-[#786C5E] mt-0.5">Chùa Tứ Giáp, nơi gắn với Sáu điều Bác Hồ dạy Công an nhân dân</span></dd>
+
+          <!-- Ô 2: 01 Di tích cấp quốc gia -->
+          <div 
+            role="button" 
+            tabindex="0"
+            onclick="filterByRankDirect('quoc-gia')"
+            onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); filterByRankDirect('quoc-gia'); }"
+            class="relic-stat-interactive-card group flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#FAF5EE]/60 hover:bg-[#FFFDF9] border border-[#EADECF] hover:border-[#8B1E1E] hover:shadow-md transition-all duration-200 cursor-pointer"
+            title="Bấm để lọc hiển thị di tích cấp quốc gia Chùa Tứ Giáp">
+            <div class="stat-number-box flex-shrink-0 w-14 min-w-[52px] h-14 rounded-xl bg-white border border-[#EADECF] flex items-center justify-center text-[#8B1E1E] font-heritage-serif text-[2rem] font-extrabold leading-none tabular-nums shadow-xs group-hover:bg-[#8B1E1E] group-hover:text-white group-hover:border-[#8B1E1E] transition-colors">
+              01
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
+                <h4 class="font-heritage-serif font-bold text-sm sm:text-base text-[#2A2521] group-hover:text-[#8B1E1E] transition-colors leading-snug">
+                  Di tích cấp quốc gia
+                </h4>
+                <span class="text-[11px] font-semibold text-[#8B1E1E] bg-[#FFF5F5] px-2 py-0.5 rounded-md border border-[#FED7D7] whitespace-nowrap">
+                  Quyết định số 138/QĐ
+                </span>
+              </div>
+              <p class="text-xs text-[#5C4A42] leading-relaxed">
+                Chùa Tứ Giáp — di tích lịch sử và nghệ thuật, nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân (11/3/1948)
+              </p>
+            </div>
           </div>
-          <div class="flex items-baseline gap-3 py-2.5 border-b border-[#EADECF]/70">
-            <dt class="font-heritage-serif text-xl font-bold text-[#8B1E1E] tabular-nums w-8 flex-shrink-0">07</dt>
-            <dd class="text-sm text-[#2A2521] leading-snug"><span class="font-semibold">di tích cấp tỉnh</span><span class="block text-xs text-[#786C5E] mt-0.5">Đền Đề Truật, chùa Đồng Điều, đình Cầu Thượng…</span></dd>
+
+          <!-- Ô 3: 07 Di tích cấp tỉnh -->
+          <div 
+            role="button" 
+            tabindex="0"
+            onclick="filterByRankDirect('cap-tinh')"
+            onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); filterByRankDirect('cap-tinh'); }"
+            class="relic-stat-interactive-card group flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#FAF5EE]/60 hover:bg-[#FFFDF9] border border-[#EADECF] hover:border-[#8B1E1E] hover:shadow-md transition-all duration-200 cursor-pointer"
+            title="Bấm để lọc hiển thị 07 di tích cấp tỉnh">
+            <div class="stat-number-box flex-shrink-0 w-14 min-w-[52px] h-14 rounded-xl bg-white border border-[#EADECF] flex items-center justify-center text-[#8B1E1E] font-heritage-serif text-[2rem] font-extrabold leading-none tabular-nums shadow-xs group-hover:bg-[#8B1E1E] group-hover:text-white group-hover:border-[#8B1E1E] transition-colors">
+              07
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
+                <h4 class="font-heritage-serif font-bold text-sm sm:text-base text-[#2A2521] group-hover:text-[#8B1E1E] transition-colors leading-snug">
+                  Di tích cấp tỉnh
+                </h4>
+                <span class="text-[11px] font-semibold text-[#8B6914] bg-[#FFFBEB] px-2 py-0.5 rounded-md border border-[#FDE68A] whitespace-nowrap">
+                  Quyết định của UBND tỉnh
+                </span>
+              </div>
+              <p class="text-xs text-[#5C4A42] leading-relaxed">
+                Đền Đề Truật, đình Cầu Thượng, đình Sậy, chùa Đồng Điều, đình Nẻo, chùa Dương Sơn và đình làng Sặt
+              </p>
+            </div>
           </div>
-          <div class="flex items-baseline gap-3 py-2.5 border-b border-[#EADECF]/70">
-            <dt class="font-heritage-serif text-xl font-bold text-[#8B1E1E] tabular-nums w-8 flex-shrink-0">21</dt>
-            <dd class="text-sm text-[#2A2521] leading-snug"><span class="font-semibold">di tích trong danh mục kiểm kê</span><span class="block text-xs text-[#786C5E] mt-0.5">Được chủ tịch UBND tỉnh phê duyệt</span></dd>
+
+          <!-- Ô 4: 21 Di tích trong danh mục kiểm kê -->
+          <div 
+            role="button" 
+            tabindex="0"
+            onclick="openRelicsInventoryModal('kiem-ke')"
+            onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); openRelicsInventoryModal('kiem-ke'); }"
+            class="relic-stat-interactive-card group flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-[#FAF5EE]/60 hover:bg-[#FFFDF9] border border-[#EADECF] hover:border-[#C59B27] hover:shadow-md transition-all duration-200 cursor-pointer"
+            title="Bấm để mở tra cứu danh mục 21 di tích kiểm kê">
+            <div class="stat-number-box flex-shrink-0 w-14 min-w-[52px] h-14 rounded-xl bg-white border border-[#EADECF] flex items-center justify-center text-[#8B6914] font-heritage-serif text-[2rem] font-extrabold leading-none tabular-nums shadow-xs group-hover:bg-[#C59B27] group-hover:text-white group-hover:border-[#C59B27] transition-colors">
+              21
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex flex-wrap items-center justify-between gap-1 mb-1">
+                <h4 class="font-heritage-serif font-bold text-sm sm:text-base text-[#2A2521] group-hover:text-[#8B6914] transition-colors leading-snug">
+                  Di tích trong danh mục kiểm kê
+                </h4>
+                <span class="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 whitespace-nowrap">
+                  Danh mục kiểm kê
+                </span>
+              </div>
+              <p class="text-xs text-[#5C4A42] leading-relaxed">
+                Được Chủ tịch UBND tỉnh phê duyệt bảo vệ, tiêu biểu như địa điểm lịch sử thôn Đồng Điều (nơi thành lập chi bộ Đảng đầu tiên) cùng các đình, chùa, đền, miếu cổ trên địa bàn xã
+              </p>
+            </div>
           </div>
-        </dl>
+        </div>
       </div>
 
       <!-- Ô TÌM KIẾM THÔNG MINH (HỖ TRỢ TIẾNG VIỆT CẢ CÓ DẤU VÀ KHÔNG DẤU) -->
@@ -576,7 +661,7 @@
   </section>
 
   <!-- ====================================================================
-       4. BẢN ĐỒ TỔNG THỂ & CÁC TUYẾN DI SẢN XÃ NHÃ NAM (INTERACTIVE HERITAGE ROUTES)
+       4. BẢN ĐỒ TỔNG THỂ VÀ CÁC TUYẾN DI SẢN XÃ NHÃ NAM (INTERACTIVE HERITAGE ROUTES)
        ==================================================================== -->
   <section id="heritage-map-section" class="py-12 bg-[#F5EFE6] border-y border-[#EADECF] relative">
     <div class="max-w-[1420px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -1093,7 +1178,7 @@
             </div>
           </div>
 
-          <!-- 2 Nút hành động trực tiếp: Nhắn tin Zalo ngay & Gọi điện trực tiếp -->
+          <!-- 2 Nút hành động trực tiếp: Nhắn tin Zalo ngay và Gọi điện trực tiếp -->
           <div class="flex flex-col gap-2">
             <a 
               href="https://zalo.me/0962629650" 
@@ -1121,7 +1206,7 @@
           © 2026 Cổng thông tin di sản văn hóa xã Nhã Nam - Trường THPT Nhã Nam - tỉnh Bắc Ninh. Bảo lưu mọi quyền.
         </div>
         <div class="text-center sm:text-right">
-          Trang web phục vụ mục đích giáo dục truyền thống phi lợi nhuận cho học sinh & cộng đồng.
+          Trang web phục vụ mục đích giáo dục truyền thống phi lợi nhuận cho học sinh và cộng đồng.
         </div>
       </div>
 

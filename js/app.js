@@ -474,7 +474,7 @@ function renderHeritageGrid(items) {
                 type="button" 
                 onclick="openDetailModal('${item.id}')"
                 class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white ${isVatThe? 'bg-[#8B1E1E] hover:bg-[#6F1515]': 'bg-[#8B6914] hover:bg-[#6F540F]'} transition shadow-sm hover:shadow">
-                <span>Xem chi tiết & bản đồ</span>
+                <span>Xem chi tiết và bản đồ</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </button>
 
@@ -1962,7 +1962,7 @@ function formatMarkdownBold(text) {
  * QUẢN LÝ MODAL BẢNG KIỂM KÊ 37 DI TÍCH LỊCH SỬ - VĂN HÓA XÃ NHÃ NAM
  * ====================================================================
  */
-function openRelicsInventoryModal() {
+function openRelicsInventoryModal(targetGroupId = null) {
   const modal = document.getElementById('relics-inventory-modal');
   if (!modal) return;
   renderRelicsInventoryModalContent();
@@ -1971,6 +1971,17 @@ function openRelicsInventoryModal() {
   const input = document.getElementById('inventory-modal-search');
   if (input) {
     input.value = '';
+  }
+  if (targetGroupId) {
+    setTimeout(() => {
+      const targetEl = document.getElementById(`inventory-group-${targetGroupId}`);
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        targetEl.classList.add('ring-2', 'ring-[#C59B27]');
+        setTimeout(() => targetEl.classList.remove('ring-2', 'ring-[#C59B27]'), 2500);
+      }
+    }, 250);
+  } else if (input) {
     setTimeout(() => input.focus(), 100);
   }
 }
@@ -2005,7 +2016,7 @@ function renderRelicsInventoryModalContent(keyword = '') {
     if (kw && filteredItems.length === 0) return '';
 
     return `
-      <div class="rounded-2xl border border-[#EADECF] p-4 bg-[#FDFBF7]">
+      <div id="inventory-group-${group.id}" class="rounded-2xl border border-[#EADECF] p-4 bg-[#FDFBF7] transition-all duration-300">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-[#EADECF]/80">
           <div class="flex items-center gap-2">
             <span class="text-[#8B1E1E]">${ic(group.icon, 'w-5 h-5')}</span>
@@ -2359,4 +2370,34 @@ function resetAllFilters() {
 
   applyFiltersAndRender();
   showToastNotification('Đã hiển thị lại toàn bộ kho tư liệu di sản!', 'info');
+}
+
+
+/**
+ * Lọc trực tiếp theo cấp xếp hạng di tích từ 4 ô thống kê trên trang chủ
+ */
+function filterByRankDirect(rankCategory) {
+  // Xóa bộ lọc tuyến và từ khóa để tập trung vào cấp xếp hạng
+  state.activeRouteFilter = null;
+  state.searchQuery = '';
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.value = '';
+  const clearBtn = document.getElementById('clear-search-btn');
+  if (clearBtn) clearBtn.classList.add('hidden');
+
+  setCategoryFilter(rankCategory);
+
+  // Cuộn mượt mà đến khu vực danh sách di tích
+  const explorerSection = document.getElementById('heritage-explorer');
+  if (explorerSection) {
+    explorerSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  const rankNames = {
+    'quoc-gia-dac-biet': '08 di tích quốc gia đặc biệt',
+    'quoc-gia': '01 di tích cấp quốc gia (Chùa Tứ Giáp)',
+    'cap-tinh': '07 di tích cấp tỉnh'
+  };
+  const label = rankNames[rankCategory] || rankCategory;
+  showToastNotification(`Đang hiển thị ${label}`, 'info');
 }
