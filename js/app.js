@@ -768,6 +768,28 @@ function openDetailModal(itemId) {
             Sao chép
           </button>
         </div>
+
+        ${(() => {
+          const parentRoute = (typeof HERITAGE_ROUTES !== 'undefined') ? HERITAGE_ROUTES.find(r => r.relicIds && r.relicIds.includes(item.id)) : null;
+          if (!parentRoute) return '';
+          return `
+            <div class="mt-3 p-3.5 rounded-xl bg-[#FAF5EE] border border-[#EADECF] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="w-6 h-6 rounded-full bg-[#8B1E1E] text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0 shadow-xs">${parentRoute.number}</span>
+                <div>
+                  <div class="font-bold text-[#8B1E1E]">Thuộc Tuyến ${parentRoute.number}: ${escapeHtml(parentRoute.title)}</div>
+                  <div class="text-[11px] text-[#786C5E] truncate mt-0.5">Lộ trình kết nối ${parentRoute.relicIds.length} di tích: ${escapeHtml(parentRoute.subtitle)}</div>
+                </div>
+              </div>
+              <button 
+                type="button" 
+                onclick="closeDetailModal(); selectRoute('${parentRoute.id}'); selectRouteRelic('${item.id}'); document.getElementById('heritage-map-section')?.scrollIntoView({behavior: 'smooth'});" 
+                class="px-3.5 py-2 rounded-lg bg-[#8B1E1E] hover:bg-[#6F1515] text-white font-bold transition shadow-xs whitespace-nowrap self-stretch sm:self-auto text-center cursor-pointer">
+                Xem cụm di tích trên bản đồ →
+              </button>
+            </div>
+          `;
+        })()}
       </section>
 
       <!-- PHẦN 3: NỘI DUNG VỀ DI TÍCH / NỘI DUNG DI SẢN -->
@@ -2041,23 +2063,56 @@ function selectRoute(routeId) {
     }
   });
 
-  // 2. Chuyển iframe bản đồ mượt mà
-  updateMapFrame(route.mapEmbedUrl, `Bản đồ Tuyến ${route.number}: ${route.title} (${route.subtitle})`, route.directionsUrl);
+  // Bỏ active tất cả chip di tích đơn lẻ
+  document.querySelectorAll('.route-relic-chip').forEach(btn => {
+    btn.classList.remove('ring-2', 'ring-[#8B1E1E]', 'bg-[#8B1E1E]', 'text-white');
+  });
 
-  // 3. Cập nhật nút dẫn đường
+  // Ẩn thanh công cụ di tích đơn lẻ
+  const singleToolbar = document.getElementById('route-single-relic-toolbar');
+  if (singleToolbar) {
+    singleToolbar.classList.add('hidden');
+    singleToolbar.classList.remove('flex');
+  }
+
+  // 2. Chuyển iframe bản đồ hiển thị toàn bộ lộ trình liên hoàn của cụm di tích
+  updateMapFrame(route.mapEmbedUrl, `Lộ trình tham quan toàn Tuyến ${route.number}: ${route.title} (${route.subtitle})`, route.directionsUrl, 'Mở Google Maps dẫn đường toàn tuyến ↗');
+
+  // 3. Cập nhật nút dẫn đường toàn tuyến liên hoàn
   const dirBtn = document.getElementById('heritage-route-directions-btn');
   const dirLabel = document.getElementById('route-directions-label');
   if (dirBtn && route.directionsUrl) {
     dirBtn.href = route.directionsUrl;
   }
   if (dirLabel && route.directionsText) {
-    dirLabel.textContent = route.directionsText;
+    dirLabel.innerHTML = `<svg class="w-4 h-4 text-[#F6E05E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> <span>${escapeHtml(route.directionsText)}</span>`;
   }
 }
 
 function selectRouteRelic(relicId, event) {
   if (event) {
     event.stopPropagation();
+  }
+
+  // Tự động kích hoạt thẻ Tuyến cha nếu chưa chọn
+  if (typeof HERITAGE_ROUTES !== 'undefined') {
+    const parentRoute = HERITAGE_ROUTES.find(r => r.relicIds && r.relicIds.includes(relicId));
+    if (parentRoute && activeRouteId !== parentRoute.id) {
+      activeRouteId = parentRoute.id;
+      ['tuyen-1', 'tuyen-2', 'tuyen-3'].forEach(id => {
+        const card = document.getElementById(`route-card-${id}`);
+        if (card) {
+          if (id === parentRoute.id) card.classList.add('active');
+          else card.classList.remove('active');
+        }
+      });
+      const dirBtn = document.getElementById('heritage-route-directions-btn');
+      const dirLabel = document.getElementById('route-directions-label');
+      if (dirBtn && parentRoute.directionsUrl) dirBtn.href = parentRoute.directionsUrl;
+      if (dirLabel && parentRoute.directionsText) {
+        dirLabel.innerHTML = `<svg class="w-4 h-4 text-[#F6E05E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> <span>${escapeHtml(parentRoute.directionsText)}</span>`;
+      }
+    }
   }
 
   // Cập nhật trạng thái active chip
@@ -2068,29 +2123,35 @@ function selectRouteRelic(relicId, event) {
     event.currentTarget.classList.add('ring-2', 'ring-[#8B1E1E]', 'bg-[#8B1E1E]', 'text-white');
   }
 
-  // 1. Zoom iframe bản đồ vào đúng vị trí tọa độ di tích
+  // 1. Zoom iframe bản đồ vào đúng vị trí tọa độ di tích được chọn
   const relic = (typeof TANGIBLE_HERITAGE_DATA !== 'undefined') ? TANGIBLE_HERITAGE_DATA.find(r => r.id === relicId) : null;
   if (relic && relic.map && relic.map.embedUrl) {
     let zoomUrl = relic.map.embedUrl;
     if (!zoomUrl.includes('&z=')) {
       zoomUrl = zoomUrl.replace('&output=embed', '&z=16&output=embed');
     }
-    updateMapFrame(zoomUrl, `${relic.title} (${relic.address})`, relic.map.directionsUrl);
+    updateMapFrame(zoomUrl, `Vị trí di tích: ${relic.title} (${relic.address})`, relic.map.directionsUrl, `Chỉ đường tới ${relic.shortTitle || relic.title} ↗`);
 
-    const dirBtn = document.getElementById('heritage-route-directions-btn');
-    const dirLabel = document.getElementById('route-directions-label');
+    // 2. Hiển thị thanh công cụ dẫn đường riêng tới di tích này
+    const singleToolbar = document.getElementById('route-single-relic-toolbar');
+    const singleDirBtn = document.getElementById('route-single-relic-dir-btn');
+    const singleDirLabel = document.getElementById('route-single-relic-dir-label');
     const openDocBtn = document.getElementById('route-relic-doc-btn');
     
-    if (dirBtn && relic.map.directionsUrl) {
-      dirBtn.href = relic.map.directionsUrl;
+    if (singleToolbar) {
+      singleToolbar.classList.remove('hidden');
+      singleToolbar.classList.add('flex');
     }
-    if (dirLabel) {
-      dirLabel.innerHTML = `Chỉ đường từ vị trí của bạn đến <strong>${escapeHtml(relic.shortTitle || relic.title)}</strong>`;
+    if (singleDirBtn && relic.map.directionsUrl) {
+      singleDirBtn.href = relic.map.directionsUrl;
+    }
+    if (singleDirLabel) {
+      singleDirLabel.textContent = `Chỉ đường riêng đến ${relic.shortTitle || relic.title} (từ vị trí của bạn)`;
     }
     if (openDocBtn) {
       openDocBtn.style.display = 'inline-flex';
       openDocBtn.onclick = () => openDetailModal(relicId);
-      openDocBtn.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg> Xem hồ sơ ${escapeHtml(relic.shortTitle || relic.title)}`;
+      openDocBtn.innerHTML = `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg> <span>Xem hồ sơ ${escapeHtml(relic.shortTitle || relic.title)}</span>`;
     }
 
     // Cuộn nhẹ tới bản đồ trên thiết bị di động
@@ -2103,9 +2164,17 @@ function selectRouteRelic(relicId, event) {
   }
 }
 
+function restoreActiveRouteOverview() {
+  const routeId = activeRouteId || 'tuyen-1';
+  selectRoute(routeId);
+}
+
 function resetToCommuneMap() {
-  const openDocBtn = document.getElementById('route-relic-doc-btn');
-  if (openDocBtn) openDocBtn.style.display = 'none';
+  const singleToolbar = document.getElementById('route-single-relic-toolbar');
+  if (singleToolbar) {
+    singleToolbar.classList.add('hidden');
+    singleToolbar.classList.remove('flex');
+  }
   document.querySelectorAll('.route-relic-chip').forEach(btn => {
     btn.classList.remove('ring-2', 'ring-[#8B1E1E]', 'bg-[#8B1E1E]', 'text-white');
   });
@@ -2118,22 +2187,24 @@ function resetToCommuneMap() {
   });
 
   // 2. Khôi phục iframe bản đồ toàn xã
-  const defaultMap = (typeof DEFAULT_COMMUNE_MAP!== 'undefined')? DEFAULT_COMMUNE_MAP: {
-    embedUrl: "https://www.google.com/maps?q=Nh%C3%A3+Nam,+B%E1%BA%AFc+Ninh&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=UBND+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
-    directionsText: "Dẫn đường đến trung tâm xã Nhã Nam"
+  const defaultMap = (typeof DEFAULT_COMMUNE_MAP !== 'undefined') ? DEFAULT_COMMUNE_MAP : {
+    embedUrl: "https://www.google.com/maps?q=21.4404,106.0965&z=14&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4404,106.0965",
+    directionsText: "Chỉ đường từ vị trí của bạn đến trung tâm xã Nhã Nam (UBND xã Nhã Nam)"
   };
 
-  updateMapFrame(defaultMap.embedUrl, 'Bản đồ tổng thể xã Nhã Nam, tỉnh Bắc Ninh', defaultMap.directionsUrl);
+  updateMapFrame(defaultMap.embedUrl, 'Bản đồ tổng thể vùng di sản xã Nhã Nam, tỉnh Bắc Ninh', defaultMap.directionsUrl, 'Mở Google Maps chỉ đường ↗');
 
   // 3. Khôi phục nút dẫn đường
   const dirBtn = document.getElementById('heritage-route-directions-btn');
   const dirLabel = document.getElementById('route-directions-label');
   if (dirBtn) dirBtn.href = defaultMap.directionsUrl;
-  if (dirLabel) dirLabel.textContent = defaultMap.directionsText;
+  if (dirLabel) {
+    dirLabel.innerHTML = `<svg class="w-4 h-4 text-[#F6E05E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> <span>${escapeHtml(defaultMap.directionsText)}</span>`;
+  }
 }
 
-function updateMapFrame(newUrl, captionText, directionsUrl) {
+function updateMapFrame(newUrl, captionText, directionsUrl, btnText) {
   const iframe = document.getElementById('heritage-route-map-frame');
   const caption = document.getElementById('active-route-map-caption');
   const indicator = document.getElementById('map-loading-indicator');
@@ -2142,8 +2213,12 @@ function updateMapFrame(newUrl, captionText, directionsUrl) {
   if (caption && captionText) {
     caption.textContent = captionText;
   }
-  if (openDirectBtn && directionsUrl) {
-    openDirectBtn.href = directionsUrl;
+  if (openDirectBtn) {
+    if (directionsUrl) openDirectBtn.href = directionsUrl;
+    if (btnText) {
+      const textSpan = openDirectBtn.querySelector('span');
+      if (textSpan) textSpan.textContent = btnText;
+    }
   }
 
   if (!iframe) return;

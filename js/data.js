@@ -161,37 +161,37 @@ const HERITAGE_ROUTES = [
     number: "1",
     name: "Tuyến 1",
     title: "Cội nguồn và kháng chiến",
-    subtitle: "Khu di tích đình - chùa Hả, chùa Tứ Giáp và đình Dương Lâm",
+    subtitle: "Khu di tích đình - chùa Hả ➔ Chùa Tứ Giáp ➔ Đình Dương Lâm",
     themeColor: "#8B1E1E",
     badgeBg: "bg-[#8B1E1E]",
     relicIds: ["vat-the-1", "vat-the-2", "vat-the-11"],
     relics: [
-      { id: "vat-the-1", name: "Đình - chùa Hả", note: "Nơi tế cờ 1884", q: "Đình+Hả,+Tân+Trung,+Tân+Yên,+Bắc+Giang" },
-      { id: "vat-the-2", name: "Chùa Tứ Giáp", note: "Nơi phát tích 6 điều Bác Hồ dạy", q: "21.4448892,106.0901463" },
-      { id: "vat-the-11", name: "Đình Dương Lâm", note: "Di tích quốc gia đặc biệt thời Lê", q: "21.4210834,106.0960966" }
+      { id: "vat-the-1", name: "Đình - chùa Hả", note: "Nơi Đề Nắm tế cờ phát động khởi nghĩa Yên Thế (1884)", q: "Đình+Hả,+Tân+Trung,+Tân+Yên,+Bắc+Giang" },
+      { id: "vat-the-2", name: "Chùa Tứ Giáp", note: "Nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân (1948)", q: "21.4448892,106.0901463" },
+      { id: "vat-the-11", name: "Đình Dương Lâm", note: "Di tích quốc gia đặc biệt thời Lê - căn cứ kháng chiến", q: "21.4210834,106.0960966" }
     ],
-    mapEmbedUrl: "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang",
-    directionsText: "Chỉ đường từ vị trí của bạn đến Đình Hả (Điểm đầu Tuyến 1)",
-    description: "Kết nối nơi khởi phát ngọn cờ Yên Thế (đình Hả) với nơi phát tích 6 điều Bác Hồ dạy CAND (chùa Tứ Giáp) và căn cứ kháng chiến kiên trung đình Dương Lâm."
+    mapEmbedUrl: "https://www.google.com/maps?saddr=21.4357253,106.116718&daddr=21.4448892,106.0901463+to:21.4210834,106.0960966&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4210834,106.0960966&waypoints=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang%7C21.4448892,106.0901463",
+    directionsText: "Chỉ đường toàn Tuyến 1 liên hoàn (Đình Hả ➔ Chùa Tứ Giáp ➔ Đình Dương Lâm)",
+    description: "Hành trình kết nối nơi khởi phát ngọn cờ Yên Thế (đình Hả) với nơi phát tích 6 điều Bác Hồ dạy CAND (chùa Tứ Giáp) và căn cứ kháng chiến kiên trung đình Dương Lâm."
   },
   {
     id: "tuyen-2",
     number: "2",
     name: "Tuyến 2",
     title: "Mốc son cách mạng & văn hóa",
-    subtitle: "Di tích thôn Đồng Điều, đền Đề Truật và chùa Dương Sơn",
+    subtitle: "Chùa Đồng Điều ➔ Đền Đề Truật ➔ Chùa Dương Sơn",
     themeColor: "#C59B27",
     badgeBg: "bg-[#C59B27]",
     relicIds: ["vat-the-3", "vat-the-8", "vat-the-15"],
     relics: [
-      { id: "vat-the-3", name: "Chùa Đồng Điều", note: "Chi bộ Đảng đầu tiên", q: "Chùa+Đồng+Điều,+xã+Nhã+Nam" },
-      { id: "vat-the-8", name: "Đền Đề Truật", note: "Tướng quân Đề Truật", q: "21.4525861,106.0980009" },
-      { id: "vat-the-15", name: "Chùa Dương Sơn", note: "Di tích cấp tỉnh - văn hóa làng Dương Sơn", q: "21.408497,106.1126369" }
+      { id: "vat-the-3", name: "Chùa Đồng Điều", note: "Cái nôi thành lập chi bộ Đảng Cộng sản đầu tiên", q: "Chùa+Đồng+Điều,+xã+Nhã+Nam" },
+      { id: "vat-the-8", name: "Đền Đề Truật", note: "Đền thờ tướng quân Dương Văn Truật (Đề Truật)", q: "21.4525861,106.0980009" },
+      { id: "vat-the-15", name: "Chùa Dương Sơn", note: "Di tích cấp tỉnh - văn hóa cổ truyền làng Dương Sơn", q: "21.408497,106.1126369" }
     ],
-    mapEmbedUrl: "https://www.google.com/maps?q=21.4525861,106.0980009&z=15&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4525861,106.0980009",
-    directionsText: "Chỉ đường từ vị trí của bạn đến Đền Đề Truật (Điểm đầu Tuyến 2)",
+    mapEmbedUrl: "https://www.google.com/maps?saddr=21.455246,106.094589&daddr=21.4525861,106.0980009+to:21.408497,106.1126369&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.408497,106.1126369&waypoints=21.455246,106.094589%7C21.4525861,106.0980009",
+    directionsText: "Chỉ đường toàn Tuyến 2 liên hoàn (Chùa Đồng Điều ➔ Đền Đề Truật ➔ Chùa Dương Sơn)",
     description: "Hành trình về với cái nôi gieo mầm cách mạng của chi bộ Đảng Cộng sản đầu tiên, tấm gương trung dũng của nghĩa quân Đề Truật và không gian văn hóa thanh tịnh chùa Dương Sơn."
   },
   {
@@ -199,28 +199,28 @@ const HERITAGE_ROUTES = [
     number: "3",
     name: "Tuyến 3",
     title: "Chiến tích oai hùng & tín ngưỡng cổ truyền",
-    subtitle: "Căn cứ đền Gốc Khế, đồi Phủ, đình làng Chuông, chùa Nam Thiên và đình Cầu Thượng",
+    subtitle: "Đền Gốc Khế ➔ Đồi Phủ ➔ Đình làng Chuông ➔ Chùa Nam Thiên ➔ Đình Cầu Thượng",
     themeColor: "#166534",
     badgeBg: "bg-[#166534]",
     relicIds: ["vat-the-4", "vat-the-5", "vat-the-6", "vat-the-7", "vat-the-12"],
     relics: [
-      { id: "vat-the-4", name: "Đền Gốc Khế", note: "Căn cứ rừng Gốc Khế", q: "21.4443835,106.0966726" },
-      { id: "vat-the-5", name: "Đồi Phủ (đồn Nhã Nam)", note: "Ao ông Chấn Ký", q: "21.4444805,106.0971055" },
-      { id: "vat-the-6", name: "Đình làng Chuông", note: "Đình cổ thế kỷ XVIII", q: "21.4443874,106.0991677" },
-      { id: "vat-the-7", name: "Chùa Nam Thiên", note: "Chùa Phố 1822", q: "21.4442158,106.0973672" },
+      { id: "vat-the-4", name: "Đền Gốc Khế", note: "Căn cứ rừng Gốc Khế nghĩa quân Yên Thế", q: "21.4443835,106.0966726" },
+      { id: "vat-the-5", name: "Đồi Phủ (đồn Nhã Nam)", note: "Ao ông Chấn Ký, di tích oanh liệt thời Pháp", q: "21.4444805,106.0971055" },
+      { id: "vat-the-6", name: "Đình làng Chuông", note: "Đình cổ thế kỷ XVIII trung tâm Nhã Nam", q: "21.4443874,106.0991677" },
+      { id: "vat-the-7", name: "Chùa Nam Thiên", note: "Chùa Phố khởi dựng năm 1822", q: "21.4442158,106.0973672" },
       { id: "vat-the-12", name: "Đình Cầu Thượng", note: "Di tích cấp tỉnh thờ Cao Sơn, Quý Minh", q: "21.4397723,106.0893274" }
     ],
-    mapEmbedUrl: "https://www.google.com/maps?q=21.4444805,106.0971055&z=16&output=embed",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4443835,106.0966726",
-    directionsText: "Chỉ đường từ vị trí của bạn đến Đền Gốc Khế (Điểm đầu Tuyến 3)",
+    mapEmbedUrl: "https://www.google.com/maps?saddr=21.4443835,106.0966726&daddr=21.4444805,106.0971055+to:21.4443874,106.0991677+to:21.4442158,106.0973672+to:21.4397723,106.0893274&output=embed",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4397723,106.0893274&waypoints=21.4443835,106.0966726%7C21.4444805,106.0971055%7C21.4443874,106.0991677%7C21.4442158,106.0973672",
+    directionsText: "Chỉ đường toàn Tuyến 3 liên hoàn (Đền Gốc Khế ➔ Đồi Phủ ➔ Đình Chuông ➔ Chùa Nam Thiên ➔ Đình Cầu Thượng)",
     description: "Cụm di tích lịch sử quân sự và tín ngưỡng trung tâm Nhã Nam - chiến trường thử lửa oanh liệt chống giặc ngoại xâm của nghĩa quân Yên Thế và thiết chế đình làng cổ kính."
   }
 ];
 
 const DEFAULT_COMMUNE_MAP = {
-  embedUrl: "https://www.google.com/maps?q=21.4404,106.0965&z=15&output=embed",
+  embedUrl: "https://www.google.com/maps?q=21.4404,106.0965&z=14&output=embed",
   directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4404,106.0965",
-  directionsText: "Chỉ đường từ vị trí của bạn đến trung tâm xã Nhã Nam"
+  directionsText: "Chỉ đường từ vị trí của bạn đến trung tâm xã Nhã Nam (UBND xã Nhã Nam)"
 };
 
 const MUSIC_PLAYLIST = [
