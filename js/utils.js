@@ -83,12 +83,18 @@ function matchesSearchQuery(item, rawQuery) {
     item.title || '',
     item.shortTitle || '',
     item.address || '',
+    item.oldAddress || '',
     item.scope || '',
     item.overview || '',
     item.badge || '',
+    item.rank || '',
+    item.decision || '',
+    item.worship || '',
+    item.relicType || '',
     (item.tags || []).join(' '),
     (item.content && item.content.intro) || '',
-    (item.content && item.content.preservationValue) || ''
+    (item.content && item.content.preservationValue) || '',
+    (item.content && Array.isArray(item.content.historicalSignificance) ? item.content.historicalSignificance.join(' ') : '')
   ];
 
   const fullSearchableText = removeVietnameseTones(searchableParts.join(' '));

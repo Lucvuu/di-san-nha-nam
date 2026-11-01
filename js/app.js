@@ -1,3 +1,38 @@
+
+/**
+ * Quản lý khóa cuộn trang nền và bù trừ thanh cuộn (Tránh giật giật ngang khi mở modal/lightbox)
+ */
+let openModalsCount = 0;
+
+function lockScroll() {
+  openModalsCount++;
+  if (openModalsCount === 1) {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      const fixedHeader = document.querySelector('header');
+      if (fixedHeader) fixedHeader.style.paddingRight = `${scrollbarWidth}px`;
+    }
+    document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
+  }
+}
+
+function unlockScroll(force = false) {
+  if (force) {
+    openModalsCount = 0;
+  } else {
+    openModalsCount = Math.max(0, openModalsCount - 1);
+  }
+  if (openModalsCount === 0) {
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+    const fixedHeader = document.querySelector('header');
+    if (fixedHeader) fixedHeader.style.paddingRight = '';
+    document.body.classList.remove('modal-open');
+  }
+}
+
 /**
  * ====================================================================
  * DI SẢN VĂN HÓA XÃ NHÃ NAM - XỬ LÝ ỨNG DỤNG CHÍNH (APPLICATION LOGIC)
@@ -296,7 +331,7 @@ function renderHeritageGrid(items) {
               src="${item.thumbnail}" 
               alt="${escapeHtml(item.title)}" 
               loading="lazy"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy" decoding="async" style="object-position: ${item.imagePosition || 'center 30%'};" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onerror="handleImageError(this)"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
@@ -393,7 +428,7 @@ function renderHeritageGrid(items) {
           </div>
 
           <!-- Dải biểu tượng đa phương tiện (Nhiệm vụ 3) -->
-          <div class="mb-3 pt-2.5 border-t border-[#EADECF]/70 flex flex-wrap items-center justify-between gap-1.5 text-[11px]">
+          <div class="mt-auto mb-3 pt-2.5 border-t border-[#EADECF]/70 flex flex-wrap items-center justify-between gap-1.5 text-[11px]">
             <span class="font-semibold text-[#8B1E1E] flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full bg-[#8B1E1E]"></span>
               Đa phương tiện:
@@ -402,7 +437,7 @@ function renderHeritageGrid(items) {
               <span class="px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#2A2521] border border-[#EADECF] font-medium" title="Ảnh tư liệu thực tế">
                 ${ic('image','w-3.5 h-3.5')} ${!item.hasRealPhoto? 'Ảnh đang cập nhật': (item.thumbnail || '').includes('video-tu-lieu')? 'Ảnh từ video': 'Ảnh thực tế'}
               </span>
-              <span class="px-2 py-0.5 rounded-md bg-[#FFF5F5] text-[#8B1E1E] border border-[#FED7D7] font-medium" title="Thuyết minh âm thanh tự động">
+              <span class="px-2 py-0.5 rounded-md bg-[#FFF5F5] text-[#8B1E1E] border border-[#FED7D7] font-medium" title="Bản ghi âm thuyết minh thực tế">
                 ${ic('volume','w-3.5 h-3.5')} Thuyết minh
               </span>
               <span class="px-2 py-0.5 rounded-md bg-[#F0FDF4] text-[#166534] border border-[#BBF7D0] font-medium" title="Bản đồ Google Maps & Dẫn đường">
@@ -778,7 +813,7 @@ function openDetailModal(itemId) {
               <div class="flex items-center gap-2.5 min-w-0">
                 <span class="w-6 h-6 rounded-full bg-[#8B1E1E] text-white font-bold text-[11px] flex items-center justify-center flex-shrink-0 shadow-xs">${parentRoute.number}</span>
                 <div>
-                  <div class="font-bold text-[#8B1E1E]">Thuộc Tuyến ${parentRoute.number}: ${escapeHtml(parentRoute.title)}</div>
+                  <div class="font-bold text-[#8B1E1E]">Thuộc tuyến ${parentRoute.number}: ${escapeHtml(parentRoute.title)}</div>
                   <div class="text-[11px] text-[#786C5E] truncate mt-0.5">Lộ trình kết nối ${parentRoute.relicIds.length} di tích: ${escapeHtml(parentRoute.subtitle)}</div>
                 </div>
               </div>
@@ -859,7 +894,7 @@ function openDetailModal(itemId) {
                 src="${img.url}" 
                 alt="${escapeHtml(img.caption || item.title)}" 
                 loading="lazy"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy" decoding="async" style="object-position: ${img.position || 'center 30%'};" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 onerror="handleImageError(this)"
               />
               <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent text-white px-3 pt-6 pb-2 pr-10">
@@ -903,7 +938,9 @@ function openDetailModal(itemId) {
 
   if (modal.classList.contains('hidden')) state.lastFocus = document.activeElement;
   modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
+  modal.scrollTop = 0;
+  container.scrollTop = 0;
+  lockScroll();
   container.querySelector('button[onclick="closeDetailModal()"]')?.focus({ preventScroll: true });
   initAudioGuideForModal(item);
 }
@@ -1020,7 +1057,7 @@ function closeDetailModal() {
   }
 
   modal.classList.add('hidden');
-  document.body.style.overflow = '';
+  unlockScroll();
   state.lastFocus?.focus?.({ preventScroll: true });
   state.lastFocus = null;
   stopAudioGuideNarration();
@@ -1277,6 +1314,7 @@ function openLightbox(index) {
 
   updateLightboxContent();
   lightbox.classList.remove('hidden');
+  lockScroll();
 }
 
 function updateLightboxContent() {
@@ -1311,6 +1349,7 @@ function closeLightbox() {
   const lightbox = document.getElementById('lightbox-modal');
   if (lightbox) {
     lightbox.classList.add('hidden');
+    unlockScroll();
   }
 }
 
@@ -1470,7 +1509,7 @@ function showQuizResultModal(score, total) {
     badgeTitle = 'Xuất sắc! Đại sứ di sản THPT Nhã Nam';
     message = 'Tuyệt vời! Bạn am hiểu rất sâu sắc về truyền thống lịch sử hào hùng quê hương Nhã Nam!';
   } else if (score >= 3) {
-    badgeTitle = 'Khá Giỏi! Tự Hào Quê Hương Nhã Nam';
+    badgeTitle = 'Khá, giỏi! Tự hào quê hương Nhã Nam';
     message = 'Rất tốt! Bạn đã nắm được những nét đặc sắc nhất của di sản văn hóa địa phương.';
   }
 
@@ -1928,7 +1967,7 @@ function openRelicsInventoryModal() {
   if (!modal) return;
   renderRelicsInventoryModalContent();
   modal.classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
+  lockScroll();
   const input = document.getElementById('inventory-modal-search');
   if (input) {
     input.value = '';
@@ -2092,10 +2131,19 @@ function selectRoute(routeId) {
   }
 }
 
+let currentActiveRelicId = null;
+
 function selectRouteRelic(relicId, event) {
   if (event) {
     event.stopPropagation();
   }
+
+  // Nếu người dùng bấm lại vào đúng chip di tích đang được zoom chọn: mở ngay hồ sơ chi tiết!
+  if (currentActiveRelicId === relicId) {
+    openDetailModal(relicId);
+    return;
+  }
+  currentActiveRelicId = relicId;
 
   // Tự động kích hoạt thẻ Tuyến cha nếu chưa chọn
   if (typeof HERITAGE_ROUTES !== 'undefined') {
@@ -2168,11 +2216,13 @@ function selectRouteRelic(relicId, event) {
 }
 
 function restoreActiveRouteOverview() {
+  currentActiveRelicId = null;
   const routeId = activeRouteId || 'tuyen-1';
   selectRoute(routeId);
 }
 
 function resetToCommuneMap() {
+  currentActiveRelicId = null;
   const singleToolbar = document.getElementById('route-single-relic-toolbar');
   if (singleToolbar) {
     singleToolbar.classList.add('hidden');
@@ -2279,4 +2329,34 @@ function filterRelicsByRoute(routeId) {
 function clearRouteFilter() {
   state.activeRouteFilter = null;
   applyFiltersAndRender();
+}
+
+
+/**
+ * Đặt lại toàn bộ bộ lọc tìm kiếm và danh mục về mặc định (Tránh kẹt bộ lọc khi tìm kiếm rỗng)
+ */
+function resetAllFilters() {
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.value = '';
+  state.searchQuery = '';
+
+  const clearBtn = document.getElementById('clear-search-btn');
+  if (clearBtn) clearBtn.classList.add('hidden');
+
+  state.activeRouteFilter = null;
+  state.currentCategory = 'all';
+
+  // Cập nhật giao diện các tab danh mục
+  const tabButtons = document.querySelectorAll('.category-tab-btn');
+  tabButtons.forEach(btn => {
+    const cat = btn.getAttribute('data-category');
+    if (cat === 'all') {
+      btn.className = 'category-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-sm flex items-center gap-2 bg-[#8B1E1E] text-white border border-[#8B1E1E] is-active';
+    } else {
+      btn.className = 'category-tab-btn px-4 py-2.5 rounded-xl font-medium text-xs sm:text-sm text-[#5C5248] hover:text-[#8B1E1E] hover:bg-[#F5EFE6] transition-all flex items-center gap-2 border border-[#EADECF] bg-white';
+    }
+  });
+
+  applyFiltersAndRender();
+  showToastNotification('Đã hiển thị lại toàn bộ kho tư liệu di sản!', 'info');
 }
