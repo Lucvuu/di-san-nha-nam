@@ -15,10 +15,12 @@ vm.runInThisContext(utilsCode);
 console.log('--- 1. TESTING SITE_CONFIG & ADMINISTRATIVE NORMALIZATION ---');
 console.assert(SITE_CONFIG.commune === 'Xã Nhã Nam', 'Commune should be Xã Nhã Nam');
 console.assert(SITE_CONFIG.province === 'Thành phố Bắc Ninh' || SITE_CONFIG.city.toLowerCase().includes('bắc ninh'), 'Province/City should be thành phố Bắc Ninh');
-console.assert(SITE_CONFIG.adminPhone === '0982.386.959', 'adminPhone should be 0982.386.959');
-console.assert(SITE_CONFIG.adminZaloUrl === 'https://zalo.me/0982386959', 'adminZaloUrl should be correct');
-console.assert(SITE_CONFIG.secondaryAdminName === 'Cô Dương Thuý Mến', 'secondaryAdminName should be Cô Dương Thuý Mến');
-console.assert(SITE_CONFIG.secondaryAdminPhone === '0985.449.123', 'secondaryAdminPhone should be 0985.449.123');
+console.assert(SITE_CONFIG.adminRole === 'Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam', 'adminRole should be Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam');
+console.assert(SITE_CONFIG.adminName.includes('Dương Thị Thuý Mến'), 'adminName must include Cô Dương Thị Thuý Mến');
+console.assert(SITE_CONFIG.adminPhone === '0985.449.123', 'adminPhone should be 0985.449.123 (Cô Dương Thị Thuý Mến)');
+console.assert(SITE_CONFIG.adminZaloUrl === 'https://zalo.me/0985449123', 'adminZaloUrl should be Cô Mến Zalo');
+console.assert(SITE_CONFIG.secondaryAdminName === 'Thầy Bùi Văn Công', 'secondaryAdminName should be Thầy Bùi Văn Công');
+console.assert(SITE_CONFIG.secondaryAdminPhone === '0982.386.959', 'secondaryAdminPhone should be 0982.386.959');
 console.assert(SITE_CONFIG.facebookGroupStatusNote.includes('kiểm duyệt'), 'Facebook note must mention kiểm duyệt');
 console.log('✓ SITE_CONFIG verified');
 

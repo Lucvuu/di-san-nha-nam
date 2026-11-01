@@ -39,15 +39,15 @@ const SITE_CONFIG = {
   facebookGroupStatusNote: "Nhóm có bật chế độ kiểm duyệt bài viết để đảm bảo môi trường học tập văn minh, an toàn cho học sinh",
 
   // Administrator & Contact Configuration
-  adminRole: "Ban điều hành dự án và quản trị nội dung",
-  adminName: "Thầy Bùi Văn Công và cô Dương Thuý Mến (Trường THPT Nhã Nam)",
-  adminPhone: "0982.386.959",
-  adminPhoneRaw: "0982386959",
-  adminZaloUrl: "https://zalo.me/0982386959",
-  secondaryAdminName: "Cô Dương Thuý Mến",
-  secondaryAdminPhone: "0985.449.123",
-  secondaryAdminPhoneRaw: "0985449123",
-  secondaryAdminZaloUrl: "https://zalo.me/0985449123",
+  adminRole: "Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam",
+  adminName: "Cô Dương Thị Thuý Mến và thầy Bùi Văn Công (Trường THPT Nhã Nam)",
+  adminPhone: "0985.449.123",
+  adminPhoneRaw: "0985449123",
+  adminZaloUrl: "https://zalo.me/0985449123",
+  secondaryAdminName: "Thầy Bùi Văn Công",
+  secondaryAdminPhone: "0982.386.959",
+  secondaryAdminPhoneRaw: "0982386959",
+  secondaryAdminZaloUrl: "https://zalo.me/0982386959",
   adminEmail: "thptnhanam.disan@gmail.com",
   adminAddress: "Trường THPT Nhã Nam, xã Nhã Nam, thành phố Bắc Ninh"
 };
