@@ -471,13 +471,13 @@ function renderHeritageGrid(items) {
 
           <!-- Nút hành động xem chi tiết & video -->
           <div class="pt-3 border-t border-[#EADECF]/60 flex flex-col gap-2">
-            ${item.id === 'vat-the-1' ? `
+            ${item.id === 'vat-the-1' || item.id === 'phi-vat-the-1' ? `
               <button 
                 type="button" 
                 onclick="event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'}), 350);"
                 class="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 transition shadow-xs" 
-                aria-label="Xem video lễ tế cờ Đề Nắm">
-                ${ic('video')} <span>Xem video lễ tế cờ Đề Nắm</span>
+                aria-label="Xem video diễn tích Đề Nắm tế cờ (từ 05:54)">
+                ${ic('video')} <span>Xem video diễn tích Đề Nắm tế cờ (từ 05:54)</span>
               </button>
             ` : (item.video ? `
               <button 
@@ -792,7 +792,7 @@ function openDetailModal(itemId) {
         <h3 class="font-heritage-serif font-bold text-lg text-[#8B1E1E] mb-3 flex items-center gap-2">${ic('video', 'w-5 h-5')} Video tư liệu</h3>
         <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
           <iframe
-            src="${item.video.embedUrl}?rel=0&enablejsapi=1"
+            src="${item.video.embedUrl}${item.video.embedUrl.includes('?') ? '&' : '?'}rel=0&enablejsapi=1"
             title="${escapeHtml(item.video.title)}"
             class="absolute inset-0 w-full h-full"
             loading="lazy"
@@ -950,6 +950,39 @@ function openDetailModal(itemId) {
           <div id="doc-fulltext" class="doc-fulltext bg-[#FDFBF7] rounded-xl border border-[#EADECF] p-4 sm:p-5 max-h-[32rem] overflow-y-auto text-sm leading-relaxed text-[#2A2521]">
             <p class="text-[#786C5E] italic">Đang tải nội dung…</p>
           </div>
+
+          ${item.relatedDocFiles && item.relatedDocFiles.length ? `
+          <div class="mt-4 pt-4 border-t border-[#EADECF]/70">
+            <h4 class="font-semibold text-sm text-[#8B1E1E] mb-2.5 flex items-center gap-1.5">
+              ${ic('book', 'w-4 h-4')} Tư liệu và tài liệu đính kèm liên quan:
+            </h4>
+            <div class="space-y-2">
+              ${item.relatedDocFiles.map(rel => `
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 p-3 bg-[#FAF8F5] rounded-xl border border-[#EADECF] hover:border-[#8B1E1E]/40 transition shadow-2xs">
+                  <div class="flex items-start sm:items-center gap-2.5">
+                    <span class="p-2 rounded-lg ${rel.fileName.endsWith('.pdf') ? 'bg-red-100 text-red-700' : 'bg-blue-100 text-blue-700'} flex-shrink-0 mt-0.5 sm:mt-0">
+                      ${ic('book', 'w-4 h-4')}
+                    </span>
+                    <div>
+                      <div class="text-sm font-bold text-[#2A2521]">${escapeHtml(rel.title)}</div>
+                      <div class="text-xs text-[#5C5248]">${escapeHtml(rel.fileName)} • ${escapeHtml(rel.size || '')}</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 self-end sm:self-auto flex-shrink-0">
+                    ${window.DOC_TEXTS && window.DOC_TEXTS[rel.fileName] ? `
+                      <button type="button" onclick="renderDocFullText('${rel.fileName}'); document.getElementById('doc-fulltext')?.scrollIntoView({behavior: 'smooth'})" class="px-3 py-1.5 rounded-lg text-xs font-bold text-[#8B1E1E] bg-[#8B1E1E]/10 hover:bg-[#8B1E1E]/20 transition">
+                        Xem toàn văn
+                      </button>
+                    ` : ''}
+                    <a href="${rel.path}" download="${escapeHtml(rel.fileName)}" class="px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-[#8B1E1E] hover:bg-[#6F1515] transition flex items-center gap-1.5 shadow-2xs">
+                      ${ic('download', 'w-3.5 h-3.5')} <span>Tải file</span>
+                    </a>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          ` : ''}
         </div>
       </section>
       `: ''}
@@ -990,22 +1023,41 @@ function renderDocFullText(fileName) {
   const box = () => document.getElementById('doc-fulltext');
   loadDocTexts().then(texts => {
     const el = box();
-    if (!el || state.selectedItem?.docFile?.fileName !== fileName) return;
+    const item = state.selectedItem;
+    const isDocFile = item?.docFile?.fileName === fileName;
+    const relDoc = item?.relatedDocFiles?.find(r => r.fileName === fileName);
+    if (!el || (!isDocFile && !relDoc)) return;
+
     const paras = texts[fileName] || [];
     if (!paras.length) {
-      el.innerHTML = '<p class="text-[#786C5E] italic">Chưa trích được nội dung, vui lòng tải file .docx ở trên.</p>';
+      el.innerHTML = '<p class="text-[#786C5E] italic">Chưa trích được nội dung, vui lòng tải file tài liệu ở trên.</p>';
       return;
     }
-    el.innerHTML = paras.map(t => {
+
+    const currentDocTitle = isDocFile ? item.docFile.title : (relDoc ? relDoc.title : fileName);
+    const headerHtml = `
+      <div class="mb-3.5 pb-2.5 border-b border-[#EADECF] flex flex-wrap items-center justify-between gap-2 text-xs">
+        <span class="font-bold text-[#8B1E1E] flex items-center gap-1.5">
+          ${ic('book', 'w-3.5 h-3.5')} Đang xem: ${escapeHtml(currentDocTitle)}
+        </span>
+        ${!isDocFile && item?.docFile ? `
+          <button type="button" onclick="renderDocFullText('${item.docFile.fileName}')" class="font-semibold text-[#8B1E1E] hover:underline underline-offset-2">
+            ← Quay lại ${escapeHtml(item.docFile.title)}
+          </button>
+        ` : ''}
+      </div>
+    `;
+
+    el.innerHTML = headerHtml + paras.map(t => {
       const letters = t.replace(/[^\p{L}]/gu, '');
-      const isHeading = t.length < 140 && letters.length > 3 && (letters === letters.toUpperCase() || /^[IVX]+\.\s/.test(t));
+      const isHeading = t.length < 140 && letters.length > 3 && (letters === letters.toUpperCase() || /^[IVX]+\.\s/.test(t) || /^\d+\.\s/.test(t));
       if (isHeading) return `<h5 class="font-bold text-[#8B1E1E] mt-4 mb-1">${escapeHtml(t)}</h5>`;
       if (/^[•\-+]\s/.test(t)) return `<p class="pl-4 -indent-3 mb-1.5">${escapeHtml(t)}</p>`;
       return `<p class="mb-3 text-justify">${escapeHtml(t)}</p>`;
     }).join('');
   }).catch(() => {
     const el = box();
-    if (el) el.innerHTML = '<p class="text-[#786C5E] italic">Không tải được nội dung. Vui lòng tải file .docx ở trên.</p>';
+    if (el) el.innerHTML = '<p class="text-[#786C5E] italic">Không tải được nội dung. Vui lòng tải file tài liệu ở trên.</p>';
   });
 }
 

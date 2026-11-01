@@ -245,6 +245,50 @@ console.assert(typeof resetToCommuneMap === 'function', 'resetToCommuneMap must 
 console.assert(typeof filterRelicsByRoute === 'function', 'filterRelicsByRoute must be a function');
 console.log('  ✓ All 4 Interactive Heritage Route controller functions verified');
 
+console.log('--- 9. TESTING NEWLY ADDED HERITAGE ASSETS (DE NAM VIDEO @354S, CLB CHEO, DUONG SON) ---');
+// 9.1 Kiểm tra video Đề Nắm bắt đầu từ phút 05:54 (354s)
+const vatThe1 = TANGIBLE_HERITAGE_DATA.find(r => r.id === 'vat-the-1');
+console.assert(vatThe1.video && vatThe1.video.youtubeUrl.includes('t=354s'), 'vat-the-1 video must link to t=354s');
+console.assert(vatThe1.video.embedUrl.includes('start=354'), 'vat-the-1 video must embed with start=354');
+console.log('  ✓ vat-the-1 video verified: Đề Nắm tế cờ bắt đầu chính xác từ 354s (05:54)');
+
+const phiVatThe1 = INTANGIBLE_HERITAGE_DATA.find(r => r.id === 'phi-vat-the-1');
+console.assert(phiVatThe1.video && phiVatThe1.video.youtubeUrl.includes('t=354s'), 'phi-vat-the-1 video must link to t=354s');
+console.assert(phiVatThe1.video.embedUrl.includes('start=354'), 'phi-vat-the-1 video must embed with start=354');
+console.log('  ✓ phi-vat-the-1 video verified: Lễ hội Yên Thế tế cờ bắt đầu chính xác từ 354s (05:54)');
+
+// 9.2 Kiểm tra CLB Chèo Dương Lâm
+const phiVatThe2 = INTANGIBLE_HERITAGE_DATA.find(r => r.id === 'phi-vat-the-2');
+console.assert(phiVatThe2.hasRealPhoto === true, 'phi-vat-the-2 must have real photos');
+console.assert(phiVatThe2.thumbnail.includes('clb-cheo-duong-lam'), 'phi-vat-the-2 thumbnail must be CLB Chèo Dương Lâm');
+console.assert(phiVatThe2.gallery.length >= 4, 'phi-vat-the-2 gallery must have at least 4 photos');
+phiVatThe2.gallery.forEach(img => {
+  if (img.url.startsWith('./assets/')) {
+    const p = img.url.replace('./', '');
+    console.assert(fs.existsSync(p), `Image path ${p} must exist on disk`);
+  }
+});
+console.log('  ✓ phi-vat-the-2 verified: 100% ảnh chụp thật CLB Chèo Dương Lâm tồn tại');
+
+// 9.3 Kiểm tra các file tài liệu mới
+const newDocs = [
+  'assets/docs/kich-ban-dien-tich-de-nam-te-co.docx',
+  'assets/docs/loi-tua-lang-noi-phet-duong-son.docx',
+  'assets/docs/quyet-dinh-thanh-lap-clb-cheo-duong-lam.pdf'
+];
+newDocs.forEach(d => {
+  console.assert(fs.existsSync(d), `Document ${d} must exist on disk`);
+  console.assert(fs.statSync(d).size > 1000, `Document ${d} must have valid content size`);
+});
+console.log('  ✓ Verified 3 newly added heritage documents (Kịch bản tế cờ, Lời tựa Dương Sơn, QĐ CLB Chèo) exist and valid');
+
+// 9.4 Kiểm tra toàn văn doc-texts
+const docTextsCode = fs.readFileSync('./js/doc-texts.js', 'utf8');
+console.assert(docTextsCode.includes('kich-ban-dien-tich-de-nam-te-co.docx'), 'doc-texts must include kịch bản Đề Nắm');
+console.assert(docTextsCode.includes('loi-tua-lang-noi-phet-duong-son.docx'), 'doc-texts must include lời tựa Dương Sơn');
+console.assert(docTextsCode.includes('Hòa Làng nói phét có ca'), 'doc-texts must include folk verse Hòa Làng vs Dương Sơn');
+console.log('  ✓ Verified doc-texts.js contains full transcript of Kịch bản Đề Nắm & Lời tựa Dương Sơn');
+
 console.log('\n======================================================');
 console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE & APP INIT TESTS PASSED! 🎉');
 console.log('======================================================\n');

@@ -272,10 +272,12 @@ const TANGIBLE_HERITAGE_DATA = [
       "title": "Thuyết minh di tích đình - chùa Hả"
     },
     "video": {
-      "title": "Đề Nắm tế cờ khởi nghĩa tại đình Hả, Nhã Nam, Bắc Ninh (tư liệu: thầy Bùi Công)",
+      "title": "Video tư liệu: Diễn tích Lương Văn Nắm (Đề Nắm) tế cờ khởi nghĩa Yên Thế tại đình Hả (từ phút 05:54)",
       "youtubeId": "13WbD3DOeQc",
-      "youtubeUrl": "https://www.youtube.com/watch?v=13WbD3DOeQc",
-      "embedUrl": "https://www.youtube.com/embed/13WbD3DOeQc"
+      "youtubeUrl": "https://www.youtube.com/watch?v=13WbD3DOeQc&t=354s",
+      "embedUrl": "https://www.youtube.com/embed/13WbD3DOeQc?start=354",
+      "startTime": 354,
+      "description": "Diễn tích hào hùng tái hiện khoảnh khắc ngày 16/3/1884 khi thủ lĩnh Đề Nắm tế cờ phát động cuộc khởi nghĩa Yên Thế oanh liệt (bắt đầu từ 05:54)."
     },
     "tags": [
       "Đình Hả",
@@ -317,6 +319,14 @@ const TANGIBLE_HERITAGE_DATA = [
         "caption": "Đình Hả - Nơi thủ lĩnh Lương Văn Nắm làm lễ tế cờ khởi nghĩa ngày 16/3/1884"
       },
       {
+        "url": "./assets/images/dinh-chua-ha/dien-tich-de-nam-te-co.jpg",
+        "caption": "Hình ảnh tái hiện diễn tích Lương Văn Nắm (Đề Nắm) tế cờ khởi nghĩa tại sân đình Hả"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/thu-linh-de-nam.jpg",
+        "caption": "Hình tượng thủ lĩnh Lương Văn Nắm (Đề Nắm) - Linh hồn khởi nghĩa Yên Thế giai đoạn đầu (1884 - 1892)"
+      },
+      {
         "url": "./assets/images/dinh-chua-ha/dinh-ha-1.jpg",
         "caption": "Đình Hả - Góc nghiêng mái ngói cổ kính và đầu đao cong vút"
       },
@@ -338,13 +348,21 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Bộ sưu tập 06 ảnh tư liệu thực tế tại đình - chùa Hả (Tài liệu thầy Bùi Công và cô Thúy Mến)",
+    "photoNotice": "Bộ sưu tập 08 ảnh tư liệu thực tế tại đình - chùa Hả và diễn tích Đề Nắm tế cờ",
     "docFile": {
       "fileName": "dinh-chua-ha.docx",
       "title": "Hồ sơ di tích đình - chùa Hả",
       "path": "./assets/docs/dinh-chua-ha.docx",
       "size": "14 KB"
-    }
+    },
+    "relatedDocFiles": [
+      {
+        "fileName": "kich-ban-dien-tich-de-nam-te-co.docx",
+        "title": "Kịch bản Lễ tế cờ hội đình Hả (diễn tích Đề Nắm)",
+        "path": "./assets/docs/kich-ban-dien-tich-de-nam-te-co.docx",
+        "size": "23 KB"
+      }
+    ]
   },
   {
     "id": "vat-the-2",
@@ -1295,10 +1313,12 @@ const INTANGIBLE_HERITAGE_DATA = [
     "scope": "Địa bàn toàn xã Nhã Nam (trọng tâm tại đình - chùa Hả, chùa Tứ Giáp và đồi Phủ)",
     "thumbnail": "./assets/images/video-tu-lieu/le-hoi-dinh-ha.jpg",
     "video": {
-      "title": "Đề Nắm tế cờ khởi nghĩa tại đình Hả, Nhã Nam, Bắc Ninh (tư liệu: thầy Bùi Công)",
+      "title": "Video tư liệu: Diễn tích Lương Văn Nắm (Đề Nắm) tế cờ khởi nghĩa Yên Thế tại đình Hả (từ phút 05:54)",
       "youtubeId": "13WbD3DOeQc",
-      "youtubeUrl": "https://www.youtube.com/watch?v=13WbD3DOeQc",
-      "embedUrl": "https://www.youtube.com/embed/13WbD3DOeQc"
+      "youtubeUrl": "https://www.youtube.com/watch?v=13WbD3DOeQc&t=354s",
+      "embedUrl": "https://www.youtube.com/embed/13WbD3DOeQc?start=354",
+      "startTime": 354,
+      "description": "Diễn tích hào hùng tái hiện khoảnh khắc ngày 16/3/1884 khi thủ lĩnh Đề Nắm tế cờ phát động khởi nghĩa Yên Thế (bắt đầu từ 05:54)."
     },
     "tags": [
       "Lễ hội Yên Thế",
@@ -1331,17 +1351,33 @@ const INTANGIBLE_HERITAGE_DATA = [
     "gallery": [
       {
         "url": "./assets/images/video-tu-lieu/le-hoi-dinh-ha.jpg",
-        "caption": "Cảnh nghi lễ tại đình Hả (ảnh trích từ video tư liệu lễ hội khởi nghĩa Yên Thế)"
+        "caption": "Cảnh nghi lễ rước kiệu tại đình Hả (ảnh trích từ video tư liệu lễ hội khởi nghĩa Yên Thế)"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/dien-tich-de-nam-te-co.jpg",
+        "caption": "Tái hiện diễn tích Đề Nắm tế cờ xuất quân khởi nghĩa tại lễ hội truyền thống đình Hả"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/thu-linh-de-nam.jpg",
+        "caption": "Hình tượng thủ lĩnh Đề Nắm tuốt gươm thề xuất quân đánh giặc tại sân đình Hả"
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh trích từ video tư liệu; ảnh chụp thực tế đang được Ban biên tập cập nhật",
+    "photoNotice": "Bộ sưu tập ảnh tư liệu trích xuất từ video và ảnh chụp thực tế diễn tích tế cờ Đề Nắm tại lễ hội đình Hả",
     "docFile": {
       "fileName": "le-hoi-yen-the-nha-nam.docx",
       "title": "Tư liệu lễ hội Yên Thế tại xã Nhã Nam",
       "path": "./assets/docs/le-hoi-yen-the-nha-nam.docx",
       "size": "37 KB"
-    }
+    },
+    "relatedDocFiles": [
+      {
+        "fileName": "kich-ban-dien-tich-de-nam-te-co.docx",
+        "title": "Kịch bản Lễ tế cờ hội đình Hả (diễn tích Đề Nắm)",
+        "path": "./assets/docs/kich-ban-dien-tich-de-nam-te-co.docx",
+        "size": "23 KB"
+      }
+    ]
   },
   {
     "id": "phi-vat-the-2",
@@ -1350,8 +1386,8 @@ const INTANGIBLE_HERITAGE_DATA = [
     "badge": "Nghệ thuật trình diễn dân gian",
     "title": "Nghệ thuật hát chèo truyền thống xã Nhã Nam",
     "shortTitle": "Hát chèo Nhã Nam",
-    "scope": "Các câu lạc bộ chèo tại các thôn: Làng Chuông, Chùa Nguộn, Cầu Thượng, xã Nhã Nam",
-    "thumbnail": "./assets/images/video-tu-lieu/hat-cheo.jpg",
+    "scope": "CLB Chèo Dương Lâm (thành lập chính thức) cùng các chiếu chèo tại các thôn: Làng Chuông, Chùa Nguộn, Cầu Thượng, xã Nhã Nam",
+    "thumbnail": "./assets/images/hat-cheo/clb-cheo-duong-lam-1.jpg",
     "video": {
       "title": "Vở diễn \"Duyên hài lứa đôi\" — Đơn vị Nhã Nam (Hội diễn quần chúng tỉnh Bắc Ninh)",
       "youtubeId": "K_7f4eD1l_0",
@@ -1360,45 +1396,71 @@ const INTANGIBLE_HERITAGE_DATA = [
     },
     "tags": [
       "Hát chèo",
+      "CLB Chèo Dương Lâm",
       "Chiếu chèo",
       "Nghệ thuật truyền thống",
       "Dân ca",
       "Làng Chuông",
+      "Dương Lâm",
       "Xã Nhã Nam"
     ],
     "overview": "Di sản văn hóa phi vật thể đặc sắc, những làn điệu chèo mượt mà thắm đượm tình làng nghĩa xóm của người dân vùng đất Cầu Vồng.",
     "content": {
-      "intro": "Nghệ thuật hát chèo từ lâu đã bén rễ sâu đậm trong đời sống tinh thần của nhân dân xã Nhã Nam. Những làn điệu chèo ngọt ngào, hóm hỉnh mà sâu lắng đã nuôi dưỡng tâm hồn biết bao thế hệ người dân quê hương đất Cầu Vồng.",
+      "intro": "Nghệ thuật hát chèo từ lâu đã bén rễ sâu đậm trong đời sống tinh thần của nhân dân xã Nhã Nam. Những làn điệu chèo ngọt ngào, hóm hỉnh mà sâu lắng đã nuôi dưỡng tâm hồn biết bao thế hệ người dân quê hương đất Cầu Vồng. Tiêu biểu cho phong trào là Câu lạc bộ Chèo thôn Dương Lâm được thành lập chính thức theo quyết định của chính quyền địa phương, hoạt động sôi nổi và bền bỉ qua nhiều năm tháng.",
       "originAndMeaning": [
-        "**Gắn liền chiếu chèo sân đình:** Ra đời từ các buổi sinh hoạt nông nhàn và hội làng cổ xưa tại đình làng Chuông, chùa Tứ Giáp.",
-        "**Nội dung phản ánh cuộc sống:** Ngợi ca tình yêu quê hương, đất nước, đạo hiếu làm con, phê phán thói hư tật xấu và biểu dương lòng kiên trinh.",
-        "**Đặc trưng chiếu chèo Nhã Nam:** Giữ được chất chèo cổ mộc mạc với các điệu Đào liễu, Quân thư, Luyện năm cung thắm thiết."
+        "**Gắn liền chiếu chèo sân đình và hội làng:** Ra đời từ các buổi sinh hoạt nông nhàn và hội làng cổ xưa tại đình Dương Lâm, đình làng Chuông, chùa Tứ Giáp.",
+        "**Nội dung phản ánh cuộc sống:** Ngợi ca tình yêu quê hương, đất nước, đạo hiếu làm con, phê phán thói hư tật xấu và biểu dương lòng kiên trinh của người phụ nữ Việt Nam.",
+        "**Đặc trưng chiếu chèo Nhã Nam:** Giữ được chất chèo cổ mộc mạc với các điệu Đào liễu, Quân thư, Luyện năm cung, Tò vò thắm thiết và sâu lắng."
       ],
       "ritualsAndActivities": [
-        "Biểu diễn giao lưu tại sân đình vào mỗi dịp lễ hội mùa xuân, ngày hội Đại đoàn kết toàn dân tộc.",
-        "Các câu lạc bộ chèo thường xuyên mở lớp truyền dạy làn điệu cho các em học sinh, thế hệ thanh thiếu niên địa phương."
+        "Biểu diễn giao lưu tại sân đình vào mỗi dịp lễ hội mùa xuân, ngày hội Đại đoàn kết toàn dân tộc và các sự kiện lớn của xã Nhã Nam.",
+        "CLB Chèo Dương Lâm và các thôn thường xuyên tổ chức tập luyện, sinh hoạt định kỳ và mở lớp truyền dạy làn điệu cho các em học sinh, thế hệ trẻ yêu nghệ thuật dân tộc."
       ],
-      "preservationValue": "Hát chèo là cây cầu nối tâm hồn, giáo dục tình yêu văn hóa dân tộc trong các hoạt động ngoại khóa của học sinh THPT Nhã Nam."
+      "preservationValue": "Hát chèo là cây cầu nối tâm hồn, giáo dục tình yêu văn hóa dân tộc trong các hoạt động ngoại khóa của học sinh Trường THPT Nhã Nam."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Đình+Nhã+Nam,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
-      "locationName": "Chiếu chèo làng Chuông - xã Nhã Nam"
+      "embedUrl": "https://www.google.com/maps?q=21.4210834,106.0960966&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4210834,106.0960966",
+      "locationName": "Câu lạc bộ Chèo thôn Dương Lâm (khu vực đình Dương Lâm), xã Nhã Nam"
     },
     "gallery": [
+      {
+        "url": "./assets/images/hat-cheo/clb-cheo-duong-lam-1.jpg",
+        "caption": "Các liền anh, liền chị CLB Chèo thôn Dương Lâm trong trang phục biểu diễn truyền thống"
+      },
+      {
+        "url": "./assets/images/hat-cheo/clb-cheo-duong-lam-2.jpg",
+        "caption": "Ban chủ nhiệm và hội viên CLB Chèo Dương Lâm chụp ảnh lưu niệm tại buổi sinh hoạt nghệ thuật"
+      },
+      {
+        "url": "./assets/images/hat-cheo/clb-cheo-duong-lam-3.jpg",
+        "caption": "Không gian sinh hoạt, tập luyện và truyền dạy các làn điệu chèo cổ tại thôn Dương Lâm"
+      },
+      {
+        "url": "./assets/images/hat-cheo/clb-cheo-duong-lam-4.jpg",
+        "caption": "Hội viên CLB Chèo Dương Lâm tích cực tham gia các phong trào văn nghệ quần chúng địa phương"
+      },
       {
         "url": "./assets/images/video-tu-lieu/hat-cheo.jpg",
         "caption": "Tiết mục hát chèo (ảnh trích từ video tư liệu \"Duyên hài lứa đôi\")"
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh trích từ video tư liệu; ảnh chụp thực tế đang được Ban biên tập cập nhật",
+    "photoNotice": "Bộ sưu tập ảnh tư liệu chụp thực tế hoạt động biểu diễn và sinh hoạt của Câu lạc bộ Chèo thôn Dương Lâm, xã Nhã Nam",
     "docFile": {
       "fileName": "hat-cheo-truyen-thong-nha-nam.docx",
       "title": "Tư liệu nghệ thuật hát chèo truyền thống xã Nhã Nam",
       "path": "./assets/docs/hat-cheo-truyen-thong-nha-nam.docx",
       "size": "37 KB"
-    }
+    },
+    "relatedDocFiles": [
+      {
+        "fileName": "quyet-dinh-thanh-lap-clb-cheo-duong-lam.pdf",
+        "title": "Quyết định thành lập Câu lạc bộ Chèo thôn Dương Lâm",
+        "path": "./assets/docs/quyet-dinh-thanh-lap-clb-cheo-duong-lam.pdf",
+        "size": "564 KB"
+      }
+    ]
   },
   {
     "id": "phi-vat-the-3",
@@ -1566,20 +1628,21 @@ const INTANGIBLE_HERITAGE_DATA = [
       "youtubeUrl": "https://www.youtube.com/watch?v=w-SSxpYTbUs",
       "embedUrl": "https://www.youtube.com/embed/w-SSxpYTbUs"
     },
-    "overview": "Lối kể chuyện phóng đại, hóm hỉnh (nói phét, nói trạng) của người dân thôn Dương Sơn, sinh ra từ đời sống lao động để mua vui và xua tan mệt nhọc.",
+    "overview": "Tục lệ \"ăn no, nói phét, người cười rụng răng\" độc đáo của làng Dương Sơn (gồm các thôn Cả, Đỉnh, Húng) — nghệ thuật kể chuyện phóng đại hóm hỉnh, sâu sắc sinh ra từ lao động để xua tan mệt nhọc.",
     "content": {
-      "intro": "Thôn Dương Sơn trước ngày 01/7/2025 thuộc xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang, nay thuộc xã Nhã Nam, tỉnh Bắc Ninh. Người trong vùng quen gọi nơi đây là \"làng nói phét\", vì người dân có lối kể chuyện phóng đại, nói quá sự thật một cách hóm hỉnh để gây cười, gần với lối nói trạng trong truyện cười dân gian. Đó không phải là nói dối để lừa người: người kể và người nghe đều biết câu chuyện là bịa. Cái hay nằm ở sức tưởng tượng và ở cách kể tỉnh bơ mà người nghe vẫn phải bật cười.",
+      "intro": "Làng Dương Sơn (gồm các thôn Cả, Đỉnh, Húng) trước ngày 01/7/2025 thuộc xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang, nay thuộc xã Nhã Nam, tỉnh Bắc Ninh. Nơi đây từ bao đời nay nổi danh gần xa với tục \"ăn no, nói phét, người cười rụng răng\". Lối nói phét (nói khoác, nói trạng) của người Dương Sơn là hình thức nghệ thuật ngôn từ dân gian mang tính giải trí lành mạnh, xuất phát từ tinh thần lạc quan, yêu đời của những người nông dân chân lấm tay bùn.",
       "originAndMeaning": [
-        "**Sinh ra từ lao động:** Theo lời người dân trong phóng sự, những câu nói tếu, nói quá ra đời từ chính công việc đồng áng. Mỗi khi mệt mỏi, căng thẳng, thay vì cáu giận, người ta nghĩ ra một câu chuyện phóng đại để cả xóm cùng cười và quên đi vất vả.",
-        "**Cùng mạch với truyện cười dân gian:** Lối nói phét Dương Sơn gần với truyện trạng và truyện khoác lác trong kho tàng truyện cười Việt Nam: lấy cái phi lý làm bất ngờ, lấy vẻ nghiêm trang của người kể làm duyên.",
-        "**Câu ca về cây đa làng:** Người làng vẫn truyền nhau câu ca: *\"Dương Sơn xưa có cây đa / Bóng đa rợp tận sông Đà, sông Lô\"*. Bóng một cây đa không thể phủ tới hai con sông ở tận Tây Bắc và Việt Bắc, nhưng chính cái \"phét\" ấy nói lên niềm tự hào vui vẻ của người Dương Sơn về quê mình."
+        "**Sinh ra từ lao động giải trí:** Tục lệ này là hình thức thư giãn sau những giờ lao động đồng áng vất vả. Thay vì mệt mỏi, người dân tụ họp cùng nhau sáng tạo nên những mẩu chuyện phóng đại đầy dí dỏm để cả xóm cùng cười sảng khoái.",
+        "**Nghệ thuật nói quá thâm thúy:** Những câu chuyện nói phét thường thể hiện qua thơ ca, vè hoặc mẩu chuyện khoa trương sinh động, thâm thúy chứ hoàn toàn không mang mục đích lừa đảo hay gian dối.",
+        "**Câu ca đối sánh dân gian nức tiếng:** Vùng Kinh Bắc xưa từng lưu truyền câu thơ đối sánh tài năng giữa các vùng đất: *\"Hòa Làng nói phét có ca / Dương Sơn nói phét bằng ba Hòa Làng\"*, khẳng định vị thế quán quân về nghệ thuật gây cười dân gian của Dương Sơn.",
+        "**Câu ca về cây đa làng:** Người làng còn truyền tụng: *\"Dương Sơn xưa có cây đa / Bóng đa rợp tận sông Đà, sông Lô\"*, thể hiện trí tưởng tượng bay bổng vô bờ bến và lòng tự hào về quê hương."
       ],
       "practice": [
-        "**Nghệ nhân cụ Cả Tam:** Cụ Cả Tam được người làng nhắc đến như một nghệ nhân kể chuyện tiêu biểu. Những câu chuyện của cụ vẫn được con cháu và người làng nhớ, kể lại.",
-        "**Không gian kể chuyện:** Chuyện phét thường được kể ở cổng làng xưa, ở điếm làng (nay còn biển \"Dương Sơn hội quán\"), bên ấm chè lúc nông nhàn hay trong những buổi tụ họp của xóm.",
-        "**Truyền thống thơ ca:** Bên cạnh chuyện kể, người Dương Sơn còn có nếp làm thơ, đặt vè. Nhiều câu thơ, câu vè được truyền miệng, góp phần giữ lại nếp vui của làng."
+        "**Những 'trạng phét' tiêu biểu:** Làng từng có những nghệ nhân trứ danh được bà con truyền tụng như cụ Cả Tam (đã mất), cụ Vũ Văn Lập, ông Nguyễn Văn Sự, ông Vũ Văn Tứ... với cách kể chuyện tỉnh queo mà người nghe cười nghiêng ngả.",
+        "**Không gian kể chuyện dân gian:** Chuyện phét thường được kể ở cổng làng xưa, ở điếm làng (nay còn tấm biển lưu niệm \"Dương Sơn hội quán\"), bên ấm nước chè xanh lúc nông nhàn hay những đêm trăng thanh tụ họp xóm ngõ.",
+        "**Bảo tồn và phục hồi:** Trải qua thời gian, trước nguy cơ mai một, chính quyền địa phương và các bô lão trong làng đang tích cực sưu tầm, ghi hình các video tiểu phẩm và phục hồi nét văn hóa độc nhất vô nhị này."
       ],
-      "studyNote": "Câu chuyện làng nói phét Dương Sơn cho thấy tiếng cười cũng là một cách người lao động vượt qua vất vả. Khi tìm hiểu, các em cần phân biệt nói phét để mua vui, ai cũng biết là bịa, với nói dối để lừa gạt người khác. Có thể xem video phóng sự rồi ghi lại một câu chuyện hoặc câu ca của làng để chia sẻ với lớp."
+      "studyNote": "Câu chuyện làng nói phét Dương Sơn cho thấy tiếng cười lạc quan là di sản tinh thần vô giá của cha ông. Học sinh Trường THPT Nhã Nam cần phân biệt rõ giữa nghệ thuật nói quá để mua vui và thói nói dối; từ đó trân trọng khiếu hài hước thông tuệ của người dân quê mình."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=21.408497,106.1126369&output=embed",
@@ -1599,7 +1662,15 @@ const INTANGIBLE_HERITAGE_DATA = [
       "title": "Tư liệu nghệ thuật kể chuyện dân gian làng nói phét Dương Sơn",
       "path": "./assets/docs/lang-noi-phet-duong-son.docx",
       "size": "37 KB"
-    }
+    },
+    "relatedDocFiles": [
+      {
+        "fileName": "loi-tua-lang-noi-phet-duong-son.docx",
+        "title": "Lời tựa tục ăn no nói phét làng Dương Sơn",
+        "path": "./assets/docs/loi-tua-lang-noi-phet-duong-son.docx",
+        "size": "13 KB"
+      }
+    ]
   }
 ];
 

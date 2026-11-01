@@ -16,6 +16,10 @@ Tài liệu di sản/
 *.rar
 *.zip
 *.py
+*.mp4
+assets/videos/
+scripts/*.json
+
 /*.doc
 /*.docx
 /*.pdf
