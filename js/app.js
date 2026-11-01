@@ -400,7 +400,7 @@ function renderHeritageGrid(items) {
             </span>
             <div class="flex items-center gap-1 flex-wrap">
               <span class="px-2 py-0.5 rounded-md bg-[#F5EFE6] text-[#2A2521] border border-[#EADECF] font-medium" title="Ảnh tư liệu thực tế">
-                ${ic('image','w-3.5 h-3.5')} ${item.hasRealPhoto? 'Ảnh thực tế': 'Ảnh đang cập nhật'}
+                ${ic('image','w-3.5 h-3.5')} ${!item.hasRealPhoto? 'Ảnh đang cập nhật': (item.thumbnail || '').includes('video-tu-lieu')? 'Ảnh từ video': 'Ảnh thực tế'}
               </span>
               <span class="px-2 py-0.5 rounded-md bg-[#FFF5F5] text-[#8B1E1E] border border-[#FED7D7] font-medium" title="Thuyết minh âm thanh tự động">
                 ${ic('volume','w-3.5 h-3.5')} Thuyết minh
@@ -672,7 +672,7 @@ function openDetailModal(itemId) {
                   <span>Bản ghi âm thuyết minh tư liệu thực tế</span>
                   <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-emerald-100 text-emerald-800 font-bold border border-emerald-300">Âm thanh gốc</span>
                 </div>
-                <div id="modal-audio-current-title" class="text-xs text-[#5C5248] mt-1 font-medium">${escapeHtml(item.audioFile.title)} (Tư liệu thực tế do Trường THPT Nhã Nam thực hiện)</div>
+                <div id="modal-audio-current-title" class="text-xs text-[#5C5248] mt-1 font-medium">${escapeHtml(item.audioFile.title)} (tư liệu thực tế do Trường THPT Nhã Nam thực hiện)</div>
               </div>
             </div>
             <audio id="modal-real-audio" onplay="pauseModalMedia('real')" controls class="h-10 w-full sm:w-72 max-w-full rounded-xl shadow-xs" preload="none">
@@ -686,12 +686,13 @@ function openDetailModal(itemId) {
           <div class="pt-3 border-t border-[#EADECF]/80">
             <div class="text-[11px] font-bold text-[#786C5E] uppercase tracking-wider mb-2 flex items-center gap-1.5">
               <svg class="w-3.5 h-3.5 text-[#8B1E1E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"></path></svg>
-              <span>Chọn chuyên đề thuyết minh âm thanh gốc (${item.audioTracks.length} bản ghi):</span>
+              <span>Chọn bản ghi âm thuyết minh (${item.audioTracks.length} bản):</span>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               ${item.audioTracks.map((tr, tIdx) => `
                 <button
                   type="button"
+                  aria-pressed="${tIdx === 0}"
                   onclick="switchModalAudioTrack('${tr.src}', '${escapeHtml(tr.title)}', this)"
                   class="audio-track-pill flex items-center justify-between p-2.5 rounded-xl border text-left transition cursor-pointer ${tIdx === 0 ? 'bg-[#8B1E1E] text-white border-[#8B1E1E] shadow-xs is-active' : 'bg-white text-[#2A2521] border-[#EADECF] hover:bg-[#FAF5EE]'}"
                 >
@@ -701,10 +702,10 @@ function openDetailModal(itemId) {
                     </span>
                     <div class="min-w-0 truncate">
                       <div class="text-xs font-bold truncate">${escapeHtml(tr.title)}</div>
-                      <div class="text-[10px] ${tIdx === 0 ? 'text-white/80' : 'text-[#786C5E]'} truncate">${escapeHtml(tr.subtitle || '')}</div>
+                      <div class="text-[10px] opacity-80 truncate">${escapeHtml(tr.subtitle || '')}</div>
                     </div>
                   </div>
-                  <span class="text-[10px] px-2 py-0.5 rounded-full font-mono flex-shrink-0 ${tIdx === 0 ? 'bg-white/20 text-white' : 'bg-[#FAF5EE] text-[#8B1E1E] font-bold'}">
+                  <span class="text-[10px] px-2 py-0.5 rounded-full font-mono font-bold flex-shrink-0 border border-current opacity-80">
                     ${tr.duration || 'Âm thanh'}
                   </span>
                 </button>
@@ -916,7 +917,7 @@ function loadDocTexts() {
   if (!loadDocTexts.promise) {
     loadDocTexts.promise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = './js/doc-texts.js?v=3.1.0';
+      s.src = './js/doc-texts.js?v=3.2.0';
       s.onload = () => resolve(window.DOC_TEXTS || {});
       s.onerror = () => { loadDocTexts.promise = null; reject(); };
       document.head.appendChild(s);
@@ -963,10 +964,11 @@ function switchModalAudioTrack(src, title, btnEl) {
     audio.play().catch(e => console.warn('Audio play prevented:', e));
   }
   if (titleEl) {
-    titleEl.textContent = `${title} (Tư liệu thực tế do Trường THPT Nhã Nam thực hiện)`;
+    titleEl.textContent = `${title} (tư liệu thực tế do Trường THPT Nhã Nam thực hiện)`;
   }
   document.querySelectorAll('.audio-track-pill').forEach(btn => {
     btn.classList.remove('bg-[#8B1E1E]', 'text-white', 'border-[#8B1E1E]', 'shadow-xs', 'is-active');
+    btn.setAttribute('aria-pressed', 'false');
     btn.classList.add('bg-white', 'text-[#2A2521]', 'border-[#EADECF]');
     const ind = btn.querySelector('.track-indicator');
     if (ind) {
@@ -976,6 +978,7 @@ function switchModalAudioTrack(src, title, btnEl) {
   if (btnEl) {
     btnEl.classList.remove('bg-white', 'text-[#2A2521]', 'border-[#EADECF]');
     btnEl.classList.add('bg-[#8B1E1E]', 'text-white', 'border-[#8B1E1E]', 'shadow-xs', 'is-active');
+    btnEl.setAttribute('aria-pressed', 'true');
     const ind = btnEl.querySelector('.track-indicator');
     if (ind) {
       ind.className = 'track-indicator flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-white/20 text-white';
@@ -2076,7 +2079,7 @@ function selectRoute(routeId) {
   }
 
   // 2. Chuyển iframe bản đồ hiển thị toàn bộ lộ trình liên hoàn của cụm di tích
-  updateMapFrame(route.mapEmbedUrl, `Lộ trình tham quan toàn Tuyến ${route.number}: ${route.title} (${route.subtitle})`, route.directionsUrl, 'Mở Google Maps dẫn đường toàn tuyến ↗');
+  updateMapFrame(route.mapEmbedUrl, `Lộ trình tuyến ${route.number}: ${route.title} (${route.subtitle})`, route.directionsUrl, 'Mở Google Maps dẫn đường cả tuyến ↗');
 
   // 3. Cập nhật nút dẫn đường toàn tuyến liên hoàn
   const dirBtn = document.getElementById('heritage-route-directions-btn');
