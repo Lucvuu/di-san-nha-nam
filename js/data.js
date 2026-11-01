@@ -3,7 +3,7 @@
  * DI SẢN VĂN HÓA XÃ NHÃ NAM - DỮ LIỆU CẤU HÌNH & HỆ THỐNG DI SẢN
  * Xã Nhã Nam, tỉnh Bắc Ninh, Việt Nam
  * Đơn vị khởi xướng & phối hợp: Trường THPT Nhã Nam
- * Cập nhật chuẩn hóa theo Báo cáo di tích phục vụ HĐND xã Nhã Nam & tư liệu địa phương
+ * Cập nhật chuẩn hóa theo hồ sơ xếp hạng di tích và danh mục kiểm kê của UBND tỉnh Bắc Ninh
  * ====================================================================
  */
 
@@ -14,7 +14,7 @@ const SITE_CONFIG = {
   commune: "Xã Nhã Nam",
   city: "tỉnh Bắc Ninh",
   province: "Tỉnh Bắc Ninh",
-  // Thống kê chính thức hệ thống di tích lịch sử - văn hóa theo Báo cáo HĐND xã & UBND tỉnh phê duyệt
+  // Thống kê chính thức hệ thống di tích lịch sử - văn hóa theo hồ sơ xếp hạng và UBND tỉnh phê duyệt
   officialRelicsStats: {
     total: 37,
     specialNational: 8,
@@ -49,7 +49,7 @@ const SITE_CONFIG = {
 /**
  * ====================================================================
  * DANH MỤC TOÀN BỘ 37 DI TÍCH LỊCH SỬ - VĂN HÓA TRÊN ĐỊA BÀN XÃ NHÃ NAM
- * Trích xuất chuẩn xác 100% từ Báo cáo số liệu phục vụ HĐND xã & danh mục UBND tỉnh phê duyệt:
+ * Trích xuất chuẩn xác 100% từ hồ sơ xếp hạng di tích và danh mục kiểm kê của UBND tỉnh phê duyệt:
  * - 08 di tích quốc gia đặc biệt (khởi nghĩa Yên Thế)
  * - 01 di tích cấp quốc gia (chùa Tứ Giáp)
  * - 07 di tích cấp tỉnh
@@ -170,9 +170,11 @@ const HERITAGE_ROUTES = [
       { id: "vat-the-2", name: "Chùa Tứ Giáp", note: "Nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân (1948)", q: "21.4448892,106.0901463" },
       { id: "vat-the-11", name: "Đình Dương Lâm", note: "Di tích quốc gia đặc biệt thời Lê - căn cứ kháng chiến", q: "21.4210834,106.0960966" }
     ],
-    mapEmbedUrl: "https://www.google.com/maps?saddr=21.4357253,106.116718&daddr=21.4448892,106.0901463+to:21.4210834,106.0960966&output=embed",
+    mapEmbedUrl: "https://www.google.com/maps?saddr=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&daddr=21.4448892,106.0901463+to:21.4210834,106.0960966&output=embed",
+    startDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang",
+    startDirectionsText: "Khởi hành từ vị trí của bạn (tới đình - chùa Hả)",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4210834,106.0960966&waypoints=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang%7C21.4448892,106.0901463",
-    directionsText: "Chỉ đường tuyến 1 (đình Hả ➔ chùa Tứ Giáp ➔ đình Dương Lâm)",
+    directionsText: "Lộ trình liên hoàn cả tuyến (đình Hả ➔ chùa Tứ Giáp ➔ đình Dương Lâm)",
     description: "Hành trình kết nối nơi khởi phát ngọn cờ Yên Thế (đình Hả) với nơi phát tích 6 điều Bác Hồ dạy CAND (chùa Tứ Giáp) và căn cứ kháng chiến kiên trung đình Dương Lâm."
   },
   {
@@ -190,8 +192,10 @@ const HERITAGE_ROUTES = [
       { id: "vat-the-15", name: "Chùa Dương Sơn", note: "Di tích cấp tỉnh - văn hóa cổ truyền làng Dương Sơn", q: "21.408497,106.1126369" }
     ],
     mapEmbedUrl: "https://www.google.com/maps?saddr=21.455246,106.094589&daddr=21.4525861,106.0980009+to:21.408497,106.1126369&output=embed",
+    startDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Ch%C3%B9a+%C4%90%E1%BB%93ng+%C4%90i%E1%BB%81u,+x%C3%A3+Nh%C3%A3+Nam,+t%E1%BB%89nh+B%E1%BA%AFc+Ninh",
+    startDirectionsText: "Khởi hành từ vị trí của bạn (tới chùa Đồng Điều)",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.408497,106.1126369&waypoints=21.455246,106.094589%7C21.4525861,106.0980009",
-    directionsText: "Chỉ đường tuyến 2 (chùa Đồng Điều ➔ đền Đề Truật ➔ chùa Dương Sơn)",
+    directionsText: "Lộ trình liên hoàn cả tuyến (chùa Đồng Điều ➔ đền Đề Truật ➔ chùa Dương Sơn)",
     description: "Hành trình về với cái nôi gieo mầm cách mạng của chi bộ Đảng Cộng sản đầu tiên, tấm gương trung dũng của nghĩa quân Đề Truật và không gian văn hóa thanh tịnh chùa Dương Sơn."
   },
   {
@@ -211,8 +215,10 @@ const HERITAGE_ROUTES = [
       { id: "vat-the-12", name: "Đình Cầu Thượng", note: "Di tích cấp tỉnh thờ Cao Sơn, Quý Minh", q: "21.4397723,106.0893274" }
     ],
     mapEmbedUrl: "https://www.google.com/maps?saddr=21.4443835,106.0966726&daddr=21.4444805,106.0971055+to:21.4443874,106.0991677+to:21.4442158,106.0973672+to:21.4397723,106.0893274&output=embed",
+    startDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4443835,106.0966726",
+    startDirectionsText: "Khởi hành từ vị trí của bạn (tới đền Gốc Khế)",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4397723,106.0893274&waypoints=21.4443835,106.0966726%7C21.4444805,106.0971055%7C21.4443874,106.0991677%7C21.4442158,106.0973672",
-    directionsText: "Chỉ đường tuyến 3 (đền Gốc Khế ➔ đồi Phủ ➔ đình Chuông ➔ chùa Nam Thiên ➔ đình Cầu Thượng)",
+    directionsText: "Lộ trình liên hoàn cả tuyến (đền Gốc Khế ➔ đồi Phủ ➔ đình Chuông ➔ chùa Nam Thiên ➔ đình Cầu Thượng)",
     description: "Cụm di tích lịch sử quân sự và tín ngưỡng trung tâm Nhã Nam - chiến trường thử lửa oanh liệt chống giặc ngoại xâm của nghĩa quân Yên Thế và thiết chế đình làng cổ kính."
   }
 ];
@@ -1671,6 +1677,149 @@ const INTANGIBLE_HERITAGE_DATA = [
         "size": "13 KB"
       }
     ]
+  },
+  {
+    "id": "phi-vat-the-7",
+    "category": "phi-vat-the",
+    "categoryName": "Di sản phi vật thể",
+    "badge": "Dân ca Quan họ",
+    "title": "Nghệ thuật Dân ca Quan họ xã Nhã Nam (CLB Dân ca Quan họ)",
+    "shortTitle": "Dân ca Quan họ Nhã Nam",
+    "scope": "Câu lạc bộ Dân ca Quan họ xã Nhã Nam cùng các nghệ nhân, liền anh liền chị tại các thôn trong toàn xã",
+    "address": "Xã Nhã Nam, tỉnh Bắc Ninh (sinh hoạt tại Khu lưu niệm 6 điều Bác Hồ dạy CAND và các di tích)",
+    "thumbnail": "./assets/images/quan-ho/quan-ho-1.jpg",
+    "tags": [
+      "Dân ca Quan họ",
+      "Quan họ Bắc Ninh",
+      "CLB Dân ca Quan họ",
+      "Liền anh liền chị",
+      "Di sản UNESCO",
+      "Áo tứ thân",
+      "Nón quai thao",
+      "Xã Nhã Nam",
+      "Bắc Ninh"
+    ],
+    "overview": "Di sản văn hóa phi vật thể đại diện của nhân loại tại xã Nhã Nam, được thành lập theo Quyết định số 756/QĐ-UBND của UBND xã Nhã Nam, bảo tồn và lan tỏa các làn điệu Quan họ mượt mà, đượm nghĩa tình quê hương Kinh Bắc.",
+    "content": {
+      "intro": "Dân ca Quan họ Bắc Ninh — kiệt tác truyền khẩu và di sản văn hóa phi vật thể đại diện của nhân loại được UNESCO vinh danh năm 2009 — luôn giữ vị trí thiêng liêng trong tâm thức người dân xã Nhã Nam. Câu lạc bộ Dân ca Quan họ xã Nhã Nam được chính quyền địa phương thành lập theo Quyết định số 756/QĐ-UBND, quy tụ các nghệ nhân, hạt nhân văn nghệ xuất sắc nhằm bảo tồn và trao truyền vốn cổ quý báu của dân tộc.",
+      "originAndMeaning": [
+        "**Kết tinh văn hóa Kinh Bắc ngàn năm:** Kế thừa trọn vẹn nét tinh hoa của Quan họ truyền thống với phong cách ứng xử lịch thiệp, khiêm nhường 'khách đến chơi nhà', trọng nghĩa trọng tình.",
+        "**Căn cứ pháp lý chính thức:** Thành lập theo Quyết định số 756/QĐ-UBND ngày 21/5/2026 của Chủ tịch UBND xã Nhã Nam nhằm gìn giữ, phát huy giá trị Dân ca Quan họ Bắc Ninh trên địa bàn xã.",
+        "**Lề lối và trang phục cổ truyền:** Liền anh đĩnh đạc trong áo the, khăn xếp, ô đen; liền chị duyên dáng trong tà áo tứ thân mớ ba mớ bảy, khăn mỏ quạ, nón quai thao thêu hoa tinh xảo."
+      ],
+      "ritualsAndActivities": [
+        "**Sinh hoạt và truyền dạy:** CLB tổ chức tập luyện thường xuyên, truyền dạy các câu hát cổ, lối hát vang, rền, nền, nảy cho thế hệ trẻ.",
+        "**Giao lưu và biểu diễn:** Biểu diễn phục vụ các ngày lễ kỷ niệm, hội làng mùa xuân, đặc biệt là các chương trình dâng hương tại Khu lưu niệm Sáu điều Bác Hồ dạy CAND và các di tích lịch sử.",
+        "**Lan tỏa di sản học đường:** Phối hợp với Trường THPT Nhã Nam đưa Dân ca Quan họ vào các buổi trải nghiệm ngoại khóa, giúp học sinh thêm tự hào về văn hóa quê hương."
+      ],
+      "preservationValue": "Dân ca Quan họ là linh hồn văn hóa của quê hương Kinh Bắc, bồi đắp tâm hồn thanh cao, lối ứng xử văn minh và đạo lý tốt đẹp cho thế hệ trẻ Nhã Nam."
+    },
+    "map": {
+      "embedUrl": "https://www.google.com/maps?q=21.4448892,106.0901463&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4448892,106.0901463",
+      "locationName": "Khu lưu niệm Sáu điều Bác Hồ dạy CAND (không gian giao lưu Quan họ), xã Nhã Nam"
+    },
+    "gallery": [
+      {
+        "url": "./assets/images/quan-ho/quan-ho-1.jpg",
+        "caption": "Các liền anh, liền chị CLB Dân ca Quan họ xã Nhã Nam chụp ảnh lưu niệm tại Khu lưu niệm Sáu điều Bác Hồ dạy CAND"
+      },
+      {
+        "url": "./assets/images/quan-ho/quan-ho-2.jpg",
+        "caption": "Đại diện liền anh, liền chị nhận hoa chúc mừng tại Lễ ra mắt Câu lạc bộ Dân ca Quan họ xã Nhã Nam"
+      },
+      {
+        "url": "./assets/images/quan-ho/quan-ho-3.jpg",
+        "caption": "Các liền chị trong trang phục áo tứ thân, khăn mỏ quạ, nón quai thao truyền thống trước cửa di tích cổ kính"
+      },
+      {
+        "url": "./assets/images/quan-ho/quan-ho-qd-trang-1.jpg",
+        "caption": "Quyết định số 756/QĐ-UBND của UBND xã Nhã Nam thành lập CLB Dân ca Quan họ xã Nhã Nam (Trang 1)"
+      },
+      {
+        "url": "./assets/images/quan-ho/quan-ho-qd-trang-2.jpg",
+        "caption": "Quyết định số 756/QĐ-UBND của UBND xã Nhã Nam có chữ ký của Phó Chủ tịch UBND xã và dấu đỏ (Trang 2)"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Bộ sưu tập 05 ảnh tư liệu chụp thực tế hoạt động và văn bản pháp lý thành lập CLB Dân ca Quan họ xã Nhã Nam",
+    "docFile": {
+      "fileName": "nghe-thuat-hat-quan-ho-nha-nam.docx",
+      "title": "Tư liệu Nghệ thuật Dân ca Quan họ xã Nhã Nam",
+      "path": "./assets/docs/nghe-thuat-hat-quan-ho-nha-nam.docx",
+      "size": "38 KB"
+    }
+  },
+  {
+    "id": "phi-vat-the-8",
+    "category": "phi-vat-the",
+    "categoryName": "Di sản phi vật thể",
+    "badge": "Văn hóa dân gian",
+    "title": "Câu lạc bộ Nghệ thuật Dân gian xã Nhã Nam",
+    "shortTitle": "CLB Nghệ thuật Dân gian Nhã Nam",
+    "scope": "Toàn thể hội viên, diễn viên nghệ thuật quần chúng tại các thôn trong xã Nhã Nam",
+    "address": "Xã Nhã Nam, tỉnh Bắc Ninh (trụ sở sinh hoạt tại Hội trường UBND xã và nhà văn hóa thôn)",
+    "thumbnail": "./assets/images/clb-nghe-thuat-dan-gian/clb-nt-dan-gian-1.jpg",
+    "tags": [
+      "Nghệ thuật dân gian",
+      "CLB Nghệ thuật Dân gian",
+      "Múa nón",
+      "Múa quạt",
+      "Dân ca",
+      "Văn nghệ quần chúng",
+      "Xã Nhã Nam",
+      "Bắc Ninh"
+    ],
+    "overview": "Mô hình bảo tồn và trình diễn nghệ thuật truyền thống nòng cốt của địa phương, thành lập theo Quyết định số 1570/QĐ-UBND của UBND xã Nhã Nam, làm phong phú đời sống văn hóa tinh thần của nhân dân.",
+    "content": {
+      "intro": "Câu lạc bộ Nghệ thuật Dân gian xã Nhã Nam là tổ chức văn hóa quần chúng nòng cốt được thành lập chính thức theo Quyết định số 1570/QĐ-UBND ngày 29/8/2025 của UBND xã Nhã Nam. Câu lạc bộ quy tụ đông đảo các nghệ nhân, diễn viên yêu nghệ thuật cổ truyền, hoạt động sôi nổi và góp phần quan trọng vào việc giữ gìn bản sắc văn hóa dân tộc tại địa phương.",
+      "originAndMeaning": [
+        "**Mốc son thành lập ý nghĩa:** Ra mắt chính thức ngày 31/8/2025 tại Hội trường UBND xã Nhã Nam chào mừng Đại hội Đảng bộ xã Nhã Nam lần thứ nhất (nhiệm kỳ 2025 - 2030) và kỷ niệm 80 năm Cách mạng Tháng Tám, Quốc khánh 2/9.",
+        "**Cơ cấu tổ chức chặt chẽ:** Chịu sự quản lý của Phòng Văn hóa - Xã hội xã. Ban chủ nhiệm gồm Chủ nhiệm bà Nguyễn Thị Tâm; các Phó Chủ nhiệm bà Vũ Thị Thìn, bà Thân Thị Loan; các Ủy viên ông Nguyễn Văn Tân, ông Nguyễn Văn Thanh.",
+        "**Sứ mệnh bảo tồn vốn cổ:** Gìn giữ các điệu múa nón quai thao, múa lụa, các bài hát then, chèo cổ và dân ca đặc sắc của quê hương."
+      ],
+      "ritualsAndActivities": [
+        "**Luyện tập và dàn dựng:** Thường xuyên tổ chức tập luyện tại nhà văn hóa thôn, sân đình Dương Lâm và hội trường xã, nâng cao chất lượng nghệ thuật.",
+        "**Biểu diễn phục vụ nhân dân:** Phục vụ các sự kiện chính trị trọng đại, lễ hội truyền thống, ngày hội Đại đoàn kết toàn dân tộc và tham gia các hội diễn văn nghệ các cấp.",
+        "**Gắn kết cộng đồng:** Khơi dậy tình yêu di sản trong các tầng lớp nhân dân, đặc biệt là sự tham gia hưởng ứng của học sinh Trường THPT Nhã Nam."
+      ],
+      "preservationValue": "CLB Nghệ thuật Dân gian là mái nhà chung nuôi dưỡng ngọn lửa đam mê nghệ thuật truyền thống, thắt chặt khối đại đoàn kết toàn dân và xây dựng đời sống văn hóa lành mạnh tại xã Nhã Nam."
+    },
+    "map": {
+      "embedUrl": "https://www.google.com/maps?q=21.4404,106.0965&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4404,106.0965",
+      "locationName": "UBND xã Nhã Nam (địa điểm sinh hoạt CLB Nghệ thuật Dân gian), tỉnh Bắc Ninh"
+    },
+    "gallery": [
+      {
+        "url": "./assets/images/clb-nghe-thuat-dan-gian/clb-nt-dan-gian-1.jpg",
+        "caption": "Toàn thể ban chủ nhiệm và hội viên CLB Nghệ thuật Dân gian xã Nhã Nam trong lễ ra mắt ngày 31/8/2025"
+      },
+      {
+        "url": "./assets/images/clb-nghe-thuat-dan-gian/clb-nt-dan-gian-2.jpg",
+        "caption": "Tiết mục múa nón và hát dân ca truyền thống đặc sắc chào mừng Đại hội Đảng bộ xã Nhã Nam"
+      },
+      {
+        "url": "./assets/images/clb-nghe-thuat-dan-gian/clb-nt-dan-gian-3.jpg",
+        "caption": "Các nghệ sĩ CLB Nghệ thuật Dân gian chụp ảnh lưu niệm tại cổng di tích lịch sử đình Dương Lâm"
+      },
+      {
+        "url": "./assets/images/clb-nghe-thuat-dan-gian/clb-nt-dan-gian-qd-trang-1.jpg",
+        "caption": "Quyết định số 1570/QĐ-UBND của UBND xã Nhã Nam thành lập CLB Nghệ thuật Dân gian (Trang 1)"
+      },
+      {
+        "url": "./assets/images/clb-nghe-thuat-dan-gian/clb-nt-dan-gian-qd-trang-2.jpg",
+        "caption": "Quyết định số 1570/QĐ-UBND có chữ ký phê duyệt của Phó Chủ tịch UBND xã Nhã Nam (Trang 2)"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Bộ sưu tập 05 ảnh tư liệu chụp thực tế Lễ ra mắt và văn bản pháp lý thành lập CLB Nghệ thuật Dân gian xã Nhã Nam",
+    "docFile": {
+      "fileName": "clb-nghe-thuat-dan-gian-nha-nam.docx",
+      "title": "Tư liệu Câu lạc bộ Nghệ thuật Dân gian xã Nhã Nam",
+      "path": "./assets/docs/clb-nghe-thuat-dan-gian-nha-nam.docx",
+      "size": "38 KB"
+    }
   }
 ];
 

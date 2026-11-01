@@ -93,7 +93,7 @@ console.assert(relicTuGiap.audioFile.src.includes('khu-luu-niem-6-dieu-bac-ho-da
 console.log('  ✓ Verified Chùa Tứ Giáp has multi-track audio with new 3-minute Khu lưu niệm 6 điều Bác Hồ dạy CAND narration');
 
 console.log('--- 4. TESTING INTANGIBLE HERITAGE (DI SẢN PHI VẬT THỂ) ---');
-console.assert(INTANGIBLE_HERITAGE_DATA.length === 6, `Should have 6 intangible heritage items (found ${INTANGIBLE_HERITAGE_DATA.length})`);
+console.assert(INTANGIBLE_HERITAGE_DATA.length >= 8, `Should have at least 8 intangible heritage items (found ${INTANGIBLE_HERITAGE_DATA.length})`);
 INTANGIBLE_HERITAGE_DATA.forEach((item, i) => {
   console.assert(item.title, `Item ${i} must have title`);
   console.assert(item.scope, `Item ${i} must have scope`);
@@ -212,16 +212,16 @@ const appCode = fs.readFileSync('./js/app.js', 'utf8');
 vm.runInThisContext(appCode);
 global.onDOMContentLoaded();
 
-console.assert(state.allItems.length === 22, `state.allItems should have 22 items (got ${state.allItems.length})`);
-console.assert(state.filteredItems.length === 22, `state.filteredItems should have 22 items (got ${state.filteredItems.length})`);
+console.assert(state.allItems.length === 24, `state.allItems should have 24 items (got ${state.allItems.length})`);
+console.assert(state.filteredItems.length === 24, `state.filteredItems should have 24 items (got ${state.filteredItems.length})`);
 console.assert(elements['heritage-grid'].innerHTML.length > 500, 'Heritage grid must render card elements');
 console.assert(elements['quick-search-tags'].innerHTML.length > 100, 'Quick search tags must render tag buttons');
-console.assert(String(elements['count-all'].textContent) === '22', 'Count all must be 22');
+console.assert(String(elements['count-all'].textContent) === '24', 'Count all must be 24');
 console.assert(String(elements['count-vat-the'].textContent) === '16', 'Count vat-the must be 16');
-console.assert(String(elements['count-phi-vat-the'].textContent) === '6' || String(elements['count-phi-vat-the'].textContent) === '06', 'Count phi-vat-the must be 6 or 06');
+console.assert(String(elements['count-phi-vat-the'].textContent) === '8' || String(elements['count-phi-vat-the'].textContent) === '08', 'Count phi-vat-the must be 8 or 08');
 console.assert(elements['quiz-questions-container'].innerHTML.length > 500, 'Quiz questions must render properly');
 
-console.log('  ✓ State items:', state.allItems.length, '(16 di sản vật thể + 6 di sản phi vật thể)');
+console.log('  ✓ State items:', state.allItems.length, '(16 di sản vật thể + 8 di sản phi vật thể)');
 console.log('  ✓ Cards rendered in #heritage-grid HTML size:', elements['heritage-grid'].innerHTML.length, 'bytes');
 console.log('  ✓ Quick tags rendered in #quick-search-tags HTML size:', elements['quick-search-tags'].innerHTML.length, 'bytes');
 console.log('  ✓ Dynamic counters updated: Tất cả =', elements['count-all'].textContent, ', Vật thể =', elements['count-vat-the'].textContent, ', Phi vật thể =', elements['count-phi-vat-the'].textContent);
@@ -232,6 +232,11 @@ HERITAGE_ROUTES.forEach((route, i) => {
   console.assert(route.id && route.name && route.title, `Route ${i} must have id, name, title`);
   console.assert(route.relicIds && route.relicIds.length > 0, `Route ${i} must have relicIds`);
   console.assert(route.mapEmbedUrl && route.directionsUrl, `Route ${i} must have embed & directions URL`);
+  console.assert(route.startDirectionsUrl && route.startDirectionsText, `Route ${i} must have startDirectionsUrl & text`);
+  if (route.id === 'tuyen-1') {
+    console.assert(!route.mapEmbedUrl.includes('21.4357253,106.116718'), 'Tuyen 1 mapEmbedUrl must NOT use inaccurate Thien Bao Linh Ung coordinate');
+    console.assert(route.startDirectionsUrl.includes('%C4%90%C3%ACnh+H%E1%BA%A3'), 'Tuyen 1 start directions must navigate to Dinh Ha');
+  }
   route.relicIds.forEach(relicId => {
     const relic = TANGIBLE_HERITAGE_DATA.find(r => r.id === relicId);
     console.assert(relic, `Relic ${relicId} in route ${route.id} must exist in TANGIBLE_HERITAGE_DATA`);
@@ -287,7 +292,28 @@ const docTextsCode = fs.readFileSync('./js/doc-texts.js', 'utf8');
 console.assert(docTextsCode.includes('kich-ban-dien-tich-de-nam-te-co.docx'), 'doc-texts must include kịch bản Đề Nắm');
 console.assert(docTextsCode.includes('loi-tua-lang-noi-phet-duong-son.docx'), 'doc-texts must include lời tựa Dương Sơn');
 console.assert(docTextsCode.includes('Hòa Làng nói phét có ca'), 'doc-texts must include folk verse Hòa Làng vs Dương Sơn');
-console.log('  ✓ Verified doc-texts.js contains full transcript of Kịch bản Đề Nắm & Lời tựa Dương Sơn');
+console.assert(docTextsCode.includes('nghe-thuat-hat-quan-ho-nha-nam.docx'), 'doc-texts must include Dân ca Quan họ');
+console.assert(docTextsCode.includes('clb-nghe-thuat-dan-gian-nha-nam.docx'), 'doc-texts must include CLB Nghệ thuật Dân gian');
+console.log('  ✓ Verified doc-texts.js contains full transcript of Kịch bản Đề Nắm, Lời tựa Dương Sơn, Quan họ & CLB NT Dân gian');
+
+// 9.5 Kiểm tra phi-vat-the-7 (Quan họ) và phi-vat-the-8 (CLB Nghệ thuật Dân gian)
+const phiVatThe7 = INTANGIBLE_HERITAGE_DATA.find(r => r.id === 'phi-vat-the-7');
+console.assert(phiVatThe7 && phiVatThe7.hasRealPhoto === true, 'phi-vat-the-7 must have real photos');
+console.assert(phiVatThe7.gallery.length === 5, 'phi-vat-the-7 must have 5 real photos');
+phiVatThe7.gallery.forEach(img => {
+  const p = img.url.replace('./', '');
+  console.assert(fs.existsSync(p), `Image path ${p} must exist on disk`);
+});
+console.log('  ✓ phi-vat-the-7 verified: 100% ảnh chụp thật & QĐ 756 CLB Dân ca Quan họ tồn tại');
+
+const phiVatThe8 = INTANGIBLE_HERITAGE_DATA.find(r => r.id === 'phi-vat-the-8');
+console.assert(phiVatThe8 && phiVatThe8.hasRealPhoto === true, 'phi-vat-the-8 must have real photos');
+console.assert(phiVatThe8.gallery.length === 5, 'phi-vat-the-8 must have 5 real photos');
+phiVatThe8.gallery.forEach(img => {
+  const p = img.url.replace('./', '');
+  console.assert(fs.existsSync(p), `Image path ${p} must exist on disk`);
+});
+console.log('  ✓ phi-vat-the-8 verified: 100% ảnh chụp thật & QĐ 1570 CLB Nghệ thuật Dân gian tồn tại');
 
 console.log('\n======================================================');
 console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE & APP INIT TESTS PASSED! 🎉');

@@ -2213,14 +2213,24 @@ function selectRoute(routeId) {
   // 2. Chuyển iframe bản đồ hiển thị toàn bộ lộ trình liên hoàn của cụm di tích
   updateMapFrame(route.mapEmbedUrl, `Lộ trình tuyến ${route.number}: ${route.title} (${route.subtitle})`, route.directionsUrl, 'Mở Google Maps dẫn đường cả tuyến ↗');
 
-  // 3. Cập nhật nút dẫn đường toàn tuyến liên hoàn
+  // 3. Cập nhật nút 1: Khởi hành từ vị trí của bạn (tới điểm đầu tuyến)
+  const fromUserBtn = document.getElementById('route-from-user-directions-btn');
+  const fromUserLabel = document.getElementById('route-from-user-directions-label');
+  if (fromUserBtn && route.startDirectionsUrl) {
+    fromUserBtn.href = route.startDirectionsUrl;
+  }
+  if (fromUserLabel && route.startDirectionsText) {
+    fromUserLabel.textContent = route.startDirectionsText;
+  }
+
+  // 4. Cập nhật nút 2: Lộ trình liên hoàn cả tuyến
   const dirBtn = document.getElementById('heritage-route-directions-btn');
   const dirLabel = document.getElementById('route-directions-label');
   if (dirBtn && route.directionsUrl) {
     dirBtn.href = route.directionsUrl;
   }
   if (dirLabel && route.directionsText) {
-    dirLabel.innerHTML = `<svg class="w-4 h-4 text-[#F6E05E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> <span>${escapeHtml(route.directionsText)}</span>`;
+    dirLabel.textContent = route.directionsText;
   }
 }
 
@@ -2250,12 +2260,15 @@ function selectRouteRelic(relicId, event) {
           else card.classList.remove('active');
         }
       });
+      const fromUserBtn = document.getElementById('route-from-user-directions-btn');
+      const fromUserLabel = document.getElementById('route-from-user-directions-label');
+      if (fromUserBtn && parentRoute.startDirectionsUrl) fromUserBtn.href = parentRoute.startDirectionsUrl;
+      if (fromUserLabel && parentRoute.startDirectionsText) fromUserLabel.textContent = parentRoute.startDirectionsText;
+
       const dirBtn = document.getElementById('heritage-route-directions-btn');
       const dirLabel = document.getElementById('route-directions-label');
       if (dirBtn && parentRoute.directionsUrl) dirBtn.href = parentRoute.directionsUrl;
-      if (dirLabel && parentRoute.directionsText) {
-        dirLabel.innerHTML = `<svg class="w-4 h-4 text-[#F6E05E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> <span>${escapeHtml(parentRoute.directionsText)}</span>`;
-      }
+      if (dirLabel && parentRoute.directionsText) dirLabel.textContent = parentRoute.directionsText;
     }
   }
 
@@ -2341,13 +2354,16 @@ function resetToCommuneMap() {
 
   updateMapFrame(defaultMap.embedUrl, 'Bản đồ tổng thể vùng di sản xã Nhã Nam, tỉnh Bắc Ninh', defaultMap.directionsUrl, 'Mở Google Maps chỉ đường ↗');
 
-  // 3. Khôi phục nút dẫn đường
+  // 3. Khôi phục các nút dẫn đường
+  const fromUserBtn = document.getElementById('route-from-user-directions-btn');
+  const fromUserLabel = document.getElementById('route-from-user-directions-label');
+  if (fromUserBtn) fromUserBtn.href = defaultMap.directionsUrl;
+  if (fromUserLabel) fromUserLabel.textContent = defaultMap.directionsText;
+
   const dirBtn = document.getElementById('heritage-route-directions-btn');
   const dirLabel = document.getElementById('route-directions-label');
   if (dirBtn) dirBtn.href = defaultMap.directionsUrl;
-  if (dirLabel) {
-    dirLabel.innerHTML = `<svg class="w-4 h-4 text-[#F6E05E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> <span>${escapeHtml(defaultMap.directionsText)}</span>`;
-  }
+  if (dirLabel) dirLabel.textContent = "Chỉ đường tới trung tâm xã Nhã Nam";
 }
 
 function updateMapFrame(newUrl, captionText, directionsUrl, btnText) {

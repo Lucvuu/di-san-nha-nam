@@ -334,7 +334,7 @@
         <!-- CARD 2: DI SẢN PHI VẬT THỂ -->
         <div 
           id="hero-btn-phi-vat-the"
-          role="button" tabindex="0" aria-label="Xem 06 di sản phi vật thể"
+          role="button" tabindex="0" aria-label="Xem 08 di sản phi vật thể"
           class="hero-entry-card rounded-3xl p-5 sm:p-6 flex flex-col justify-end min-h-[210px] sm:min-h-[235px] shadow-lg border-2 border-[#C59B27]/40 cursor-pointer text-white relative group"
           style="background-image: url('./assets/images/video-tu-lieu/le-hoi-dinh-ha.jpg');">
           
@@ -351,12 +351,12 @@
             </h2>
 
             <p class="text-xs sm:text-sm text-gray-200 line-clamp-2 leading-relaxed mb-3 opacity-95">
-              Hồn cốt tinh hoa dân gian lưu truyền ngàn đời: Lễ hội khởi nghĩa Yên Thế (đình Hả, chùa Tứ Giáp), nghệ thuật hát chèo truyền thống, nghề làm bánh khảo, kẹo lạc, tập quán tưởng niệm, võ cổ truyền Yên Thế và nghệ thuật kể chuyện dân gian làng nói phét Dương Sơn.
+              Hồn cốt tinh hoa dân gian lưu truyền ngàn đời: Lễ hội khởi nghĩa Yên Thế, nghệ thuật Dân ca Quan họ, hát chèo truyền thống, CLB nghệ thuật dân gian, nghề làm bánh khảo, kẹo lạc, tập quán tưởng niệm, võ cổ truyền và làng nói phét Dương Sơn.
             </p>
 
             <div class="flex items-center justify-between">
               <span class="inline-flex items-center gap-2 font-bold text-xs sm:text-sm text-white group-hover:translate-x-1 transition-transform">
-                <span>Trải nghiệm 06 di sản ngay</span>
+                <span>Trải nghiệm 08 di sản ngay</span>
                 <svg class="w-4 h-4 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </span>
             </div>
@@ -911,28 +911,45 @@
 
           <!-- Actions -->
           <div class="pt-2 flex flex-col gap-2.5">
-            <!-- Hàng 1: Nút Dẫn đường toàn tuyến liên hoàn và Xem danh sách di tích -->
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+            <!-- Hàng 1: Hai lựa chọn dẫn đường chuẩn xác theo nhu cầu du khách -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <!-- Lựa chọn 1: Dẫn đường từ vị trí của bạn (GPS hiện tại) đến điểm đầu tuyến -->
+              <a 
+                id="route-from-user-directions-btn"
+                href="https://www.google.com/maps/dir/?api=1&destination=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-[#8B1E1E] hover:bg-[#6F1515] transition shadow-md text-center"
+                title="Mở Google Maps dẫn đường xuất phát từ vị trí GPS hiện tại của bạn đến điểm mở đầu tuyến">
+                <svg class="w-4 h-4 text-[#F6E05E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <span id="route-from-user-directions-label">Khởi hành từ vị trí của bạn (tới đình - chùa Hả)</span>
+              </a>
+
+              <!-- Lựa chọn 2: Lộ trình liên hoàn cả tuyến (kết nối tất cả các điểm trong cụm) -->
               <a 
                 id="heritage-route-directions-btn"
                 href="https://www.google.com/maps/dir/?api=1&destination=21.4210834,106.0960966&waypoints=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang%7C21.4448892,106.0901463" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-[#8B1E1E] hover:bg-[#6F1515] transition shadow-md flex-1 text-center"
-                title="Mở Google Maps dẫn đường xuất phát từ vị trí của bạn qua tất cả các điểm trong cụm di sản">
-                <span id="route-directions-label" class="inline-flex items-center gap-2">
-                  <svg class="w-4 h-4 text-[#F6E05E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                  <span>Chỉ đường tuyến 1 (đình Hả ➔ chùa Tứ Giáp ➔ đình Dương Lâm)</span>
-                </span>
+                class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-bold text-[#8B1E1E] bg-[#FAF5EE] hover:bg-[#F0E6D8] border border-[#8B1E1E]/40 transition shadow-xs text-center"
+                title="Mở Google Maps lộ trình liên hoàn tham quan tuần tự trọn vẹn tất cả các di tích trong cụm">
+                <svg class="w-4 h-4 text-[#8B1E1E] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                <span id="route-directions-label">Lộ trình liên hoàn cả tuyến (3 di tích)</span>
               </a>
+            </div>
 
+            <!-- Hàng nút phụ: Lọc danh sách di tích tuyến này -->
+            <div class="flex items-center justify-between gap-2 pt-0.5">
+              <span class="text-[11px] text-[#786C5E] italic">
+                💡 Mẹo: Bấm vào từng chặng số 1, 2, 3 ở trên để phóng to bản đồ và lấy chỉ đường riêng từng điểm.
+              </span>
               <button 
                 type="button" 
                 id="filter-route-relics-btn"
                 onclick="filterRelicsByActiveRoute()"
-                class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold text-[#8B1E1E] bg-white border border-[#8B1E1E]/40 hover:bg-[#8B1E1E] hover:text-white transition shadow-xs cursor-pointer whitespace-nowrap">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                <span>Xem di tích tuyến này</span>
+                class="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold text-[#8B1E1E] bg-white border border-[#8B1E1E]/30 hover:bg-[#8B1E1E] hover:text-white transition shadow-xs cursor-pointer whitespace-nowrap">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <span>Xem danh sách di tích tuyến này</span>
               </button>
             </div>
 
@@ -991,7 +1008,7 @@
             </div>
             <iframe 
               id="heritage-route-map-frame"
-              src="https://www.google.com/maps?saddr=21.4357253,106.116718&daddr=21.4448892,106.0901463+to:21.4210834,106.0960966&output=embed" 
+              src="https://www.google.com/maps?saddr=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&daddr=21.4448892,106.0901463+to:21.4210834,106.0960966&output=embed" 
               width="100%" 
               height="100%" 
               style="border:0;" 
@@ -1202,6 +1219,8 @@
             <li><a href="javascript:void(0)" onclick="openDetailModal('phi-vat-the-4')" class="hover:text-white transition-colors"><svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-flame"/></svg> Tưởng niệm Hoàng Hoa Thám</a></li>
             <li><a href="javascript:void(0)" onclick="openDetailModal('phi-vat-the-5')" class="hover:text-white transition-colors"><svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-swords"/></svg> Trò chơi dân gian và võ cổ truyền</a></li>
             <li><a href="javascript:void(0)" onclick="openDetailModal('phi-vat-the-6')" class="hover:text-white transition-colors"><svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-users"/></svg> Làng nói phét Dương Sơn</a></li>
+            <li><a href="javascript:void(0)" onclick="openDetailModal('phi-vat-the-7')" class="hover:text-white transition-colors"><svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-sparkles"/></svg> Dân ca Quan họ Bắc Ninh</a></li>
+            <li><a href="javascript:void(0)" onclick="openDetailModal('phi-vat-the-8')" class="hover:text-white transition-colors"><svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-users"/></svg> CLB Nghệ thuật Dân gian</a></li>
           </ul>
         </div>
 
@@ -1422,7 +1441,7 @@
             Hệ thống 37 di tích lịch sử - văn hóa xã Nhã Nam
           </h3>
           <p class="text-xs text-[#5C5248] mt-1">
-            Gồm 08 di tích quốc gia đặc biệt • 01 di tích cấp quốc gia • 07 di tích cấp tỉnh • 21 di tích thuộc danh mục kiểm kê. Số liệu chính thức phục vụ HĐND xã và UBND tỉnh.
+            Gồm 08 di tích quốc gia đặc biệt • 01 di tích cấp quốc gia • 07 di tích cấp tỉnh • 21 di tích thuộc danh mục kiểm kê do Chủ tịch UBND tỉnh phê duyệt bảo vệ.
           </p>
         </div>
         <button 
