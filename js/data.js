@@ -25,6 +25,14 @@ const SITE_CONFIG = {
   },
   schoolTarget: "Dành cho học sinh Trường THPT Nhã Nam, các trường THCS, Tiểu học, thầy cô giáo và nhân dân",
   logoUrl: "./assets/images/share/logo-160.png",
+
+  // Cấu hình bộ đếm lượt truy cập (Visitor Counter: Số khống ban đầu + Lượt truy cập thật)
+  visitorCounter: {
+    enabled: true,
+    baseCount: 3682, // Số khởi điểm khống ban đầu (trong tầm 2.000 - 5.000)
+    namespace: "di-san-nha-nam-thpt-bac-ninh",
+    endpoint: "https://countapi.mileshilliard.com/api/v1"
+  },
   
   // Facebook Group Community Configuration
   facebookGroupUrl: "#", 

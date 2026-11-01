@@ -315,6 +315,16 @@ phiVatThe8.gallery.forEach(img => {
 });
 console.log('  ✓ phi-vat-the-8 verified: 100% ảnh chụp thật & QĐ 1570 CLB Nghệ thuật Dân gian tồn tại');
 
+console.log('--- 10. TESTING VISITOR COUNTER CONFIGURATION & LOGIC ---');
+console.assert(SITE_CONFIG.visitorCounter && SITE_CONFIG.visitorCounter.enabled === true, 'Visitor counter must be enabled');
+console.assert(SITE_CONFIG.visitorCounter.baseCount >= 2000 && SITE_CONFIG.visitorCounter.baseCount <= 5000, 'Base visitor count must be between 2000 and 5000');
+console.assert(SITE_CONFIG.visitorCounter.namespace && SITE_CONFIG.visitorCounter.endpoint, 'Visitor counter must have namespace and endpoint');
+console.assert(typeof initVisitorCounter === 'function', 'initVisitorCounter must be a function');
+
+const indexHtmlContent = fs.readFileSync('index.html', 'utf8');
+console.assert(indexHtmlContent.includes('id="visitor-counter-display"'), 'index.html must have #visitor-counter-display element');
+console.log(`  ✓ Visitor counter verified: Base count = ${SITE_CONFIG.visitorCounter.baseCount} (between 2.000 - 5.000), API endpoint ready, element wired in footer`);
+
 console.log('\n======================================================');
 console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE & APP INIT TESTS PASSED! 🎉');
 console.log('======================================================\n');

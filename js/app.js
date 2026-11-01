@@ -96,6 +96,7 @@ function initApp() {
   try { renderQuiz(); } catch (e) { console.warn('renderQuiz error:', e); }
   try { checkUrlHash(); } catch (e) { console.warn('checkUrlHash error:', e); }
   try { initAudioPlayerSettings(); } catch (e) { console.warn('initAudioPlayerSettings error:', e); }
+  try { initVisitorCounter(); } catch (e) { console.warn('initVisitorCounter error:', e); }
 }
 
 let currentTrackIndex = 0;
@@ -2498,4 +2499,73 @@ function filterByRankDirect(rankCategory) {
   };
   const label = rankNames[rankCategory] || rankCategory;
   showToastNotification(`Đang hiển thị ${label}`, 'info');
+}
+
+/**
+ * ====================================================================
+ * BỘ ĐẾM LƯỢT TRUY CẬP (VISITOR COUNTER)
+ * Công thức: Tổng hiển thị = Base count (2.000 - 5.000) + Lượt truy cập thật
+ * Chống F5 ảo: Mỗi phiên (tab) chỉ hit 1 lần, các lần sau gọi get
+ * Fallback an toàn: Có mạng hay mất mạng đều hiển thị số mượt mà
+ * ====================================================================
+ */
+function initVisitorCounter() {
+  const displayEl = document.getElementById('visitor-counter-display');
+  if (!displayEl) return;
+
+  const cfg = (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.visitorCounter)
+    ? SITE_CONFIG.visitorCounter
+    : {
+        enabled: true,
+        baseCount: 3682,
+        namespace: "di-san-nha-nam-thpt-bac-ninh",
+        endpoint: "https://countapi.mileshilliard.com/api/v1"
+      };
+
+  if (cfg.enabled === false) return;
+
+  const base = cfg.baseCount || 3682;
+  let cachedVal = null;
+  try {
+    cachedVal = localStorage.getItem('nhanam_cached_visitors');
+  } catch (e) {
+    // localStorage có thể bị tắt trên trình duyệt ẩn danh
+  }
+  const initialDisplay = cachedVal ? parseInt(cachedVal, 10) : base;
+
+  // Hiển thị ngay số cached hoặc base để không bị trống hay giật giao diện
+  displayEl.textContent = initialDisplay.toLocaleString('vi-VN');
+
+  // Xác định phiên truy cập: mỗi phiên mở tab mới chỉ ghi nhận 1 lượt thật, F5 không tăng ảo
+  const sessionKey = 'nhanam_visited_session';
+  let hasVisitedThisSession = false;
+  try {
+    hasVisitedThisSession = !!sessionStorage.getItem(sessionKey);
+  } catch (e) {}
+
+  const action = hasVisitedThisSession ? 'get' : 'hit';
+  const apiUrl = `${cfg.endpoint}/${action}/${cfg.namespace}`;
+
+  if (typeof fetch === 'function') {
+    fetch(apiUrl, { headers: { 'Accept': 'application/json' } })
+      .then(res => res.json())
+      .then(data => {
+        if (data && typeof data.value === 'number') {
+          try {
+            if (!hasVisitedThisSession) {
+              sessionStorage.setItem(sessionKey, '1');
+            }
+          } catch (e) {}
+          const total = base + data.value;
+          try {
+            localStorage.setItem('nhanam_cached_visitors', total.toString());
+          } catch (e) {}
+          displayEl.textContent = total.toLocaleString('vi-VN');
+        }
+      })
+      .catch(err => {
+        // Fallback an toàn: nếu API bị chặn hoặc mất mạng, giữ nguyên số cached
+        console.warn('Visitor counter API fallback:', err);
+      });
+  }
 }
