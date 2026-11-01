@@ -363,8 +363,8 @@ function renderHeritageGrid(items) {
           `: `
             <div class="w-full h-full relative flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#FAF5EE] via-[#F3ECE0] to-[#EAE0D0] overflow-hidden">
               <img 
-                src="./assets/trong-dong-ngoc-lu-real.png" 
-                alt="" 
+                src="./assets/images/share/trong-dong-360.webp" 
+                alt="" loading="lazy" decoding="async" 
                 aria-hidden="true"
                 class="absolute -right-10 -bottom-10 w-44 h-44 opacity-[0.14] pointer-events-none select-none mix-blend-multiply" 
               />

@@ -24,7 +24,7 @@ const SITE_CONFIG = {
     intangible: 5
   },
   schoolTarget: "Dành cho học sinh Trường THPT Nhã Nam, các trường THCS, Tiểu học, thầy cô giáo và nhân dân",
-  logoUrl: "./logo-thpt-nha-nam.png",
+  logoUrl: "./assets/images/share/logo-160.png",
   
   // Facebook Group Community Configuration
   facebookGroupUrl: "#", 
