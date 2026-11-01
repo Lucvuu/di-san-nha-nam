@@ -910,7 +910,7 @@ function openDetailModal(itemId) {
           <div class="photo-pending-frame rounded-2xl p-8 text-center">
             <div class="mb-2 text-[#8B1E1E] flex justify-center">${ic('landmark','w-8 h-8')}</div>
             <p class="font-heritage-serif font-bold text-[#8B1E1E]">Ảnh tư liệu thực tế tại di tích đang được Ban biên tập cập nhật</p>
-            <p class="text-xs text-[#786C5E] mt-1">Thầy cô, học sinh có ảnh chụp thật tại di tích xin gửi qua Zalo thầy Công 0982.386.959 hoặc cô Mến 0985.449.123.</p>
+            <p class="text-xs text-[#786C5E] mt-1">Thầy cô, học sinh có ảnh chụp thật tại di tích xin gửi qua Zalo thầy Công 0982.386.959 hoặc cô Dương Thuý Mến 0985.449.123.</p>
           </div>
         `}
 
@@ -1455,7 +1455,7 @@ function showFacebookComingSoonModal() {
     modal.classList.remove('hidden');
   } else {
     showToastNotification(
-      'Nhóm Facebook đang được ban điều hành (thầy Công, cô Mến) thiết lập. Đường dẫn sẽ sớm được cập nhật!',
+      'Nhóm Facebook đang được ban điều hành (thầy Bùi Văn Công, cô Dương Thuý Mến) thiết lập. Đường dẫn sẽ sớm được cập nhật!',
       'info',
       5000
     );
@@ -2517,21 +2517,22 @@ function initVisitorCounter() {
     ? SITE_CONFIG.visitorCounter
     : {
         enabled: true,
-        baseCount: 3682,
+        baseCount: 6284,
         namespace: "di-san-nha-nam-thpt-bac-ninh",
         endpoint: "https://countapi.mileshilliard.com/api/v1"
       };
 
   if (cfg.enabled === false) return;
 
-  const base = cfg.baseCount || 3682;
+  const base = cfg.baseCount || 6284;
   let cachedVal = null;
   try {
     cachedVal = localStorage.getItem('nhanam_cached_visitors');
   } catch (e) {
     // localStorage có thể bị tắt trên trình duyệt ẩn danh
   }
-  const initialDisplay = cachedVal ? parseInt(cachedVal, 10) : base;
+  const cachedNum = cachedVal ? parseInt(cachedVal, 10) : 0;
+  const initialDisplay = (cachedNum >= base) ? cachedNum : base;
 
   // Hiển thị ngay số cached hoặc base để không bị trống hay giật giao diện
   displayEl.textContent = initialDisplay.toLocaleString('vi-VN');

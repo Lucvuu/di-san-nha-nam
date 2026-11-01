@@ -26,10 +26,10 @@ const SITE_CONFIG = {
   schoolTarget: "Dành cho học sinh Trường THPT Nhã Nam, các trường THCS, Tiểu học, thầy cô giáo và nhân dân",
   logoUrl: "./assets/images/share/logo-160.png",
 
-  // Cấu hình bộ đếm lượt truy cập (Visitor Counter: Số khống ban đầu + Lượt truy cập thật)
+  // Cấu hình bộ đếm lượt truy cập (Visitor Counter: Số khởi điểm ban đầu + Lượt truy cập thật)
   visitorCounter: {
     enabled: true,
-    baseCount: 3682, // Số khởi điểm khống ban đầu (trong tầm 2.000 - 5.000)
+    baseCount: 6284, // Số khởi điểm ban đầu trong tầm 5.000 - 7.000
     namespace: "di-san-nha-nam-thpt-bac-ninh",
     endpoint: "https://countapi.mileshilliard.com/api/v1"
   },
@@ -40,11 +40,11 @@ const SITE_CONFIG = {
 
   // Administrator & Contact Configuration
   adminRole: "Ban điều hành dự án và quản trị nội dung",
-  adminName: "Thầy Bùi Văn Công và cô Mến (Trường THPT Nhã Nam)",
+  adminName: "Thầy Bùi Văn Công và cô Dương Thuý Mến (Trường THPT Nhã Nam)",
   adminPhone: "0982.386.959",
   adminPhoneRaw: "0982386959",
   adminZaloUrl: "https://zalo.me/0982386959",
-  secondaryAdminName: "Cô Mến",
+  secondaryAdminName: "Cô Dương Thuý Mến",
   secondaryAdminPhone: "0985.449.123",
   secondaryAdminPhoneRaw: "0985449123",
   secondaryAdminZaloUrl: "https://zalo.me/0985449123",
