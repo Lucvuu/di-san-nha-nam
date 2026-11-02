@@ -18,20 +18,20 @@
   <meta property="og:description"
     content="Cổng thông tin số hóa hệ thống 37 di tích lịch sử – văn hóa xã Nhã Nam, tỉnh Bắc Ninh: 16 di tích xếp hạng, trong đó có 08 di tích quốc gia đặc biệt, cùng các di sản văn hóa phi vật thể. Ảnh thực tế, thuyết minh, bản đồ và tư liệu do Ban biên tập dự án biên soạn." />
   <meta property="og:url" content="https://lucvuu.github.io/di-san-nha-nam/" />
-  <meta property="og:image" content="https://lucvuu.github.io/di-san-nha-nam/assets/images/share/og-image.jpg?v=4" />
+  <meta property="og:image" content="https://lucvuu.github.io/di-san-nha-nam/assets/images/share/og-image.jpg?v=5" />
   <meta property="og:image:secure_url"
-    content="https://lucvuu.github.io/di-san-nha-nam/assets/images/share/og-image.jpg?v=4" />
+    content="https://lucvuu.github.io/di-san-nha-nam/assets/images/share/og-image.jpg?v=5" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt"
-    content="Biểu trưng văn hóa xã Nhã Nam và mặt tiền đình Hả – Di sản văn hóa xã Nhã Nam" />
+    content="Biểu trưng (Logo) xã Nhã Nam và mặt tiền đình Hả – Di sản văn hóa xã Nhã Nam" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title"
     content="Di sản văn hóa xã Nhã Nam • Cổng thông tin số hóa di sản văn hóa và lịch sử địa phương" />
   <meta name="twitter:description"
     content="Cổng thông tin số hóa hệ thống 37 di tích lịch sử – văn hóa xã Nhã Nam, tỉnh Bắc Ninh: 16 di tích xếp hạng, trong đó có 08 di tích quốc gia đặc biệt, cùng các di sản văn hóa phi vật thể. Ảnh thực tế, thuyết minh, bản đồ và tư liệu do Ban biên tập dự án biên soạn." />
-  <meta name="twitter:image" content="https://lucvuu.github.io/di-san-nha-nam/assets/images/share/og-image.jpg?v=4" />
+  <meta name="twitter:image" content="https://lucvuu.github.io/di-san-nha-nam/assets/images/share/og-image.jpg?v=5" />
   <meta name="keywords"
     content="Di sản Nhã Nam, xã Nhã Nam, đình Hả, chùa Hả, chùa Tứ Giáp, chùa Đồng Điều, đền Gốc Khế, đồn Nhã Nam, đồi Phủ, đền Đề Truật, đình làng Chuông, chùa Nam Thiên, khởi nghĩa Yên Thế, Lương Văn Nắm, Hoàng Hoa Thám, tỉnh Bắc Ninh, Bắc Ninh" />
   <!-- Cache Prevention Headers -->
@@ -40,10 +40,10 @@
   <meta http-equiv="Expires" content="0" />
   <meta name="author" content="Ban biên tập Cổng thông tin di sản văn hóa xã Nhã Nam" />
 
-  <!-- Favicon: biểu trưng văn hóa xã Nhã Nam (mặt trống đồng) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/share/favicon-32.png?v=4" />
-  <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/share/icon-192.png?v=4" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/share/apple-touch-icon.png?v=4" />
+  <!-- Favicon: Biểu trưng (Logo) xã Nhã Nam -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/share/favicon-32.png?v=5" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/share/icon-192.png?v=5" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/share/apple-touch-icon.png?v=5" />
 
   <!-- Tailwind CSS qua CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -281,14 +281,19 @@
       <div class="flex items-center justify-between h-20 gap-4">
 
         <!-- Biểu trưng xã Nhã Nam & Tên Cổng Thông Tin (Luôn 1 dòng, không vỡ chữ) -->
-        <a href="#" class="flex items-center gap-2.5 sm:gap-3 group min-w-0">
-          <img src="./assets/images/share/bieu-trung-nha-nam-160.png"
-            srcset="./assets/images/share/bieu-trung-nha-nam-160.png 1x, ./assets/images/share/bieu-trung-nha-nam-320.png 2x"
-            width="52" height="52" alt="Biểu trưng văn hóa xã Nhã Nam"
-            style="height: 52px; width: 52px; object-fit: contain;"
-            class="shadow-sm group-hover:scale-105 transition-transform duration-200 flex-shrink-0"
-            onerror="this.style.display='none'" />
-          <div class="flex flex-col">
+        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+          <button type="button" onclick="openCommuneEmblemModal()"
+            title="Bấm để xem ý nghĩa Biểu trưng (Logo) xã Nhã Nam: Truyền thống + Hiện đại"
+            aria-label="Xem ý nghĩa Biểu trưng (Logo) xã Nhã Nam"
+            class="flex-shrink-0 rounded-full focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] cursor-pointer">
+            <img src="./assets/images/share/bieu-trung-nha-nam-160.png?v=5"
+              srcset="./assets/images/share/bieu-trung-nha-nam-160.png?v=5 1x, ./assets/images/share/bieu-trung-nha-nam-320.png?v=5 2x"
+              width="52" height="52" alt="Biểu trưng văn hóa xã Nhã Nam"
+              style="height: 52px; width: 52px; object-fit: contain;"
+              class="shadow-sm hover:scale-105 transition-transform duration-200 flex-shrink-0 rounded-full"
+              onerror="this.style.display='none'" />
+          </button>
+          <a href="#" class="flex flex-col group min-w-0">
             <span
               class="font-heritage-serif text-[0.98rem] min-[360px]:text-[1.05rem] sm:text-[1.32rem] lg:text-[1.36rem] font-black tracking-tight text-[#8B1E1E] whitespace-nowrap leading-tight group-hover:text-[#6F1515] transition-colors">
               Di sản văn hóa xã Nhã Nam
@@ -296,8 +301,8 @@
             <span class="text-[11px] text-[#5C5248] hidden sm:block font-medium whitespace-nowrap leading-tight mt-0.5">
               Cổng thông tin số hóa di sản văn hóa và lịch sử địa phương
             </span>
-          </div>
-        </a>
+          </a>
+        </div>
 
         <!-- danh mục liên kết điều hướng nhanh (Desktop: Luôn trên 1 hàng ngang) -->
         <nav class="hidden lg:flex items-center gap-6 xl:gap-8 flex-shrink-0">
@@ -572,6 +577,12 @@
             title="Thử sức với 05 câu hỏi trắc nghiệm tìm hiểu di sản Nhã Nam">
             <span class="pill-num">05</span>
             <span>Câu hỏi trắc nghiệm</span>
+          </button>
+          <button type="button" onclick="openCommuneEmblemModal()" class="discovery-stat-pill"
+            title="Tìm hiểu ý nghĩa Biểu trưng (Logo) xã Nhã Nam: Sự giao thoa Truyền thống và Hiện đại">
+            <img src="./assets/images/share/bieu-trung-nha-nam-160.png?v=5" width="22" height="22"
+              alt="Logo xã Nhã Nam" class="w-5 h-5 rounded-full object-contain flex-shrink-0" />
+            <span>Ý nghĩa Logo Nhã Nam</span>
           </button>
         </div>
       </div>
@@ -1407,11 +1418,17 @@
         <!-- Cột 1: Giới thiệu cổng thông tin & biểu trưng xã Nhã Nam -->
         <div class="lg:col-span-1">
           <div class="flex items-center gap-3 mb-4">
-            <img src="./assets/images/share/bieu-trung-nha-nam-160.png"
-              srcset="./assets/images/share/bieu-trung-nha-nam-160.png 1x, ./assets/images/share/bieu-trung-nha-nam-320.png 2x"
-              width="48" height="48" alt="Biểu trưng văn hóa xã Nhã Nam"
-              style="height: 48px; width: 48px; object-fit: contain;" class="shadow-sm flex-shrink-0"
-              onerror="this.style.display='none'" />
+            <button type="button" onclick="openCommuneEmblemModal()"
+              title="Bấm để xem ý nghĩa Biểu trưng (Logo) xã Nhã Nam"
+              aria-label="Xem ý nghĩa Biểu trưng (Logo) xã Nhã Nam"
+              class="flex-shrink-0 rounded-full cursor-pointer">
+              <img src="./assets/images/share/bieu-trung-nha-nam-160.png?v=5"
+                srcset="./assets/images/share/bieu-trung-nha-nam-160.png?v=5 1x, ./assets/images/share/bieu-trung-nha-nam-320.png?v=5 2x"
+                width="48" height="48" alt="Biểu trưng (Logo) xã Nhã Nam"
+                style="height: 48px; width: 48px; object-fit: contain;"
+                class="shadow-sm flex-shrink-0 rounded-full hover:scale-105 transition-transform duration-200"
+                onerror="this.style.display='none'" />
+            </button>
             <div class="font-heritage-serif text-lg font-bold text-[#F6E05E] whitespace-nowrap">
               Di sản Nhã Nam
             </div>
@@ -1420,9 +1437,13 @@
             Dự án số hóa di sản văn hóa và lịch sử địa phương do học sinh THPT thực hiện, phục vụ giảng dạy, học tập
             truyền thống cho học sinh, thanh thiếu niên và nhân dân <span class="whitespace-nowrap">xã Nhã Nam</span>.
           </p>
-          <div class="text-xs text-[#C59B27] font-medium" style="text-wrap: balance;">
+          <div class="text-xs text-[#C59B27] font-medium mb-3" style="text-wrap: balance;">
             <span class="whitespace-nowrap">Xã Nhã Nam,</span> <span class="whitespace-nowrap">tỉnh Bắc Ninh</span>
           </div>
+          <button type="button" onclick="openCommuneEmblemModal()"
+            class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#F6E05E] hover:text-white underline underline-offset-4 transition-colors cursor-pointer">
+            <span>Ý nghĩa Biểu trưng (Logo) xã Nhã Nam →</span>
+          </button>
         </div>
 
         <!-- Cột 2: Danh mục di sản nhanh -->
@@ -1834,6 +1855,124 @@
         <button type="button" onclick="closeLegalPrivacyModal()"
           class="px-5 py-2.5 rounded-xl font-bold bg-[#8B1E1E] text-white hover:bg-[#6F1515] transition-colors cursor-pointer">
           Đã hiểu và đóng lại
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODAL Ý NGHĨA BIỂU TRƯNG (LOGO) XÃ NHÃ NAM (TRUYỀN THỐNG + HIỆN ĐẠI)
+       ==================================================================== -->
+  <div id="commune-emblem-modal" role="dialog" aria-modal="true" aria-labelledby="commune-emblem-title"
+    class="fixed inset-0 z-[105] hidden flex items-center justify-center p-3 sm:p-6">
+    <div onclick="closeCommuneEmblemModal()"
+      class="absolute inset-0 bg-[#18120E]/85 backdrop-blur-sm transition-opacity"></div>
+
+    <div
+      class="relative bg-[#FCF9F2] rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl border-2 border-[#C59B27]/50 flex flex-col p-5 sm:p-8 z-10">
+      <div class="flex items-start justify-between gap-4 pb-4 border-b border-[#EADECF]">
+        <div class="flex items-center gap-3.5">
+          <img src="./assets/images/share/bieu-trung-nha-nam-320.png?v=5" width="60" height="60"
+            alt="Biểu trưng (Logo) xã Nhã Nam" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-md flex-shrink-0" />
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-[#0F763E]">
+              Nhận diện văn hóa địa phương • Xã Nhã Nam, tỉnh Bắc Ninh
+            </span>
+            <h3 id="commune-emblem-title" class="font-heritage-serif text-xl sm:text-2xl font-bold text-[#8B1E1E]">
+              Ý nghĩa Biểu trưng (Logo) xã Nhã Nam: “Khát vọng vươn lên”
+            </h3>
+          </div>
+        </div>
+        <button type="button" onclick="closeCommuneEmblemModal()" aria-label="Đóng cửa sổ ý nghĩa biểu trưng"
+          class="w-9 h-9 rounded-full bg-[#F5EFE6] text-gray-500 hover:text-[#8B1E1E] hover:bg-[#EADECF] flex items-center justify-center transition-colors cursor-pointer flex-shrink-0"
+          title="Đóng (ESC)">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="overflow-y-auto space-y-5 py-4 pr-1 text-sm text-[#4A4036] leading-relaxed flex-1">
+        <p class="bg-[#F5EFE6] border-l-4 border-[#0F763E] p-3.5 rounded-r-xl text-[#2D241E]">
+          Ý tưởng thiết kế Biểu trưng (Logo) Nhã Nam xuất phát từ sự giao thoa <strong>“Truyền thống + Hiện đại”</strong>:
+          lấy nền tảng lịch sử – văn hóa hào hùng của vùng đất Yên Thế Hạ làm điểm tựa cho khát vọng đổi mới, vươn lên
+          xây dựng quê hương văn minh, xanh – sạch – đẹp và bền vững.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div class="p-4 rounded-2xl bg-white border border-[#EADECF] shadow-sm">
+            <h4 class="font-bold text-[#0F763E] mb-1">1. Đồi Phủ huyền thoại (Nền tảng lịch sử)</h4>
+            <p class="text-xs sm:text-sm text-[#4A4036]">
+              Hình ảnh <strong>đồi Phủ</strong> vững chãi làm điểm tựa phía sau đại diện cho tinh thần quật cường, sức
+              sống bền bỉ và truyền thống đấu tranh giữ nước kiên cường của nhân dân Nhã Nam qua các thời kỳ lịch sử.
+            </p>
+            <button type="button" onclick="closeCommuneEmblemModal(); openDetailModal('vat-the-5');"
+              class="mt-2 inline-flex items-center gap-1 text-xs font-bold text-[#8B1E1E] hover:underline cursor-pointer">
+              Xem hồ sơ Di tích QGĐB Đồi Phủ →
+            </button>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white border border-[#EADECF] shadow-sm">
+            <h4 class="font-bold text-[#0F763E] mb-1">2. Tòa nhà cách điệu chữ “N” (Khát vọng hiện đại)</h4>
+            <p class="text-xs sm:text-sm text-[#4A4036]">
+              Khối kiến trúc vươn cao ở trung tâm được tạo hình từ chữ cái <strong>“N” (Nhã Nam)</strong> theo tỷ lệ
+              vàng chuẩn mực, biểu trưng cho sự năng động, đổi mới và khát vọng chinh phục những tầm cao mới.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white border border-[#EADECF] shadow-sm">
+            <h4 class="font-bold text-[#0F763E] mb-1">3. Chim hạc trống đồng (Di sản văn hóa ngàn đời)</h4>
+            <p class="text-xs sm:text-sm text-[#4A4036]">
+              Hình tượng <strong>cánh chim hạc</strong> (họa tiết trên trống đồng cổ) lao vút lên cao ở bên trái thể
+              hiện quyết tâm gìn giữ, kế thừa và phát huy bản sắc văn hóa ngàn đời của cha ông trong thời đại số.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white border border-[#EADECF] shadow-sm">
+            <h4 class="font-bold text-[#0F763E] mb-1">4. Cành Giáng Hương Đỏ (Phát triển bền vững)</h4>
+            <p class="text-xs sm:text-sm text-[#4A4036]">
+              Cành lá <strong>Giáng Hương Đỏ</strong> – loài cây đặc trưng được trồng phổ biến tại địa phương – ôm lấy
+              vòng tròn bên phải, hướng đến phát triển không gian văn minh, xanh – sạch – đẹp, giàu sức sống.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-[#8B1E1E] mb-2.5">
+            Sơ đồ phát triển ý tưởng (“Truyền thống + Hiện đại”) &amp; Thông điệp thiết kế gốc:
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <figure class="bg-white p-2.5 rounded-2xl border border-[#EADECF] shadow-sm">
+              <img src="./assets/images/bieu-trung-nha-nam/so-do-y-tuong-logo-nha-nam.jpg"
+                alt="Sơ đồ phát triển ý tưởng và bản vẽ kỹ thuật Biểu trưng Nhã Nam (Truyền thống + Hiện đại)"
+                loading="lazy"
+                onclick="openLightbox('./assets/images/bieu-trung-nha-nam/so-do-y-tuong-logo-nha-nam.jpg', 'Sơ đồ phát triển ý tưởng và bản vẽ kỹ thuật Biểu trưng xã Nhã Nam: Truyền thống + Hiện đại')"
+                class="w-full h-48 sm:h-56 object-contain rounded-xl cursor-zoom-in hover:opacity-95 transition" />
+              <figcaption class="text-xs text-center text-[#5C5248] mt-2 font-medium">
+                Sơ đồ phát triển ý tưởng “Truyền thống + Hiện đại” (Bấm vào ảnh để phóng to)
+              </figcaption>
+            </figure>
+
+            <figure class="bg-white p-2.5 rounded-2xl border border-[#EADECF] shadow-sm">
+              <img src="./assets/images/bieu-trung-nha-nam/thong-diep-thiet-ke-logo-nha-nam.jpg"
+                alt="Thông điệp thiết kế Biểu trưng xã Nhã Nam" loading="lazy"
+                onclick="openLightbox('./assets/images/bieu-trung-nha-nam/thong-diep-thiet-ke-logo-nha-nam.jpg', 'Thông điệp thiết kế Biểu trưng (Logo) xã Nhã Nam')"
+                class="w-full h-48 sm:h-56 object-contain rounded-xl cursor-zoom-in hover:opacity-95 transition" />
+              <figcaption class="text-xs text-center text-[#5C5248] mt-2 font-medium">
+                Thuyết minh thông điệp thiết kế Biểu trưng Nhã Nam (Bấm vào ảnh để phóng to)
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-[#EADECF] flex items-center justify-between gap-3 text-xs flex-shrink-0">
+        <span class="text-[#5C5248] italic hidden sm:inline">
+          “Thành công bắt đầu từ khát vọng – khát vọng xuất phát từ những hạt giống hy vọng đầu tiên.”
+        </span>
+        <button type="button" onclick="closeCommuneEmblemModal()"
+          class="ml-auto px-5 py-2.5 rounded-xl font-bold bg-[#8B1E1E] text-white hover:bg-[#6F1515] transition-colors cursor-pointer">
+          Đóng cửa sổ
         </button>
       </div>
     </div>

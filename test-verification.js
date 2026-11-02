@@ -23,7 +23,11 @@ const PRIVATE = ['THPT Nhã Nam', 'THPT NHÃ NAM', 'thptnhanam', 'Thuý Mến', 
   PRIVATE.forEach(w => console.assert(!text.includes(w), `${f} must not contain "${w}"`));
 });
 console.assert(fs.readFileSync('./index.html', 'utf8').includes('alt="Biểu trưng văn hóa xã Nhã Nam"'), 'Header must show the Nhã Nam cultural emblem');
+console.assert(fs.readFileSync('./index.html', 'utf8').includes('id="commune-emblem-modal"'), 'index.html must include commune-emblem-modal');
 console.assert(fs.existsSync('./assets/images/share/bieu-trung-nha-nam-160.png'), 'Emblem image must exist');
+console.assert(fs.existsSync('./assets/images/bieu-trung-nha-nam/logo-xa-nha-nam.jpg'), 'Official commune logo must exist');
+console.assert(fs.existsSync('./assets/images/bieu-trung-nha-nam/thong-diep-thiet-ke-logo-nha-nam.jpg'), 'Official commune logo design message must exist');
+console.assert(fs.existsSync('./assets/images/bieu-trung-nha-nam/so-do-y-tuong-logo-nha-nam.jpg'), 'Official commune logo idea diagram must exist');
 console.assert(SITE_CONFIG.facebookGroupStatusNote.includes('kiểm duyệt'), 'Facebook note must mention kiểm duyệt');
 console.log('✓ SITE_CONFIG verified');
 

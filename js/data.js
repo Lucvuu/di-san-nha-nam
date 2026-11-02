@@ -631,21 +631,25 @@ const TANGIBLE_HERITAGE_DATA = [
       "Đồn Nhã Nam",
       "Phủ Yên Thế",
       "Thực dân Pháp",
-      "Di tích quốc gia đặc biệt"
+      "Di tích quốc gia đặc biệt",
+      "Logo Nhã Nam",
+      "Biểu trưng xã Nhã Nam",
+      "Khát vọng vươn lên"
     ],
-    "overview": "Năm 1885 quân Pháp chiếm quả đồi này, dựng đồn Nhã Nam và tòa đại lý phủ Yên Thế để đàn áp nghĩa quân. Nay còn dấu nền móng đồn lũy.",
+    "overview": "Năm 1885 quân Pháp chiếm quả đồi này, dựng đồn Nhã Nam và tòa đại lý phủ Yên Thế để đàn áp nghĩa quân; nay là biểu tượng lịch sử trung tâm trên Biểu trưng (Logo) xã Nhã Nam.",
     "content": {
-      "intro": "Đồi Phủ là quả đồi khống chế ngã tư Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Từ năm 1885, quân Pháp chiếm đồi, dựng đồn Nhã Nam và đặt tòa đại lý phủ Yên Thế để đàn áp nghĩa quân. Địa điểm Ao ông Chấn Ký nằm trong khu vực này.",
+      "intro": "Đồi Phủ là quả đồi khống chế ngã tư Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Từ năm 1885, quân Pháp chiếm đồi, dựng đồn Nhã Nam và đặt tòa đại lý phủ Yên Thế để đàn áp nghĩa quân. Địa điểm Ao ông Chấn Ký nằm trong khu vực này. Với giá trị lịch sử tiêu biểu, đồi Phủ đã được chọn làm hình ảnh trung tâm trên Biểu trưng (Logo) xã Nhã Nam.",
       "historicalSignificance": [
         "**Đại bản doanh đàn áp của thực dân Pháp (1885):** Để đối phó với nghĩa quân của Đề Nắm và Đề Thám, thực dân Pháp đã thiết lập đồn bốt kiên cố trên đồi Phủ. Từ đây, các tướng chỉ huy Pháp đã xuất quân tấn công nhiều đồn lũy nghĩa quân nhưng liên tục chịu tổn thất nặng nề.",
         "**Địa điểm Ao ông Chấn Ký:** Địa điểm gắn liền với các trận phục kích, giao tranh dũng cảm của các nghĩa sĩ Yên Thế và phong trào cách mạng địa phương.",
-        "**Xếp hạng quốc gia đặc biệt:** Xếp hạng theo Quyết định số 548/QĐ-TTg ngày 10/05/2012 của Thủ tướng Chính phủ."
+        "**Xếp hạng quốc gia đặc biệt:** Xếp hạng theo Quyết định số 548/QĐ-TTg ngày 10/05/2012 của Thủ tướng Chính phủ.",
+        "**Biểu tượng cội nguồn trên Biểu trưng (Logo) xã Nhã Nam:** Trong thiết kế Biểu trưng (Logo) Nhã Nam với chủ đề “Khát vọng vươn lên (Truyền thống + Hiện đại)”, ngọn đồi Phủ được chọn làm điểm tựa nền tảng ở trung tâm – tượng trưng cho tinh thần quật cường, sức sống bền bỉ của vùng đất Nhã Nam hòa quyện cùng cánh chim hạc trống đồng, tòa nhà chữ N hiện đại và cành Giáng Hương Đỏ bền vững."
       ],
       "architecture": [
         "Khu vực còn dấu tích nền móng đồn lũy, bờ thành đất đá cuội ong cổ.",
-        "Hiện nay được quy hoạch tôn tạo thành công viên lịch sử rợp bóng cây xanh, phục vụ giáo dục truyền thống và sinh hoạt văn hóa của nhân dân địa phương."
+        "Hiện nay được quy hoạch tôn tạo thành công viên lịch sử rợp bóng cây xanh (trong đó cây Giáng Hương Đỏ là loài cây đặc trưng tại địa phương), phục vụ giáo dục truyền thống và sinh hoạt văn hóa của nhân dân."
       ],
-      "studyNote": "Di tích là chứng tích lịch sử không thể phai mờ về sự thất bại của chủ nghĩa thực dân trước lòng yêu nước bất diệt của nhân dân ta."
+      "studyNote": "Di tích là chứng tích lịch sử về ý chí bất khuất của nhân dân Yên Thế trước thực dân xâm lược, đồng thời là nguồn cảm hứng cốt lõi trong Biểu trưng (Logo) nhận diện văn hóa xã Nhã Nam."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=21.4444805,106.0971055&output=embed",
@@ -656,6 +660,18 @@ const TANGIBLE_HERITAGE_DATA = [
       {
         "url": "./assets/images/doi-phu-nha-nam/anh-dai-dien.jpg",
         "caption": "Đồi Phủ Nhã Nam – Nơi thực dân Pháp lập đồn bốt và tòa đại lý phủ Yên Thế năm 1885"
+      },
+      {
+        "url": "./assets/images/bieu-trung-nha-nam/logo-xa-nha-nam.jpg",
+        "caption": "Biểu trưng (Logo) xã Nhã Nam lấy ngọn đồi Phủ làm điểm tựa lịch sử trung tâm kết hợp cùng tòa nhà chữ N, chim hạc trống đồng và cành Giáng Hương Đỏ"
+      },
+      {
+        "url": "./assets/images/bieu-trung-nha-nam/thong-diep-thiet-ke-logo-nha-nam.jpg",
+        "caption": "Thông điệp thiết kế Biểu trưng (Logo) Nhã Nam: Đồi Phủ là biểu tượng cho tinh thần quật cường, sức sống bền bỉ và khát vọng vươn lên"
+      },
+      {
+        "url": "./assets/images/bieu-trung-nha-nam/so-do-y-tuong-logo-nha-nam.jpg",
+        "caption": "Sơ đồ phát triển ý tưởng và bản vẽ kỹ thuật Biểu trưng Nhã Nam theo triết lý “Truyền thống + Hiện đại”"
       }
     ],
     "hasRealPhoto": true,

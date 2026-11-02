@@ -1878,6 +1878,7 @@ function setupEventListeners() {
       closeQuizResultModal();
       if (typeof closeRelicsInventoryModal === 'function') closeRelicsInventoryModal();
       if (typeof closeLegalPrivacyModal === 'function') closeLegalPrivacyModal();
+      if (typeof closeCommuneEmblemModal === 'function') closeCommuneEmblemModal();
     } else if (e.key === 'Tab') {
       // Accessible Focus Trap for all open modal dialogs (WCAG 2.2 AA/AAA)
       const openModal = [
@@ -1885,6 +1886,7 @@ function setupEventListeners() {
         document.getElementById('heritage-detail-modal'),
         document.getElementById('relics-inventory-modal'),
         document.getElementById('legal-privacy-modal'),
+        document.getElementById('commune-emblem-modal'),
         document.getElementById('facebook-notice-modal'),
         document.getElementById('quiz-result-modal')
       ].find(m => m && !m.classList.contains('hidden'));
@@ -2048,6 +2050,25 @@ function openLegalPrivacyModal() {
 
 function closeLegalPrivacyModal() {
   const modal = document.getElementById('legal-privacy-modal');
+  if (modal && !modal.classList.contains('hidden')) {
+    modal.classList.add('hidden');
+    unlockScroll();
+    state.lastFocus?.focus?.({ preventScroll: true });
+    state.lastFocus = null;
+  }
+}
+
+function openCommuneEmblemModal() {
+  const modal = document.getElementById('commune-emblem-modal');
+  if (!modal) return;
+  state.lastFocus = document.activeElement;
+  modal.classList.remove('hidden');
+  lockScroll();
+  modal.querySelector('button')?.focus({ preventScroll: true });
+}
+
+function closeCommuneEmblemModal() {
+  const modal = document.getElementById('commune-emblem-modal');
   if (modal && !modal.classList.contains('hidden')) {
     modal.classList.add('hidden');
     unlockScroll();
