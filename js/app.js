@@ -107,15 +107,13 @@ function getActivePlaylist() {
       id: "nha-nam-trong-toi",
       title: "Nhã Nam trong tôi",
       artist: "Ca khúc truyền thống",
-      src: "./nha-nam-trong-toi.mp3",
-      fallbackSrc: "./assets/audio/nha-nam-trong-toi.mp3"
+      src: "./assets/audio/nha-nam-trong-toi.mp3"
     },
     {
       id: "thpt-nha-nam",
       title: "THPT Nhã Nam",
       artist: "Trường THPT Nhã Nam",
-      src: "./thpt-nha-nam.mp3",
-      fallbackSrc: "./assets/audio/thpt-nha-nam.mp3"
+      src: "./assets/audio/thpt-nha-nam.mp3"
     }
   ];
 }
@@ -137,17 +135,6 @@ function initAudioPlayerSettings() {
     // Tự động chuyển bài khi kết thúc và lặp lại danh sách (Playlist Loop)
     bgMusic.onended = () => {
       nextTrack(true);
-    };
-
-    // Xử lý nếu tải lỗi file gốc thì thử sang fallbackSrc
-    bgMusic.onerror = () => {
-      const track = playlist[currentTrackIndex];
-      if (track && track.fallbackSrc && bgMusic.src!== track.fallbackSrc) {
-        bgMusic.src = track.fallbackSrc;
-        if (state.isAudioPlaying) {
-          bgMusic.play().catch(e => console.warn('Audio fallback play error:', e));
-        }
-      }
     };
   }
 
@@ -1561,18 +1548,8 @@ async function toggleMusicPlayback() {
       updateMusicPlayerUI();
       showToastNotification(`Đang phát ca khúc: ${track.title} (${track.artist || 'THPT Nhã Nam'})`, 'success');
     } catch (err) {
-      console.warn('Playback error, trying fallback:', err);
-      if (track.fallbackSrc) {
-        bgMusic.src = track.fallbackSrc;
-        try {
-          await bgMusic.play();
-          state.isAudioPlaying = true;
-          updateMusicPlayerUI();
-          showToastNotification(`Đang phát ca khúc: ${track.title}`, 'success');
-        } catch (e2) {
-          showToastNotification('Chạm vào màn hình để bắt đầu phát nhạc', 'info');
-        }
-      }
+      console.warn('Playback error:', err);
+      showToastNotification('Chạm vào màn hình để bắt đầu phát nhạc', 'info');
     }
   }
 }
@@ -1598,13 +1575,6 @@ async function nextTrack(auto = false) {
       }
     } catch (err) {
       console.warn('Next track playback error:', err);
-      if (track.fallbackSrc) {
-        bgMusic.src = track.fallbackSrc;
-        bgMusic.play().then(() => {
-          state.isAudioPlaying = true;
-          updateMusicPlayerUI();
-        }).catch(e => console.warn(e));
-      }
     }
   }
 }

@@ -246,15 +246,13 @@ const MUSIC_PLAYLIST = [
     id: "nha-nam-trong-toi",
     title: "Nhã Nam trong tôi",
     artist: "Ca khúc truyền thống quê hương",
-    src: "./nha-nam-trong-toi.mp3",
-    fallbackSrc: "./assets/audio/nha-nam-trong-toi.mp3"
+    src: "./assets/audio/nha-nam-trong-toi.mp3"
   },
   {
     id: "thpt-nha-nam",
     title: "THPT Nhã Nam",
     artist: "Bùi Công Nam / Trường THPT Nhã Nam",
-    src: "./thpt-nha-nam.mp3",
-    fallbackSrc: "./assets/audio/thpt-nha-nam.mp3"
+    src: "./assets/audio/thpt-nha-nam.mp3"
   }
 ];
 
