@@ -30,3 +30,15 @@ scripts/*.json
 /luu-thuy-kim-tien.mp3
 /BANNER_THPT NHÃ NAM.png
 /Đôi_Bờ.mp3
+
+# Hồ sơ hợp đồng và đề xuất dự trù kinh phí: không bao giờ đưa lên git.
+Hồ sơ hợp đồng*/
+*[Hh]op dong*
+*[Hh]ợp đồng*
+*[Dd]u tru*
+*[Dd]ự trù*
+*[Kk]inh phi*
+*[Kk]inh phí*
+*[Dd]e nghi thanh toan*
+*[Tt]hanh ly hop dong*
+*[Bb]ien ban nghiem thu*
