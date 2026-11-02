@@ -112,7 +112,7 @@ Bức ảnh poster chứa mã QR chính thức đã được xuất ra tại `./
   - **Màu nền:** Giấy dó kem cổ điển (`#FAF6EE`).
   - **Khung viền đôi:** Viền ngoài Đỏ son truyền thống (`#8B1E1E`), viền trong mạ Vàng đồng (`#B48327`) với 4 góc gắn họa tiết đồng tâm.
   - **Tiêu đề cơ quan & đơn vị:**  
-    *TRƯỜNG THPT NHÃ NAM - THÀNH PHỐ BẮC NINH*  
+    *TRƯỜNG THPT NHÃ NAM - TỈNH BẮC NINH*  
     *CỔNG THÔNG TIN DI SẢN VĂN HÓA XÃ NHÃ NAM*
   - **Mã QR:** Thiết kế theo tông màu Đỏ son (`#8B1E1E`), chuẩn mã hóa phục hồi lỗi mức cao (`Error Correction Level H - 30%`).
   - **Logo trường ở tâm QR:** Đặt huy hiệu trường THPT Nhã Nam trang trọng trong khung bo tròn viền vàng đồng tại trung tâm mã QR.

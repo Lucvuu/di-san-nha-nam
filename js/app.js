@@ -36,7 +36,7 @@ function unlockScroll(force = false) {
 /**
  * ====================================================================
  * DI SẢN VĂN HÓA XÃ NHÃ NAM - XỬ LÝ ỨNG DỤNG CHÍNH (APPLICATION LOGIC)
- * Xã Nhã Nam, thành phố Bắc Ninh
+ * Xã Nhã Nam, tỉnh Bắc Ninh
  * Đơn vị khởi xướng & phối hợp: Trường THPT Nhã Nam
  * ====================================================================
  */
@@ -46,7 +46,7 @@ function unlockScroll(force = false) {
 // entry.1121841917 = câu "Chỗ nào trong nội dung chưa chính xác?".
 const FEEDBACK_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSd8dhq3sS6yTca3nX9z0V0CJdj3SkRFUXYmcUsmLCJvDf0rCA/viewform';
 const FEEDBACK_FORM_OPTIONS = {
-  'vat-the-1': 'Khu di tích đình - chùa Hả', 'vat-the-2': 'Chùa Tứ Giáp', 'vat-the-3': 'Chùa Đồng Điều',
+  'vat-the-1': 'Khu di tích đình – chùa Hả', 'vat-the-2': 'Chùa Tứ Giáp', 'vat-the-3': 'Chùa Đồng Điều',
   'vat-the-4': 'Đền Gốc Khế', 'vat-the-5': 'Đồi Phủ', 'vat-the-6': 'Đình làng Chuông',
   'vat-the-7': 'Chùa Nam Thiên (chùa Phố)', 'vat-the-8': 'Đền Đề Truật', 'vat-the-9': 'Nghĩa địa Pháp',
   'vat-the-10': 'Đền thờ Cả Trọng', 'vat-the-11': 'Đình Dương Lâm', 'vat-the-12': 'Đình Cầu Thượng',
@@ -166,7 +166,7 @@ function renderQuickSearchTags() {
   if (!container) return;
 
   const defaultTags = [
-    "Đình - chùa Hả",
+    "Đình – chùa Hả",
     "Chùa Tứ Giáp",
     "Thôn Đồng Điều",
     "Đền Gốc Khế",
@@ -315,11 +315,11 @@ function renderHeritageGrid(items) {
 
   if (items.length === 0) {
     gridContainer.innerHTML = '';
-    if (emptyState) emptyState.classList.remove('hidden');
+    if (emptyState) { emptyState.hidden = false; emptyState.classList.remove('hidden'); }
     return;
   }
 
-  if (emptyState) emptyState.classList.add('hidden');
+  if (emptyState) { emptyState.hidden = true; emptyState.classList.add('hidden'); }
 
   gridContainer.innerHTML = items.map(item => {
     const isVatThe = item.category === 'vat-the';
@@ -955,7 +955,7 @@ function initAudioGuideForModal(item) {
 
   // Xây dựng nội dung bài thuyết minh giàu cảm xúc và truyền cảm
   let story = `Chào mừng quý thầy cô và các bạn học sinh đến với ${item.title}. `;
-  story += `${item.categoryName} tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. `;
+  story += `${item.categoryName} tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. `;
   if (item.address) story += `Địa chỉ tại: ${item.address}. `;
   if (item.scope) story += `Phạm vi thực hành di sản tại: ${item.scope}. `;
   if (item.content && item.content.intro) story += `${item.content.intro} `;
@@ -1340,7 +1340,7 @@ function submitQuiz() {
   const answeredCount = Object.keys(state.quizAnswers).length;
 
   if (answeredCount < totalQuestions) {
-    showToastNotification(`Bạn hãy hoàn thành đủ ${totalQuestions} câu hỏi nhé! (Đã làm: ${answeredCount}/${totalQuestions})`, 'warning');
+    showToastNotification(`Còn ${totalQuestions - answeredCount} câu chưa chọn đáp án (đã làm ${answeredCount}/${totalQuestions}).`, 'warning');
     return;
   }
 
@@ -1352,13 +1352,13 @@ function submitQuiz() {
     if (userAnswer === q.correctAnswer) {
       score++;
       if (explanationEl) {
-        explanationEl.className = 'mt-3 pl-10 text-xs p-3 rounded-xl bg-green-50 text-green-800 leading-relaxed border border-green-200 block';
-        explanationEl.innerHTML = `<strong>Chính xác!</strong> ${escapeHtml(q.explanation)}`;
+        explanationEl.className = 'quiz-explain quiz-explain-ok block';
+        explanationEl.innerHTML = `<strong>Đúng.</strong> ${escapeHtml(q.explanation)}`;
       }
     } else {
       if (explanationEl) {
-        explanationEl.className = 'mt-3 pl-10 text-xs p-3 rounded-xl bg-red-50 text-red-800 leading-relaxed border border-red-200 block';
-        explanationEl.innerHTML = `<strong>Chưa đúng:</strong> Đáp án đúng là <em>"${escapeHtml(q.options[q.correctAnswer])}"</em>.<br>${escapeHtml(q.explanation)}`;
+        explanationEl.className = 'quiz-explain quiz-explain-wrong block';
+        explanationEl.innerHTML = `<strong>Chưa đúng.</strong> Đáp án: ${escapeHtml(q.options[q.correctAnswer])}.<br>${escapeHtml(q.explanation)}`;
       }
     }
   });
@@ -1383,11 +1383,8 @@ function showQuizResultModal(score, total) {
   if (resultContainer) {
     resultContainer.innerHTML = `
       <div class="text-center py-4">
-        <div class="mx-auto mb-3 flex items-center justify-center text-[#8B6914]">
-          ${ic(score === 5? 'trophy': 'star', 'w-8 h-8 text-[#8B6914]')}
-        </div>
         <h3 class="font-heritage-serif text-2xl font-bold text-[#8B1E1E] mb-2">${badgeTitle}</h3>
-        <div class="text-4xl font-extrabold text-[#2A2521] mb-2">
+        <div class="font-heritage-serif text-4xl font-bold text-[#2A2521] tabular-nums mb-2">
           ${score} / ${total}
         </div>
         <p class="text-sm text-[#5C5248] max-w-sm mx-auto mb-6 leading-relaxed">
@@ -2121,7 +2118,7 @@ function resetToCommuneMap() {
     directionsText: "Chỉ đường từ vị trí của bạn đến trung tâm xã Nhã Nam (UBND xã Nhã Nam)"
   };
 
-  updateMapFrame(defaultMap.embedUrl, 'Bản đồ tổng thể vùng di sản xã Nhã Nam, thành phố Bắc Ninh', defaultMap.directionsUrl, 'Mở Google Maps chỉ đường ↗');
+  updateMapFrame(defaultMap.embedUrl, 'Bản đồ tổng thể vùng di sản xã Nhã Nam, tỉnh Bắc Ninh', defaultMap.directionsUrl, 'Mở Google Maps chỉ đường ↗');
 
   // 3. Khôi phục các nút dẫn đường
   const fromUserBtn = document.getElementById('route-from-user-directions-btn');

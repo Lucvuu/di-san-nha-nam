@@ -933,3 +933,24 @@ p, blockquote, figcaption {
   color: var(--color-heritage-red);
   white-space: nowrap;
 }
+
+/* Thẻ tuyến: thẻ đang chọn hiện "Đang xem trên bản đồ", thẻ khác hiện gợi ý bấm */
+.heritage-route-card.active .route-hint-pill { display: none; }
+@media (max-width: 639px) { .route-hint-pill { display: none; } }
+
+/* Lời giải thích trắc nghiệm: kẻ lề trái, không hộp màu */
+.quiz-explain {
+  margin-top: 0.75rem;
+  margin-left: 2.5rem;
+  padding: 0.25rem 0 0.25rem 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #4A4036;
+  border-left: 2px solid;
+}
+.quiz-explain-ok { border-color: #4D7C4F; }
+.quiz-explain-ok strong { color: #3F6B41; }
+.quiz-explain-wrong { border-color: #8B1E1E; }
+.quiz-explain-wrong strong { color: #8B1E1E; }
+
+#quiz-section input[type="radio"] { accent-color: #8B1E1E; }

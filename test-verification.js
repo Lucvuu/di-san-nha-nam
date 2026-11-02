@@ -14,7 +14,7 @@ vm.runInThisContext(utilsCode);
 
 console.log('--- 1. TESTING SITE_CONFIG & ADMINISTRATIVE NORMALIZATION ---');
 console.assert(SITE_CONFIG.commune === 'Xã Nhã Nam', 'Commune should be Xã Nhã Nam');
-console.assert(SITE_CONFIG.province === 'Thành phố Bắc Ninh' || SITE_CONFIG.city.toLowerCase().includes('bắc ninh'), 'Province/City should be thành phố Bắc Ninh');
+console.assert(SITE_CONFIG.province === 'Tỉnh Bắc Ninh' || SITE_CONFIG.city.toLowerCase().includes('bắc ninh'), 'Province should be tỉnh Bắc Ninh');
 console.assert(SITE_CONFIG.adminRole === 'Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam', 'adminRole should be Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam');
 console.assert(SITE_CONFIG.adminName.includes('Dương Thị Thuý Mến'), 'adminName must include Cô Dương Thị Thuý Mến');
 console.assert(SITE_CONFIG.adminPhone === '0985.449.123', 'adminPhone should be 0985.449.123 (Cô Dương Thị Thuý Mến)');
@@ -111,9 +111,9 @@ INTANGIBLE_HERITAGE_DATA.forEach((item, i) => {
 
 console.log('--- 5. TESTING VIETNAMESE ACCENT-INSENSITIVE SEARCH ---');
 const testCases = [
-  { query: 'dinh ha', expectedMatch: 'Đình - Chùa Hả' },
-  { query: 'chua ha', expectedMatch: 'Đình - Chùa Hả' },
-  { query: 'de nam', expectedMatch: 'Đình - Chùa Hả' },
+  { query: 'dinh ha', expectedMatch: 'Đình – Chùa Hả' },
+  { query: 'chua ha', expectedMatch: 'Đình – Chùa Hả' },
+  { query: 'de nam', expectedMatch: 'Đình – Chùa Hả' },
   { query: 'dong dieu', expectedMatch: 'Thôn Đồng Điều' },
   { query: 'chi bo dang', expectedMatch: 'Thôn Đồng Điều' },
   { query: 'de truat', expectedMatch: 'Đền Đề Truật' },
