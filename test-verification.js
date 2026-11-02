@@ -17,8 +17,8 @@ console.assert(SITE_CONFIG.commune === 'Xã Nhã Nam', 'Commune should be Xã Nh
 console.assert(SITE_CONFIG.province === 'Tỉnh Bắc Ninh' || SITE_CONFIG.city.toLowerCase().includes('bắc ninh'), 'Province should be tỉnh Bắc Ninh');
 // Bản dự thi (Văn bản 3437): trang web không ghi tên trường, tên thầy cô, số điện thoại, logo trường
 const PRIVATE = ['THPT Nhã Nam', 'THPT NHÃ NAM', 'thptnhanam', 'Thuý Mến', 'Thúy Mến', 'cô Mến', 'Bùi Văn Công', 'Bùi Công', 'thầy Công',
-  '0985', '0982', '0962', 'zalo.me', 'logo-160', 'logo-thpt'];
-['index.html', 'js/data.js', 'js/app.js', 'js/utils.js', 'js/doc-texts.js'].forEach(f => {
+  '0985', '0982', '0962', 'zalo.me', 'logo-160', 'logo-thpt', 'hành phố Bắc Ninh'];
+['index.html', 'js/data.js', 'js/app.js', 'js/utils.js', 'js/doc-texts.js', 'package.json', 'README.md'].forEach(f => {
   const text = fs.readFileSync('./' + f, 'utf8');
   PRIVATE.forEach(w => console.assert(!text.includes(w), `${f} must not contain "${w}"`));
 });
