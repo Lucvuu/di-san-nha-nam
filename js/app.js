@@ -37,7 +37,7 @@ function unlockScroll(force = false) {
  * ====================================================================
  * DI SẢN VĂN HÓA XÃ NHÃ NAM - XỬ LÝ ỨNG DỤNG CHÍNH (APPLICATION LOGIC)
  * Xã Nhã Nam, tỉnh Bắc Ninh
- * Đơn vị khởi xướng & phối hợp: Trường THPT Nhã Nam
+ * Dự án nghiên cứu khoa học của học sinh THPT
  * ====================================================================
  */
 
@@ -136,15 +136,6 @@ function initAudioPlayerSettings() {
  * Hiển thị các thông tin cấu hình từ SITE_CONFIG lên giao diện
  */
 function renderConfigElements() {
-  const adminNameEls = document.querySelectorAll('.site-admin-name');
-  adminNameEls.forEach(el => el.textContent = SITE_CONFIG.adminName);
-
-  const adminPhoneEls = document.querySelectorAll('.site-admin-phone');
-  adminPhoneEls.forEach(el => el.textContent = SITE_CONFIG.adminPhone);
-
-  const adminRoleEls = document.querySelectorAll('.site-admin-role');
-  adminRoleEls.forEach(el => el.textContent = SITE_CONFIG.adminRole);
-
   const fbGroupNoteEls = document.querySelectorAll('.facebook-moderation-badge');
   fbGroupNoteEls.forEach(el => el.textContent = SITE_CONFIG.facebookGroupStatusNote);
 }
@@ -444,7 +435,7 @@ function openDetailModal(itemId) {
 
         ${item.content.studyNote? `
           <aside class="modal-aside">
-            <div class="eyebrow mb-1">Ghi chú học tập <span aria-hidden="true">·</span> Trường THPT Nhã Nam</div>
+            <div class="eyebrow mb-1">Ghi chú học tập</div>
             <p>${escapeHtml(item.content.studyNote)}</p>
           </aside>
         `: ''}
@@ -481,7 +472,7 @@ function openDetailModal(itemId) {
 
         ${item.content.preservationValue? `
           <aside class="modal-aside">
-            <div class="eyebrow mb-1">Bảo tồn và giáo dục <span aria-hidden="true">·</span> Trường THPT Nhã Nam</div>
+            <div class="eyebrow mb-1">Bảo tồn và giáo dục</div>
             <p>${escapeHtml(item.content.preservationValue)}</p>
           </aside>
         `: ''}
@@ -569,7 +560,7 @@ function openDetailModal(itemId) {
                   <span>Bản ghi âm thuyết minh</span>
                   <span class="eyebrow eyebrow-muted whitespace-nowrap">Âm thanh gốc</span>
                 </div>
-                <div id="modal-audio-current-title" class="text-xs text-[#5C5248] mt-1 font-medium">${escapeHtml(item.audioFile.title)} (tư liệu thực tế do Trường THPT Nhã Nam thực hiện)</div>
+                <div id="modal-audio-current-title" class="text-xs text-[#5C5248] mt-1 font-medium">${escapeHtml(item.audioFile.title)} (tư liệu thực tế do Ban biên tập thực hiện)</div>
               </div>
             </div>
             <audio id="modal-real-audio" onplay="pauseModalMedia('real'); this.volume = 1.0;" controls class="h-10 w-full sm:w-72 max-w-full rounded-xl shadow-xs" preload="none">
@@ -619,7 +610,7 @@ function openDetailModal(itemId) {
           </div>
           <div>
             <div class="font-bold text-[#8B1E1E]">Bản ghi âm thuyết minh thực tế</div>
-            <div class="text-[11px] text-[#5C5248] mt-0.5">Thầy cô và học sinh Trường THPT Nhã Nam đang ghi âm bản thuyết minh cho mục này.</div>
+            <div class="text-[11px] text-[#5C5248] mt-0.5">Ban biên tập đang ghi âm bản thuyết minh cho mục này.</div>
           </div>
         </div>
       `}
@@ -723,7 +714,7 @@ function openDetailModal(itemId) {
           <div class="photo-pending-frame rounded-2xl p-8 text-center">
             <div class="mb-2 text-[#8B1E1E] flex justify-center">${ic('landmark','w-8 h-8')}</div>
             <p class="font-heritage-serif font-bold text-[#8B1E1E]">Ảnh tư liệu thực tế tại di tích đang được Ban biên tập cập nhật</p>
-            <p class="text-xs text-[#786C5E] mt-1">Thầy cô, học sinh có ảnh chụp thật tại di tích xin gửi qua Zalo cô Dương Thị Thuý Mến 0985.449.123 hoặc thầy Công 0982.386.959.</p>
+            <p class="text-xs text-[#786C5E] mt-1">Thầy cô, học sinh có ảnh chụp thật tại di tích xin gửi qua phiếu góp ý ẩn danh ở cuối trang.</p>
           </div>
         `}
 
@@ -908,7 +899,7 @@ function loadDocTexts() {
   if (!loadDocTexts.promise) {
     loadDocTexts.promise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = './js/doc-texts.js?v=3.2.0';
+      s.src = './js/doc-texts.js?v=3.5.0';
       s.onload = () => resolve(window.DOC_TEXTS || {});
       s.onerror = () => { loadDocTexts.promise = null; reject(); };
       document.head.appendChild(s);
@@ -979,7 +970,7 @@ function switchModalAudioTrack(src, title, btnEl) {
     audio.play().catch(e => console.warn('Audio play prevented:', e));
   }
   if (titleEl) {
-    titleEl.textContent = `${title} (tư liệu thực tế do Trường THPT Nhã Nam thực hiện)`;
+    titleEl.textContent = `${title} (tư liệu thực tế do Ban biên tập thực hiện)`;
   }
   document.querySelectorAll('.audio-track-pill').forEach(btn => {
     btn.classList.remove('bg-[#8B1E1E]', 'text-white', 'border-[#8B1E1E]', 'shadow-xs', 'is-active');
@@ -1060,7 +1051,7 @@ function initAudioGuideForModal(item) {
     stopAudioGuideNarration();
   }
 
-  // Toàn bộ dự án ưu tiên 100% bản ghi âm tư liệu thực tế của Trường THPT Nhã Nam
+  // Toàn bộ dự án ưu tiên 100% bản ghi âm tư liệu thực tế của Ban biên tập
   // Tuyệt đối không kích hoạt giọng đọc máy tự động ngoài (Web Speech API)
   return;
 
@@ -1370,7 +1361,7 @@ function showFacebookComingSoonModal() {
     modal.querySelector('button, a')?.focus({ preventScroll: true });
   } else {
     showToastNotification(
-      'Nhóm Facebook đang được Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam (cô Dương Thị Thuý Mến, thầy Bùi Văn Công) thiết lập. Đường dẫn sẽ sớm được cập nhật!',
+      'Nhóm Facebook đang được Ban biên tập dự án di sản văn hóa xã Nhã Nam thiết lập. Đường dẫn sẽ sớm được cập nhật!',
       'info',
       5000
     );
@@ -1645,7 +1636,7 @@ const LUU_THUY_KIM_TIEN_NOTES = [
 
 /**
  * ====================================================================
- * TRÌNH PHÁT NHẠC CA KHÚC QUÊ HƯƠNG ("NHÃ NAM TRONG TÔI" & "THPT NHÃ NAM")
+ * TRÌNH PHÁT NHẠC CA KHÚC QUÊ HƯƠNG ("NHÃ NAM TRONG TÔI")
  * ====================================================================
  */
 
@@ -1886,12 +1877,14 @@ function setupEventListeners() {
       closeFacebookNoticeModal();
       closeQuizResultModal();
       if (typeof closeRelicsInventoryModal === 'function') closeRelicsInventoryModal();
+      if (typeof closeLegalPrivacyModal === 'function') closeLegalPrivacyModal();
     } else if (e.key === 'Tab') {
       // Accessible Focus Trap for all open modal dialogs (WCAG 2.2 AA/AAA)
       const openModal = [
         document.getElementById('lightbox-modal'),
         document.getElementById('heritage-detail-modal'),
         document.getElementById('relics-inventory-modal'),
+        document.getElementById('legal-privacy-modal'),
         document.getElementById('facebook-notice-modal'),
         document.getElementById('quiz-result-modal')
       ].find(m => m && !m.classList.contains('hidden'));
@@ -2036,6 +2029,25 @@ function openRelicsInventoryModal(targetGroupId = null) {
 
 function closeRelicsInventoryModal() {
   const modal = document.getElementById('relics-inventory-modal');
+  if (modal && !modal.classList.contains('hidden')) {
+    modal.classList.add('hidden');
+    unlockScroll();
+    state.lastFocus?.focus?.({ preventScroll: true });
+    state.lastFocus = null;
+  }
+}
+
+function openLegalPrivacyModal() {
+  const modal = document.getElementById('legal-privacy-modal');
+  if (!modal) return;
+  state.lastFocus = document.activeElement;
+  modal.classList.remove('hidden');
+  lockScroll();
+  modal.querySelector('button')?.focus({ preventScroll: true });
+}
+
+function closeLegalPrivacyModal() {
+  const modal = document.getElementById('legal-privacy-modal');
   if (modal && !modal.classList.contains('hidden')) {
     modal.classList.add('hidden');
     unlockScroll();
