@@ -113,7 +113,7 @@ function getActivePlaylist() {
 }
 
 /**
- * Khởi tạo thiết lập âm lượng và danh sách phát nhạc (Playlist Loop)
+ * Khởi tạo âm lượng; trang chỉ có một ca khúc nên phát lặp lại
  */
 function initAudioPlayerSettings() {
   const bgMusic = document.getElementById('bg-music');
@@ -1610,10 +1610,10 @@ function updateMusicPlayerUI() {
     }
   });
 
-  const btn = document.getElementById('sound-toggle-btn');
-  if (btn) {
-    btn.title = state.isAudioPlaying? `Tạm dừng: ${track.title}`: `Phát bài: ${track.title}`;
-  }
+  document.querySelectorAll('[onclick="toggleMusicPlayback()"]').forEach(btn => {
+    btn.title = state.isAudioPlaying ? `Tạm dừng: ${track.title}` : `Phát bài: ${track.title}`;
+    btn.setAttribute('aria-pressed', state.isAudioPlaying);
+  });
 }
 
 /**
