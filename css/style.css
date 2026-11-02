@@ -914,3 +914,22 @@ p, blockquote, figcaption {
   max-width: 46ch;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
+
+/* Đoạn mở đầu hero: canh đều hai bên, nhấn mạnh mốc và tên riêng */
+.hero-lede {
+  text-wrap: pretty;
+  hyphens: none;
+}
+
+@media (min-width: 640px) {
+  .hero-lede {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+}
+
+.hero-em {
+  font-weight: 600;
+  color: var(--color-heritage-red);
+  white-space: nowrap;
+}
