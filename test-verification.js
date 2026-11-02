@@ -360,6 +360,26 @@ try {
   throw e;
 }
 
+console.log('--- 12. POST-SURVEY: VISIT GUIDE, MINI-QUIZ, MAPS, IMAGE WEIGHT ---');
+const surveyItems = [...TANGIBLE_HERITAGE_DATA, ...INTANGIBLE_HERITAGE_DATA];
+// Đình Hả cố ý tra theo tên: tọa độ trong file GG map trỏ nhầm sang Thiên Bảo Linh Ứng (xem mục route ở trên).
+const okPlace = v => /^-?\d+\.\d+,-?\d+\.\d+$/.test(v || '') || (v || '').startsWith('Đình Hả,');
+surveyItems.forEach(item => {
+  const g = VISIT_GUIDES[item.id];
+  console.assert(g && Array.isArray(g.see) && g.see.length > 0, `${item.id} must have a visit guide`);
+  const qs = buildMiniQuiz(item);
+  console.assert(qs.length >= 1 && qs.length <= 2, `${item.id} must have 1-2 mini-quiz questions`);
+  qs.forEach(q => console.assert(Number.isInteger(q.answer) && q.answer >= 0 && q.answer < q.options.length && new Set(q.options).size === q.options.length, `${item.id} mini-quiz answer/options invalid: ${q.q}`));
+  const d = new URL(item.map.directionsUrl), e = new URL(item.map.embedUrl);
+  console.assert(d.pathname === '/maps/dir/' && d.searchParams.get('api') === '1' && okPlace(d.searchParams.get('destination')), `${item.id} directionsUrl must be api=1 with a precise destination`);
+  console.assert(okPlace(e.searchParams.get('q')) && e.searchParams.get('output') === 'embed', `${item.id} embedUrl must use a precise place`);
+  const c = item.content;
+  console.assert((c.architecture || c.ritualsAndActivities || c.practice || []).length > 0, `${item.id} second content list must not be empty`);
+});
+const heavy = execSync('git ls-files assets/images', { encoding: 'utf8' }).split(/\r?\n/).filter(f => f && fs.existsSync(f) && fs.statSync(f).size > 180 * 1024);
+console.assert(heavy.length === 0, `Images over 180KB: ${heavy.join(', ')}`);
+console.log(`  ✓ ${surveyItems.length} hồ sơ: cẩm nang, câu hỏi nhanh, bản đồ chính xác; 0 ảnh trên 180KB`);
+
 console.log('\n======================================================');
 console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE, APP INIT & SECURITY TESTS PASSED! 🎉');
 console.log('======================================================\n');

@@ -419,7 +419,7 @@ function openDetailModal(itemId) {
 
         <div>
           <h4 class="modal-subhead">
-            Giá trị lịch sử
+            Giá trị lịch sử và câu chuyện
           </h4>
           <ul class="modal-list">
             ${(item.content.historicalSignificance || []).map(point => `
@@ -430,7 +430,7 @@ function openDetailModal(itemId) {
 
         <div>
           <h4 class="modal-subhead">
-            Kiến trúc và di vật
+            Kiến trúc và điểm nhấn
           </h4>
           <ul class="modal-list">
             ${(item.content.architecture || []).map(point => `
@@ -470,7 +470,7 @@ function openDetailModal(itemId) {
             Nghi thức và thực hành
           </h4>
           <ul class="modal-list">
-            ${(item.content.ritualsAndActivities || []).map(point => `
+            ${(item.content.ritualsAndActivities || item.content.practice || []).map(point => `
               <li class="leading-relaxed">${formatMarkdownBold(point)}</li>
             `).join('')}
           </ul>
@@ -491,7 +491,7 @@ function openDetailModal(itemId) {
   container.innerHTML = `
     <!-- Thanh thao tác trên modal -->
     <div class="flex items-center justify-between pb-4 mb-6 border-b border-[rgba(44,30,24,0.1)]">
-      <p class="eyebrow">${escapeHtml(item.categoryName)} <span aria-hidden="true">·</span> <span class="eyebrow-muted">Mã ${item.id}</span></p>
+      <p class="eyebrow">${escapeHtml(item.categoryName)} <span class="hidden sm:inline"><span aria-hidden="true">·</span> <span class="eyebrow-muted">Mã ${item.id}</span></span></p>
 
       <div class="flex items-center gap-1">
         <button
@@ -648,13 +648,24 @@ function openDetailModal(itemId) {
         ${section3Html}
       </section>
 
+      ${renderVisitGuide(item)}
+
+      ${renderMiniQuiz(item)}
+
       <!-- PHẦN 4: CHỈ DẪN ĐI ĐẾN ĐÓ BẰNG GOOGLE MAP -->
       <section class="border-b border-[rgba(44,30,24,0.1)] pb-5">
-        <h3 class="modal-section-title">Chỉ dẫn đường đi bằng Google Maps</h3>
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <h3 class="modal-section-title !mb-0">Chỉ dẫn đường đi bằng Google Maps</h3>
+          <div class="map-view-toggle" role="group" aria-label="Kiểu bản đồ">
+            <button type="button" class="is-active" aria-pressed="true" onclick="setModalMapView(this, false)">Bản đồ</button>
+            <button type="button" aria-pressed="false" onclick="setModalMapView(this, true)">Ảnh vệ tinh</button>
+          </div>
+        </div>
         
         <div class="rounded-lg overflow-hidden border border-[rgba(139,30,30,0.12)] bg-[#F5EFE6]">
           <div class="relative w-full h-72 sm:h-80 bg-gray-200">
-            <iframe 
+            <iframe
+              id="modal-map-frame"
               src="${item.map.embedUrl}" 
               width="100%" 
               height="100%" 
@@ -727,18 +738,8 @@ function openDetailModal(itemId) {
       <section class="border-t border-[rgba(44,30,24,0.1)] pt-5">
         <h3 class="modal-section-title">Tài liệu giới thiệu</h3>
         <div>
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-            <div>
-              <div class="font-semibold text-[#2A2521]">${escapeHtml(item.docFile.title)}</div>
-              <div class="text-xs text-[#5C5248]">${escapeHtml(item.docFile.fileName)} • ${escapeHtml(item.docFile.size || '')}</div>
-            </div>
-            <a href="${item.docFile.path}" download="${escapeHtml(item.docFile.fileName)}"
-              class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold text-sm text-white bg-[#8B1E1E] hover:bg-[#6F1515] shadow-sm transition-colors">
-              ${ic('download')} Tải file chữ giới thiệu (.docx)
-            </a>
-          </div>
-          <h4 class="font-semibold text-[#2A2521] mb-2 flex items-center gap-2">${ic('book','w-4 h-4 text-[#8B1E1E]')} Nội dung chi tiết về di tích</h4>
-          <div id="doc-fulltext" class="doc-fulltext bg-[#FFFCF7] rounded-lg border border-[rgba(139,30,30,0.12)] p-4 sm:p-5 max-h-[32rem] overflow-y-auto text-sm leading-relaxed text-[#2A2521]">
+          <p class="text-xs text-[#786C5E] mb-3">Toàn văn: ${escapeHtml(item.docFile.title)}</p>
+          <div id="doc-fulltext" class="doc-fulltext text-[0.9375rem] leading-relaxed text-[#2A2521]">
             <p class="text-[#786C5E] italic">Đang tải nội dung…</p>
           </div>
 
@@ -774,6 +775,10 @@ function openDetailModal(itemId) {
             </div>
           </div>
           ` : ''}
+          <div class="mt-5 pt-4 border-t border-[rgba(44,30,24,0.1)] flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#786C5E]">
+            <span>Dành cho thầy cô cần lấy tư liệu:</span>
+            <a href="${item.docFile.path}" download="${escapeHtml(item.docFile.fileName)}" class="spec-action !ml-0 inline-flex items-center gap-1">${ic('download', 'w-3.5 h-3.5')} Tải file Word (${escapeHtml(item.docFile.size || '.docx')})</a>
+          </div>
         </div>
       </section>
       `: ''}
@@ -790,6 +795,91 @@ function openDetailModal(itemId) {
   lockScroll();
   container.querySelector('button[onclick="closeDetailModal()"]')?.focus({ preventScroll: true });
   initAudioGuideForModal(item);
+}
+
+function renderVisitGuide(item) {
+  const g = (typeof VISIT_GUIDES !== 'undefined') && VISIT_GUIDES[item.id];
+  if (!g) return '';
+  return `
+      <section class="visit-guide border-b border-[rgba(44,30,24,0.1)] pb-6">
+        <h3 class="modal-section-title">Cẩm nang tham quan</h3>
+        <dl class="spec-table">
+          ${g.when ? `<div><dt>Thời điểm nên đến</dt><dd>${escapeHtml(g.when)}</dd></div>` : ''}
+          <div><dt>Xem tận nơi</dt><dd><ul class="modal-list !text-[0.9375rem]">${g.see.map(t => `<li>${escapeHtml(t)}</li>`).join('')}</ul></dd></div>
+        </dl>
+      </section>`;
+}
+
+/** Câu hỏi nhanh cuối hồ sơ: 1 câu tự sinh từ dữ liệu (cấp xếp hạng / loại hình) + câu bổ sung nếu có. */
+function buildMiniQuiz(item) {
+  const all = [...TANGIBLE_HERITAGE_DATA, ...INTANGIBLE_HERITAGE_DATA];
+  const name = item.shortTitle || item.title;
+  const qs = [];
+  if (item.category === 'vat-the') {
+    const ranks = ['Di tích quốc gia đặc biệt', 'Di tích cấp quốc gia', 'Di tích cấp tỉnh', 'Chỉ có trong danh mục kiểm kê'];
+    if (ranks.includes(item.badge)) qs.push({ q: `${name} được xếp hạng ở cấp nào?`, options: ranks, answer: ranks.indexOf(item.badge), explain: item.decision || '' });
+  } else {
+    const others = [...new Set(all.filter(x => x.category !== 'vat-the' && x.badge !== item.badge).map(x => x.badge))].slice(0, 3);
+    const opts = [item.badge, ...others];
+    const shift = item.id.length % opts.length;
+    const rotated = opts.slice(shift).concat(opts.slice(0, shift));
+    qs.push({ q: `${name} thuộc loại hình di sản nào?`, options: rotated, answer: rotated.indexOf(item.badge), explain: item.overview || '' });
+  }
+  const extra = (typeof MINI_QUIZ_EXTRA !== 'undefined' && MINI_QUIZ_EXTRA[item.id]) || [];
+  return extra.length > 1 ? extra.slice(0, 2) : [...extra, ...qs].slice(0, 2);
+}
+
+function renderMiniQuiz(item) {
+  const qs = buildMiniQuiz(item);
+  if (!qs.length) return '';
+  state.miniQuiz = qs;
+  return `
+      <section class="mini-quiz border-b border-[rgba(44,30,24,0.1)] pb-6">
+        <h3 class="modal-section-title">Tự kiểm tra nhanh</h3>
+        ${qs.map((q, i) => `
+          <fieldset class="mini-quiz-q">
+            <legend>${i + 1}. ${escapeHtml(q.q)}</legend>
+            <div class="mini-quiz-options">
+              ${q.options.map((o, j) => `<button type="button" onclick="answerMiniQuiz(${i}, ${j}, this)">${escapeHtml(o)}</button>`).join('')}
+            </div>
+            <p class="mini-quiz-feedback" id="mini-quiz-fb-${i}" aria-live="polite" hidden></p>
+          </fieldset>`).join('')}
+      </section>`;
+}
+
+function answerMiniQuiz(i, j, btn) {
+  const q = state.miniQuiz && state.miniQuiz[i];
+  if (!q) return;
+  const buttons = btn.parentElement.querySelectorAll('button');
+  buttons.forEach((b, k) => {
+    b.disabled = true;
+    if (k === q.answer) b.classList.add('is-correct');
+    else if (k === j) b.classList.add('is-wrong');
+  });
+  const fb = document.getElementById(`mini-quiz-fb-${i}`);
+  const ok = j === q.answer;
+  fb.className = `quiz-explain mini-quiz-feedback ${ok ? 'quiz-explain-ok' : 'quiz-explain-wrong'}`;
+  fb.innerHTML = `<strong>${ok ? 'Đúng.' : 'Chưa đúng.'}</strong> ${ok ? '' : `Đáp án: ${escapeHtml(q.options[q.answer])}. `}${escapeHtml(q.explain)}`;
+  fb.hidden = false;
+}
+
+/** 21 di tích kiểm kê chưa có tọa độ riêng: tra theo tên kèm "Nhã Nam, Bắc Ninh". */
+const inventoryQuery = name => encodeURIComponent(`${name}, Nhã Nam, Bắc Ninh`);
+const inventoryDirectionsUrl = name => `https://www.google.com/maps/dir/?api=1&destination=${inventoryQuery(name)}`;
+
+function showInventoryRelicOnMap(name) {
+  closeRelicsInventoryModal();
+  updateMapFrame(`https://www.google.com/maps?q=${inventoryQuery(name)}&z=16&output=embed`, `Vị trí: ${name} (di tích trong danh mục kiểm kê)`, inventoryDirectionsUrl(name), `Chỉ đường tới ${name} ↗`);
+  document.getElementById('heritage-map-section')?.scrollIntoView({ behavior: 'smooth' });
+}
+
+function setModalMapView(btn, satellite) {
+  const frame = document.getElementById('modal-map-frame');
+  if (!frame) return;
+  const base = frame.dataset.base || frame.src;
+  frame.dataset.base = base;
+  frame.src = satellite ? base.replace('&output=embed', '&t=k&z=18&output=embed') : base;
+  btn.parentElement.querySelectorAll('button').forEach(b => { const on = b === btn; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', on); });
 }
 
 /**
@@ -839,13 +929,17 @@ function renderDocFullText(fileName) {
       </div>
     `;
 
-    el.innerHTML = headerHtml + paras.map(t => {
+    let html = '', list = [];
+    const flush = () => { if (list.length) { html += `<ul class="modal-list mb-3">${list.join('')}</ul>`; list = []; } };
+    paras.forEach(t => {
       const letters = t.replace(/[^\p{L}]/gu, '');
       const isHeading = t.length < 140 && letters.length > 3 && (letters === letters.toUpperCase() || /^[IVX]+\.\s/.test(t) || /^\d+\.\s/.test(t));
-      if (isHeading) return `<h5 class="font-bold text-[#8B1E1E] mt-4 mb-1">${escapeHtml(t)}</h5>`;
-      if (/^[•\-+]\s/.test(t)) return `<p class="pl-4 -indent-3 mb-1.5">${escapeHtml(t)}</p>`;
-      return `<p class="mb-3 text-justify">${escapeHtml(t)}</p>`;
-    }).join('');
+      if (/^[•\-+]\s/.test(t)) { list.push(`<li>${escapeHtml(t.replace(/^[•\-+]\s+/, ''))}</li>`); return; }
+      flush();
+      html += isHeading ? `<h5 class="modal-subhead mt-5">${escapeHtml(t)}</h5>` : `<p class="mb-3">${escapeHtml(t)}</p>`;
+    });
+    flush();
+    el.innerHTML = headerHtml + html;
   }).catch(() => {
     const el = box();
     if (el) el.innerHTML = '<p class="text-[#786C5E] italic">Không tải được nội dung. Vui lòng tải file tài liệu ở trên.</p>';
@@ -1198,6 +1292,19 @@ function updateLightboxContent() {
   if (captionEl) captionEl.textContent = current.caption || '';
   if (counterEl) counterEl.textContent = `${state.lightboxIndex + 1} / ${state.lightboxImages.length}`;
 }
+
+(function enableLightboxSwipe() {
+  const box = document.getElementById('lightbox-modal');
+  if (!box) return;
+  let x0 = null, y0 = null;
+  box.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  box.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    x0 = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) (dx < 0 ? nextLightboxImage : prevLightboxImage)();
+  }, { passive: true });
+})();
 
 function prevLightboxImage() {
   if (state.lightboxImages.length <= 1) return;
@@ -1909,8 +2016,9 @@ function renderRelicsInventoryModalContent(keyword = '') {
                     Xem hồ sơ ${ic('arrow-right','w-3.5 h-3.5')}
                   </button>
                 `: `
-                  <span class="text-[10px] text-gray-500 bg-gray-100 px-2 py-0.5 rounded-md whitespace-nowrap flex-shrink-0">
-                    Trong danh mục
+                  <span class="flex items-center gap-3 flex-shrink-0 text-xs">
+                    <button type="button" class="spec-action !ml-0" onclick="showInventoryRelicOnMap('${escapeHtml(item.name)}')" title="Xem vị trí trên bản đồ của trang">Bản đồ</button>
+                    <a class="spec-action !ml-0" href="${inventoryDirectionsUrl(item.name)}" target="_blank" rel="noopener noreferrer" title="Chỉ đường trên Google Maps">Chỉ đường ↗</a>
                   </span>
                 `}
               </div>

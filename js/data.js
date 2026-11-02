@@ -199,12 +199,12 @@ const HERITAGE_ROUTES = [
     badgeBg: "bg-[#C59B27]",
     relicIds: ["vat-the-3", "vat-the-8", "vat-the-15"],
     relics: [
-      { id: "vat-the-3", name: "Chùa Đồng Điều", note: "Cái nôi thành lập chi bộ Đảng Cộng sản đầu tiên", q: "Chùa+Đồng+Điều,+xã+Nhã+Nam" },
+      { id: "vat-the-3", name: "Chùa Đồng Điều", note: "Cái nôi thành lập chi bộ Đảng Cộng sản đầu tiên", q: "21.455246,106.094589" },
       { id: "vat-the-8", name: "Đền Đề Truật", note: "Đền thờ tướng quân Dương Văn Truật (Đề Truật)", q: "21.4525861,106.0980009" },
       { id: "vat-the-15", name: "Chùa Dương Sơn", note: "Di tích cấp tỉnh – văn hóa cổ truyền làng Dương Sơn", q: "21.408497,106.1126369" }
     ],
     mapEmbedUrl: "https://www.google.com/maps?saddr=21.455246,106.094589&daddr=21.4525861,106.0980009+to:21.408497,106.1126369&output=embed",
-    startDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Ch%C3%B9a+%C4%90%E1%BB%93ng+%C4%90i%E1%BB%81u,+x%C3%A3+Nh%C3%A3+Nam,+t%E1%BB%89nh+B%E1%BA%AFc+Ninh",
+    startDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.455246,106.094589",
     startDirectionsText: "Khởi hành từ vị trí của bạn (tới chùa Đồng Điều)",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.408497,106.1126369&waypoints=21.455246,106.094589%7C21.4525861,106.0980009",
     directionsText: "Lộ trình liên hoàn cả tuyến (chùa Đồng Điều → đền Đề Truật → chùa Dương Sơn)",
@@ -509,8 +509,8 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Đối với học sinh: Di tích thôn Đồng Điều là minh chứng hùng hồn cho truyền thống kiên cường cách mạng, lòng son sắt một dạ theo Đảng của nhân dân xã Nhã Nam qua các thời kỳ kháng chiến."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=Ch%C3%B9a+%C4%90%E1%BB%93ng+%C4%90i%E1%BB%81u,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Chùa+Đồng+Điều,+Thôn+Đồng+Điều,+xã+Nhã+Nam,+tỉnh+Bắc+Ninh",
+      "embedUrl": "https://www.google.com/maps?q=21.455246,106.094589&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.455246,106.094589",
       "locationName": "Di tích lịch sử thôn Đồng Điều (chùa Đồng Điều)"
     },
     "gallery": [],
@@ -1509,8 +1509,8 @@ const INTANGIBLE_HERITAGE_DATA = [
       "preservationValue": "Gìn giữ hương vị cội nguồn của quê hương, khơi gợi niềm tự hào về sản vật nông nghiệp của địa phương trong các dự án học tập sáng tạo."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
+      "embedUrl": "https://www.google.com/maps?q=21.4404,106.0965&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4404,106.0965",
       "locationName": "Làng nghề bánh khảo và kẹo lạc – xã Nhã Nam"
     },
     "gallery": [],
@@ -1601,8 +1601,8 @@ const INTANGIBLE_HERITAGE_DATA = [
       "preservationValue": "Góp phần rèn luyện thể lực và bồi dưỡng lòng dũng cảm, tinh thần đồng đội cho học sinh thế hệ trẻ Trường THPT Nhã Nam."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+Nh%C3%A3+Nam,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Sới+vật+lễ+hội,+xã+Nhã+Nam,+Thành+phố+Bắc+Ninh",
+      "embedUrl": "https://www.google.com/maps?q=21.4443874,106.0991677&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4443874,106.0991677",
       "locationName": "Sới vật và không gian hội thao dân gian – xã Nhã Nam"
     },
     "gallery": [],
@@ -1925,3 +1925,46 @@ const QUICK_SEARCH_TAGS = [
   "Kẹo lạc",
   "Võ cổ truyền"
 ];
+
+/**
+ * CẨM NANG THAM QUAN theo từng hồ sơ. Chỉ ghi điều có trong hồ sơ và toàn văn tài liệu gốc (doc-texts.js).
+ * when: thời điểm nên đến (bỏ trống nếu tư liệu không ghi). see: những gì nên xem tận nơi.
+ */
+const VISIT_GUIDES = {
+  "vat-the-1": { when: "Quanh ngày 15–16/3 dương lịch, khi lễ hội khởi nghĩa Yên Thế tái hiện lễ tế cờ ngay tại sân đình Hả.", see: ["Sân đình, nơi Đề Nắm tế cờ ngày 16/3/1884.", "Khung gỗ lim chồng rường giá chiêng, chạm rồng, lân, hoa cúc dây.", "Chùa Hả (Thanh Âm tự) liền kề: tượng Phật sơn son thếp vàng, chuông đồng, văn bia trùng tu."] },
+  "vat-the-2": { when: "Mốc gắn với di tích: ngày 11/3/1948, Chủ tịch Hồ Chí Minh gửi thư cho Công an Khu XII.", see: ["Bia đá niên hiệu Cảnh Hưng (1771) và chuông đồng thế kỷ XIX.", "Khu lưu niệm Sáu điều Bác Hồ dạy Công an nhân dân trong khuôn viên chùa.", "Nghe bản thuyết minh khu lưu niệm (khoảng 3 phút) ngay trên trang này trước khi đến."] },
+  "vat-the-3": { see: ["Bia ghi công tích cách mạng của thôn Đồng Điều.", "Ngôi chùa từng là cơ sở hoạt động bí mật trước năm 1945, nơi lập chi bộ Đảng đầu tiên của địa phương."] },
+  "vat-the-4": { when: "Lễ hội đền ngày 15–16 tháng Giêng âm lịch; ngày rằm, mùng một có lễ cúng.", see: ["Ban thờ Thánh Mẫu và nghĩa quân Hoàng Hoa Thám.", "Bia đá ghi sự kiện lịch sử trong khuôn viên.", "Rừng Gốc Khế, trạm tiền tiêu ở cửa ngõ đồn Nhã Nam xưa."] },
+  "vat-the-5": { see: ["Dấu tích nền móng đồn lũy trên đồi.", "Vị trí khống chế ngã tư Nhã Nam, nơi Pháp dựng đồn từ năm 1885.", "Nghĩa địa Pháp và chùa Nam Thiên ở ngay gần, cùng tuyến tham quan số 3."] },
+  "vat-the-6": { see: ["Đầu dư, kẻ, cốn chạm lộng rồng ổ, phượng múa.", "Bát hương gốm Thổ Hà, kiệu bát cống và 2 đạo sắc phong thời Nguyễn.", "Đình là nơi Đề Thám từng họp bàn việc quân."] },
+  "vat-the-7": { see: ["Chuông đồng \"Nam Thiên Tự Chung\" đúc thời Nguyễn.", "Tòa Tiền đường, Thượng điện, nhà Mẫu, nhà Tổ và vườn tháp."] },
+  "vat-the-8": { when: "Ngày giỗ tướng Đề Truật, mùng 1 tháng 7 âm lịch.", see: ["Ban thờ tướng Đề Truật và biểu tượng cây nỏ.", "Sân tế lễ dưới tán cây cổ thụ."] },
+  "vat-the-9": { see: ["Các bia mộ khắc tên, cấp bậc sĩ quan và binh lính Pháp tử trận trong chiến tranh Yên Thế.", "Nằm cạnh đồn Nhã Nam trên đồi Phủ; nên đi cùng tuyến tham quan số 3."] },
+  "vat-the-10": { see: ["Ban thờ Cả Trọng (Hoàng Đức Trọng), con trai cả của Hoàng Hoa Thám.", "Cùng khu vực với đền Gốc Khế (chung một điểm định vị trên bản đồ của Ban biên tập)."] },
+  "vat-the-11": { see: ["Đường hầm cụ Cai Hậu cho đào từ hậu cung ra bờ ao cho nghĩa quân.", "Kết cấu gỗ lim của ngôi đình thời Lê.", "Sân đình là nơi CLB Chèo Dương Lâm tập luyện, biểu diễn."] },
+  "vat-the-12": { see: ["Vì nóc chồng rường giá chiêng, cột gỗ lim.", "Kiệu thờ, hương án cổ, hoành phi câu đối sơn son thếp vàng."] },
+  "vat-the-13": { see: ["Tường gạch chỉ, mái ngói mũi hài của ngôi đình thời Nguyễn.", "Bát hương gốm cổ, hoành phi câu đối."] },
+  "vat-the-14": { see: ["Cấu kiện gỗ chạm hoa cúc dây, rồng chầu mặt trời.", "Ngai thờ và sắc phong cổ."] },
+  "vat-the-15": { see: ["Tượng Phật sơn son thếp vàng, bia ký và chuông đồng cổ.", "Làng Dương Sơn có tục nói phét; biển \"Dương Sơn hội quán\" ở điếm làng."] },
+  "vat-the-16": { see: ["Sắc phong niên hiệu Duy Tân thứ 3 (1909).", "Bát hương gốm Phù Lãng, sập thờ và bộ bát bửu.", "Đình chung của 5 thôn Chài, Quân, Đồn, Thượng, Phố."] },
+  "phi-vat-the-1": { when: "Phần chính quanh ngày 15–16/3 dương lịch; hội còn tổ chức vào tháng Giêng và tháng Ba âm lịch.", see: ["Lễ tế cờ tái hiện tại sân đình Hả.", "Lễ rước kiệu từ các thôn và lễ dâng hương.", "Phần hội: đấu vật, kéo co, cờ tướng, văn nghệ quần chúng."] },
+  "phi-vat-the-2": { when: "Các dịp lễ hội mùa xuân và ngày hội Đại đoàn kết toàn dân tộc.", see: ["Chiếu chèo sân đình Dương Lâm, đình Chuông, chùa Tứ Giáp.", "Các điệu Đào liễu, Quân thư, Luyện năm cung, Tò vò.", "Buổi tập định kỳ của CLB Chèo Dương Lâm."] },
+  "phi-vat-the-3": { when: "Dịp Tết Nguyên đán, khi các gia đình làm bánh khảo, kẹo lạc để dâng cúng.", see: ["Công đoạn đóng khuôn gỗ bột nếp rang xay.", "Nấu mạch nha, thả lạc rang, dàn mỏng rồi cắt kẹo."] },
+  "phi-vat-the-4": { when: "Ngày rằm, mùng một và ngày giỗ trận.", see: ["Lễ thắp hương tại đình Hả, đền Gốc Khế, đền Đề Truật.", "Lễ dâng hương báo công của học sinh Trường THPT Nhã Nam."] },
+  "phi-vat-the-5": { when: "Đầu xuân và trong lễ hội khởi nghĩa Yên Thế (quanh 15–16/3 dương lịch).", see: ["Sới vật dân tộc đầu xuân.", "Cờ người, kéo co, đập niêu, giao lưu võ cổ truyền."] },
+  "phi-vat-the-6": { see: ["Điếm làng với biển lưu niệm \"Dương Sơn hội quán\".", "Gặp các bô lão kể chuyện phét lúc nông nhàn; xem trước video tiểu phẩm trên trang này."] },
+  "phi-vat-the-7": { when: "Hội làng mùa xuân và các chương trình dâng hương tại Khu lưu niệm Sáu điều Bác Hồ dạy CAND.", see: ["Lối hát vang, rền, nền, nảy của câu Quan họ cổ.", "Buổi truyền dạy cho học sinh của CLB."] },
+  "phi-vat-the-8": { see: ["Buổi tập tại nhà văn hóa thôn, sân đình Dương Lâm và hội trường xã.", "Tiết mục múa nón và các tiết mục dàn dựng cho hội diễn."] }
+};
+
+/** Câu hỏi nhanh bổ sung cho các hồ sơ được người dùng quan tâm nhất (ngoài câu tự sinh từ dữ liệu). */
+const MINI_QUIZ_EXTRA = {
+  "vat-the-1": [{ q: "Chùa Hả có tên chữ là gì?", options: ["Thanh Âm tự", "Đại Phúc tự", "Nam Thiên tự", "Diên Hựu tự"], answer: 0, explain: "Chùa Hả tên chữ là Thanh Âm tự. Đại Phúc tự là chùa Tứ Giáp; Nam Thiên tự là chùa Phố." }],
+  "vat-the-2": [{ q: "Chùa Tứ Giáp còn lưu giữ bia đá mang niên hiệu nào?", options: ["Duy Tân (1909)", "Cảnh Hưng (1771)", "Tự Đức (1848)", "Bảo Đại (1926)"], answer: 1, explain: "Bia đá niên hiệu Cảnh Hưng (1771). Sắc phong Duy Tân thứ 3 (1909) là của đình làng Sặt." }],
+  "phi-vat-the-1": [{ q: "Phần chính của lễ hội khởi nghĩa Yên Thế tại Nhã Nam diễn ra quanh ngày nào (dương lịch)?", options: ["11/3", "15–16/3", "1/7", "2/9"], answer: 1, explain: "Quanh ngày 15–16/3 dương lịch, kỷ niệm ngày Đề Nắm tế cờ tại đình Hả (16/3/1884). Ngày 11/3/1948 là ngày Bác Hồ gửi thư cho Công an Khu XII." }],
+  "phi-vat-the-2": [{ q: "Điệu nào dưới đây được hồ sơ nêu là điệu của chiếu chèo Nhã Nam?", options: ["Hò kéo pháo", "Lý cây đa", "Luyện năm cung", "Ru con Nam Bộ"], answer: 2, explain: "Hồ sơ nêu các điệu Đào liễu, Quân thư, Luyện năm cung, Tò vò." }],
+  "phi-vat-the-6": [
+    { q: "Theo hồ sơ, lối nói phét ở Dương Sơn sinh ra từ đâu?", options: ["Các cuộc thi hùng biện của nhà nước", "Lễ tế cờ khởi nghĩa Yên Thế", "Lúc làm đồng, kể chuyện phóng đại cho quên mệt", "Các phường chèo chuyên nghiệp"], answer: 2, explain: "Nói phét là lối kể chuyện phóng đại để mua vui, sinh ra trong lao động của người làm ruộng." },
+    { q: "Câu ca \"… nói phét có ca / Dương Sơn nói phét bằng ba …\" so Dương Sơn với làng nào?", options: ["Dương Lâm", "Hòa Làng", "Cầu Thượng", "Đồng Điều"], answer: 1, explain: "\"Hòa Làng nói phét có ca / Dương Sơn nói phét bằng ba Hòa Làng\"." }
+  ]
+};

@@ -954,3 +954,56 @@ p, blockquote, figcaption {
 .quiz-explain-wrong strong { color: #8B1E1E; }
 
 #quiz-section input[type="radio"] { accent-color: #8B1E1E; }
+
+/* Bản đồ trong hồ sơ: chuyển Bản đồ / Ảnh vệ tinh */
+.map-view-toggle {
+  display: inline-flex;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.8125rem;
+}
+.map-view-toggle button {
+  padding: 0.4rem 0.75rem;
+  min-height: 36px;
+  color: #5C5248;
+  background: var(--color-surface);
+}
+.map-view-toggle button + button { border-left: 1px solid var(--hairline); }
+.map-view-toggle button.is-active { background: var(--color-heritage-red); color: #fff; }
+
+/* Câu hỏi nhanh cuối hồ sơ */
+.mini-quiz-q { border: 0; margin: 0 0 1.25rem; padding: 0; min-width: 0; }
+.mini-quiz-q legend { font-weight: 600; color: #2A2521; margin-bottom: 0.6rem; line-height: 1.5; }
+.mini-quiz-options { display: grid; gap: 0.5rem; }
+@media (min-width: 640px) { .mini-quiz-options { grid-template-columns: 1fr 1fr; } }
+.mini-quiz-options button {
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  min-height: 44px;
+  border: 1px solid #EADECF;
+  border-radius: 6px;
+  background: var(--color-surface);
+  font-size: 0.9375rem;
+  color: #4A4036;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.mini-quiz-options button:hover:not(:disabled) { border-color: rgba(139, 30, 30, 0.4); }
+.mini-quiz-options button:disabled { cursor: default; }
+.mini-quiz-options button.is-correct { border-color: #4D7C4F; background: #F1F6EF; color: #2F5232; }
+.mini-quiz-options button.is-wrong { border-color: #8B1E1E; background: #FBF1EE; color: #8B1E1E; }
+.quiz-explain.mini-quiz-feedback { margin-left: 0; }
+
+/* Chống tràn ngang trên điện thoại */
+#modal-dynamic-content, #modal-dynamic-content * { min-width: 0; }
+#modal-dynamic-content { overflow-wrap: anywhere; }
+@media (max-width: 639px) {
+  .category-tab-btn, .route-relic-chip, .route-status-pill, .eyebrow,
+  .spec-action, .whitespace-nowrap {
+    white-space: normal !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
+  }
+  .spec-table dd { overflow-wrap: anywhere; }
+}
