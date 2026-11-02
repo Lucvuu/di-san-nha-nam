@@ -2,7 +2,7 @@
  * ====================================================================
  * DI SẢN VĂN HÓA XÃ NHÃ NAM – DỮ LIỆU CẤU HÌNH & HỆ THỐNG DI SẢN
  * Xã Nhã Nam, tỉnh Bắc Ninh, Việt Nam
- * Đơn vị khởi xướng & phối hợp: Trường THPT Nhã Nam
+ * Dự án nghiên cứu khoa học của học sinh THPT
  * Cập nhật chuẩn hóa theo hồ sơ xếp hạng di tích và danh mục kiểm kê của UBND tỉnh Bắc Ninh
  * ====================================================================
  */
@@ -10,7 +10,6 @@
 const SITE_CONFIG = {
   portalName: "Di sản văn hóa xã Nhã Nam",
   portalSubtitle: "Cổng thông tin số hóa di sản văn hóa và lịch sử địa phương",
-  schoolName: "Trường THPT Nhã Nam",
   commune: "Xã Nhã Nam",
   city: "tỉnh Bắc Ninh",
   province: "Tỉnh Bắc Ninh",
@@ -23,8 +22,6 @@ const SITE_CONFIG = {
     inventoried: 21,
     intangible: 5
   },
-  schoolTarget: "Dành cho học sinh Trường THPT Nhã Nam, các trường THCS, Tiểu học, thầy cô giáo và nhân dân",
-  logoUrl: "./assets/images/share/logo-160.png",
 
   // Cấu hình bộ đếm lượt truy cập (Visitor Counter: Số khởi điểm ban đầu + Lượt truy cập thật)
   visitorCounter: {
@@ -36,20 +33,7 @@ const SITE_CONFIG = {
   
   // Facebook Group Community Configuration
   facebookGroupUrl: "#", 
-  facebookGroupStatusNote: "Nhóm bật kiểm duyệt: bài viết và bình luận được duyệt trước khi hiển thị.",
-
-  // Administrator & Contact Configuration
-  adminRole: "Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam",
-  adminName: "Cô Dương Thị Thuý Mến và thầy Bùi Văn Công (Trường THPT Nhã Nam)",
-  adminPhone: "0985.449.123",
-  adminPhoneRaw: "0985449123",
-  adminZaloUrl: "https://zalo.me/0985449123",
-  secondaryAdminName: "Thầy Bùi Văn Công",
-  secondaryAdminPhone: "0982.386.959",
-  secondaryAdminPhoneRaw: "0982386959",
-  secondaryAdminZaloUrl: "https://zalo.me/0982386959",
-  adminEmail: "thptnhanam.disan@gmail.com",
-  adminAddress: "Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh"
+  facebookGroupStatusNote: "Nhóm bật kiểm duyệt: bài viết và bình luận được duyệt trước khi hiển thị."
 };
 
 /**
@@ -316,7 +300,7 @@ const TANGIBLE_HERITAGE_DATA = [
         "Bộ khung gỗ lim cổ thụ vững chãi, các vì kèo kết cấu chồng rường giá chiêng với những mảng chạm khắc rồng, lân, hoa cúc dây sinh động mang đậm phong cách nghệ thuật thời Nguyễn.",
         "Chùa Hả (tên chữ 'Thanh Âm Tự') nằm liền kề bên đình, rợp bóng cây cổ thụ, lưu giữ hệ thống tượng Phật cổ sơn son thếp vàng, chuông đồng và các văn bia ghi lại quá trình trùng tu từ thời Lê – Nguyễn."
       ],
-      "studyNote": "Đối với thế hệ trẻ và học sinh Trường THPT Nhã Nam: Đình – chùa Hả là cội nguồn của tinh thần quật cường Yên Thế, là bài học đầu tiên về lòng yêu nước nồng nàn và ý chí bất khuất trước quân thù."
+      "studyNote": "Đối với thế hệ trẻ và học sinh THPT: Đình – chùa Hả là cội nguồn của tinh thần quật cường Yên Thế, là bài học đầu tiên về lòng yêu nước nồng nàn và ý chí bất khuất trước quân thù."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
@@ -439,7 +423,7 @@ const TANGIBLE_HERITAGE_DATA = [
         "**Tượng đài Bác Hồ và bức phù điêu Việt Bắc:** Điểm nhấn trung tâm là bức tượng Chủ tịch Hồ Chí Minh bằng đồng cao 7m (Bác mặc bộ kaki đơn sơ, đi dép cao su, tay cầm tờ báo bên chiếc máy đánh chữ, nhìn về hướng Đông). Phía sau là bức phù điêu đá xanh cao 13,5m, dài 52m tạo hình dãy núi Việt Bắc, chạm khắc hình ảnh các thế hệ CAND; khuôn viên trồng 79 cây sao đen (79 mùa xuân của Bác) và 54 cây tùng tháp (54 dân tộc anh em).",
         "**Nhà truyền thống trưng bày 3 chuyên đề:** (1) Công an Khu 12 – nơi đón nhận 6 điều Bác dạy; (2) Phong trào học tập, làm theo lời Bác; (3) Hình ảnh Bác với CAND. Nơi đây lưu giữ nhiều kỷ vật vô giá của đồng chí Hoàng Mai: lễ phục cấp tướng, sắc phong, thẻ nhà báo, bản tự khai viết tay cùng những chiếc chum đựng gạo, muối, nước từng dùng trong thời hoạt động bí mật."
       ],
-      "studyNote": "Đối với học sinh Trường THPT Nhã Nam: Chùa Tứ Giáp và Khu lưu niệm Sáu điều Bác Hồ dạy CAND là 'địa chỉ đỏ' giáo dục sâu sắc về đạo đức chí công vô tư, tinh thần 'vì nước quên thân, vì dân phục vụ' và truyền thống cách mạng kiên cường của quê hương Nhã Nam."
+      "studyNote": "Đối với học sinh THPT: Chùa Tứ Giáp và Khu lưu niệm Sáu điều Bác Hồ dạy CAND là 'địa chỉ đỏ' giáo dục sâu sắc về đạo đức chí công vô tư, tinh thần 'vì nước quên thân, vì dân phục vụ' và truyền thống cách mạng kiên cường của quê hương Nhã Nam."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=21.4448892,106.0901463&output=embed",
@@ -535,7 +519,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "gallery": [
       {
         "url": "./assets/images/chua-dong-dieu/anh-dai-dien.jpg",
-        "caption": "Mặt tiền tòa Tam bảo và nhà Tổ chùa Đồng Điều ngày nay với trụ biểu khắc chữ Hán và hệ cửa bức bàn gỗ lim (Ảnh thực tế: Trường THPT Nhã Nam)"
+        "caption": "Mặt tiền tòa Tam bảo và nhà Tổ chùa Đồng Điều ngày nay với trụ biểu khắc chữ Hán và hệ cửa bức bàn gỗ lim (Ảnh thực tế: Ban biên tập)"
       },
       {
         "url": "./assets/images/chua-dong-dieu/dong-dieu-tu-lieu-co.jpg",
@@ -551,7 +535,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Bộ sưu tập 04 ảnh và video tư liệu thực tế tại chùa Đồng Điều (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Bộ sưu tập 04 ảnh và video tư liệu thực tế tại chùa Đồng Điều (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "chua-dong-dieu.docx",
       "title": "Hồ sơ di tích chùa Đồng Điều",
@@ -614,7 +598,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh tư liệu thực tế tại đền Gốc Khế (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Ảnh tư liệu thực tế tại đền Gốc Khế (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "den-goc-khe.docx",
       "title": "Thuyết minh dự án tu bổ Đền Gốc Khế",
@@ -675,7 +659,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh tư liệu thực tế tại đồi Phủ (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Ảnh tư liệu thực tế tại đồi Phủ (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "doi-phu-nha-nam.docx",
       "title": "Tư liệu lịch sử đồi Phủ – đồn Nhã Nam",
@@ -737,7 +721,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh tư liệu thực tế tại đình làng Chuông (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Ảnh tư liệu thực tế tại đình làng Chuông (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "dinh-lang-chuong.docx",
       "title": "Tư liệu khoa học đình làng Chuông",
@@ -798,7 +782,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh tư liệu thực tế tại chùa Nam Thiên (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Ảnh tư liệu thực tế tại chùa Nam Thiên (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "chua-nam-thien.docx",
       "title": "Tư liệu khoa học chùa Nam Thiên (chùa Phố)",
@@ -845,7 +829,7 @@ const TANGIBLE_HERITAGE_DATA = [
         "Đền mang kiến trúc chữ Đinh truyền thống, bài trí trang nghiêm ban thờ tướng quân Đề Truật, lư hương đồng và biểu tượng cây nỏ thần kỳ.",
         "Khuôn viên có sân tế lễ râm mát, cây cổ thụ che phủ, là nơi sinh hoạt văn hóa truyền thống của nhân dân."
       ],
-      "studyNote": "Tấm gương quả cảm, tài năng quân sự và lòng trung thành tuyệt đối của tướng Đề Truật là ngọn lửa truyền cảm hứng mạnh mẽ cho học sinh Trường THPT Nhã Nam rèn luyện tài đức."
+      "studyNote": "Tấm gương quả cảm, tài năng quân sự và lòng trung thành tuyệt đối của tướng Đề Truật là ngọn lửa truyền cảm hứng mạnh mẽ cho học sinh THPT rèn luyện tài đức."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=21.4525861,106.0980009&output=embed",
@@ -867,7 +851,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại đền Đề Truật (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại đền Đề Truật (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "den-de-truat.docx",
       "title": "Tư liệu nghiên cứu đền Đề Truật",
@@ -922,7 +906,7 @@ const TANGIBLE_HERITAGE_DATA = [
     },
     "gallery": [],
     "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập cập nhật",
     "docFile": {
       "fileName": "nghia-dia-phap.docx",
       "title": "Thuyết minh đồi Phủ – nghĩa địa Pháp",
@@ -976,7 +960,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "gallery": [
       {
         "url": "./assets/images/den-ca-trong/anh-dai-dien.jpg",
-        "caption": "Toàn cảnh khu di tích lịch sử quốc gia đặc biệt đền thờ Cả Trọng (đền Gốc Dẻ) dưới bóng hai cây cổ thụ uy nghiêm (Ảnh thực tế: Trường THPT Nhã Nam)"
+        "caption": "Toàn cảnh khu di tích lịch sử quốc gia đặc biệt đền thờ Cả Trọng (đền Gốc Dẻ) dưới bóng hai cây cổ thụ uy nghiêm (Ảnh thực tế: Ban biên tập)"
       },
       {
         "url": "./assets/images/den-ca-trong/ca-trong-2.jpg",
@@ -988,7 +972,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại di tích đền thờ Cả Trọng (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại di tích đền thờ Cả Trọng (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "den-ca-trong.docx",
       "title": "Hồ sơ di tích đền thờ Cả Trọng",
@@ -1050,7 +1034,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh tư liệu thực tế tại đình Dương Lâm (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Ảnh tư liệu thực tế tại đình Dương Lâm (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "dinh-duong-lam.docx",
       "title": "Hồ sơ di tích đình Dương Lâm",
@@ -1104,7 +1088,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "gallery": [
       {
         "url": "./assets/images/dinh-cau-thuong/anh-dai-dien.jpg",
-        "caption": "Toàn cảnh mặt tiền cụm di tích Cầu Thượng cổ kính dưới tán cây đại cổ thụ (Ảnh thực tế: Trường THPT Nhã Nam)"
+        "caption": "Toàn cảnh mặt tiền cụm di tích Cầu Thượng cổ kính dưới tán cây đại cổ thụ (Ảnh thực tế: Ban biên tập)"
       },
       {
         "url": "./assets/images/dinh-cau-thuong/cau-thuong-2.jpg",
@@ -1116,7 +1100,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại di tích Cầu Thượng (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại di tích Cầu Thượng (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "dinh-cau-thuong.docx",
       "title": "Hồ sơ di tích đình Cầu Thượng",
@@ -1175,7 +1159,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh tư liệu thực tế tại đình Sậy (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Ảnh tư liệu thực tế tại đình Sậy (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "dinh-say.docx",
       "title": "Hồ sơ di tích đình Sậy",
@@ -1234,7 +1218,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh tư liệu thực tế tại đình Nẻo (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Ảnh tư liệu thực tế tại đình Nẻo (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "dinh-neo.docx",
       "title": "Hồ sơ di tích đình Nẻo",
@@ -1307,7 +1291,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại chùa Dương Sơn (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại chùa Dương Sơn (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "chua-duong-son.docx",
       "title": "Hồ sơ di tích chùa Dương Sơn",
@@ -1370,7 +1354,7 @@ const TANGIBLE_HERITAGE_DATA = [
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Ảnh tư liệu thực tế tại đình làng Sặt (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Ảnh tư liệu thực tế tại đình làng Sặt (hồ sơ của Ban biên tập)",
     "docFile": {
       "fileName": "dinh-sat.docx",
       "title": "Hồ sơ di tích đình làng Sặt",
@@ -1419,7 +1403,7 @@ const INTANGIBLE_HERITAGE_DATA = [
         "**Phần lễ trang nghiêm:** Lễ rước kiệu truyền thống từ các làng thôn, lễ dâng hương tưởng niệm, lễ tế cờ tái hiện lịch sử hào hùng.",
         "**Phần hội tưng bừng:** Hội diễn văn nghệ quần chúng, thi đấu cờ tướng, kéo co, đấu vật dân tộc, giải bóng chuyền, hội chọi gà và các trò chơi dân gian đặc sắc."
       ],
-      "preservationValue": "Lễ hội là không gian văn hóa sống động kết nối các thế hệ học sinh trường THPT Nhã Nam với cội nguồn lịch sử oanh liệt của ông cha."
+      "preservationValue": "Lễ hội là không gian văn hóa sống động kết nối các thế hệ học sinh THPT với cội nguồn lịch sử oanh liệt của ông cha."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
@@ -1494,7 +1478,7 @@ const INTANGIBLE_HERITAGE_DATA = [
         "Biểu diễn giao lưu tại sân đình vào mỗi dịp lễ hội mùa xuân, ngày hội Đại đoàn kết toàn dân tộc và các sự kiện lớn của xã Nhã Nam.",
         "CLB Chèo Dương Lâm và các thôn thường xuyên tổ chức tập luyện, sinh hoạt định kỳ và mở lớp truyền dạy làn điệu cho các em học sinh, thế hệ trẻ yêu nghệ thuật dân tộc."
       ],
-      "preservationValue": "Hát chèo là cây cầu nối tâm hồn, giáo dục tình yêu văn hóa dân tộc trong các hoạt động ngoại khóa của học sinh Trường THPT Nhã Nam."
+      "preservationValue": "Hát chèo là cây cầu nối tâm hồn, giáo dục tình yêu văn hóa dân tộc trong các hoạt động ngoại khóa của học sinh THPT."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=21.4210834,106.0960966&output=embed",
@@ -1627,7 +1611,7 @@ const INTANGIBLE_HERITAGE_DATA = [
       ],
       "ritualsAndActivities": [
         "Nghi thức thắp hương tưởng niệm vào ngày rằm, mùng một, ngày tế cờ (16/3) và ngày giỗ trận tại đình Hả, đền Gốc Khế, đền Đề Truật, đền thờ Cả Trọng.",
-        "Hoạt động ngoại khóa dâng hương báo công, nghe thuyết minh lịch sử của thầy và trò Trường THPT Nhã Nam trước thềm các kỳ thi và ngày lễ lớn."
+        "Hoạt động ngoại khóa dâng hương báo công, nghe thuyết minh lịch sử của thầy và trò các trường phổ thông trên địa bàn trước thềm các kỳ thi và ngày lễ lớn."
       ],
       "preservationValue": "Kết nối mạch nguồn lịch sử từ lời thề nghĩa quân Yên Thế đến lời Bác Hồ dạy tại Nhã Nam: 'vì dân mà hành động, vì nước mà hy sinh', bồi đắp lý tưởng sống cao đẹp cho học sinh THPT."
     },
@@ -1684,7 +1668,7 @@ const INTANGIBLE_HERITAGE_DATA = [
         "Sới vật dân tộc đầu xuân: Tiếng trống thúc giục, các đô vật tranh tài quyết liệt trên nền cát mịn với tinh thần thượng võ mãnh liệt.",
         "Hội thi cờ người, kéo co, đập niêu đất, chọi gà và giao lưu võ thuật cổ truyền giữa các trường học và câu lạc bộ thanh niên."
       ],
-      "preservationValue": "Góp phần rèn luyện thể lực và bồi dưỡng lòng dũng cảm, tinh thần đồng đội cho học sinh thế hệ trẻ Trường THPT Nhã Nam."
+      "preservationValue": "Góp phần rèn luyện thể lực và bồi dưỡng lòng dũng cảm, tinh thần đồng đội cho học sinh THPT và thế hệ trẻ."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=21.4443874,106.0991677&output=embed",
@@ -1693,7 +1677,7 @@ const INTANGIBLE_HERITAGE_DATA = [
     },
     "gallery": [],
     "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập cập nhật",
     "docFile": {
       "fileName": "tro-choi-dan-gian-vo-co-truyen.docx",
       "title": "Tư liệu trò chơi dân gian và võ cổ truyền trong lễ hội Nhã Nam",
@@ -1744,7 +1728,7 @@ const INTANGIBLE_HERITAGE_DATA = [
         "**Không gian kể chuyện dân gian:** Chuyện phét thường được kể ở cổng làng xưa, ở điếm làng (nay còn tấm biển lưu niệm \"Dương Sơn hội quán\"), bên ấm nước chè xanh lúc nông nhàn hay những đêm trăng thanh tụ họp xóm ngõ.",
         "**Bảo tồn và phục hồi:** Trải qua thời gian, trước nguy cơ mai một, chính quyền địa phương và các bô lão trong làng đang tích cực sưu tầm, ghi hình các video tiểu phẩm và phục hồi nét văn hóa độc nhất vô nhị này."
       ],
-      "studyNote": "Câu chuyện làng nói phét Dương Sơn cho thấy tiếng cười lạc quan là di sản tinh thần vô giá của cha ông. Học sinh Trường THPT Nhã Nam cần phân biệt rõ giữa nghệ thuật nói quá để mua vui và thói nói dối; từ đó trân trọng khiếu hài hước thông tuệ của người dân quê mình."
+      "studyNote": "Câu chuyện làng nói phét Dương Sơn cho thấy tiếng cười lạc quan là di sản tinh thần vô giá của cha ông. Học sinh THPT cần phân biệt rõ giữa nghệ thuật nói quá để mua vui và thói nói dối; từ đó trân trọng khiếu hài hước thông tuệ của người dân quê mình."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=21.408497,106.1126369&output=embed",
@@ -1758,12 +1742,12 @@ const INTANGIBLE_HERITAGE_DATA = [
       },
       {
         "url": "./assets/images/video-tu-lieu/lang-noi-phet-ban-chep-tay.jpg",
-        "caption": "Cụ cao niên làng Dương Sơn đọc lại bản chép tay (ảnh trích từ video tư liệu của Trường THPT Nhã Nam)",
+        "caption": "Cụ cao niên làng Dương Sơn đọc lại bản chép tay (ảnh trích từ video tư liệu của Ban biên tập)",
         "position": "center 50%"
       },
       {
         "url": "./assets/images/video-tu-lieu/lang-noi-phet-duong-lang.jpg",
-        "caption": "Đường làng Dương Sơn (ảnh trích từ video tư liệu của Trường THPT Nhã Nam)",
+        "caption": "Đường làng Dương Sơn (ảnh trích từ video tư liệu của Ban biên tập)",
         "position": "center 50%"
       }
     ],
@@ -1816,7 +1800,7 @@ const INTANGIBLE_HERITAGE_DATA = [
       "ritualsAndActivities": [
         "**Sinh hoạt và truyền dạy:** CLB tổ chức tập luyện thường xuyên, truyền dạy các câu hát cổ, lối hát vang, rền, nền, nảy cho thế hệ trẻ.",
         "**Giao lưu và biểu diễn:** Biểu diễn phục vụ các ngày lễ kỷ niệm, hội làng mùa xuân, đặc biệt là các chương trình dâng hương tại Khu lưu niệm Sáu điều Bác Hồ dạy CAND và các di tích lịch sử.",
-        "**Lan tỏa di sản học đường:** Phối hợp với Trường THPT Nhã Nam đưa Dân ca Quan họ vào các buổi trải nghiệm ngoại khóa, giúp học sinh thêm tự hào về văn hóa quê hương."
+        "**Lan tỏa di sản học đường:** Phối hợp với các trường phổ thông trên địa bàn đưa Dân ca Quan họ vào các buổi trải nghiệm ngoại khóa, giúp học sinh thêm tự hào về văn hóa quê hương."
       ],
       "preservationValue": "Dân ca Quan họ là linh hồn văn hóa của quê hương Kinh Bắc, bồi đắp tâm hồn thanh cao, lối ứng xử văn minh và đạo lý tốt đẹp cho thế hệ trẻ Nhã Nam."
     },
@@ -1887,7 +1871,7 @@ const INTANGIBLE_HERITAGE_DATA = [
       "ritualsAndActivities": [
         "**Luyện tập và dàn dựng:** Thường xuyên tổ chức tập luyện tại nhà văn hóa thôn, sân đình Dương Lâm và hội trường xã, nâng cao chất lượng nghệ thuật.",
         "**Biểu diễn phục vụ nhân dân:** Phục vụ các sự kiện chính trị trọng đại, lễ hội truyền thống, ngày hội Đại đoàn kết toàn dân tộc và tham gia các hội diễn văn nghệ các cấp.",
-        "**Gắn kết cộng đồng:** Khơi dậy tình yêu di sản trong các tầng lớp nhân dân, đặc biệt là sự tham gia hưởng ứng của học sinh Trường THPT Nhã Nam."
+        "**Gắn kết cộng đồng:** Khơi dậy tình yêu di sản trong các tầng lớp nhân dân, đặc biệt là sự tham gia hưởng ứng của học sinh THPT."
       ],
       "preservationValue": "CLB Nghệ thuật Dân gian là mái nhà chung nuôi dưỡng ngọn lửa đam mê nghệ thuật truyền thống, thắt chặt khối đại đoàn kết toàn dân và xây dựng đời sống văn hóa lành mạnh tại xã Nhã Nam."
     },
@@ -2046,7 +2030,7 @@ const VISIT_GUIDES = {
   "phi-vat-the-1": { when: "Từ ngày 15–17/3 dương lịch hằng năm (từ năm 2025 mở rộng thành Tuần lễ hội 11–18/3 dương lịch); hội làng vào tháng Giêng và tháng Ba âm lịch.", see: ["Lễ tế cờ tái hiện tại sân đình Hả.", "Lễ rước kiệu từ các thôn và lễ dâng hương.", "Phần hội: đấu vật, kéo co, cờ tướng, văn nghệ quần chúng."] },
   "phi-vat-the-2": { when: "Các dịp lễ hội mùa xuân và ngày hội Đại đoàn kết toàn dân tộc.", see: ["Chiếu chèo sân đình Dương Lâm, đình Chuông, chùa Tứ Giáp.", "Các điệu Đào liễu, Quân thư, Luyện năm cung, Tò vò.", "Buổi tập định kỳ của CLB Chèo Dương Lâm."] },
   "phi-vat-the-3": { when: "Dịp Tết Nguyên đán, khi các gia đình làm bánh khảo, kẹo lạc để dâng cúng.", see: ["Công đoạn đóng khuôn gỗ bột nếp rang xay.", "Nấu mạch nha, thả lạc rang, dàn mỏng rồi cắt kẹo."] },
-  "phi-vat-the-4": { when: "Ngày rằm, mùng một và ngày giỗ trận.", see: ["Lễ thắp hương tại đình Hả, đền Gốc Khế, đền Đề Truật.", "Lễ dâng hương báo công của học sinh Trường THPT Nhã Nam."] },
+  "phi-vat-the-4": { when: "Ngày rằm, mùng một và ngày giỗ trận.", see: ["Lễ thắp hương tại đình Hả, đền Gốc Khế, đền Đề Truật.", "Lễ dâng hương báo công của học sinh THPT."] },
   "phi-vat-the-5": { when: "Đầu xuân và trong lễ hội khởi nghĩa Yên Thế (quanh 15–16/3 dương lịch).", see: ["Sới vật dân tộc đầu xuân.", "Cờ người, kéo co, đập niêu, giao lưu võ cổ truyền."] },
   "phi-vat-the-6": { see: ["Điếm làng với biển lưu niệm \"Dương Sơn hội quán\".", "Gặp các bô lão kể chuyện phét lúc nông nhàn; xem trước video tiểu phẩm trên trang này."] },
   "phi-vat-the-7": { when: "Hội làng mùa xuân và các chương trình dâng hương tại Khu lưu niệm Sáu điều Bác Hồ dạy CAND.", see: ["Lối hát vang, rền, nền, nảy của câu Quan họ cổ.", "Buổi truyền dạy cho học sinh của CLB."] },

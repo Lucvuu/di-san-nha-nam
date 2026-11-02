@@ -1,6 +1,6 @@
 # BÁO CÁO TỐI ƯU HÓA TÀI NGUYÊN 4G, KIỂM ĐỊNH ĐA PHƯƠNG TIỆN & MÃ QR DÙNG THỬ
 **Dự án:** Cổng thông tin Di sản Văn hóa xã Nhã Nam, tỉnh Bắc Ninh  
-**Đơn vị thực hiện:** Trường THPT Nhã Nam  
+**Đơn vị thực hiện:** Ban biên tập dự án  
 **Ngày thực hiện:** 01/11/2026  
 **Chế độ thực thi:** Chạy song song độc lập (Parallel Task - Không can thiệp mã nguồn `index.html`, `.js`, `.css`, không commit/push Git).
 
@@ -31,7 +31,6 @@ Toàn bộ 36 file ảnh trong `./assets/images/` đã được tối ưu hóa t
 | Tên file ảnh di tích | Kích thước ảnh | Dung lượng gốc | Dung lượng sau nén | Mức giảm |
 | :--- | :---: | :---: | :---: | :---: |
 | `dinh-chua-ha/dien-tich-de-nam-te-co.jpg` | 1000x563 | 616.6 KB | **137.7 KB** | **-77.7%** |
-| `logo-thpt-nha-nam.png` | 800x726 | 773.3 KB | **345.7 KB** | **-55.3%** |
 | `dinh-chua-ha/thu-linh-de-nam.jpg` | 1000x600 | 362.0 KB | **173.4 KB** | **-52.1%** |
 | `hat-cheo/clb-cheo-duong-lam-3.jpg` | 1280x845 | 476.1 KB | **257.1 KB** | **-46.0%** |
 | `chua-duong-son/chua-duong-son-3.jpg` | 1276x956 | 676.1 KB | **367.2 KB** | **-45.7%** |
@@ -112,10 +111,10 @@ Bức ảnh poster chứa mã QR chính thức đã được xuất ra tại `./
   - **Màu nền:** Giấy dó kem cổ điển (`#FAF6EE`).
   - **Khung viền đôi:** Viền ngoài Đỏ son truyền thống (`#8B1E1E`), viền trong mạ Vàng đồng (`#B48327`) với 4 góc gắn họa tiết đồng tâm.
   - **Tiêu đề cơ quan & đơn vị:**  
-    *TRƯỜNG THPT NHÃ NAM - TỈNH BẮC NINH*  
+    *XÃ NHÃ NAM – TỈNH BẮC NINH*  
     *CỔNG THÔNG TIN DI SẢN VĂN HÓA XÃ NHÃ NAM*
   - **Mã QR:** Thiết kế theo tông màu Đỏ son (`#8B1E1E`), chuẩn mã hóa phục hồi lỗi mức cao (`Error Correction Level H - 30%`).
-  - **Logo trường ở tâm QR:** Đặt huy hiệu trường THPT Nhã Nam trang trọng trong khung bo tròn viền vàng đồng tại trung tâm mã QR.
+  - **Biểu trưng ở tâm QR:** Biểu trưng văn hóa xã Nhã Nam (mặt trống đồng) trong khung bo tròn viền vàng đồng tại trung tâm mã QR.
   - **Chỉ dẫn:** Dòng chú thích hướng dẫn quét mã bằng camera điện thoại và thanh badge hiển thị tên miền.
 
 ---

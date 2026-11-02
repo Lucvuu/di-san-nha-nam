@@ -15,12 +15,15 @@ vm.runInThisContext(utilsCode);
 console.log('--- 1. TESTING SITE_CONFIG & ADMINISTRATIVE NORMALIZATION ---');
 console.assert(SITE_CONFIG.commune === 'Xã Nhã Nam', 'Commune should be Xã Nhã Nam');
 console.assert(SITE_CONFIG.province === 'Tỉnh Bắc Ninh' || SITE_CONFIG.city.toLowerCase().includes('bắc ninh'), 'Province should be tỉnh Bắc Ninh');
-console.assert(SITE_CONFIG.adminRole === 'Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam', 'adminRole should be Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam');
-console.assert(SITE_CONFIG.adminName.includes('Dương Thị Thuý Mến'), 'adminName must include Cô Dương Thị Thuý Mến');
-console.assert(SITE_CONFIG.adminPhone === '0985.449.123', 'adminPhone should be 0985.449.123 (Cô Dương Thị Thuý Mến)');
-console.assert(SITE_CONFIG.adminZaloUrl === 'https://zalo.me/0985449123', 'adminZaloUrl should be Cô Mến Zalo');
-console.assert(SITE_CONFIG.secondaryAdminName === 'Thầy Bùi Văn Công', 'secondaryAdminName should be Thầy Bùi Văn Công');
-console.assert(SITE_CONFIG.secondaryAdminPhone === '0982.386.959', 'secondaryAdminPhone should be 0982.386.959');
+// Bản dự thi (Văn bản 3437): trang web không ghi tên trường, tên thầy cô, số điện thoại, logo trường
+const PRIVATE = ['THPT Nhã Nam', 'THPT NHÃ NAM', 'thptnhanam', 'Thuý Mến', 'Thúy Mến', 'cô Mến', 'Bùi Văn Công', 'Bùi Công', 'thầy Công',
+  '0985', '0982', '0962', 'zalo.me', 'logo-160', 'logo-thpt'];
+['index.html', 'js/data.js', 'js/app.js', 'js/utils.js', 'js/doc-texts.js'].forEach(f => {
+  const text = fs.readFileSync('./' + f, 'utf8');
+  PRIVATE.forEach(w => console.assert(!text.includes(w), `${f} must not contain "${w}"`));
+});
+console.assert(fs.readFileSync('./index.html', 'utf8').includes('alt="Biểu trưng văn hóa xã Nhã Nam"'), 'Header must show the Nhã Nam cultural emblem');
+console.assert(fs.existsSync('./assets/images/share/bieu-trung-nha-nam-160.png'), 'Emblem image must exist');
 console.assert(SITE_CONFIG.facebookGroupStatusNote.includes('kiểm duyệt'), 'Facebook note must mention kiểm duyệt');
 console.log('✓ SITE_CONFIG verified');
 

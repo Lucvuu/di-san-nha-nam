@@ -55,15 +55,11 @@ Mỗi khi nhấp vào bất kỳ di sản nào, giao diện chi tiết (Detail M
 - **Hiển thị huy hiệu kiểm duyệt an toàn**:
   > *"Nhóm có bật chế độ kiểm duyệt bài viết để đảm bảo môi trường học tập văn minh, an toàn cho học sinh"*
 - **Cơ chế an toàn cho URL Group**: Lưu trữ tập trung tại `SITE_CONFIG.facebookGroupUrl`. Nếu URL là `#` hoặc chưa điền, khi nhấp nút tham gia, website sẽ mở cửa sổ thông báo thân thiện:
-  > *"Group Facebook hiện đang được Ban điều hành và Cô Mến thiết lập. Đường dẫn sẽ sớm được cập nhật!"*
+  > *"Nhóm Facebook đang được Ban biên tập dự án di sản văn hóa xã Nhã Nam thiết lập. Đường dẫn sẽ được cập nhật khi nhóm mở."*
 
-### 6. Chân Trang & Kênh Liên Hệ Người Điều Hành (Cô Mến)
-- Thông tin quản trị rõ ràng: **Cô Mến & Nhóm phụ trách Di sản Nhã Nam**.
-- **Hotline / Zalo chính thức**: `0985.449.123`.
-- Nút bấm trực tiếp:
-  - **"Nhắn tin Zalo ngay"**: Mở trực tiếp `https://zalo.me/0985449123`.
-  - **"Gọi điện trực tiếp"**: Quay số `tel:0985449123`.
-- Nút nổi Zalo ở góc phải màn hình với hiệu ứng lan tỏa (pulse animation) dễ dàng liên hệ bất cứ lúc nào.
+### 6. Chân trang và góp ý
+- Biểu trưng văn hóa xã Nhã Nam (mặt trống đồng), giới thiệu ngắn về dự án nghiên cứu khoa học của học sinh THPT.
+- Góp ý gửi qua phiếu Google Biểu mẫu ẩn danh; trang không đăng tên, số điện thoại của cá nhân.
 
 ### 7. Góc Học Tập - Trắc Nghiệm Tương Tác
 - 5 câu hỏi trắc nghiệm sinh động kiểm tra kiến thức về Chùa Tứ Giáp, Đền Gốc Khế, Khởi nghĩa Yên Thế, Đình Nhã Nam và Bánh khảo truyền thống.
@@ -143,9 +139,8 @@ Mỗi di tích trong mảng `TANGIBLE_HERITAGE_DATA` hoặc `INTANGIBLE_HERITAGE
 
 ---
 
-## 📞 LIÊN HỆ BAN ĐIỀU HÀNH DỰ ÁN
-- **Chủ nhiệm dự án & Quản trị nội dung**: Cô Mến & Nhóm phụ trách
-- **Hotline / Zalo**: `0985.449.123`
-- **Địa chỉ**: Xã Nhã Nam, Tỉnh Bắc Ninh
+## 📞 GÓP Ý CHO BAN BIÊN TẬP
+- **Phiếu góp ý ẩn danh**: https://forms.gle/DAm42WZF4JRAYzns6
+- **Địa bàn**: Xã Nhã Nam, tỉnh Bắc Ninh
 - **Mục tiêu**: Phục vụ công tác giáo dục truyền thống phi lợi nhuận cho học sinh và nhân dân.
 

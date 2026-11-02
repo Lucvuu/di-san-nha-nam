@@ -1,7 +1,7 @@
 /* Toàn văn trích từ các file Word trong assets/docs (cập nhật tự động). */
 window.DOC_TEXTS = {
   "chua-dong-dieu.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "CHÙA ĐỒNG ĐIỀU (DI TÍCH LỊCH SỬ THÔN ĐỒNG ĐIỀU)",
     "Xếp hạng: Di tích cấp tỉnh",
@@ -25,7 +25,7 @@ window.DOC_TEXTS = {
     "• Nơi đây lưu giữ nhiều hiện vật quý, bia ghi công tích cách mạng và các chứng tích lịch sử của phong trào kháng chiến chống thực dân Pháp.",
     "VI. GÓC HỌC TẬP",
     "Đối với học sinh: Di tích thôn Đồng Điều là minh chứng hùng hồn cho truyền thống kiên cường cách mạng, lòng son sắt một dạ theo Đảng của nhân dân xã Nhã Nam qua các thời kỳ kháng chiến.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
   ],
   "chua-duong-son.docx": [
     "CHÙA DƯƠNG SƠN",
@@ -41,7 +41,7 @@ window.DOC_TEXTS = {
     "Những năm 1946-1958, Công an Khu 12 (nay là các tỉnh Cao Bằng, Lạng Sơn, Bắc Giang, Bắc Ninh, Quảng Ninh) đóng quân tại đây. Giám đốc công an Khu 12 là đồng chí Hoàng Mai. Vào 11/3/1948, Bác Hồ gửi thư cho đồng chí Hoàng Mai, trong thư có 6 nội dung nói về “Tư cách người Công an cách mệnh”. Lời dạy Bác Hồ sau đó được in trên Báo Bạn dân, được lan tỏa trong toàn bộ cán bộ, chiến sĩ của lực lượng Công an nhân dân. Năm 1992, chùa Tứ Giáp được Bộ Văn hóa - Thông tin công nhận di tích lịch sử nghệ thuật."
   ],
   "den-ca-trong.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "ĐỀN THỜ CẢ TRỌNG (ĐỀN GỐC DẺ)",
     "Xếp hạng: Di tích quốc gia đặc biệt",
@@ -64,7 +64,7 @@ window.DOC_TEXTS = {
     "• Bên trong đặt ban thờ tướng quân Cả Trọng cùng đồ tế khí, hoành phi câu đối ca ngợi lòng dũng cảm của người con núi rừng Yên Thế.",
     "VI. GÓC HỌC TẬP",
     "Hình tượng người tướng trẻ Cả Trọng là tấm gương sáng ngời về tuổi trẻ dấn thân, lòng quả cảm và khí phách kiên cường cho học sinh noi theo.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
   ],
   "den-de-truat.docx": [
     "ĐỀN ĐỀ TRUẬT",
@@ -389,7 +389,7 @@ window.DOC_TEXTS = {
     "Năm 1892, Đề Thám lên thay Đề Nắm (do Đề Nắm bị ám sát) lãnh đạo phong trào chống Pháp. Ông đã sai Đề Hậu cùng các tướng bắt Đề Sặt là kẻ ám hại Đề Nắm để tế cờ báo thù cho Đề Nắm. Sau đó, Đề Thám điều Đề Hậu lên Thái Nguyên bắt liên lạc với các cánh quân của Đề Nguyên, Đề Công, Đề Cam. Những cánh quân này kéo về Yên Thế làm cho lực lượng nghĩa quân mạnh dần lên. Từ Thái Nguyên trở về, đến đồn Bãi Bục giáp Hồng Lĩnh, Đề Hậu cho quân dừng chân ăn cơm tối và nghỉ ngơi. Tại đây lợi dụng lúc Đề Hậu mất cảnh giác, một tên phản bội đã ám hại ông, cắt lấy đầu đem về nộp cho đồn binh Nhã Nam lấy thưởng. Thực dân Pháp đem đầu ông bêu 3 ngày ở chợ Nhã Nam đế khủng bố tinh thần quần chúng. Đến đêm, bà Cổng là con gái ông đã lẻn lấy được đầu ông gói vào vạt áo dài bí mật đem về làng Chuông mai táng. Sau đó, vợ con ông phải lên tận Kép Thượng, xã Lam Cốt tránh sự trả thù của thực dân Pháp và tay sai, sau vài năm mới trở lại làng Chuông.\nCùng với giá trị lịch sử, đình làng Chuông là một trung tâm sinh hoạt văn hóa tinh thần của nhân dân thôn Tiến Phan 2. Hằng năm, tại trung tâm di tích đình làng Chuông, nhân dân địa phương lại long trọng tổ chức lễ hội vào ngày 12, 13 tháng Giêng đế tướng nhớ công lao của những vị Thánh thờ trong đình. Trong lễ hội có nhiều trò chơi dân gian đặc sắc và những sinh hoạt văn nghệ truyền thống thu hút đông đảo bà con cùng nam thanh nữ tú xa gần đến tham dự."
   ],
   "dinh-neo.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "ĐÌNH NẺO",
     "Xếp hạng: Di tích cấp tỉnh",
@@ -411,7 +411,7 @@ window.DOC_TEXTS = {
     "• Lưu giữ nhiều cấu kiện gỗ chạm trổ hình hoa cúc dây, rồng chầu mặt trời sinh động cùng ngai thờ, sắc phong cổ.",
     "VI. GÓC HỌC TẬP",
     "Khám phá đình Nẻo giúp bồi đắp lòng tự hào về truyền thống bảo tồn di sản của các thế hệ nhân dân thôn Nẻo nói riêng và xã Nhã Nam nói chung.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
   ],
   "dinh-sat.docx": [
     "ĐÌNH LÀNG SẶT",
@@ -429,7 +429,7 @@ window.DOC_TEXTS = {
     "Chào mừng quý thầy cô và các bạn học sinh đến với Nghĩa địa Pháp.Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Đây là chứng tích lịch sử đặc biệt ghi dấu những tổn thất nặng nề và thất bại không thể tránh khỏi của đạo quân xâm lược trước ý chí quật cường của nghĩa quân Yên Thế.Khu chứng tích lịch sử nơi chôn cất nhiều sĩ quan, binh lính Pháp tử trận tại chiến trường Yên Thế, di tích quốc gia đặc biệt.. Trong suốt cuộc chiến tranh xâm lược Yên Thế, hàng loạt sĩ quan chỉ huy và lính lê dương Pháp đã bỏ mạng dưới tay nghĩa quân của Đề Nắm và Đề Thám. Qua đó Di tích giúp học sinh nhận thức sâu sắc về cái giá của hòa bình và sự quả cảm phi thường của các thế hệ nghĩa binh Yên Thế chống ngoại xâm."
   ],
   "hat-cheo-truyen-thong-nha-nam.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "NGHỆ THUẬT HÁT CHÈO TRUYỀN THỐNG XÃ NHÃ NAM",
     "Loại hình: Nghệ thuật trình diễn dân gian",
@@ -447,11 +447,11 @@ window.DOC_TEXTS = {
     "• Biểu diễn giao lưu tại sân đình vào mỗi dịp lễ hội mùa xuân, ngày hội Đại đoàn kết toàn dân tộc.",
     "• Các câu lạc bộ chèo thường xuyên mở lớp truyền dạy làn điệu cho các em học sinh, thế hệ thanh thiếu niên địa phương.",
     "VI. GIÁ TRỊ BẢO TỒN VÀ GIÁO DỤC",
-    "Hát chèo là cây cầu nối tâm hồn, giáo dục tình yêu văn hóa dân tộc trong các hoạt động ngoại khóa của học sinh THPT Nhã Nam.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
+    "Hát chèo là cây cầu nối tâm hồn, giáo dục tình yêu văn hóa dân tộc trong các hoạt động ngoại khóa của học sinh THPT.",
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
   ],
   "lang-noi-phet-duong-son.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "NGHỆ THUẬT KỂ CHUYỆN DÂN GIAN – LÀNG NÓI PHÉT DƯƠNG SƠN",
     "1. Giới thiệu chung",
@@ -474,7 +474,7 @@ window.DOC_TEXTS = {
     "Làng Dương Sơn từng có những 'trạng phét' nổi tiếng được nhân dân mến mộ như cụ Cả Tam (đã mất), cụ Vũ Văn Lập, ông Nguyễn Văn Sự, ông Vũ Văn Tứ... Nghệ thuật nói quá của các cụ thể hiện qua thơ ca, vè hoặc các mẩu chuyện khoa trương đầy hóm hỉnh, thâm thúy chứ hoàn toàn không mang mục đích lừa dối."
   ],
   "le-hoi-yen-the-nha-nam.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "LỄ HỘI KHỞI NGHĨA YÊN THẾ TẠI XÃ NHÃ NAM",
     "Loại hình: Lễ hội truyền thống",
@@ -492,11 +492,11 @@ window.DOC_TEXTS = {
     "• Phần lễ trang nghiêm: Lễ rước kiệu truyền thống từ các làng thôn, lễ dâng hương tưởng niệm, lễ tế cờ tái hiện lịch sử hào hùng.",
     "• Phần hội tưng bừng: Hội diễn văn nghệ quần chúng, thi đấu cờ tướng, kéo co, đấu vật dân tộc, giải bóng chuyền, hội chọi gà và các trò chơi dân gian đặc sắc.",
     "VI. GIÁ TRỊ BẢO TỒN VÀ GIÁO DỤC",
-    "Lễ hội là không gian văn hóa sống động kết nối các thế hệ học sinh trường THPT Nhã Nam với cội nguồn lịch sử oanh liệt của ông cha.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
+    "Lễ hội là không gian văn hóa sống động kết nối các thế hệ học sinh THPT với cội nguồn lịch sử oanh liệt của ông cha.",
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
   ],
   "nghe-lam-banh-khao-keo-lac-nha-nam.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "NGHỀ LÀM BÁNH KHẢO, KẸO LẠC TRUYỀN THỐNG XÃ NHÃ NAM",
     "Loại hình: Nghề truyền thống",
@@ -514,7 +514,7 @@ window.DOC_TEXTS = {
     "• Làm kẹo lạc: Nấu đường mạch nha sôi dẻo, thả lạc rang chín vàng đều, dàn mỏng trên mặt bàn rồi cắt thành thanh thơm giòn.",
     "VI. GIÁ TRỊ BẢO TỒN VÀ GIÁO DỤC",
     "Gìn giữ hương vị cội nguồn của quê hương, khơi gợi niềm tự hào về sản vật nông nghiệp của địa phương trong các dự án học tập sáng tạo.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
   ],
   "nghia-dia-phap.docx": [
     "ĐỒI PHỦ",
@@ -523,7 +523,7 @@ window.DOC_TEXTS = {
     "Chào mừng quý thầy cô và các bạn học sinh đến với Nghĩa địa Pháp.Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Đây là chứng tích lịch sử đặc biệt ghi dấu những tổn thất nặng nề và thất bại không thể tránh khỏi của đạo quân xâm lược trước ý chí quật cường của nghĩa quân Yên Thế.Khu chứng tích lịch sử nơi chôn cất nhiều sĩ quan, binh lính Pháp tử trận tại chiến trường Yên Thế, di tích quốc gia đặc biệt.. Trong suốt cuộc chiến tranh xâm lược Yên Thế, hàng loạt sĩ quan chỉ huy và lính lê dương Pháp đã bỏ mạng dưới tay nghĩa quân của Đề Nắm và Đề Thám. Qua đó Di tích giúp học sinh nhận thức sâu sắc về cái giá của hòa bình và sự quả cảm phi thường của các thế hệ nghĩa binh Yên Thế chống ngoại xâm."
   ],
   "tap-quan-tuong-niem-de-nam-de-tham.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "TẬP QUÁN TƯỞNG NIỆM LƯƠNG VĂN NẮM VÀ HOÀNG HOA THÁM",
     "Loại hình: Tập quán xã hội & tín ngưỡng",
@@ -538,13 +538,13 @@ window.DOC_TEXTS = {
     "• Biểu tượng tinh thần độc lập: Hình tượng Đề Nắm và Đề Thám trở thành biểu tượng tinh thần của ý chí không khuất phục trước ngoại bang.",
     "V. NGHI THỨC, HOẠT ĐỘNG VÀ THỰC HÀNH",
     "• Nghi thức thắp hương tưởng niệm vào ngày rằm, mùng một và ngày giỗ trận tại đình Hả, đền Gốc Khế, đền Đề Truật.",
-    "• Lễ dâng hương báo công của học sinh trường THPT Nhã Nam trước thềm các kỳ thi và sự kiện trọng đại của nhà trường.",
+    "• Lễ dâng hương báo công của học sinh THPT trước thềm các kỳ thi và sự kiện trọng đại của nhà trường.",
     "VI. GIÁ TRỊ BẢO TỒN VÀ GIÁO DỤC",
     "Là bài học đạo đức, lý tưởng cách mạng sâu sắc nhất cho đoàn viên, học sinh xã Nhã Nam trên con đường rèn đức luyện tài.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
   ],
   "tro-choi-dan-gian-vo-co-truyen.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "TRÒ CHƠI DÂN GIAN VÀ VÕ CỔ TRUYỀN TRONG LỄ HỘI NHÃ NAM",
     "Loại hình: Trò chơi dân gian & võ thuật",
@@ -561,8 +561,8 @@ window.DOC_TEXTS = {
     "• Sới vật dân tộc đầu xuân: Tiếng trống thúc giục, các đô vật tranh tài quyết liệt trên nền cát mịn với tinh thần thượng võ mãnh liệt.",
     "• Hội thi cờ người, kéo co, đập niêu đất, chọi gà và giao lưu võ thuật cổ truyền giữa các trường học và câu lạc bộ thanh niên.",
     "VI. GIÁ TRỊ BẢO TỒN VÀ GIÁO DỤC",
-    "Góp phần rèn luyện thể lực và bồi dưỡng lòng dũng cảm, tinh thần đồng đội cho học sinh thế hệ trẻ Trường THPT Nhã Nam.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Trường THPT Nhã Nam, xã Nhã Nam, tỉnh Bắc Ninh."
+    "Góp phần rèn luyện thể lực và bồi dưỡng lòng dũng cảm, tinh thần đồng đội cho học sinh THPT và thế hệ trẻ.",
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
   ],
   "kich-ban-dien-tich-de-nam-te-co.docx": [
     "KỊCH BẢN LỄ TẾ CỜ HỘI ĐÌNH HẢ",
@@ -677,7 +677,7 @@ window.DOC_TEXTS = {
     "* Thực trạng: Trải qua thời gian, nét văn hóa đặc thù này đang dần mai một và được chính quyền địa phương tìm cách lưu giữ, phục hồi."
   ],
   "nghe-thuat-hat-quan-ho-nha-nam.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "NGHỆ THUẬT DÂN CA QUAN HỌ TẠI XÃ NHÃ NAM (CÂU LẠC BỘ DÂN CA QUAN HỌ XÃ NHÃ NAM)",
     "Loại hình di sản: Nghệ thuật trình diễn dân gian (Dân ca Quan họ Bắc Ninh)",
@@ -694,11 +694,11 @@ window.DOC_TEXTS = {
     "III. ĐẶC TRƯNG NGHỆ THUẬT VÀ KHÔNG GIAN THỰC HÀNH",
     "Các liền anh, liền chị CLB Dân ca Quan họ xã Nhã Nam giữ vẹn nguyên phong thái thanh lịch, trang nhã đặc trưng của Quan họ truyền thống: Liền anh trong trang phục áo the, khăn xếp, ô đen đĩnh đạc; liền chị trong tà áo tứ thân mớ ba mớ bảy, khăn mỏ quạ, nón quai thao thêu hoa rực rỡ.",
     "Các làn điệu Quan họ mộc mạc, ngọt ngào, sâu lắng như 'Khách đến chơi nhà', 'Mời nước mời trầu', 'Ngồi tựa mạn thuyền', 'Cây trúc xinh', 'Người ơi người ở đừng về' thường xuyên được biểu diễn tại sân khấu hội trường UBND xã, sân đình cổ kính và đặc biệt là không gian thiêng liêng tại Khu lưu niệm Sáu điều Bác Hồ dạy CAND.",
-    "IV. Ý NGHĨA GIÁO DỤC ĐỐI VỚI HỌC SINH THPT NHÃ NAM",
-    "Đối với thầy và trò Trường THPT Nhã Nam, Dân ca Quan họ là bài học sinh động về tình yêu ngôn ngữ mẹ đẻ, về cách ứng xử lễ độ, khiêm nhường 'người ngoan người đẹp'. CLB là hạt nhân quan trọng phối hợp với nhà trường đưa di sản văn hóa phi vật thể vào các giờ ngoại khóa và chương trình giáo dục truyền thống địa phương."
+    "IV. Ý NGHĨA GIÁO DỤC ĐỐI VỚI HỌC SINH THPT",
+    "Đối với thầy và trò các trường phổ thông trên địa bàn, Dân ca Quan họ là bài học sinh động về tình yêu ngôn ngữ mẹ đẻ, về cách ứng xử lễ độ, khiêm nhường 'người ngoan người đẹp'. CLB là hạt nhân quan trọng phối hợp với nhà trường đưa di sản văn hóa phi vật thể vào các giờ ngoại khóa và chương trình giáo dục truyền thống địa phương."
   ],
   "clb-nghe-thuat-dan-gian-nha-nam.docx": [
-    "TRƯỜNG THPT NHÃ NAM • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "CÂU LẠC BỘ NGHỆ THUẬT DÂN GIAN XÃ NHÃ NAM",
     "Loại hình di sản: Văn hóa dân gian - Nghệ thuật quần chúng truyền thống",
@@ -721,6 +721,6 @@ window.DOC_TEXTS = {
     "• Tổ chức sinh hoạt, luyện tập thường xuyên, dàn dựng nhiều tiết mục đặc sắc phục vụ các ngày lễ kỷ niệm, hội làng và ngày hội Đại đoàn kết toàn dân tộc.",
     "• Tuyên truyền, giáo dục nếp sống văn minh và giữ gìn bản sắc văn hóa dân tộc trong các tầng lớp nhân dân, truyền cảm hứng văn hóa cho thế hệ thanh thiếu niên.",
     "IV. ĐÁNH GIÁ VÀ GIÁ TRỊ CỘNG ĐỒNG",
-    "Sự ra đời và phát triển bền bỉ của CLB Nghệ thuật dân gian khẳng định sức sống mãnh liệt của vốn cổ truyền thống trong lòng xã Nhã Nam đương đại. CLB là cầu nối gắn kết tình làng nghĩa xóm, làm phong phú đời sống tinh thần và là môi trường trải nghiệm thực tế quý giá cho học sinh Trường THPT Nhã Nam."
+    "Sự ra đời và phát triển bền bỉ của CLB Nghệ thuật dân gian khẳng định sức sống mãnh liệt của vốn cổ truyền thống trong lòng xã Nhã Nam đương đại. CLB là cầu nối gắn kết tình làng nghĩa xóm, làm phong phú đời sống tinh thần và là môi trường trải nghiệm thực tế quý giá cho học sinh THPT."
   ]
 };
