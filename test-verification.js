@@ -329,6 +329,37 @@ const indexHtmlContent = fs.readFileSync('index.html', 'utf8');
 console.assert(indexHtmlContent.includes('id="visitor-counter-display"'), 'index.html must have #visitor-counter-display element');
 console.log(`  ✓ Visitor counter verified: Base count = ${SITE_CONFIG.visitorCounter.baseCount} (between 5.000 - 7.000), API endpoint ready, element wired in footer`);
 
+console.log('--- 11. TESTING SECURITY POLICY: BUDGET PROPOSALS & CONTRACTS EXCLUSION ---');
+const { execSync } = require('child_process');
+
+// 11.1 Verify .gitignore contains critical patterns
+const gitignoreContent = fs.readFileSync('.gitignore', 'utf8');
+console.assert(gitignoreContent.includes('[Hh]ợp đồng'), '.gitignore must ignore hợp đồng');
+console.assert(gitignoreContent.includes('[Dd]ự trù'), '.gitignore must ignore dự trù');
+console.assert(gitignoreContent.includes('[Kk]inh phí'), '.gitignore must ignore kinh phí');
+console.assert(gitignoreContent.includes('*.xls'), '.gitignore must ignore *.xls');
+console.assert(gitignoreContent.includes('*.xlsx'), '.gitignore must ignore *.xlsx');
+console.log('  ✓ .gitignore contains strict exclusion patterns for budget proposals & contract dossiers');
+
+// 11.2 Verify GEMINI.md exists and enforces security rule
+console.assert(fs.existsSync('GEMINI.md'), 'GEMINI.md must exist at project root');
+const geminiRules = fs.readFileSync('GEMINI.md', 'utf8');
+console.assert(geminiRules.includes('dự trù kinh phí'), 'GEMINI.md must mention dự trù kinh phí');
+console.assert(geminiRules.includes('hồ sơ hợp đồng'), 'GEMINI.md must mention hồ sơ hợp đồng');
+console.log('  ✓ GEMINI.md system rule exists and enforces persistent security constraint');
+
+// 11.3 Verify no tracked git files violate this rule
+try {
+  const trackedFiles = execSync('git ls-files', { encoding: 'utf8' }).split(/\r?\n/);
+  const sensitivePattern = /(hop.?dong|du.?tru|kinh.?phi|de.?xuat|thanh.?toan|nghiem.?thu|bao.?gia|contract|budget|\.xlsx?$)/i;
+  const violatedTrackedFiles = trackedFiles.filter(file => file.trim() && sensitivePattern.test(file));
+  console.assert(violatedTrackedFiles.length === 0, `VIOLATION: Found tracked sensitive files in git: ${violatedTrackedFiles.join(', ')}`);
+  console.log('  ✓ Verified 0% tracked files in git violate budget or contract security rules');
+} catch (e) {
+  console.error('  ✗ Error checking git tracked files:', e.message);
+  throw e;
+}
+
 console.log('\n======================================================');
-console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE & APP INIT TESTS PASSED! 🎉');
+console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE, APP INIT & SECURITY TESTS PASSED! 🎉');
 console.log('======================================================\n');

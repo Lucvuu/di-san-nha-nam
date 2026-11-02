@@ -23,22 +23,87 @@ scripts/*.json
 /*.doc
 /*.docx
 /*.pdf
-/*.xls
-/*.xlsx
+*.xls
+*.xlsx
 /4 THPNN Bùi Công.mp3
 /Nha nam trong toi.mp3
 /luu-thuy-kim-tien.mp3
 /BANNER_THPT NHÃ NAM.png
 /Đôi_Bờ.mp3
 
-# Hồ sơ hợp đồng và đề xuất dự trù kinh phí: không bao giờ đưa lên git.
-Hồ sơ hợp đồng*/
+# ====================================================================
+# BẢO MẬT TUYỆT ĐỐI: HỒ SƠ HỢP ĐỒNG & ĐỀ XUẤT DỰ TRÙ KINH PHÍ
+# Yêu cầu hệ thống: Tuyệt đối không bao giờ đưa lên git trong mọi tình huống!
+# ====================================================================
+*[Hh]ồ sơ hợp đồng*
+*[Hh]o so hop dong*
 *[Hh]op dong*
 *[Hh]ợp đồng*
+*[Hh]op-dong*
+*[Hh]ợp-đồng*
+*[Hh]op_dong*
+*[Hh]ợp_đồng*
 *[Dd]u tru*
 *[Dd]ự trù*
+*[Dd]u-tru*
+*[Dd]ự-trù*
+*[Dd]u_tru*
+*[Dd]ự_trù*
 *[Kk]inh phi*
 *[Kk]inh phí*
+*[Kk]inh-phi*
+*[Kk]inh-phí*
+*[Kk]inh_phi*
+*[Kk]inh_phí*
+*[Dd]e xuat*
+*[Đđ]ề xuất*
+*[Dd]e-xuat*
+*[Đđ]ề-xuất*
+*[Dd]e_xuat*
+*[Đđ]ề_xuất*
+*[Bb]ao gia*
+*[Bb]áo giá*
+*[Bb]ao-gia*
+*[Bb]áo-giá*
+*[Bb]ao_gia*
+*[Bb]áo_giá*
+*[Tt]hanh toan*
+*[Tt]hanh toán*
+*[Tt]hanh-toan*
+*[Tt]hanh-toán*
+*[Tt]hanh_toan*
+*[Tt]hanh_toán*
 *[Dd]e nghi thanh toan*
-*[Tt]hanh ly hop dong*
+*[Đđ]ề nghị thanh toán*
+*[Tt]hanh ly*
+*[Tt]hanh lý*
+*[Tt]hanh-ly*
+*[Tt]hanh-lý*
+*[Tt]hanh_ly*
+*[Tt]hanh_lý*
+*[Nn]ghiem thu*
+*[Nn]ghiệm thu*
+*[Nn]ghiem-thu*
+*[Nn]ghiệm-thu*
+*[Nn]ghiem_thu*
+*[Nn]ghiệm_thu*
 *[Bb]ien ban nghiem thu*
+*[Bb]iên bản nghiệm thu*
+*[Hh]oa don*
+*[Hh]óa đơn*
+*[Hh]oa-don*
+*[Hh]óa-đơn*
+*[Hh]oa_don*
+*[Hh]óa_đơn*
+*contract*
+*Contract*
+*CONTRACT*
+*budget*
+*Budget*
+*BUDGET*
+*proposal*
+*Proposal*
+*PROPOSAL*
+*invoice*
+*Invoice*
+*INVOICE*
