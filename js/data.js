@@ -36,7 +36,7 @@ const SITE_CONFIG = {
   
   // Facebook Group Community Configuration
   facebookGroupUrl: "#", 
-  facebookGroupStatusNote: "Nhóm có bật chế độ kiểm duyệt bài viết để đảm bảo môi trường học tập văn minh, an toàn cho học sinh",
+  facebookGroupStatusNote: "Nhóm bật kiểm duyệt: bài viết và bình luận được duyệt trước khi hiển thị.",
 
   // Administrator & Contact Configuration
   adminRole: "Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam",

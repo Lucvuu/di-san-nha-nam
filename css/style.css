@@ -276,12 +276,12 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(20, 10, 8, 0.15) 0%, rgba(35, 12, 10, 0.75) 100%);
+  background: linear-gradient(180deg, rgba(20, 10, 8, 0.05) 0%, rgba(20, 10, 8, 0.35) 40%, rgba(25, 10, 8, 0.85) 100%);
   transition: background 0.3s ease;
 }
 
 .hero-entry-card:hover::before {
-  background: linear-gradient(180deg, rgba(20, 10, 8, 0.1) 0%, rgba(35, 12, 10, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(20, 10, 8, 0.05) 0%, rgba(20, 10, 8, 0.4) 40%, rgba(25, 10, 8, 0.9) 100%);
 }
 
 .hero-entry-card:hover {
@@ -338,12 +338,9 @@ button, [role="button"], a, input[type="button"], input[type="submit"], select, 
   text-decoration: underline;
 }
 
-.quick-tag + .quick-tag::before {
-  content: '·';
-  display: inline-block;
-  margin-right: 0.5rem;
-  color: var(--color-bronze);
-  text-decoration: none;
+.quick-tag {
+  margin-right: 0.875rem;
+  color: #5C5248;
 }
 
 /* Nút Zalo nổi góc phải */
@@ -746,8 +743,13 @@ body.modal-open .back-to-top-btn {
 }
 
 /* Typographic balance & anti-orphan rules */
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   text-wrap: balance;
+}
+
+/* Tiêu đề dài nhiều dòng (câu hỏi, tuyến): ngắt tự nhiên, chỉ chống chữ mồ côi */
+h3, h4, h5, h6 {
+  text-wrap: pretty;
 }
 
 p, blockquote, figcaption {
@@ -771,8 +773,6 @@ p, blockquote, figcaption {
 }
 
 .hero-entry-card h2,
-.relic-stat-interactive-card h4,
-.heritage-route-card h3,
 .heritage-card h3 {
   text-wrap: balance;
 }
@@ -904,4 +904,13 @@ p, blockquote, figcaption {
 @media (prefers-reduced-motion: reduce) {
   .heritage-card, .hero-entry-card { transition: none; }
   .heritage-card:hover, .hero-entry-card:hover { transform: none; }
+}
+
+.hero-card-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0.875rem;
+  max-width: 46ch;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }

@@ -1299,7 +1299,7 @@ function renderQuiz() {
   }
 
   container.innerHTML = quizList.map((q, qIndex) => `
-    <div class="p-5 rounded-2xl bg-white border border-[#EADECF] shadow-sm mb-4">
+    <div class="p-5 sm:p-6 rounded-xl bg-[#FFFCF7] border border-[rgba(139,30,30,0.12)] mb-4">
       <div class="flex items-start gap-3 mb-3">
         <span class="w-7 h-7 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">
           ${qIndex + 1}
@@ -1311,7 +1311,7 @@ function renderQuiz() {
 
       <div class="space-y-2 pl-10">
         ${q.options.map((opt, optIndex) => `
-          <label class="quiz-option-label flex items-center gap-3 p-3 rounded-xl border border-[#EADECF] hover:bg-[#FDFBF7] cursor-pointer transition-colors text-sm text-[#4A4036]">
+          <label class="quiz-option-label flex items-center gap-3 p-3 rounded-lg border border-[#EADECF] hover:bg-[#FAF6EE] cursor-pointer transition-colors text-sm text-[#4A4036]">
             <input 
               type="radio" 
               name="quiz-q-${q.id}" 
