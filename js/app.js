@@ -2378,7 +2378,7 @@ function filterByRankDirect(rankCategory) {
 /**
  * ====================================================================
  * BỘ ĐẾM LƯỢT TRUY CẬP (VISITOR COUNTER)
- * Công thức: Tổng hiển thị = Base count (2.000 - 5.000) + Lượt truy cập thật
+ * Công thức: Tổng hiển thị = Base count + Lượt truy cập thật
  * Chống F5 ảo: Mỗi phiên (tab) chỉ hit 1 lần, các lần sau gọi get
  * Fallback an toàn: Có mạng hay mất mạng đều hiển thị số mượt mà
  * ====================================================================
@@ -2391,14 +2391,14 @@ function initVisitorCounter() {
     ? SITE_CONFIG.visitorCounter
     : {
         enabled: true,
-        baseCount: 6284,
+        baseCount: 6241,
         namespace: "di-san-nha-nam-thpt-bac-ninh",
         endpoint: "https://countapi.mileshilliard.com/api/v1"
       };
 
   if (cfg.enabled === false) return;
 
-  const base = cfg.baseCount || 6284;
+  const base = cfg.baseCount || 6241;
   let cachedVal = null;
   try {
     cachedVal = localStorage.getItem('nhanam_cached_visitors');

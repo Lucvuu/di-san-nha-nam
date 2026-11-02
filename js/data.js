@@ -29,7 +29,7 @@ const SITE_CONFIG = {
   // Cấu hình bộ đếm lượt truy cập (Visitor Counter: Số khởi điểm ban đầu + Lượt truy cập thật)
   visitorCounter: {
     enabled: true,
-    baseCount: 6284, // Số khởi điểm ban đầu trong tầm 5.000 – 7.000
+    baseCount: 6241, // Đến 02/11/2026: 6.241 + 153 lượt API = 6.394
     namespace: "di-san-nha-nam-thpt-bac-ninh",
     endpoint: "https://countapi.mileshilliard.com/api/v1"
   },
