@@ -143,30 +143,22 @@
           </a>
         </nav>
 
-        <!-- Thao tác góc phải: Trình phát nhạc 2 bài ("Nhã Nam trong tôi" & "THPT Nhã Nam") + Hotline -->
+        <!-- Thao tác góc phải: Trình phát ca khúc quê hương "Nhã Nam trong tôi" + Hotline -->
         <div class="hidden sm:flex items-center gap-2 flex-shrink-0">
-          <!-- Trình phát nhạc 2 ca khúc quê hương -->
+          <!-- Trình phát ca khúc quê hương "Nhã Nam trong tôi" -->
           <div class="music-player-pill flex items-center gap-1.5 bg-[#F5EFE6] border border-[#C59B27]/40 rounded-full py-1 px-3 shadow-xs whitespace-nowrap">
             <button 
               id="sound-toggle-btn"
               type="button" 
               onclick="toggleMusicPlayback()"
               class="flex items-center gap-1.5 text-xs font-bold text-[#8B1E1E] hover:text-[#701A1A] transition-colors whitespace-nowrap"
-              title="Phát / Tạm dừng ca khúc quê hương">
+              title="Phát / Tạm dừng ca khúc quê hương: Nhã Nam trong tôi">
               <span class="equalizer-icon" id="header-eq" aria-hidden="true">
                 <span class="eq-bar eq-bar-1"></span>
                 <span class="eq-bar eq-bar-2"></span>
                 <span class="eq-bar eq-bar-3"></span>
               </span>
               <svg class="ic w-3.5 h-3.5" aria-hidden="true"><use href="#i-music"/></svg><span id="sound-toggle-label" class="whitespace-nowrap font-semibold">Nhã Nam trong tôi</span>
-            </button>
-            <button 
-              type="button" 
-              onclick="nextTrack()"
-              aria-label="Chuyển sang bài tiếp theo (Nhã Nam trong tôi ⮂ THPT Nhã Nam)"
-              class="w-6 h-6 rounded-full bg-white text-[#8B1E1E] hover:bg-[#8B1E1E] hover:text-white transition flex items-center justify-center shadow-xs flex-shrink-0 ml-0.5"
-              title="Đổi bài tiếp theo (Nhã Nam trong tôi ⮂ THPT Nhã Nam)">
-              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M5.586 19.414A2 2 0 012 18V6a2 2 0 013.586-1.414l8 6a2 2 0 010 2.828l-8 6zM18 5a1 1 0 011 1v12a1 1 0 11-2 0V6a1 1 0 011-1z"/></svg>
             </button>
           </div>
 
@@ -196,22 +188,19 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-[#EADECF] bg-[#FAF6EE] px-4 pt-3 pb-5 space-y-3 shadow-lg">
-      <!-- Trình phát nhạc trên mobile -->
-      <div class="flex items-center justify-between p-2.5 rounded-xl bg-[#F5EFE6] border border-[#C59B27]/30 text-xs">
+      <!-- Trình phát ca khúc quê hương "Nhã Nam trong tôi" trên mobile -->
+      <div class="p-2.5 rounded-xl bg-[#F5EFE6] border border-[#C59B27]/30 text-xs">
         <button 
           type="button" 
           onclick="toggleMusicPlayback()"
-          class="flex items-center gap-2 font-bold text-[#8B1E1E]">
+          class="flex items-center justify-center gap-2 font-bold text-[#8B1E1E] w-full py-1">
+          <span class="equalizer-icon" id="mobile-eq" aria-hidden="true">
+            <span class="eq-bar eq-bar-1"></span>
+            <span class="eq-bar eq-bar-2"></span>
+            <span class="eq-bar eq-bar-3"></span>
+          </span>
           <span><svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-music"/></svg> Ca khúc:</span>
           <span class="sound-track-label">Nhã Nam trong tôi</span>
-        </button>
-        <button 
-          type="button" 
-          onclick="nextTrack()"
-          aria-label="Đổi bài tiếp theo"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white text-[#8B1E1E] font-bold shadow-xs hover:bg-[#8B1E1E] hover:text-white transition-colors">
-          <span>Đổi bài</span>
-          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M5.586 19.414A2 2 0 012 18V6a2 2 0 013.586-1.414l8 6a2 2 0 010 2.828l-8 6zM18 5a1 1 0 011 1v12a1 1 0 11-2 0V6a1 1 0 011-1z"/></svg>
         </button>
       </div>
 
@@ -1499,8 +1488,8 @@
   </div>
 
   <!-- SCRIPT FILES -->
-  <script src="js/data.js?v=3.4.3"></script>
+  <script src="js/data.js?v=3.4.4"></script>
   <script src="js/utils.js?v=3.4.1"></script>
-  <script src="js/app.js?v=3.4.3"></script>
+  <script src="js/app.js?v=3.4.4"></script>
 </body>
 </html>

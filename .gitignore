@@ -19,6 +19,10 @@ Tài liệu di sản/
 *.mp4
 assets/videos/
 scripts/*.json
+# Âm thanh: chỉ đưa lên các bản thuyết minh và ca khúc đang dùng trên trang
+assets/audio/*.mp3
+!assets/audio/thuyet-minh-*.mp3
+!assets/audio/nha-nam-trong-toi.mp3
 
 # Bộ quy tắc nội bộ và thư mục ảnh nháp (ảnh đã chọn nằm trong assets/images/<chủ đề>/)
 assets/system-prompt-pack.json
@@ -29,11 +33,8 @@ assets/images/phi-vat-the/
 /*.pdf
 *.xls
 *.xlsx
-/4 THPNN Bùi Công.mp3
-/Nha nam trong toi.mp3
-/luu-thuy-kim-tien.mp3
+/*.mp3
 /BANNER_THPT NHÃ NAM.png
-/Đôi_Bờ.mp3
 
 # ====================================================================
 # BẢO MẬT TUYỆT ĐỐI: HỒ SƠ HỢP ĐỒNG & ĐỀ XUẤT DỰ TRÙ KINH PHÍ

@@ -102,18 +102,12 @@ function initApp() {
 let currentTrackIndex = 0;
 
 function getActivePlaylist() {
-  return (typeof MUSIC_PLAYLIST!== 'undefined' && MUSIC_PLAYLIST.length)? MUSIC_PLAYLIST: [
+  return (typeof MUSIC_PLAYLIST !== 'undefined' && MUSIC_PLAYLIST.length) ? MUSIC_PLAYLIST : [
     {
       id: "nha-nam-trong-toi",
       title: "Nhã Nam trong tôi",
-      artist: "Ca khúc truyền thống",
+      artist: "Ca khúc truyền thống quê hương",
       src: "./assets/audio/nha-nam-trong-toi.mp3"
-    },
-    {
-      id: "thpt-nha-nam",
-      title: "THPT Nhã Nam",
-      artist: "Trường THPT Nhã Nam",
-      src: "./assets/audio/thpt-nha-nam.mp3"
     }
   ];
 }
@@ -132,10 +126,7 @@ function initAudioPlayerSettings() {
       bgMusic.src = currentTrack.src;
     }
 
-    // Tự động chuyển bài khi kết thúc và lặp lại danh sách (Playlist Loop)
-    bgMusic.onended = () => {
-      nextTrack(true);
-    };
+    bgMusic.loop = playlist.length === 1;
   }
 
   updateMusicPlayerUI();
@@ -1651,35 +1642,10 @@ async function toggleMusicPlayback() {
       await bgMusic.play();
       state.isAudioPlaying = true;
       updateMusicPlayerUI();
-      showToastNotification(`Đang phát ca khúc: ${track.title} (${track.artist || 'THPT Nhã Nam'})`, 'success');
+      showToastNotification(`Đang phát ca khúc: ${track.title}`, 'success');
     } catch (err) {
       console.warn('Playback error:', err);
       showToastNotification('Chạm vào màn hình để bắt đầu phát nhạc', 'info');
-    }
-  }
-}
-
-/**
- * Chuyển sang bài tiếp theo trong Playlist
- */
-async function nextTrack(auto = false) {
-  const bgMusic = document.getElementById('bg-music');
-  const playlist = getActivePlaylist();
-  currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-  const track = playlist[currentTrackIndex];
-
-  if (bgMusic) {
-    bgMusic.src = track.src;
-    bgMusic.currentTime = 0;
-    try {
-      await bgMusic.play();
-      state.isAudioPlaying = true;
-      updateMusicPlayerUI();
-      if (!auto) {
-        showToastNotification(`Đã chuyển bài: ${track.title}`, 'success');
-      }
-    } catch (err) {
-      console.warn('Next track playback error:', err);
     }
   }
 }

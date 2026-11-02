@@ -42,7 +42,7 @@ console.log('  ✓ Verified OFFICIAL_COMMUNE_RELICS: 37 total (8 QG đặc biệ
 console.log('  ✓ Verified 16 ranked relics have 100% 1-to-1 linkage to TANGIBLE_HERITAGE_DATA');
 
 console.log('--- 2. TESTING AUDIO PLAYLIST ---');
-console.assert(Array.isArray(MUSIC_PLAYLIST) && MUSIC_PLAYLIST.length === 2, 'Should have 2 tracks in MUSIC_PLAYLIST');
+console.assert(Array.isArray(MUSIC_PLAYLIST) && MUSIC_PLAYLIST.length === 1 && MUSIC_PLAYLIST[0].id === 'nha-nam-trong-toi', 'Should have only 1 track "Nhã Nam trong tôi" in MUSIC_PLAYLIST');
 MUSIC_PLAYLIST.forEach((track, i) => {
   console.assert(track.title && track.artist && track.src, `Track ${i} must have title, artist, src`);
   console.assert(fs.existsSync(track.src), `Audio file ${track.src} must exist on disk`);
