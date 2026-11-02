@@ -424,26 +424,27 @@ const TANGIBLE_HERITAGE_DATA = [
         "isPrimary": false
       }
     ],
-    "overview": "Trụ sở Công an Khu XII những năm 1946–1948. Thư Chủ tịch Hồ Chí Minh gửi ngày 11/3/1948 nêu Sáu điều dạy Công an nhân dân. Chùa còn bia đá niên hiệu Cảnh Hưng (1771).",
+    "overview": "Ngôi chùa cổ dựng khoảng 1771–1773 (còn gọi chùa Đại Phúc, chùa Gốc Gạo), nơi đặt trụ sở Sở Công an Khu XII (1946–1948) đón nhận bức thư Sáu điều Bác Hồ dạy CAND ngày 11/3/1948; liền kề Khu lưu niệm rộng hơn 3,3 ha.",
     "content": {
-      "intro": "Chùa Tứ Giáp, tên chữ Đại Phúc tự, dân gọi là chùa làng Nguộn, ở tổ dân phố Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Chùa có từ thời Lê, thế kỷ XVIII. Những năm 1946–1948, Công an Khu XII đóng trụ sở tại đây; ngày 11/3/1948, Chủ tịch Hồ Chí Minh gửi thư cho Công an Khu XII, nêu Sáu điều dạy Công an nhân dân.",
+      "intro": "Chùa Tứ Giáp (tên chữ Đại Phúc tự, dân gian gọi là chùa làng Nguộn hay chùa Gốc Gạo) tọa lạc tại tổ dân phố Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Ngôi chùa được khởi dựng khoảng năm 1771–1773 thời Lê Cảnh Hưng, xếp hạng Di tích lịch sử – văn hóa cấp Quốc gia năm 1992. Giai đoạn 1946–1948, nơi đây là trụ sở Sở Công an Khu XII và là nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân (11/3/1948).",
       "historicalSignificance": [
-        "**Nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân:** Trong kháng chiến chống thực dân Pháp (1946 – 1948), chùa Tứ Giáp là trụ sở đóng quân và làm việc của Công an Khu XII.",
-        "**Bức thư lịch sử ngày 11/3/1948:** Nhận được báo Tết 'Bạn Dân' do đồng chí Hoàng Mai (Giám đốc Công an Khu XII) kính biếu, Chủ tịch Hồ Chí Minh đã gửi bức thư lịch sử căn dặn về 'Tư cách người Công an cách mệnh'. Sáu lời dạy thiêng liêng đã trở thành kim chỉ nam rèn luyện của mọi thế hệ chiến sĩ CAND Việt Nam.",
-        "**Xếp hạng di tích:** Chùa Tứ Giáp được xếp hạng di tích lịch sử và nghệ thuật cấp quốc gia theo Quyết định số 138/QĐ ngày 31/01/1992."
+        "**Trụ sở Sở Công an Khu XII và đồng chí Hoàng Mai (1922–2004):** Tháng 11/1946, cả nước chia thành 12 khu hành chính – quân sự (Khu 12 gồm Cao Bằng, Lạng Sơn, Bắc Giang, Bắc Ninh và Quảng Ninh). Sở Công an Khu 12 đặt trụ sở tại chùa Tứ Giáp (Nhã Nam), do đồng chí Hoàng Mai làm Giám đốc khi mới 26 tuổi.",
+        "**Bức thư lịch sử ngày 11/3/1948:** Đầu năm 1948, sau Hội nghị Công an toàn quốc lần thứ 2 tại Tuyên Quang, đồng chí Hoàng Mai viết thư xin Bác góp ý về rèn luyện đạo đức, tác phong nghiệp vụ và gửi biếu Người tờ báo 'Bạn Dân' – cơ quan tuyên truyền của Sở. Ngày 11/3/1948, Chủ tịch Hồ Chí Minh gửi thư hồi âm căn dặn: 'Công an của ta là Công an nhân dân, vì dân mà phục vụ và dựa vào dân mà làm việc', đồng thời nêu Sáu điều về 'Tư cách người Công an cách mệnh'.",
+        "**Chứng tích kháng chiến và cây gạo 'Luân hồi':** Năm 1947, chùa Tứ Giáp từng bị thực dân Pháp bắn phá ác liệt; đến nay trên các cột gỗ lim sẫm màu thời gian vẫn còn lưu dấu đạn. Trước sân chùa, gốc cây gạo cổ thụ trồng từ khi dựng chùa đã hóa mục nhưng từ chính gốc ấy lại vươn lên cây gạo con xanh tốt – được gọi là cây gạo 'Luân hồi', ẩn dụ cho sức sống và tinh thần cách mạng bất diệt.",
+        "**Xếp hạng di tích và điểm đến giáo dục truyền thống:** Chùa Tứ Giáp được xếp hạng Di tích cấp Quốc gia theo Quyết định số 138/QĐ ngày 31/01/1992. Hằng năm, quần thể di tích và Khu lưu niệm đón từ 8.000 đến 16.000 lượt cán bộ, chiến sĩ, học sinh và nhân dân về sinh hoạt chính trị, học tập truyền thống."
       ],
       "architecture": [
-        "Kiến trúc truyền thống kiểu tiền chữ Nhất (-), hậu chữ Đinh (丁) vững chãi, tường gạch cổ, mái lợp ngói mũi hài thanh thoát.",
-        "Hệ thống cột gỗ lim chắc khỏe, vì kèo kết cấu con chồng giá chiêng được chạm trổ hoa lá, rồng mây tinh tế.",
-        "Lưu giữ nhiều bảo vật quý: bia đá niên hiệu Cảnh Hưng (1771), chuông đồng đúc thế kỷ XIX, các pho tượng Phật sơn son thếp vàng cổ kính.",
-        "Khuôn viên hiện nay được mở rộng xây dựng khu lưu niệm Sáu điều Bác Hồ dạy Công an nhân dân với tượng đài Bác Hồ trang nghiêm, hoa viên xanh mát và nhà truyền thống giáo dục thế hệ trẻ."
+        "**Chùa cổ Tứ Giáp (Đại Phúc tự):** Kiến trúc truyền thống kiểu tiền chữ Nhất (-), hậu chữ Đinh (丁) vững chãi, khung cột gỗ lim còn lưu dấu đạn năm 1947, lưu giữ bia đá niên hiệu Cảnh Hưng (1771), chuông đồng thế kỷ XIX và hệ thống tượng Phật cổ.",
+        "**Khu lưu niệm Sáu điều Bác Hồ dạy CAND (rộng hơn 3,3 ha):** Khởi công ngày 15/8/2017 và khánh thành ngày 11/3/2018 (kỷ niệm 70 năm Bác Hồ có Sáu điều dạy CAND) từ nguồn xã hội hóa hơn 100 tỷ đồng do cán bộ, chiến sĩ toàn lực lượng đóng góp.",
+        "**Tượng đài Bác Hồ và bức phù điêu Việt Bắc:** Điểm nhấn trung tâm là bức tượng Chủ tịch Hồ Chí Minh bằng đồng cao 7m (Bác mặc bộ kaki đơn sơ, đi dép cao su, tay cầm tờ báo bên chiếc máy đánh chữ, nhìn về hướng Đông). Phía sau là bức phù điêu đá xanh cao 13,5m, dài 52m tạo hình dãy núi Việt Bắc, chạm khắc hình ảnh các thế hệ CAND; khuôn viên trồng 79 cây sao đen (79 mùa xuân của Bác) và 54 cây tùng tháp (54 dân tộc anh em).",
+        "**Nhà truyền thống trưng bày 3 chuyên đề:** (1) Công an Khu 12 – nơi đón nhận 6 điều Bác dạy; (2) Phong trào học tập, làm theo lời Bác; (3) Hình ảnh Bác với CAND. Nơi đây lưu giữ nhiều kỷ vật vô giá của đồng chí Hoàng Mai: lễ phục cấp tướng, sắc phong, thẻ nhà báo, bản tự khai viết tay cùng những chiếc chum đựng gạo, muối, nước từng dùng trong thời hoạt động bí mật."
       ],
-      "studyNote": "Đối với học sinh Trường THPT Nhã Nam: Chùa Tứ Giáp là bài học thực tế sống động nhất về lòng yêu nước, đạo đức chí công vô tư và sự tri ân các anh hùng liệt sĩ cách mạng của quê hương Nhã Nam."
+      "studyNote": "Đối với học sinh Trường THPT Nhã Nam: Chùa Tứ Giáp và Khu lưu niệm Sáu điều Bác Hồ dạy CAND là 'địa chỉ đỏ' giáo dục sâu sắc về đạo đức chí công vô tư, tinh thần 'vì nước quên thân, vì dân phục vụ' và truyền thống cách mạng kiên cường của quê hương Nhã Nam."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=21.4448892,106.0901463&output=embed",
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4448892,106.0901463",
-      "locationName": "Chùa Tứ Giáp (nơi phát tích Sáu điều Bác Hồ dạy CAND)"
+      "locationName": "Chùa Tứ Giáp & Khu lưu niệm Sáu điều Bác Hồ dạy CAND"
     },
     "gallery": [
       {
@@ -451,12 +452,32 @@ const TANGIBLE_HERITAGE_DATA = [
         "caption": "Chùa Tứ Giáp (Đại Phúc tự) – Nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân"
       },
       {
+        "url": "./assets/images/chua-tu-giap/khu-luu-niem-toan-canh.jpg",
+        "caption": "Toàn cảnh Khu lưu niệm Sáu điều Bác Hồ dạy Công an nhân dân rộng hơn 3,3 ha tại tổ dân phố Chùa Nguộn, xã Nhã Nam (Tư liệu: Báo Pháp luật Việt Nam)"
+      },
+      {
+        "url": "./assets/images/chua-tu-giap/tuong-bac-7m.jpg",
+        "caption": "Tượng Chủ tịch Hồ Chí Minh bằng đồng cao 7m cùng bức phù điêu đá xanh cao 13,5m, dài 52m tạo hình dãy núi Việt Bắc tại Khu lưu niệm"
+      },
+      {
+        "url": "./assets/images/chua-tu-giap/nha-truyen-thong-cand.jpg",
+        "caption": "Nhà truyền thống trong Khu lưu niệm – nơi trưng bày kỷ vật của Công an Khu XII và đồng chí Hoàng Mai"
+      },
+      {
+        "url": "./assets/images/chua-tu-giap/chua-tu-giap-toan-canh.jpg",
+        "caption": "Toàn cảnh kiến trúc chùa Tứ Giáp (chùa Đại Phúc / chùa Gốc Gạo) nhìn từ trên cao"
+      },
+      {
+        "url": "./assets/images/chua-tu-giap/chua-tu-giap-tam-bao.jpg",
+        "caption": "Mặt tiền tòa Tam bảo chùa Tứ Giáp (Đại Phúc tự) cổ kính tại xã Nhã Nam"
+      },
+      {
         "url": "./assets/images/chua-tu-giap/tu-giap-2.jpg",
-        "caption": "Khuôn viên và kiến trúc tiền tế chùa Tứ Giáp tại thôn Chùa Nguộn"
+        "caption": "Không gian khuôn viên và kiến trúc tiền tế chùa Tứ Giáp tại tổ dân phố Chùa Nguộn"
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Bộ sưu tập 02 ảnh tư liệu thực tế tại chùa Tứ Giáp (hồ sơ Trường THPT Nhã Nam)",
+    "photoNotice": "Bộ sưu tập 07 ảnh tư liệu thực tế tại chùa Tứ Giáp và Khu lưu niệm Sáu điều Bác Hồ dạy CAND",
     "docFile": {
       "fileName": "chua-tu-giap.docx",
       "title": "Hồ sơ di tích chùa Tứ Giáp",
@@ -1386,13 +1407,13 @@ const INTANGIBLE_HERITAGE_DATA = [
       "Lễ hội truyền thống",
       "Xã Nhã Nam"
     ],
-    "overview": "Quanh ngày 15–16/3 dương lịch, tái hiện lễ tế cờ của Đề Nắm năm 1884 tại sân đình Hả; có rước kiệu, đấu vật, kéo co, cờ tướng.",
+    "overview": "Diễn ra dịp 15–17/3 dương lịch hằng năm (từ năm 2025 mở rộng thành Tuần lễ hội 11–18/3), tái hiện lễ tế cờ của Đề Nắm năm 1884 tại đình Hả cùng rước kiệu, hội thao thượng võ.",
     "content": {
-      "intro": "Lễ hội tổ chức vào tháng Giêng và tháng Ba âm lịch; phần chính rơi vào ngày 15–16/3 dương lịch, kỷ niệm ngày Lương Văn Nắm tế cờ khởi nghĩa tại đình Hả năm 1884. Phần lễ có rước kiệu, dâng hương, tái hiện lễ tế cờ; phần hội có văn nghệ, đấu vật, kéo co, cờ tướng.",
+      "intro": "Lễ hội khởi nghĩa Yên Thế tại Nhã Nam và vùng phụ cận diễn ra vào mùa xuân, trọng tâm từ ngày 15–17/3 dương lịch hằng năm (từ năm 2025 được mở rộng thành Tuần lễ hội từ 11–18/3), kỷ niệm ngày thủ lĩnh Lương Văn Nắm (Đề Nắm) tế cờ phát động cuộc khởi nghĩa nông dân kéo dài 29 năm 9 tháng (1884–1913). Phần lễ có rước kiệu, dâng hương, tái hiện lễ tế cờ; phần hội có văn nghệ, đấu vật, kéo co, cờ tướng.",
       "originAndMeaning": [
-        "**Tưởng niệm ngày lễ tế cờ lịch sử 16/3/1884:** Tái hiện trang nghiêm nghi lễ cắt máu ăn thề của Đề Nắm và nghĩa quân tại sân đình Hả.",
-        "**Tôn vinh thủ lĩnh Lương Văn Nắm và Hoàng Hoa Thám:** Khẳng định tầm vóc lịch sử của cuộc khởi nghĩa nông dân vĩ đại nhất cuối thế kỷ XIX – đầu thế kỷ XX.",
-        "**Cố kết cộng đồng làng xã:** Dịp tụ hội của con em quê hương Nhã Nam khắp mọi miền đất nước trở về nguồn cội."
+        "**Tưởng niệm ngày lễ tế cờ lịch sử 16/3/1884:** Tái hiện trang nghiêm nghi lễ cắt máu ăn thề trước trận đánh và khao quân sau chiến thắng của Đề Nắm, Đề Thám cùng nghĩa binh tại đình Hả và hệ thống di tích Yên Thế.",
+        "**Tôn vinh cuộc khởi nghĩa nông dân dài nhất lịch sử (29 năm 9 tháng):** Khẳng định tầm vóc cuộc khởi nghĩa vũ trang bền bỉ, linh hoạt và quyết liệt của những thủ lĩnh xuất thân từ nông dân chống thực dân Pháp cuối thế kỷ XIX – đầu thế kỷ XX.",
+        "**Cố kết cộng đồng làng xã:** Dịp tụ hội của nhân dân địa phương và du khách thập phương trở về nguồn cội hào hùng."
       ],
       "ritualsAndActivities": [
         "**Phần lễ trang nghiêm:** Lễ rước kiệu truyền thống từ các làng thôn, lễ dâng hương tưởng niệm, lễ tế cờ tái hiện lịch sử hào hùng.",
@@ -1583,38 +1604,50 @@ const INTANGIBLE_HERITAGE_DATA = [
     "badge": "Tập quán xã hội và tín ngưỡng",
     "title": "Tập quán tưởng niệm Lương Văn Nắm và Hoàng Hoa Thám",
     "shortTitle": "Tưởng niệm nghĩa quân Yên Thế",
-    "scope": "Địa bàn toàn xã Nhã Nam, trung tâm tại đình Hả, đền Gốc Khế, đền Đề Truật",
-    "thumbnail": null,
+    "scope": "Địa bàn toàn xã Nhã Nam và vùng di tích khởi nghĩa Yên Thế (đình Hả, đền Gốc Khế, đền Đề Truật, đền thờ Cả Trọng)",
+    "thumbnail": "./assets/images/tuong-niem-yen-the/tuong-dai-hoang-hoa-tham.jpg",
     "tags": [
       "Lương Văn Nắm",
       "Hoàng Hoa Thám",
+      "Hùm thiêng Yên Thế",
       "Đề Truật",
+      "Hoàng Thị Thế",
       "Tưởng niệm",
       "Tập quán tín ngưỡng",
       "Uống nước nhớ nguồn",
       "Xã Nhã Nam"
     ],
-    "overview": "Thắp hương ngày rằm, mùng một và ngày giỗ trận tại đình Hả, đền Gốc Khế, đền Đề Truật; học sinh THPT Nhã Nam dâng hương báo công trước kỳ thi.",
+    "overview": "Tục phối thờ và dâng hương tưởng niệm Đề Nắm, 'Hùm thiêng' Hoàng Hoa Thám cùng các tướng lĩnh nghĩa quân Yên Thế; lưu truyền câu ca bất khuất 'Đất này là đất cụ Đề'.",
     "content": {
-      "intro": "Người Nhã Nam thờ cúng Đề Nắm, Hoàng Hoa Thám và nghĩa binh Yên Thế tại đình Hả, đền Gốc Khế, đền Đề Truật vào ngày rằm, mùng một và ngày giỗ trận. Học sinh Trường THPT Nhã Nam dâng hương báo công trước các kỳ thi.",
+      "intro": "Sau khi cuộc khởi nghĩa Yên Thế (1884–1913) kết thúc, nhân dân xã Nhã Nam và vùng Yên Thế đã đưa bài vị, tượng thờ thủ lĩnh Lương Văn Nắm (Đề Nắm), 'Hùm thiêng' Hoàng Hoa Thám (Đề Thám) cùng các tướng lĩnh (Đề Truật, Cả Trọng...) vào phối thờ tại các đình, đền, chùa địa phương (đình Hả, đền Gốc Khế, đền Đề Truật, đền Gốc Dẻ, đền Thề).",
       "originAndMeaning": [
-        "**Đạo lý tri ân ngàn đời:** Xuất phát từ lòng biết ơn vô hạn của người dân đối với những người đã xả thân cứu nước cứu làng.",
-        "**Biểu tượng tinh thần độc lập:** Hình tượng Đề Nắm và Đề Thám trở thành biểu tượng tinh thần của ý chí không khuất phục trước ngoại bang."
+        "**Khí phách 'Đất này là đất cụ Đề':** Khởi nghĩa Yên Thế kéo dài suốt 29 năm 9 tháng đã để lại trong tâm thức dân gian niềm tự hào bất khuất qua câu truyền tụng: 'Đất này là đất cụ Đề, Tây lên thì có, Tây về thì không'.",
+        "**Đạo lý tri ân và phối thờ tiền nhân:** Khi cuộc khởi nghĩa khép lại năm 1913, nhiều công trình bị thực dân Pháp tàn phá, người dân đã gìn giữ và đưa tượng, bài vị cụ Đề Nắm, cụ Đề Thám vào thờ trang trọng tại các ngôi đình, đền, chùa để hương khói đời đời.",
+        "**Tấm lòng hướng về cội nguồn của hậu duệ nghĩa quân:** Tiêu biểu như bà Hoàng Thị Thế (1901–1988) – con gái cụ Đề Thám, từng bị đày sang Pháp từ nhỏ; năm 1963 hưởng ứng lời kêu gọi Việt kiều yêu nước của Chủ tịch Hồ Chí Minh đã trở về Tổ quốc và tâm nguyện yên nghỉ vĩnh hằng trên mảnh đất quê hương."
       ],
       "ritualsAndActivities": [
-        "Nghi thức thắp hương tưởng niệm vào ngày rằm, mùng một và ngày giỗ trận tại đình Hả, đền Gốc Khế, đền Đề Truật.",
-        "Lễ dâng hương báo công của học sinh trường THPT Nhã Nam trước thềm các kỳ thi và sự kiện trọng đại của nhà trường."
+        "Nghi thức thắp hương tưởng niệm vào ngày rằm, mùng một, ngày tế cờ (16/3) và ngày giỗ trận tại đình Hả, đền Gốc Khế, đền Đề Truật, đền thờ Cả Trọng.",
+        "Hoạt động ngoại khóa dâng hương báo công, nghe thuyết minh lịch sử của thầy và trò Trường THPT Nhã Nam trước thềm các kỳ thi và ngày lễ lớn."
       ],
-      "preservationValue": "Là bài học đạo đức, lý tưởng cách mạng sâu sắc nhất cho đoàn viên, học sinh xã Nhã Nam trên con đường rèn đức luyện tài."
+      "preservationValue": "Kết nối mạch nguồn lịch sử từ lời thề nghĩa quân Yên Thế đến lời Bác Hồ dạy tại Nhã Nam: 'vì dân mà hành động, vì nước mà hy sinh', bồi đắp lý tưởng sống cao đẹp cho học sinh THPT."
     },
     "map": {
       "embedUrl": "https://www.google.com/maps?q=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang&output=embed",
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=%C4%90%C3%ACnh+H%E1%BA%A3,+T%C3%A2n+Trung,+T%C3%A2n+Y%C3%AAn,+B%E1%BA%AFc+Giang",
       "locationName": "Khu tưởng niệm nghĩa sĩ Yên Thế – xã Nhã Nam"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/tuong-niem-yen-the/tuong-dai-hoang-hoa-tham.jpg",
+        "caption": "Tượng đài và hương án tưởng niệm Anh hùng dân tộc Hoàng Hoa Thám – 'Hùm thiêng Yên Thế' (Tư liệu: Báo Pháp luật Việt Nam)"
+      },
+      {
+        "url": "./assets/images/tuong-niem-yen-the/den-the-yen-the.jpg",
+        "caption": "Không gian Đền Thề cổ kính – nơi nghĩa quân Yên Thế từng cắt máu ăn thề xuất quân và được nhân dân phối thờ cụ Đề Thám"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Bộ sưu tập 02 ảnh tư liệu thực tế không gian tưởng niệm Anh hùng dân tộc Hoàng Hoa Thám và nghĩa quân Yên Thế",
     "docFile": {
       "fileName": "tap-quan-tuong-niem-de-nam-de-tham.docx",
       "title": "Tư liệu tập quán tưởng niệm Lương Văn Nắm và Hoàng Hoa Thám",
@@ -1995,7 +2028,7 @@ const QUICK_SEARCH_TAGS = [
  */
 const VISIT_GUIDES = {
   "vat-the-1": { when: "Quanh ngày 15–16/3 dương lịch, khi lễ hội khởi nghĩa Yên Thế tái hiện lễ tế cờ ngay tại sân đình Hả.", see: ["Sân đình, nơi Đề Nắm tế cờ ngày 16/3/1884.", "Khung gỗ lim chồng rường giá chiêng, chạm rồng, lân, hoa cúc dây.", "Chùa Hả (Thanh Âm tự) liền kề: tượng Phật sơn son thếp vàng, chuông đồng, văn bia trùng tu."] },
-  "vat-the-2": { when: "Mốc gắn với di tích: ngày 11/3/1948, Chủ tịch Hồ Chí Minh gửi thư cho Công an Khu XII.", see: ["Bia đá niên hiệu Cảnh Hưng (1771) và chuông đồng thế kỷ XIX.", "Khu lưu niệm Sáu điều Bác Hồ dạy Công an nhân dân trong khuôn viên chùa.", "Nghe bản thuyết minh khu lưu niệm (khoảng 3 phút) ngay trên trang này trước khi đến."] },
+  "vat-the-2": { when: "Mốc gắn với di tích: ngày 11/3/1948 (ngày Bác Hồ gửi thư nêu Sáu điều dạy CAND) và mùa xuân trẩy hội chùa Tứ Giáp.", see: ["Tượng Chủ tịch Hồ Chí Minh bằng đồng cao 7m cùng bức phù điêu đá xanh cao 13,5m, dài 52m tạo hình dãy núi Việt Bắc.", "Nhà truyền thống trưng bày 3 chuyên đề và kỷ vật của đồng chí Hoàng Mai (Giám đốc Công an Khu XII), tờ báo 'Bạn Dân'.", "Chùa cổ Tứ Giáp (1771–1773): cột gỗ lim còn lưu dấu đạn năm 1947, bia đá Cảnh Hưng (1771) và cây gạo 'Luân hồi' trước sân chùa."] },
   "vat-the-3": { see: ["Bia ghi công tích cách mạng của thôn Đồng Điều.", "Ngôi chùa từng là cơ sở hoạt động bí mật trước năm 1945, nơi lập chi bộ Đảng đầu tiên của địa phương."] },
   "vat-the-4": { when: "Lễ hội đền ngày 15–16 tháng Giêng âm lịch; ngày rằm, mùng một có lễ cúng.", see: ["Ban thờ Thánh Mẫu và nghĩa quân Hoàng Hoa Thám.", "Bia đá ghi sự kiện lịch sử trong khuôn viên.", "Rừng Gốc Khế, trạm tiền tiêu ở cửa ngõ đồn Nhã Nam xưa."] },
   "vat-the-5": { see: ["Dấu tích nền móng đồn lũy trên đồi.", "Vị trí khống chế ngã tư Nhã Nam, nơi Pháp dựng đồn từ năm 1885.", "Nghĩa địa Pháp và chùa Nam Thiên ở ngay gần, cùng tuyến tham quan số 3."] },
@@ -2010,7 +2043,7 @@ const VISIT_GUIDES = {
   "vat-the-14": { see: ["Cấu kiện gỗ chạm hoa cúc dây, rồng chầu mặt trời.", "Ngai thờ và sắc phong cổ."] },
   "vat-the-15": { see: ["Tượng Phật sơn son thếp vàng, bia ký và chuông đồng cổ.", "Làng Dương Sơn có tục nói phét; biển \"Dương Sơn hội quán\" ở điếm làng."] },
   "vat-the-16": { see: ["Sắc phong niên hiệu Duy Tân thứ 3 (1909).", "Bát hương gốm Phù Lãng, sập thờ và bộ bát bửu.", "Đình chung của 5 thôn Chài, Quân, Đồn, Thượng, Phố."] },
-  "phi-vat-the-1": { when: "Phần chính quanh ngày 15–16/3 dương lịch; hội còn tổ chức vào tháng Giêng và tháng Ba âm lịch.", see: ["Lễ tế cờ tái hiện tại sân đình Hả.", "Lễ rước kiệu từ các thôn và lễ dâng hương.", "Phần hội: đấu vật, kéo co, cờ tướng, văn nghệ quần chúng."] },
+  "phi-vat-the-1": { when: "Từ ngày 15–17/3 dương lịch hằng năm (từ năm 2025 mở rộng thành Tuần lễ hội 11–18/3 dương lịch); hội làng vào tháng Giêng và tháng Ba âm lịch.", see: ["Lễ tế cờ tái hiện tại sân đình Hả.", "Lễ rước kiệu từ các thôn và lễ dâng hương.", "Phần hội: đấu vật, kéo co, cờ tướng, văn nghệ quần chúng."] },
   "phi-vat-the-2": { when: "Các dịp lễ hội mùa xuân và ngày hội Đại đoàn kết toàn dân tộc.", see: ["Chiếu chèo sân đình Dương Lâm, đình Chuông, chùa Tứ Giáp.", "Các điệu Đào liễu, Quân thư, Luyện năm cung, Tò vò.", "Buổi tập định kỳ của CLB Chèo Dương Lâm."] },
   "phi-vat-the-3": { when: "Dịp Tết Nguyên đán, khi các gia đình làm bánh khảo, kẹo lạc để dâng cúng.", see: ["Công đoạn đóng khuôn gỗ bột nếp rang xay.", "Nấu mạch nha, thả lạc rang, dàn mỏng rồi cắt kẹo."] },
   "phi-vat-the-4": { when: "Ngày rằm, mùng một và ngày giỗ trận.", see: ["Lễ thắp hương tại đình Hả, đền Gốc Khế, đền Đề Truật.", "Lễ dâng hương báo công của học sinh Trường THPT Nhã Nam."] },
