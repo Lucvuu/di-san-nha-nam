@@ -335,10 +335,11 @@ function renderHeritageGrid(items) {
     return `
       <article class="heritage-card rounded-lg overflow-hidden flex flex-col h-full">
         <div class="relative h-52 sm:h-56 overflow-hidden bg-[#EADECF] cursor-pointer" onclick="openDetailModal('${item.id}')">
-          ${item.hasRealPhoto && item.thumbnail ? `
+          ${item.thumbnail ? `
             <img src="${item.thumbnail}" alt="${title}" loading="lazy" decoding="async"
               style="object-position: ${item.imagePosition || 'center 30%'};" class="w-full h-full object-cover"
               onerror="handleImageError(this)" />
+            ${item.hasRealPhoto ? '' : '<span class="absolute left-3 bottom-3 rounded bg-black/65 px-2 py-1 text-xs font-semibold text-white">Ảnh minh họa</span>'}
           ` : `
             <div class="photo-pending-frame w-full h-full relative flex items-end p-4 overflow-hidden">
               <img src="./assets/images/share/trong-dong-360.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"

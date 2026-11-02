@@ -380,6 +380,15 @@ const heavy = execSync('git ls-files assets/images', { encoding: 'utf8' }).split
 console.assert(heavy.length === 0, `Images over 180KB: ${heavy.join(', ')}`);
 console.log(`  ✓ ${surveyItems.length} hồ sơ: cẩm nang, câu hỏi nhanh, bản đồ chính xác; 0 ảnh trên 180KB`);
 
+// 13. Ảnh minh họa phải ghi rõ, không lẫn với ảnh thực tế; mọi ảnh thư viện phải tồn tại
+for (const item of surveyItems) {
+  if (!item.hasRealPhoto && item.thumbnail) {
+    console.assert((item.gallery || []).length && item.gallery.every(g => /minh họa/i.test(g.caption)), `${item.id}: ảnh minh họa phải ghi chú "minh họa"`);
+  }
+  for (const g of item.gallery || []) console.assert(fs.existsSync(g.url), `${item.id}: thiếu ảnh ${g.url}`);
+}
+console.log('  ✓ Ảnh minh họa được ghi chú rõ; mọi ảnh thư viện đều tồn tại');
+
 console.log('\n======================================================');
 console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE, APP INIT & SECURITY TESTS PASSED! 🎉');
 console.log('======================================================\n');

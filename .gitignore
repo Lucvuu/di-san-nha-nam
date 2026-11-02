@@ -20,6 +20,10 @@ Tài liệu di sản/
 assets/videos/
 scripts/*.json
 
+# Bộ quy tắc nội bộ và thư mục ảnh nháp (ảnh đã chọn nằm trong assets/images/<chủ đề>/)
+assets/system-prompt-pack.json
+assets/images/phi-vat-the/
+
 /*.doc
 /*.docx
 /*.pdf

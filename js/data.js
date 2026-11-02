@@ -1486,7 +1486,8 @@ const INTANGIBLE_HERITAGE_DATA = [
     "title": "Nghề làm bánh khảo, kẹo lạc truyền thống xã Nhã Nam",
     "shortTitle": "Bánh khảo và kẹo lạc Nhã Nam",
     "scope": "Các hộ gia đình nghệ nhân làm nghề truyền thống tại xã Nhã Nam",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/banh-khao/banh-khao-minh-hoa.jpg",
+    "imagePosition": "center 60%",
     "tags": [
       "Bánh khảo",
       "Kẹo lạc",
@@ -1513,9 +1514,20 @@ const INTANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4404,106.0965",
       "locationName": "Làng nghề bánh khảo và kẹo lạc – xã Nhã Nam"
     },
-    "gallery": [],
+    "gallery": [
+      {
+        "url": "./assets/images/banh-khao/banh-khao-minh-hoa.jpg",
+        "caption": "Bánh khảo – ảnh minh họa sưu tầm trên mạng, không chụp tại Nhã Nam",
+        "position": "center 60%"
+      },
+      {
+        "url": "./assets/images/banh-khao/keo-lac-minh-hoa.jpg",
+        "caption": "Kẹo lạc – ảnh minh họa sưu tầm trên mạng, không chụp tại Nhã Nam",
+        "position": "center 55%"
+      }
+    ],
     "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại lễ hội/hoạt động đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "photoNotice": "Ảnh minh họa sưu tầm trên mạng; ảnh chụp thực tế tại các hộ làm nghề ở Nhã Nam đang được Ban biên tập cập nhật",
     "docFile": {
       "fileName": "nghe-lam-banh-khao-keo-lac-nha-nam.docx",
       "title": "Tư liệu nghề làm bánh khảo, kẹo lạc truyền thống",
@@ -1669,6 +1681,16 @@ const INTANGIBLE_HERITAGE_DATA = [
       {
         "url": "./assets/images/video-tu-lieu/lang-noi-phet-duong-son.jpg",
         "caption": "Điếm làng Dương Sơn – Dương Sơn hội quán (ảnh trích từ video phóng sự \"Chuyện làng nói phét\")"
+      },
+      {
+        "url": "./assets/images/video-tu-lieu/lang-noi-phet-ban-chep-tay.jpg",
+        "caption": "Cụ cao niên làng Dương Sơn đọc lại bản chép tay (ảnh trích từ video tư liệu của Trường THPT Nhã Nam)",
+        "position": "center 50%"
+      },
+      {
+        "url": "./assets/images/video-tu-lieu/lang-noi-phet-duong-lang.jpg",
+        "caption": "Đường làng Dương Sơn (ảnh trích từ video tư liệu của Trường THPT Nhã Nam)",
+        "position": "center 50%"
       }
     ],
     "hasRealPhoto": true,
