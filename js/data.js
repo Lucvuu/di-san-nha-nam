@@ -1874,24 +1874,24 @@ const HERITAGE_QUIZ_DATA = [
     id: 4,
     question: "Vị tướng nào của nghĩa quân Yên Thế nổi tiếng bắn nỏ “bách phát bách trúng” và được thờ tại đền ở thôn Tiến Phan 1?",
     options: [
-      "Đề Truật (Dương Văn Truật)",
       "Thủ lĩnh Đề Nắm (Lương Văn Nắm)",
       "Cả Trọng (Hoàng Đức Trọng)",
-      "Tướng Cai Biều"
+      "Tướng Cai Biều",
+      "Đề Truật (Dương Văn Truật)"
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
     explanation: "Đề Truật, tên thật Dương Văn Truật (tài liệu khác ghi Đề Thuật, Đề Hậu, Hội Thuật), người làng Chuông, nổi tiếng bắn nỏ. Đền thờ ông ở thôn Tiến Phan 1 là di tích cấp tỉnh."
   },
   {
     id: 5,
     question: "Đồi Phủ và đồn Nhã Nam gắn với dấu tích nào của quân Pháp thời khởi nghĩa Yên Thế?",
     options: [
-      "Đồn binh, tòa đại lý phủ Yên Thế của Pháp và khu nghĩa địa Pháp bên cạnh",
       "Nơi Đề Nắm làm lễ tế cờ phát động khởi nghĩa năm 1884",
+      "Đồn binh, tòa đại lý phủ Yên Thế của Pháp và khu nghĩa địa Pháp bên cạnh",
       "Xưởng rèn vũ khí bí mật của nghĩa quân",
       "Kho dự trữ muối ăn của quân đội triều đình"
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     explanation: "Từ năm 1885, quân Pháp chiếm đồi Phủ, dựng đồn Nhã Nam và đặt tòa đại lý phủ Yên Thế để đàn áp nghĩa quân; nghĩa địa Pháp nằm cạnh đồn. Lễ tế cờ năm 1884 diễn ra ở đình Hả."
   }
 ];
