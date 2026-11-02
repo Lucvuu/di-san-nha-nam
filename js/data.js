@@ -478,7 +478,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "shortTitle": "Chùa Đồng Điều",
     "address": "Thôn Đồng Điều, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/chua-dong-dieu/anh-dai-dien.jpg",
     "tags": [
       "Thôn Đồng Điều",
       "Chùa Đồng Điều",
@@ -507,9 +507,30 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.455246,106.094589",
       "locationName": "Di tích lịch sử thôn Đồng Điều (chùa Đồng Điều)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "video": {
+      "title": "Video tư liệu thực tế khuôn viên và kiến trúc chùa Đồng Điều – xã Nhã Nam",
+      "localSrc": "./assets/videos/chua-dong-dieu/chua-dong-dieu.mp4"
+    },
+    "gallery": [
+      {
+        "url": "./assets/images/chua-dong-dieu/anh-dai-dien.jpg",
+        "caption": "Mặt tiền tòa Tam bảo và nhà Tổ chùa Đồng Điều ngày nay với trụ biểu khắc chữ Hán và hệ cửa bức bàn gỗ lim (Ảnh thực tế: Trường THPT Nhã Nam)"
+      },
+      {
+        "url": "./assets/images/chua-dong-dieu/dong-dieu-tu-lieu-co.jpg",
+        "caption": "Ảnh tư liệu lịch sử ngôi chùa Đồng Điều cổ trước khi trùng tu – nơi thành lập chi bộ Đảng đầu tiên của địa phương trước Cách mạng Tháng Tám 1945"
+      },
+      {
+        "url": "./assets/images/chua-dong-dieu/dong-dieu-2.jpg",
+        "caption": "Toàn cảnh chùa Đồng Điều uy nghiêm, thanh bình giữa vùng đồi trung du thôn Đồng Điều, xã Nhã Nam"
+      },
+      {
+        "url": "./assets/images/chua-dong-dieu/dong-dieu-3.jpg",
+        "caption": "Nét kiến trúc mái đao cong vút và tường gạch thất mộc mạc của ngôi chùa lịch sử cách mạng"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Bộ sưu tập 04 ảnh và video tư liệu thực tế tại chùa Đồng Điều (hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "chua-dong-dieu.docx",
       "title": "Hồ sơ di tích chùa Đồng Điều",
@@ -902,7 +923,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "shortTitle": "Đền thờ Cả Trọng",
     "address": "Khu vực Gốc Dẻ, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/den-ca-trong/anh-dai-dien.jpg",
     "tags": [
       "Đền Cả Trọng",
       "Gốc Dẻ",
@@ -931,9 +952,22 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4443835,106.0966726",
       "locationName": "Đền thờ Cả Trọng (đền Gốc Dẻ)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/den-ca-trong/anh-dai-dien.jpg",
+        "caption": "Toàn cảnh khu di tích lịch sử quốc gia đặc biệt đền thờ Cả Trọng (đền Gốc Dẻ) dưới bóng hai cây cổ thụ uy nghiêm (Ảnh thực tế: Trường THPT Nhã Nam)"
+      },
+      {
+        "url": "./assets/images/den-ca-trong/ca-trong-2.jpg",
+        "caption": "Cổng vào và gốc đa cổ thụ rợp bóng mát trước sân di tích đền thờ tướng quân Hoàng Đức Trọng (Cả Trọng)"
+      },
+      {
+        "url": "./assets/images/den-ca-trong/ca-trong-3.jpg",
+        "caption": "Trụ biểu khắc câu đối chữ Hán và kiến trúc truyền thống tại khu di tích Gốc Dẻ, xã Nhã Nam"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại di tích đền thờ Cả Trọng (hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "den-ca-trong.docx",
       "title": "Hồ sơ di tích đền thờ Cả Trọng",
@@ -1017,7 +1051,7 @@ const TANGIBLE_HERITAGE_DATA = [
     "shortTitle": "Đình Cầu Thượng",
     "address": "Thôn Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh",
     "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
-    "thumbnail": null,
+    "thumbnail": "./assets/images/dinh-cau-thuong/anh-dai-dien.jpg",
     "audioFile": {
       "src": "./assets/audio/thuyet-minh-dinh-cau-thuong.mp3",
       "title": "Thuyết minh di tích đình Cầu Thượng"
@@ -1046,9 +1080,22 @@ const TANGIBLE_HERITAGE_DATA = [
       "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4397723,106.0893274",
       "locationName": "Đình Cầu Thượng (di tích lịch sử – văn hóa cấp tỉnh)"
     },
-    "gallery": [],
-    "hasRealPhoto": false,
-    "photoNotice": "Ảnh tư liệu thực tế tại di tích đang được Ban biên tập và Trường THPT Nhã Nam cập nhật",
+    "gallery": [
+      {
+        "url": "./assets/images/dinh-cau-thuong/anh-dai-dien.jpg",
+        "caption": "Toàn cảnh mặt tiền cụm di tích Cầu Thượng cổ kính dưới tán cây đại cổ thụ (Ảnh thực tế: Trường THPT Nhã Nam)"
+      },
+      {
+        "url": "./assets/images/dinh-cau-thuong/cau-thuong-2.jpg",
+        "caption": "Sân gạch Bát Tràng và 5 gian Tiền tế cửa bức bàn gỗ lim vững chãi tại Cầu Thượng"
+      },
+      {
+        "url": "./assets/images/dinh-cau-thuong/cau-thuong-3.jpg",
+        "caption": "Hệ trụ biểu khắc câu đối chữ Hán và không gian kiến trúc tâm truyền thống thôn Cầu Thượng, xã Nhã Nam"
+      }
+    ],
+    "hasRealPhoto": true,
+    "photoNotice": "Bộ sưu tập 03 ảnh tư liệu thực tế tại di tích Cầu Thượng (hồ sơ Trường THPT Nhã Nam)",
     "docFile": {
       "fileName": "dinh-cau-thuong.docx",
       "title": "Hồ sơ di tích đình Cầu Thượng",

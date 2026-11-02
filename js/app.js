@@ -177,16 +177,24 @@ function renderQuickSearchTags() {
 : defaultTags;
 
   container.innerHTML = tags.map(tag => `
-    <button type="button" class="quick-tag" data-tag="${tag}">${tag}</button>
+    <button type="button" class="quick-tag ${state.searchQuery === tag ? 'is-active' : ''}" data-tag="${tag}">${tag}</button>
   `).join('');
 
   container.querySelectorAll('button').forEach(btn => {
     btn.addEventListener('click', () => {
       const tag = btn.getAttribute('data-tag');
       const searchInput = document.getElementById('search-input');
+      const clearBtn = document.getElementById('clear-search-btn');
       if (searchInput) {
-        searchInput.value = tag;
-        state.searchQuery = tag;
+        if (state.searchQuery === tag) {
+          searchInput.value = '';
+          state.searchQuery = '';
+          if (clearBtn) clearBtn.classList.add('hidden');
+        } else {
+          searchInput.value = tag;
+          state.searchQuery = tag;
+          if (clearBtn) clearBtn.classList.remove('hidden');
+        }
         applyFiltersAndRender();
         scrollToSection('heritage-explorer');
       }
@@ -262,6 +270,9 @@ function applyFiltersAndRender() {
   }
 
   state.filteredItems = items;
+  document.querySelectorAll('#quick-search-tags .quick-tag').forEach(btn => {
+    btn.classList.toggle('is-active', Boolean(state.searchQuery) && btn.getAttribute('data-tag') === state.searchQuery);
+  });
   renderHeritageGrid(items);
   updateResultsSummary(items.length);
 }
@@ -321,6 +332,7 @@ function renderHeritageGrid(items) {
     const rankLabel = isVatThe
       ? [String(item.badge || '').replace(/^Di tích\s+/i, ''), rankYear].filter(Boolean).join(' · ')
       : ['Phi vật thể', item.badge].filter(Boolean).join(' · ');
+    const openAudio = `event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => playModalRealAudio(), 250);`;
     const openVideo = `event.stopPropagation(); openDetailModal('${item.id}'); setTimeout(() => document.getElementById('modal-video-section')?.scrollIntoView({behavior: 'smooth'}), 350);`;
 
     return `
@@ -328,9 +340,9 @@ function renderHeritageGrid(items) {
         <div class="relative h-52 sm:h-56 overflow-hidden bg-[#EADECF] cursor-pointer" onclick="openDetailModal('${item.id}')">
           ${item.thumbnail ? `
             <img src="${item.thumbnail}" alt="${title}" loading="lazy" decoding="async"
-              style="object-position: ${item.imagePosition || 'center 30%'};" class="w-full h-full object-cover"
+              style="object-position: ${item.imagePosition || 'center 30%'};" class="w-full h-full object-cover card-thumb-img"
               onerror="handleImageError(this)" />
-            ${item.hasRealPhoto ? '' : '<span class="absolute left-3 bottom-3 rounded bg-black/65 px-2 py-1 text-xs font-semibold text-white">Ảnh minh họa</span>'}
+            ${item.hasRealPhoto ? '' : '<span class="absolute left-3 bottom-3 rounded-md bg-black/75 backdrop-blur-xs px-2.5 py-1 text-xs font-semibold text-white shadow-xs">Ảnh minh họa</span>'}
           ` : `
             <div class="photo-pending-frame w-full h-full relative flex items-end p-4 overflow-hidden">
               <img src="./assets/images/share/trong-dong-360.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"
@@ -342,8 +354,8 @@ function renderHeritageGrid(items) {
             onclick="event.stopPropagation(); toggleFavorite('${item.id}');"
             title="${isFav ? 'Bỏ lưu' : 'Lưu lại di tích này'}"
             aria-label="${isFav ? 'Bỏ lưu ' + title : 'Lưu lại ' + title}"
-            class="absolute top-2.5 right-2.5 w-8 h-8 rounded-md bg-[#FFFCF7]/90 border border-[rgba(139,30,30,0.12)] flex items-center justify-center text-[#7A5C3E] hover:text-[#8B1E1E] transition-colors">
-            <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="${isFav ? 'currentColor' : 'none'}" class="${isFav ? 'text-[#8B1E1E]' : ''}" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+            class="absolute top-2.5 right-2.5 w-9 h-9 min-w-[36px] min-h-[36px] rounded-md bg-[#FFFCF7]/90 hover:bg-[#FFFCF7] border border-[rgba(139,30,30,0.15)] flex items-center justify-center text-[#7A5C3E] hover:text-[#8B1E1E] transition-all shadow-xs cursor-pointer">
+            <svg width="17" height="17" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7" fill="${isFav ? 'currentColor' : 'none'}" class="${isFav ? 'text-[#8B1E1E]' : ''}" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
           </button>
         </div>
 
@@ -354,15 +366,14 @@ function renderHeritageGrid(items) {
           </h3>
           <p class="text-sm text-[#5C5248] leading-relaxed line-clamp-2 mb-4">${escapeHtml(item.overview)}</p>
 
-          <div class="mt-auto pt-3 border-t border-[rgba(44,30,24,0.1)] flex items-center justify-between gap-3">
-            <div class="card-media flex items-center gap-3.5 text-[#7A5C3E]">
-              ${item.hasRealPhoto ? `<span title="Ảnh thực tế">${ic('image')}<span class="sr-only">Ảnh thực tế</span></span>` : ''}
-              ${item.audioFile ? `<span title="Bản ghi âm thuyết minh">${ic('volume')}<span class="sr-only">Thuyết minh</span></span>` : ''}
-              ${item.video ? `<button type="button" onclick="${openVideo}" title="Xem video tư liệu" class="hover:text-[#8B1E1E] transition-colors">${ic('video')}<span class="sr-only">Video tư liệu ${title}</span></button>` : ''}
-              ${item.docFile ? `<span title="Có file Word giới thiệu (.docx)">${ic('file-text')}<span class="sr-only">File giới thiệu</span></span>` : ''}
-              <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" title="Chỉ đường trên Google Maps" aria-label="Chỉ đường đến ${title}" class="hover:text-[#8B1E1E] transition-colors">${ic('map')}</a>
+          <div class="mt-auto pt-3 border-t border-[rgba(44,30,24,0.1)] flex items-center justify-between gap-2">
+            <div class="card-media flex flex-wrap items-center gap-1.5 text-[#7A5C3E]">
+              ${item.audioFile ? `<button type="button" onclick="${openAudio}" title="Nghe ngay bản ghi âm thuyết minh" class="card-media-pill card-media-pill--audio hover:bg-[#8B1E1E] hover:text-white transition-colors cursor-pointer">${ic('volume', 'w-3.5 h-3.5')}<span>Thuyết minh</span></button>` : ''}
+              ${item.video ? `<button type="button" onclick="${openVideo}" title="Xem video tư liệu" class="card-media-pill card-media-pill--video hover:border-[#8B6914] transition-colors cursor-pointer">${ic('video', 'w-3.5 h-3.5')}<span>Video</span></button>` : ''}
+              ${item.docFile ? `<span title="Có hồ sơ tư liệu Word (.docx)" class="card-media-pill">${ic('file-text', 'w-3.5 h-3.5')}<span>Tư liệu</span></span>` : ''}
+              <a href="${item.map.directionsUrl}" target="_blank" rel="noopener noreferrer" title="Chỉ đường trên Google Maps" aria-label="Chỉ đường đến ${title}" class="p-1 text-[#7A5C3E] hover:text-[#8B1E1E] transition-colors">${ic('map', 'w-4 h-4')}</a>
             </div>
-            <button type="button" onclick="openDetailModal('${item.id}')" class="text-xs font-semibold text-[#8B1E1E] hover:underline underline-offset-4 whitespace-nowrap">Xem hồ sơ →</button>
+            <button type="button" onclick="openDetailModal('${item.id}')" class="text-xs font-bold text-[#8B1E1E] hover:underline underline-offset-4 whitespace-nowrap cursor-pointer">Xem hồ sơ →</button>
           </div>
         </div>
       </article>
@@ -615,9 +626,22 @@ function openDetailModal(itemId) {
       </section>
 
       ${item.video ? `
-      <!-- VIDEO TƯ LIỆU YOUTUBE -->
+      <!-- VIDEO TƯ LIỆU THỰC TẾ / YOUTUBE -->
       <section id="modal-video-section" class="border-b border-[rgba(44,30,24,0.1)] pb-6 scroll-mt-4">
         <h3 class="modal-section-title flex items-center gap-2">${ic('video', 'w-5 h-5')} Video tư liệu</h3>
+        ${item.video.localSrc ? `
+        <div class="relative w-full rounded-xl overflow-hidden bg-black">
+          <video
+            controls
+            preload="metadata"
+            class="w-full max-h-[460px] mx-auto"
+            onplay="pauseModalMedia('video')">
+            <source src="${item.video.localSrc}" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ phát video trực tiếp.
+          </video>
+        </div>
+        <p class="mt-2 text-xs text-[#5C5248]">${escapeHtml(item.video.title)}</p>
+        ` : `
         <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
           <iframe
             src="${item.video.embedUrl}${item.video.embedUrl.includes('?') ? '&' : '?'}rel=0&enablejsapi=1"
@@ -631,6 +655,7 @@ function openDetailModal(itemId) {
         <p class="mt-2 text-xs text-[#5C5248]">${escapeHtml(item.video.title)} •
           <a href="${item.video.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="text-[#8B1E1E] underline underline-offset-2">Mở trên YouTube</a>
         </p>
+        `}
       </section>
       ` : ''}
 
@@ -1176,6 +1201,9 @@ function pauseModalMedia(keep) {
     modal?.querySelectorAll('iframe[src*="youtube"]').forEach(f => {
       f.contentWindow?.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     });
+    modal?.querySelectorAll('video').forEach(v => {
+      if (!v.paused) v.pause();
+    });
   }
   const bg = document.getElementById('bg-music');
   if (bg && !bg.paused && typeof toggleMusicPlayback === 'function') toggleMusicPlayback();
@@ -1336,7 +1364,10 @@ function handleJoinFacebookGroup() {
 function showFacebookComingSoonModal() {
   const modal = document.getElementById('facebook-notice-modal');
   if (modal) {
+    state.lastFocus = document.activeElement;
     modal.classList.remove('hidden');
+    lockScroll();
+    modal.querySelector('button, a')?.focus({ preventScroll: true });
   } else {
     showToastNotification(
       'Nhóm Facebook đang được Ban Biên Tập Dự án Di sản Văn hoá xã Nhã Nam (cô Dương Thị Thuý Mến, thầy Bùi Văn Công) thiết lập. Đường dẫn sẽ sớm được cập nhật!',
@@ -1348,8 +1379,11 @@ function showFacebookComingSoonModal() {
 
 function closeFacebookNoticeModal() {
   const modal = document.getElementById('facebook-notice-modal');
-  if (modal) {
+  if (modal && !modal.classList.contains('hidden')) {
     modal.classList.add('hidden');
+    unlockScroll();
+    state.lastFocus?.focus?.({ preventScroll: true });
+    state.lastFocus = null;
   }
 }
 
@@ -1387,6 +1421,14 @@ function getQuizList() {
   return [];
 }
 
+function updateQuizProgressStatus() {
+  const statusEl = document.getElementById('quiz-progress-status');
+  if (!statusEl) return;
+  const total = getQuizList().length || 5;
+  const answered = Object.keys(state.quizAnswers).length;
+  statusEl.textContent = `Đã chọn ${answered}/${total} câu hỏi`;
+}
+
 function renderQuiz() {
   const container = document.getElementById('quiz-questions-container');
   if (!container) return;
@@ -1398,7 +1440,7 @@ function renderQuiz() {
   }
 
   container.innerHTML = quizList.map((q, qIndex) => `
-    <div class="p-5 sm:p-6 rounded-xl bg-[#FFFCF7] border border-[rgba(139,30,30,0.12)] mb-4">
+    <div class="p-5 sm:p-6 rounded-xl bg-heritage-surface border border-[rgba(139,30,30,0.12)] mb-4">
       <div class="flex items-start gap-3 mb-3">
         <span class="w-7 h-7 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">
           ${qIndex + 1}
@@ -1408,14 +1450,14 @@ function renderQuiz() {
         </h4>
       </div>
 
-      <div class="space-y-2 pl-10">
+      <div class="space-y-2 pl-10" data-quiz-group="${q.id}">
         ${q.options.map((opt, optIndex) => `
           <label class="quiz-option-label flex items-center gap-3 p-3 rounded-lg border border-[#EADECF] hover:bg-[#FAF6EE] cursor-pointer transition-colors text-sm text-[#4A4036]">
             <input 
               type="radio" 
               name="quiz-q-${q.id}" 
               value="${optIndex}" 
-              onchange="handleSelectQuizAnswer(${q.id}, ${optIndex})"
+              onchange="handleSelectQuizAnswer(${q.id}, ${optIndex}, this)"
               class="w-4 h-4 text-[#8B1E1E] focus:ring-[#8B1E1E] border-gray-300"
             />
             <span class="leading-relaxed">${escapeHtml(opt)}</span>
@@ -1427,10 +1469,20 @@ function renderQuiz() {
       </div>
     </div>
   `).join('');
+
+  updateQuizProgressStatus();
 }
 
-function handleSelectQuizAnswer(questionId, optionIndex) {
+function handleSelectQuizAnswer(questionId, optionIndex, inputEl) {
   state.quizAnswers[questionId] = optionIndex;
+  if (inputEl) {
+    const group = inputEl.closest('[data-quiz-group]');
+    if (group) {
+      group.querySelectorAll('.quiz-option-label').forEach(lbl => lbl.classList.remove('is-selected'));
+    }
+    inputEl.closest('.quiz-option-label')?.classList.add('is-selected');
+  }
+  updateQuizProgressStatus();
 }
 
 function submitQuiz() {
@@ -1508,19 +1560,28 @@ function showQuizResultModal(score, total) {
   }
 
   const modal = document.getElementById('quiz-result-modal');
-  if (modal) modal.classList.remove('hidden');
+  if (modal) {
+    state.lastFocus = document.activeElement;
+    modal.classList.remove('hidden');
+    lockScroll();
+    modal.querySelector('button')?.focus({ preventScroll: true });
+  }
 }
 
 function closeQuizResultModal() {
   const modal = document.getElementById('quiz-result-modal');
-  if (modal) modal.classList.add('hidden');
+  if (modal && !modal.classList.contains('hidden')) {
+    modal.classList.add('hidden');
+    unlockScroll();
+    state.lastFocus?.focus?.({ preventScroll: true });
+    state.lastFocus = null;
+  }
 }
 
 function resetQuiz() {
   state.quizAnswers = {};
   state.quizSubmitted = false;
   closeQuizResultModal();
-      closeRelicsInventoryModal();
   renderQuiz();
 }
 
@@ -1805,6 +1866,19 @@ function setupEventListeners() {
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      // Đang mở menu di động: Esc đóng menu trước
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn?.setAttribute('aria-label', 'Mở thanh điều hướng');
+        if (mobileMenuIcon) {
+          mobileMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>';
+        }
+        return;
+      }
       // Đang xem ảnh phóng to: Esc chỉ đóng ảnh, giữ nguyên hồ sơ bên dưới
       const lightbox = document.getElementById('lightbox-modal');
       if (lightbox && !lightbox.classList.contains('hidden')) { closeLightbox(); return; }
@@ -1812,6 +1886,37 @@ function setupEventListeners() {
       closeFacebookNoticeModal();
       closeQuizResultModal();
       if (typeof closeRelicsInventoryModal === 'function') closeRelicsInventoryModal();
+    } else if (e.key === 'Tab') {
+      // Accessible Focus Trap for all open modal dialogs (WCAG 2.2 AA/AAA)
+      const openModal = [
+        document.getElementById('lightbox-modal'),
+        document.getElementById('heritage-detail-modal'),
+        document.getElementById('relics-inventory-modal'),
+        document.getElementById('facebook-notice-modal'),
+        document.getElementById('quiz-result-modal')
+      ].find(m => m && !m.classList.contains('hidden'));
+
+      if (openModal) {
+        const focusable = openModal.querySelectorAll(
+          'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        const focusableArr = Array.prototype.filter.call(focusable, el => el.offsetParent !== null);
+        if (focusableArr.length > 0) {
+          const first = focusableArr[0];
+          const last = focusableArr[focusableArr.length - 1];
+          if (e.shiftKey) {
+            if (document.activeElement === first || !openModal.contains(document.activeElement)) {
+              e.preventDefault();
+              last.focus();
+            }
+          } else {
+            if (document.activeElement === last || !openModal.contains(document.activeElement)) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        }
+      }
     } else if ((e.key === 'Enter' || e.key === ' ') && e.target.matches?.('[role="button"]:not(button)')) {
       // Thẻ tuyến / thẻ danh mục là <div role="button">: cho bấm bằng bàn phím
       e.preventDefault();
@@ -1831,10 +1936,30 @@ function setupEventListeners() {
 
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuIcon = document.getElementById('mobile-menu-icon');
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
       const isHidden = mobileMenu.classList.toggle('hidden');
-      mobileMenuBtn.setAttribute('aria-expanded', isHidden? 'false': 'true');
+      const expanded = !isHidden;
+      mobileMenuBtn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      mobileMenuBtn.setAttribute('aria-label', expanded ? 'Đóng thanh điều hướng' : 'Mở thanh điều hướng');
+      if (mobileMenuIcon) {
+        mobileMenuIcon.innerHTML = expanded
+          ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'
+          : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>';
+      }
+    });
+
+    // Tự động đóng menu di động khi nhấn ra ngoài
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.setAttribute('aria-label', 'Mở thanh điều hướng');
+        if (mobileMenuIcon) {
+          mobileMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>';
+        }
+      }
     });
   }
 }
@@ -1887,6 +2012,7 @@ function formatMarkdownBold(text) {
 function openRelicsInventoryModal(targetGroupId = null) {
   const modal = document.getElementById('relics-inventory-modal');
   if (!modal) return;
+  state.lastFocus = document.activeElement;
   renderRelicsInventoryModalContent();
   modal.classList.remove('hidden');
   lockScroll();
@@ -1910,9 +2036,11 @@ function openRelicsInventoryModal(targetGroupId = null) {
 
 function closeRelicsInventoryModal() {
   const modal = document.getElementById('relics-inventory-modal');
-  if (modal) {
+  if (modal && !modal.classList.contains('hidden')) {
     modal.classList.add('hidden');
-    document.body.style.overflow = '';
+    unlockScroll();
+    state.lastFocus?.focus?.({ preventScroll: true });
+    state.lastFocus = null;
   }
 }
 

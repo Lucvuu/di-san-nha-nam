@@ -78,7 +78,7 @@ TANGIBLE_HERITAGE_DATA.forEach((item, i) => {
     });
   }
   if (item.video) {
-    console.assert(item.video.youtubeId && item.video.embedUrl, `Video for ${item.id} must have valid youtubeId & embedUrl`);
+    console.assert((item.video.youtubeId && item.video.embedUrl) || (item.video.localSrc && fs.existsSync(item.video.localSrc)), `Video for ${item.id} must have valid youtubeId & embedUrl or existing localSrc`);
   }
   console.log(`  ✓ [Vật thể ${i+1}] ${item.title} -> Verified multimedia components (RealPhoto: ${item.hasRealPhoto}, Audio: ${!!item.audioFile}, Video: ${!!item.video}, Map, Doc: ${item.docFile.fileName})`);
 });
@@ -386,8 +386,15 @@ for (const item of surveyItems) {
     console.assert((item.gallery || []).length && item.gallery.every(g => /minh họa/i.test(g.caption)), `${item.id}: ảnh minh họa phải ghi chú "minh họa"`);
   }
   for (const g of item.gallery || []) console.assert(fs.existsSync(g.url), `${item.id}: thiếu ảnh ${g.url}`);
+  if (item.video && item.video.localSrc) {
+    console.assert(fs.existsSync(item.video.localSrc), `${item.id}: thiếu video ${item.video.localSrc}`);
+  }
 }
-console.log('  ✓ Ảnh minh họa được ghi chú rõ; mọi ảnh thư viện đều tồn tại');
+['vat-the-3', 'vat-the-10', 'vat-the-12'].forEach(id => {
+  const r = surveyItems.find(x => x.id === id);
+  console.assert(r && r.hasRealPhoto && r.thumbnail && fs.existsSync(r.thumbnail) && r.gallery.length >= 3, `${id} must have real photos and thumbnail`);
+});
+console.log('  ✓ Ảnh minh họa được ghi chú rõ; mọi ảnh thư viện và video thực tế đều tồn tại');
 
 console.log('\n======================================================');
 console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE, APP INIT & SECURITY TESTS PASSED! 🎉');

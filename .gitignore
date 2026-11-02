@@ -17,7 +17,11 @@ Tài liệu di sản/
 *.zip
 *.py
 *.mp4
-assets/videos/
+assets/videos/*
+!assets/videos/chua-dong-dieu/
+!assets/videos/chua-dong-dieu/*.mp4
+bao-cao-khoa-hoc/
+~$*
 scripts/*.json
 # Âm thanh: chỉ đưa lên các bản thuyết minh và ca khúc đang dùng trên trang
 assets/audio/*.mp3
