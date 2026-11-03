@@ -18,8 +18,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        serif: ['Merriweather', 'Georgia', 'serif'],
-        sans: ['Be Vietnam Pro', 'Inter', 'sans-serif']
+        serif: ['Merriweather', 'Merriweather Fallback', 'Georgia', 'serif'],
+        sans: ['Be Vietnam Pro', 'Be Vietnam Pro Fallback', 'Inter', 'sans-serif']
       }
     }
   }
