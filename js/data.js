@@ -339,10 +339,38 @@ const TANGIBLE_HERITAGE_DATA = [
       {
         "url": "./assets/images/dinh-chua-ha/dinh-ha-5.jpg",
         "caption": "Quần thể di tích quốc gia đặc biệt đình – chùa Hả tại xã Nhã Nam"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/chua-ha-tam-bao.jpg",
+        "caption": "Chùa Hả (Thanh Âm tự) – Mặt tiền tòa Tam Bảo cổ kính rợp bóng cây xanh và đèn lồng hoa sen (Ảnh tư liệu: UBND xã Nhã Nam)"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/chua-ha-den-tho-mau-1.jpg",
+        "caption": "Đền thờ Mẫu trong khuôn viên chùa Hả với kiến trúc 3 gian cửa bức bàn gỗ và đôi trụ biểu câu đối chữ Hán (Ảnh tư liệu: UBND xã Nhã Nam)"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/chua-ha-den-tho-mau-2.jpg",
+        "caption": "Góc nhìn chính diện tòa Đền thờ Mẫu thuộc cụm di tích đình – chùa Hả (Ảnh tư liệu: UBND xã Nhã Nam)"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/chua-ha-nghi-mon.jpg",
+        "caption": "Nghi môn tứ trụ uy nghiêm với câu đối chữ Hán dẫn vào sân gạch Bát Tràng và tòa đại bái (Ảnh tư liệu: UBND xã Nhã Nam)"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/chua-ha-dai-bai-1.jpg",
+        "caption": "Tòa đại bái 5 gian gỗ lim với mái ngói mũi hài lưỡng long chầu nguyệt và bậc tam cấp đá xanh chạm rồng (Ảnh tư liệu: UBND xã Nhã Nam)"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/chua-ha-dai-bai-2.jpg",
+        "caption": "Không gian kiến trúc cổ kính, trang nghiêm tại cụm di tích đình – chùa Hả (Ảnh tư liệu: UBND xã Nhã Nam)"
+      },
+      {
+        "url": "./assets/images/dinh-chua-ha/chua-ha-khuon-vien-1.jpg",
+        "caption": "Sân gạch truyền thống và kiến trúc cổ dưới bóng cờ Tổ quốc trong cụm di tích (Ảnh tư liệu: UBND xã Nhã Nam)"
       }
     ],
     "hasRealPhoto": true,
-    "photoNotice": "Bộ sưu tập 08 ảnh tư liệu thực tế tại đình – chùa Hả và diễn tích Đề Nắm tế cờ",
+    "photoNotice": "Bộ sưu tập 15 ảnh tư liệu thực tế tại cụm di tích đình – chùa Hả (Thanh Âm tự), Đền thờ Mẫu và diễn tích Đề Nắm tế cờ (do UBND xã Nhã Nam và Ban biên tập cung cấp)",
     "docFile": {
       "fileName": "dinh-chua-ha.docx",
       "title": "Hồ sơ di tích đình – chùa Hả",
@@ -370,8 +398,8 @@ const TANGIBLE_HERITAGE_DATA = [
     "worship": "Thờ Phật",
     "title": "Chùa Tứ Giáp",
     "shortTitle": "Chùa Tứ Giáp (Đại Phúc tự)",
-    "address": "Tổ dân phố Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh",
-    "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
+    "address": "Thôn Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh",
+    "oldAddress": "Tổ dân phố Chùa Nguộn, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "thumbnail": "./assets/images/chua-tu-giap/anh-dai-dien.jpg",
     "tags": [
       "Chùa Tứ Giáp",
@@ -410,7 +438,7 @@ const TANGIBLE_HERITAGE_DATA = [
     ],
     "overview": "Ngôi chùa cổ dựng khoảng 1771–1773 (còn gọi chùa Đại Phúc, chùa Gốc Gạo), nơi đặt trụ sở Sở Công an Khu XII (1946–1948) đón nhận bức thư Sáu điều Bác Hồ dạy CAND ngày 11/3/1948; liền kề Khu lưu niệm rộng hơn 3,3 ha.",
     "content": {
-      "intro": "Chùa Tứ Giáp (tên chữ Đại Phúc tự, dân gian gọi là chùa làng Nguộn hay chùa Gốc Gạo) tọa lạc tại tổ dân phố Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Ngôi chùa được khởi dựng khoảng năm 1771–1773 thời Lê Cảnh Hưng, xếp hạng Di tích lịch sử – văn hóa cấp Quốc gia năm 1992. Giai đoạn 1946–1948, nơi đây là trụ sở Sở Công an Khu XII và là nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân (11/3/1948).",
+      "intro": "Chùa Tứ Giáp (tên chữ Đại Phúc tự, dân gian gọi là chùa làng Nguộn hay chùa Gốc Gạo) tọa lạc tại thôn Chùa Nguộn, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc tổ dân phố Chùa Nguộn, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Ngôi chùa được khởi dựng khoảng năm 1771–1773 thời Lê Cảnh Hưng, xếp hạng Di tích lịch sử – văn hóa cấp Quốc gia năm 1992. Giai đoạn 1946–1948, nơi đây là trụ sở Sở Công an Khu XII và là nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân (11/3/1948).",
       "historicalSignificance": [
         "**Trụ sở Sở Công an Khu XII và đồng chí Hoàng Mai (1922–2004):** Tháng 11/1946, cả nước chia thành 12 khu hành chính – quân sự (Khu 12 gồm Cao Bằng, Lạng Sơn, Bắc Giang, Bắc Ninh và Quảng Ninh). Sở Công an Khu 12 đặt trụ sở tại chùa Tứ Giáp (Nhã Nam), do đồng chí Hoàng Mai làm Giám đốc khi mới 26 tuổi.",
         "**Bức thư lịch sử ngày 11/3/1948:** Đầu năm 1948, sau Hội nghị Công an toàn quốc lần thứ 2 tại Tuyên Quang, đồng chí Hoàng Mai viết thư xin Bác góp ý về rèn luyện đạo đức, tác phong nghiệp vụ và gửi biếu Người tờ báo 'Bạn Dân' – cơ quan tuyên truyền của Sở. Ngày 11/3/1948, Chủ tịch Hồ Chí Minh gửi thư hồi âm căn dặn: 'Công an của ta là Công an nhân dân, vì dân mà phục vụ và dựa vào dân mà làm việc', đồng thời nêu Sáu điều về 'Tư cách người Công an cách mệnh'.",
@@ -437,7 +465,7 @@ const TANGIBLE_HERITAGE_DATA = [
       },
       {
         "url": "./assets/images/chua-tu-giap/khu-luu-niem-toan-canh.jpg",
-        "caption": "Toàn cảnh Khu lưu niệm Sáu điều Bác Hồ dạy Công an nhân dân rộng hơn 3,3 ha tại tổ dân phố Chùa Nguộn, xã Nhã Nam (Tư liệu: Báo Pháp luật Việt Nam)"
+        "caption": "Toàn cảnh Khu lưu niệm Sáu điều Bác Hồ dạy Công an nhân dân rộng hơn 3,3 ha tại thôn Chùa Nguộn, xã Nhã Nam (Tư liệu: Báo Pháp luật Việt Nam)"
       },
       {
         "url": "./assets/images/chua-tu-giap/tuong-bac-7m.jpg",
@@ -457,7 +485,7 @@ const TANGIBLE_HERITAGE_DATA = [
       },
       {
         "url": "./assets/images/chua-tu-giap/tu-giap-2.jpg",
-        "caption": "Không gian khuôn viên và kiến trúc tiền tế chùa Tứ Giáp tại tổ dân phố Chùa Nguộn"
+        "caption": "Không gian khuôn viên và kiến trúc tiền tế chùa Tứ Giáp tại thôn Chùa Nguộn"
       }
     ],
     "hasRealPhoto": true,
@@ -555,8 +583,8 @@ const TANGIBLE_HERITAGE_DATA = [
     "worship": "Thờ Mẫu",
     "title": "Đền Gốc Khế",
     "shortTitle": "Đền Gốc Khế",
-    "address": "Tổ dân phố Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh",
-    "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
+    "address": "Thôn Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh",
+    "oldAddress": "Tổ dân phố Cầu Thượng, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "thumbnail": "./assets/images/den-goc-khe/anh-dai-dien.webp",
     "audioFile": {
       "src": "./assets/audio/thuyet-minh-den-goc-khe.mp3",
@@ -573,7 +601,7 @@ const TANGIBLE_HERITAGE_DATA = [
     ],
     "overview": "Đền thờ Mẫu và nghĩa quân Yên Thế giữa khu rừng Gốc Khế – trạm tiền tiêu ở cửa ngõ đồn Nhã Nam thời Đề Thám.",
     "content": {
-      "intro": "Đền nằm trong khu rừng Gốc Khế, tổ dân phố Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Thời khởi nghĩa Yên Thế, khu rừng là trạm tiền tiêu ở cửa ngõ đồn Nhã Nam và phủ Yên Thế. Đền thuộc cụm Những địa điểm Khởi nghĩa Yên Thế, di tích quốc gia đặc biệt.",
+      "intro": "Đền nằm trong khu rừng Gốc Khế, thôn Cầu Thượng, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc tổ dân phố Cầu Thượng, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Thời khởi nghĩa Yên Thế, khu rừng là trạm tiền tiêu ở cửa ngõ đồn Nhã Nam và phủ Yên Thế. Đền thuộc cụm Những địa điểm Khởi nghĩa Yên Thế, di tích quốc gia đặc biệt.",
       "historicalSignificance": [
         "**Căn cứ tiền tiêu của phong trào Yên Thế:** Khu vực đền Gốc Khế nằm ở vị trí yết hầu cửa ngõ vào vùng căn cứ đồn Nhã Nam và Phủ Yên Thế. Dưới sự chỉ huy của Đề Thám và các tướng lĩnh, nơi đây là trạm tiền tiêu trinh sát nắm bắt tình hình di chuyển của quân đội viễn chinh Pháp.",
         "**Nơi tưởng niệm các nghĩa sĩ bất khuất:** Nhân dân đã lập đền thờ tại khu rừng Gốc Khế để tưởng nhớ công đức các thủ lĩnh nghĩa quân Yên Thế và các anh hùng nghĩa sĩ đã anh dũng hy sinh vì độc lập dân tộc.",
@@ -757,8 +785,8 @@ const TANGIBLE_HERITAGE_DATA = [
     "worship": "Thờ Phật",
     "title": "Chùa Nam Thiên (chùa Phố)",
     "shortTitle": "Chùa Nam Thiên",
-    "address": "Tổ dân phố Tân Quang, xã Nhã Nam, tỉnh Bắc Ninh",
-    "oldAddress": "Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
+    "address": "Thôn Tân Quang, xã Nhã Nam, tỉnh Bắc Ninh",
+    "oldAddress": "Tổ dân phố Tân Quang, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "thumbnail": "./assets/images/chua-nam-thien/anh-dai-dien.jpg",
     "audioFile": {
       "src": "./assets/audio/thuyet-minh-chua-nam-thien.mp3",
@@ -774,7 +802,7 @@ const TANGIBLE_HERITAGE_DATA = [
     ],
     "overview": "Dựng năm Nhâm Ngọ (1822) ở làng Cầu, chuyển về phố Nhã Nam năm 1885, trùng tu năm 1925. Năm 1947 chùa nuôi giấu cán bộ, cất lương thực cho bộ đội.",
     "content": {
-      "intro": "Chùa Nam Thiên, tục gọi chùa Phố, ở tổ dân phố Tân Quang, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Chùa dựng năm Nhâm Ngọ (1822) đời Minh Mạng, ban đầu thuộc làng Cầu; năm 1885, khi phố Nhã Nam hình thành, chùa được chuyển về phố.",
+      "intro": "Chùa Nam Thiên, tục gọi chùa Phố, ở thôn Tân Quang, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc tổ dân phố Tân Quang, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Chùa dựng năm Nhâm Ngọ (1822) đời Minh Mạng, ban đầu thuộc làng Cầu; năm 1885, khi phố Nhã Nam hình thành, chùa được chuyển về phố.",
       "historicalSignificance": [
         "**Lịch sử hơn 200 năm đồng hành cùng quê hương:** Khởi dựng từ năm 1822, trùng tu năm 1925. Trong kháng chiến chống Pháp năm 1947, chùa từng là nơi nuôi giấu cán bộ và kho cất giấu lương thực phục vụ bộ đội.",
         "**Cơ sở liên lạc cách mạng:** Nhờ vị trí kín đáo và sự bảo bọc kiên cường của sư trụ trì cùng Phật tử, chùa Nam Thiên là cơ sở liên lạc tin cậy của nghĩa quân và bộ đội ta.",

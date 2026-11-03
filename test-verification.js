@@ -401,7 +401,13 @@ for (const item of surveyItems) {
   const r = surveyItems.find(x => x.id === id);
   console.assert(r && r.hasRealPhoto && r.thumbnail && fs.existsSync(r.thumbnail) && r.gallery.length >= 3, `${id} must have real photos and thumbnail`);
 });
-console.log('  ✓ Ảnh minh họa được ghi chú rõ; mọi ảnh thư viện và video thực tế đều tồn tại');
+const dinhChuaHa = surveyItems.find(x => x.id === 'vat-the-1');
+console.assert(dinhChuaHa && dinhChuaHa.gallery.length === 15, `vat-the-1 (Đình - Chùa Hả) must have 15 gallery photos including newly added Chùa Hả photos (found ${dinhChuaHa ? dinhChuaHa.gallery.length : 0})`);
+TANGIBLE_HERITAGE_DATA.forEach(item => {
+  console.assert(!/tổ dân phố/i.test(item.address), `${item.id} current address must use "Thôn ..." (not "Tổ dân phố ...") for xã Nhã Nam: ${item.address}`);
+  console.assert(!/tổ dân phố[^()]*xã Nhã Nam/i.test(item.content.intro), `${item.id} intro must not pair "tổ dân phố" with "xã Nhã Nam"`);
+});
+console.log('  ✓ Ảnh minh họa được ghi chú rõ; mọi ảnh thư viện (gồm 15 ảnh Đình - Chùa Hả) và chuẩn hóa đơn vị hành chính "Thôn ..., xã Nhã Nam" đều đạt 100%');
 
 console.log('\n======================================================');
 console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE, APP INIT & SECURITY TESTS PASSED! 🎉');
