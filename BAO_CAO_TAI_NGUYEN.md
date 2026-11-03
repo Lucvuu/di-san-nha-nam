@@ -106,7 +106,7 @@ Bức ảnh poster chứa mã QR chính thức đã được xuất ra tại `./
 - **Độ phân giải:** `1000 x 1200 px` (chuẩn tỷ lệ in ấn poster và chia sẻ nét căng trên Zalo, Facebook, trình chiếu slide).
 - **Dung lượng file:** `112.0 KB` (tối ưu hóa cực nhẹ, gửi qua mạng tức thì).
 - **Địa chỉ đích (Target URL):**  
-  `https://lucvuu.github.io/di-san-nha-nam/`
+  `https://disannhanam.com/`
 - **Phong cách thiết kế trang trọng, chuẩn di sản Kinh Bắc:**
   - **Màu nền:** Giấy dó kem cổ điển (`#FAF6EE`).
   - **Khung viền đôi:** Viền ngoài Đỏ son truyền thống (`#8B1E1E`), viền trong mạ Vàng đồng (`#B48327`) với 4 góc gắn họa tiết đồng tâm.
