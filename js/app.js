@@ -94,6 +94,8 @@ function initApp() {
   try { setupEventListeners(); } catch (e) { console.warn('setupEventListeners error:', e); }
   try { renderQuiz(); } catch (e) { console.warn('renderQuiz error:', e); }
   try { checkUrlHash(); } catch (e) { console.warn('checkUrlHash error:', e); }
+  // Bấm link #item=… khi trang đã mở: trình duyệt chỉ đổi phần sau dấu #, không tải lại trang
+  window.addEventListener('hashchange', checkUrlHash);
   try { initAudioPlayerSettings(); } catch (e) { console.warn('initAudioPlayerSettings error:', e); }
   try { initVisitorCounter(); } catch (e) { console.warn('initVisitorCounter error:', e); }
 }
@@ -1022,6 +1024,9 @@ function closeDetailModal() {
       iframe.src = '';
     }
   });
+
+  // Dừng video tư liệu (tệp mp4 trên trang)
+  modal.querySelectorAll('video').forEach(v => { try { v.pause(); } catch (e) {} });
 
   // Dừng bản ghi âm thực tế nếu đang phát
   const realAudio = modal.querySelector('#modal-real-audio');
@@ -1987,7 +1992,8 @@ function scrollToSection(sectionId) {
 function checkUrlHash() {
   const hash = window.location.hash;
   if (hash && hash.startsWith('#item=')) {
-    const itemId = hash.replace('#item=', '');
+    // Chỉ lấy mã hồ sơ, bỏ phần ứng dụng chat có thể gắn thêm phía sau (vd. &fbclid=…)
+    const itemId = (decodeURIComponent(hash.slice(6)).match(/^[a-z0-9-]+/) || [''])[0];
     setTimeout(() => {
       openDetailModal(itemId);
     }, 200);

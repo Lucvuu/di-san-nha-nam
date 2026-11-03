@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex" />
+  <title>Di sản văn hóa xã Nhã Nam</title>
+  <script>
+    // Một số phần mềm (Word, ứng dụng chat) đổi dấu # thành %23 khi mở link hồ sơ:
+    // disannhanam.com/%23item=phi-vat-the-7 -> đưa về disannhanam.com/#item=phi-vat-the-7
+    (function () {
+      var p = decodeURIComponent(location.pathname + location.search);
+      var i = p.indexOf('#item=');
+      location.replace('/' + (i >= 0 ? p.slice(i) : ''));
+    })();
+  </script>
+</head>
+<body>
+  <p>Đang chuyển về <a href="/">Cổng thông tin Di sản văn hóa xã Nhã Nam</a>…</p>
+</body>
+</html>
