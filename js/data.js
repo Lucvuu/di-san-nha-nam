@@ -33,7 +33,7 @@ const SITE_CONFIG = {
   
   // Facebook Group Community Configuration
   facebookGroupUrl: "https://www.facebook.com/chungemlamtheoloiBac", 
-  facebookGroupStatusNote: "Nhóm bật kiểm duyệt: bài viết và bình luận được duyệt trước khi hiển thị."
+  facebookGroupStatusNote: "Trang Facebook “Sáu Điều Bác Hồ Dạy CAND – Theo Dấu Chân Bác Hồ”"
 };
 
 /**

@@ -28,7 +28,7 @@ console.assert(fs.existsSync('./assets/images/share/bieu-trung-nha-nam-160.png')
 console.assert(fs.existsSync('./assets/images/bieu-trung-nha-nam/logo-xa-nha-nam.jpg'), 'Official commune logo must exist');
 console.assert(fs.existsSync('./assets/images/bieu-trung-nha-nam/thong-diep-thiet-ke-logo-nha-nam.jpg'), 'Official commune logo design message must exist');
 console.assert(fs.existsSync('./assets/images/bieu-trung-nha-nam/so-do-y-tuong-logo-nha-nam.jpg'), 'Official commune logo idea diagram must exist');
-console.assert(SITE_CONFIG.facebookGroupStatusNote.includes('kiểm duyệt'), 'Facebook note must mention kiểm duyệt');
+console.assert(SITE_CONFIG.facebookGroupStatusNote.includes('Sáu Điều Bác Hồ'), 'Facebook note must name the linked page');
 console.log('✓ SITE_CONFIG verified');
 
 
