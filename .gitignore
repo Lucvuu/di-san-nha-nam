@@ -20,6 +20,10 @@ Tài liệu di sản/
 assets/videos/*
 !assets/videos/chua-dong-dieu/
 !assets/videos/chua-dong-dieu/*.mp4
+!assets/videos/noi-phet-duong-son/
+!assets/videos/noi-phet-duong-son/*.mp4
+!assets/videos/quan-ho-nha-nam/
+!assets/videos/quan-ho-nha-nam/*.mp4
 bao-cao-khoa-hoc/
 ~$*
 scripts/*.json

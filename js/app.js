@@ -386,6 +386,39 @@ function renderHeritageGrid(items) {
  * - Sao chép liên kết chia sẻ di tích
  * ====================================================================
  */
+/** Một khối video: tệp mp4 trên trang (localSrc) hoặc YouTube (embedUrl). */
+function renderVideoBlock(v) {
+  return `
+        ${v.localSrc ? `
+        <div class="relative w-full rounded-xl overflow-hidden bg-black">
+          <video
+            controls
+            preload="metadata"
+            class="w-full max-h-[460px] mx-auto"
+            onplay="pauseModalMedia('video')">
+            <source src="${v.localSrc}" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ phát video trực tiếp.
+          </video>
+        </div>
+        <p class="mt-2 text-xs text-[#5C5248]">${escapeHtml(v.title)}</p>
+        ` : `
+        <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
+          <iframe
+            src="${v.embedUrl}${v.embedUrl.includes('?') ? '&' : '?'}rel=0&enablejsapi=1"
+            title="${escapeHtml(v.title)}"
+            class="absolute inset-0 w-full h-full"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <p class="mt-2 text-xs text-[#5C5248]">${escapeHtml(v.title)} •
+          <a href="${v.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="text-[#8B1E1E] underline underline-offset-2">Mở trên YouTube</a>
+        </p>
+        `}
+  `;
+}
+
 /** Biểu tượng SVG từ sprite #i-* trong index.html */
 function ic(name, cls = 'w-4 h-4') {
   return `<svg class="ic ${cls}" aria-hidden="true"><use href="#i-${name}"/></svg>`;
@@ -619,34 +652,8 @@ function openDetailModal(itemId) {
       ${item.video ? `
       <!-- VIDEO TƯ LIỆU THỰC TẾ / YOUTUBE -->
       <section id="modal-video-section" class="border-b border-[rgba(44,30,24,0.1)] pb-6 scroll-mt-4">
-        <h3 class="modal-section-title flex items-center gap-2">${ic('video', 'w-5 h-5')} Video tư liệu</h3>
-        ${item.video.localSrc ? `
-        <div class="relative w-full rounded-xl overflow-hidden bg-black">
-          <video
-            controls
-            preload="metadata"
-            class="w-full max-h-[460px] mx-auto"
-            onplay="pauseModalMedia('video')">
-            <source src="${item.video.localSrc}" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ phát video trực tiếp.
-          </video>
-        </div>
-        <p class="mt-2 text-xs text-[#5C5248]">${escapeHtml(item.video.title)}</p>
-        ` : `
-        <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
-          <iframe
-            src="${item.video.embedUrl}${item.video.embedUrl.includes('?') ? '&' : '?'}rel=0&enablejsapi=1"
-            title="${escapeHtml(item.video.title)}"
-            class="absolute inset-0 w-full h-full"
-            loading="lazy"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
-        </div>
-        <p class="mt-2 text-xs text-[#5C5248]">${escapeHtml(item.video.title)} •
-          <a href="${item.video.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="text-[#8B1E1E] underline underline-offset-2">Mở trên YouTube</a>
-        </p>
-        `}
+        <h3 class="modal-section-title flex items-center gap-2">${ic('video', 'w-5 h-5')} Video tư liệu${item.moreVideos?.length ? ` (${item.moreVideos.length + 1})` : ''}</h3>
+        ${[item.video, ...(item.moreVideos || [])].map((v, vi) => `<div class="${vi ? 'mt-6' : ''}">${renderVideoBlock(v)}</div>`).join('')}
       </section>
       ` : ''}
 

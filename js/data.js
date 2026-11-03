@@ -1549,7 +1549,9 @@ const INTANGIBLE_HERITAGE_DATA = [
       {
         "url": "./assets/images/video-tu-lieu/hat-cheo.jpg",
         "caption": "Tiết mục hát chèo (ảnh trích từ video tư liệu \"Duyên hài lứa đôi\")"
-      }
+      },
+      {"url": "./assets/images/hat-cheo/clb-cheo-qd-trang-1.jpg", "caption": "Quyết định số 1270/QĐ-UBND ngày 07/9/2026 của Chủ tịch UBND xã Nhã Nam về việc thành lập Câu lạc bộ Chèo Dương Lâm (trang 1)"},
+      {"url": "./assets/images/hat-cheo/clb-cheo-qd-trang-2.jpg", "caption": "Quyết định số 1270/QĐ-UBND ngày 07/9/2026 của Chủ tịch UBND xã Nhã Nam về việc thành lập Câu lạc bộ Chèo Dương Lâm (trang 2)"}
     ],
     "hasRealPhoto": true,
     "photoNotice": "Bộ sưu tập ảnh tư liệu chụp thực tế hoạt động biểu diễn và sinh hoạt của Câu lạc bộ Chèo thôn Dương Lâm, xã Nhã Nam",
@@ -1758,6 +1760,14 @@ const INTANGIBLE_HERITAGE_DATA = [
       "youtubeUrl": "https://www.youtube.com/watch?v=w-SSxpYTbUs",
       "embedUrl": "https://www.youtube.com/embed/w-SSxpYTbUs"
     },
+    "moreVideos": [
+      {"title": "Nghệ nhân làng Dương Sơn kể chuyện nói phét – đoạn 1 (tư liệu video quay tại làng Dương Sơn)", "localSrc": "./assets/videos/noi-phet-duong-son/noi-phet-1.mp4"},
+      {"title": "Nghệ nhân làng Dương Sơn kể chuyện nói phét – đoạn 2 (tư liệu video quay tại làng Dương Sơn)", "localSrc": "./assets/videos/noi-phet-duong-son/noi-phet-2.mp4"},
+      {"title": "Trò chuyện cùng nghệ nhân nói phét bên hiên nhà – đoạn 3 (tư liệu video quay tại làng Dương Sơn)", "localSrc": "./assets/videos/noi-phet-duong-son/noi-phet-3.mp4"},
+      {"title": "Nghệ nhân kể chuyện phét ngay bên bờ ruộng – đoạn 4 (tư liệu video quay tại làng Dương Sơn)", "localSrc": "./assets/videos/noi-phet-duong-son/noi-phet-4.mp4"},
+      {"title": "Theo chân nghệ nhân qua vườn, ngõ làng Dương Sơn – đoạn 5 (tư liệu video quay tại làng Dương Sơn)", "localSrc": "./assets/videos/noi-phet-duong-son/noi-phet-5.mp4"},
+      {"title": "Cảnh quan đường làng, cây cổ thụ làng Dương Sơn – đoạn 6 (tư liệu video quay tại làng Dương Sơn)", "localSrc": "./assets/videos/noi-phet-duong-son/noi-phet-6.mp4"}
+    ],
     "overview": "Làng Dương Sơn (thôn Cả, Đỉnh, Húng) giữ tục \"ăn no, nói phét, người cười rụng răng\": kể chuyện phóng đại lúc làm đồng cho quên mệt.",
     "content": {
       "intro": "Làng Dương Sơn gồm các thôn Cả, Đỉnh, Húng; trước ngày 01/7/2025 thuộc xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang, nay thuộc xã Nhã Nam, thành phố Bắc Ninh. Làng có tục \"ăn no, nói phét, người cười rụng răng\". Nói phét (nói khoác, nói trạng) ở Dương Sơn là lối kể chuyện phóng đại để mua vui, sinh ra trong lao động của người làm ruộng.",
@@ -1822,6 +1832,10 @@ const INTANGIBLE_HERITAGE_DATA = [
     "scope": "Câu lạc bộ Dân ca Quan họ xã Nhã Nam cùng các nghệ nhân, liền anh liền chị tại các thôn trong toàn xã",
     "address": "Xã Nhã Nam, thành phố Bắc Ninh (sinh hoạt tại Khu lưu niệm 6 điều Bác Hồ dạy CAND và các di tích)",
     "thumbnail": "./assets/images/quan-ho/quan-ho-1.jpg",
+    "video": {"title": "Phóng sự truyền hình về dân ca quan họ (nguồn: VTV1)", "localSrc": "./assets/videos/quan-ho-nha-nam/quan-ho-vtv1.mp4"},
+    "moreVideos": [
+      {"title": "Các liền chị CLB Dân ca Quan họ biểu diễn trước sân đình", "localSrc": "./assets/videos/quan-ho-nha-nam/quan-ho-san-dinh.mp4"}
+    ],
     "tags": [
       "Dân ca Quan họ",
       "Quan họ Bắc Ninh",
