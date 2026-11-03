@@ -45,33 +45,6 @@
   <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/share/icon-192.png?v=5" />
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/share/apple-touch-icon.png?v=5" />
 
-  <!-- Tailwind CSS qua CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            heritage: {
-              red: '#8B1E1E',
-              redDark: '#6F1515',
-              gold: '#C59B27',
-              goldDark: '#A67C18',
-              ivory: '#FAF6EE',
-              warm: '#F5EFE6',
-              border: '#EADECF',
-              text: '#2A2521',
-              muted: '#5C5248'
-            }
-          },
-          fontFamily: {
-            serif: ['Merriweather', 'Georgia', 'serif'],
-            sans: ['Be Vietnam Pro', 'Inter', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
 
   <!-- Google Fonts: Merriweather (Chuẩn dấu tiếng Việt 100%) & Be Vietnam Pro -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,6 +55,8 @@
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/style.css?v=3.6.0" />
+  <!-- Tailwind dựng sẵn (npm run build:css), đặt sau style.css như bản CDN cũ -->
+  <link rel="stylesheet" href="css/tailwind.css?v=1.0.0" />
 </head>
 
 <body
@@ -485,7 +460,7 @@
               <div id="hero-btn-vat-the" role="button" tabindex="0"
                 aria-label="Xem 16 di tích xếp hạng (di sản vật thể)"
                 class="hero-entry-card rounded-xl p-5 sm:p-6 flex flex-col justify-end min-h-[210px] sm:min-h-[235px] cursor-pointer text-white relative group"
-                style="background-image: url('./assets/images/dinh-chua-ha/anh-dai-dien.jpg');">
+                style="background-image: url('./assets/images/dinh-chua-ha/anh-dai-dien-hero.webp');">
 
 
                 <div class="relative z-10">
@@ -1962,7 +1937,7 @@
   <!-- SCRIPT FILES -->
   <script src="js/data.js?v=3.8.0"></script>
   <script src="js/utils.js?v=3.6.1"></script>
-  <script src="js/app.js?v=3.8.1"></script>
+  <script src="js/app.js?v=3.9.0"></script>
 </body>
 
 </html>

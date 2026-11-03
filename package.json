@@ -5,7 +5,8 @@
   "main": "index.html",
   "scripts": {
     "start": "node server.js",
-    "test": "node test-verification.js"
+    "test": "node test-verification.js",
+    "build:css": "npx -y tailwindcss@3.4.17 -c tailwind.config.js -i css/tailwind.input.css -o css/tailwind.css --minify"
   },
   "keywords": [
     "di-san-nha-nam",
@@ -17,4 +18,3 @@
   "author": "Ban biên tập Cổng thông tin di sản văn hóa xã Nhã Nam",
   "license": "MIT"
 }
-

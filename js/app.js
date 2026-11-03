@@ -331,9 +331,9 @@ function renderHeritageGrid(items) {
       <article class="heritage-card rounded-lg overflow-hidden flex flex-col h-full">
         <div class="relative h-52 sm:h-56 overflow-hidden bg-[#EADECF] cursor-pointer" onclick="openDetailModal('${item.id}')">
           ${item.thumbnail ? `
-            <img src="${item.thumbnail}" alt="${title}" loading="lazy" decoding="async"
+            <img src="${cardThumb(item.thumbnail)}" alt="${title}" loading="lazy" decoding="async" width="720" height="405"
               style="object-position: ${item.imagePosition || 'center 30%'};" class="w-full h-full object-cover card-thumb-img"
-              onerror="handleImageError(this)" />
+              onerror="if (!this.dataset.full) { this.dataset.full = 1; this.src = '${item.thumbnail}'; } else handleImageError(this)" />
             ${item.hasRealPhoto ? '' : '<span class="absolute left-3 bottom-3 rounded-md bg-black/75 backdrop-blur-xs px-2.5 py-1 text-xs font-semibold text-white shadow-xs">Ảnh minh họa</span>'}
           ` : `
             <div class="photo-pending-frame w-full h-full relative flex items-end p-4 overflow-hidden">
@@ -418,6 +418,11 @@ function renderVideoBlock(v) {
         </p>
         `}
   `;
+}
+
+/** Ảnh thẻ di tích: bản nhỏ "-the.webp" (rộng 720 px) cạnh ảnh gốc; ảnh gốc dùng trong hồ sơ. */
+function cardThumb(src) {
+  return src ? src.replace(/\.(jpe?g|png|webp)$/i, '-the.webp') : src;
 }
 
 /** Biểu tượng SVG từ sprite #i-* trong index.html */

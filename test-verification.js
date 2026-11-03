@@ -426,6 +426,8 @@ for (let r = 0; r < 300; r++) {
   ex.questions.forEach(q => { const src = QUIZ_BANK_40.find(b => b.id === q.id); console.assert(q.options[q.answer] === src.options[src.answer], `Shuffled answer must stay correct for ${q.id}`); });
 }
 console.assert(fs.existsSync('./assets/docs/bo-de-trac-nghiem-10-cau-di-san-nha-nam.docx'), 'Quiz docx must exist');
+[...TANGIBLE_HERITAGE_DATA, ...INTANGIBLE_HERITAGE_DATA].filter(i => i.thumbnail).forEach(i => console.assert(fs.existsSync(cardThumb(i.thumbnail).replace('./', '')), `Card thumbnail missing for ${i.id}`));
+console.assert(!fs.readFileSync('./index.html', 'utf8').includes('cdn.tailwindcss.com') && fs.existsSync('./css/tailwind.css'), 'Tailwind must be prebuilt (css/tailwind.css), not CDN');
 console.log('  ✓ 300 random exams follow matrix 2/3/3/2, 2–3 answers per letter, no conflict pairs');
 
 console.log('\n======================================================');
