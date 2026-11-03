@@ -813,6 +813,14 @@ function openDetailModal(itemId) {
   modal.classList.remove('hidden');
   modal.scrollTop = 0;
   container.scrollTop = 0;
+  const progressBar = document.getElementById('modal-reading-progress');
+  if (progressBar) {
+    progressBar.style.transform = 'scaleX(0)';
+    container.onscroll = () => {
+      const max = container.scrollHeight - container.clientHeight;
+      progressBar.style.transform = `scaleX(${max > 0 ? Math.min(1, container.scrollTop / max) : 0})`;
+    };
+  }
   lockScroll();
   container.querySelector('button[onclick="closeDetailModal()"]')?.focus({ preventScroll: true });
   initAudioGuideForModal(item);
@@ -912,7 +920,7 @@ function loadDocTexts() {
   if (!loadDocTexts.promise) {
     loadDocTexts.promise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = './js/doc-texts.js?v=3.5.1';
+      s.src = './js/doc-texts.js?v=3.6.0';
       s.onload = () => resolve(window.DOC_TEXTS || {});
       s.onerror = () => { loadDocTexts.promise = null; reject(); };
       document.head.appendChild(s);
@@ -1043,6 +1051,10 @@ function closeDetailModal() {
   }
 
   modal.classList.add('hidden');
+  const progressBar = document.getElementById('modal-reading-progress');
+  if (progressBar) progressBar.style.transform = 'scaleX(0)';
+  const container = document.getElementById('modal-dynamic-content');
+  if (container) container.onscroll = null;
   unlockScroll();
   state.lastFocus?.focus?.({ preventScroll: true });
   state.lastFocus = null;

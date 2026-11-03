@@ -628,7 +628,7 @@ button:active:not(:disabled), [role="button"]:active {
   background-color: #FFFFFF;
   color: var(--color-text-main);
   padding: 1.5rem;
-  animation: modalScaleUp 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalScaleUp 0.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   will-change: transform, opacity;
 }
 
@@ -639,7 +639,7 @@ button:active:not(:disabled), [role="button"]:active {
 @keyframes modalScaleUp {
   0% {
     opacity: 0;
-    transform: scale(0.96) translateY(12px);
+    transform: scale(0.99) translateY(10px);
   }
   100% {
     opacity: 1;
@@ -1266,3 +1266,24 @@ p, blockquote, figcaption {
   color: var(--color-heritage-red);
 }
 
+
+/* Ô "08 di tích quốc gia đặc biệt": viền vàng làm nổi số liệu chính */
+.bento-stat-highlight {
+  border-color: rgba(197, 155, 39, 0.45) !important;
+  background: linear-gradient(135deg, rgba(255, 253, 249, 0.98) 0%, rgba(249, 241, 227, 0.6) 100%);
+  box-shadow: 0 4px 16px -2px rgba(197, 155, 39, 0.12);
+}
+
+/* Thanh tiến độ đọc trong hộp hồ sơ (scaleX: không gây tính lại bố cục) */
+.modal-reading-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #B48327;
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 50;
+  pointer-events: none;
+}

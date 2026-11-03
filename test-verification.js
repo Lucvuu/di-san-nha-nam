@@ -305,6 +305,8 @@ console.assert(docTextsCode.includes('loi-tua-lang-noi-phet-duong-son.docx'), 'd
 console.assert(docTextsCode.includes('Hòa Làng nói phét có ca'), 'doc-texts must include folk verse Hòa Làng vs Dương Sơn');
 console.assert(docTextsCode.includes('nghe-thuat-hat-quan-ho-nha-nam.docx'), 'doc-texts must include Dân ca Quan họ');
 console.assert(docTextsCode.includes('clb-nghe-thuat-dan-gian-nha-nam.docx'), 'doc-texts must include CLB Nghệ thuật Dân gian');
+console.assert(!/xã Nhã Nam, tỉnh Bắc Ninh/i.test(docTextsCode), 'doc-texts: địa danh hiện hành phải là thành phố Bắc Ninh');
+console.assert(docTextsCode.includes('sáp nhập địa giới hành chính về tỉnh Bắc Ninh'), 'doc-texts: giữ đúng tên tỉnh Bắc Ninh khi sáp nhập 01/7/2025');
 console.log('  ✓ Verified doc-texts.js contains full transcript of Kịch bản Đề Nắm, Lời tựa Dương Sơn, Quan họ & CLB NT Dân gian');
 
 // 9.5 Kiểm tra phi-vat-the-7 (Quan họ) và phi-vat-the-8 (CLB Nghệ thuật Dân gian)

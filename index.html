@@ -54,7 +54,7 @@
     rel="stylesheet">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=3.7.1" />
+  <link rel="stylesheet" href="css/style.css?v=3.8.0" />
   <!-- Tailwind dựng sẵn (npm run build:css), đặt sau style.css như bản CDN cũ -->
   <link rel="stylesheet" href="css/tailwind.css?v=1.0.1" />
 </head>
@@ -696,7 +696,7 @@
             <!-- Ô 1: 08 Di tích quốc gia đặc biệt -->
             <div role="button" tabindex="0" onclick="filterByRankDirect('quoc-gia-dac-biet')"
               onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); filterByRankDirect('quoc-gia-dac-biet'); }"
-              class="relic-stat-interactive-card group flex items-start gap-3.5 p-4 rounded-xl border border-[rgba(139,30,30,0.14)] cursor-pointer"
+              class="relic-stat-interactive-card bento-stat-highlight group flex items-start gap-3.5 p-4 rounded-xl border border-[rgba(139,30,30,0.14)] cursor-pointer"
               title="Bấm để lọc hiển thị 08 di tích quốc gia đặc biệt">
               <span
                 class="stat-number-display bg-[#F5EFE6] text-[#8B1E1E] group-hover:bg-[#8B1E1E] group-hover:text-white transition-colors">
@@ -1562,7 +1562,8 @@
     onclick="if(event.target === this) closeDetailModal();">
 
     <div role="dialog" aria-modal="true" aria-label="Hồ sơ di tích"
-      class="modal-content-box bg-white w-full max-w-4xl rounded-xl shadow-[0_24px_48px_rgba(44,30,24,0.18)] border border-[rgba(139,30,30,0.12)] overflow-hidden my-auto max-h-[92vh] max-h-[92dvh] flex flex-col">
+      class="modal-content-box bg-white w-full max-w-4xl rounded-xl shadow-[0_24px_48px_rgba(44,30,24,0.18)] border border-[rgba(139,30,30,0.12)] overflow-hidden my-auto max-h-[92vh] max-h-[92dvh] flex flex-col relative">
+      <div id="modal-reading-progress" class="modal-reading-progress" aria-hidden="true"></div>
       <div id="modal-dynamic-content" class="p-5 sm:p-8 overflow-y-auto">
         <!-- Render động từ js/app.js -->
       </div>
@@ -1937,7 +1938,7 @@
   <!-- SCRIPT FILES -->
   <script src="js/data.js?v=3.8.0"></script>
   <script src="js/utils.js?v=3.6.1"></script>
-  <script src="js/app.js?v=3.9.0"></script>
+  <script src="js/app.js?v=3.10.0"></script>
 </body>
 
 </html>
