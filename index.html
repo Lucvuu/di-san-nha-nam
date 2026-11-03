@@ -18,9 +18,9 @@
   <meta property="og:description"
     content="Cổng thông tin số hóa hệ thống 37 di tích lịch sử – văn hóa xã Nhã Nam, thành phố Bắc Ninh: 16 di tích xếp hạng, trong đó có 08 di tích quốc gia đặc biệt, cùng các di sản văn hóa phi vật thể. Ảnh thực tế, thuyết minh, bản đồ và tư liệu do Ban biên tập dự án biên soạn." />
   <meta property="og:url" content="https://disannhanam.com/" />
-  <meta property="og:image" content="https://disannhanam.com/assets/images/share/og-image.jpg?v=7" />
+  <meta property="og:image" content="https://disannhanam.com/assets/images/share/og-image-share.jpg?v=20261103b" />
   <meta property="og:image:secure_url"
-    content="https://disannhanam.com/assets/images/share/og-image.jpg?v=7" />
+    content="https://disannhanam.com/assets/images/share/og-image-share.jpg?v=20261103b" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -31,7 +31,7 @@
     content="Di sản văn hóa xã Nhã Nam • Cổng thông tin số hóa di sản văn hóa và lịch sử địa phương" />
   <meta name="twitter:description"
     content="Cổng thông tin số hóa hệ thống 37 di tích lịch sử – văn hóa xã Nhã Nam, thành phố Bắc Ninh: 16 di tích xếp hạng, trong đó có 08 di tích quốc gia đặc biệt, cùng các di sản văn hóa phi vật thể. Ảnh thực tế, thuyết minh, bản đồ và tư liệu do Ban biên tập dự án biên soạn." />
-  <meta name="twitter:image" content="https://disannhanam.com/assets/images/share/og-image.jpg?v=7" />
+  <meta name="twitter:image" content="https://disannhanam.com/assets/images/share/og-image-share.jpg?v=20261103b" />
   <meta name="keywords"
     content="Di sản Nhã Nam, xã Nhã Nam, đình Hả, chùa Hả, chùa Tứ Giáp, chùa Đồng Điều, đền Gốc Khế, đồn Nhã Nam, đồi Phủ, đền Đề Truật, đình làng Chuông, chùa Nam Thiên, khởi nghĩa Yên Thế, Lương Văn Nắm, Hoàng Hoa Thám, thành phố Bắc Ninh, Bắc Ninh" />
   <!-- Cache Prevention Headers -->
@@ -54,7 +54,7 @@
     rel="stylesheet">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=3.7.1" />
+  <link rel="stylesheet" href="css/style.css?v=4.0.0" />
   <!-- Tailwind dựng sẵn (npm run build:css), đặt sau style.css như bản CDN cũ -->
   <link rel="stylesheet" href="css/tailwind.css?v=1.0.1" />
 </head>
@@ -674,7 +674,7 @@
               </svg>
               <div>
                 <h3 class="font-heritage-serif font-bold text-sm sm:text-base text-[#8B1E1E]">
-                  Hệ thống 37 di tích lịch sử – văn hóa xã Nhã Nam
+                  Hệ thống <span class="bento-count-num" data-target="37" data-pad="false">37</span> di tích lịch sử – văn hóa xã Nhã Nam
                 </h3>
                 <p class="text-xs text-[#786C5E] mt-0.5">
                   Tổng hợp theo hồ sơ xếp hạng di tích (đến ngày 15/02/2026) và danh mục kiểm kê của UBND tỉnh Bắc Ninh
@@ -692,14 +692,15 @@
             </button>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4 pt-4">
-            <!-- Ô 1: 08 Di tích quốc gia đặc biệt -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4 pt-4 bento-stats-grid" id="bento-stats-section">
+            <!-- Ô 1: 08 Di tích quốc gia đặc biệt (Bento Highlight) -->
             <div role="button" tabindex="0" onclick="filterByRankDirect('quoc-gia-dac-biet')"
               onkeydown="if(event.key==='Enter'||event.key===' ') { event.preventDefault(); filterByRankDirect('quoc-gia-dac-biet'); }"
-              class="relic-stat-interactive-card group flex items-start gap-3.5 p-4 rounded-xl border border-[rgba(139,30,30,0.14)] cursor-pointer"
+              class="relic-stat-interactive-card bento-stat-highlight group flex items-start gap-3.5 p-4 rounded-xl border border-[#C59B27]/40 cursor-pointer"
               title="Bấm để lọc hiển thị 08 di tích quốc gia đặc biệt">
               <span
-                class="stat-number-display bg-[#F5EFE6] text-[#8B1E1E] group-hover:bg-[#8B1E1E] group-hover:text-white transition-colors">
+                class="stat-number-display bento-count-num bg-[#F5EFE6] text-[#8B1E1E] group-hover:bg-[#8B1E1E] group-hover:text-white transition-colors"
+                data-target="8" data-pad="true">
                 08
               </span>
               <div class="flex-1 min-w-0">
@@ -726,7 +727,8 @@
               class="relic-stat-interactive-card group flex items-start gap-3.5 p-4 rounded-xl border border-[rgba(139,30,30,0.14)] cursor-pointer"
               title="Bấm để lọc hiển thị di tích cấp quốc gia chùa Tứ Giáp">
               <span
-                class="stat-number-display bg-[#F5EFE6] text-[#8B1E1E] group-hover:bg-[#8B1E1E] group-hover:text-white transition-colors">
+                class="stat-number-display bento-count-num bg-[#F5EFE6] text-[#8B1E1E] group-hover:bg-[#8B1E1E] group-hover:text-white transition-colors"
+                data-target="1" data-pad="true">
                 01
               </span>
               <div class="flex-1 min-w-0">
@@ -753,7 +755,8 @@
               class="relic-stat-interactive-card group flex items-start gap-3.5 p-4 rounded-xl border border-[rgba(139,30,30,0.14)] cursor-pointer"
               title="Bấm để lọc hiển thị 07 di tích cấp tỉnh">
               <span
-                class="stat-number-display bg-[#F5EFE6] text-[#8B1E1E] group-hover:bg-[#8B1E1E] group-hover:text-white transition-colors">
+                class="stat-number-display bento-count-num bg-[#F5EFE6] text-[#8B1E1E] group-hover:bg-[#8B1E1E] group-hover:text-white transition-colors"
+                data-target="7" data-pad="true">
                 07
               </span>
               <div class="flex-1 min-w-0">
@@ -779,7 +782,8 @@
               class="relic-stat-interactive-card group flex items-start gap-3.5 p-4 rounded-xl border border-[rgba(139,30,30,0.14)] cursor-pointer"
               title="Bấm để mở tra cứu danh mục 21 di tích kiểm kê">
               <span
-                class="stat-number-display bg-[#F5EFE6] text-[#8B6914] group-hover:bg-[#C59B27] group-hover:text-white transition-colors">
+                class="stat-number-display bento-count-num bg-[#F5EFE6] text-[#8B6914] group-hover:bg-[#C59B27] group-hover:text-white transition-colors"
+                data-target="21" data-pad="false">
                 21
               </span>
               <div class="flex-1 min-w-0">
@@ -909,7 +913,7 @@
                   <div class="flex items-start justify-between gap-2 mb-2">
                     <div class="flex items-center gap-2.5">
                       <span
-                        class="w-6 h-6 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-xs">1</span>
+                        class="route-badge-num w-6 h-6 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-xs">1</span>
                       <h3 class="text-sm sm:text-[0.9375rem] font-bold text-[#2A2521] leading-snug">
                         Tuyến 1 (Cội nguồn và kháng chiến): <span class="font-normal text-[#5C5248]">Đình – chùa Hả,
                           chùa Tứ Giáp và đình Dương Lâm</span>
@@ -928,21 +932,21 @@
                       <span class="text-[11px] text-[#786C5E] font-normal hidden sm:inline">(bấm từng điểm để xem cận
                         cảnh)</span>
                     </div>
-                    <div class="flex flex-wrap items-center gap-1.5">
+                    <div class="flex flex-wrap items-center gap-1.5 axle-journey-track">
                       <button type="button" onclick="selectRouteRelic('vat-the-1', event)" class="route-relic-chip"
                         title="Chặng 1: Bấm để xem cận cảnh đình Hả">
                         <span
                           class="w-4 h-4 rounded-full bg-[#8B1E1E] text-white text-[10px] font-bold flex items-center justify-center mr-0.5">1</span>
                         <span>Đình – chùa Hả</span>
                       </button>
-                      <span class="text-[#8B1E1E] text-xs select-none" aria-hidden="true">→</span>
+                      <span class="axle-arrow text-[#8B1E1E] text-xs select-none" aria-hidden="true">→</span>
                       <button type="button" onclick="selectRouteRelic('vat-the-2', event)" class="route-relic-chip"
                         title="Chặng 2: Bấm để xem cận cảnh chùa Tứ Giáp và khu lưu niệm CAND">
                         <span
                           class="w-4 h-4 rounded-full bg-[#8B1E1E] text-white text-[10px] font-bold flex items-center justify-center mr-0.5">2</span>
                         <span>Chùa Tứ Giáp</span>
                       </button>
-                      <span class="text-[#8B1E1E] text-xs select-none" aria-hidden="true">→</span>
+                      <span class="axle-arrow text-[#8B1E1E] text-xs select-none" aria-hidden="true">→</span>
                       <button type="button" onclick="selectRouteRelic('vat-the-11', event)" class="route-relic-chip"
                         title="Chặng 3: Bấm để xem cận cảnh đình Dương Lâm">
                         <span
@@ -959,7 +963,7 @@
                   <div class="flex items-start justify-between gap-2 mb-2">
                     <div class="flex items-center gap-2.5">
                       <span
-                        class="w-6 h-6 rounded-full bg-[#8B6914] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-xs">2</span>
+                        class="route-badge-num w-6 h-6 rounded-full bg-[#8B6914] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-xs">2</span>
                       <h3 class="text-sm sm:text-[0.9375rem] font-bold text-[#2A2521] leading-snug">
                         Tuyến 2 (Cách mạng và văn hóa): <span class="font-normal text-[#5C5248]">Di tích thôn Đồng Điều,
                           đền Đề Truật và chùa Dương Sơn</span>
@@ -978,21 +982,21 @@
                       <span class="text-[11px] text-[#786C5E] font-normal hidden sm:inline">(bấm từng điểm để xem cận
                         cảnh)</span>
                     </div>
-                    <div class="flex flex-wrap items-center gap-1.5">
+                    <div class="flex flex-wrap items-center gap-1.5 axle-journey-track">
                       <button type="button" onclick="selectRouteRelic('vat-the-3', event)" class="route-relic-chip"
                         title="Chặng 1: Bấm để xem cận cảnh chùa Đồng Điều">
                         <span
                           class="w-4 h-4 rounded-full bg-[#8B6914] text-white text-[10px] font-bold flex items-center justify-center mr-0.5">1</span>
                         <span>Chùa Đồng Điều</span>
                       </button>
-                      <span class="text-[#8B6914] text-xs select-none" aria-hidden="true">→</span>
+                      <span class="axle-arrow text-[#8B6914] text-xs select-none" aria-hidden="true">→</span>
                       <button type="button" onclick="selectRouteRelic('vat-the-8', event)" class="route-relic-chip"
                         title="Chặng 2: Bấm để xem cận cảnh đền Đề Truật">
                         <span
                           class="w-4 h-4 rounded-full bg-[#8B6914] text-white text-[10px] font-bold flex items-center justify-center mr-0.5">2</span>
                         <span>Đền Đề Truật</span>
                       </button>
-                      <span class="text-[#8B6914] text-xs select-none" aria-hidden="true">→</span>
+                      <span class="axle-arrow text-[#8B6914] text-xs select-none" aria-hidden="true">→</span>
                       <button type="button" onclick="selectRouteRelic('vat-the-15', event)" class="route-relic-chip"
                         title="Chặng 3: Bấm để xem cận cảnh chùa Dương Sơn">
                         <span
@@ -1009,7 +1013,7 @@
                   <div class="flex items-start justify-between gap-2 mb-2">
                     <div class="flex items-center gap-2.5">
                       <span
-                        class="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-xs">3</span>
+                        class="route-badge-num w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-xs">3</span>
                       <h3 class="text-sm sm:text-[0.9375rem] font-bold text-[#2A2521] leading-snug">
                         Tuyến 3 (Đồn Nhã Nam và tín ngưỡng): <span class="font-normal text-[#5C5248]">Đền Gốc Khế, đồi
                           Phủ, đình làng Chuông, chùa Nam Thiên và đình Cầu Thượng</span>
@@ -1028,35 +1032,35 @@
                       <span class="text-[11px] text-[#786C5E] font-normal hidden sm:inline">(bấm từng điểm để xem cận
                         cảnh)</span>
                     </div>
-                    <div class="flex flex-wrap items-center gap-1.5">
+                    <div class="flex flex-wrap items-center gap-1.5 axle-journey-track">
                       <button type="button" onclick="selectRouteRelic('vat-the-4', event)" class="route-relic-chip"
                         title="Chặng 1: Đền Gốc Khế">
                         <span
                           class="w-4 h-4 rounded-full bg-emerald-700 text-white text-[10px] font-bold flex items-center justify-center mr-0.5">1</span>
                         <span>Đền Gốc Khế</span>
                       </button>
-                      <span class="text-emerald-700 text-xs select-none" aria-hidden="true">→</span>
+                      <span class="axle-arrow text-emerald-700 text-xs select-none" aria-hidden="true">→</span>
                       <button type="button" onclick="selectRouteRelic('vat-the-5', event)" class="route-relic-chip"
                         title="Chặng 2: Đồi Phủ (đồn Nhã Nam)">
                         <span
                           class="w-4 h-4 rounded-full bg-emerald-700 text-white text-[10px] font-bold flex items-center justify-center mr-0.5">2</span>
                         <span>Đồi Phủ</span>
                       </button>
-                      <span class="text-emerald-700 text-xs select-none" aria-hidden="true">→</span>
+                      <span class="axle-arrow text-emerald-700 text-xs select-none" aria-hidden="true">→</span>
                       <button type="button" onclick="selectRouteRelic('vat-the-6', event)" class="route-relic-chip"
                         title="Chặng 3: Đình làng Chuông">
                         <span
                           class="w-4 h-4 rounded-full bg-emerald-700 text-white text-[10px] font-bold flex items-center justify-center mr-0.5">3</span>
                         <span>Đình Chuông</span>
                       </button>
-                      <span class="text-emerald-700 text-xs select-none" aria-hidden="true">→</span>
+                      <span class="axle-arrow text-emerald-700 text-xs select-none" aria-hidden="true">→</span>
                       <button type="button" onclick="selectRouteRelic('vat-the-7', event)" class="route-relic-chip"
                         title="Chặng 4: Chùa Nam Thiên">
                         <span
                           class="w-4 h-4 rounded-full bg-emerald-700 text-white text-[10px] font-bold flex items-center justify-center mr-0.5">4</span>
                         <span>Chùa Nam Thiên</span>
                       </button>
-                      <span class="text-emerald-700 text-xs select-none" aria-hidden="true">→</span>
+                      <span class="axle-arrow text-emerald-700 text-xs select-none" aria-hidden="true">→</span>
                       <button type="button" onclick="selectRouteRelic('vat-the-12', event)" class="route-relic-chip"
                         title="Chặng 5: Đình Cầu Thượng">
                         <span
@@ -1562,7 +1566,8 @@
     onclick="if(event.target === this) closeDetailModal();">
 
     <div role="dialog" aria-modal="true" aria-label="Hồ sơ di tích"
-      class="modal-content-box bg-white w-full max-w-4xl rounded-xl shadow-[0_24px_48px_rgba(44,30,24,0.18)] border border-[rgba(139,30,30,0.12)] overflow-hidden my-auto max-h-[92vh] max-h-[92dvh] flex flex-col">
+      class="modal-content-box bg-white w-full max-w-4xl rounded-xl shadow-[0_24px_48px_rgba(44,30,24,0.18)] border border-[rgba(139,30,30,0.12)] overflow-hidden my-auto max-h-[92vh] max-h-[92dvh] flex flex-col relative">
+      <div id="modal-reading-progress" class="modal-reading-progress" aria-hidden="true"></div>
       <div id="modal-dynamic-content" class="p-5 sm:p-8 overflow-y-auto">
         <!-- Render động từ js/app.js -->
       </div>
@@ -1935,9 +1940,9 @@
   </div>
 
   <!-- SCRIPT FILES -->
-  <script src="js/data.js?v=3.8.0"></script>
-  <script src="js/utils.js?v=3.6.1"></script>
-  <script src="js/app.js?v=3.9.0"></script>
+  <script src="js/data.js?v=4.0.0"></script>
+  <script src="js/utils.js?v=4.0.0"></script>
+  <script src="js/app.js?v=4.0.0"></script>
 </body>
 
 </html>

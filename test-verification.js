@@ -305,7 +305,9 @@ console.assert(docTextsCode.includes('loi-tua-lang-noi-phet-duong-son.docx'), 'd
 console.assert(docTextsCode.includes('Hòa Làng nói phét có ca'), 'doc-texts must include folk verse Hòa Làng vs Dương Sơn');
 console.assert(docTextsCode.includes('nghe-thuat-hat-quan-ho-nha-nam.docx'), 'doc-texts must include Dân ca Quan họ');
 console.assert(docTextsCode.includes('clb-nghe-thuat-dan-gian-nha-nam.docx'), 'doc-texts must include CLB Nghệ thuật Dân gian');
-console.log('  ✓ Verified doc-texts.js contains full transcript of Kịch bản Đề Nắm, Lời tựa Dương Sơn, Quan họ & CLB NT Dân gian');
+console.assert(!docTextsCode.includes('tỉnh Bắc Ninh'), 'doc-texts must not contain "tỉnh Bắc Ninh"');
+console.assert(!/tổ dân phố[^.()\n]*xã Nhã Nam/i.test(docTextsCode), 'doc-texts must not pair "tổ dân phố" with "xã Nhã Nam"');
+console.log('  ✓ Verified doc-texts.js contains full transcript and normalized to "thành phố Bắc Ninh" & "Thôn ... xã Nhã Nam"');
 
 // 9.5 Kiểm tra phi-vat-the-7 (Quan họ) và phi-vat-the-8 (CLB Nghệ thuật Dân gian)
 const phiVatThe7 = INTANGIBLE_HERITAGE_DATA.find(r => r.id === 'phi-vat-the-7');

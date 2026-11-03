@@ -1,7 +1,7 @@
 /* Toàn văn trích từ các file Word trong assets/docs (cập nhật tự động). */
 window.DOC_TEXTS = {
   "chua-dong-dieu.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "CHÙA ĐỒNG ĐIỀU (DI TÍCH LỊCH SỬ THÔN ĐỒNG ĐIỀU)",
     "Xếp hạng: Di tích cấp tỉnh",
@@ -41,7 +41,7 @@ window.DOC_TEXTS = {
     "Những năm 1946-1958, Công an Khu 12 (nay là các tỉnh Cao Bằng, Lạng Sơn, Bắc Giang, Bắc Ninh, Quảng Ninh) đóng quân tại đây. Giám đốc công an Khu 12 là đồng chí Hoàng Mai. Vào 11/3/1948, Bác Hồ gửi thư cho đồng chí Hoàng Mai, trong thư có 6 nội dung nói về “Tư cách người Công an cách mệnh”. Lời dạy Bác Hồ sau đó được in trên Báo Bạn dân, được lan tỏa trong toàn bộ cán bộ, chiến sĩ của lực lượng Công an nhân dân. Năm 1992, chùa Tứ Giáp được Bộ Văn hóa - Thông tin công nhận di tích lịch sử nghệ thuật."
   ],
   "den-ca-trong.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "ĐỀN THỜ CẢ TRỌNG (ĐỀN GỐC DẺ)",
     "Xếp hạng: Di tích quốc gia đặc biệt",
@@ -389,7 +389,7 @@ window.DOC_TEXTS = {
     "Năm 1892, Đề Thám lên thay Đề Nắm (do Đề Nắm bị ám sát) lãnh đạo phong trào chống Pháp. Ông đã sai Đề Hậu cùng các tướng bắt Đề Sặt là kẻ ám hại Đề Nắm để tế cờ báo thù cho Đề Nắm. Sau đó, Đề Thám điều Đề Hậu lên Thái Nguyên bắt liên lạc với các cánh quân của Đề Nguyên, Đề Công, Đề Cam. Những cánh quân này kéo về Yên Thế làm cho lực lượng nghĩa quân mạnh dần lên. Từ Thái Nguyên trở về, đến đồn Bãi Bục giáp Hồng Lĩnh, Đề Hậu cho quân dừng chân ăn cơm tối và nghỉ ngơi. Tại đây lợi dụng lúc Đề Hậu mất cảnh giác, một tên phản bội đã ám hại ông, cắt lấy đầu đem về nộp cho đồn binh Nhã Nam lấy thưởng. Thực dân Pháp đem đầu ông bêu 3 ngày ở chợ Nhã Nam đế khủng bố tinh thần quần chúng. Đến đêm, bà Cổng là con gái ông đã lẻn lấy được đầu ông gói vào vạt áo dài bí mật đem về làng Chuông mai táng. Sau đó, vợ con ông phải lên tận Kép Thượng, xã Lam Cốt tránh sự trả thù của thực dân Pháp và tay sai, sau vài năm mới trở lại làng Chuông.\nCùng với giá trị lịch sử, đình làng Chuông là một trung tâm sinh hoạt văn hóa tinh thần của nhân dân thôn Tiến Phan 2. Hằng năm, tại trung tâm di tích đình làng Chuông, nhân dân địa phương lại long trọng tổ chức lễ hội vào ngày 12, 13 tháng Giêng đế tướng nhớ công lao của những vị Thánh thờ trong đình. Trong lễ hội có nhiều trò chơi dân gian đặc sắc và những sinh hoạt văn nghệ truyền thống thu hút đông đảo bà con cùng nam thanh nữ tú xa gần đến tham dự."
   ],
   "dinh-neo.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "ĐÌNH NẺO",
     "Xếp hạng: Di tích cấp tỉnh",
@@ -429,7 +429,7 @@ window.DOC_TEXTS = {
     "Chào mừng quý thầy cô và các bạn học sinh đến với Nghĩa địa Pháp.Di sản vật thể tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. Đây là chứng tích lịch sử đặc biệt ghi dấu những tổn thất nặng nề và thất bại không thể tránh khỏi của đạo quân xâm lược trước ý chí quật cường của nghĩa quân Yên Thế.Khu chứng tích lịch sử nơi chôn cất nhiều sĩ quan, binh lính Pháp tử trận tại chiến trường Yên Thế, di tích quốc gia đặc biệt.. Trong suốt cuộc chiến tranh xâm lược Yên Thế, hàng loạt sĩ quan chỉ huy và lính lê dương Pháp đã bỏ mạng dưới tay nghĩa quân của Đề Nắm và Đề Thám. Qua đó Di tích giúp học sinh nhận thức sâu sắc về cái giá của hòa bình và sự quả cảm phi thường của các thế hệ nghĩa binh Yên Thế chống ngoại xâm."
   ],
   "hat-cheo-truyen-thong-nha-nam.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "NGHỆ THUẬT HÁT CHÈO TRUYỀN THỐNG XÃ NHÃ NAM",
     "Loại hình: Nghệ thuật trình diễn dân gian",
@@ -451,7 +451,7 @@ window.DOC_TEXTS = {
     "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "lang-noi-phet-duong-son.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "NGHỆ THUẬT KỂ CHUYỆN DÂN GIAN – LÀNG NÓI PHÉT DƯƠNG SƠN",
     "1. Giới thiệu chung",
@@ -474,7 +474,7 @@ window.DOC_TEXTS = {
     "Làng Dương Sơn từng có những 'trạng phét' nổi tiếng được nhân dân mến mộ như cụ Cả Tam (đã mất), cụ Vũ Văn Lập, ông Nguyễn Văn Sự, ông Vũ Văn Tứ... Nghệ thuật nói quá của các cụ thể hiện qua thơ ca, vè hoặc các mẩu chuyện khoa trương đầy hóm hỉnh, thâm thúy chứ hoàn toàn không mang mục đích lừa dối."
   ],
   "le-hoi-yen-the-nha-nam.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "LỄ HỘI KHỞI NGHĨA YÊN THẾ TẠI XÃ NHÃ NAM",
     "Loại hình: Lễ hội truyền thống",
@@ -496,7 +496,7 @@ window.DOC_TEXTS = {
     "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "nghe-lam-banh-khao-keo-lac-nha-nam.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "NGHỀ LÀM BÁNH KHẢO, KẸO LẠC TRUYỀN THỐNG XÃ NHÃ NAM",
     "Loại hình: Nghề truyền thống",
@@ -523,7 +523,7 @@ window.DOC_TEXTS = {
     "Chào mừng quý thầy cô và các bạn học sinh đến với Nghĩa địa Pháp.Di sản vật thể tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. Đây là chứng tích lịch sử đặc biệt ghi dấu những tổn thất nặng nề và thất bại không thể tránh khỏi của đạo quân xâm lược trước ý chí quật cường của nghĩa quân Yên Thế.Khu chứng tích lịch sử nơi chôn cất nhiều sĩ quan, binh lính Pháp tử trận tại chiến trường Yên Thế, di tích quốc gia đặc biệt.. Trong suốt cuộc chiến tranh xâm lược Yên Thế, hàng loạt sĩ quan chỉ huy và lính lê dương Pháp đã bỏ mạng dưới tay nghĩa quân của Đề Nắm và Đề Thám. Qua đó Di tích giúp học sinh nhận thức sâu sắc về cái giá của hòa bình và sự quả cảm phi thường của các thế hệ nghĩa binh Yên Thế chống ngoại xâm."
   ],
   "tap-quan-tuong-niem-de-nam-de-tham.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "TẬP QUÁN TƯỞNG NIỆM LƯƠNG VĂN NẮM VÀ HOÀNG HOA THÁM",
     "Loại hình: Tập quán xã hội & tín ngưỡng",
@@ -544,7 +544,7 @@ window.DOC_TEXTS = {
     "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "tro-choi-dan-gian-vo-co-truyen.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "TRÒ CHƠI DÂN GIAN VÀ VÕ CỔ TRUYỀN TRONG LỄ HỘI NHÃ NAM",
     "Loại hình: Trò chơi dân gian & võ thuật",
@@ -677,7 +677,7 @@ window.DOC_TEXTS = {
     "* Thực trạng: Trải qua thời gian, nét văn hóa đặc thù này đang dần mai một và được chính quyền địa phương tìm cách lưu giữ, phục hồi."
   ],
   "nghe-thuat-hat-quan-ho-nha-nam.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "NGHỆ THUẬT DÂN CA QUAN HỌ TẠI XÃ NHÃ NAM (CÂU LẠC BỘ DÂN CA QUAN HỌ XÃ NHÃ NAM)",
     "Loại hình di sản: Nghệ thuật trình diễn dân gian (Dân ca Quan họ Bắc Ninh)",
@@ -685,7 +685,7 @@ window.DOC_TEXTS = {
     "Địa bàn thực hành: Toàn thể nhân dân và các hạt nhân văn nghệ tại xã Nhã Nam, thành phố Bắc Ninh (trọng tâm sinh hoạt tại các thôn, Khu lưu niệm Sáu điều Bác Hồ dạy CAND và các di tích lịch sử đình chùa cổ truyền).",
     "I. NGUỒN GỐC VÀ TẦM VÓC VĂN HÓA",
     "Xã Nhã Nam sở hữu vị trí chiến lược ngàn năm gắn bó với lịch sử dân tộc. Trong dòng chảy văn hóa Kinh Bắc trù phú, Dân ca Quan họ Bắc Ninh — di sản văn hóa phi vật thể đại diện của nhân loại được UNESCO vinh danh năm 2009 — là viên ngọc quý kết tinh lối sống tao nhã, nghĩa tình và tài hoa của con người quê hương.",
-    "Sau khi chuyển giao và sáp nhập địa giới hành chính về tỉnh Bắc Ninh, phong trào học tập, truyền dạy và giao lưu Dân ca Quan họ tại xã Nhã Nam càng thêm bừng sáng, trở thành nét sinh hoạt tinh thần không thể thiếu trong đời sống cộng đồng.",
+    "Sau khi chuyển giao và sáp nhập địa giới hành chính về thành phố Bắc Ninh, phong trào học tập, truyền dạy và giao lưu Dân ca Quan họ tại xã Nhã Nam càng thêm bừng sáng, trở thành nét sinh hoạt tinh thần không thể thiếu trong đời sống cộng đồng.",
     "II. THÀNH LẬP CÂU LẠC BỘ DÂN CA QUAN HỌ (QUYẾT ĐỊNH SỐ 756/QĐ-UBND)",
     "Nhằm đáp ứng nguyện vọng chính đáng của đông đảo nhân dân và bảo tồn vốn cổ quý báu, ngày 21/5/2026, UBND xã Nhã Nam đã ban hành Quyết định số 756/QĐ-UBND chính thức thành lập Câu lạc bộ Dân ca Quan họ xã Nhã Nam. Câu lạc bộ có nhiệm vụ:",
     "• Tập hợp những cá nhân, nghệ nhân yêu thích Dân ca Quan họ trên địa bàn xã, duy trì và phát triển phong trào văn nghệ quần chúng sâu rộng.",
@@ -698,7 +698,7 @@ window.DOC_TEXTS = {
     "Đối với thầy và trò các trường phổ thông trên địa bàn, Dân ca Quan họ là bài học sinh động về tình yêu ngôn ngữ mẹ đẻ, về cách ứng xử lễ độ, khiêm nhường 'người ngoan người đẹp'. CLB là hạt nhân quan trọng phối hợp với nhà trường đưa di sản văn hóa phi vật thể vào các giờ ngoại khóa và chương trình giáo dục truyền thống địa phương."
   ],
   "clb-nghe-thuat-dan-gian-nha-nam.docx": [
-    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
+    "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, THÀNH PHỐ BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "CÂU LẠC BỘ NGHỆ THUẬT DÂN GIAN XÃ NHÃ NAM",
     "Loại hình di sản: Văn hóa dân gian - Nghệ thuật quần chúng truyền thống",

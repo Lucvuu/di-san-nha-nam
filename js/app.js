@@ -98,6 +98,7 @@ function initApp() {
   window.addEventListener('hashchange', checkUrlHash);
   try { initAudioPlayerSettings(); } catch (e) { console.warn('initAudioPlayerSettings error:', e); }
   try { initVisitorCounter(); } catch (e) { console.warn('initVisitorCounter error:', e); }
+  try { initBentoStatsCountUp(); } catch (e) { console.warn('initBentoStatsCountUp error:', e); }
 }
 
 let currentTrackIndex = 0;
@@ -371,6 +372,70 @@ function renderHeritageGrid(items) {
       </article>
     `;
   }).join('');
+  triggerCardsReveal();
+}
+
+function triggerCardsReveal() {
+  const cards = document.querySelectorAll('.heritage-card');
+  if (!cards.length) return;
+  if (typeof window === 'undefined' || !window.requestAnimationFrame || window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches) {
+    cards.forEach(c => c.classList.add('card-revealed'));
+    return;
+  }
+  cards.forEach((card, i) => {
+    setTimeout(() => {
+      card.classList.add('card-revealed');
+    }, Math.min(i * 45, 600));
+  });
+}
+
+function initBentoStatsCountUp() {
+  const elements = document.querySelectorAll('.bento-count-num');
+  if (!elements.length) return;
+
+  const animateNumber = (el) => {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    if (isNaN(target)) return;
+    const shouldPad = el.getAttribute('data-pad') === 'true';
+    if (typeof window === 'undefined' || !window.requestAnimationFrame || window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches) {
+      el.textContent = shouldPad && target < 10 ? `0${target}` : String(target);
+      return;
+    }
+    const duration = 900;
+    const startTime = (typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now();
+    const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
+
+    const step = (currentTime) => {
+      const now = currentTime || ((typeof performance !== 'undefined' && performance.now) ? performance.now() : Date.now());
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutQuart(progress);
+      const currentVal = Math.round(easedProgress * target);
+      el.textContent = shouldPad && currentVal < 10 ? `0${currentVal}` : String(currentVal);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = shouldPad && target < 10 ? `0${target}` : String(target);
+      }
+    };
+    requestAnimationFrame(step);
+  };
+
+  if (typeof IntersectionObserver === 'undefined') {
+    elements.forEach(animateNumber);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateNumber(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
 }
 
 /**
@@ -813,6 +878,15 @@ function openDetailModal(itemId) {
   modal.classList.remove('hidden');
   modal.scrollTop = 0;
   container.scrollTop = 0;
+  const progressBar = document.getElementById('modal-reading-progress');
+  if (progressBar) {
+    progressBar.style.width = '0%';
+    container.onscroll = () => {
+      const maxScroll = container.scrollHeight - container.clientHeight;
+      const pct = maxScroll > 0 ? Math.min(100, Math.round((container.scrollTop / maxScroll) * 100)) : 0;
+      progressBar.style.width = pct + '%';
+    };
+  }
   lockScroll();
   container.querySelector('button[onclick="closeDetailModal()"]')?.focus({ preventScroll: true });
   initAudioGuideForModal(item);
@@ -912,7 +986,7 @@ function loadDocTexts() {
   if (!loadDocTexts.promise) {
     loadDocTexts.promise = new Promise((resolve, reject) => {
       const s = document.createElement('script');
-      s.src = './js/doc-texts.js?v=3.5.1';
+      s.src = './js/doc-texts.js?v=4.0.0';
       s.onload = () => resolve(window.DOC_TEXTS || {});
       s.onerror = () => { loadDocTexts.promise = null; reject(); };
       document.head.appendChild(s);
@@ -1043,6 +1117,10 @@ function closeDetailModal() {
   }
 
   modal.classList.add('hidden');
+  const progressBar = document.getElementById('modal-reading-progress');
+  if (progressBar) progressBar.style.width = '0%';
+  const container = document.getElementById('modal-dynamic-content');
+  if (container) container.onscroll = null;
   unlockScroll();
   state.lastFocus?.focus?.({ preventScroll: true });
   state.lastFocus = null;
