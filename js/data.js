@@ -1971,71 +1971,56 @@ const INTANGIBLE_HERITAGE_DATA = [
   }
 ];
 
-const HERITAGE_QUIZ_DATA = [
-  {
-    id: 1,
-    question: "Ngày 16/3/1884, sự kiện nào diễn ra tại đình Hả (xã Nhã Nam)?",
-    options: [
-      "Thủ lĩnh Lương Văn Nắm (Đề Nắm) làm lễ tế cờ, phát động khởi nghĩa Yên Thế",
-      "Bác Hồ gửi thư khen cán bộ chiến sĩ Công an Khu XII",
-      "Thực dân Pháp dựng xong đồn Nhã Nam trên đồi Phủ",
-      "Thành lập chi bộ Đảng Cộng sản đầu tiên của địa phương"
-    ],
-    correctAnswer: 0,
-    explanation: "Ngày 16/3/1884, tại đình Hả, thủ lĩnh Lương Văn Nắm (Đề Nắm) làm lễ tế cờ, mở đầu cuộc khởi nghĩa Yên Thế kéo dài gần 30 năm (1884–1913). Pháp chỉ chiếm đồi Phủ từ năm 1885; thư Bác Hồ gửi Công an Khu XII là năm 1948."
-  },
-  {
-    id: 2,
-    question: "Ngày 11/3/1948, Chủ tịch Hồ Chí Minh gửi thư nêu Sáu điều dạy Công an nhân dân cho Công an Khu XII, khi đó đóng trụ sở tại chùa nào ở xã Nhã Nam?",
-    options: [
-      "Chùa Nam Thiên (chùa Phố)",
-      "Chùa Tứ Giáp (Đại Phúc tự)",
-      "Chùa Đồng Điều",
-      "Chùa Hả (Thanh Âm Tự)"
-    ],
-    correctAnswer: 1,
-    explanation: "Chùa Tứ Giáp (Đại Phúc tự) là trụ sở Công an Khu XII những năm 1946–1948, nơi nhận thư của Chủ tịch Hồ Chí Minh ngày 11/3/1948. Chùa được xếp hạng di tích cấp quốc gia."
-  },
-  {
-    id: 3,
-    question: "Chi bộ Đảng đầu tiên của địa phương được thành lập tại thôn nào, nay thuộc xã Nhã Nam?",
-    options: [
-      "Thôn Tiến Phan 1",
-      "Thôn Cầu Thượng",
-      "Thôn Đồng Điều",
-      "Thôn Chùa Nguộn"
-    ],
-    correctAnswer: 2,
-    explanation: "Thôn Đồng Điều là nơi thành lập chi bộ Đảng đầu tiên của địa phương; trước năm 1945, chùa Đồng Điều là cơ sở hoạt động bí mật."
-  },
-  {
-    id: 4,
-    question: "Vị tướng nào của nghĩa quân Yên Thế nổi tiếng bắn nỏ “bách phát bách trúng” và được thờ tại đền ở thôn Tiến Phan 1?",
-    options: [
-      "Thủ lĩnh Đề Nắm (Lương Văn Nắm)",
-      "Cả Trọng (Hoàng Đức Trọng)",
-      "Tướng Cai Biều",
-      "Đề Truật (Dương Văn Truật)"
-    ],
-    correctAnswer: 3,
-    explanation: "Đề Truật, tên thật Dương Văn Truật (tài liệu khác ghi Đề Thuật, Đề Hậu, Hội Thuật), người làng Chuông, nổi tiếng bắn nỏ. Đền thờ ông ở thôn Tiến Phan 1 là di tích cấp tỉnh."
-  },
-  {
-    id: 5,
-    question: "Đồi Phủ và đồn Nhã Nam gắn với dấu tích nào của quân Pháp thời khởi nghĩa Yên Thế?",
-    options: [
-      "Nơi Đề Nắm làm lễ tế cờ phát động khởi nghĩa năm 1884",
-      "Đồn binh, tòa đại lý phủ Yên Thế của Pháp và khu nghĩa địa Pháp bên cạnh",
-      "Xưởng rèn vũ khí bí mật của nghĩa quân",
-      "Kho dự trữ muối ăn của quân đội triều đình"
-    ],
-    correctAnswer: 1,
-    explanation: "Từ năm 1885, quân Pháp chiếm đồi Phủ, dựng đồn Nhã Nam và đặt tòa đại lý phủ Yên Thế để đàn áp nghĩa quân; nghĩa địa Pháp nằm cạnh đồn. Lễ tế cờ năm 1884 diễn ra ở đình Hả."
-  }
+/**
+ * NGÂN HÀNG 40 CÂU HỎI TRẮC NGHIỆM DI SẢN NHÃ NAM (4 phần). Sinh tự động bởi
+ * bao-cao-khoa-hoc/ngan_hang_40_cau.py từ file Word của Ban biên tập; đáp án đã cân bằng 10/10/10/10.
+ * part: 1–4 theo ma trận; answer: chỉ số phương án đúng (0 = A).
+ */
+const QUIZ_PARTS = {"1": "Phần I – Lịch sử vùng đất, địa giới hành chính và tổng thể di tích", "2": "Phần II – Hệ thống di tích quốc gia đặc biệt Khởi nghĩa Yên Thế", "3": "Phần III – Di tích quốc gia chùa Tứ Giáp và các di tích cấp tỉnh", "4": "Phần IV – Di sản phi vật thể, làng nghề truyền thống và tuyến tham quan"};
+const QUIZ_MATRIX = {"1": 2, "2": 3, "3": 3, "4": 2};
+const QUIZ_CONFLICT_GROUPS = [[3, 4, 5, 9], [11, 17, 18], [20, 21], [26, 27, 39], [28, 30], [36, 37, 38], [6, 35], [24, 26], [24, 27], [24, 28], [24, 29], [24, 30], [24, 39]];
+const QUIZ_BANK_40 = [
+  {"id": 1, "part": 1, "question": "Vùng đất Nhã Nam thời xưa là trung tâm của khu vực nào sau đây?", "options": ["Vùng Yên Thế Hạ", "Vùng Yên Thế Thượng", "Vùng Lục Ngạn", "Vùng Hiệp Hòa"], "answer": 0, "explain": "Nhã Nam xưa là trung tâm vùng Yên Thế Hạ (trước ngày 01/7/2025 thuộc huyện Tân Yên; còn huyện Yên Thế ngày nay là vùng Yên Thế Thượng)."},
+  {"id": 2, "part": 1, "question": "Theo đơn vị hành chính mới, xã Nhã Nam được thành lập trên cơ sở hợp nhất từ 04 đơn vị hành chính nào?", "options": ["Thị trấn Cao Thượng, xã Cao Xá, xã Ngọc Lý và xã Phúc Hòa", "Xã Nhã Nam, xã Quang Tiến, xã Lan Giới và xã Đại Hóa", "Thị trấn Nhã Nam, xã Tân Trung, xã An Dương và xã Liên Sơn", "Thị trấn Cầu Gồ, xã Phồn Xương, xã Tam Hiệp và xã Đồng Lạc"], "answer": 2, "explain": "Xã Nhã Nam theo đơn vị hành chính mới được hợp nhất từ 4 đơn vị cũ: Thị trấn Nhã Nam, xã Tân Trung, xã An Dương và xã Liên Sơn."},
+  {"id": 3, "part": 1, "question": "Toàn xã Nhã Nam hiện nay sở hữu tổng cộng bao nhiêu di tích lịch sử – văn hóa?", "options": ["16 di tích", "44 di tích", "37 di tích", "21 di tích"], "answer": 2, "explain": "Toàn xã Nhã Nam có tổng cộng 37 di tích lịch sử – văn hóa, bao gồm 16 di tích đã xếp hạng các cấp và 21 di tích nằm trong danh mục kiểm kê bảo vệ."},
+  {"id": 4, "part": 1, "question": "Trong tổng số 37 di tích lịch sử – văn hóa của xã Nhã Nam, có bao nhiêu di tích đã được xếp hạng chính thức?", "options": ["16 di tích", "30 di tích", "08 di tích", "21 di tích"], "answer": 0, "explain": "Xã có 16 di tích đã được xếp hạng (8 quốc gia đặc biệt, 1 quốc gia, 7 cấp tỉnh) và 21 di tích trong danh mục kiểm kê."},
+  {"id": 5, "part": 1, "question": "Cơ cấu xếp hạng của 16 di tích đã xếp hạng tại xã Nhã Nam được phân chia như thế nào?", "options": ["06 di tích quốc gia đặc biệt, 03 di tích cấp quốc gia, 07 di tích cấp tỉnh", "04 di tích quốc gia đặc biệt, 04 di tích cấp quốc gia, 08 di tích cấp tỉnh", "10 di tích quốc gia đặc biệt, 02 di tích cấp quốc gia, 04 di tích cấp tỉnh", "08 di tích quốc gia đặc biệt, 01 di tích cấp quốc gia, 07 di tích cấp tỉnh"], "answer": 3, "explain": "Cơ cấu chuẩn gồm: 8 di tích quốc gia đặc biệt (thuộc hệ thống Khởi nghĩa Yên Thế), 1 di tích cấp quốc gia (Chùa Tứ Giáp), và 7 di tích cấp tỉnh."},
+  {"id": 6, "part": 1, "question": "Sự kiện lịch sử vẻ vang nào diễn ra ngày 16/3/1884 tại đình Hả được xem là mốc mở đầu cuộc khởi nghĩa Yên Thế?", "options": ["Chi bộ Đảng Cộng sản đầu tiên làm lễ ra mắt nhân dân", "Nghĩa quân ký hòa hoãn lần thứ nhất với thực dân Pháp", "Thủ lĩnh Lương Văn Nắm (Đề Nắm) làm lễ tế cờ khởi nghĩa", "Hoàng Hoa Thám (Đề Thám) tổ chức đại hội nghĩa quân"], "answer": 2, "explain": "Ngày 16/3/1884, tại đình Hả, thủ lĩnh Lương Văn Nắm (Đề Nắm) đã cùng nghĩa quân làm lễ tế cờ xuất quân chống thực dân Pháp, chính thức mở đầu cuộc khởi nghĩa Yên Thế."},
+  {"id": 7, "part": 1, "question": "Địa danh nào tại xã Nhã Nam là nơi thành lập chi bộ Đảng Cộng sản đầu tiên của địa phương?", "options": ["Thôn Đồng Điều", "Thôn Dương Lâm", "Thôn Cầu Thượng", "Thôn Sậy"], "answer": 0, "explain": "Thôn Đồng Điều là nơi thành lập chi bộ Đảng Cộng sản đầu tiên của địa phương. Di tích lịch sử thôn Đồng Điều (trung tâm là chùa Đồng Điều) được xếp hạng di tích cấp tỉnh theo Quyết định số 2087/QĐ-UBND ngày 25/12/2006."},
+  {"id": 8, "part": 1, "question": "Trước ngày sáp nhập đơn vị hành chính 01/7/2025, địa bàn xã Nhã Nam thuộc huyện nào của tỉnh Bắc Giang?", "options": ["Huyện Yên Thế", "Huyện Tân Yên", "Huyện Lạng Giang", "Huyện Việt Yên"], "answer": 1, "explain": "Trước ngày 01/7/2025, 4 đơn vị hành chính (Thị trấn Nhã Nam, xã Tân Trung, An Dương, Liên Sơn) đều trực thuộc huyện Tân Yên."},
+  {"id": 9, "part": 1, "question": "Toàn xã Nhã Nam có bao nhiêu di tích nằm trong danh mục kiểm kê được Chủ tịch UBND tỉnh phê duyệt bảo vệ?", "options": ["16 di tích", "21 di tích", "37 di tích", "25 di tích"], "answer": 1, "explain": "Ngoài 16 di tích đã được xếp hạng, xã có đúng 21 di tích nằm trong danh mục kiểm kê được phê duyệt bảo vệ."},
+  {"id": 10, "part": 2, "question": "Các di tích quốc gia đặc biệt tại Nhã Nam thuộc hệ thống di tích Khởi nghĩa Yên Thế được Thủ tướng Chính phủ xếp hạng theo quyết định nào?", "options": ["Quyết định số 1254/QĐ-TTg", "Quyết định số 548/QĐ-TTg", "Quyết định số 138/QĐ-BVHTTDL", "Quyết định số 240/QĐ-UBND"], "answer": 1, "explain": "Quyết định số 548/QĐ-TTg ngày 10/5/2012 của Thủ tướng Chính phủ xếp hạng di tích quốc gia đặc biệt Những địa điểm Khởi nghĩa Yên Thế, trong đó có 08 điểm trên địa bàn xã Nhã Nam."},
+  {"id": 11, "part": 2, "question": "Dãy di tích nào sau đây liệt kê đầy đủ 8 điểm di tích quốc gia đặc biệt tại xã Nhã Nam?", "options": ["Đình – chùa Hả, đền Gốc Khế, đồi Phủ, đình Dương Lâm, chùa Nam Thiên, đình làng Chuông, đền thờ Cả Trọng, nghĩa địa Pháp", "Chùa Nam Thiên, đền Gốc Khế, đình Cầu Thượng, chùa Dương Sơn, đồi Phủ, đình Chuông, đền Cả Trọng, chùa Hả", "Đình Hả, chùa Tứ Giáp, đồi Phủ, đền Đề Truật, đình Nẻo, chùa Đồng Điều, đình Sậy, đền Gốc Khế", "Đình Dương Lâm, nghĩa địa Pháp, đình làng Sặt, chùa Tứ Giáp, đồi Phủ, đình Hả, đền Đề Truật, chùa Nam Thiên"], "answer": 0, "explain": "Chính xác gồm 8 điểm: đình – chùa Hả, đền Gốc Khế, đồi Phủ, đình Dương Lâm, chùa Nam Thiên, đình làng Chuông, đền thờ Cả Trọng và nghĩa địa Pháp."},
+  {"id": 12, "part": 2, "question": "Di tích Đồi Phủ tại Nhã Nam giữ vai trò lịch sử quan trọng nào trong thời kỳ Khởi nghĩa Yên Thế?", "options": ["Địa điểm ký kết hiệp ước hòa hoãn giữa nghĩa quân và Pháp", "Kho dự trữ lương thảo và đúc vũ khí chính của nghĩa quân Đề Nắm", "Nơi thực dân Pháp dựng đồn Nhã Nam và đặt tòa đại lý phủ Yên Thế để đàn áp nghĩa quân", "Tổng hành dinh chỉ huy tối cao của Hoàng Hoa Thám"], "answer": 2, "explain": "Đồi Phủ là quả đồi khống chế ngã tư Nhã Nam. Từ năm 1885, quân Pháp chiếm đồi, dựng đồn Nhã Nam và đặt tòa đại lý phủ Yên Thế để đàn áp nghĩa quân Yên Thế."},
+  {"id": 13, "part": 2, "question": "Di tích Đình Dương Lâm gắn liền với chiến công thầm lặng của nhân vật lịch sử nào?", "options": ["Cụ Bá Phức xây dựng kho chứa lương thảo", "Cụ Cai Hậu đào hầm bí mật cho nghĩa quân rút lui", "Cụ Đề Truật chỉ huy trận tập kích quân Pháp", "Cụ Cai Sơn tổ chức chế tạo súng kíp cho nghĩa quân"], "answer": 1, "explain": "Đình Dương Lâm gắn với cụ Cai Hậu, người đào hầm bí mật từ hậu cung ra bờ ao để nghĩa quân rút lui. Đề Thám cũng từng bàn với dân dời đình từ Bãi Đình về giữa làng."},
+  {"id": 14, "part": 2, "question": "Vị danh tướng được nhân dân lập đền thờ tại Di tích quốc gia đặc biệt “Đền thờ Cả Trọng” có mối quan hệ như thế nào với thủ lĩnh Hoàng Hoa Thám?", "options": ["Là em trai ruột và là quân sư mưu lược của Hoàng Hoa Thám", "Là con trai cả, từng chỉ huy xây dựng căn cứ đồn Hố Chuối của nghĩa quân", "Là thân phụ truyền thụ võ nghệ cho Hoàng Hoa Thám", "Là dũng sĩ hộ vệ trung thành của thủ lĩnh nghĩa quân"], "answer": 1, "explain": "Cả Trọng (Hoàng Đức Trọng) là con trai cả của thủ lĩnh Hoàng Hoa Thám. Thuở nhỏ ông được gửi về Dương Lâm ăn học tại nhà cụ Cai Hậu, sau chỉ huy xây dựng căn cứ đồn Hố Chuối."},
+  {"id": 15, "part": 2, "question": "Di tích “Nghĩa địa Pháp” tại Nhã Nam là chứng tích lịch sử phản ánh nội dung gì?", "options": ["Nghĩa trang chôn cất tù binh sau Chiến tranh thế giới thứ nhất", "Nơi an táng các giáo sĩ và thương nhân phương Tây", "Khu nghĩa trang của các chuyên gia nông nghiệp Pháp", "Nơi chôn cất các sĩ quan, binh lính Pháp và tay sai tử trận trong các cuộc giao tranh với nghĩa quân Yên Thế"], "answer": 3, "explain": "Nghĩa địa Pháp nằm cạnh đồn Nhã Nam trên đồi Phủ, là nơi chôn cất sĩ quan, binh lính Pháp tử trận: trong cuộc chiến ở Yên Thế, hàng loạt sĩ quan chỉ huy và lính lê dương Pháp đã bỏ mạng dưới tay nghĩa quân của Đề Nắm và Đề Thám."},
+  {"id": 16, "part": 2, "question": "Cụm di tích quốc gia đặc biệt Đình – Chùa Hả hiện nay tọa lạc tại làng nào thuộc xã Nhã Nam?", "options": ["Làng Chuông (thuộc thị trấn Nhã Nam cũ)", "Làng Sậy (thuộc địa bàn xã An Dương cũ)", "Làng Dương Lâm (thuộc địa bàn xã An Dương cũ)", "Làng Hả (thuộc địa bàn xã Tân Trung cũ)"], "answer": 3, "explain": "Cụm di tích lịch sử Đình – chùa Hả nằm tại làng Hả, trước đây thuộc xã Tân Trung (nay là xã Nhã Nam)."},
+  {"id": 17, "part": 2, "question": "Ngôi đình cổ nào tại xã Nhã Nam thuộc 8 di tích quốc gia đặc biệt từng là nơi hội họp bàn việc nghĩa của tướng lĩnh nghĩa quân Hoàng Hoa Thám?", "options": ["Đình làng Chuông", "Đình Nẻo", "Đình Cầu Thượng", "Đình làng Sặt"], "answer": 0, "explain": "Đình làng Chuông (đình Nhã Nam) là một trong 08 di tích quốc gia đặc biệt tại Nhã Nam, nơi Hoàng Hoa Thám nhiều lần họp bàn việc quân."},
+  {"id": 18, "part": 2, "question": "Ngôi chùa cổ nào tại xã Nhã Nam nằm trong hệ thống 8 di tích quốc gia đặc biệt Khởi nghĩa Yên Thế?", "options": ["Chùa Nam Thiên", "Chùa Tứ Giáp", "Chùa Đồng Điều", "Chùa Dương Sơn"], "answer": 0, "explain": "Chùa Nam Thiên là ngôi chùa thuộc danh mục 8 di tích quốc gia đặc biệt (còn Chùa Tứ Giáp là di tích quốc gia; Đồng Điều và Dương Sơn là cấp tỉnh)."},
+  {"id": 19, "part": 2, "question": "Di tích quốc gia đặc biệt Đền Gốc Khế có vị trí và vai trò đặc biệt gì đối với nghĩa quân Yên Thế?", "options": ["Xưởng sửa chữa đại bác và đúc súng trường", "Bệnh xá cứu chữa thương bệnh binh của nghĩa quân", "Nơi giam giữ các chỉ huy quân đội Pháp bị bắt sống", "Trạm tiền tiêu của nghĩa quân ở cửa ngõ đồn Nhã Nam và phủ Yên Thế"], "answer": 3, "explain": "Thời khởi nghĩa Yên Thế, khu rừng Gốc Khế là trạm tiền tiêu của nghĩa quân ở cửa ngõ đồn Nhã Nam và phủ Yên Thế. Đền thuộc cụm Những địa điểm Khởi nghĩa Yên Thế, di tích quốc gia đặc biệt."},
+  {"id": 20, "part": 3, "question": "Chùa Tứ Giáp là di tích cấp quốc gia duy nhất của xã Nhã Nam, nơi đây ghi dấu sự kiện lịch sử vẻ vang nào của lực lượng Công an nhân dân?", "options": ["Nơi thành lập Đội Tuyên truyền Giải phóng quân Khu XII", "Nơi mở khóa huấn luyện điệp báo đầu tiên toàn quốc", "Nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân", "Nơi tổ chức Đại hội thi đua Ái quốc ngành Công an"], "answer": 2, "explain": "Giai đoạn 1946–1948, Sở Công an Khu XII đặt trụ sở tại chùa Tứ Giáp, do đồng chí Hoàng Mai làm Giám đốc. Ngày 11/3/1948, Chủ tịch Hồ Chí Minh gửi thư nêu Sáu điều dạy Công an nhân dân."},
+  {"id": 21, "part": 3, "question": "Bức thư của Chủ tịch Hồ Chí Minh gửi Công an Khu XII nêu “Sáu điều dạy Công an nhân dân” tại chùa Tứ Giáp được gửi vào thời gian nào?", "options": ["Ngày 19/8/1945", "Ngày 16/3/1948", "Ngày 02/9/1949", "Ngày 11/3/1948"], "answer": 3, "explain": "Bức thư lịch sử mang lời dạy của Bác về tư cách người Công an cách mạng được gửi đi vào ngày 11/3/1948."},
+  {"id": 22, "part": 3, "question": "Chùa Tứ Giáp được Bộ Văn hóa – Thông tin (nay là Bộ Văn hóa, Thể thao và Du lịch) xếp hạng di tích cấp quốc gia theo quyết định nào?", "options": ["Quyết định số 548/QĐ", "Quyết định số 138/QĐ", "Quyết định số 225/QĐ", "Quyết định số 79/QĐ"], "answer": 1, "explain": "Chùa Tứ Giáp được xếp hạng di tích cấp quốc gia theo Quyết định số 138/QĐ ngày 31/01/1992 của Bộ Văn hóa – Thông tin."},
+  {"id": 23, "part": 3, "question": "Tên gọi “Tứ Giáp” của ngôi chùa bắt nguồn từ nguyên nhân văn hóa – xã hội nào?", "options": ["Chùa nằm ở ngã tư giáp ranh giữa 4 huyện cổ", "Chùa xây trên đất làng Nguộn, do bốn giáp (đơn vị dân cư trong làng) cùng hưng công xây dựng", "Chùa có 4 cửa quay về bốn phương giáp ranh", "Chùa có 4 lớp tường thành bao quanh kiên cố"], "answer": 1, "explain": "Theo tư liệu của di tích, ngôi chùa xây trên đất làng Nguộn chủ yếu do 4 giáp hưng công nên gọi là chùa Tứ Giáp. Chùa còn có tên chữ là Đại Phúc tự, tên Nôm là chùa Gốc Gạo."},
+  {"id": 24, "part": 3, "question": "Danh sách 07 di tích lịch sử – văn hóa cấp tỉnh tại xã Nhã Nam gồm những di tích nào?", "options": ["Chùa Dương Sơn, đình Cầu Thượng, đình Sặt, đồi Phủ, nghĩa địa Pháp, đình Dương Lâm, đền Đề Truật", "Đình Hả, chùa Nam Thiên, đền Đề Truật, đình Cầu Thượng, đình Sặt, đình Nẻo, chùa Tứ Giáp", "Đền Đề Truật, đình Cầu Thượng, đình Sậy, chùa Đồng Điều, đình Nẻo, chùa Dương Sơn và đình làng Sặt", "Đền Đề Truật, đền Gốc Khế, chùa Đồng Điều, đình Chuông, đình Sậy, đình Nẻo, chùa Dương Sơn"], "answer": 2, "explain": "Đúng 7 di tích cấp tỉnh: Đền Đề Truật, đình Cầu Thượng, đình Sậy, chùa Đồng Điều, đình Nẻo, chùa Dương Sơn và đình làng Sặt."},
+  {"id": 25, "part": 3, "question": "Di tích cấp tỉnh Đền Đề Truật thờ phụng vị nhân vật lịch sử nào?", "options": ["Đề Truật – vị thần tướng thời Hai Bà Trưng", "Đề Truật (Dương Văn Truật) – tướng lĩnh chỉ huy dũng cảm của Khởi nghĩa Yên Thế", "Đề Truật – một vị quan triều Mạc có công dạy học tại vùng Yên Thế", "Đề Truật – một tù trưởng khai phá lập làng thời Lý – Trần"], "answer": 1, "explain": "Đền thờ tướng Dương Văn Truật (Đề Truật). Ông nổi tiếng bắn nỏ, từng chỉ huy dân binh chống giặc Cờ Đen rồi theo nghĩa quân Yên Thế chống Pháp. Đền được xếp hạng di tích cấp tỉnh theo Quyết định số 1987/QĐ-UBND ngày 12/12/2014."},
+  {"id": 26, "part": 3, "question": "Di tích cấp tỉnh Đình làng Sặt là công trình văn hóa gắn liền với tín ngưỡng phụng thờ của làng cổ nào?", "options": ["Làng Chuông", "Làng Sặt", "Làng Nguộn", "Làng Hả"], "answer": 1, "explain": "Đình làng Sặt ở thôn Sặt là đình chung của 5 thôn Chài, Quân, Đồn, Thượng và Phố; được xếp hạng di tích lịch sử cấp tỉnh theo Quyết định số 2012/QĐ-UBND ngày 24/12/2018."},
+  {"id": 27, "part": 3, "question": "Ngôi đình cổ nào tại Nhã Nam được xếp hạng di tích cấp tỉnh và là nơi sinh hoạt truyền thống của người dân thôn Sậy?", "options": ["Đình Hả", "Đình Chuông", "Đình Nẻo", "Đình Sậy"], "answer": 3, "explain": "Đình Sậy là đình làng thời Nguyễn của thôn Sậy, được xếp hạng di tích lịch sử – văn hóa cấp tỉnh theo Quyết định số 2315/QĐ-CT ngày 30/12/2005."},
+  {"id": 28, "part": 3, "question": "Di tích chùa Đồng Điều được công nhận xếp hạng ở cấp nào trong hệ thống di tích?", "options": ["Di tích quốc gia đặc biệt", "Di tích cấp quốc gia", "Di tích cấp tỉnh", "Di tích kiểm kê bảo vệ"], "answer": 2, "explain": "Di tích lịch sử thôn Đồng Điều (trung tâm là chùa Đồng Điều), nơi thành lập chi bộ Đảng đầu tiên của địa phương, được xếp hạng di tích cấp tỉnh theo Quyết định số 2087/QĐ-UBND ngày 25/12/2006."},
+  {"id": 29, "part": 3, "question": "Ngôi đình nào sau đây tại xã Nhã Nam thuộc danh mục 7 di tích cấp tỉnh?", "options": ["Đình Hả", "Đình làng Chuông", "Đình Dương Lâm", "Đình Cầu Thượng"], "answer": 3, "explain": "Đình Cầu Thượng thuộc nhóm di tích cấp tỉnh; các đình Hả, Dương Lâm, Chuông đều là di tích quốc gia đặc biệt."},
+  {"id": 30, "part": 3, "question": "Chùa Dương Sơn tại Nhã Nam là di tích được xếp hạng ở cấp bậc nào?", "options": ["Di tích cấp tỉnh", "Di tích quốc gia đặc biệt", "Công trình tín ngưỡng chưa phân hạng", "Di tích cấp quốc gia"], "answer": 0, "explain": "Chùa Dương Sơn là một trong 07 di tích cấp tỉnh của xã Nhã Nam, được xếp hạng theo Quyết định số 2169/QĐ-UBND ngày 29/12/2010."},
+  {"id": 31, "part": 4, "question": "Tục văn hóa dân gian độc đáo, giàu tính khôi hài và nghệ thuật phóng đại trào lộng nổi tiếng tại xã Nhã Nam là gì?", "options": ["Tục thổi cơm thi trên sông", "Tục múa rối cạn làng Hả", "Tục kéo co dây tre", "Tục nói phét Dương Sơn (nói dóc Dương Sơn)"], "answer": 3, "explain": "Tục nói phét Dương Sơn là nét sinh hoạt văn hóa dân gian độc đáo, thể hiện trí thông minh, tính lạc quan yêu đời và khả năng phóng đại dí dỏm của người dân."},
+  {"id": 32, "part": 4, "question": "Nghề thủ công và sản phẩm ẩm thực truyền thống tiêu biểu của đất Nhã Nam là nghề nào?", "options": ["Nghề làm bánh khảo – kẹo lạc Nhã Nam", "Nghề làm tương Cự Đà", "Nghề làm bánh chưng Vân Cầu", "Nghề làm bánh đa Thổ Hà"], "answer": 0, "explain": "Nghề bánh khảo – kẹo lạc là sản phẩm ẩm thực truyền thống nức tiếng, gắn với văn hóa hội hè và đời sống người dân Nhã Nam."},
+  {"id": 33, "part": 4, "question": "Di sản nghệ thuật diễn xướng dân gian truyền thống gắn liền với bản sắc văn hóa Kinh Bắc được gìn giữ tại Nhã Nam là gì?", "options": ["Nghệ thuật Hát Xoan", "Hát Tuồng cổ và Bài Chòi", "Nghệ thuật Ca trù và Hát Then", "Hát Dân ca Quan họ và nghệ thuật Hát Chèo"], "answer": 3, "explain": "Người dân Nhã Nam gìn giữ và bảo tồn sâu sắc phong trào Dân ca Quan họ và Hát Chèo truyền thống của đất Kinh Bắc."},
+  {"id": 34, "part": 4, "question": "Di sản phi vật thể gắn liền với tinh thần thượng võ kiên cường của phong trào Khởi nghĩa Yên Thế tại Nhã Nam là gì?", "options": ["Bắn nỏ dân tộc", "Đua thuyền rồng truyền thống", "Võ cổ truyền (biểu diễn trong lễ hội Nhã Nam)", "Hội đấu vật cầu bùn"], "answer": 2, "explain": "Trò chơi dân gian và võ cổ truyền được tổ chức trong lễ hội ở Nhã Nam, nuôi dưỡng tinh thần thượng võ của vùng đất khởi nghĩa Yên Thế."},
+  {"id": 35, "part": 4, "question": "Lễ hội truyền thống nào tại Nhã Nam tưởng nhớ các thủ lĩnh và nghĩa quân nông dân chống Pháp?", "options": ["Lễ hội Đền Hùng", "Lễ hội Chùa Dâu", "Lễ hội Khởi nghĩa Yên Thế (quanh ngày 15–16/3 dương lịch)", "Lễ hội Tịch điền"], "answer": 2, "explain": "Phần chính của lễ hội Khởi nghĩa Yên Thế diễn ra quanh ngày 15–16/3 dương lịch, tái hiện lễ tế cờ tại sân đình Hả, tưởng nhớ Đề Nắm, Đề Thám và nghĩa quân Yên Thế."},
+  {"id": 36, "part": 4, "question": "Tuyến tham quan học tập số 1 (chủ đề “Cội nguồn và kháng chiến”) kết nối 3 điểm di tích tiêu biểu nào?", "options": ["Đình làng Chuông, chùa Nam Thiên và đền Cả Trọng", "Đồi Phủ, nghĩa địa Pháp và đền Gốc Khế", "Đình – chùa Hả, chùa Tứ Giáp và đình Dương Lâm", "Địa điểm thôn Đồng Điều, đền Đề Truật và chùa Dương Sơn"], "answer": 2, "explain": "Tuyến 1 “Cội nguồn và kháng chiến” đi qua đình – chùa Hả (nơi Đề Nắm tế cờ năm 1884), chùa Tứ Giáp (nơi phát tích Sáu điều Bác Hồ dạy Công an nhân dân) và đình Dương Lâm (hầm bí mật cho nghĩa quân)."},
+  {"id": 37, "part": 4, "question": "Tuyến tham quan học tập số 2 (chủ đề “Mốc son cách mạng và văn hóa”) kết nối các di tích nào?", "options": ["Đồi Phủ, nghĩa địa Pháp, đình làng Sặt", "Chùa Đồng Điều (di tích thôn Đồng Điều), đền Đề Truật và chùa Dương Sơn", "Đình Nẻo, đình Sậy, đình Cầu Thượng", "Đình làng Chuông, đền Gốc Khế, chùa Tứ Giáp"], "answer": 1, "explain": "Tuyến 2 “Mốc son cách mạng và văn hóa” gồm chùa Đồng Điều (nơi thành lập chi bộ Đảng đầu tiên), đền Đề Truật (thờ tướng nghĩa quân Dương Văn Truật) và chùa Dương Sơn."},
+  {"id": 38, "part": 4, "question": "Trên bản đồ số của cổng thông tin, tuyến tham quan số 3 “Chiến tích oai hùng và tín ngưỡng cổ truyền” đi qua các di tích theo thứ tự nào?", "options": ["Đền Gốc Khế → đồi Phủ → đình làng Chuông → chùa Nam Thiên → đình Cầu Thượng", "Nghĩa địa Pháp → chùa Tứ Giáp → đình Hả → chùa Dương Sơn → đình Cầu Thượng", "Chùa Đồng Điều → đền Đề Truật → chùa Dương Sơn → đình làng Sặt → đền Cả Trọng", "Đình – chùa Hả → chùa Tứ Giáp → đình Dương Lâm → đình Sậy → đình Nẻo"], "answer": 0, "explain": "Tuyến 3 nối 5 di tích gần trung tâm Nhã Nam: đền Gốc Khế → đồi Phủ (đồn Nhã Nam) → đình làng Chuông → chùa Nam Thiên (chùa Phố) → đình Cầu Thượng."},
+  {"id": 39, "part": 3, "question": "Ngôi đình nào sau đây của xã Nhã Nam là di tích cấp tỉnh của thôn Nẻo?", "options": ["Đình Nẻo", "Đình Chuông", "Đình Dương Lâm", "Đình Hả"], "answer": 0, "explain": "Đình Nẻo ở thôn Nẻo thờ Đức thánh Cao Sơn, Quý Minh và Thành hoàng làng Hòa Làng; được xếp hạng di tích lịch sử – văn hóa cấp tỉnh theo Quyết định số 2169/QĐ-UBND ngày 29/12/2010."},
+  {"id": 40, "part": 4, "question": "Việc giữ gìn, bảo tồn và số hóa hệ thống 37 di tích cùng các di sản phi vật thể tại xã Nhã Nam mang ý nghĩa trọng tâm nào?", "options": ["Chuyển đổi toàn bộ đất di tích sang mục đích phát triển khu công nghiệp thương mại", "Chỉ phục vụ riêng cho các nhà nghiên cứu lịch sử học thuật", "Thay thế hoàn toàn việc tham quan thực tế bằng trải nghiệm trực tuyến", "Góp phần giáo dục truyền thống yêu nước, tự hào dân tộc và phát triển du lịch di sản địa phương bền vững"], "answer": 3, "explain": "Hệ thống di sản phong phú của Nhã Nam là tài sản vô giá nhằm giáo dục truyền thống cho thế hệ trẻ và thúc đẩy kinh tế du lịch văn hóa bền vững."}
 ];
-
-// Alias để tương thích cả hai tên biến QUIZ_DATA và HERITAGE_QUIZ_DATA
-const QUIZ_DATA = HERITAGE_QUIZ_DATA;
 
 /**
  * --------------------------------------------------------------------

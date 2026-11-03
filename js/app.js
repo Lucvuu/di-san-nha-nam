@@ -72,8 +72,7 @@ const state = {
   lightboxImages: [],
   lightboxIndex: 0,
   favorites: JSON.parse(localStorage.getItem('nhanam_heritage_favorites') || '[]'),
-  quizAnswers: {},
-  quizSubmitted: false,
+  quizExam: null,
   isAudioPlaying: false,
   isAudioGuidePlaying: false
 };
@@ -1409,154 +1408,148 @@ function toggleFavorite(itemId) {
  * GÓC HỌC TẬP - TRẮC NGHIỆM TÌM HIỂU DI SẢN NHÃ NAM
  * ====================================================================
  */
-function getQuizList() {
-  if (typeof QUIZ_DATA!== 'undefined' && Array.isArray(QUIZ_DATA) && QUIZ_DATA.length > 0) {
-    return QUIZ_DATA;
+/** Fisher–Yates: trộn mảng tại chỗ. */
+function shuffleInPlace(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
-  if (typeof HERITAGE_QUIZ_DATA!== 'undefined' && Array.isArray(HERITAGE_QUIZ_DATA) && HERITAGE_QUIZ_DATA.length > 0) {
-    return HERITAGE_QUIZ_DATA;
-  }
-  return [];
+  return arr;
+}
+
+const QUIZ_SEEN_KEY = 'nhanam_quiz_seen_ids';
+const QUIZ_LETTERS = ['A', 'B', 'C', 'D'];
+
+function quizConflicts(id, chosen) {
+  return (typeof QUIZ_CONFLICT_GROUPS !== 'undefined' ? QUIZ_CONFLICT_GROUPS : [])
+    .some(g => g.includes(id) && g.some(x => chosen.includes(x)));
+}
+
+/**
+ * Bốc đề 10 câu theo ma trận 2/3/3/2 từ ngân hàng 40 câu; ưu tiên câu chưa gặp ở các lượt trước,
+ * không bốc chung các câu cùng nhóm (lộ đáp án của nhau). Đáp án đúng rải đều: mỗi chữ cái 2–3 lần.
+ */
+function generateQuizExam() {
+  const bank = typeof QUIZ_BANK_40 !== 'undefined' ? QUIZ_BANK_40 : [];
+  if (!bank.length) return null;
+  let seen = [];
+  try { seen = JSON.parse(localStorage.getItem(QUIZ_SEEN_KEY) || '[]'); } catch (e) { seen = []; }
+  const chosen = [];
+  Object.entries(QUIZ_MATRIX).forEach(([part, need]) => {
+    const pool = bank.filter(q => String(q.part) === part).map(q => q.id);
+    const fresh = shuffleInPlace(pool.filter(id => !seen.includes(id)));
+    const old = shuffleInPlace(pool.filter(id => seen.includes(id)));
+    if (fresh.length < need) seen = seen.filter(id => !pool.includes(id)); // hết câu mới của phần này: quay vòng
+    let got = 0;
+    for (const id of [...fresh, ...old]) {
+      if (got >= need) break;
+      if (!quizConflicts(id, chosen)) { chosen.push(id); got++; }
+    }
+  });
+  try { localStorage.setItem(QUIZ_SEEN_KEY, JSON.stringify([...new Set([...seen, ...chosen])])); } catch (e) { /* bỏ qua */ }
+
+  const targets = shuffleInPlace([0, 0, 1, 1, 2, 2, 3, 3, ...shuffleInPlace([0, 1, 2, 3]).slice(0, 2)]);
+  const questions = chosen.map((id, i) => {
+    const q = bank.find(x => x.id === id);
+    const wrong = shuffleInPlace(q.options.filter((_, k) => k !== q.answer));
+    const t = targets[i];
+    return { ...q, options: [...wrong.slice(0, t), q.options[q.answer], ...wrong.slice(t)], answer: t };
+  });
+  return { code: String(1000 + Math.floor(Math.random() * 9000)), questions, picked: {} };
 }
 
 function updateQuizProgressStatus() {
   const statusEl = document.getElementById('quiz-progress-status');
-  if (!statusEl) return;
-  const total = getQuizList().length || 5;
-  const answered = Object.keys(state.quizAnswers).length;
-  statusEl.textContent = `Đã chọn ${answered}/${total} câu hỏi`;
+  const exam = state.quizExam;
+  if (!statusEl || !exam) return;
+  const answered = Object.keys(exam.picked).length;
+  const correct = exam.questions.filter((q, i) => exam.picked[i] === q.answer).length;
+  statusEl.textContent = `Mã đề #${exam.code} • Đã làm ${answered}/10 câu • Đúng ${correct}`;
 }
 
 function renderQuiz() {
   const container = document.getElementById('quiz-questions-container');
   if (!container) return;
-
-  const quizList = getQuizList();
-  if (quizList.length === 0) {
+  if (!state.quizExam) state.quizExam = generateQuizExam();
+  const exam = state.quizExam;
+  if (!exam) {
     container.innerHTML = '<p class="text-xs text-[#5C5248]">Đang tải câu hỏi trắc nghiệm…</p>';
     return;
   }
-
-  container.innerHTML = quizList.map((q, qIndex) => `
-    <div class="p-5 sm:p-6 rounded-xl bg-heritage-surface border border-[rgba(139,30,30,0.12)] mb-4">
-      <div class="flex items-start gap-3 mb-3">
-        <span class="w-7 h-7 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">
-          ${qIndex + 1}
-        </span>
-        <h4 class="font-semibold text-base text-[#2A2521] leading-snug">
-          ${escapeHtml(q.question)}
-        </h4>
-      </div>
-
-      <div class="space-y-2 pl-10" data-quiz-group="${q.id}">
-        ${q.options.map((opt, optIndex) => `
-          <label class="quiz-option-label flex items-center gap-3 p-3 rounded-lg border border-[#EADECF] hover:bg-[#FAF6EE] cursor-pointer transition-colors text-sm text-[#4A4036]">
-            <input 
-              type="radio" 
-              name="quiz-q-${q.id}" 
-              value="${optIndex}" 
-              onchange="handleSelectQuizAnswer(${q.id}, ${optIndex}, this)"
-              class="w-4 h-4 text-[#8B1E1E] focus:ring-[#8B1E1E] border-gray-300"
-            />
-            <span class="leading-relaxed">${escapeHtml(opt)}</span>
-          </label>
+  container.innerHTML = exam.questions.map((q, i) => `
+    <fieldset class="mini-quiz-q p-5 sm:p-6 rounded-xl bg-heritage-surface border border-[rgba(139,30,30,0.12)]">
+      <legend class="sr-only">Câu ${i + 1}</legend>
+      <p class="text-[11px] sm:text-xs font-semibold text-[#8B6914] mb-2 leading-relaxed">
+        Mã đề ngẫu nhiên #${exam.code} • Câu ${i + 1}/10 • Chủ đề: ${escapeHtml(QUIZ_PARTS[q.part])} (Ngân hàng 40 câu hỏi địa chí Nhã Nam)
+      </p>
+      <p class="font-semibold text-base text-[#2A2521] leading-snug mb-3">Câu ${i + 1}. ${escapeHtml(q.question)}</p>
+      <div class="mini-quiz-options quiz-bank-options" data-quiz-q="${i}">
+        ${q.options.map((opt, k) => `
+          <button type="button" onclick="answerBankQuiz(${i}, ${k}, this)"><strong>${QUIZ_LETTERS[k]}.</strong> ${escapeHtml(opt)}</button>
         `).join('')}
       </div>
-
-      <div id="quiz-explanation-${q.id}" class="hidden mt-3 pl-10 text-xs p-3 rounded-xl bg-[#F5EFE6] text-[#5C5248] leading-relaxed border border-[#C59B27]/30">
-      </div>
-    </div>
+      <div id="quiz-explanation-${i}" class="hidden" aria-live="polite"></div>
+    </fieldset>
   `).join('');
-
   updateQuizProgressStatus();
 }
 
-function handleSelectQuizAnswer(questionId, optionIndex, inputEl) {
-  state.quizAnswers[questionId] = optionIndex;
-  if (inputEl) {
-    const group = inputEl.closest('[data-quiz-group]');
-    if (group) {
-      group.querySelectorAll('.quiz-option-label').forEach(lbl => lbl.classList.remove('is-selected'));
-    }
-    inputEl.closest('.quiz-option-label')?.classList.add('is-selected');
-  }
-  updateQuizProgressStatus();
-}
-
-function submitQuiz() {
-  const quizList = getQuizList();
-  const totalQuestions = quizList.length;
-  const answeredCount = Object.keys(state.quizAnswers).length;
-
-  if (answeredCount < totalQuestions) {
-    showToastNotification(`Còn ${totalQuestions - answeredCount} câu chưa chọn đáp án (đã làm ${answeredCount}/${totalQuestions}).`, 'warning');
-    return;
-  }
-
-  let score = 0;
-  quizList.forEach(q => {
-    const userAnswer = state.quizAnswers[q.id];
-    const explanationEl = document.getElementById(`quiz-explanation-${q.id}`);
-
-    if (userAnswer === q.correctAnswer) {
-      score++;
-      if (explanationEl) {
-        explanationEl.className = 'quiz-explain quiz-explain-ok block';
-        explanationEl.innerHTML = `<strong>Đúng.</strong> ${escapeHtml(q.explanation)}`;
-      }
-    } else {
-      if (explanationEl) {
-        explanationEl.className = 'quiz-explain quiz-explain-wrong block';
-        explanationEl.innerHTML = `<strong>Chưa đúng.</strong> Đáp án: ${escapeHtml(q.options[q.correctAnswer])}.<br>${escapeHtml(q.explanation)}`;
-      }
-    }
+function answerBankQuiz(i, k, btn) {
+  const exam = state.quizExam;
+  if (!exam || exam.picked[i] !== undefined) return;
+  exam.picked[i] = k;
+  const q = exam.questions[i];
+  const ok = k === q.answer;
+  btn.closest('[data-quiz-q]').querySelectorAll('button').forEach((b, idx) => {
+    b.disabled = true;
+    if (idx === q.answer) b.classList.add('is-correct');
+    else if (idx === k) b.classList.add('is-wrong');
   });
-
-  state.quizSubmitted = true;
-  showQuizResultModal(score, totalQuestions);
+  const ex = document.getElementById(`quiz-explanation-${i}`);
+  ex.className = `quiz-explain ${ok ? 'quiz-explain-ok' : 'quiz-explain-wrong'} quiz-bank-explain`;
+  ex.innerHTML = `<strong>${ok ? 'Đúng.' : `Chưa đúng. Đáp án ${QUIZ_LETTERS[q.answer]}.`}</strong>
+    <span class="block mt-1"><em>Chú giải tư liệu địa phương:</em> ${escapeHtml(q.explain)}</span>`;
+  updateQuizProgressStatus();
+  if (Object.keys(exam.picked).length === exam.questions.length) {
+    const score = exam.questions.filter((qq, idx) => exam.picked[idx] === qq.answer).length;
+    setTimeout(() => showQuizResultModal(score, exam.questions.length), 600);
+  }
 }
 
 function showQuizResultModal(score, total) {
-  let badgeTitle = 'Cần đọc thêm';
-  let message = 'Đọc lại hồ sơ các di tích rồi làm lại bài để kiểm tra.';
-  
-  if (score === 5) {
-    badgeTitle = 'Đúng cả năm câu';
-    message = 'Lời giải thích hiện ngay dưới mỗi câu hỏi.';
-  } else if (score >= 3) {
+  let badgeTitle = 'Cần đọc thêm hồ sơ di tích';
+  let message = 'Em nên đọc lại các hồ sơ di tích trên cổng thông tin rồi làm một đề khác.';
+  if (score >= 9) {
+    badgeTitle = 'Nắm vững kiến thức';
+    message = 'Em hiểu rõ lịch sử và di sản quê hương. Làm thêm đề khác để ôn hết ngân hàng 40 câu.';
+  } else if (score >= 7) {
+    badgeTitle = 'Khá vững';
+    message = 'Xem lại chú giải dưới các câu làm sai, rồi làm đề khác để củng cố.';
+  } else if (score >= 5) {
     badgeTitle = 'Đạt yêu cầu';
-    message = 'Xem lời giải thích dưới các câu trả lời sai.';
+    message = 'Đọc kỹ chú giải tư liệu địa phương dưới các câu sai trước khi làm đề tiếp theo.';
   }
-
   const resultContainer = document.getElementById('quiz-result-content');
   if (resultContainer) {
     resultContainer.innerHTML = `
       <div class="text-center py-4">
+        <p class="text-xs text-[#5C5248] mb-1">Mã đề #${state.quizExam ? state.quizExam.code : ''}</p>
         <h3 class="font-heritage-serif text-2xl font-bold text-[#8B1E1E] mb-2">${badgeTitle}</h3>
-        <div class="font-heritage-serif text-4xl font-bold text-[#2A2521] tabular-nums mb-2">
-          ${score} / ${total}
-        </div>
-        <p class="text-sm text-[#5C5248] max-w-sm mx-auto mb-6 leading-relaxed">
-          ${message}
-        </p>
-        <div class="flex items-center justify-center gap-3">
-          <button 
-            type="button" 
-            onclick="resetQuiz()" 
-            class="px-4 py-2 rounded-xl text-xs font-semibold bg-[#F5EFE6] text-[#5C5248] hover:bg-[#EADECF] transition-colors">
-            Làm lại bài kiểm tra
-          </button>
-          <button 
-            type="button" 
-            onclick="closeQuizResultModal()" 
+        <div class="font-heritage-serif text-4xl font-bold text-[#2A2521] tabular-nums mb-2">${score}/${total} điểm</div>
+        <p class="text-sm text-[#5C5248] max-w-sm mx-auto mb-6 leading-relaxed">${message}</p>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <button type="button" onclick="resetQuiz()"
             class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-[#8B1E1E] text-white hover:bg-[#6F1515] transition-colors">
-            Đóng
+            Làm đề 10 câu ngẫu nhiên khác
+          </button>
+          <button type="button" onclick="closeQuizResultModal()"
+            class="px-4 py-2 rounded-xl text-xs font-semibold bg-[#F5EFE6] text-[#5C5248] hover:bg-[#EADECF] transition-colors">
+            Xem lại chú giải
           </button>
         </div>
       </div>
     `;
   }
-
   const modal = document.getElementById('quiz-result-modal');
   if (modal) {
     state.lastFocus = document.activeElement;
@@ -1576,11 +1569,12 @@ function closeQuizResultModal() {
   }
 }
 
+/** Tạo đề ngẫu nhiên mới (10 câu), ưu tiên các câu chưa gặp. */
 function resetQuiz() {
-  state.quizAnswers = {};
-  state.quizSubmitted = false;
   closeQuizResultModal();
+  state.quizExam = generateQuizExam();
   renderQuiz();
+  document.getElementById('quiz-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /**

@@ -1138,6 +1138,8 @@ p, blockquote, figcaption {
 .mini-quiz-options button.is-correct { border-color: #4D7C4F; background: #F1F6EF; color: #2F5232; }
 .mini-quiz-options button.is-wrong { border-color: #8B1E1E; background: #FBF1EE; color: #8B1E1E; }
 .quiz-explain.mini-quiz-feedback { margin-left: 0; }
+@media (min-width: 640px) { .mini-quiz-options.quiz-bank-options { grid-template-columns: 1fr; } }
+.quiz-explain.quiz-bank-explain { margin-left: 0; }
 
 /* Chống tràn ngang trên điện thoại */
 #modal-dynamic-content, #modal-dynamic-content * { min-width: 0; }

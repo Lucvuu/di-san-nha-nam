@@ -1242,7 +1242,7 @@
           </h2>
           <p class="text-[0.9375rem] text-[#5C5248] max-w-xl mx-auto leading-relaxed font-normal"
             style="text-wrap: balance;">
-            Năm câu hỏi về các di tích và lễ hội trong xã. Chọn đáp án cho từng câu rồi bấm nộp bài.
+            Mỗi đề 10 câu được bốc ngẫu nhiên từ ngân hàng 40 câu hỏi địa chí Nhã Nam theo 4 phần kiến thức. Chọn một đáp án để biết ngay Đúng/Sai và đọc chú giải tư liệu địa phương.
           </p>
         </div>
 
@@ -1250,32 +1250,29 @@
         <div
           class="flex flex-wrap items-center justify-between gap-3 mb-5 pb-3 border-b border-[#EADECF] text-xs sm:text-sm">
           <span id="quiz-progress-status" aria-live="polite" class="font-semibold text-[#8B1E1E] tabular-nums">
-            Đã chọn 0/5 câu hỏi
+            Mã đề #… • Đã làm 0/10 câu
           </span>
-          <button type="button" onclick="resetQuiz()"
-            class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#5C5248] hover:text-[#8B1E1E] transition-colors cursor-pointer">
-            <svg class="ic w-3.5 h-3.5" aria-hidden="true">
-              <use href="#i-rotate" />
-            </svg>
-            <span>Làm lại bộ câu hỏi</span>
-          </button>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <button type="button" onclick="resetQuiz()"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#8B1E1E] hover:underline underline-offset-4 cursor-pointer">
+              <svg class="ic w-3.5 h-3.5" aria-hidden="true">
+                <use href="#i-rotate" />
+              </svg>
+              <span>Tạo đề ngẫu nhiên mới (10 câu)</span>
+            </button>
+            <a href="./assets/docs/bo-de-trac-nghiem-10-cau-di-san-nha-nam.docx" download
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#5C5248] hover:text-[#8B1E1E] transition-colors">
+              <svg class="ic w-3.5 h-3.5" aria-hidden="true">
+                <use href="#i-scroll" />
+              </svg>
+              <span>Tải bộ đề trắc nghiệm 10 câu &amp; Ngân hàng 40 câu hỏi (.docx)</span>
+            </a>
+          </div>
         </div>
 
         <!-- Danh sách câu hỏi trắc nghiệm -->
         <div id="quiz-questions-container" class="space-y-4">
           <!-- Render động từ js/app.js -->
-        </div>
-
-        <!-- Nút nộp bài -->
-        <div class="text-center mt-8">
-          <button type="button" onclick="submitQuiz()"
-            class="btn-crimson inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg font-semibold text-sm text-white">
-            <svg class="w-5 h-5 text-[#F6E05E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span>Nộp bài và xem kết quả</span>
-          </button>
         </div>
 
       </div>
@@ -1963,9 +1960,9 @@
   </div>
 
   <!-- SCRIPT FILES -->
-  <script src="js/data.js?v=3.7.0"></script>
+  <script src="js/data.js?v=3.8.0"></script>
   <script src="js/utils.js?v=3.6.1"></script>
-  <script src="js/app.js?v=3.7.0"></script>
+  <script src="js/app.js?v=3.8.0"></script>
 </body>
 
 </html>

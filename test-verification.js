@@ -409,6 +409,25 @@ TANGIBLE_HERITAGE_DATA.forEach(item => {
 });
 console.log('  ✓ Ảnh minh họa được ghi chú rõ; mọi ảnh thư viện (gồm 15 ảnh Đình - Chùa Hả) và chuẩn hóa đơn vị hành chính "Thôn ..., xã Nhã Nam" đều đạt 100%');
 
+
+console.log('--- 13. QUIZ BANK 40: MA TRẬN, CÂN BẰNG ĐÁP ÁN, ĐỀ NGẪU NHIÊN ---');
+console.assert(QUIZ_BANK_40.length === 40 && new Set(QUIZ_BANK_40.map(q => q.id)).size === 40, 'Quiz bank must have 40 unique questions');
+[0, 1, 2, 3].forEach(k => console.assert(QUIZ_BANK_40.filter(q => q.answer === k).length === 10, `Bank answer ${'ABCD'[k]} must appear 10 times`));
+QUIZ_BANK_40.forEach(q => console.assert(q.options.length === 4 && new Set(q.options).size === 4 && q.explain.length > 20, `Bank question ${q.id} invalid`));
+for (let r = 0; r < 300; r++) {
+  const ex = generateQuizExam();
+  const parts = [1, 2, 3, 4].map(p => ex.questions.filter(q => q.part === p).length);
+  console.assert(ex.questions.length === 10 && parts.join() === '2,3,3,2', `Exam must follow 2/3/3/2 matrix (got ${parts})`);
+  const letters = [0, 1, 2, 3].map(k => ex.questions.filter(q => q.answer === k).length);
+  console.assert(letters.every(n => n >= 2 && n <= 3), `Exam answers must be 2-3 per letter (got ${letters})`);
+  const ids = ex.questions.map(q => q.id);
+  console.assert(new Set(ids).size === 10, 'Exam must not repeat questions');
+  QUIZ_CONFLICT_GROUPS.forEach(g => console.assert(g.filter(x => ids.includes(x)).length <= 1, `Exam must not mix conflict group ${g}`));
+  ex.questions.forEach(q => { const src = QUIZ_BANK_40.find(b => b.id === q.id); console.assert(q.options[q.answer] === src.options[src.answer], `Shuffled answer must stay correct for ${q.id}`); });
+}
+console.assert(fs.existsSync('./assets/docs/bo-de-trac-nghiem-10-cau-di-san-nha-nam.docx'), 'Quiz docx must exist');
+console.log('  ✓ 300 random exams follow matrix 2/3/3/2, 2–3 answers per letter, no conflict pairs');
+
 console.log('\n======================================================');
 console.log('ALL INTEGRITY, SEARCH, AUDIO GUIDE, APP INIT & SECURITY TESTS PASSED! 🎉');
 console.log('======================================================\n');
