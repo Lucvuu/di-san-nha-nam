@@ -1,5 +1,5 @@
 # BÁO CÁO TỐI ƯU HÓA TÀI NGUYÊN 4G, KIỂM ĐỊNH ĐA PHƯƠNG TIỆN & MÃ QR DÙNG THỬ
-**Dự án:** Cổng thông tin Di sản Văn hóa xã Nhã Nam, tỉnh Bắc Ninh  
+**Dự án:** Cổng thông tin Di sản Văn hóa xã Nhã Nam, thành phố Bắc Ninh  
 **Đơn vị thực hiện:** Ban biên tập dự án  
 **Ngày thực hiện:** 01/11/2026  
 **Chế độ thực thi:** Chạy song song độc lập (Parallel Task - Không can thiệp mã nguồn `index.html`, `.js`, `.css`, không commit/push Git).

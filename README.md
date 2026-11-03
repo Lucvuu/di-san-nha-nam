@@ -1,6 +1,6 @@
 # 🏛️ DI SẢN VĂN HÓA NHÃ NAM
 ### Cổng Thông Tin Số Hóa Di Sản Văn Hóa & Lịch Sử Địa Phương
-**Xã Nhã Nam, Tỉnh Bắc Ninh, Việt Nam**
+**Xã Nhã Nam, Thành phố Bắc Ninh, Việt Nam**
 
 ---
 
@@ -141,6 +141,6 @@ Mỗi di tích trong mảng `TANGIBLE_HERITAGE_DATA` hoặc `INTANGIBLE_HERITAGE
 
 ## 📞 GÓP Ý CHO BAN BIÊN TẬP
 - **Phiếu góp ý ẩn danh**: https://forms.gle/DAm42WZF4JRAYzns6
-- **Địa bàn**: Xã Nhã Nam, tỉnh Bắc Ninh
+- **Địa bàn**: Xã Nhã Nam, thành phố Bắc Ninh
 - **Mục tiêu**: Phục vụ công tác giáo dục truyền thống phi lợi nhuận cho học sinh và nhân dân.
 

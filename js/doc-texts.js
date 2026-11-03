@@ -6,7 +6,7 @@ window.DOC_TEXTS = {
     "CHÙA ĐỒNG ĐIỀU (DI TÍCH LỊCH SỬ THÔN ĐỒNG ĐIỀU)",
     "Xếp hạng: Di tích cấp tỉnh",
     "I. THÔNG TIN PHÁP LÝ VÀ ĐỊA ĐIỂM",
-    "• Địa chỉ hiện nay: Thôn Đồng Điều, xã Nhã Nam, tỉnh Bắc Ninh",
+    "• Địa chỉ hiện nay: Thôn Đồng Điều, xã Nhã Nam, thành phố Bắc Ninh",
     "• Địa chỉ trước ngày 01/7/2025: Xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang",
     "• Quyết định xếp hạng: QĐ số 2087/QĐ-UBND, ngày 25/12/2006 của Chủ tịch UBND tỉnh",
     "• Loại hình di tích: Di tích lịch sử - văn hóa",
@@ -14,7 +14,7 @@ window.DOC_TEXTS = {
     "II. TỔNG QUAN",
     "Nơi thành lập chi bộ Đảng Cộng sản đầu tiên của địa phương trước Cách mạng Tháng Tám năm 1945, di tích lịch sử - văn hóa cấp tỉnh.",
     "III. NỘI DUNG GIỚI THIỆU",
-    "Di tích lịch sử thôn Đồng Điều (trung tâm là chùa Đồng Điều) thuộc xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang). Đây là cái nôi cách mạng hào hùng, nơi ươm mầm và chứng kiến sự ra đời của chi bộ Đảng Cộng sản đầu tiên trên địa bàn địa phương trước đây.",
+    "Di tích lịch sử thôn Đồng Điều (trung tâm là chùa Đồng Điều) thuộc xã Nhã Nam, thành phố Bắc Ninh (trước ngày 01/7/2025 thuộc xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang). Đây là cái nôi cách mạng hào hùng, nơi ươm mầm và chứng kiến sự ra đời của chi bộ Đảng Cộng sản đầu tiên trên địa bàn địa phương trước đây.",
     "IV. Ý NGHĨA LỊCH SỬ VÀ SỰ KIỆN NỔI BẬT",
     "• Nơi thành lập chi bộ Đảng đầu tiên: Trước Cách mạng Tháng Tám năm 1945, thôn Đồng Điều là cơ sở cách mạng bí mật an toàn. Tại đây, những người con ưu tú của quê hương đã được giác ngộ lý tưởng cộng sản, thành lập chi bộ Đảng đầu tiên, trực tiếp lãnh đạo quần chúng nhân dân vùng lên giành chính quyền.",
     "• Căn cứ nuôi giấu cán bộ xứ ủy Bắc Kỳ: Nhiều cán bộ cao cấp của Đảng và các đội tuyên truyền cứu quốc quân đã dừng chân, hoạt động bí mật tại Đồng Điều nhờ sự đùm bọc, chở che kiên trung của đồng bào và bà con giáo dân nơi đây.",
@@ -25,11 +25,11 @@ window.DOC_TEXTS = {
     "• Nơi đây lưu giữ nhiều hiện vật quý, bia ghi công tích cách mạng và các chứng tích lịch sử của phong trào kháng chiến chống thực dân Pháp.",
     "VI. GÓC HỌC TẬP",
     "Đối với học sinh: Di tích thôn Đồng Điều là minh chứng hùng hồn cho truyền thống kiên cường cách mạng, lòng son sắt một dạ theo Đảng của nhân dân xã Nhã Nam qua các thời kỳ kháng chiến.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "chua-duong-son.docx": [
     "CHÙA DƯƠNG SƠN",
-    "Chào mừng quý thầy cô và các bạn học sinh đến với Chùa Dương Sơn.Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Ngôi chùa cổ thanh tịnh giữa làng quê trù phú, là chốn tu tâm hướng thiện của bà con Phật tử địa phương nơi lưu giữ tinh hoa Phật giáo và đạo lý truyền thống, di tích lịch sử - văn hóa cấp tỉnh. Trong những năm tháng chiến tranh,chùa Dương Sơn luôn là điểm tựa tâm linh vững chắc cho dân làng an tâm sản xuất và chi viện cho tiền tuyến.Chùa Dương Sơn giáo dục học sinh về lòng từ bi,nhân ái và sự trân trọng gìn giữ không gian văn hóa tâm linh thanh tịnh của quê hương."
+    "Chào mừng quý thầy cô và các bạn học sinh đến với Chùa Dương Sơn.Di sản vật thể tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. Ngôi chùa cổ thanh tịnh giữa làng quê trù phú, là chốn tu tâm hướng thiện của bà con Phật tử địa phương nơi lưu giữ tinh hoa Phật giáo và đạo lý truyền thống, di tích lịch sử - văn hóa cấp tỉnh. Trong những năm tháng chiến tranh,chùa Dương Sơn luôn là điểm tựa tâm linh vững chắc cho dân làng an tâm sản xuất và chi viện cho tiền tuyến.Chùa Dương Sơn giáo dục học sinh về lòng từ bi,nhân ái và sự trân trọng gìn giữ không gian văn hóa tâm linh thanh tịnh của quê hương."
   ],
   "chua-nam-thien.docx": [
     "Chùa Nam Thiên (chùa Phố)",
@@ -46,7 +46,7 @@ window.DOC_TEXTS = {
     "ĐỀN THỜ CẢ TRỌNG (ĐỀN GỐC DẺ)",
     "Xếp hạng: Di tích quốc gia đặc biệt",
     "I. THÔNG TIN PHÁP LÝ VÀ ĐỊA ĐIỂM",
-    "• Địa chỉ hiện nay: Khu vực Gốc Dẻ, xã Nhã Nam, tỉnh Bắc Ninh",
+    "• Địa chỉ hiện nay: Khu vực Gốc Dẻ, xã Nhã Nam, thành phố Bắc Ninh",
     "• Địa chỉ trước ngày 01/7/2025: Thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang",
     "• Quyết định xếp hạng: QĐ số 548/QĐ-TTg, ngày 10/05/2012 của Thủ tướng Chính phủ",
     "• Loại hình di tích: Di tích lịch sử",
@@ -54,7 +54,7 @@ window.DOC_TEXTS = {
     "II. TỔNG QUAN",
     "Đền thờ tướng quân Cả Trọng (Hoàng Đức Trọng), con trai cả và vị tướng xuất chúng của thủ lĩnh Hoàng Hoa Thám, di tích quốc gia đặc biệt.",
     "III. NỘI DUNG GIỚI THIỆU",
-    "Đền thờ Cả Trọng (tục gọi là đền Gốc Dẻ) tọa lạc tại xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Ngôi đền được nhân dân lập nên để tưởng nhớ vị tướng tài hoa Hoàng Đức Trọng (Cả Trọng) - người con trai cả dũng lược của thủ lĩnh Hoàng Hoa Thám.",
+    "Đền thờ Cả Trọng (tục gọi là đền Gốc Dẻ) tọa lạc tại xã Nhã Nam, thành phố Bắc Ninh (trước ngày 01/7/2025 thuộc thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Ngôi đền được nhân dân lập nên để tưởng nhớ vị tướng tài hoa Hoàng Đức Trọng (Cả Trọng) - người con trai cả dũng lược của thủ lĩnh Hoàng Hoa Thám.",
     "IV. Ý NGHĨA LỊCH SỬ VÀ SỰ KIỆN NỔI BẬT",
     "• Tướng quân tài ba xuất chúng: Cả Trọng là cánh tay mặt đắc lực của Hoàng Hoa Thám, sớm bộc lộ tài thao lược quân sự. Ông từng trực tiếp chỉ huy xây dựng căn cứ phòng thủ đồn Hố Chuối và lãnh đạo nhiều trận phục kích bẻ gãy các cuộc tấn công của binh đoàn lê dương Pháp.",
     "• Tấm lòng trung hiếu tiết nghĩa: Cả Trọng luôn xông pha nơi tuyến đầu nguy hiểm, chiến đấu kiên cường đến hơi thở cuối cùng vì sự nghiệp cứu nước.",
@@ -64,7 +64,7 @@ window.DOC_TEXTS = {
     "• Bên trong đặt ban thờ tướng quân Cả Trọng cùng đồ tế khí, hoành phi câu đối ca ngợi lòng dũng cảm của người con núi rừng Yên Thế.",
     "VI. GÓC HỌC TẬP",
     "Hình tượng người tướng trẻ Cả Trọng là tấm gương sáng ngời về tuổi trẻ dấn thân, lòng quả cảm và khí phách kiên cường cho học sinh noi theo.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "den-de-truat.docx": [
     "ĐỀN ĐỀ TRUẬT",
@@ -365,11 +365,11 @@ window.DOC_TEXTS = {
   ],
   "dinh-cau-thuong.docx": [
     "ĐÌNH CẦU THƯỢNG",
-    "Chào mừng quý thầy cô và các bạn học sinh đến với Đình Cầu Thượng.Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Ngôi đình là thiết chế văn hóa tâm linh thiêng liêng của nhân dân làng Cầu Thượng qua bao thế hệ. Ngôi đình làng cổ kính thờ Đức thánh Cao Sơn, Quý Minh, trung tâm tín ngưỡng gắn liền với lịch sử Nhã Nam, di tích lịch sử - văn hóa cấp tỉnh.Về ý nghĩa lịch sử vẻ vang: **Hậu phương vững chắc của các phong trào yêu nước:** Nhân dân thôn Cầu Thượng có truyền thống đoàn kết\u0001 kiên cường đánh giặc bảo vệ quê hương.Tìm hiểu về đình Cầu Thượng giúp học sinh hiểu sâu sắc hơn về nét đẹp văn hóa làng xã và tín ngưỡng tôn thờ tiền nhân của vùng đất Nhã Nam."
+    "Chào mừng quý thầy cô và các bạn học sinh đến với Đình Cầu Thượng.Di sản vật thể tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. Ngôi đình là thiết chế văn hóa tâm linh thiêng liêng của nhân dân làng Cầu Thượng qua bao thế hệ. Ngôi đình làng cổ kính thờ Đức thánh Cao Sơn, Quý Minh, trung tâm tín ngưỡng gắn liền với lịch sử Nhã Nam, di tích lịch sử - văn hóa cấp tỉnh.Về ý nghĩa lịch sử vẻ vang: **Hậu phương vững chắc của các phong trào yêu nước:** Nhân dân thôn Cầu Thượng có truyền thống đoàn kết\u0001 kiên cường đánh giặc bảo vệ quê hương.Tìm hiểu về đình Cầu Thượng giúp học sinh hiểu sâu sắc hơn về nét đẹp văn hóa làng xã và tín ngưỡng tôn thờ tiền nhân của vùng đất Nhã Nam."
   ],
   "dinh-chua-ha.docx": [
     "Đình- chùa Hả",
-    "Trong hệ thống 23 địa điểm di tích quốc gia đặc biệt liên quan đến khởi nghĩa Yên Thế thuộc địa bàn các huyện Việt Yên, Yên Dũng, Tân Yên và Yên Thế thì Đình Hả, xã Tân Trung có vai trò rất đặc biệt. Đây chính là nơi Lương Văn Nắm làm lễ tế cờ chính thức phát động nghĩa quân khởi nghĩa chống thực dân Pháp. Đình Hả xưa thuộc về xã Thế Lộc, Tổng Yên Lễ, huyện Yên Thế nay thuộc thôn Hả, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang). Sau đình là Chùa Hả. Bố cục theo lối “Tiền thần hậu phật”. Di tích này nằm trên sườn một quả đồi thấp, bao quanh là khu đồi là rừng lim xanh tốt. Theo truyền thuyết thì đình, chùa Hả được xây dựng vào thời Lê - Nguyễn thế kỷ XVII. Đây là Chứng nhân lịch sử trọng yếu trong Khởi nghĩa Yên Thế. Thông lệ, thường sau Lễ hội 15 và 16 tháng Giêng hàng năm, không gian quanh Đình Hả lại trở nên tĩnh lặng. Ngôi đình làng thâm nghiêm chìm vào sắc xanh của rừng lim trăm năm tuổi, nhưng những năm gần đây Khu di tích này sôi động với những hoạt động về nguồn. Nhiều trường học ở Tân Yên lấy nơi đây là điểm kết nạp đoàn viên, đội viên. Năm 2021 Tân Yên đầu tư xây dựng Đền thờ Lương Văn Nắm và nghĩa binh Yên Thế thì những hoạt động trên được gia tăng đáng kể. Theo truyền thuyết thì Đình, chùa Hả được xây dựng vào thời Lê - Nguyễn thế kỷ XVII. Đình Hả, có tên chữ là đình Thọ Linh thờ Thành hoàng là thánh Cao Sơn - Quý Minh. Kiến trúc của đình khi xưa gồm một toà tiền đình 3 gian 2 trái. Trong khoảng sân đình rộng rãi có tả vu và hữu vu, mỗi dãy 5 gian đối diện với nhau, tiếp đến toà đại đình 5 gian 2 dĩ và một hậu cung 3 gian. Phần kiến trúc các vì kèo theo lối cốn, kẻ, bẩy, con chồng. Phần trang trí chạm khắc tinh tế, theo các đề tài hoa lá, tiên múa. Nhưng ngôi đình đẹp đẽ này không còn, nguyên do là đã bị Thực dân Pháp phá hoại những năm 1885. Cuộc Khởi nghĩa Yên Thế, đã phát triển trở thành Phong trào Khởi nghĩa Yên Thế và kéo dài gần 30 năm (1884 – 1913). Từ sự kiện Đề Nắm tế cờ, phát động Khởi nghĩa Yên Thế, Đình, chùa Hả trở thành một di tích lịch sử mở đầu cho phong trào khởi nghĩa nông dân Yên Thế, đóng một dấu son đỏ thắm trong lịch sử chống ngoại xâm của dân tộc Việt Nam thế kỷ XIX – XX."
+    "Trong hệ thống 23 địa điểm di tích quốc gia đặc biệt liên quan đến khởi nghĩa Yên Thế thuộc địa bàn các huyện Việt Yên, Yên Dũng, Tân Yên và Yên Thế thì Đình Hả, xã Tân Trung có vai trò rất đặc biệt. Đây chính là nơi Lương Văn Nắm làm lễ tế cờ chính thức phát động nghĩa quân khởi nghĩa chống thực dân Pháp. Đình Hả xưa thuộc về xã Thế Lộc, Tổng Yên Lễ, huyện Yên Thế nay thuộc thôn Hả, xã Nhã Nam, thành phố Bắc Ninh (trước ngày 01/7/2025 thuộc xã Tân Trung, huyện Tân Yên, tỉnh Bắc Giang). Sau đình là Chùa Hả. Bố cục theo lối “Tiền thần hậu phật”. Di tích này nằm trên sườn một quả đồi thấp, bao quanh là khu đồi là rừng lim xanh tốt. Theo truyền thuyết thì đình, chùa Hả được xây dựng vào thời Lê - Nguyễn thế kỷ XVII. Đây là Chứng nhân lịch sử trọng yếu trong Khởi nghĩa Yên Thế. Thông lệ, thường sau Lễ hội 15 và 16 tháng Giêng hàng năm, không gian quanh Đình Hả lại trở nên tĩnh lặng. Ngôi đình làng thâm nghiêm chìm vào sắc xanh của rừng lim trăm năm tuổi, nhưng những năm gần đây Khu di tích này sôi động với những hoạt động về nguồn. Nhiều trường học ở Tân Yên lấy nơi đây là điểm kết nạp đoàn viên, đội viên. Năm 2021 Tân Yên đầu tư xây dựng Đền thờ Lương Văn Nắm và nghĩa binh Yên Thế thì những hoạt động trên được gia tăng đáng kể. Theo truyền thuyết thì Đình, chùa Hả được xây dựng vào thời Lê - Nguyễn thế kỷ XVII. Đình Hả, có tên chữ là đình Thọ Linh thờ Thành hoàng là thánh Cao Sơn - Quý Minh. Kiến trúc của đình khi xưa gồm một toà tiền đình 3 gian 2 trái. Trong khoảng sân đình rộng rãi có tả vu và hữu vu, mỗi dãy 5 gian đối diện với nhau, tiếp đến toà đại đình 5 gian 2 dĩ và một hậu cung 3 gian. Phần kiến trúc các vì kèo theo lối cốn, kẻ, bẩy, con chồng. Phần trang trí chạm khắc tinh tế, theo các đề tài hoa lá, tiên múa. Nhưng ngôi đình đẹp đẽ này không còn, nguyên do là đã bị Thực dân Pháp phá hoại những năm 1885. Cuộc Khởi nghĩa Yên Thế, đã phát triển trở thành Phong trào Khởi nghĩa Yên Thế và kéo dài gần 30 năm (1884 – 1913). Từ sự kiện Đề Nắm tế cờ, phát động Khởi nghĩa Yên Thế, Đình, chùa Hả trở thành một di tích lịch sử mở đầu cho phong trào khởi nghĩa nông dân Yên Thế, đóng một dấu son đỏ thắm trong lịch sử chống ngoại xâm của dân tộc Việt Nam thế kỷ XIX – XX."
   ],
   "dinh-duong-lam.docx": [
     "ĐÌNH DƯƠNG LÂM",
@@ -384,7 +384,7 @@ window.DOC_TEXTS = {
   ],
   "dinh-lang-chuong.docx": [
     "Đình làng Chuông, xã Nhã Nam",
-    "Đình làng Chuông là một trung tâm sinh hoạt văn hóa tín ngưỡng lớn của làng Chuông xưa, nay là thôn Tiến Phan 2, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc tổ dân phố Tiến Phan 2, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Di tích nằm cách trung tâm tỉnh Bắc Giang cũ khoảng 24km về phía Tây Bắc, cách thành phố Hà Nội khoảng 85km về phía Đông Bắc. Từ thành phố Bắc Giang theo Quốc lộ 1A (cũ), qua cầu Sông Thương, rẽ phải tuyến Bắc Giang - Nhã Nam, tới ngã tư thị trấn Nhã Nam rẽ phải theo đường lên cầu Gồ chừng 300m rẽ trái theo đường bê tông 100m là tới di tích đình làng Chuông. Theo các tài liệu, hiện vật còn lại trong di tích, các nhà nghiên cứu đã xác định đình làng Chuông là một ngôi đình cổ được khởi dựng thời Lê Trung Hưng (thế kỷ XVIII).\nHiện nay đình làng Chuông tọa lạc trên khuôn viên đất rộng, cao thoáng ở trung tâm làng Chuông. Bố cục mặt bằng di tích được làm theo lối kiến trúc hình chữ đinh gồm 7 gian tiền đình và hai gian hậu cung, ngoảnh hướng Nam. Tòa tiền đình xây gạch chỉ, ngoài phủ vữa quét ve vàng, mái lợp ngói mũi, bờ nóc lợp ngói bò. Bờ dải hai hồi xây gạch, ngoài phủ vữa. Bảy gian tòa tiền đình đều trổ cửa bức bàn, sơn màu nâu. Giữa sân và nội tự được ngăn cách bởi hàng hiên nhỏ chạy suốt bảy gian. Nền đình lát gạch vuông truyền thống. Kết cấu chịu lực bên trong được tạo bởi 8 vì có chung một kiểu thức gắn kết theo lốì kèo kìm cánh báng, quá giang gác tường. Hậu cung được tạo bởi 2 gian, tường xây gạch chỉ, mái lợp ngói mũi, kết cấu chịu lực bên trong được tạo bởi 3 vì, mỗi vì hai hàng chân cột, các cấu kiện được gắn kết theo kiểu thức kẻ chuyền, trốn cột, bào trơn đóng bén, không chạm khắc cầu kỳ. Hậu cung có khám thờ đặt long ngai bài vị. Đồ rước sách có kiệu bát cống, chấp kích, bát bửu, tàn lọng và nhiều đồ thờ được sơn thếp. Hiện trong đình còn lưu giữ được nhiều hiện vật, sắc phong và đồ thờ tự quý giá. Những hiện vật này phần nào khẳng định lịch sử ra đời của di tích. Đồng thời cho biết, đình làng Chuông tôn thờ đức Thánh Cao Sơn, Quý Minh đại vương và Trấn Giang Đô Thống. Ngoài ra đình cũng thờ Nàng Giã Đại Thần - một vị nữ tướng của hai Bà Trưng. Sau này vào thời Nguyễn, đình còn thờ một vị phúc Thần là người con của quê hương Nhã Nam, đó là ông Nguyễn Đức Hiên đã công đức tiền của tu sửa đình.",
+    "Đình làng Chuông là một trung tâm sinh hoạt văn hóa tín ngưỡng lớn của làng Chuông xưa, nay là thôn Tiến Phan 2, xã Nhã Nam, thành phố Bắc Ninh (trước ngày 01/7/2025 thuộc tổ dân phố Tiến Phan 2, thị trấn Nhã Nam, huyện Tân Yên, tỉnh Bắc Giang). Di tích nằm cách trung tâm tỉnh Bắc Giang cũ khoảng 24km về phía Tây Bắc, cách thành phố Hà Nội khoảng 85km về phía Đông Bắc. Từ thành phố Bắc Giang theo Quốc lộ 1A (cũ), qua cầu Sông Thương, rẽ phải tuyến Bắc Giang - Nhã Nam, tới ngã tư thị trấn Nhã Nam rẽ phải theo đường lên cầu Gồ chừng 300m rẽ trái theo đường bê tông 100m là tới di tích đình làng Chuông. Theo các tài liệu, hiện vật còn lại trong di tích, các nhà nghiên cứu đã xác định đình làng Chuông là một ngôi đình cổ được khởi dựng thời Lê Trung Hưng (thế kỷ XVIII).\nHiện nay đình làng Chuông tọa lạc trên khuôn viên đất rộng, cao thoáng ở trung tâm làng Chuông. Bố cục mặt bằng di tích được làm theo lối kiến trúc hình chữ đinh gồm 7 gian tiền đình và hai gian hậu cung, ngoảnh hướng Nam. Tòa tiền đình xây gạch chỉ, ngoài phủ vữa quét ve vàng, mái lợp ngói mũi, bờ nóc lợp ngói bò. Bờ dải hai hồi xây gạch, ngoài phủ vữa. Bảy gian tòa tiền đình đều trổ cửa bức bàn, sơn màu nâu. Giữa sân và nội tự được ngăn cách bởi hàng hiên nhỏ chạy suốt bảy gian. Nền đình lát gạch vuông truyền thống. Kết cấu chịu lực bên trong được tạo bởi 8 vì có chung một kiểu thức gắn kết theo lốì kèo kìm cánh báng, quá giang gác tường. Hậu cung được tạo bởi 2 gian, tường xây gạch chỉ, mái lợp ngói mũi, kết cấu chịu lực bên trong được tạo bởi 3 vì, mỗi vì hai hàng chân cột, các cấu kiện được gắn kết theo kiểu thức kẻ chuyền, trốn cột, bào trơn đóng bén, không chạm khắc cầu kỳ. Hậu cung có khám thờ đặt long ngai bài vị. Đồ rước sách có kiệu bát cống, chấp kích, bát bửu, tàn lọng và nhiều đồ thờ được sơn thếp. Hiện trong đình còn lưu giữ được nhiều hiện vật, sắc phong và đồ thờ tự quý giá. Những hiện vật này phần nào khẳng định lịch sử ra đời của di tích. Đồng thời cho biết, đình làng Chuông tôn thờ đức Thánh Cao Sơn, Quý Minh đại vương và Trấn Giang Đô Thống. Ngoài ra đình cũng thờ Nàng Giã Đại Thần - một vị nữ tướng của hai Bà Trưng. Sau này vào thời Nguyễn, đình còn thờ một vị phúc Thần là người con của quê hương Nhã Nam, đó là ông Nguyễn Đức Hiên đã công đức tiền của tu sửa đình.",
     "Trong những năm đầu của cuộc khởi nghĩa Yên Thế, Hoàng Hoa Thám đã tổ chức nhiều cuộc họp quan trọng, bàn việc tổ chức những trận đánh lớn chống thực dân Pháp xâm lược và tay sai tại đình làng Chuông. Làng Chuông còn là nơi sinh ra Dương Văn Truật còn gọi là Đề Hậu - một trong những vị tướng tài giỏi, giữ vai trò chủ chốt trong phong trào khởi nghĩa Yên Thế. Ông có tài bắn cung bách phát - bách trúng khiến bọn giặc Cờ Đen do Ngô Côn cầm đầu và sau này là thực dân Pháp và bè lũ tay sai phải kinh hoàng, khiếp sợ khi nhắc đên tên ông. Khi Lương Văn Nắm (Đề Nắm) - người làng Hả giương cao ngọn cờ khởi nghĩa chống thực dân Pháp, Dương Văn Truật gia nhập nghĩa quân, trở thành một trong những vị tướng giỏi giúp Đề Nắm và sau này là Đề Thám tổ chức nhiều trận đánh, gây cho thực dân Pháp những tổn thất lớn cả về người và của.",
     "Năm 1892, Đề Thám lên thay Đề Nắm (do Đề Nắm bị ám sát) lãnh đạo phong trào chống Pháp. Ông đã sai Đề Hậu cùng các tướng bắt Đề Sặt là kẻ ám hại Đề Nắm để tế cờ báo thù cho Đề Nắm. Sau đó, Đề Thám điều Đề Hậu lên Thái Nguyên bắt liên lạc với các cánh quân của Đề Nguyên, Đề Công, Đề Cam. Những cánh quân này kéo về Yên Thế làm cho lực lượng nghĩa quân mạnh dần lên. Từ Thái Nguyên trở về, đến đồn Bãi Bục giáp Hồng Lĩnh, Đề Hậu cho quân dừng chân ăn cơm tối và nghỉ ngơi. Tại đây lợi dụng lúc Đề Hậu mất cảnh giác, một tên phản bội đã ám hại ông, cắt lấy đầu đem về nộp cho đồn binh Nhã Nam lấy thưởng. Thực dân Pháp đem đầu ông bêu 3 ngày ở chợ Nhã Nam đế khủng bố tinh thần quần chúng. Đến đêm, bà Cổng là con gái ông đã lẻn lấy được đầu ông gói vào vạt áo dài bí mật đem về làng Chuông mai táng. Sau đó, vợ con ông phải lên tận Kép Thượng, xã Lam Cốt tránh sự trả thù của thực dân Pháp và tay sai, sau vài năm mới trở lại làng Chuông.\nCùng với giá trị lịch sử, đình làng Chuông là một trung tâm sinh hoạt văn hóa tinh thần của nhân dân thôn Tiến Phan 2. Hằng năm, tại trung tâm di tích đình làng Chuông, nhân dân địa phương lại long trọng tổ chức lễ hội vào ngày 12, 13 tháng Giêng đế tướng nhớ công lao của những vị Thánh thờ trong đình. Trong lễ hội có nhiều trò chơi dân gian đặc sắc và những sinh hoạt văn nghệ truyền thống thu hút đông đảo bà con cùng nam thanh nữ tú xa gần đến tham dự."
   ],
@@ -394,7 +394,7 @@ window.DOC_TEXTS = {
     "ĐÌNH NẺO",
     "Xếp hạng: Di tích cấp tỉnh",
     "I. THÔNG TIN PHÁP LÝ VÀ ĐỊA ĐIỂM",
-    "• Địa chỉ hiện nay: Thôn Nẻo, xã Nhã Nam, tỉnh Bắc Ninh",
+    "• Địa chỉ hiện nay: Thôn Nẻo, xã Nhã Nam, thành phố Bắc Ninh",
     "• Địa chỉ trước ngày 01/7/2025: Xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang",
     "• Quyết định xếp hạng: QĐ số 2169/QĐ-UBND, ngày 29/12/2010 của Chủ tịch UBND tỉnh",
     "• Loại hình di tích: Di tích lịch sử - văn hóa",
@@ -402,7 +402,7 @@ window.DOC_TEXTS = {
     "II. TỔNG QUAN",
     "Ngôi đình cổ của thôn Nẻo thờ Đức thánh Cao Sơn, Quý Minh và Thành hoàng làng Hòa Làng, di tích lịch sử - văn hóa cấp tỉnh.",
     "III. NỘI DUNG GIỚI THIỆU",
-    "Đình Nẻo tọa lạc tại thôn Nẻo, xã Nhã Nam, tỉnh Bắc Ninh (trước ngày 01/7/2025 thuộc xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang). Ngôi đình là trung tâm hội tụ văn hóa tín ngưỡng truyền thống của vùng đất Liên Sơn cũ.",
+    "Đình Nẻo tọa lạc tại thôn Nẻo, xã Nhã Nam, thành phố Bắc Ninh (trước ngày 01/7/2025 thuộc xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang). Ngôi đình là trung tâm hội tụ văn hóa tín ngưỡng truyền thống của vùng đất Liên Sơn cũ.",
     "IV. Ý NGHĨA LỊCH SỬ VÀ SỰ KIỆN NỔI BẬT",
     "• Trung tâm đoàn kết thôn xóm: Đình là nơi tổ chức tế lễ, sinh hoạt hương ước làng xã và nuôi dưỡng tinh thần yêu nước trong các cuộc đấu tranh giải phóng dân tộc.",
     "• Xếp hạng di tích: Được Chủ tịch UBND tỉnh ban hành Quyết định số 2169/QĐ-UBND ngày 29/12/2010 xếp hạng di tích lịch sử - văn hóa cấp tỉnh.",
@@ -411,7 +411,7 @@ window.DOC_TEXTS = {
     "• Lưu giữ nhiều cấu kiện gỗ chạm trổ hình hoa cúc dây, rồng chầu mặt trời sinh động cùng ngai thờ, sắc phong cổ.",
     "VI. GÓC HỌC TẬP",
     "Khám phá đình Nẻo giúp bồi đắp lòng tự hào về truyền thống bảo tồn di sản của các thế hệ nhân dân thôn Nẻo nói riêng và xã Nhã Nam nói chung.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "dinh-sat.docx": [
     "ĐÌNH LÀNG SẶT",
@@ -420,13 +420,13 @@ window.DOC_TEXTS = {
   ],
   "dinh-say.docx": [
     "ĐÌNH SẬY",
-    "Chào mừng quý thầy cô và các bạn học sinh đến với Đình Sậy.Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Ngôi đình là di sản tâm linh quý giá của bà con thôn Sậy qua nhiều đời.Ngôi đình làng cổ truyền của thôn Sậy, nơi thờ Đức thánh Cao Sơn, Quý Minh và lưu giữ lễ hội truyền thống, di tích lịch sử - văn hóa cấp tỉnh.Đình Sậy gắn liền với công cuộc khai phá,lập làng và tinh thần chống giặc giữ làng của các thế hệ cư dân vùng Tân Trung xưa.Như vậy, Đình Sậy là minh chứng sống động cho bản sắc cộng đồng làng quê thanh bình nhưng quật cường của nhân dân xã Nhã Nam."
+    "Chào mừng quý thầy cô và các bạn học sinh đến với Đình Sậy.Di sản vật thể tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. Ngôi đình là di sản tâm linh quý giá của bà con thôn Sậy qua nhiều đời.Ngôi đình làng cổ truyền của thôn Sậy, nơi thờ Đức thánh Cao Sơn, Quý Minh và lưu giữ lễ hội truyền thống, di tích lịch sử - văn hóa cấp tỉnh.Đình Sậy gắn liền với công cuộc khai phá,lập làng và tinh thần chống giặc giữ làng của các thế hệ cư dân vùng Tân Trung xưa.Như vậy, Đình Sậy là minh chứng sống động cho bản sắc cộng đồng làng quê thanh bình nhưng quật cường của nhân dân xã Nhã Nam."
   ],
   "doi-phu-nha-nam.docx": [
     "ĐỒI PHỦ",
-    "Chào mừng quý thầy cô và các bạn học sinh đến với Đồi phủ,Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Nơi đây từng bị thực dân Pháp chiếm đóng từ năm 1885 để lập đồn bốt khét tiếng và đặt Tòa đại lý Phủ Yên Thế nhằm trấn áp phong trào nông dân. Địa điểm lịch sử ghi dấu căn cứ đầu não của thực dân Pháp và các cuộc đụng độ quyết liệt của nghĩa quân Yên Thế, di tích quốc gia đặc biệt.Về ý nghĩa lịch sử vẻ vang: **Đại bản doanh đàn áp của thực dân Pháp (1885):** Để đối phó với nghĩa quân của Đề Nắm và Đề Thám,thực dân Pháp đã thiết lập đồn bốt\u0001kiên cố trên đồi Phủ.Từ đây, các tướng chỉ huy Pháp đã xuất quân tấn công nhiều đồn lũy nghĩa quân nhưng liên tục chịu tổn thất nặng nề.Di tích là chứng tích lịch sử không thể phai mờ về sự thất bại của chủ nghĩa thực dân trước lòng yêu nước bất diệt của nhân dân ta.",
+    "Chào mừng quý thầy cô và các bạn học sinh đến với Đồi phủ,Di sản vật thể tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. Nơi đây từng bị thực dân Pháp chiếm đóng từ năm 1885 để lập đồn bốt khét tiếng và đặt Tòa đại lý Phủ Yên Thế nhằm trấn áp phong trào nông dân. Địa điểm lịch sử ghi dấu căn cứ đầu não của thực dân Pháp và các cuộc đụng độ quyết liệt của nghĩa quân Yên Thế, di tích quốc gia đặc biệt.Về ý nghĩa lịch sử vẻ vang: **Đại bản doanh đàn áp của thực dân Pháp (1885):** Để đối phó với nghĩa quân của Đề Nắm và Đề Thám,thực dân Pháp đã thiết lập đồn bốt\u0001kiên cố trên đồi Phủ.Từ đây, các tướng chỉ huy Pháp đã xuất quân tấn công nhiều đồn lũy nghĩa quân nhưng liên tục chịu tổn thất nặng nề.Di tích là chứng tích lịch sử không thể phai mờ về sự thất bại của chủ nghĩa thực dân trước lòng yêu nước bất diệt của nhân dân ta.",
     "NGHĨA ĐỊA PHÁP",
-    "Chào mừng quý thầy cô và các bạn học sinh đến với Nghĩa địa Pháp.Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Đây là chứng tích lịch sử đặc biệt ghi dấu những tổn thất nặng nề và thất bại không thể tránh khỏi của đạo quân xâm lược trước ý chí quật cường của nghĩa quân Yên Thế.Khu chứng tích lịch sử nơi chôn cất nhiều sĩ quan, binh lính Pháp tử trận tại chiến trường Yên Thế, di tích quốc gia đặc biệt.. Trong suốt cuộc chiến tranh xâm lược Yên Thế, hàng loạt sĩ quan chỉ huy và lính lê dương Pháp đã bỏ mạng dưới tay nghĩa quân của Đề Nắm và Đề Thám. Qua đó Di tích giúp học sinh nhận thức sâu sắc về cái giá của hòa bình và sự quả cảm phi thường của các thế hệ nghĩa binh Yên Thế chống ngoại xâm."
+    "Chào mừng quý thầy cô và các bạn học sinh đến với Nghĩa địa Pháp.Di sản vật thể tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. Đây là chứng tích lịch sử đặc biệt ghi dấu những tổn thất nặng nề và thất bại không thể tránh khỏi của đạo quân xâm lược trước ý chí quật cường của nghĩa quân Yên Thế.Khu chứng tích lịch sử nơi chôn cất nhiều sĩ quan, binh lính Pháp tử trận tại chiến trường Yên Thế, di tích quốc gia đặc biệt.. Trong suốt cuộc chiến tranh xâm lược Yên Thế, hàng loạt sĩ quan chỉ huy và lính lê dương Pháp đã bỏ mạng dưới tay nghĩa quân của Đề Nắm và Đề Thám. Qua đó Di tích giúp học sinh nhận thức sâu sắc về cái giá của hòa bình và sự quả cảm phi thường của các thế hệ nghĩa binh Yên Thế chống ngoại xâm."
   ],
   "hat-cheo-truyen-thong-nha-nam.docx": [
     "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
@@ -448,14 +448,14 @@ window.DOC_TEXTS = {
     "• Các câu lạc bộ chèo thường xuyên mở lớp truyền dạy làn điệu cho các em học sinh, thế hệ thanh thiếu niên địa phương.",
     "VI. GIÁ TRỊ BẢO TỒN VÀ GIÁO DỤC",
     "Hát chèo là cây cầu nối tâm hồn, giáo dục tình yêu văn hóa dân tộc trong các hoạt động ngoại khóa của học sinh THPT.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "lang-noi-phet-duong-son.docx": [
     "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
     "Tư liệu giới thiệu di sản văn hóa và lịch sử địa phương",
     "NGHỆ THUẬT KỂ CHUYỆN DÂN GIAN – LÀNG NÓI PHÉT DƯƠNG SƠN",
     "1. Giới thiệu chung",
-    "Thôn Dương Sơn trước ngày 01/7/2025 thuộc xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang, nay thuộc xã Nhã Nam, tỉnh Bắc Ninh. Người trong vùng quen gọi nơi đây là \"làng nói phét\", vì người dân có lối kể chuyện phóng đại, nói quá sự thật một cách hóm hỉnh để gây cười, gần với lối nói trạng trong truyện cười dân gian. Đó không phải là nói dối để lừa người: người kể và người nghe đều biết câu chuyện là bịa. Cái hay nằm ở sức tưởng tượng và ở cách kể tỉnh bơ mà người nghe vẫn phải bật cười.",
+    "Thôn Dương Sơn trước ngày 01/7/2025 thuộc xã Liên Sơn, huyện Tân Yên, tỉnh Bắc Giang, nay thuộc xã Nhã Nam, thành phố Bắc Ninh. Người trong vùng quen gọi nơi đây là \"làng nói phét\", vì người dân có lối kể chuyện phóng đại, nói quá sự thật một cách hóm hỉnh để gây cười, gần với lối nói trạng trong truyện cười dân gian. Đó không phải là nói dối để lừa người: người kể và người nghe đều biết câu chuyện là bịa. Cái hay nằm ở sức tưởng tượng và ở cách kể tỉnh bơ mà người nghe vẫn phải bật cười.",
     "2. Nguồn gốc và ý nghĩa",
     "- Sinh ra từ lao động: Theo lời người dân trong phóng sự, những câu nói tếu, nói quá ra đời từ chính công việc đồng áng. Mỗi khi mệt mỏi, căng thẳng, thay vì cáu giận, người ta nghĩ ra một câu chuyện phóng đại để cả xóm cùng cười và quên đi vất vả.",
     "- Cùng mạch với truyện cười dân gian: Lối nói phét Dương Sơn gần với truyện trạng và truyện khoác lác trong kho tàng truyện cười Việt Nam: lấy cái phi lý làm bất ngờ, lấy vẻ nghiêm trang của người kể làm duyên.",
@@ -493,7 +493,7 @@ window.DOC_TEXTS = {
     "• Phần hội tưng bừng: Hội diễn văn nghệ quần chúng, thi đấu cờ tướng, kéo co, đấu vật dân tộc, giải bóng chuyền, hội chọi gà và các trò chơi dân gian đặc sắc.",
     "VI. GIÁ TRỊ BẢO TỒN VÀ GIÁO DỤC",
     "Lễ hội là không gian văn hóa sống động kết nối các thế hệ học sinh THPT với cội nguồn lịch sử oanh liệt của ông cha.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "nghe-lam-banh-khao-keo-lac-nha-nam.docx": [
     "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
@@ -514,13 +514,13 @@ window.DOC_TEXTS = {
     "• Làm kẹo lạc: Nấu đường mạch nha sôi dẻo, thả lạc rang chín vàng đều, dàn mỏng trên mặt bàn rồi cắt thành thanh thơm giòn.",
     "VI. GIÁ TRỊ BẢO TỒN VÀ GIÁO DỤC",
     "Gìn giữ hương vị cội nguồn của quê hương, khơi gợi niềm tự hào về sản vật nông nghiệp của địa phương trong các dự án học tập sáng tạo.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "nghia-dia-phap.docx": [
     "ĐỒI PHỦ",
-    "Chào mừng quý thầy cô và các bạn học sinh đến với Đồi phủ,Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Nơi đây từng bị thực dân Pháp chiếm đóng từ năm 1885 để lập đồn bốt khét tiếng và đặt Tòa đại lý Phủ Yên Thế nhằm trấn áp phong trào nông dân. Địa điểm lịch sử ghi dấu căn cứ đầu não của thực dân Pháp và các cuộc đụng độ quyết liệt của nghĩa quân Yên Thế, di tích quốc gia đặc biệt.Về ý nghĩa lịch sử vẻ vang: **Đại bản doanh đàn áp của thực dân Pháp (1885):** Để đối phó với nghĩa quân của Đề Nắm và Đề Thám,thực dân Pháp đã thiết lập đồn bốt\u0001kiên cố trên đồi Phủ.Từ đây, các tướng chỉ huy Pháp đã xuất quân tấn công nhiều đồn lũy nghĩa quân nhưng liên tục chịu tổn thất nặng nề.Di tích là chứng tích lịch sử không thể phai mờ về sự thất bại của chủ nghĩa thực dân trước lòng yêu nước bất diệt của nhân dân ta.",
+    "Chào mừng quý thầy cô và các bạn học sinh đến với Đồi phủ,Di sản vật thể tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. Nơi đây từng bị thực dân Pháp chiếm đóng từ năm 1885 để lập đồn bốt khét tiếng và đặt Tòa đại lý Phủ Yên Thế nhằm trấn áp phong trào nông dân. Địa điểm lịch sử ghi dấu căn cứ đầu não của thực dân Pháp và các cuộc đụng độ quyết liệt của nghĩa quân Yên Thế, di tích quốc gia đặc biệt.Về ý nghĩa lịch sử vẻ vang: **Đại bản doanh đàn áp của thực dân Pháp (1885):** Để đối phó với nghĩa quân của Đề Nắm và Đề Thám,thực dân Pháp đã thiết lập đồn bốt\u0001kiên cố trên đồi Phủ.Từ đây, các tướng chỉ huy Pháp đã xuất quân tấn công nhiều đồn lũy nghĩa quân nhưng liên tục chịu tổn thất nặng nề.Di tích là chứng tích lịch sử không thể phai mờ về sự thất bại của chủ nghĩa thực dân trước lòng yêu nước bất diệt của nhân dân ta.",
     "NGHĨA ĐỊA PHÁP",
-    "Chào mừng quý thầy cô và các bạn học sinh đến với Nghĩa địa Pháp.Di sản vật thể tiêu biểu của xã Nhã Nam, tỉnh Bắc Ninh. Đây là chứng tích lịch sử đặc biệt ghi dấu những tổn thất nặng nề và thất bại không thể tránh khỏi của đạo quân xâm lược trước ý chí quật cường của nghĩa quân Yên Thế.Khu chứng tích lịch sử nơi chôn cất nhiều sĩ quan, binh lính Pháp tử trận tại chiến trường Yên Thế, di tích quốc gia đặc biệt.. Trong suốt cuộc chiến tranh xâm lược Yên Thế, hàng loạt sĩ quan chỉ huy và lính lê dương Pháp đã bỏ mạng dưới tay nghĩa quân của Đề Nắm và Đề Thám. Qua đó Di tích giúp học sinh nhận thức sâu sắc về cái giá của hòa bình và sự quả cảm phi thường của các thế hệ nghĩa binh Yên Thế chống ngoại xâm."
+    "Chào mừng quý thầy cô và các bạn học sinh đến với Nghĩa địa Pháp.Di sản vật thể tiêu biểu của xã Nhã Nam, thành phố Bắc Ninh. Đây là chứng tích lịch sử đặc biệt ghi dấu những tổn thất nặng nề và thất bại không thể tránh khỏi của đạo quân xâm lược trước ý chí quật cường của nghĩa quân Yên Thế.Khu chứng tích lịch sử nơi chôn cất nhiều sĩ quan, binh lính Pháp tử trận tại chiến trường Yên Thế, di tích quốc gia đặc biệt.. Trong suốt cuộc chiến tranh xâm lược Yên Thế, hàng loạt sĩ quan chỉ huy và lính lê dương Pháp đã bỏ mạng dưới tay nghĩa quân của Đề Nắm và Đề Thám. Qua đó Di tích giúp học sinh nhận thức sâu sắc về cái giá của hòa bình và sự quả cảm phi thường của các thế hệ nghĩa binh Yên Thế chống ngoại xâm."
   ],
   "tap-quan-tuong-niem-de-nam-de-tham.docx": [
     "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
@@ -541,7 +541,7 @@ window.DOC_TEXTS = {
     "• Lễ dâng hương báo công của học sinh THPT trước thềm các kỳ thi và sự kiện trọng đại của nhà trường.",
     "VI. GIÁ TRỊ BẢO TỒN VÀ GIÁO DỤC",
     "Là bài học đạo đức, lý tưởng cách mạng sâu sắc nhất cho đoàn viên, học sinh xã Nhã Nam trên con đường rèn đức luyện tài.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "tro-choi-dan-gian-vo-co-truyen.docx": [
     "CỔNG THÔNG TIN DI SẢN VĂN HÓA • XÃ NHÃ NAM, TỈNH BẮC NINH",
@@ -562,7 +562,7 @@ window.DOC_TEXTS = {
     "• Hội thi cờ người, kéo co, đập niêu đất, chọi gà và giao lưu võ thuật cổ truyền giữa các trường học và câu lạc bộ thanh niên.",
     "VI. GIÁ TRỊ BẢO TỒN VÀ GIÁO DỤC",
     "Góp phần rèn luyện thể lực và bồi dưỡng lòng dũng cảm, tinh thần đồng đội cho học sinh THPT và thế hệ trẻ.",
-    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, tỉnh Bắc Ninh."
+    "Tài liệu tổng hợp phục vụ giảng dạy, học tập ngoại khóa và tìm hiểu lịch sử địa phương. Xã Nhã Nam, thành phố Bắc Ninh."
   ],
   "kich-ban-dien-tich-de-nam-te-co.docx": [
     "KỊCH BẢN LỄ TẾ CỜ HỘI ĐÌNH HẢ",
@@ -682,7 +682,7 @@ window.DOC_TEXTS = {
     "NGHỆ THUẬT DÂN CA QUAN HỌ TẠI XÃ NHÃ NAM (CÂU LẠC BỘ DÂN CA QUAN HỌ XÃ NHÃ NAM)",
     "Loại hình di sản: Nghệ thuật trình diễn dân gian (Dân ca Quan họ Bắc Ninh)",
     "Cơ sở pháp lý: Quyết định số 756/QĐ-UBND ngày 21/5/2026 của Chủ tịch UBND xã Nhã Nam về việc thành lập Câu lạc bộ Dân ca Quan họ xã Nhã Nam.",
-    "Địa bàn thực hành: Toàn thể nhân dân và các hạt nhân văn nghệ tại xã Nhã Nam, tỉnh Bắc Ninh (trọng tâm sinh hoạt tại các thôn, Khu lưu niệm Sáu điều Bác Hồ dạy CAND và các di tích lịch sử đình chùa cổ truyền).",
+    "Địa bàn thực hành: Toàn thể nhân dân và các hạt nhân văn nghệ tại xã Nhã Nam, thành phố Bắc Ninh (trọng tâm sinh hoạt tại các thôn, Khu lưu niệm Sáu điều Bác Hồ dạy CAND và các di tích lịch sử đình chùa cổ truyền).",
     "I. NGUỒN GỐC VÀ TẦM VÓC VĂN HÓA",
     "Xã Nhã Nam sở hữu vị trí chiến lược ngàn năm gắn bó với lịch sử dân tộc. Trong dòng chảy văn hóa Kinh Bắc trù phú, Dân ca Quan họ Bắc Ninh — di sản văn hóa phi vật thể đại diện của nhân loại được UNESCO vinh danh năm 2009 — là viên ngọc quý kết tinh lối sống tao nhã, nghĩa tình và tài hoa của con người quê hương.",
     "Sau khi chuyển giao và sáp nhập địa giới hành chính về tỉnh Bắc Ninh, phong trào học tập, truyền dạy và giao lưu Dân ca Quan họ tại xã Nhã Nam càng thêm bừng sáng, trở thành nét sinh hoạt tinh thần không thể thiếu trong đời sống cộng đồng.",
@@ -703,7 +703,7 @@ window.DOC_TEXTS = {
     "CÂU LẠC BỘ NGHỆ THUẬT DÂN GIAN XÃ NHÃ NAM",
     "Loại hình di sản: Văn hóa dân gian - Nghệ thuật quần chúng truyền thống",
     "Cơ sở pháp lý: Quyết định số 1570/QĐ-UBND ngày 29/8/2025 của Chủ tịch UBND xã Nhã Nam về việc thành lập Câu lạc bộ Nghệ thuật dân gian xã Nhã Nam.",
-    "Địa bàn hoạt động: Toàn địa bàn xã Nhã Nam, tỉnh Bắc Ninh.",
+    "Địa bàn hoạt động: Toàn địa bàn xã Nhã Nam, thành phố Bắc Ninh.",
     "I. HOÀN CẢNH RA ĐỜI VÀ MỐC SON LỊCH SỬ",
     "Nhằm quy tụ các hạt nhân văn nghệ tiêu biểu và bảo tồn kho tàng nghệ thuật truyền thống của quê hương, ngày 29/8/2025, UBND xã Nhã Nam đã ban hành Quyết định số 1570/QĐ-UBND thành lập Câu lạc bộ Nghệ thuật dân gian xã Nhã Nam.",
     "Lễ ra mắt chính thức của Câu lạc bộ được tổ chức trọng thể vào ngày 31 tháng 8 năm 2025 tại Hội trường UBND xã Nhã Nam. Đây là sự kiện văn hóa ý nghĩa chào mừng thành công Đại hội Đảng bộ xã Nhã Nam lần thứ nhất (nhiệm kỳ 2025 - 2030) và kỷ niệm 80 năm Cách mạng Tháng Tám, Quốc khánh 2/9 (1945 - 2025).",

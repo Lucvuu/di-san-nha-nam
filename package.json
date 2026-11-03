@@ -1,7 +1,7 @@
 {
   "name": "di-san-van-hoa-nha-nam",
   "version": "1.0.0",
-  "description": "Cổng thông tin số hóa Di sản văn hóa xã Nhã Nam, tỉnh Bắc Ninh",
+  "description": "Cổng thông tin số hóa Di sản văn hóa xã Nhã Nam, thành phố Bắc Ninh",
   "main": "index.html",
   "scripts": {
     "start": "node server.js",
