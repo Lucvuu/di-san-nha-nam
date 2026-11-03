@@ -54,7 +54,7 @@
     rel="stylesheet">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=3.8.0" />
+  <link rel="stylesheet" href="css/style.css?v=3.8.1" />
   <!-- Tailwind dựng sẵn (npm run build:css), đặt sau style.css như bản CDN cũ -->
   <link rel="stylesheet" href="css/tailwind.css?v=1.0.1" />
 </head>
@@ -1265,19 +1265,17 @@
 
           <div class="relative z-10">
 
-            <!-- HUY HIỆU BẮT BUỘC VỀ KIỂM DUYỆT BÀI VIẾT CHO HỌC SINH -->
-            <div class="inline-flex items-start gap-1.5 mb-5 text-[13px] text-[#7A5C3E]">
-              <svg class="ic w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true">
-                <use href="#i-shield" />
-              </svg>
-              <span class="facebook-moderation-badge">
-                Trang Facebook “Sáu Điều Bác Hồ Dạy CAND – Theo Dấu Chân Bác Hồ”
-              </span>
-            </div>
+            <div class="facebook-community-main">
+              <div class="facebook-community-intro">
+                <div class="inline-flex items-start gap-1.5 mb-5 text-[13px] text-[#7A5C3E]">
+                  <svg class="ic w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true">
+                    <use href="#i-shield" />
+                  </svg>
+                  <span class="facebook-moderation-badge">
+                    Trang Facebook “Sáu Điều Bác Hồ Dạy CAND – Theo Dấu Chân Bác Hồ”
+                  </span>
+                </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-
-              <div class="lg:col-span-2">
                 <h3
                   class="font-heritage-serif text-2xl sm:text-3xl font-bold text-[#8B1E1E] mb-3 flex items-center gap-2.5">
                   <svg class="w-7 h-7 flex-shrink-0 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
@@ -1287,51 +1285,48 @@
                   Cộng đồng yêu di sản Nhã Nam
                 </h3>
 
-                <p class="text-sm sm:text-base text-[#5C5248] leading-relaxed mb-6 font-normal">
+                <p class="text-sm sm:text-base text-[#5C5248] leading-relaxed font-normal">
                   Kênh kết nối dành cho học sinh THPT, thầy cô và người dân trong xã: chia sẻ ảnh chụp tại di tích, ghi lại chuyện
                   kể của người cao tuổi, học tập và noi gương theo lời Bác dạy.
                 </p>
-
-                <!-- Các hoạt động trong nhóm -->
-                <div
-                  class="grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4 text-xs text-[#2A2521] pt-5 border-t border-[#EADECF]">
-                  <div>
-                    <div class="font-bold text-[#8B1E1E] mb-1"><svg class="ic w-4 h-4" aria-hidden="true">
-                        <use href="#i-camera" />
-                      </svg> Chia sẻ hình ảnh</div>
-                    <div>Ảnh chụp tại di tích trong các buổi tham quan, ghi rõ ngày và địa điểm.</div>
-                  </div>
-                  <div>
-                    <div class="font-bold text-[#8B1E1E] mb-1"><svg class="ic w-4 h-4" aria-hidden="true">
-                        <use href="#i-book" />
-                      </svg> Tư liệu học tập</div>
-                    <div>Trao đổi bài tập lịch sử địa phương, hỏi đáp tư liệu làm dự án trường học.</div>
-                  </div>
-                  <div>
-                    <div class="font-bold text-[#8B1E1E] mb-1"><svg class="ic w-4 h-4" aria-hidden="true">
-                        <use href="#i-shield" />
-                      </svg> Theo dấu chân Bác</div>
-                    <div>Tin bài về Sáu điều Bác Hồ dạy Công an nhân dân, gắn với chùa Tứ Giáp.</div>
-                  </div>
-                </div>
               </div>
 
-              <!-- Nút mở trang Facebook cộng đồng -->
-              <div class="text-center lg:text-right flex flex-col items-center lg:items-end justify-center">
+              <div class="facebook-community-actions text-center">
                 <a href="https://www.facebook.com/chungemlamtheoloiBac" target="_blank" rel="noopener noreferrer"
                   id="btn-join-facebook-community" onclick="handleJoinFacebookGroup(event)"
-                  class="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-lg font-semibold text-sm text-white bg-[#1877F2] hover:bg-[#166fe5] transition-colors duration-200 w-full sm:w-auto shadow-sm">
+                  class="inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-lg font-semibold text-sm text-white bg-[#1877F2] hover:bg-[#166fe5] transition-colors duration-200 w-full shadow-sm">
                   <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                     <path
                       d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                   </svg>
                   <span class="whitespace-nowrap">Tham gia cộng đồng Facebook ↗</span>
                 </a>
-                <span class="text-xs text-[#786C5E] mt-2 block">
+                <span class="facebook-community-url text-xs text-[#786C5E] block">
                   Trang cộng đồng: facebook.com/chungemlamtheoloiBac
                 </span>
               </div>
+            </div>
 
+            <!-- Các hoạt động trong cộng đồng -->
+            <div class="facebook-community-activities text-sm text-[#2A2521]">
+              <div class="facebook-community-activity">
+                <div class="facebook-community-activity-title"><svg class="ic w-4 h-4" aria-hidden="true">
+                    <use href="#i-camera" />
+                  </svg> Chia sẻ hình ảnh</div>
+                <div>Ảnh chụp tại di tích trong các buổi tham quan, ghi rõ ngày và địa điểm.</div>
+              </div>
+              <div class="facebook-community-activity">
+                <div class="facebook-community-activity-title"><svg class="ic w-4 h-4" aria-hidden="true">
+                    <use href="#i-book" />
+                  </svg> Tư liệu học tập</div>
+                <div>Trao đổi bài tập lịch sử địa phương, hỏi đáp tư liệu làm dự án trường học.</div>
+              </div>
+              <div class="facebook-community-activity">
+                <div class="facebook-community-activity-title"><svg class="ic w-4 h-4" aria-hidden="true">
+                    <use href="#i-shield" />
+                  </svg> Theo dấu chân Bác</div>
+                <div>Tin bài về Sáu điều Bác Hồ dạy Công an nhân dân, gắn với chùa Tứ Giáp.</div>
+              </div>
             </div>
 
           </div>
