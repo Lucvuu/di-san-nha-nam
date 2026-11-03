@@ -1370,12 +1370,16 @@ function closeLightbox() {
  * FACEBOOK GROUP SECTION & MODAL THÔNG BÁO THÂN THIỆN
  * ====================================================================
  */
-function handleJoinFacebookGroup() {
+function handleJoinFacebookGroup(event) {
   const url = SITE_CONFIG.facebookGroupUrl;
   
   if (!url || url.trim() === '#' || url.trim() === '') {
+    if (event) event.preventDefault();
     showFacebookComingSoonModal();
   } else {
+    if (event && event.currentTarget && event.currentTarget.tagName === 'A') {
+      return;
+    }
     window.open(url, '_blank', 'noopener,noreferrer');
   }
 }

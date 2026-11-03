@@ -32,7 +32,7 @@ const SITE_CONFIG = {
   },
   
   // Facebook Group Community Configuration
-  facebookGroupUrl: "#", 
+  facebookGroupUrl: "https://www.facebook.com/chungemlamtheoloiBac", 
   facebookGroupStatusNote: "Nhóm bật kiểm duyệt: bài viết và bình luận được duyệt trước khi hiển thị."
 };
 
