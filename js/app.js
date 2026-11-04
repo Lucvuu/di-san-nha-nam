@@ -2018,6 +2018,13 @@ function checkUrlHash() {
     setTimeout(() => {
       openDetailModal(itemId);
     }, 200);
+  } else if (hash && hash.length > 1) {
+    const targetId = (decodeURIComponent(hash.slice(1)).match(/^[a-z0-9-]+/) || [''])[0];
+    if (targetId) {
+      setTimeout(() => {
+        scrollToSection(targetId);
+      }, 200);
+    }
   }
 }
 
