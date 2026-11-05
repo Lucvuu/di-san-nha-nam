@@ -2606,3 +2606,45 @@ function initVisitorCounter() {
       });
   }
 }
+
+/**
+ * Thu gọn hai nhóm minh chứng nghiên cứu trên trang chủ.
+ * Liên kết cũ dùng #phong-van hoặc #phan-hoi-website vẫn tự mở đúng nội dung.
+ */
+function initResearchEvidenceDisclosures() {
+  const items = Array.from(document.querySelectorAll('details.research-evidence-item'));
+  if (items.length === 0) return;
+
+  const pausePlayers = (item) => {
+    item.querySelectorAll('audio').forEach((player) => player.pause());
+  };
+
+  const openHashTarget = () => {
+    if (!window.location.hash) return;
+    const targetId = decodeURIComponent(window.location.hash.slice(1));
+    const target = document.getElementById(targetId);
+    if (target && target.matches('details.research-evidence-item')) {
+      target.open = true;
+    }
+  };
+
+  items.forEach((item) => {
+    item.addEventListener('toggle', () => {
+      if (!item.open) {
+        pausePlayers(item);
+        return;
+      }
+
+      items.forEach((otherItem) => {
+        if (otherItem !== item && otherItem.open) {
+          otherItem.open = false;
+        }
+      });
+    });
+  });
+
+  window.addEventListener('hashchange', openHashTarget);
+  openHashTarget();
+}
+
+initResearchEvidenceDisclosures();

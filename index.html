@@ -54,7 +54,7 @@
     rel="stylesheet">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=3.8.1" />
+  <link rel="stylesheet" href="css/style.css?v=3.8.2" />
   <!-- Tailwind dựng sẵn (npm run build:css), đặt sau style.css như bản CDN cũ -->
   <link rel="stylesheet" href="css/tailwind.css?v=1.0.1" />
 </head>
@@ -296,14 +296,9 @@
             <span>Cộng đồng</span>
           </a>
 
-          <a href="#phong-van"
+          <a href="#minh-chung-nghien-cuu"
             class="text-sm font-medium text-[#5C5248] hover:text-[#8B1E1E] transition relative py-1 border-b-2 border-transparent hover:border-[#C59B27] whitespace-nowrap">
-            <span>Phỏng vấn sâu</span>
-          </a>
-
-          <a href="#phan-hoi-website"
-            class="text-sm font-medium text-[#5C5248] hover:text-[#8B1E1E] transition relative py-1 border-b-2 border-transparent hover:border-[#C59B27] whitespace-nowrap">
-            <span>Đánh giá website</span>
+            <span>Minh chứng nghiên cứu</span>
           </a>
 
           <a href="#site-footer"
@@ -394,16 +389,10 @@
           <use href="#i-pencil" />
         </svg> <span>Góc học tập và trắc nghiệm di sản</span>
       </a>
-      <a href="#phong-van" onclick="document.getElementById('mobile-menu').classList.add('hidden');"
-        class="px-3.5 py-2.5 rounded-xl text-sm sm:text-base font-semibold text-[#8B1E1E] hover:bg-heritage-warm min-h-[44px] flex items-center gap-2.5">
-        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"></path></svg>
-        <span>Tư liệu phỏng vấn sâu</span>
-      </a>
-
-      <a href="#phan-hoi-website" onclick="document.getElementById('mobile-menu').classList.add('hidden');"
+      <a href="#minh-chung-nghien-cuu" onclick="document.getElementById('mobile-menu').classList.add('hidden');"
         class="px-3.5 py-2.5 rounded-xl text-sm sm:text-base font-semibold text-[#8B1E1E] hover:bg-heritage-warm min-h-[44px] flex items-center gap-2.5">
         <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-        <span>Báo cáo phản hồi người dùng (N = 85)</span>
+        <span>Minh chứng nghiên cứu</span>
       </a>
 
       <a href="#site-footer" onclick="document.getElementById('mobile-menu').classList.add('hidden');"
@@ -1359,18 +1348,47 @@
     </section>
 
     <!-- ====================================================================
-       7. CHÂN TRANG & THÔNG TIN LIÊN HỆ NGƯỜI ĐIỀU HÀNH (FOOTER & CONTACT)
-       Biểu trưng văn hóa xã Nhã Nam, giới thiệu dự án và nút góp ý ẩn danh
+       5–6. MINH CHỨNG NGHIÊN CỨU
+       Hai nhóm nội dung chuyên sâu được thu gọn để không làm gián đoạn
+       hành trình khám phá di sản. Giữ nguyên các id cũ cho liên kết đã phát hành.
        ==================================================================== -->
-  
-    <!-- ====================================================================
-       5. TƯ LIỆU ĐIỀN DÃ & PHỎNG VẤN SÂU KHOA HỌC (AUDIO KIỂM CHỨNG)
-       Minh chứng nghiên cứu định tính: 10 bản ghi âm nguyên bản (.m4a)
-       ==================================================================== -->
-    <section id="phong-van" class="py-12 md:py-16 bg-[#FDFBF7] border-t border-[#EADECF] scroll-mt-20">
+    <section id="minh-chung-nghien-cuu" class="research-evidence-hub scroll-mt-20">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="research-evidence-heading">
+          <h2 class="font-heritage-serif text-2xl sm:text-3xl font-bold text-[#8B1E1E]">
+            Minh chứng nghiên cứu
+          </h2>
+          <p>
+            Bản ghi phỏng vấn và số liệu khảo sát được xếp riêng ở cuối trang. Chọn từng mục khi cần xem nội dung chi tiết.
+          </p>
+        </div>
+
+        <div class="research-evidence-list">
+          <details id="phong-van" class="research-evidence-item scroll-mt-24">
+            <summary class="research-evidence-summary">
+              <span class="research-evidence-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 2.75a3.25 3.25 0 00-3.25 3.25v5a3.25 3.25 0 006.5 0V6A3.25 3.25 0 0012 2.75zM5.75 10.5v.5a6.25 6.25 0 0012.5 0v-.5M12 17.25v4M8.75 21.25h6.5" />
+                </svg>
+              </span>
+              <span class="research-evidence-copy">
+                <span class="research-evidence-meta">10 bản ghi âm · Phỏng vấn sâu</span>
+                <span class="research-evidence-title">Kho bản ghi âm phỏng vấn sâu</span>
+                <span class="research-evidence-description">Ý kiến của cán bộ văn hóa, giáo viên và học sinh trên địa bàn xã Nhã Nam.</span>
+              </span>
+              <span class="research-evidence-action">
+                <span class="research-evidence-action-label">Xem chi tiết</span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5.75 7.75L10 12l4.25-4.25" />
+                </svg>
+              </span>
+            </summary>
+
+            <div class="research-evidence-content">
+              <section class="research-evidence-panel">
+                <div class="max-w-6xl mx-auto">
         
-        <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="hidden" aria-hidden="true">
           <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-900 rounded-full text-xs font-semibold mb-3 border border-amber-200">
             <svg class="w-4 h-4 text-amber-700" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd"></path>
@@ -1566,17 +1584,36 @@
           </div>
         </div>
 
-      </div>
-    </section>
+                </div>
+              </section>
+            </div>
+          </details>
 
-    <!-- ====================================================================
-       6. BÁO CÁO PHẢN HỒI TRANG WEBSITE & ĐÁNH GIÁ NGƯỜI DÙNG (N = 85)
-       Dữ liệu thực nghiệm KHKT: khảo sát qua Google Form gắn trên website
-       ==================================================================== -->
-    <section id="phan-hoi-website" class="py-12 md:py-16 bg-white border-t border-[#EADECF] scroll-mt-20">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <details id="phan-hoi-website" class="research-evidence-item scroll-mt-24">
+            <summary class="research-evidence-summary">
+              <span class="research-evidence-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 19.25V12.5M12 19.25V7.5M19 19.25V4.75M3 19.25h18" />
+                </svg>
+              </span>
+              <span class="research-evidence-copy">
+                <span class="research-evidence-meta">85 người tham gia · Khảo sát trực tuyến</span>
+                <span class="research-evidence-title">Phản hồi và đánh giá người dùng</span>
+                <span class="research-evidence-description">70,6% đánh giá dễ sử dụng; 78,8% đánh giá nội dung hấp dẫn.</span>
+              </span>
+              <span class="research-evidence-action">
+                <span class="research-evidence-action-label">Xem chi tiết</span>
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5.75 7.75L10 12l4.25-4.25" />
+                </svg>
+              </span>
+            </summary>
+
+            <div class="research-evidence-content">
+              <section class="research-evidence-panel research-evidence-panel--survey">
+                <div class="max-w-5xl mx-auto">
         
-        <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="hidden" aria-hidden="true">
           <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-100 text-amber-900 rounded-full text-xs font-semibold mb-3 border border-amber-200">
             <svg class="w-4 h-4 text-amber-700" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
@@ -1594,7 +1631,7 @@
 
         <div class="bg-heritage-warm rounded-2xl p-6 sm:p-8 border border-[#EADECF] space-y-6">
           
-          <!-- Đoạn dẫn nhập theo file của cô Mến -->
+          <!-- Đoạn dẫn nhập theo hồ sơ khảo sát -->
           <div class="border-l-4 border-[#8B1E1E] pl-4 sm:pl-5 text-sm sm:text-base text-[#2A2521] leading-relaxed">
             <p>
               Trước đây, việc dạy và học lịch sử – văn hóa địa phương chủ yếu diễn ra trên lớp theo lối truyền thụ một chiều; tư liệu phân tán, học sinh ít có dịp đối chiếu bài học với di tích thực tế. Với tư liệu số và website, học sinh tự tra cứu, nghe thuyết minh, xem video, xem bản đồ và làm trắc nghiệm trên điện thoại hoặc máy tính, cả trên lớp lẫn tại di tích.
@@ -1612,8 +1649,9 @@
             <p class="text-xs text-[#5C5248] italic mb-4">(Nguồn: Nhóm nghiên cứu xây dựng, khảo sát tháng 10–11/2026)</p>
             
             <div class="max-w-2xl mx-auto p-2 bg-[#FDFBF7] rounded-lg border border-[#EADECF]">
-              <img src="assets/images/charts/bieu-do-3-5-danh-gia-website.png" 
+              <img src="assets/images/charts/bieu-do-3-5-danh-gia-website.png"
                    alt="Biểu đồ đánh giá thực tế của người dùng N = 85" 
+                   loading="lazy"
                    class="w-full h-auto object-contain mx-auto rounded">
             </div>
           </div>
@@ -1687,6 +1725,11 @@
             </a>
           </div>
 
+        </div>
+                </div>
+              </section>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -2285,7 +2328,7 @@
   <!-- SCRIPT FILES -->
   <script src="js/data.js?v=3.9.0"></script>
   <script src="js/utils.js?v=3.6.1"></script>
-  <script src="js/app.js?v=3.10.0"></script>
+  <script src="js/app.js?v=3.10.1"></script>
 </body>
 
 </html>
