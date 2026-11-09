@@ -9,6 +9,9 @@
     { key: 'phi-vat-the', label: 'Di sản phi vật thể', color: '#047857' }
   ];
   const LEAFLET = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/';
+  // Hai hồ sơ cùng một địa điểm thật: dùng chung tọa độ là đúng, không cảnh báo.
+  // Đồi Phủ (vat-the-5) chính là khu Nghĩa địa Pháp (vat-the-9).
+  const SAME_PLACE = [['vat-the-5', 'vat-the-9']];
 
   function coordsOf(item) {
     const m = ((item.map && item.map.embedUrl) || '').match(/[?&]q=(-?\d+\.\d+),(-?\d+\.\d+)/);
@@ -46,7 +49,8 @@
     const suspect = new Set();
     Object.values(seen).forEach(group => {
       const tangible = group.filter(g => g.category === 'vat-the');
-      if (tangible.length > 1) tangible.forEach(g => suspect.add(g.id));
+      const sameSite = SAME_PLACE.some(p => tangible.every(g => p.includes(g.id)));
+      if (tangible.length > 1 && !sameSite) tangible.forEach(g => suspect.add(g.id));
     });
 
     const map = L.map(mapEl, { scrollWheelZoom: false });
