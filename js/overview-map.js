@@ -12,6 +12,9 @@
   // Hai hồ sơ cùng một địa điểm thật: dùng chung tọa độ là đúng, không cảnh báo.
   // Đồi Phủ (vat-the-5) chính là khu Nghĩa địa Pháp (vat-the-9).
   const SAME_PLACE = [['vat-the-5', 'vat-the-9']];
+  // Tọa độ biết là chưa đúng nhưng chưa có số đo thay thế.
+  // Đền Cả Trọng (vat-the-10) nằm phía bên kia đồi Phủ so với đền Gốc Khế; tọa độ hiện tại vẫn ở phía Gốc Khế.
+  const UNVERIFIED = ['vat-the-10'];
 
   function coordsOf(item) {
     const m = ((item.map && item.map.embedUrl) || '').match(/[?&]q=(-?\d+\.\d+),(-?\d+\.\d+)/);
@@ -46,7 +49,7 @@
     });
 
     // Di tích vật thể khác nhau mà trùng hệt tọa độ: gần như chắc là tọa độ mượn, cần đo lại.
-    const suspect = new Set();
+    const suspect = new Set(UNVERIFIED);
     Object.values(seen).forEach(group => {
       const tangible = group.filter(g => g.category === 'vat-the');
       const sameSite = SAME_PLACE.some(p => tangible.every(g => p.includes(g.id)));
@@ -74,7 +77,7 @@
         html: `<span class="ovm-dot${suspect.has(it.id) ? ' ovm-dot--suspect' : ''}" style="background:${layer.color}"></span>`,
         iconSize: [18, 18], iconAnchor: [9, 9]
       });
-      const warn = suspect.has(it.id) ? '<p class="ovm-pop-warn">Tọa độ đang trùng với di tích khác, vị trí chỉ gần đúng.</p>' : '';
+      const warn = suspect.has(it.id) ? '<p class="ovm-pop-warn">Tọa độ chưa đo tại thực địa, vị trí chỉ gần đúng.</p>' : '';
       L.marker(pos, { icon, title, alt: title, keyboard: true })
         .bindPopup(`<strong>${esc(title)}</strong><br><span>${esc(it.rankName || it.categoryName)}</span>` +
           (it.address ? `<br><small>${esc(it.address)}</small>` : '') + warn +
@@ -101,7 +104,7 @@
 
     const parts = [];
     if (missing.length) parts.push('Chưa có tọa độ đo đạc, chưa hiện trên bản đồ: ' + missing.map(m => m.shortTitle || m.title).join('; ') + '.');
-    if (suspect.size) parts.push('Viền đứt nét: di tích đang dùng chung tọa độ với di tích khác, cần đo lại tại thực địa.');
+    if (suspect.size) parts.push('Viền đứt nét: tọa độ chưa đo tại thực địa, vị trí chỉ gần đúng.');
     note.textContent = parts.join(' ');
   }
 

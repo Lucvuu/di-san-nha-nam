@@ -204,16 +204,16 @@ const HERITAGE_ROUTES = [
     badgeBg: "bg-[#166534]",
     relicIds: ["vat-the-4", "vat-the-5", "vat-the-6", "vat-the-7", "vat-the-12"],
     relics: [
-      { id: "vat-the-4", name: "Đền Gốc Khế", note: "Căn cứ rừng Gốc Khế nghĩa quân Yên Thế", q: "21.4443835,106.0966726" },
+      { id: "vat-the-4", name: "Đền Gốc Khế", note: "Căn cứ rừng Gốc Khế nghĩa quân Yên Thế", q: "21.4443397,106.0965238" },
       { id: "vat-the-5", name: "Đồi Phủ (đồn Nhã Nam)", note: "Ao ông Chấn Ký, di tích oanh liệt thời Pháp", q: "21.4444805,106.0971055" },
       { id: "vat-the-6", name: "Đình làng Chuông", note: "Đình cổ thế kỷ XVIII trung tâm Nhã Nam", q: "21.4443874,106.0991677" },
       { id: "vat-the-7", name: "Chùa Nam Thiên", note: "Chùa Phố khởi dựng năm 1822", q: "21.4442158,106.0973672" },
       { id: "vat-the-12", name: "Đình Cầu Thượng", note: "Di tích cấp tỉnh thờ Cao Sơn, Quý Minh", q: "21.4397723,106.0893274" }
     ],
-    mapEmbedUrl: "https://www.google.com/maps?saddr=21.4443835,106.0966726&daddr=21.4444805,106.0971055+to:21.4443874,106.0991677+to:21.4442158,106.0973672+to:21.4397723,106.0893274&output=embed",
-    startDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4443835,106.0966726",
+    mapEmbedUrl: "https://www.google.com/maps?saddr=21.4443397,106.0965238&daddr=21.4444805,106.0971055+to:21.4443874,106.0991677+to:21.4442158,106.0973672+to:21.4397723,106.0893274&output=embed",
+    startDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4443397,106.0965238",
     startDirectionsText: "Khởi hành từ vị trí của bạn (tới đền Gốc Khế)",
-    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4397723,106.0893274&waypoints=21.4443835,106.0966726%7C21.4444805,106.0971055%7C21.4443874,106.0991677%7C21.4442158,106.0973672",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=21.4397723,106.0893274&waypoints=21.4443397,106.0965238%7C21.4444805,106.0971055%7C21.4443874,106.0991677%7C21.4442158,106.0973672",
     directionsText: "Lộ trình liên hoàn cả tuyến (đền Gốc Khế → đồi Phủ → đình Chuông → chùa Nam Thiên → đình Cầu Thượng)",
     description: "Các điểm quanh đồn Nhã Nam cũ: rừng Gốc Khế, đồi Phủ, đình Chuông nơi Đề Thám họp bàn, chùa Nam Thiên (1822) và đình Cầu Thượng."
   }
@@ -615,8 +615,8 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Đền Gốc Khế nhắc nhở các bạn học sinh về sự mưu trí, dũng cảm và tinh thần dựa vào lòng dân để chống giặc ngoại xâm của thế hệ cha anh đi trước."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=21.4443835,106.0966726&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4443835,106.0966726",
+      "embedUrl": "https://www.google.com/maps?q=21.4443397,106.0965238&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4443397,106.0965238",
       "locationName": "Đền Gốc Khế (căn cứ nghĩa quân Yên Thế)"
     },
     "gallery": [
@@ -1251,8 +1251,8 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Khám phá đình Nẻo giúp bồi đắp lòng tự hào về truyền thống bảo tồn di sản của các thế hệ nhân dân thôn Nẻo nói riêng và xã Nhã Nam nói chung."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=21.408497,106.1126369&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.408497,106.1126369",
+      "embedUrl": "https://www.google.com/maps?q=21.4084815,106.1123691&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4084815,106.1123691",
       "locationName": "Đình Nẻo (di tích lịch sử – văn hóa cấp tỉnh)"
     },
     "gallery": [
