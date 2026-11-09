@@ -997,8 +997,8 @@ const TANGIBLE_HERITAGE_DATA = [
       "studyNote": "Hình tượng người tướng trẻ Cả Trọng là tấm gương sáng ngời về tuổi trẻ dấn thân, lòng quả cảm và khí phách kiên cường cho học sinh noi theo."
     },
     "map": {
-      "embedUrl": "https://www.google.com/maps?q=21.4443835,106.0966726&output=embed",
-      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4443835,106.0966726",
+      "embedUrl": "https://www.google.com/maps?q=21.4446213,106.0976872&output=embed",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=21.4446213,106.0976872",
       "locationName": "Đền thờ Cả Trọng (đền Gốc Dẻ)"
     },
     "gallery": [

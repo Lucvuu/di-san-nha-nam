@@ -54,9 +54,9 @@
     rel="stylesheet">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=3.9.0" />
+  <link rel="stylesheet" href="css/style.css?v=3.9.1" />
   <!-- Tailwind dựng sẵn (npm run build:css), đặt sau style.css như bản CDN cũ -->
-  <link rel="stylesheet" href="css/tailwind.css?v=1.0.2" />
+  <link rel="stylesheet" href="css/tailwind.css?v=1.0.3" />
 </head>
 
 <body
@@ -1215,16 +1215,25 @@
         </div>
 
         <!-- Bản đồ toàn cảnh: mọi điểm di sản cùng lúc, bật/tắt theo lớp xếp hạng (js/overview-map.js) -->
-        <div id="overview-map-block" class="ovm-block">
-          <h3 class="font-heritage-serif text-xl sm:text-2xl font-bold text-[#8B1E1E] mb-2">Toàn cảnh các điểm di sản trên một bản đồ</h3>
-          <p class="text-[0.9375rem] text-[#4A4036] leading-relaxed mb-3">
-            Bật, tắt từng lớp để so sánh vị trí. Bấm vào chấm tròn để mở hồ sơ di sản.
-          </p>
-          <fieldset id="ovm-layers" class="ovm-layers">
-            <legend class="sr-only">Lớp hiển thị trên bản đồ</legend>
-          </fieldset>
+        <div id="overview-map-block" class="ovm-shell">
           <div id="ovm-map" class="ovm-map" role="region" aria-label="Bản đồ toàn cảnh di sản xã Nhã Nam"></div>
-          <p id="ovm-note" class="ovm-note"></p>
+          <aside class="ovm-panel" aria-labelledby="ovm-title">
+            <div class="ovm-panel-head">
+              <p class="ovm-kicker">Bản đồ di sản số</p>
+              <h3 id="ovm-title" class="font-heritage-serif ovm-title">Toàn cảnh di sản xã Nhã Nam</h3>
+              <p class="ovm-lead">Chọn một di sản trong danh sách hoặc bấm ghim trên bản đồ để xem vị trí và mở hồ sơ.</p>
+              <label class="ovm-search">
+                <svg class="ic w-4 h-4" aria-hidden="true"><use href="#i-search" /></svg>
+                <input id="ovm-search" type="search" placeholder="Tìm di sản (gõ không dấu được)" aria-label="Tìm di sản trên bản đồ">
+              </label>
+              <fieldset id="ovm-layers" class="ovm-layers">
+                <legend class="sr-only">Lớp hiển thị trên bản đồ</legend>
+              </fieldset>
+              <p id="ovm-count" class="ovm-count" aria-live="polite"></p>
+            </div>
+            <ul id="ovm-list" class="ovm-list"></ul>
+            <p id="ovm-note" class="ovm-note"></p>
+          </aside>
         </div>
       </div>
     </section>
@@ -2381,10 +2390,10 @@
   </div>
 
   <!-- SCRIPT FILES -->
-  <script src="js/data.js?v=3.9.1"></script>
+  <script src="js/data.js?v=3.9.2"></script>
   <script src="js/utils.js?v=3.6.1"></script>
   <script src="js/app.js?v=3.10.1"></script>
-  <script src="js/overview-map.js?v=1.0.2"></script>
+  <script src="js/overview-map.js?v=1.1.0"></script>
 </body>
 
 </html>
