@@ -54,9 +54,9 @@
     rel="stylesheet">
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=3.8.3" />
+  <link rel="stylesheet" href="css/style.css?v=3.9.0" />
   <!-- Tailwind dựng sẵn (npm run build:css), đặt sau style.css như bản CDN cũ -->
-  <link rel="stylesheet" href="css/tailwind.css?v=1.0.1" />
+  <link rel="stylesheet" href="css/tailwind.css?v=1.0.2" />
 </head>
 
 <body
@@ -1212,6 +1212,19 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- Bản đồ toàn cảnh: mọi điểm di sản cùng lúc, bật/tắt theo lớp xếp hạng (js/overview-map.js) -->
+        <div id="overview-map-block" class="ovm-block">
+          <h3 class="font-heritage-serif text-xl sm:text-2xl font-bold text-[#8B1E1E] mb-2">Toàn cảnh các điểm di sản trên một bản đồ</h3>
+          <p class="text-[0.9375rem] text-[#4A4036] leading-relaxed mb-3">
+            Bật, tắt từng lớp để so sánh vị trí. Bấm vào chấm tròn để mở hồ sơ di sản.
+          </p>
+          <fieldset id="ovm-layers" class="ovm-layers">
+            <legend class="sr-only">Lớp hiển thị trên bản đồ</legend>
+          </fieldset>
+          <div id="ovm-map" class="ovm-map" role="region" aria-label="Bản đồ toàn cảnh di sản xã Nhã Nam"></div>
+          <p id="ovm-note" class="ovm-note"></p>
         </div>
       </div>
     </section>
@@ -2371,6 +2384,7 @@
   <script src="js/data.js?v=3.9.0"></script>
   <script src="js/utils.js?v=3.6.1"></script>
   <script src="js/app.js?v=3.10.1"></script>
+  <script src="js/overview-map.js?v=1.0.0"></script>
 </body>
 
 </html>
