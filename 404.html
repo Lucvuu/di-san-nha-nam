@@ -6,10 +6,10 @@
   <title>Di sản văn hóa xã Nhã Nam</title>
   <script>
     // Một số phần mềm (Word, ứng dụng chat) đổi dấu # thành %23 khi mở link hồ sơ:
-    // disannhanam.com/%23item=phi-vat-the-7 -> đưa về disannhanam.com/#item=phi-vat-the-7
+    // disannhanam.com/%23item=phi-vat-the-7 -> đưa về disannhanam.com/#item=phi-vat-the-7 (giữ mọi dấu #, kể cả mã QR #phong-van)
     (function () {
       var p = decodeURIComponent(location.pathname + location.search);
-      var i = p.indexOf('#item=');
+      var i = p.indexOf('#');
       location.replace('/' + (i >= 0 ? p.slice(i) : ''));
     })();
   </script>
