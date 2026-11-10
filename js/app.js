@@ -2609,7 +2609,7 @@ function initVisitorCounter() {
 
 /**
  * Thu gọn hai nhóm minh chứng nghiên cứu trên trang chủ.
- * Liên kết cũ dùng #phong-van hoặc #phan-hoi-website vẫn tự mở đúng nội dung.
+ * Liên kết cũ dùng #phan-hoi-website vẫn tự mở đúng nội dung.
  */
 function initResearchEvidenceDisclosures() {
   const items = Array.from(document.querySelectorAll('details.research-evidence-item'));
