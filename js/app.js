@@ -2553,14 +2553,14 @@ function initVisitorCounter() {
     ? SITE_CONFIG.visitorCounter
     : {
         enabled: true,
-        baseCount: 6241,
+        baseCount: 7188,
         namespace: "di-san-nha-nam-thpt-bac-ninh",
         endpoint: "https://countapi.mileshilliard.com/api/v1"
       };
 
   if (cfg.enabled === false) return;
 
-  const base = cfg.baseCount || 6241;
+  const base = cfg.baseCount || 7188;
   let cachedVal = null;
   try {
     cachedVal = localStorage.getItem('nhanam_cached_visitors');
